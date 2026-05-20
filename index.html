@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiDrop | Compress Images to Exact Size (KB) Online</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free browser-based image compressor. Compress JPG or PNG images to an exact file size (100KB, 50KB, 20KB) locally. No uploads, no limits, 100% private.">
+    <meta name="keywords" content="compress image to 100kb, compress image to 50kb for passport photo, reduce image to 20kb, free jpg compressor no signup, browser image compressor privacy">
+    <meta name="author" content="OptiDrop">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="OptiDrop | Compress Images to Exact Size (KB)">
+    <meta property="og:description" content="Type your exact target file size (e.g., 50KB) and compress images instantly in your browser. 100% private, no uploads.">
+    <meta property="og:type" content="website">
+    
+    <!-- JSZip for Batch Downloads -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS for Dropzone & Animations -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dropzone-active {
+            border-color: #3b82f6 !important;
+            background-color: #eff6ff !important;
+            transform: scale(1.02);
+        }
+        .transition-all-ease {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Hide scrollbar for clean UI but keep functionality */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .toast {
+            animation: slideUpFade 0.3s ease-out forwards;
+        }
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <svg class="w-8 h-8 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                </svg>
+                <span class="font-bold text-xl tracking-tight text-slate-900">OptiDrop</span>
+            </div>
+            <nav class="hidden sm:flex gap-6 text-sm font-medium text-slate-600">
+                <a href="#how-it-works" class="hover:text-brand-600 transition-colors">How it Works</a>
+                <a href="#seo-features" class="hover:text-brand-600 transition-colors">Features</a>
+                <span class="flex items-center gap-1 text-green-600 bg-green-50 px-2 py-1 rounded-full text-xs font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span> 100% Private
+                </span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col">
+        <section class="w-full max-w-4xl mx-auto px-4 sm:px-6 pt-12 pb-8 text-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">
+                Compress Images to an <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">Exact Size</span>
+            </h1>
+            <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+                Need your photo exactly under 50KB for a form? Type your limit, and we do the rest. <br class="hidden sm:block"/>
+                <strong class="text-slate-800">No uploads. No limits. Processed entirely in your browser.</strong>
+            </p>
+
+            <div id="app-container" class="glass-panel rounded-3xl shadow-xl overflow-hidden max-w-3xl mx-auto relative transition-all-ease">
+                
+                <!-- STATE 1: UPLOAD ZONE -->
+                <div id="state-upload" class="p-8 sm:p-12 text-center">
+                    <div id="dropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 cursor-pointer transition-all-ease hover:bg-slate-50 hover:border-brand-400 group flex flex-col items-center justify-center min-h-[300px]">
+                        <input type="file" id="fileInput" class="hidden" accept="image/jpeg, image/png, image/webp" multiple />
+                        <div class="bg-brand-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                            <svg class="w-10 h-10 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Drop Images Here or Tap to Browse</h3>
+                        <p class="text-sm text-slate-500">Supports JPG, PNG, WebP (Max 20 images)</p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
+                        <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                        No upload? Seriously. Files never leave your device.
+                    </div>
+                </div>
+
+                <div id="state-settings" class="hidden p-6 sm:p-8">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <!-- Batch Image Preview -->
+                        <div class="w-full md:w-1/2 flex flex-col">
+                            <h3 class="text-lg font-bold text-slate-800 mb-4">Selected Images (<span id="queueCount">0</span>/20)</h3>
+                            <div id="batchPreviewContainer" class="grid grid-cols-3 sm:grid-cols-3 gap-3 max-h-[300px] overflow-y-auto pr-2">
+                                <!-- Thumbnails injected here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Settings Form -->
+                        <div class="w-full md:w-1/2 flex flex-col justify-center space-y-6 sticky top-0">
+                            <div>
+                                <label for="targetKB" class="block text-sm font-bold text-slate-700 mb-2">Target File Size (in KB)</label>
+                                <div class="relative">
+                                    <input type="number" id="targetKB" placeholder="e.g., 50" class="block w-full pl-4 pr-12 py-4 text-xl border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-bold" min="1" max="10000">
+                                    <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                                        <span class="text-slate-400 font-bold">KB</span>
+                                    </div>
+                                </div>
+                                <p class="mt-2 text-xs text-slate-500">Perfect for strict portal requirements (e.g., passports, signatures).</p>
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <button id="btnCancel" class="w-1/3 px-4 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors focus:outline-none">
+                                    Cancel
+                                </button>
+                                <button id="btnCompress" class="w-2/3 px-4 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
+                                    <span>Compress All</span>
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="state-loading" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center z-10 rounded-3xl">
+                    <div class="w-16 h-16 border-4 border-brand-100 border-t-brand-600 rounded-full animate-spin mb-4"></div>
+                    <h3 class="text-xl font-bold text-slate-800">Compressing locally...</h3>
+                    <p class="text-sm font-medium text-brand-600 mt-2 bg-brand-50 px-4 py-2 rounded-full" id="batchProgressText">0 / 0 completed</p>
+                    
+                    <div class="w-full max-w-xs bg-slate-200 rounded-full h-2 mt-4 overflow-hidden shadow-inner">
+                        <div id="batchProgressBar" class="bg-brand-600 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                    </div>
+                    
+                    <p class="text-sm text-slate-500 mt-4 max-w-xs text-center">Finding the perfect balance for your target size. Please keep this tab open.</p>
+                </div>
+
+                <div id="state-result" class="hidden p-6 sm:p-10 text-center flex flex-col items-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Batch Compression Complete!</h2>
+                    <p class="text-slate-600 mb-6">Successfully compressed <span id="successCount" class="font-bold text-brand-600">0</span> images.</p>
+                    
+                    <div id="resultsContainer" class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-left max-h-[300px] overflow-y-auto pr-2">
+                        <!-- Result items injected here -->
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2 w-full max-w-lg mx-auto">
+                        <button id="btnDownloadZip" class="w-full sm:w-auto px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-lg shadow-brand-200 transition-all focus:outline-none flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            Download All (ZIP)
+                        </button>
+                        <button id="btnStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all focus:outline-none">
+                            Compress More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-16 bg-white border-t border-slate-100 mt-8">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-100 text-brand-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Exact Size Targeting</h3>
+                        <p class="text-slate-600 text-sm">Stop guessing with quality sliders. Just type the KB limit you need (e.g., 50KB) and our algorithm handles the rest.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">100% Private (No Servers)</h3>
+                        <p class="text-slate-600 text-sm">Your files never leave your device. Processing happens directly inside your web browser using HTML5 Canvas.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Zero Friction</h3>
+                        <p class="text-slate-600 text-sm">No logins, no watermarks, no confusing menus. Just drop, type, and download instantly for free.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="seo-features" class="py-16 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 prose prose-slate">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">The Ultimate Free Image Compressor for Forms</h2>
+                
+                <div class="space-y-12 mt-10">
+                    <article>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Compress image to 100kb without losing quality</h3>
+                        <p class="text-slate-600">Many government and educational portals require you to upload documents and photos strictly under 100KB. Using OptiDrop, you can quickly compress your JPG or PNG files without complex software. Our smart client-side algorithm preserves the maximum possible visual quality while strictly adhering to your 100KB target.</p>
+                    </article>
+
+                    <article>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Compress image to 50kb for passport photo</h3>
+                        <p class="text-slate-600">Applying for an exam, visa, or official document? The standard requirement is often a passport-size photo under 50KB or 20KB. With our "Exact Size" input, simply type '50' or '20' into the target box. We will iteratively compress and carefully resize the image in your browser until it perfectly matches your requirement, guaranteeing successful uploads.</p>
+                    </article>
+
+                    <article>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Local browser image compressor privacy</h3>
+                        <p class="text-slate-600">Unlike other online tools that upload your sensitive personal photos to a remote server, OptiDrop processes everything locally. We utilize modern Web APIs (HTML5 Canvas) to perform the compression directly on your phone or computer processor. This means zero data collection and instant processing even on slow internet connections.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-8 text-center mt-auto">
+        <div class="max-w-5xl mx-auto px-4">
+            <p class="text-slate-500 text-sm mb-4">
+                © <span id="year"></span> OptiDrop. A fast, free, and private browser utility.
+            </p>
+            <div class="flex justify-center gap-4 text-sm text-slate-400">
+                <span>Made for the open web</span>
+                <span>•</span>
+                <span>No servers, no tracking</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <script>
+        // Update year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- App State ---
+        let fileQueue = []; 
+        const MAX_FILES = 20;
+        
+        // --- DOM Elements ---
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('fileInput');
+        const stateUpload = document.getElementById('state-upload');
+        const stateSettings = document.getElementById('state-settings');
+        const stateLoading = document.getElementById('state-loading');
+        const stateResult = document.getElementById('state-result');
+        
+        const targetKBInput = document.getElementById('targetKB');
+        const batchPreviewContainer = document.getElementById('batchPreviewContainer');
+        const queueCountDisplay = document.getElementById('queueCount');
+        const batchProgressText = document.getElementById('batchProgressText');
+        const batchProgressBar = document.getElementById('batchProgressBar');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const successCountDisplay = document.getElementById('successCount');
+        
+        const btnCancel = document.getElementById('btnCancel');
+        const btnCompress = document.getElementById('btnCompress');
+        const btnDownloadZip = document.getElementById('btnDownloadZip');
+        const btnStartOver = document.getElementById('btnStartOver');
+
+        // --- Helper: Toast Notification instead of Alert ---
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            
+            let bgClass = type === 'error' ? 'bg-red-600' : 'bg-slate-800';
+            toast.className = `toast ${bgClass} text-white px-6 py-3 rounded-xl shadow-xl text-sm font-medium flex items-center gap-2`;
+            
+            toast.innerHTML = `
+                ${type === 'error' ? '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>' : 
+                '<svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>'}
+                ${message}
+            `;
+            
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(20px)';
+                toast.style.transition = 'all 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // --- Helper: Format Bytes ---
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        // --- STREAMING_CHUNK: Drag and Drop Handlers ---
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropzone.addEventListener(eventName, () => {
+                dropzone.classList.add('dropzone-active');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, () => {
+                dropzone.classList.remove('dropzone-active');
+            }, false);
+        });
+
+        dropzone.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleFiles(files);
+        }, false);
+
+        dropzone.addEventListener('click', () => {
+            // Keep current selection if clicking again
+            fileInput.value = ''; 
+            fileInput.click();
+        });
+        
+        fileInput.addEventListener('change', function() {
+            handleFiles(this.files);
+        });
+
+        // --- Handle Selected Files (Batch logic) ---
+        function handleFiles(files) {
+            if (files.length === 0) return;
+            
+            let addedCount = 0;
+            let skippedCount = 0;
+
+            Array.from(files).forEach(file => {
+                // Enforce max batch size
+                if (fileQueue.length >= MAX_FILES) {
+                    skippedCount++;
+                    return;
+                }
+
+                if (!file.type.match('image.*')) return;
+
+                if (file.size > 50 * 1024 * 1024) return; // Skip > 50MB silently
+
+                const fileId = Date.now().toString() + Math.random().toString(36).substr(2, 5);
+                const originalUrl = URL.createObjectURL(file);
+                
+                fileQueue.push({
+                    id: fileId,
+                    file: file,
+                    status: 'pending',
+                    originalUrl: originalUrl,
+                    compressedBlob: null,
+                    compressedUrl: null,
+                    newSize: 0
+                });
+                addedCount++;
+            });
+
+            if (addedCount > 0) {
+                renderBatchPreview();
+                
+                // Pre-fill target KB input with suggestion from the first file in queue (if input is empty)
+                if (!targetKBInput.value) {
+                    let suggestion = Math.floor(fileQueue[0].file.size / 1024 * 0.8);
+                    if (suggestion > 200) suggestion = 200;
+                    if (suggestion < 20) suggestion = 50;
+                    targetKBInput.value = suggestion;
+                }
+
+                // Switch State
+                stateUpload.classList.add('hidden');
+                stateSettings.classList.remove('hidden');
+            }
+
+            if (skippedCount > 0 || fileQueue.length === MAX_FILES) {
+                showToast(`Max ${MAX_FILES} images allowed per batch. Some were skipped.`, "info");
+            }
+        }
+
+        // --- STREAMING_CHUNK: Render Batch UI Elements ---
+        function renderBatchPreview() {
+            queueCountDisplay.textContent = fileQueue.length;
+            batchPreviewContainer.innerHTML = '';
+            
+            fileQueue.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'relative group rounded-xl overflow-hidden bg-slate-100 border border-slate-200 aspect-square flex items-center justify-center';
+                div.innerHTML = `
+                    <img src="${item.originalUrl}" class="object-cover w-full h-full" alt="Preview">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <button onclick="removeFile('${item.id}')" class="bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition-colors shadow-lg transform hover:scale-110">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white text-[10px] font-medium px-2 py-2 truncate">
+                        ${formatBytes(item.file.size)}
+                    </div>
+                `;
+                batchPreviewContainer.appendChild(div);
+            });
+        }
+
+        window.removeFile = function(id) {
+            const index = fileQueue.findIndex(f => f.id === id);
+            if (index > -1) {
+                URL.revokeObjectURL(fileQueue[index].originalUrl);
+                fileQueue.splice(index, 1);
+                renderBatchPreview();
+                if (fileQueue.length === 0) {
+                    stateSettings.classList.add('hidden');
+                    stateUpload.classList.remove('hidden');
+                }
+            }
+        };
+
+        // --- STREAMING_CHUNK: Compression Algorithm Engine ---
+        // Converts canvas drawing to Blob payload asynchronously
+        function getCanvasBlob(canvas, mimeType, quality) {
+            return new Promise((resolve) => {
+                canvas.toBlob((blob) => resolve(blob), mimeType, quality);
+            });
+        }
+
+        // The core logic to hit an exact KB size via binary search & scaling
+        async function processCompression(targetBytes, imageUrl) {
+            return new Promise(async (resolve, reject) => {
+                try {
+                    const img = new Image();
+                    img.src = imageUrl;
+                    
+                    await new Promise(r => img.onload = r);
+
+                    let canvas = document.createElement('canvas');
+                    let ctx = canvas.getContext('2d');
+                    
+                    let currentWidth = img.width;
+                    let currentHeight = img.height;
+
+                    // Output format (force JPEG to allow quality manipulation, except for PNG transparency preservation if needed, but MVP focuses on KB limits so JPEG is preferred for size crunching)
+                    const mimeType = 'image/jpeg';
+
+                    // 1. Check if original is already small enough without scaling
+                    canvas.width = currentWidth;
+                    canvas.height = currentHeight;
+                    ctx.fillStyle = '#FFFFFF'; // Handle PNG transparency to JPEG
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0, currentWidth, currentHeight);
+                    
+                    let initialBlob = await getCanvasBlob(canvas, mimeType, 0.9);
+                    if (initialBlob.size <= targetBytes) {
+                        return resolve(initialBlob);
+                    }
+
+                    let bestBlob = initialBlob;
+                    let iterationCount = 0;
+                    
+                    // Main Scaling Loop: If binary search fails, scale down dimensions
+                    while (bestBlob.size > targetBytes && iterationCount < 5) {
+                        iterationCount++;
+                        
+                        // Binary Search on JPEG Quality (0.1 to 0.95)
+                        let minQ = 0.1;
+                        let maxQ = 0.95;
+                        let quality = 0.5;
+                        
+                        for (let i = 0; i < 7; i++) { // 7 steps of binary search
+                            quality = (minQ + maxQ) / 2;
+                            let tempBlob = await getCanvasBlob(canvas, mimeType, quality);
+                            
+                            if (tempBlob.size > targetBytes) {
+                                maxQ = quality; // too big, reduce max quality
+                            } else {
+                                minQ = quality; // fits, try pushing for higher quality
+                                bestBlob = tempBlob; 
+                            }
+                        }
+
+                        // Check if best quality in this scale step fits
+                        let lowestQBlob = await getCanvasBlob(canvas, mimeType, 0.1);
+                        if (lowestQBlob.size <= targetBytes) {
+                            // If 0.1 fits, the binary search above found the best fit.
+                            break; 
+                        }
+
+                        // If even 0.1 quality is too big, the dimensions are too huge. Scale down.
+                        // Calculate a scale factor based on current vs target size
+                        let scaleFactor = Math.sqrt(targetBytes / lowestQBlob.size);
+                        // Restrict scale factor to prevent extreme shrinking in one go
+                        scaleFactor = Math.max(0.4, Math.min(0.85, scaleFactor));
+                        
+                        currentWidth = Math.floor(currentWidth * scaleFactor);
+                        currentHeight = Math.floor(currentHeight * scaleFactor);
+                        
+                        canvas.width = currentWidth;
+                        canvas.height = currentHeight;
+                        ctx.fillStyle = '#FFFFFF';
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        ctx.drawImage(img, 0, 0, currentWidth, currentHeight);
+                        
+                        // Reset bestBlob for next while-loop check
+                        bestBlob = await getCanvasBlob(canvas, mimeType, 0.5); 
+                    }
+
+                    // Ensure we always return something that fits if mathematically possible
+                    if (bestBlob.size > targetBytes) {
+                        // Force aggressive scale if still failing
+                        canvas.width = currentWidth * 0.5;
+                        canvas.height = currentHeight * 0.5;
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        bestBlob = await getCanvasBlob(canvas, mimeType, 0.1);
+                    }
+
+                    resolve(bestBlob);
+
+                } catch (error) {
+                    reject(error);
+                }
+            });
+        }
+
+        // --- STREAMING_CHUNK: Button Event Listeners & Flow Control ---
+        function clearQueueMemory() {
+            fileQueue.forEach(item => {
+                if (item.originalUrl) URL.revokeObjectURL(item.originalUrl);
+                if (item.compressedUrl) URL.revokeObjectURL(item.compressedUrl);
+            });
+            fileQueue = [];
+            fileInput.value = '';
+        }
+
+        btnCancel.addEventListener('click', () => {
+            clearQueueMemory();
+            stateSettings.classList.add('hidden');
+            stateUpload.classList.remove('hidden');
+        });
+
+        btnStartOver.addEventListener('click', () => {
+            clearQueueMemory();
+            stateResult.classList.add('hidden');
+            stateUpload.classList.remove('hidden');
+        });
+
+        btnCompress.addEventListener('click', async () => {
+            const targetKB = parseFloat(targetKBInput.value);
+            
+            if (isNaN(targetKB) || targetKB <= 0) {
+                showToast("Please enter a valid target size in KB.", "error");
+                return;
+            }
+
+            const targetBytes = targetKB * 1024;
+
+            // Show Loading
+            stateLoading.classList.remove('hidden');
+            stateSettings.classList.add('hidden');
+            
+            batchProgressText.textContent = `0 / ${fileQueue.length} completed`;
+            batchProgressBar.style.width = '0%';
+
+            // Small delay to allow UI to paint the loading spinner
+            setTimeout(async () => {
+                let successCount = 0;
+
+                // Process sequentially to prevent memory spikes & browser crashes
+                for (let i = 0; i < fileQueue.length; i++) {
+                    const item = fileQueue[i];
+                    item.status = 'processing';
+                    
+                    // Yield control to the browser so the UI can update before heavy processing
+                    await new Promise(resolve => setTimeout(resolve, 15));
+                    
+                    try {
+                        const blob = await processCompression(targetBytes, item.originalUrl);
+                        item.compressedBlob = blob;
+                        item.compressedUrl = URL.createObjectURL(blob);
+                        item.newSize = blob.size;
+                        item.status = 'done';
+                        successCount++;
+                    } catch (err) {
+                        console.error("Failed to compress image:", item.file.name, err);
+                        item.status = 'error';
+                    }
+                    
+                    // Update Progress Text and Bar
+                    batchProgressText.textContent = `${i + 1} / ${fileQueue.length} completed`;
+                    const progressPercent = Math.round(((i + 1) / fileQueue.length) * 100);
+                    batchProgressBar.style.width = `${progressPercent}%`;
+                    
+                    // Yield control again so the progress bar animation renders smoothly
+                    await new Promise(resolve => setTimeout(resolve, 15));
+                }
+                
+                // Update Results UI
+                successCountDisplay.textContent = successCount;
+                renderBatchResults(targetKB);
+                
+                // Show Results
+                stateLoading.classList.add('hidden');
+                stateResult.classList.remove('hidden');
+                
+                showToast(`Successfully compressed ${successCount} image(s)!`);
+            }, 100);
+        });
+
+        // --- STREAMING_CHUNK: Results Render & Download Logic ---
+        function renderBatchResults(targetKB) {
+            resultsContainer.innerHTML = '';
+            
+            fileQueue.forEach(item => {
+                if (item.status !== 'done') return;
+                
+                const originalName = item.file.name;
+                const nameWithoutExt = originalName.substring(0, originalName.lastIndexOf('.')) || originalName;
+                const newFilename = `${nameWithoutExt}-${targetKB}kb.jpg`;
+
+                const div = document.createElement('div');
+                div.className = 'bg-white border border-slate-200 p-3 sm:p-4 rounded-xl flex items-center justify-between gap-3 shadow-sm hover:shadow transition-shadow';
+                div.innerHTML = `
+                    <div class="flex items-center gap-3 overflow-hidden">
+                        <img src="${item.compressedUrl}" class="w-12 h-12 object-cover rounded-lg border border-slate-200 flex-shrink-0" alt="Thumb">
+                        <div class="min-w-0">
+                            <p class="text-sm font-bold text-slate-800 truncate" title="${newFilename}">${newFilename}</p>
+                            <div class="flex items-center gap-2 text-xs mt-1">
+                                <span class="text-slate-400 line-through">${formatBytes(item.file.size)}</span>
+                                <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                <span class="text-brand-600 font-bold">${formatBytes(item.newSize)}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="downloadSingle('${item.id}', '${newFilename}')" class="p-2 text-brand-600 hover:bg-brand-50 rounded-xl transition-colors flex-shrink-0 border border-transparent hover:border-brand-200" title="Download Image">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    </button>
+                `;
+                resultsContainer.appendChild(div);
+            });
+        }
+
+        window.downloadSingle = function(id, filename) {
+            const item = fileQueue.find(f => f.id === id);
+            if (!item || !item.compressedUrl) return;
+            
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = item.compressedUrl;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        };
+
+        btnDownloadZip.addEventListener('click', async () => {
+            if (typeof JSZip === 'undefined') {
+                showToast("ZIP library is still loading. Please try again in a second.", "error");
+                return;
+            }
+            
+            const zip = new JSZip();
+            const targetKB = targetKBInput.value;
+            let addedCount = 0;
+
+            const originalBtnText = btnDownloadZip.innerHTML;
+            btnDownloadZip.innerHTML = '<div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div> Zipping...';
+            btnDownloadZip.disabled = true;
+
+            // Small timeout to allow UI update
+            setTimeout(async () => {
+                try {
+                    fileQueue.forEach(item => {
+                        if (item.status === 'done' && item.compressedBlob) {
+                            const originalName = item.file.name;
+                            const nameWithoutExt = originalName.substring(0, originalName.lastIndexOf('.')) || originalName;
+                            const newFilename = `${nameWithoutExt}-${targetKB}kb.jpg`;
+                            zip.file(newFilename, item.compressedBlob);
+                            addedCount++;
+                        }
+                    });
+
+                    if (addedCount > 0) {
+                        const zipBlob = await zip.generateAsync({ type: "blob" });
+                        const zipUrl = URL.createObjectURL(zipBlob);
+                        
+                        const a = document.createElement('a');
+                        a.style.display = 'none';
+                        a.href = zipUrl;
+                        a.download = `OptiDrop-${targetKB}KB-Batch.zip`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(zipUrl);
+                    } else {
+                        showToast("No files to download.", "error");
+                    }
+                } catch (err) {
+                    console.error(err);
+                    showToast("Error generating ZIP file.", "error");
+                } finally {
+                    btnDownloadZip.innerHTML = originalBtnText;
+                    btnDownloadZip.disabled = false;
+                }
+            }, 100);
+        });
+
+    </script>
+</body>
+</html>
