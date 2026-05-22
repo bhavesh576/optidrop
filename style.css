@@ -1,0 +1,445 @@
+/* =========================================================
+   OptiDrop — style.css
+   ========================================================= */
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Glass Panel */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Dropzone Active State */
+.dropzone-active {
+    border-color: #3b82f6 !important;
+    background-color: #eff6ff !important;
+    transform: scale(1.02);
+}
+
+/* Generic smooth transition */
+.transition-all-ease {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Toast Container */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    animation: slideUpFade 0.3s ease-out forwards;
+}
+
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tab Switcher ──────────────────────────────────────── */
+.tab-btn {
+    color: #64748b;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background: #ffffff;
+    color: #2563eb;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ── Quick Preset Pills ──────────────────────────────────── */
+.preset-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    border: 2px solid #e2e8f0;
+    color: #475569;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.preset-btn:hover {
+    border-color: #3b82f6;
+    color: #2563eb;
+    background: #eff6ff;
+}
+
+.preset-btn.active {
+    border-color: #3b82f6;
+    background: #3b82f6;
+    color: #ffffff;
+}
+
+/* ── Passport Preset Pills ───────────────────────────────── */
+.passport-preset-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    border: 2px solid #e2e8f0;
+    color: #475569;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    gap: 0.25rem;
+}
+
+.passport-preset-btn:hover {
+    border-color: #10b981;
+    color: #059669;
+    background: #ecfdf5;
+}
+
+.passport-preset-btn.active {
+    border-color: #10b981;
+    background: #10b981;
+    color: #ffffff;
+}
+
+/* ── Format & Dimension Inputs ───────────────────────────── */
+.settings-select {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    background: #fff;
+    color: #1e293b;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.1rem;
+    transition: border-color 0.2s ease;
+}
+
+.settings-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+.dim-input {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    color: #1e293b;
+    transition: border-color 0.2s ease;
+}
+
+.dim-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+.dim-input::placeholder {
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+/* ── PDF Download Button ─────────────────────────────────── */
+.btn-pdf {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.65rem;
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+    color: #dc2626;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-pdf:hover {
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+.btn-pdf:active {
+    transform: scale(0.95);
+    background: #fee2e2;
+}
+
+.btn-pdf:focus {
+    outline: 2px solid #dc2626;
+    outline-offset: 2px;
+}
+
+/* ── Compare Button ─────────────────────────────────────── */
+.btn-compare {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.65rem;
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+    color: #7c3aed;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-compare:hover {
+    background: #f5f3ff;
+    border-color: #ddd6fe;
+}
+
+.btn-compare:active {
+    transform: scale(0.95);
+    background: #ede9fe;
+}
+
+.btn-compare:focus {
+    outline: 2px solid #7c3aed;
+    outline-offset: 2px;
+}
+
+/* ── SEO Section Prose Overrides ─────────────────────────── */
+#seo-features article {
+    border-left: 4px solid #dbeafe;
+    padding-left: 1.25rem;
+    transition: border-color 0.2s ease;
+}
+
+#seo-features article:hover {
+    border-left-color: #3b82f6;
+}
+
+/* ── FAQ Accordion ───────────────────────────────────────── */
+.faq-question {
+    cursor: pointer;
+    user-select: none;
+}
+
+.faq-answer {
+    transition: all 0.2s ease;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(180deg);
+}
+
+/* ── Ad Slot Placeholder ─────────────────────────────────── */
+.ad-slot {
+    min-height: 90px;
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 0.875rem;
+}
+
+/* ── Merge Queue Items ───────────────────────────────────── */
+.merge-queue-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.merge-queue-item:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.merge-queue-item.dragging {
+    opacity: 0.5;
+    border-color: #6366f1;
+    background: #eef2ff;
+}
+
+.merge-page-num {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e0e7ff;
+    color: #4338ca;
+    font-size: 0.7rem;
+    font-weight: 800;
+    border-radius: 9999px;
+    flex-shrink: 0;
+}
+
+.merge-thumb {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+}
+
+.merge-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    flex-shrink: 0;
+}
+
+.merge-btn {
+    padding: 0.15rem;
+    border-radius: 0.25rem;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+}
+
+.merge-btn:hover {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.merge-btn.remove:hover {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+/* ── Compare Modal Slider ────────────────────────────────── */
+.compare-container {
+    position: relative;
+    overflow: hidden;
+}
+
+#compareOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#compareSliderHandle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: white;
+    cursor: ew-resize;
+    z-index: 10;
+}
+
+#compareSliderHandle > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    background: white;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Responsive Tweaks ───────────────────────────────────── */
+@media (max-width: 640px) {
+    .merge-queue-item {
+        padding: 0.4rem 0.5rem;
+    }
+    .merge-thumb {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+/* ── Improved Button Touch Responsiveness ──────────────── */
+
+/* Download button in results */
+#resultsContainer button {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#resultsContainer button:active {
+    transform: scale(0.95);
+}
+
+/* Indicate clickable state on mobile */
+@media (hover: none) and (pointer: coarse) {
+    .btn-pdf,
+    .btn-compare,
+    .merge-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    #resultsContainer button {
+        padding: 0.6rem;
+    }
+}
+
+/* Ensure buttons have visible feedback when tapped */
+.btn-pdf,
+.btn-compare,
+.merge-btn,
+.preset-btn,
+.passport-preset-btn,
+.tab-btn {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Loading state spinner animation fix */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
