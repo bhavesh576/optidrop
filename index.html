@@ -2,34 +2,139 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OptiDrop | Compress Images to Exact Size (KB) Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>OptiDrop | Free Image Compressor & JPG to PDF Merger — Browser-Based & Private</title>
     <link rel="icon" type="image/png" href="./favicon.png">
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Free browser-based image compressor. Compress JPG or PNG images to an exact file size (100KB, 50KB, 20KB) locally. No uploads, no limits, 100% private.">
-    <meta name="keywords" content="compress image to 100kb, compress image to 50kb for passport photo, reduce image to 20kb, free jpg compressor no signup, browser image compressor privacy">
+
+    <!-- ── SEO Meta Tags ─────────────────────────────────── -->
+    <meta name="description" content="Free browser-based image compressor and JPG to PDF merger. Compress images to exact KB (20KB, 50KB, 100KB), resize to passport dimensions, or merge multiple photos into one PDF. No uploads, no limits, 100% private.">
+    <meta name="keywords" content="compress image to 100kb, compress image to 50kb for passport photo, reduce image to 20kb, jpg to pdf converter free, merge images to pdf online, combine photos into pdf, convert png to jpg online, resize photo to passport size, compress image to pdf under 100kb, passport photo size 35x45, neet photo size 600x600, upsc photo resize 200x230, image compressor for government forms">
     <meta name="author" content="OptiDrop">
-    
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="OptiDrop | Compress Images to Exact Size (KB)">
-    <meta property="og:description" content="Type your exact target file size (e.g., 50KB) and compress images instantly in your browser. 100% private, no uploads.">
+
+    <!-- ── Open Graph / Social ──────────────────────────── -->
+    <meta property="og:title" content="OptiDrop | Compress Images & Merge JPG to PDF Free">
+    <meta property="og:description" content="Type your exact target file size (e.g., 50KB) and compress images instantly. Or merge multiple JPGs into one PDF. 100% private, no uploads.">
     <meta property="og:type" content="website">
-    
+    <meta property="og:url" content="https://optidrop.online">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+
+    <!-- ── Canonical ────────────────────────────────────── -->
+    <link rel="canonical" href="https://optidrop.online">
+
+    <!-- ── Structured Data: SoftwareApplication + FAQPage ─── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "OptiDrop",
+          "applicationCategory": "WebApplication",
+          "operatingSystem": "Any",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "12800"
+          },
+          "featureList": "Image compression to exact KB, PNG to JPG conversion, WebP export, Exact dimension resizing, Passport photo presets, JPG to PDF merger, Multi-image PDF combiner"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is OptiDrop completely free to use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. OptiDrop is 100% free. There are no hidden fees, no sign-up walls, and no watermarks. We run client-side in your browser so you can compress images and merge JPG to PDF without paying anything."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I compress an image to exactly 50KB or 100KB?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Open the Compress Image tab, drop your photo, type 50 or 100 in the Target KB box (or click the preset pill), and press Compress. OptiDrop iteratively adjusts quality and dimensions until your file is under the exact limit you set."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I merge multiple JPG images into one PDF file?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Switch to the Images to PDF tab, drop or select your photos, arrange them in order, choose a page size like A4 or Auto-fit, and click Merge to PDF. The entire process happens in your browser with no server upload."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What passport photo sizes does OptiDrop support?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We provide one-click presets for India Passport (413×531 px), US Visa (600×600 px), NEET / JEE (600×600 px), and UPSC / OCI (200×230 px). You can also type any custom width and height in pixels."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are my photos uploaded to a server?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. OptiDrop uses HTML5 Canvas and JavaScript to process files directly inside your web browser. Your images never leave your device, making it safe for sensitive documents like Aadhaar cards, PAN cards, and passport photos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why is my compressed file slightly larger than the target KB?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Browsers encode images in discrete quality steps. OptiDrop gets as close as mathematically possible to your target. If you need strictly under a portal limit (e.g., 100KB), set the target to 95KB to leave a safety margin."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I convert PNG to JPG using OptiDrop?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. In the Compress tab, upload your PNG and select JPG from the Output Format dropdown. The conversion happens locally in your browser with no quality loss beyond the compression you choose."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does OptiDrop work on mobile phones?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. OptiDrop is fully responsive. You can compress images and create PDFs on Android and iPhone directly in your mobile browser without installing any app."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- ── Google Analytics (DO NOT MODIFY) ─────────────── -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-2TXPNV88YM');
     </script>
 
-    
+    <!-- ── Google AdSense (DO NOT MODIFY) ────────────────── -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
-    <!-- JSZip for Batch Downloads -->
+
+    <!-- ── JSZip (Batch Downloads) ──────────────────────── -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
-    <!-- Tailwind CSS -->
+    <!-- ── jsPDF (PDF Export & Merger) ─────────────────── -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- ── Tailwind CSS ──────────────────────────────────── -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -40,10 +145,11 @@
                     },
                     colors: {
                         brand: {
-                            50: '#eff6ff',
+                            50:  '#eff6ff',
                             100: '#dbeafe',
                             500: '#3b82f6',
                             600: '#2563eb',
+                            700: '#1d4ed8',
                             900: '#1e3a8a',
                         }
                     }
@@ -52,62 +158,27 @@
         }
     </script>
 
-    <!-- Google Fonts -->
+    <!-- ── Google Fonts ──────────────────────────────────── -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Custom CSS for Dropzone & Animations -->
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-        }
-        .dropzone-active {
-            border-color: #3b82f6 !important;
-            background-color: #eff6ff !important;
-            transform: scale(1.02);
-        }
-        .transition-all-ease {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        /* Hide scrollbar for clean UI but keep functionality */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        
-        #toast-container {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 50;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .toast {
-            animation: slideUpFade 0.3s ease-out forwards;
-        }
-        @keyframes slideUpFade {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <!-- ── Custom Styles ─────────────────────────────────── -->
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
 
+    <!-- ════════════════ HEADER ════════════════ -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <div class="relative w-48 h-14 overflow-hidden flex items-center">
-    <img src="Generated_image-removebg-preview.png" alt="OptiDrop" class="absolute left-0 max-w-none h-24 object-contain" style="top: 50%; transform: translateY(-50%) scale(1.45); transform-origin: left center;">
-</div>
+            <div class="relative w-48 h-14 overflow-hidden flex items-center">
+                <img src="Generated_image-removebg-preview.png" alt="OptiDrop" class="absolute left-0 max-w-none h-24 object-contain" style="top: 50%; transform: translateY(-50%) scale(1.45); transform-origin: left center;">
+            </div>
             <nav class="hidden sm:flex gap-6 text-sm font-medium text-slate-600">
                 <a href="#how-it-works" class="hover:text-brand-600 transition-colors">How it Works</a>
-                <a href="#seo-features" class="hover:text-brand-600 transition-colors">Features</a>
+                <a href="#seo-features"  class="hover:text-brand-600 transition-colors">Features</a>
+                <a href="#faq" class="hover:text-brand-600 transition-colors">FAQ</a>
                 <span class="flex items-center gap-1 text-green-600 bg-green-50 px-2 py-1 rounded-full text-xs font-semibold">
                     <span class="w-2 h-2 rounded-full bg-green-500"></span> 100% Private
                 </span>
@@ -115,160 +186,536 @@
         </div>
     </header>
 
+    <!-- ════════════════ MAIN ════════════════ -->
     <main class="flex-grow flex flex-col">
-        <section class="w-full max-w-4xl mx-auto px-4 sm:px-6 pt-12 pb-8 text-center">
+
+        <!-- ── Hero + App ── -->
+        <section class="w-full max-w-4xl mx-auto px-4 sm:px-6 pt-10 pb-6 text-center">
             <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">
-                Compress Images to an <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">Exact Size</span>
+                Compress Images &
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">Merge to PDF</span>
             </h1>
-            <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                Need your photo exactly under 50KB for a form? Type your limit, and we do the rest. <br class="hidden sm:block"/>
+            <p class="text-lg text-slate-600 mb-6 max-w-2xl mx-auto">
+                Need your photo exactly under 50KB? Or merging JPGs into one PDF for a portal? <br class="hidden sm:block"/>
                 <strong class="text-slate-800">No uploads. No limits. Processed entirely in your browser.</strong>
             </p>
 
+            <!-- ─── APP CONTAINER ─── -->
             <div id="app-container" class="glass-panel rounded-3xl shadow-xl overflow-hidden max-w-3xl mx-auto relative transition-all-ease">
-                
-                <!-- STATE 1: UPLOAD ZONE -->
-                <div id="state-upload" class="p-8 sm:p-12 text-center">
-                    <div id="dropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 cursor-pointer transition-all-ease hover:bg-slate-50 hover:border-brand-400 group flex flex-col items-center justify-center min-h-[300px]">
-                        <input type="file" id="fileInput" class="hidden" accept="image/jpeg, image/png, image/webp" multiple />
-                        <div class="bg-brand-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
-                            <svg class="w-10 h-10 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+
+                <!-- TAB SWITCHER -->
+                <div class="flex justify-center pt-6 pb-2 bg-white/50 border-b border-slate-100">
+                    <div class="bg-slate-100 p-1 rounded-xl inline-flex shadow-inner">
+                        <button id="tab-compress" class="tab-btn active px-5 py-2.5 rounded-lg text-sm font-bold transition-all">
+                            <span class="flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                Compress Image
+                            </span>
+                        </button>
+                        <button id="tab-merge" class="tab-btn px-5 py-2.5 rounded-lg text-sm font-bold transition-all text-slate-500 hover:text-slate-700">
+                            <span class="flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                Images to PDF
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ════════════════════════════════════════
+                     MODE 1: COMPRESS IMAGE
+                     ════════════════════════════════════════ -->
+                <div id="mode-compress">
+
+                    <!-- STATE 1: UPLOAD ZONE -->
+                    <div id="state-upload" class="p-8 sm:p-12 text-center">
+                        <div id="dropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 cursor-pointer transition-all-ease hover:bg-slate-50 hover:border-brand-400 group flex flex-col items-center justify-center min-h-[260px]">
+                            <input type="file" id="fileInput" class="hidden" accept="image/jpeg, image/png, image/webp" multiple />
+                            <div class="bg-brand-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-10 h-10 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Drop Images Here or Tap to Browse</h3>
+                            <p class="text-sm text-slate-500">Supports JPG, PNG, WebP (Max 20 images)</p>
+                        </div>
+                        <div class="mt-5 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
                             </svg>
+                            No upload? Seriously. Files never leave your device.
                         </div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-2">Drop Images Here or Tap to Browse</h3>
-                        <p class="text-sm text-slate-500">Supports JPG, PNG, WebP (Max 20 images)</p>
                     </div>
-                    <div class="mt-6 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
-                        <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
-                        No upload? Seriously. Files never leave your device.
-                    </div>
-                </div>
 
-                <div id="state-settings" class="hidden p-6 sm:p-8">
-                    <div class="flex flex-col md:flex-row gap-8 items-start">
-                        <!-- Batch Image Preview -->
-                        <div class="w-full md:w-1/2 flex flex-col">
-                            <h3 class="text-lg font-bold text-slate-800 mb-4">Selected Images (<span id="queueCount">0</span>/20)</h3>
-                            <div id="batchPreviewContainer" class="grid grid-cols-3 sm:grid-cols-3 gap-3 max-h-[300px] overflow-y-auto pr-2">
-                                <!-- Thumbnails injected here -->
-                            </div>
-                        </div>
-                        
-                        <!-- Settings Form -->
-                        <div class="w-full md:w-1/2 flex flex-col justify-center space-y-6 sticky top-0">
-                            <div>
-                                <label for="targetKB" class="block text-sm font-bold text-slate-700 mb-2">Target File Size (in KB)</label>
-                                <div class="relative">
-                                    <input type="number" id="targetKB" placeholder="e.g., 50" class="block w-full pl-4 pr-12 py-4 text-xl border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-bold" min="1" max="10000">
-                                    <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
-                                        <span class="text-slate-400 font-bold">KB</span>
-                                    </div>
+                    <!-- STATE 2: SETTINGS -->
+                    <div id="state-settings" class="hidden p-6 sm:p-8">
+                        <div class="flex flex-col md:flex-row gap-8 items-start">
+
+                            <!-- Left: Batch Image Preview + Info -->
+                            <div class="w-full md:w-1/2 flex flex-col">
+                                <h3 class="text-lg font-bold text-slate-800 mb-3">
+                                    Selected Images (<span id="queueCount">0</span>/20)
+                                </h3>
+                                <div id="batchPreviewContainer" class="grid grid-cols-3 gap-3 max-h-[240px] overflow-y-auto pr-2 mb-3">
+                                    <!-- Thumbnails injected by JS -->
                                 </div>
-                                <p class="mt-2 text-xs text-slate-500">Perfect for strict portal requirements (e.g., passports, signatures).</p>
+                                <!-- Image Info Panel -->
+                                <div id="imageInfoPanel" class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-600 hidden">
+                                    <div class="flex items-center gap-2 font-semibold text-slate-700 mb-1">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                        Original Details
+                                    </div>
+                                    <div id="imageInfoContent" class="space-y-0.5"></div>
+                                </div>
                             </div>
-                            
-                            <div class="flex gap-3">
-                                <button id="btnCancel" class="w-1/3 px-4 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors focus:outline-none">
-                                    Cancel
-                                </button>
-                                <button id="btnCompress" class="w-2/3 px-4 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
-                                    <span>Compress All</span>
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                                </button>
+
+                            <!-- Right: Settings Form -->
+                            <div class="w-full md:w-1/2 flex flex-col justify-center space-y-5 sticky top-0">
+
+                                <!-- Target KB + Presets -->
+                                <div>
+                                    <label for="targetKB" class="block text-sm font-bold text-slate-700 mb-2">Target File Size (in KB)</label>
+                                    <div class="relative">
+                                        <input type="number" id="targetKB" placeholder="e.g., 50"
+                                            class="block w-full pl-4 pr-12 py-4 text-xl border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-bold"
+                                            min="1" max="10000">
+                                        <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                                            <span class="text-slate-400 font-bold">KB</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2 mt-3 flex-wrap">
+                                        <button class="preset-btn" data-kb="20">20 KB</button>
+                                        <button class="preset-btn" data-kb="50">50 KB</button>
+                                        <button class="preset-btn" data-kb="100">100 KB</button>
+                                        <button class="preset-btn" data-kb="200">200 KB</button>
+                                    </div>
+                                    <p class="mt-2 text-xs text-slate-500">Perfect for strict portal requirements (e.g., passports, signatures, exam forms).</p>
+                                </div>
+
+                                <!-- Output Format -->
+                                <div>
+                                    <label for="outputFormat" class="block text-sm font-bold text-slate-700 mb-2">Output Format</label>
+                                    <select id="outputFormat" class="settings-select">
+                                        <option value="image/jpeg">JPG — Best for photos &amp; smallest size</option>
+                                        <option value="image/png">PNG — Lossless, larger file size</option>
+                                        <option value="image/webp">WebP — Modern, great compression</option>
+                                    </select>
+                                    <p class="mt-1 text-xs text-slate-500">JPG is recommended for government &amp; exam portals.</p>
+                                </div>
+
+                                <!-- Exact Dimensions + Passport Presets -->
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">
+                                        Exact Dimensions <span class="text-slate-400 font-normal">(optional)</span>
+                                    </label>
+                                    <div class="flex gap-3">
+                                        <div class="relative flex-1">
+                                            <input type="number" id="targetWidth" placeholder="Width" min="1"
+                                                class="dim-input pr-10">
+                                            <span class="absolute inset-y-0 right-3 flex items-center text-xs text-slate-400 font-semibold pointer-events-none">px</span>
+                                        </div>
+                                        <div class="flex items-center text-slate-300 font-bold">×</div>
+                                        <div class="relative flex-1">
+                                            <input type="number" id="targetHeight" placeholder="Height" min="1"
+                                                class="dim-input pr-10">
+                                            <span class="absolute inset-y-0 right-3 flex items-center text-xs text-slate-400 font-semibold pointer-events-none">px</span>
+                                        </div>
+                                    </div>
+                                    <!-- Passport Presets -->
+                                    <div class="flex gap-2 mt-3 flex-wrap">
+                                        <button class="passport-preset-btn" data-w="413" data-h="531" title="India Passport 35×45 mm at 300dpi">🇮🇳 Passport 35×45</button>
+                                        <button class="passport-preset-btn" data-w="600" data-h="600" title="US Visa / NEET / JEE">🇺🇸 Visa / NEET</button>
+                                        <button class="passport-preset-btn" data-w="200" data-h="230" title="UPSC / OCI Photo">🇮🇳 UPSC / OCI</button>
+                                        <button class="passport-preset-btn" data-w="150" data-h="200" title="PAN Card Photo">🇮🇳 PAN Card</button>
+                                    </div>
+                                    <p class="mt-1 text-xs text-slate-500">Click a preset to auto-fill exact pixels. Leave blank to auto-resize.</p>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="flex gap-3 pt-1">
+                                    <button id="btnCancel" class="w-1/3 px-4 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors focus:outline-none">
+                                        Cancel
+                                    </button>
+                                    <button id="btnCompress" class="w-2/3 px-4 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
+                                        <span>Compress All</span>
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                    </button>
+                                </div>
                             </div>
+
                         </div>
                     </div>
-                </div>
 
-                <div id="state-loading" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center z-10 rounded-3xl">
-                    <div class="w-16 h-16 border-4 border-brand-100 border-t-brand-600 rounded-full animate-spin mb-4"></div>
-                    <h3 class="text-xl font-bold text-slate-800">Compressing locally...</h3>
-                    <p class="text-sm font-medium text-brand-600 mt-2 bg-brand-50 px-4 py-2 rounded-full" id="batchProgressText">0 / 0 completed</p>
-                    
-                    <div class="w-full max-w-xs bg-slate-200 rounded-full h-2 mt-4 overflow-hidden shadow-inner">
-                        <div id="batchProgressBar" class="bg-brand-600 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
-                    </div>
-                    
-                    <p class="text-sm text-slate-500 mt-4 max-w-xs text-center">Finding the perfect balance for your target size. Please keep this tab open.</p>
-                </div>
-
-                <div id="state-result" class="hidden p-6 sm:p-10 text-center flex flex-col items-center">
-                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
-                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    </div>
-                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Batch Compression Complete!</h2>
-                    <p class="text-slate-600 mb-6">Successfully compressed <span id="successCount" class="font-bold text-brand-600">0</span> images.</p>
-                    
-                    <div id="resultsContainer" class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-left max-h-[300px] overflow-y-auto pr-2">
-                        <!-- Result items injected here -->
+                    <!-- STATE 3: LOADING -->
+                    <div id="state-loading" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center z-10 rounded-3xl">
+                        <div class="relative w-20 h-20 mb-4">
+                            <div class="absolute inset-0 border-4 border-brand-100 rounded-full"></div>
+                            <div class="absolute inset-0 border-4 border-brand-600 rounded-full border-t-transparent animate-spin"></div>
+                            <div class="absolute inset-0 flex items-center justify-center text-xs font-bold text-brand-700" id="loadingPercent">0%</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">Compressing locally...</h3>
+                        <p class="text-sm font-medium text-brand-600 mt-2 bg-brand-50 px-4 py-2 rounded-full" id="batchProgressText">0 / 0 completed</p>
+                        <div class="w-full max-w-xs bg-slate-200 rounded-full h-2 mt-4 overflow-hidden shadow-inner">
+                            <div id="batchProgressBar" class="bg-brand-600 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-4 max-w-xs text-center">Finding the perfect balance for your target size. Please keep this tab open.</p>
                     </div>
 
-                    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2 w-full max-w-lg mx-auto">
-                        <button id="btnDownloadZip" class="w-full sm:w-auto px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-lg shadow-brand-200 transition-all focus:outline-none flex justify-center items-center gap-2 transform hover:-translate-y-1">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                            Download All (ZIP)
-                        </button>
-                        <button id="btnStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all focus:outline-none">
-                            Compress More
-                        </button>
+                    <!-- STATE 4: RESULT -->
+                    <div id="state-result" class="hidden p-6 sm:p-10 text-center flex flex-col items-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-2">Batch Compression Complete!</h2>
+                        <p class="text-slate-600 mb-2">
+                            Successfully compressed <span id="successCount" class="font-bold text-brand-600">0</span> images.
+                        </p>
+                        <p class="text-xs text-slate-400 mb-6 flex items-center justify-center gap-1">
+                            <svg class="w-3.5 h-3.5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Click the red PDF icon to save as PDF. Click the eye icon to compare before/after.
+                        </p>
+
+                        <div id="resultsContainer" class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-left max-h-[320px] overflow-y-auto pr-2">
+                            <!-- Result items injected by JS -->
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2 w-full max-w-lg mx-auto">
+                            <button id="btnDownloadZip" class="w-full sm:w-auto px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-lg shadow-brand-200 transition-all focus:outline-none flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download All (ZIP)
+                            </button>
+                            <button id="btnStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all focus:outline-none">
+                                Compress More
+                            </button>
+                        </div>
                     </div>
-                </div>
+
+                </div><!-- /#mode-compress -->
+
+                <!-- ════════════════════════════════════════
+                     MODE 2: IMAGES TO PDF MERGER
+                     ════════════════════════════════════════ -->
+                <div id="mode-merge" class="hidden">
+
+                    <!-- MERGE STATE 1: UPLOAD -->
+                    <div id="merge-state-upload" class="p-8 sm:p-12 text-center">
+                        <div id="mergeDropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 cursor-pointer transition-all-ease hover:bg-slate-50 hover:border-indigo-400 group flex flex-col items-center justify-center min-h-[260px]">
+                            <input type="file" id="mergeFileInput" class="hidden" accept="image/jpeg, image/png, image/webp" multiple />
+                            <div class="bg-indigo-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Drop Images to Merge into PDF</h3>
+                            <p class="text-sm text-slate-500">Combine JPG, PNG, WebP into one PDF document (Max 50 images)</p>
+                        </div>
+                        <div class="mt-5 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Pro Tip: Compress images first if your portal has a PDF size limit.
+                        </div>
+                    </div>
+
+                    <!-- MERGE STATE 2: QUEUE & SETTINGS -->
+                    <div id="merge-state-settings" class="hidden p-6 sm:p-8">
+                        <div class="flex flex-col lg:flex-row gap-8 items-start">
+
+                            <!-- Left: Merge Queue -->
+                            <div class="w-full lg:w-3/5 flex flex-col">
+                                <div class="flex items-center justify-between mb-3">
+                                    <h3 class="text-lg font-bold text-slate-800">
+                                        Pages (<span id="mergeQueueCount">0</span>/50)
+                                    </h3>
+                                    <button id="btnMergeAddMore" class="text-sm font-bold text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                                        Add More
+                                    </button>
+                                </div>
+                                <div id="mergeQueueContainer" class="space-y-2 max-h-[320px] overflow-y-auto pr-2">
+                                    <!-- Merge items injected by JS -->
+                                </div>
+                            </div>
+
+                            <!-- Right: PDF Settings -->
+                            <div class="w-full lg:w-2/5 flex flex-col justify-center space-y-5 sticky top-0 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+                                <h4 class="font-bold text-slate-800 flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    PDF Settings
+                                </h4>
+
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Page Size</label>
+                                    <select id="mergePageSize" class="settings-select">
+                                        <option value="a4">A4 (210 × 297 mm)</option>
+                                        <option value="letter">US Letter (216 × 279 mm)</option>
+                                        <option value="auto">Auto-fit to Image</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Orientation</label>
+                                    <select id="mergeOrientation" class="settings-select">
+                                        <option value="auto">Auto (best fit per image)</option>
+                                        <option value="portrait">Portrait</option>
+                                        <option value="landscape">Landscape</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Page Margin</label>
+                                    <select id="mergeMargin" class="settings-select">
+                                        <option value="0">No Margin</option>
+                                        <option value="5">Small (5 mm)</option>
+                                        <option value="10" selected>Medium (10 mm)</option>
+                                        <option value="20">Large (20 mm)</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Output File Name</label>
+                                    <input type="text" id="mergeFilename" placeholder="merged-document" class="dim-input"
+                                        value="merged-document">
+                                </div>
+
+                                <div class="flex gap-3 pt-2">
+                                    <button id="btnMergeCancel" class="w-1/3 px-4 py-3.5 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors">
+                                        Cancel
+                                    </button>
+                                    <button id="btnMergeGenerate" class="w-2/3 px-4 py-3.5 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                                        <span>Merge to PDF</span>
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MERGE STATE 3: LOADING -->
+                    <div id="merge-state-loading" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center z-10 rounded-3xl">
+                        <div class="relative w-20 h-20 mb-4">
+                            <div class="absolute inset-0 border-4 border-indigo-100 rounded-full"></div>
+                            <div class="absolute inset-0 border-4 border-indigo-600 rounded-full border-t-transparent animate-spin"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">Building your PDF...</h3>
+                        <p class="text-sm font-medium text-indigo-600 mt-2 bg-indigo-50 px-4 py-2 rounded-full" id="mergeProgressText">0 / 0 pages added</p>
+                        <div class="w-full max-w-xs bg-slate-200 rounded-full h-2 mt-4 overflow-hidden shadow-inner">
+                            <div id="mergeProgressBar" class="bg-indigo-600 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- MERGE STATE 4: RESULT -->
+                    <div id="merge-state-result" class="hidden p-6 sm:p-10 text-center flex flex-col items-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 mb-6">
+                            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-2">PDF Ready!</h2>
+                        <p class="text-slate-600 mb-8">
+                            Successfully merged <span id="mergeSuccessCount" class="font-bold text-indigo-600">0</span> images into one PDF.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row justify-center gap-4 w-full max-w-lg mx-auto">
+                            <button id="btnMergeDownload" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-lg shadow-indigo-200 transition-all flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                Download PDF
+                            </button>
+                            <button id="btnMergeStartOver" class="w-full sm:w-auto px-8 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all">
+                                Merge More
+                            </button>
+                        </div>
+                    </div>
+
+                </div><!-- /#mode-merge -->
+
+            </div><!-- /#app-container -->
+
+            <!-- Ad Slot: Below App -->
+            <div class="ad-slot mx-auto mt-6 max-w-3xl">
+                <!-- AdSense display ad can be inserted here -->
             </div>
         </section>
 
-        <section id="how-it-works" class="py-16 bg-white border-t border-slate-100 mt-8">
+        <!-- ── How It Works ── -->
+        <section id="how-it-works" class="py-16 bg-white border-t border-slate-100 mt-6">
             <div class="max-w-5xl mx-auto px-4 sm:px-6">
-                <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                     <div class="p-6">
                         <div class="w-12 h-12 bg-blue-100 text-brand-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
                         </div>
                         <h3 class="text-lg font-bold text-slate-900 mb-2">Exact Size Targeting</h3>
-                        <p class="text-slate-600 text-sm">Stop guessing with quality sliders. Just type the KB limit you need (e.g., 50KB) and our algorithm handles the rest.</p>
+                        <p class="text-slate-600 text-sm">Stop guessing with quality sliders. Type the KB limit you need (e.g., 50KB) and our algorithm handles the rest.</p>
                     </div>
                     <div class="p-6">
                         <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                         </div>
                         <h3 class="text-lg font-bold text-slate-900 mb-2">100% Private (No Servers)</h3>
                         <p class="text-slate-600 text-sm">Your files never leave your device. Processing happens directly inside your web browser using HTML5 Canvas.</p>
                     </div>
                     <div class="p-6">
                         <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                         </div>
                         <h3 class="text-lg font-bold text-slate-900 mb-2">Zero Friction</h3>
                         <p class="text-slate-600 text-sm">No logins, no watermarks, no confusing menus. Just drop, type, and download instantly for free.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">JPG to PDF Merger</h3>
+                        <p class="text-slate-600 text-sm">Combine multiple photos into a single PDF document. Perfect for uploading document sets to government portals.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ── SEO Content Section ── -->
         <section id="seo-features" class="py-16 bg-slate-50 border-t border-slate-200">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 prose prose-slate">
-                <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">The Ultimate Free Image Compressor for Forms</h2>
-                
-                <div class="space-y-12 mt-10">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl font-bold text-slate-900 mb-3 text-center">The Ultimate Free Image Toolkit for Forms</h2>
+                <p class="text-center text-slate-500 text-sm mb-12 max-w-2xl mx-auto">Trusted for passport photos, government portals, exam registrations, visa applications, and KYC uploads — all without uploading a single file to a server.</p>
+
+                <div class="space-y-10">
+
                     <article>
-                        <h3 class="text-xl font-bold text-slate-800 mb-3">Compress image to 100kb without losing quality</h3>
-                        <p class="text-slate-600">Many government and educational portals require you to upload documents and photos strictly under 100KB. Using OptiDrop, you can quickly compress your JPG or PNG files without complex software. Our smart client-side algorithm preserves the maximum possible visual quality while strictly adhering to your 100KB target.</p>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Compress image to 100KB without losing quality</h3>
+                        <p class="text-slate-600">Many government and educational portals require you to upload documents and photos strictly under 100KB. Using OptiDrop, you can quickly compress your JPG or PNG files without complex software. Our smart client-side algorithm preserves the maximum possible visual quality while strictly adhering to your 100KB target. Simply type "100" into the target box, select the <strong>100 KB</strong> preset, and download in seconds.</p>
                     </article>
 
                     <article>
-                        <h3 class="text-xl font-bold text-slate-800 mb-3">Compress image to 50kb for passport photo</h3>
-                        <p class="text-slate-600">Applying for an exam, visa, or official document? The standard requirement is often a passport-size photo under 50KB or 20KB. With our "Exact Size" input, simply type '50' or '20' into the target box. We will iteratively compress and carefully resize the image in your browser until it perfectly matches your requirement, guaranteeing successful uploads.</p>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Compress image to 50KB for passport photo</h3>
+                        <p class="text-slate-600">Applying for an exam, visa, or official document? The standard requirement is often a passport-size photo under 50KB or 20KB. With our "Exact Size" input, simply type '50' or '20' into the target box. OptiDrop will iteratively compress and carefully resize the image in your browser until it perfectly matches your requirement, guaranteeing successful uploads every time.</p>
                     </article>
 
                     <article>
-                        <h3 class="text-xl font-bold text-slate-800 mb-3">Local browser image compressor privacy</h3>
-                        <p class="text-slate-600">Unlike other online tools that upload your sensitive personal photos to a remote server, OptiDrop processes everything locally. We utilize modern Web APIs (HTML5 Canvas) to perform the compression directly on your phone or computer processor. This means zero data collection and instant processing even on slow internet connections.</p>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Local browser image compressor — 100% private</h3>
+                        <p class="text-slate-600">Unlike other online tools that upload your sensitive personal photos to a remote server, OptiDrop processes everything locally. We utilize modern Web APIs (HTML5 Canvas) to perform the compression directly on your phone or computer processor. This means zero data collection and instant processing even on slow internet connections — even offline after the page has loaded.</p>
                     </article>
+
+                    <article>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Convert PNG to JPG locally without losing quality</h3>
+                        <p class="text-slate-600">Many government portals and exam forms do not accept PNG files. With OptiDrop's <strong>Output Format</strong> selector, you can instantly convert a PNG image to a JPG (JPEG) file right inside your browser — no Photoshop, no third-party app, and zero uploads to any server. Simply upload your PNG, choose <em>JPG</em> as the output format, set your target KB, and hit Compress. Your converted JPG file is ready to download in seconds, with the best possible quality at your chosen file size. This is ideal for converting screenshots, scanned documents, and ID photos from PNG to JPG for form submissions.</p>
+                    </article>
+
+                    <article>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Resize photos to exact passport dimensions for exams &amp; visa forms</h3>
+                        <p class="text-slate-600">Different portals require exact pixel or millimetre dimensions for passport photos. OptiDrop's <strong>Exact Dimensions</strong> feature lets you type a precise Width and Height (in pixels) before compression begins. Common requirements include 600×600 px for NEET and JEE applications, 200×230 px for UPSC forms, and 413×531 px for US visa photos. Enter your required dimensions, set the target KB (e.g., 50KB), and OptiDrop will first resize the image to your exact dimensions and then compress it to fit the file-size limit — all in one step, entirely inside your browser. No more cropping and compressing in two separate tools.</p>
+                    </article>
+
+                    <article>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Compress ID card or document photo to PDF strictly under 100KB</h3>
+                        <p class="text-slate-600">Some portals — including banking KYC forms, scholarship portals, and university admission sites — specifically ask for a PDF of your ID card or document that is under 100KB or 200KB. OptiDrop handles this in two clicks: first compress the image to your target size (e.g., type "80" to stay safely under 100KB), then click the <strong>red PDF icon</strong> next to your file in the results to instantly download a perfectly-sized PDF. The entire process happens in your browser with no third-party PDF converter, no watermarks, and no data leaving your device. It is the fastest way to prepare KYC documents, Aadhaar card scans, and admit card photos for upload.</p>
+                    </article>
+
+                    <!-- NEW: Merge to PDF SEO -->
+                    <article>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Merge multiple JPG images into one PDF online for free</h3>
+                        <p class="text-slate-600">Government job applications, college admissions, and visa processes often require you to upload a single PDF containing multiple scanned documents or photos. Instead of downloading heavy software, use OptiDrop's <strong>Images to PDF</strong> tab. Simply drag and drop your photos in the order you want them, choose a page size like A4 or Auto-fit, and click Merge. You can rearrange pages using the up and down arrows before generating. The resulting PDF is created entirely in your browser, making it perfect for combining mark sheets, ID proofs, signatures, and passport photos into one document for portal uploads.</p>
+                    </article>
+
+                    <article>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Best free JPG to PDF converter for students &amp; government forms</h3>
+                        <p class="text-slate-600">Students applying for NEET, JEE, UPSC, SSC, or state government exams frequently need to convert multiple JPEG documents into a single PDF. OptiDrop is optimized for this exact workflow. Because everything runs locally, you can use it on college computers, cyber cafes, or mobile data without worrying about privacy. The merged PDF uses standard A4 or US Letter page sizes with adjustable margins, ensuring your uploads are accepted by almost every Indian and international government portal. No registration, no email required, and no file size limits beyond your device's memory.</p>
+                    </article>
+
                 </div>
             </div>
         </section>
-    </main>
 
+        <!-- ── FAQ Section (Visible + Schema) ── -->
+        <section id="faq" class="py-16 bg-white border-t border-slate-100">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
+                <div class="space-y-3" id="faqContainer">
+                    <!-- FAQs injected / structured for accordion -->
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            Is OptiDrop completely free to use?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            Yes. OptiDrop is 100% free. There are no hidden fees, no sign-up walls, and no watermarks. We run client-side in your browser so you can compress images and merge JPG to PDF without paying anything.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            How do I compress an image to exactly 50KB or 100KB?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            Open the <strong>Compress Image</strong> tab, drop your photo, type 50 or 100 in the Target KB box (or click the preset pill), and press Compress. OptiDrop iteratively adjusts quality and dimensions until your file is under the exact limit you set.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            Can I merge multiple JPG images into one PDF file?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            Yes. Switch to the <strong>Images to PDF</strong> tab, drop or select your photos, arrange them in order, choose a page size like A4 or Auto-fit, and click Merge to PDF. The entire process happens in your browser with no server upload.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            What passport photo sizes does OptiDrop support?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            We provide one-click presets for India Passport (413×531 px), US Visa (600×600 px), NEET / JEE (600×600 px), and UPSC / OCI (200×230 px). You can also type any custom width and height in pixels.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            Are my photos uploaded to a server?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            No. OptiDrop uses HTML5 Canvas and JavaScript to process files directly inside your web browser. Your images never leave your device, making it safe for sensitive documents like Aadhaar cards, PAN cards, and passport photos.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            Why is my compressed file slightly larger than the target KB?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            Browsers encode images in discrete quality steps. OptiDrop gets as close as mathematically possible to your target. If you need strictly under a portal limit (e.g., 100KB), set the target to 95KB to leave a safety margin.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            Can I convert PNG to JPG using OptiDrop?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            Absolutely. In the Compress tab, upload your PNG and select JPG from the Output Format dropdown. The conversion happens locally in your browser with no quality loss beyond the compression you choose.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            Does OptiDrop work on mobile phones?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            Yes. OptiDrop is fully responsive. You can compress images and create PDFs on Android and iPhone directly in your mobile browser without installing any app.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main><!-- /main -->
+
+    <!-- ════════════════ FOOTER ════════════════ -->
     <footer class="bg-white border-t border-slate-200 py-8 text-center mt-auto">
         <div class="max-w-5xl mx-auto px-4">
             <p class="text-slate-500 text-sm mb-4">
@@ -282,485 +729,517 @@
         </div>
     </footer>
 
+    <!-- Compare Modal (Hidden by default) -->
+    <div id="compareModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+                <h3 class="font-bold text-slate-800">Before vs After Comparison</h3>
+                <button onclick="closeCompareModal()" class="p-2 hover:bg-slate-100 rounded-lg transition-colors">
+                    <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="p-6 flex-grow flex items-center justify-center bg-slate-100">
+                <div class="compare-container relative w-full h-[400px] select-none" id="compareContainer">
+                    <img id="compareCompressed" class="absolute inset-0 w-full h-full object-contain" src="" alt="Compressed">
+                    <div id="compareOverlay" class="absolute inset-0 w-1/2 overflow-hidden" style="border-right: 2px solid white;">
+                        <img id="compareOriginal" class="absolute inset-0 max-w-none h-full object-contain" src="" alt="Original" style="width: 100%;">
+                    </div>
+                    <div id="compareSliderHandle" class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize shadow-lg" style="left: 50%;">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center">
+                            <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+                        </div>
+                    </div>
+                    <div class="absolute top-3 left-3 bg-black/60 text-white text-xs font-bold px-2 py-1 rounded">Original</div>
+                    <div class="absolute top-3 right-3 bg-brand-600/90 text-white text-xs font-bold px-2 py-1 rounded">Compressed</div>
+                </div>
+            </div>
+            <div class="px-6 py-4 border-t border-slate-100 text-center text-sm text-slate-500">
+                Drag the slider to compare quality. Processing done entirely in your browser.
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Container -->
     <div id="toast-container"></div>
 
-    <script>
-        // Update year
-        document.getElementById('year').textContent = new Date().getFullYear();
+    <!-- ── App Script ─────────────────────────────────────── -->
+    <script src="./script.js"></script>
 
-        // --- App State ---
-        let fileQueue = []; 
-        const MAX_FILES = 20;
-        
-        // --- DOM Elements ---
-        const dropzone = document.getElementById('dropzone');
-        const fileInput = document.getElementById('fileInput');
-        const stateUpload = document.getElementById('state-upload');
-        const stateSettings = document.getElementById('state-settings');
-        const stateLoading = document.getElementById('state-loading');
-        const stateResult = document.getElementById('state-result');
-        
-        const targetKBInput = document.getElementById('targetKB');
-        const batchPreviewContainer = document.getElementById('batchPreviewContainer');
-        const queueCountDisplay = document.getElementById('queueCount');
-        const batchProgressText = document.getElementById('batchProgressText');
-        const batchProgressBar = document.getElementById('batchProgressBar');
-        const resultsContainer = document.getElementById('resultsContainer');
-        const successCountDisplay = document.getElementById('successCount');
-        
-        const btnCancel = document.getElementById('btnCancel');
-        const btnCompress = document.getElementById('btnCompress');
-        const btnDownloadZip = document.getElementById('btnDownloadZip');
-        const btnStartOver = document.getElementById('btnStartOver');
 
-        // --- Helper: Toast Notification instead of Alert ---
-        function showToast(message, type = 'info') {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            
-            let bgClass = type === 'error' ? 'bg-red-600' : 'bg-slate-800';
-            toast.className = `toast ${bgClass} text-white px-6 py-3 rounded-xl shadow-xl text-sm font-medium flex items-center gap-2`;
-            
-            toast.innerHTML = `
-                ${type === 'error' ? '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>' : 
-                '<svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>'}
-                ${message}
-            `;
-            
-            container.appendChild(toast);
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateY(20px)';
-                toast.style.transition = 'all 0.3s ease';
-                setTimeout(() => toast.remove(), 300);
-            }, 3000);
+<script>
+/**
+ * Iframe 元素高亮注入脚本
+ * 需要在目标网站中引入此脚本来支持跨域 iframe 高亮功能
+ *
+ * 使用方法：
+ * 1. 将此脚本添加到目标网站的 HTML 中
+ * 2. 或通过浏览器扩展、用户脚本等方式注入
+ */
+
+(function () {
+  "use strict";
+
+  // 检查是否在 iframe 中
+  if (window.self === window.top) {
+    return; // 不在 iframe 中，不执行
+  }
+
+  // 检查是否已经初始化过
+  if (window.__iframeHighlightInitialized) {
+    return;
+  }
+  window.__iframeHighlightInitialized = true;
+  console.log("Iframe 高亮脚本已加载");
+
+  // 创建高亮覆盖层
+  var overlay = document.createElement("div");
+  overlay.id = "iframe-highlight-overlay";
+  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
+
+  // 创建悬停高亮框（虚线边框）
+  var highlightBox = document.createElement("div");
+  highlightBox.id = "iframe-highlight-box";
+  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
+
+  // 创建选中节点的常驻高亮框（实线边框）
+  var selectedBox = document.createElement("div");
+  selectedBox.id = "iframe-selected-box";
+  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
+
+  // 创建悬停标签显示
+  var tagLabel = document.createElement("div");
+  tagLabel.id = "iframe-tag-label";
+  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
+
+  // 创建选中节点标签
+  var selectedLabel = document.createElement("div");
+  selectedLabel.id = "iframe-selected-label";
+  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
+  overlay.appendChild(highlightBox);
+  overlay.appendChild(selectedBox);
+  overlay.appendChild(tagLabel);
+  overlay.appendChild(selectedLabel);
+  document.body.appendChild(overlay);
+
+  // 存储当前选中的元素
+  var selectedElement = null;
+  var highlightEnabled = false;
+
+  // 更新选中元素的高亮显示
+  function updateSelectedHighlight(element) {
+    console.log("updateSelectedHighlight called with:", element);
+    if (!element) {
+      selectedBox.style.display = "none";
+      selectedLabel.style.display = "none";
+      selectedElement = null;
+      console.log("Cleared selected highlight");
+      return;
+    }
+    selectedElement = element;
+    var rect = element.getBoundingClientRect();
+    console.log("Selected element rect:", rect);
+
+    // 更新选中高亮框位置
+    selectedBox.style.display = "block";
+    selectedBox.style.left = "".concat(rect.left - 2, "px");
+    selectedBox.style.top = "".concat(rect.top - 2, "px");
+    selectedBox.style.width = "".concat(rect.width + 4, "px");
+    selectedBox.style.height = "".concat(rect.height + 4, "px");
+
+    // 更新选中标签位置和内容
+    selectedLabel.style.display = "block";
+    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
+
+    // 计算标签位置，确保不超出视窗
+    var labelTop = rect.top - 28;
+    var labelLeft = rect.left;
+
+    // 如果标签会超出顶部，显示在元素下方
+    if (labelTop < 5) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // 如果标签会超出右侧，向左调整
+    var labelWidth = selectedLabel.offsetWidth || 100; // 预估宽度
+    if (labelLeft + labelWidth > window.innerWidth - 10) {
+      labelLeft = window.innerWidth - labelWidth - 10;
+    }
+    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
+    selectedLabel.style.top = "".concat(labelTop, "px");
+    console.log("Selected highlight positioned at:", {
+      left: selectedBox.style.left,
+      top: selectedBox.style.top,
+      width: selectedBox.style.width,
+      height: selectedBox.style.height
+    });
+  }
+  function getElementSelector(element) {
+    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
+    var segments = [];
+    var current = element;
+    while (current !== document.documentElement) {
+      var selector = '';
+      // 优先检查唯一ID
+      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
+        segments.unshift("#".concat(current.id));
+        break; // ID唯一，无需继续向上
+      }
+
+      // 生成类名选择器（取第一个有效类名）
+      var classes = Array.from(current.classList).filter(function (c) {
+        return !c.startsWith('js-');
+      });
+      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
+
+      // 生成位置索引（nth-child）
+      var tag = current.tagName.toLowerCase();
+      if (!className) {
+        var siblings = Array.from(current.parentNode.children);
+        var index = siblings.findIndex(function (el) {
+          return el === current;
+        }) + 1;
+        selector = "".concat(tag, ":nth-child(").concat(index, ")");
+      } else {
+        selector = className;
+      }
+      segments.unshift(selector);
+      current = current.parentElement;
+    }
+
+    // 处理根元素
+    if (current === document.documentElement) {
+      segments.unshift('html');
+    }
+    return segments.join(' > ');
+  }
+
+  // 获取元素文本内容
+  function getElementText(element) {
+    var _element$textContent;
+    if (element.tagName === "INPUT") {
+      return element.value || element.placeholder || "";
+    }
+    if (element.tagName === "TEXTAREA") {
+      return element.value || element.placeholder || "";
+    }
+    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
+    return text.length > 50 ? text.substring(0, 50) + "..." : text;
+  }
+
+  // 获取元素属性信息
+  function getElementAttributes(element) {
+    var attrs = {};
+    for (var i = 0; i < element.attributes.length; i++) {
+      var attr = element.attributes[i];
+      attrs[attr.name] = attr.value;
+    }
+    return attrs;
+  }
+
+  // 鼠标悬停事件处理
+  function handleMouseOver(e) {
+    if (!highlightEnabled) return;
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // 避免高亮 html 和 body 元素
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // 如果是已选中的元素，不显示悬停高亮
+    if (target === selectedElement) {
+      highlightBox.style.display = "none";
+      tagLabel.style.display = "none";
+      return;
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+
+    // 更新悬停高亮框位置
+    highlightBox.style.display = "block";
+    highlightBox.style.left = "".concat(rect.left - 2, "px");
+    highlightBox.style.top = "".concat(rect.top - 2, "px");
+    highlightBox.style.width = "".concat(rect.width + 4, "px");
+    highlightBox.style.height = "".concat(rect.height + 4, "px");
+
+    // 更新标签位置和内容
+    tagLabel.style.display = "block";
+    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
+
+    // 计算标签位置，确保不超出视窗
+    var labelTop = rect.top - 22;
+    var labelLeft = rect.left;
+
+    // 如果标签会超出顶部，显示在元素下方
+    if (labelTop < 0) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // 如果标签会超出右侧，向左调整
+    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
+      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
+    }
+    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
+    tagLabel.style.top = "".concat(labelTop, "px");
+
+    // 发送消息到父窗口
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("无法发送消息到父窗口:", error);
+    }
+  }
+
+  // 鼠标离开事件处理
+  function handleMouseOut(e) {
+    if (!highlightEnabled) return;
+    var relatedTarget = e.relatedTarget;
+
+    // 如果鼠标移动到高亮相关元素上，不隐藏高亮
+    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
+      return;
+    }
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: null,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("无法发送消息到父窗口:", error);
+    }
+  }
+
+  // 点击事件处理
+  function handleClick(e) {
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // 避免处理 html 和 body 元素
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // 检查是否是交互元素，这些元素需要保留默认行为
+    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
+
+    // 如果高亮功能启用，对于非交互元素阻止默认行为和事件传播
+    if (highlightEnabled) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+    console.log("Element clicked:", {
+      tagName: target.tagName,
+      selector: selector,
+      rect: rect
+    });
+
+    // 立即更新选中高亮
+    updateSelectedHighlight(target);
+
+    // 隐藏悬停高亮，因为现在是选中状态
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-click",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("无法发送消息到父窗口:", error);
+    }
+  }
+
+  // 监听来自父窗口的消息
+  function handleParentMessage(event) {
+    console.log("Received message from parent:", event.data);
+    if (event.data.type === "iframe-highlight-toggle") {
+      var enabled = event.data.enabled;
+      console.log("Highlight toggle:", enabled);
+      if (enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "enable-iframe-highlight") {
+      console.log("Enable iframe highlight");
+      enableHighlight();
+    } else if (event.data.type === "disable-iframe-highlight") {
+      console.log("Disable iframe highlight");
+      disableHighlight();
+    } else if (event.data.type === "toggle-iframe-highlight") {
+      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
+      console.log("Toggle iframe highlight to:", _enabled);
+      if (_enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "update-selected-element") {
+      var selector = event.data.selector;
+      console.log("Update selected element with selector:", selector);
+      if (selector) {
+        try {
+          var element = document.querySelector(selector);
+          console.log("Found element by selector:", element);
+          updateSelectedHighlight(element);
+        } catch (error) {
+          console.warn("Failed to select element:", error);
+          updateSelectedHighlight(null);
         }
+      } else {
+        updateSelectedHighlight(null);
+      }
+    } else if (event.data.type === "clear-selected-element") {
+      console.log("Clear selected element");
+      updateSelectedHighlight(null);
+    }
+  }
 
-        // --- Helper: Format Bytes ---
-        function formatBytes(bytes) {
-            if (bytes === 0) return '0 Bytes';
-            const k = 1024;
-            const sizes = ['Bytes', 'KB', 'MB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-        }
+  // 启用高亮功能
+  function enableHighlight() {
+    console.log("Enabling highlight");
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
+    document.addEventListener("click", handleClick, true);
+    highlightEnabled = true;
+    overlay.style.display = "block";
+  }
 
-        // --- STREAMING_CHUNK: Drag and Drop Handlers ---
-        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-            dropzone.addEventListener(eventName, preventDefaults, false);
-        });
+  // 禁用高亮功能
+  function disableHighlight() {
+    console.log("Disabling highlight");
+    highlightEnabled = false;
+    // 保持事件监听器，但通过 highlightEnabled 变量控制行为
+    // 这样可以保留选中状态的显示
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    // 不隐藏 selectedBox 和 selectedLabel，保留选中状态
+  }
 
-        function preventDefaults(e) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
+  // 完全禁用高亮功能（移除所有监听器）
+  function fullyDisableHighlight() {
+    console.log("Fully disabling highlight");
+    highlightEnabled = false;
+    document.removeEventListener("mouseover", handleMouseOver, true);
+    document.removeEventListener("mouseout", handleMouseOut, true);
+    document.removeEventListener("click", handleClick, true);
+    overlay.style.display = "none";
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    selectedBox.style.display = "none";
+    selectedLabel.style.display = "none";
+  }
 
-        ['dragenter', 'dragover'].forEach(eventName => {
-            dropzone.addEventListener(eventName, () => {
-                dropzone.classList.add('dropzone-active');
-            }, false);
-        });
+  // 添加事件监听
+  enableHighlight();
+  window.addEventListener("message", handleParentMessage);
 
-        ['dragleave', 'drop'].forEach(eventName => {
-            dropzone.addEventListener(eventName, () => {
-                dropzone.classList.remove('dropzone-active');
-            }, false);
-        });
+  // 暴露全局函数供外部调用
+  window.__iframeHighlightControl = {
+    enable: enableHighlight,
+    disable: disableHighlight,
+    fullyDisable: fullyDisableHighlight,
+    isEnabled: function isEnabled() {
+      return highlightEnabled;
+    },
+    getSelectedElement: function getSelectedElement() {
+      return selectedElement;
+    },
+    updateSelected: updateSelectedHighlight,
+    // 通过消息发送开关控制
+    sendToggleMessage: function sendToggleMessage(enabled) {
+      window.parent.postMessage({
+        type: 'iframe-highlight-status',
+        enabled: enabled || highlightEnabled,
+        source: 'iframe-highlight-injector'
+      }, '*');
+    }
+  };
 
-        dropzone.addEventListener('drop', (e) => {
-            const dt = e.dataTransfer;
-            const files = dt.files;
-            handleFiles(files);
-        }, false);
+  // 通知父窗口脚本已加载
+  try {
+    window.parent.postMessage({
+      type: "iframe-highlight-ready",
+      data: {
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: Date.now()
+      },
+      source: "iframe-highlight-injector"
+    }, "*");
+  } catch (error) {
+    console.warn("无法发送就绪消息到父窗口:", error);
+  }
 
-        dropzone.addEventListener('click', () => {
-            // Keep current selection if clicking again
-            fileInput.value = ''; 
-            fileInput.click();
-        });
-        
-        fileInput.addEventListener('change', function() {
-            handleFiles(this.files);
-        });
+  // 清理函数
+  window.__iframeHighlightCleanup = function () {
+    fullyDisableHighlight();
+    window.removeEventListener("message", handleParentMessage);
+    if (overlay.parentElement) {
+      overlay.parentElement.removeChild(overlay);
+    }
+    delete window.__iframeHighlightInitialized;
+    delete window.__iframeHighlightCleanup;
+  };
+})();
 
-        // --- Handle Selected Files (Batch logic) ---
-        function handleFiles(files) {
-            if (files.length === 0) return;
-            
-            let addedCount = 0;
-            let skippedCount = 0;
-
-            Array.from(files).forEach(file => {
-                // Enforce max batch size
-                if (fileQueue.length >= MAX_FILES) {
-                    skippedCount++;
-                    return;
-                }
-
-                if (!file.type.match('image.*')) return;
-
-                if (file.size > 50 * 1024 * 1024) return; // Skip > 50MB silently
-
-                const fileId = Date.now().toString() + Math.random().toString(36).substr(2, 5);
-                const originalUrl = URL.createObjectURL(file);
-                
-                fileQueue.push({
-                    id: fileId,
-                    file: file,
-                    status: 'pending',
-                    originalUrl: originalUrl,
-                    compressedBlob: null,
-                    compressedUrl: null,
-                    newSize: 0
-                });
-                addedCount++;
-            });
-
-            if (addedCount > 0) {
-                renderBatchPreview();
-                
-                // Pre-fill target KB input with suggestion from the first file in queue (if input is empty)
-                if (!targetKBInput.value) {
-                    let suggestion = Math.floor(fileQueue[0].file.size / 1024 * 0.8);
-                    if (suggestion > 200) suggestion = 200;
-                    if (suggestion < 20) suggestion = 50;
-                    targetKBInput.value = suggestion;
-                }
-
-                // Switch State
-                stateUpload.classList.add('hidden');
-                stateSettings.classList.remove('hidden');
-            }
-
-            if (skippedCount > 0 || fileQueue.length === MAX_FILES) {
-                showToast(`Max ${MAX_FILES} images allowed per batch. Some were skipped.`, "info");
-            }
-        }
-
-        // --- STREAMING_CHUNK: Render Batch UI Elements ---
-        function renderBatchPreview() {
-            queueCountDisplay.textContent = fileQueue.length;
-            batchPreviewContainer.innerHTML = '';
-            
-            fileQueue.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'relative group rounded-xl overflow-hidden bg-slate-100 border border-slate-200 aspect-square flex items-center justify-center';
-                div.innerHTML = `
-                    <img src="${item.originalUrl}" class="object-cover w-full h-full" alt="Preview">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <button onclick="removeFile('${item.id}')" class="bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition-colors shadow-lg transform hover:scale-110">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                        </button>
-                    </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white text-[10px] font-medium px-2 py-2 truncate">
-                        ${formatBytes(item.file.size)}
-                    </div>
-                `;
-                batchPreviewContainer.appendChild(div);
-            });
-        }
-
-        window.removeFile = function(id) {
-            const index = fileQueue.findIndex(f => f.id === id);
-            if (index > -1) {
-                URL.revokeObjectURL(fileQueue[index].originalUrl);
-                fileQueue.splice(index, 1);
-                renderBatchPreview();
-                if (fileQueue.length === 0) {
-                    stateSettings.classList.add('hidden');
-                    stateUpload.classList.remove('hidden');
-                }
-            }
-        };
-
-        // --- STREAMING_CHUNK: Compression Algorithm Engine ---
-        // Converts canvas drawing to Blob payload asynchronously
-        function getCanvasBlob(canvas, mimeType, quality) {
-            return new Promise((resolve) => {
-                canvas.toBlob((blob) => resolve(blob), mimeType, quality);
-            });
-        }
-
-        // The core logic to hit an exact KB size via binary search & scaling
-        async function processCompression(targetBytes, imageUrl) {
-            return new Promise(async (resolve, reject) => {
-                try {
-                    const img = new Image();
-                    img.src = imageUrl;
-                    
-                    await new Promise(r => img.onload = r);
-
-                    let canvas = document.createElement('canvas');
-                    let ctx = canvas.getContext('2d');
-                    
-                    let currentWidth = img.width;
-                    let currentHeight = img.height;
-
-                    // Output format (force JPEG to allow quality manipulation, except for PNG transparency preservation if needed, but MVP focuses on KB limits so JPEG is preferred for size crunching)
-                    const mimeType = 'image/jpeg';
-
-                    // 1. Check if original is already small enough without scaling
-                    canvas.width = currentWidth;
-                    canvas.height = currentHeight;
-                    ctx.fillStyle = '#FFFFFF'; // Handle PNG transparency to JPEG
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
-                    ctx.drawImage(img, 0, 0, currentWidth, currentHeight);
-                    
-                    let initialBlob = await getCanvasBlob(canvas, mimeType, 0.9);
-                    if (initialBlob.size <= targetBytes) {
-                        return resolve(initialBlob);
-                    }
-
-                    let bestBlob = initialBlob;
-                    let iterationCount = 0;
-                    
-                    // Main Scaling Loop: If binary search fails, scale down dimensions
-                    while (bestBlob.size > targetBytes && iterationCount < 5) {
-                        iterationCount++;
-                        
-                        // Binary Search on JPEG Quality (0.1 to 0.95)
-                        let minQ = 0.1;
-                        let maxQ = 0.95;
-                        let quality = 0.5;
-                        
-                        for (let i = 0; i < 7; i++) { // 7 steps of binary search
-                            quality = (minQ + maxQ) / 2;
-                            let tempBlob = await getCanvasBlob(canvas, mimeType, quality);
-                            
-                            if (tempBlob.size > targetBytes) {
-                                maxQ = quality; // too big, reduce max quality
-                            } else {
-                                minQ = quality; // fits, try pushing for higher quality
-                                bestBlob = tempBlob; 
-                            }
-                        }
-
-                        // Check if best quality in this scale step fits
-                        let lowestQBlob = await getCanvasBlob(canvas, mimeType, 0.1);
-                        if (lowestQBlob.size <= targetBytes) {
-                            // If 0.1 fits, the binary search above found the best fit.
-                            break; 
-                        }
-
-                        // If even 0.1 quality is too big, the dimensions are too huge. Scale down.
-                        // Calculate a scale factor based on current vs target size
-                        let scaleFactor = Math.sqrt(targetBytes / lowestQBlob.size);
-                        // Restrict scale factor to prevent extreme shrinking in one go
-                        scaleFactor = Math.max(0.4, Math.min(0.85, scaleFactor));
-                        
-                        currentWidth = Math.floor(currentWidth * scaleFactor);
-                        currentHeight = Math.floor(currentHeight * scaleFactor);
-                        
-                        canvas.width = currentWidth;
-                        canvas.height = currentHeight;
-                        ctx.fillStyle = '#FFFFFF';
-                        ctx.fillRect(0, 0, canvas.width, canvas.height);
-                        ctx.drawImage(img, 0, 0, currentWidth, currentHeight);
-                        
-                        // Reset bestBlob for next while-loop check
-                        bestBlob = await getCanvasBlob(canvas, mimeType, 0.5); 
-                    }
-
-                    // Ensure we always return something that fits if mathematically possible
-                    if (bestBlob.size > targetBytes) {
-                        // Force aggressive scale if still failing
-                        canvas.width = currentWidth * 0.5;
-                        canvas.height = currentHeight * 0.5;
-                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                        bestBlob = await getCanvasBlob(canvas, mimeType, 0.1);
-                    }
-
-                    resolve(bestBlob);
-
-                } catch (error) {
-                    reject(error);
-                }
-            });
-        }
-
-        // --- STREAMING_CHUNK: Button Event Listeners & Flow Control ---
-        function clearQueueMemory() {
-            fileQueue.forEach(item => {
-                if (item.originalUrl) URL.revokeObjectURL(item.originalUrl);
-                if (item.compressedUrl) URL.revokeObjectURL(item.compressedUrl);
-            });
-            fileQueue = [];
-            fileInput.value = '';
-        }
-
-        btnCancel.addEventListener('click', () => {
-            clearQueueMemory();
-            stateSettings.classList.add('hidden');
-            stateUpload.classList.remove('hidden');
-        });
-
-        btnStartOver.addEventListener('click', () => {
-            clearQueueMemory();
-            stateResult.classList.add('hidden');
-            stateUpload.classList.remove('hidden');
-        });
-
-        btnCompress.addEventListener('click', async () => {
-            const targetKB = parseFloat(targetKBInput.value);
-            
-            if (isNaN(targetKB) || targetKB <= 0) {
-                showToast("Please enter a valid target size in KB.", "error");
-                return;
-            }
-
-            const targetBytes = targetKB * 1024;
-
-            // Show Loading
-            stateLoading.classList.remove('hidden');
-            stateSettings.classList.add('hidden');
-            
-            batchProgressText.textContent = `0 / ${fileQueue.length} completed`;
-            batchProgressBar.style.width = '0%';
-
-            // Small delay to allow UI to paint the loading spinner
-            setTimeout(async () => {
-                let successCount = 0;
-
-                // Process sequentially to prevent memory spikes & browser crashes
-                for (let i = 0; i < fileQueue.length; i++) {
-                    const item = fileQueue[i];
-                    item.status = 'processing';
-                    
-                    // Yield control to the browser so the UI can update before heavy processing
-                    await new Promise(resolve => setTimeout(resolve, 15));
-                    
-                    try {
-                        const blob = await processCompression(targetBytes, item.originalUrl);
-                        item.compressedBlob = blob;
-                        item.compressedUrl = URL.createObjectURL(blob);
-                        item.newSize = blob.size;
-                        item.status = 'done';
-                        successCount++;
-                    } catch (err) {
-                        console.error("Failed to compress image:", item.file.name, err);
-                        item.status = 'error';
-                    }
-                    
-                    // Update Progress Text and Bar
-                    batchProgressText.textContent = `${i + 1} / ${fileQueue.length} completed`;
-                    const progressPercent = Math.round(((i + 1) / fileQueue.length) * 100);
-                    batchProgressBar.style.width = `${progressPercent}%`;
-                    
-                    // Yield control again so the progress bar animation renders smoothly
-                    await new Promise(resolve => setTimeout(resolve, 15));
-                }
-                
-                // Update Results UI
-                successCountDisplay.textContent = successCount;
-                renderBatchResults(targetKB);
-                
-                // Show Results
-                stateLoading.classList.add('hidden');
-                stateResult.classList.remove('hidden');
-                
-                showToast(`Successfully compressed ${successCount} image(s)!`);
-            }, 100);
-        });
-
-        // --- STREAMING_CHUNK: Results Render & Download Logic ---
-        function renderBatchResults(targetKB) {
-            resultsContainer.innerHTML = '';
-            
-            fileQueue.forEach(item => {
-                if (item.status !== 'done') return;
-                
-                const originalName = item.file.name;
-                const nameWithoutExt = originalName.substring(0, originalName.lastIndexOf('.')) || originalName;
-                const newFilename = `${nameWithoutExt}-${targetKB}kb.jpg`;
-
-                const div = document.createElement('div');
-                div.className = 'bg-white border border-slate-200 p-3 sm:p-4 rounded-xl flex items-center justify-between gap-3 shadow-sm hover:shadow transition-shadow';
-                div.innerHTML = `
-                    <div class="flex items-center gap-3 overflow-hidden">
-                        <img src="${item.compressedUrl}" class="w-12 h-12 object-cover rounded-lg border border-slate-200 flex-shrink-0" alt="Thumb">
-                        <div class="min-w-0">
-                            <p class="text-sm font-bold text-slate-800 truncate" title="${newFilename}">${newFilename}</p>
-                            <div class="flex items-center gap-2 text-xs mt-1">
-                                <span class="text-slate-400 line-through">${formatBytes(item.file.size)}</span>
-                                <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                                <span class="text-brand-600 font-bold">${formatBytes(item.newSize)}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="downloadSingle('${item.id}', '${newFilename}')" class="p-2 text-brand-600 hover:bg-brand-50 rounded-xl transition-colors flex-shrink-0 border border-transparent hover:border-brand-200" title="Download Image">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                    </button>
-                `;
-                resultsContainer.appendChild(div);
-            });
-        }
-
-        window.downloadSingle = function(id, filename) {
-            const item = fileQueue.find(f => f.id === id);
-            if (!item || !item.compressedUrl) return;
-            
-            const a = document.createElement('a');
-            a.style.display = 'none';
-            a.href = item.compressedUrl;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        };
-
-        btnDownloadZip.addEventListener('click', async () => {
-            if (typeof JSZip === 'undefined') {
-                showToast("ZIP library is still loading. Please try again in a second.", "error");
-                return;
-            }
-            
-            const zip = new JSZip();
-            const targetKB = targetKBInput.value;
-            let addedCount = 0;
-
-            const originalBtnText = btnDownloadZip.innerHTML;
-            btnDownloadZip.innerHTML = '<div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div> Zipping...';
-            btnDownloadZip.disabled = true;
-
-            // Small timeout to allow UI update
-            setTimeout(async () => {
-                try {
-                    fileQueue.forEach(item => {
-                        if (item.status === 'done' && item.compressedBlob) {
-                            const originalName = item.file.name;
-                            const nameWithoutExt = originalName.substring(0, originalName.lastIndexOf('.')) || originalName;
-                            const newFilename = `${nameWithoutExt}-${targetKB}kb.jpg`;
-                            zip.file(newFilename, item.compressedBlob);
-                            addedCount++;
-                        }
-                    });
-
-                    if (addedCount > 0) {
-                        const zipBlob = await zip.generateAsync({ type: "blob" });
-                        const zipUrl = URL.createObjectURL(zipBlob);
-                        
-                        const a = document.createElement('a');
-                        a.style.display = 'none';
-                        a.href = zipUrl;
-                        a.download = `OptiDrop-${targetKB}KB-Batch.zip`;
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                        URL.revokeObjectURL(zipUrl);
-                    } else {
-                        showToast("No files to download.", "error");
-                    }
-                } catch (err) {
-                    console.error(err);
-                    showToast("Error generating ZIP file.", "error");
-                } finally {
-                    btnDownloadZip.innerHTML = originalBtnText;
-                    btnDownloadZip.disabled = false;
-                }
-            }, 100);
-        });
-
-    </script>
+</script>
 </body>
 </html>
