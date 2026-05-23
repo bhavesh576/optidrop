@@ -1,5 +1,5 @@
 /* =========================================================
-   OptiDrop — style.css
+   OptiDrop — style.css (Dashboard + All Tools)
    ========================================================= */
 
 body {
@@ -52,7 +52,207 @@ body {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Tab Switcher ──────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════
+   TOOL GRID DASHBOARD
+   ═══════════════════════════════════════════════════════════ */
+.tool-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #6366f1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tool-card:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-4px);
+}
+
+.tool-card:hover::before {
+    opacity: 1;
+}
+
+.tool-card:active {
+    transform: translateY(-2px);
+}
+
+.tool-card-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.tool-card:hover .tool-card-icon {
+    transform: scale(1.1);
+}
+
+.tool-card-title {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.tool-card-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.tool-card-tag {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.tool-card-tag.blue {
+    background: #eff6ff;
+    color: #2563eb;
+}
+.tool-card-tag.indigo {
+    background: #eef2ff;
+    color: #4338ca;
+}
+.tool-card-tag.orange {
+    background: #fff7ed;
+    color: #c2410c;
+}
+.tool-card-tag.purple {
+    background: #faf5ff;
+    color: #7c3aed;
+}
+.tool-card-tag.emerald {
+    background: #ecfdf5;
+    color: #059669;
+}
+.tool-card-tag.rose {
+    background: #fff1f2;
+    color: #e11d48;
+}
+
+/* Tool Panel transition */
+.tool-panel {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESIZER PRESET BUTTONS
+   ═══════════════════════════════════════════════════════════ */
+.resizer-preset-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    border: 2px solid #d1fae5;
+    color: #059669;
+    background: #ecfdf5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.resizer-preset-btn:hover {
+    border-color: #059669;
+    background: #d1fae5;
+}
+
+.resizer-preset-btn.active {
+    border-color: #059669;
+    background: #059669;
+    color: #ffffff;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STAMPER COLOR BUTTONS
+   ═══════════════════════════════════════════════════════════ */
+.stamper-color-btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.stamper-color-btn:hover {
+    transform: scale(1.15);
+}
+
+.stamper-color-btn.active {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px #eff6ff;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PDF2JPG RESULT GRID ITEMS
+   ═══════════════════════════════════════════════════════════ */
+.pdf2jpg-result-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.pdf2jpg-result-item:hover {
+    border-color: #c4b5fd;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
+}
+
+.pdf2jpg-result-item img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}
+
+.pdf2jpg-result-item .pdf2jpg-item-actions {
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.25rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   EXISTING STYLES — Compress & Merge Tools
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Tab Switcher (kept for legacy) ──────────────────────── */
 .tab-btn {
     color: #64748b;
     background: transparent;
@@ -396,6 +596,9 @@ body {
         width: 2.5rem;
         height: 2.5rem;
     }
+    .tool-card {
+        padding: 1.25rem;
+    }
 }
 
 /* ── Improved Button Touch Responsiveness ──────────────── */
@@ -430,7 +633,9 @@ body {
 .merge-btn,
 .preset-btn,
 .passport-preset-btn,
-.tab-btn {
+.tab-btn,
+.resizer-preset-btn,
+.stamper-color-btn {
     -webkit-user-select: none;
     user-select: none;
 }
