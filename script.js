@@ -1,44 +1,9 @@
 /* =========================================================
-   OptiDrop — script.js (FIXED & OPTIMIZED)
+   OptiDrop — script.js (Dashboard + 6 Tools)
    ========================================================= */
 
 // Update footer year
 document.getElementById('year').textContent = new Date().getFullYear();
-
-// ── App State ──────────────────────────────────────────────
-let fileQueue = [];
-const MAX_FILES = 20;
-
-// ── DOM References ─────────────────────────────────────────
-const dropzone              = document.getElementById('dropzone');
-const fileInput             = document.getElementById('fileInput');
-const stateUpload           = document.getElementById('state-upload');
-const stateSettings         = document.getElementById('state-settings');
-const stateLoading          = document.getElementById('state-loading');
-const stateResult           = document.getElementById('state-result');
-
-const targetKBInput         = document.getElementById('targetKB');
-const batchPreviewContainer = document.getElementById('batchPreviewContainer');
-const queueCountDisplay     = document.getElementById('queueCount');
-const batchProgressText     = document.getElementById('batchProgressText');
-const batchProgressBar      = document.getElementById('batchProgressBar');
-const resultsContainer      = document.getElementById('resultsContainer');
-const successCountDisplay   = document.getElementById('successCount');
-const loadingPercent        = document.getElementById('loadingPercent');
-
-const btnCancel             = document.getElementById('btnCancel');
-const btnCompress           = document.getElementById('btnCompress');
-const btnDownloadZip        = document.getElementById('btnDownloadZip');
-const btnStartOver          = document.getElementById('btnStartOver');
-
-// Feature DOM refs
-const presetButtons         = document.querySelectorAll('.preset-btn');
-const passportPresetButtons = document.querySelectorAll('.passport-preset-btn');
-const outputFormatSelect    = document.getElementById('outputFormat');
-const targetWidthInput      = document.getElementById('targetWidth');
-const targetHeightInput     = document.getElementById('targetHeight');
-const imageInfoPanel        = document.getElementById('imageInfoPanel');
-const imageInfoContent      = document.getElementById('imageInfoContent');
 
 // ── Helper: Toast Notification ─────────────────────────────
 function showToast(message, type = 'info') {
@@ -84,7 +49,211 @@ function getExtension(mimeType) {
     return map[mimeType] || 'jpg';
 }
 
-// ── Feature 1: Quick Size Presets ──────────────────────────
+// ── Helper: Load Image ─────────────────────────────────────
+function loadImage(src) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = src;
+    });
+}
+
+// ── Helper: Canvas Blob ────────────────────────────────────
+function getCanvasBlob(canvas, mimeType, quality) {
+    return new Promise((resolve) => {
+        if (mimeType === 'image/png') {
+            canvas.toBlob((blob) => resolve(blob), mimeType);
+        } else {
+            canvas.toBlob((blob) => resolve(blob), mimeType, quality);
+        }
+    });
+}
+
+// ── Helper: Prevent Defaults ───────────────────────────────
+function preventDefaults(e) {
+    e.preventDefault();
+    e.stopPropagation();
+}
+
+// ── Helper: Setup Dropzone ─────────────────────────────────
+function setupDropzone(dropzoneEl, fileInputEl, callback, acceptMultiple) {
+    if (!dropzoneEl) return;
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropzoneEl.addEventListener(eventName, preventDefaults, false);
+    });
+    ['dragenter', 'dragover'].forEach(eventName => {
+        dropzoneEl.addEventListener(eventName, () => dropzoneEl.classList.add('dropzone-active'), false);
+    });
+    ['dragleave', 'drop'].forEach(eventName => {
+        dropzoneEl.addEventListener(eventName, () => dropzoneEl.classList.remove('dropzone-active'), false);
+    });
+    dropzoneEl.addEventListener('drop', (e) => {
+        callback(e.dataTransfer.files);
+    }, false);
+    dropzoneEl.addEventListener('click', () => {
+        fileInputEl.value = '';
+        fileInputEl.click();
+    });
+    if (fileInputEl) {
+        fileInputEl.addEventListener('change', function () {
+            callback(this.files);
+        });
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   DASHBOARD NAVIGATION
+   ═══════════════════════════════════════════════════════════ */
+
+const toolDashboard = document.getElementById('toolDashboard');
+const appSection = document.getElementById('app-section');
+const btnBackToDashboard = document.getElementById('btnBackToDashboard');
+
+// Map tool names to their panel IDs
+const toolPanelMap = {
+    'compress': 'mode-compress',
+    'merge':    'mode-merge',
+    'heic':     'mode-heic',
+    'pdf2jpg':  'mode-pdf2jpg',
+    'resizer':  'mode-resizer',
+    'stamper':  'mode-stamper'
+};
+
+// Tool card click handlers
+document.querySelectorAll('.tool-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const toolName = card.dataset.tool;
+        openTool(toolName);
+    });
+});
+
+function openTool(toolName) {
+    // Hide all panels
+    document.querySelectorAll('.tool-panel').forEach(p => p.classList.add('hidden'));
+
+    // Show target panel
+    const panelId = toolPanelMap[toolName];
+    if (panelId) {
+        document.getElementById(panelId).classList.remove('hidden');
+    }
+
+    // Hide dashboard, show app
+    toolDashboard.parentElement.classList.add('hidden');
+    appSection.classList.remove('hidden');
+
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Track in analytics
+    if (typeof gtag === 'function') {
+        gtag('event', 'tool_open', { tool_name: toolName });
+    }
+}
+
+function goToDashboard() {
+    // Hide app section
+    appSection.classList.add('hidden');
+
+    // Show dashboard
+    toolDashboard.parentElement.classList.remove('hidden');
+
+    // Reset all tool states
+    resetAllTools();
+
+    // Scroll to tools section
+    document.getElementById('tools').scrollIntoView({ behavior: 'smooth' });
+}
+
+btnBackToDashboard.addEventListener('click', goToDashboard);
+
+function resetAllTools() {
+    // Reset compress
+    clearQueueMemory();
+    document.getElementById('state-upload').classList.remove('hidden');
+    document.getElementById('state-settings').classList.add('hidden');
+    document.getElementById('state-loading').classList.add('hidden');
+    document.getElementById('state-result').classList.add('hidden');
+
+    // Reset merge
+    mergeQueue.forEach(item => URL.revokeObjectURL(item.url));
+    mergeQueue = [];
+    document.getElementById('merge-state-upload').classList.remove('hidden');
+    document.getElementById('merge-state-settings').classList.add('hidden');
+    document.getElementById('merge-state-loading').classList.add('hidden');
+    document.getElementById('merge-state-result').classList.add('hidden');
+
+    // Reset HEIC
+    heicQueue.forEach(item => { if (item.url) URL.revokeObjectURL(item.url); if (item.jpgUrl) URL.revokeObjectURL(item.jpgUrl); });
+    heicQueue = [];
+    document.getElementById('heic-state-upload').classList.remove('hidden');
+    document.getElementById('heic-state-settings').classList.add('hidden');
+    document.getElementById('heic-state-loading').classList.add('hidden');
+    document.getElementById('heic-state-result').classList.add('hidden');
+
+    // Reset PDF2JPG
+    pdf2jpgPages.forEach(p => { if (p.url) URL.revokeObjectURL(p.url); });
+    pdf2jpgPages = [];
+    pdf2jpgDoc = null;
+    document.getElementById('pdf2jpg-state-upload').classList.remove('hidden');
+    document.getElementById('pdf2jpg-state-settings').classList.add('hidden');
+    document.getElementById('pdf2jpg-state-loading').classList.add('hidden');
+    document.getElementById('pdf2jpg-state-result').classList.add('hidden');
+
+    // Reset resizer
+    resizerFile = null;
+    resizerOriginalImg = null;
+    document.getElementById('resizer-state-upload').classList.remove('hidden');
+    document.getElementById('resizer-state-settings').classList.add('hidden');
+    document.getElementById('resizer-state-result').classList.add('hidden');
+
+    // Reset stamper
+    stamperFile = null;
+    stamperOriginalImg = null;
+    document.getElementById('stamper-state-upload').classList.remove('hidden');
+    document.getElementById('stamper-state-settings').classList.add('hidden');
+    document.getElementById('stamper-state-result').classList.add('hidden');
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   TOOL 1: IMAGE COMPRESSOR
+   ═══════════════════════════════════════════════════════════ */
+
+let fileQueue = [];
+const MAX_FILES = 20;
+
+const dropzone              = document.getElementById('dropzone');
+const fileInput             = document.getElementById('fileInput');
+const stateUpload           = document.getElementById('state-upload');
+const stateSettings         = document.getElementById('state-settings');
+const stateLoading          = document.getElementById('state-loading');
+const stateResult           = document.getElementById('state-result');
+
+const targetKBInput         = document.getElementById('targetKB');
+const batchPreviewContainer = document.getElementById('batchPreviewContainer');
+const queueCountDisplay     = document.getElementById('queueCount');
+const batchProgressText     = document.getElementById('batchProgressText');
+const batchProgressBar      = document.getElementById('batchProgressBar');
+const resultsContainer      = document.getElementById('resultsContainer');
+const successCountDisplay   = document.getElementById('successCount');
+const loadingPercent        = document.getElementById('loadingPercent');
+
+const btnCancel             = document.getElementById('btnCancel');
+const btnCompress           = document.getElementById('btnCompress');
+const btnDownloadZip        = document.getElementById('btnDownloadZip');
+const btnStartOver          = document.getElementById('btnStartOver');
+
+const presetButtons         = document.querySelectorAll('.preset-btn');
+const passportPresetButtons = document.querySelectorAll('.passport-preset-btn');
+const outputFormatSelect    = document.getElementById('outputFormat');
+const targetWidthInput      = document.getElementById('targetWidth');
+const targetHeightInput     = document.getElementById('targetHeight');
+const imageInfoPanel        = document.getElementById('imageInfoPanel');
+const imageInfoContent      = document.getElementById('imageInfoContent');
+
+// Quick Size Presets
 presetButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -101,69 +270,31 @@ targetKBInput.addEventListener('input', () => {
     });
 });
 
-// ── Feature: Passport Dimension Presets ─────────────────────
+// Passport Dimension Presets
 passportPresetButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const w = btn.dataset.w;
-        const h = btn.dataset.h;
-        targetWidthInput.value = w;
-        targetHeightInput.value = h;
+        targetWidthInput.value = btn.dataset.w;
+        targetHeightInput.value = btn.dataset.h;
         passportPresetButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        showToast(`Preset applied: ${w} × ${h} px`, 'info');
+        showToast(`Preset applied: ${btn.dataset.w} x ${btn.dataset.h} px`);
     });
 });
 
 [targetWidthInput, targetHeightInput].forEach(input => {
     input.addEventListener('input', () => {
-        const w = targetWidthInput.value;
-        const h = targetHeightInput.value;
         passportPresetButtons.forEach(b => {
-            b.classList.toggle('active', b.dataset.w === w && b.dataset.h === h);
+            b.classList.toggle('active', b.dataset.w === targetWidthInput.value && b.dataset.h === targetHeightInput.value);
         });
     });
 });
 
-// ── Drag and Drop Handlers ─────────────────────────────────
-if (dropzone) {
-    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-        dropzone.addEventListener(eventName, preventDefaults, false);
-    });
+// Dropzone
+setupDropzone(dropzone, fileInput, handleFiles);
 
-    ['dragenter', 'dragover'].forEach(eventName => {
-        dropzone.addEventListener(eventName, () => dropzone.classList.add('dropzone-active'), false);
-    });
-
-    ['dragleave', 'drop'].forEach(eventName => {
-        dropzone.addEventListener(eventName, () => dropzone.classList.remove('dropzone-active'), false);
-    });
-
-    dropzone.addEventListener('drop', (e) => {
-        handleFiles(e.dataTransfer.files);
-    }, false);
-
-    dropzone.addEventListener('click', () => {
-        fileInput.value = '';
-        fileInput.click();
-    });
-}
-
-function preventDefaults(e) {
-    e.preventDefault();
-    e.stopPropagation();
-}
-
-if (fileInput) {
-    fileInput.addEventListener('change', function () {
-        handleFiles(this.files);
-    });
-}
-
-// ── Handle Selected Files ──────────────────────────────────
 function handleFiles(files) {
     if (files.length === 0) return;
-
     let addedCount = 0;
     let skippedCount = 0;
 
@@ -192,7 +323,6 @@ function handleFiles(files) {
     if (addedCount > 0) {
         renderBatchPreview();
         updateImageInfo();
-
         if (!targetKBInput.value) {
             let suggestion = Math.floor(fileQueue[0].file.size / 1024 * 0.8);
             if (suggestion > 200) suggestion = 200;
@@ -202,7 +332,6 @@ function handleFiles(files) {
                 b.classList.toggle('active', b.dataset.kb === String(suggestion));
             });
         }
-
         stateUpload.classList.add('hidden');
         stateSettings.classList.remove('hidden');
     }
@@ -212,21 +341,18 @@ function handleFiles(files) {
     }
 }
 
-// ── Update Image Info Panel ────────────────────────────────
 function updateImageInfo() {
     if (fileQueue.length === 0) {
         imageInfoPanel.classList.add('hidden');
         return;
     }
-
     const first = fileQueue[0];
     const img = new Image();
     img.onload = function() {
         first.originalWidth = this.width;
         first.originalHeight = this.height;
-
         imageInfoContent.innerHTML = `
-            <div class="flex justify-between"><span>Dimensions:</span> <span class="font-semibold">${this.width} × ${this.height} px</span></div>
+            <div class="flex justify-between"><span>Dimensions:</span> <span class="font-semibold">${this.width} x ${this.height} px</span></div>
             <div class="flex justify-between"><span>File Size:</span> <span class="font-semibold">${formatBytes(first.file.size)}</span></div>
             <div class="flex justify-between"><span>Type:</span> <span class="font-semibold">${first.file.type.split('/')[1].toUpperCase()}</span></div>
             <div class="flex justify-between"><span>Name:</span> <span class="font-semibold truncate max-w-[140px]" title="${first.file.name}">${first.file.name}</span></div>
@@ -236,11 +362,9 @@ function updateImageInfo() {
     img.src = first.originalUrl;
 }
 
-// ── Render Batch Preview Grid ──────────────────────────────
 function renderBatchPreview() {
     queueCountDisplay.textContent = fileQueue.length;
     batchPreviewContainer.innerHTML = '';
-
     fileQueue.forEach(item => {
         const div = document.createElement('div');
         div.className = 'relative group rounded-xl overflow-hidden bg-slate-100 border border-slate-200 aspect-square flex items-center justify-center';
@@ -273,25 +397,11 @@ window.removeFile = function (id) {
     }
 };
 
-// ── Core: Canvas Blob Helper ───────────────────────────────
-function getCanvasBlob(canvas, mimeType, quality) {
-    return new Promise((resolve) => {
-        if (mimeType === 'image/png') {
-            canvas.toBlob((blob) => resolve(blob), mimeType);
-        } else {
-            canvas.toBlob((blob) => resolve(blob), mimeType, quality);
-        }
-    });
-}
-
-// ── Core: Compression Engine ───────────────────────────────
+// Compression Engine
 async function processCompression(targetBytes, imageUrl, outputFormat, forcedWidth, forcedHeight) {
     return new Promise(async (resolve, reject) => {
         try {
-            const img = new Image();
-            img.src = imageUrl;
-            await new Promise(r => { img.onload = r; });
-
+            const img = await loadImage(imageUrl);
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
 
@@ -311,9 +421,7 @@ async function processCompression(targetBytes, imageUrl, outputFormat, forcedWid
             ctx.drawImage(img, 0, 0, currentWidth, currentHeight);
 
             let initialBlob = await getCanvasBlob(canvas, outputFormat, 0.9);
-            if (initialBlob.size <= targetBytes) {
-                return resolve(initialBlob);
-            }
+            if (initialBlob.size <= targetBytes) return resolve(initialBlob);
 
             if (outputFormat === 'image/png') {
                 let pngBlob = initialBlob;
@@ -335,39 +443,27 @@ async function processCompression(targetBytes, imageUrl, outputFormat, forcedWid
 
             let bestBlob = initialBlob;
             let iterationCount = 0;
-
             while (bestBlob.size > targetBytes && iterationCount < 5) {
                 iterationCount++;
-
-                let minQ = 0.05;
-                let maxQ = 0.95;
-
+                let minQ = 0.05, maxQ = 0.95;
                 for (let i = 0; i < 8; i++) {
                     const quality = (minQ + maxQ) / 2;
                     const tempBlob = await getCanvasBlob(canvas, outputFormat, quality);
-                    if (tempBlob.size > targetBytes) {
-                        maxQ = quality;
-                    } else {
-                        minQ = quality;
-                        bestBlob = tempBlob;
-                    }
+                    if (tempBlob.size > targetBytes) { maxQ = quality; }
+                    else { minQ = quality; bestBlob = tempBlob; }
                 }
-
                 const lowestQBlob = await getCanvasBlob(canvas, outputFormat, 0.05);
                 if (lowestQBlob.size <= targetBytes) break;
 
                 let scaleFactor = Math.sqrt(targetBytes / lowestQBlob.size);
                 scaleFactor = Math.max(0.4, Math.min(0.85, scaleFactor));
-
                 currentWidth  = Math.max(1, Math.floor(currentWidth  * scaleFactor));
                 currentHeight = Math.max(1, Math.floor(currentHeight * scaleFactor));
-
                 canvas.width  = currentWidth;
                 canvas.height = currentHeight;
                 ctx.fillStyle = '#FFFFFF';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 ctx.drawImage(img, 0, 0, currentWidth, currentHeight);
-
                 bestBlob = await getCanvasBlob(canvas, outputFormat, 0.5);
             }
 
@@ -379,16 +475,11 @@ async function processCompression(targetBytes, imageUrl, outputFormat, forcedWid
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
                 bestBlob = await getCanvasBlob(canvas, outputFormat, 0.05);
             }
-
             resolve(bestBlob);
-
-        } catch (error) {
-            reject(error);
-        }
+        } catch (error) { reject(error); }
     });
 }
 
-// ── Flow Control: Cancel / Start Over ─────────────────────
 function clearQueueMemory() {
     fileQueue.forEach(item => {
         if (item.originalUrl)   URL.revokeObjectURL(item.originalUrl);
@@ -419,16 +510,13 @@ if (btnStartOver) {
     });
 }
 
-// ── Compress Button ────────────────────────────────────────
 if (btnCompress) {
     btnCompress.addEventListener('click', async () => {
         const targetKB = parseFloat(targetKBInput.value);
-
         if (isNaN(targetKB) || targetKB <= 0) {
             showToast('Please enter a valid target size in KB.', 'error');
             return;
         }
-
         const targetBytes   = targetKB * 1024;
         const outputFormat  = outputFormatSelect.value;
         const forcedWidth   = parseInt(targetWidthInput.value,  10) || 0;
@@ -436,20 +524,16 @@ if (btnCompress) {
 
         stateLoading.classList.remove('hidden');
         stateSettings.classList.add('hidden');
-
         batchProgressText.textContent = `0 / ${fileQueue.length} completed`;
         batchProgressBar.style.width = '0%';
         loadingPercent.textContent = '0%';
 
         setTimeout(async () => {
             let successCount = 0;
-
             for (let i = 0; i < fileQueue.length; i++) {
                 const item = fileQueue[i];
                 item.status = 'processing';
-
                 await new Promise(resolve => setTimeout(resolve, 15));
-
                 try {
                     const blob = await processCompression(targetBytes, item.originalUrl, outputFormat, forcedWidth, forcedHeight);
                     item.compressedBlob = blob;
@@ -462,33 +546,25 @@ if (btnCompress) {
                     console.error('Failed to compress:', item.file.name, err);
                     item.status = 'error';
                 }
-
                 const pct = Math.round(((i + 1) / fileQueue.length) * 100);
                 batchProgressText.textContent = `${i + 1} / ${fileQueue.length} completed`;
                 batchProgressBar.style.width  = `${pct}%`;
                 loadingPercent.textContent = `${pct}%`;
-
                 await new Promise(resolve => setTimeout(resolve, 15));
             }
-
             successCountDisplay.textContent = successCount;
             renderBatchResults(targetKB);
-
             stateLoading.classList.add('hidden');
             stateResult.classList.remove('hidden');
-
             showToast(`Successfully compressed ${successCount} image(s)!`);
         }, 100);
     });
 }
 
-// ── Render Results ─────────────────────────────────────────
 function renderBatchResults(targetKB) {
     resultsContainer.innerHTML = '';
-
     fileQueue.forEach(item => {
         if (item.status !== 'done') return;
-
         const ext          = getExtension(item.mimeType || 'image/jpeg');
         const originalName = item.file.name;
         const nameWithoutExt = originalName.substring(0, originalName.lastIndexOf('.')) || originalName;
@@ -514,19 +590,13 @@ function renderBatchResults(targetKB) {
                     title="Download Image">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                 </button>
-                <button onclick="openCompare('${item.id}')"
-                    class="btn-compare"
-                    title="Compare Before/After">
+                <button onclick="openCompare('${item.id}')" class="btn-compare" title="Compare Before/After">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                 </button>
-                <button onclick="downloadAsPdf('${item.id}', '${newFilename}')"
-                    class="btn-pdf"
-                    title="Download as PDF">
+                <button onclick="downloadAsPdf('${item.id}', '${newFilename}')" class="btn-pdf" title="Download as PDF">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 14v-3m0 3h4m-4 0h4"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14v-3m0 3h4m-4 0h4"/>
                     </svg>
                 </button>
             </div>
@@ -535,51 +605,24 @@ function renderBatchResults(targetKB) {
     });
 }
 
-// ── Download: Single Image ─────────────────────────────────
+// Download Single
 window.downloadSingle = function (id, filename) {
-    console.log('downloadSingle called:', id, filename);
-
     const item = fileQueue.find(f => f.id === id);
-    if (!item) {
-        console.error('Item not found:', id);
-        showToast('File not found. Please refresh and try again.', 'error');
-        return;
-    }
-
-    if (!item.compressedUrl) {
-        console.error('Compressed URL not available for:', id);
-        showToast('Image not ready. Please wait for compression to complete.', 'error');
-        return;
-    }
-
-    try {
-        // Create download link
-        const link = document.createElement('a');
-        link.href = item.compressedUrl;
-        link.download = filename || 'downloaded-image.jpg';
-        link.style.display = 'none';
-
-        // Append to body, click, and remove
-        document.body.appendChild(link);
-        link.click();
-
-        // Small delay before removal to ensure download starts
-        setTimeout(() => {
-            document.body.removeChild(link);
-        }, 100);
-
-        showToast('Image downloaded successfully!');
-    } catch (err) {
-        console.error('Download failed:', err);
-        showToast('Download failed. Please try again.', 'error');
-    }
+    if (!item || !item.compressedUrl) { showToast('File not found.', 'error'); return; }
+    const link = document.createElement('a');
+    link.href = item.compressedUrl;
+    link.download = filename || 'downloaded-image.jpg';
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    setTimeout(() => document.body.removeChild(link), 100);
+    showToast('Image downloaded!');
 };
 
-// ── Feature: Before/After Comparison ───────────────────────
+// Before/After Comparison
 window.openCompare = function(id) {
     const item = fileQueue.find(f => f.id === id);
     if (!item) return;
-
     const modal = document.getElementById('compareModal');
     const originalImg = document.getElementById('compareOriginal');
     const compressedImg = document.getElementById('compareCompressed');
@@ -588,15 +631,12 @@ window.openCompare = function(id) {
 
     originalImg.src = item.originalUrl;
     compressedImg.src = item.compressedUrl;
-
     overlay.style.width = '50%';
     slider.style.left = '50%';
-
     modal.classList.remove('hidden');
 
     let isDragging = false;
     const container = document.getElementById('compareContainer');
-
     function updateSlider(clientX) {
         const rect = container.getBoundingClientRect();
         let x = clientX - rect.left;
@@ -605,21 +645,13 @@ window.openCompare = function(id) {
         overlay.style.width = pct + '%';
         slider.style.left = pct + '%';
     }
-
-    // Slider setup
     const startDrag = () => isDragging = true;
     const stopDrag = () => isDragging = false;
-
     slider.addEventListener('mousedown', startDrag);
-    container.addEventListener('mousemove', (e) => {
-        if (isDragging) updateSlider(e.clientX);
-    });
+    container.addEventListener('mousemove', (e) => { if (isDragging) updateSlider(e.clientX); });
     document.addEventListener('mouseup', stopDrag);
-
     slider.addEventListener('touchstart', startDrag);
-    container.addEventListener('touchmove', (e) => {
-        if (isDragging) updateSlider(e.touches[0].clientX);
-    });
+    container.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0].clientX); });
     document.addEventListener('touchend', stopDrag);
 };
 
@@ -627,115 +659,53 @@ window.closeCompareModal = function() {
     document.getElementById('compareModal').classList.add('hidden');
 };
 
-// ── Feature 4: Download as PDF ─────────────────────────────
+// Download as PDF
 window.downloadAsPdf = function (id, filename) {
-    console.log('downloadAsPdf called:', id, filename);
-
     const item = fileQueue.find(f => f.id === id);
-    if (!item) {
-        console.error('Item not found for PDF:', id);
-        showToast('File not found. Please refresh and try again.', 'error');
-        return;
-    }
+    if (!item || !item.compressedBlob) { showToast('Image not ready.', 'error'); return; }
+    if (typeof window.jspdf === 'undefined') { showToast('PDF library loading...', 'error'); return; }
 
-    if (!item.compressedBlob) {
-        console.error('Compressed blob not available for:', id);
-        showToast('Image not ready. Please wait for compression to complete.', 'error');
-        return;
-    }
-
-    if (typeof window.jspdf === 'undefined') {
-        console.error('jsPDF library not loaded');
-        showToast('PDF library is still loading. Please wait and try again.', 'error');
-        return;
-    }
-
-    try {
-        // Create image from compressed URL
-        const img = new Image();
-        img.crossOrigin = 'anonymous'; // Handle CORS for canvas operations
-
-        img.onload = function () {
-            console.log('Image loaded for PDF conversion, dimensions:', img.width, 'x', img.height);
-
-            try {
-                // Create canvas
-                const canvas = document.createElement('canvas');
-                canvas.width = img.width;
-                canvas.height = img.height;
-                const ctx = canvas.getContext('2d');
-
-                // Fill with white background
-                ctx.fillStyle = '#FFFFFF';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                // Draw image
-                ctx.drawImage(img, 0, 0);
-
-                // Get data URL
-                const dataUrl = canvas.toDataURL('image/jpeg', 0.95);
-                console.log('Canvas data URL created, length:', dataUrl.length);
-
-                // Create PDF
-                const { jsPDF } = window.jspdf;
-                const pxToMm = 0.264583;
-                const widthMm = img.width * pxToMm;
-                const heightMm = img.height * pxToMm;
-
-                console.log('PDF dimensions (mm):', widthMm, 'x', heightMm);
-
-                const doc = new jsPDF({
-                    orientation: widthMm > heightMm ? 'l' : 'p',
-                    unit: 'mm',
-                    format: [widthMm, heightMm]
-                });
-
-                // Add image to PDF
-                doc.addImage(dataUrl, 'JPEG', 0, 0, widthMm, heightMm);
-
-                // Generate filename
-                const baseName = filename ? filename.substring(0, filename.lastIndexOf('.')) || filename : 'image';
-                const pdfFilename = `${baseName}.pdf`;
-
-                console.log('Saving PDF as:', pdfFilename);
-
-                // Save the PDF
-                doc.save(pdfFilename);
-
-                showToast('PDF downloaded successfully!');
-            } catch (pdfErr) {
-                console.error('PDF generation error:', pdfErr);
-                showToast('Failed to generate PDF. Please try again.', 'error');
-            }
-        };
-
-        img.onerror = function(err) {
-            console.error('Image load error for PDF:', err);
-            showToast('Failed to load image for PDF conversion.', 'error');
-        };
-
-        // Set the source
-        img.src = item.compressedUrl;
-        console.log('Loading image from:', item.compressedUrl);
-
-    } catch (err) {
-        console.error('PDF download error:', err);
-        showToast('PDF download failed. Please try again.', 'error');
-    }
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = function () {
+        try {
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0);
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.95);
+            const { jsPDF } = window.jspdf;
+            const pxToMm = 0.264583;
+            const widthMm = img.width * pxToMm;
+            const heightMm = img.height * pxToMm;
+            const doc = new jsPDF({
+                orientation: widthMm > heightMm ? 'l' : 'p',
+                unit: 'mm',
+                format: [widthMm, heightMm]
+            });
+            doc.addImage(dataUrl, 'JPEG', 0, 0, widthMm, heightMm);
+            const baseName = filename ? filename.substring(0, filename.lastIndexOf('.')) || filename : 'image';
+            doc.save(`${baseName}.pdf`);
+            showToast('PDF downloaded!');
+        } catch (pdfErr) {
+            console.error('PDF generation error:', pdfErr);
+            showToast('Failed to generate PDF.', 'error');
+        }
+    };
+    img.onerror = () => showToast('Failed to load image for PDF.', 'error');
+    img.src = item.compressedUrl;
 };
 
-// ── Download All as ZIP ────────────────────────────────────
+// Download All as ZIP
 if (btnDownloadZip) {
     btnDownloadZip.addEventListener('click', async () => {
-        if (typeof JSZip === 'undefined') {
-            showToast('ZIP library is still loading. Please try again in a second.', 'error');
-            return;
-        }
-
-        const zip       = new JSZip();
-        const targetKB  = targetKBInput.value;
-        let addedCount  = 0;
-
+        if (typeof JSZip === 'undefined') { showToast('ZIP library loading...', 'error'); return; }
+        const zip = new JSZip();
+        const targetKB = targetKBInput.value;
+        let addedCount = 0;
         const originalBtnHTML = btnDownloadZip.innerHTML;
         btnDownloadZip.innerHTML = '<div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div> Zipping...';
         btnDownloadZip.disabled = true;
@@ -744,22 +714,19 @@ if (btnDownloadZip) {
             try {
                 fileQueue.forEach(item => {
                     if (item.status === 'done' && item.compressedBlob) {
-                        const ext         = getExtension(item.mimeType || 'image/jpeg');
-                        const originalName  = item.file.name;
+                        const ext = getExtension(item.mimeType || 'image/jpeg');
+                        const originalName = item.file.name;
                         const nameWithoutExt = originalName.substring(0, originalName.lastIndexOf('.')) || originalName;
-                        const newFilename  = `${nameWithoutExt}-${targetKB}kb.${ext}`;
-                        zip.file(newFilename, item.compressedBlob);
+                        zip.file(`${nameWithoutExt}-${targetKB}kb.${ext}`, item.compressedBlob);
                         addedCount++;
                     }
                 });
-
                 if (addedCount > 0) {
                     const zipBlob = await zip.generateAsync({ type: 'blob' });
-                    const zipUrl  = URL.createObjectURL(zipBlob);
-
+                    const zipUrl = URL.createObjectURL(zipBlob);
                     const a = document.createElement('a');
                     a.style.display = 'none';
-                    a.href     = zipUrl;
+                    a.href = zipUrl;
                     a.download = `OptiDrop-${targetKB}KB-Batch.zip`;
                     document.body.appendChild(a);
                     a.click();
@@ -770,10 +737,10 @@ if (btnDownloadZip) {
                 }
             } catch (err) {
                 console.error(err);
-                showToast('Error generating ZIP file.', 'error');
+                showToast('Error generating ZIP.', 'error');
             } finally {
                 btnDownloadZip.innerHTML = originalBtnHTML;
-                btnDownloadZip.disabled  = false;
+                btnDownloadZip.disabled = false;
             }
         }, 100);
     });
@@ -781,7 +748,7 @@ if (btnDownloadZip) {
 
 
 /* ═══════════════════════════════════════════════════════════
-   MODE 2: IMAGES TO PDF MERGER
+   TOOL 2: IMAGES TO PDF MERGER
    ═══════════════════════════════════════════════════════════ */
 
 let mergeQueue = [];
@@ -793,85 +760,22 @@ const mergeStateUpload      = document.getElementById('merge-state-upload');
 const mergeStateSettings    = document.getElementById('merge-state-settings');
 const mergeStateLoading     = document.getElementById('merge-state-loading');
 const mergeStateResult      = document.getElementById('merge-state-result');
-
 const mergeQueueContainer   = document.getElementById('mergeQueueContainer');
 const mergeQueueCount       = document.getElementById('mergeQueueCount');
 const mergeProgressText     = document.getElementById('mergeProgressText');
 const mergeProgressBar      = document.getElementById('mergeProgressBar');
 const mergeSuccessCount     = document.getElementById('mergeSuccessCount');
-
 const btnMergeAddMore       = document.getElementById('btnMergeAddMore');
 const btnMergeCancel        = document.getElementById('btnMergeCancel');
 const btnMergeGenerate      = document.getElementById('btnMergeGenerate');
 const btnMergeDownload      = document.getElementById('btnMergeDownload');
 const btnMergeStartOver     = document.getElementById('btnMergeStartOver');
-
 const mergePageSize         = document.getElementById('mergePageSize');
 const mergeOrientation      = document.getElementById('mergeOrientation');
 const mergeMargin           = document.getElementById('mergeMargin');
 const mergeFilename         = document.getElementById('mergeFilename');
 
-// ── Tab Switching Logic (CLEAN & FIXED) ────────────────────
-const tabCompress = document.getElementById('tab-compress');
-const tabMerge    = document.getElementById('tab-merge');
-const modeCompress = document.getElementById('mode-compress');
-const modeMerge    = document.getElementById('mode-merge');
-
-if (tabCompress && tabMerge) {
-    tabCompress.addEventListener('click', (e) => {
-        e.preventDefault();
-        tabCompress.classList.add('active');
-        tabCompress.classList.remove('text-slate-500', 'hover:text-slate-700');
-        
-        tabMerge.classList.remove('active');
-        tabMerge.classList.add('text-slate-500', 'hover:text-slate-700');
-        
-        modeCompress.classList.remove('hidden');
-        modeMerge.classList.add('hidden');
-    });
-
-    tabMerge.addEventListener('click', (e) => {
-        e.preventDefault();
-        tabMerge.classList.add('active');
-        tabMerge.classList.remove('text-slate-500', 'hover:text-slate-700');
-        
-        tabCompress.classList.remove('active');
-        tabCompress.classList.add('text-slate-500', 'hover:text-slate-700');
-        
-        modeMerge.classList.remove('hidden');
-        modeCompress.classList.add('hidden');
-    });
-}
-
-// ── Merge Dropzone Handlers ────────────────────────────────
-if (mergeDropzone) {
-    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-        mergeDropzone.addEventListener(eventName, (e) => { e.preventDefault(); e.stopPropagation(); }, false);
-    });
-
-    ['dragenter', 'dragover'].forEach(eventName => {
-        mergeDropzone.addEventListener(eventName, () => mergeDropzone.classList.add('dropzone-active'), false);
-    });
-
-    ['dragleave', 'drop'].forEach(eventName => {
-        mergeDropzone.addEventListener(eventName, () => mergeDropzone.classList.remove('dropzone-active'), false);
-    });
-
-    mergeDropzone.addEventListener('drop', (e) => {
-        handleMergeFiles(e.dataTransfer.files);
-    }, false);
-
-    mergeDropzone.addEventListener('click', () => {
-        mergeFileInput.value = '';
-        mergeFileInput.click();
-    });
-}
-
-if (mergeFileInput) {
-    mergeFileInput.addEventListener('change', function () {
-        handleMergeFiles(this.files);
-    });
-}
+setupDropzone(mergeDropzone, mergeFileInput, handleMergeFiles);
 
 if (btnMergeAddMore) {
     btnMergeAddMore.addEventListener('click', () => {
@@ -880,53 +784,32 @@ if (btnMergeAddMore) {
     });
 }
 
-// ── Handle Merge Files ─────────────────────────────────────
 function handleMergeFiles(files) {
     if (files.length === 0) return;
-
     let addedCount = 0;
-    let skippedCount = 0;
-
     Array.from(files).forEach(file => {
-        if (mergeQueue.length >= MAX_MERGE_FILES) { skippedCount++; return; }
+        if (mergeQueue.length >= MAX_MERGE_FILES) return;
         if (!file.type.match('image.*')) return;
         if (file.size > 50 * 1024 * 1024) return;
-
         const fileId = Date.now().toString() + Math.random().toString(36).substr(2, 5);
-        const url = URL.createObjectURL(file);
-
-        mergeQueue.push({
-            id: fileId,
-            file: file,
-            url: url,
-            width: 0,
-            height: 0
-        });
+        mergeQueue.push({ id: fileId, file: file, url: URL.createObjectURL(file), width: 0, height: 0 });
         addedCount++;
     });
-
     if (addedCount > 0) {
         renderMergeQueue();
         mergeStateUpload.classList.add('hidden');
         mergeStateSettings.classList.remove('hidden');
     }
-
-    if (skippedCount > 0) {
-        showToast(`Max ${MAX_MERGE_FILES} images allowed. Some were skipped.`, 'info');
-    }
 }
 
-// ── Render Merge Queue ───────────────────────────────────
 function renderMergeQueue() {
     mergeQueueCount.textContent = mergeQueue.length;
     mergeQueueContainer.innerHTML = '';
-
     mergeQueue.forEach((item, index) => {
         const div = document.createElement('div');
         div.className = 'merge-queue-item';
         div.draggable = true;
         div.dataset.index = index;
-
         div.innerHTML = `
             <span class="merge-page-num">${index + 1}</span>
             <img src="${item.url}" class="merge-thumb" alt="Page ${index + 1}">
@@ -946,18 +829,9 @@ function renderMergeQueue() {
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
         `;
-
-        // Drag and drop reordering
-        div.addEventListener('dragstart', (e) => {
-            e.dataTransfer.setData('text/plain', index);
-            div.classList.add('dragging');
-        });
-        div.addEventListener('dragend', () => {
-            div.classList.remove('dragging');
-        });
-        div.addEventListener('dragover', (e) => {
-            e.preventDefault();
-        });
+        div.addEventListener('dragstart', (e) => { e.dataTransfer.setData('text/plain', index); div.classList.add('dragging'); });
+        div.addEventListener('dragend', () => div.classList.remove('dragging'));
+        div.addEventListener('dragover', (e) => e.preventDefault());
         div.addEventListener('drop', (e) => {
             e.preventDefault();
             const fromIndex = parseInt(e.dataTransfer.getData('text/plain'));
@@ -968,7 +842,6 @@ function renderMergeQueue() {
                 renderMergeQueue();
             }
         });
-
         mergeQueueContainer.appendChild(div);
     });
 }
@@ -1012,21 +885,14 @@ if (btnMergeStartOver) {
     });
 }
 
-// ── Generate PDF ───────────────────────────────────────────
+// Generate PDF
 let generatedPdfDoc = null;
 let generatedPdfFilename = '';
 
 if (btnMergeGenerate) {
     btnMergeGenerate.addEventListener('click', async () => {
-        if (mergeQueue.length === 0) {
-            showToast('Please add at least one image.', 'error');
-            return;
-        }
-
-        if (typeof window.jspdf === 'undefined') {
-            showToast('PDF library is still loading. Please wait and try again.', 'error');
-            return;
-        }
+        if (mergeQueue.length === 0) { showToast('Please add at least one image.', 'error'); return; }
+        if (typeof window.jspdf === 'undefined') { showToast('PDF library loading...', 'error'); return; }
 
         mergeStateLoading.classList.remove('hidden');
         mergeStateSettings.classList.add('hidden');
@@ -1035,28 +901,18 @@ if (btnMergeGenerate) {
         const orientation = mergeOrientation.value;
         const marginMm    = parseInt(mergeMargin.value, 10);
         const filename    = mergeFilename.value.trim() || 'merged-document';
-
         const { jsPDF } = window.jspdf;
 
         let pdf;
-        const sizes = {
-            a4:     { w: 210, h: 297 },
-            letter: { w: 216, h: 279 }
-        };
+        const sizes = { a4: { w: 210, h: 297 }, letter: { w: 216, h: 279 } };
 
         if (pageSize === 'auto') {
             const firstImg = await loadImage(mergeQueue[0].url);
             const firstRatio = firstImg.width / firstImg.height;
-            const autoOrient = firstRatio > 1 ? 'l' : 'p';
-            pdf = new jsPDF({ orientation: autoOrient, unit: 'mm' });
+            pdf = new jsPDF({ orientation: firstRatio > 1 ? 'l' : 'p', unit: 'mm' });
         } else {
             const size = sizes[pageSize];
-            const orient = orientation === 'auto' ? 'p' : orientation;
-            pdf = new jsPDF({
-                orientation: orient,
-                unit: 'mm',
-                format: [size.w, size.h]
-            });
+            pdf = new jsPDF({ orientation: orientation === 'auto' ? 'p' : orientation, unit: 'mm', format: [size.w, size.h] });
         }
 
         const total = mergeQueue.length;
@@ -1066,7 +922,6 @@ if (btnMergeGenerate) {
             const item = mergeQueue[i];
             const img = await loadImage(item.url);
             processed++;
-
             const pct = Math.round((processed / total) * 100);
             mergeProgressText.textContent = `${processed} / ${total} pages added`;
             mergeProgressBar.style.width = `${pct}%`;
@@ -1076,12 +931,8 @@ if (btnMergeGenerate) {
                 const imgW = img.width * pxToMm;
                 const imgH = img.height * pxToMm;
                 const orient = imgW > imgH ? 'l' : 'p';
-
                 if (i > 0) pdf.addPage([imgW, imgH], orient);
-                else if (i === 0) {
-                    pdf = new jsPDF({ orientation: orient, unit: 'mm', format: [imgW, imgH] });
-                }
-
+                else if (i === 0) pdf = new jsPDF({ orientation: orient, unit: 'mm', format: [imgW, imgH] });
                 const canvas = document.createElement('canvas');
                 canvas.width = img.width;
                 canvas.height = img.height;
@@ -1089,23 +940,14 @@ if (btnMergeGenerate) {
                 ctx.fillStyle = '#FFFFFF';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 ctx.drawImage(img, 0, 0);
-                const dataUrl = canvas.toDataURL('image/jpeg', 0.95);
-
-                pdf.addImage(dataUrl, 'JPEG', 0, 0, imgW, imgH);
+                pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, imgW, imgH);
             } else {
                 const size = sizes[pageSize];
-                const pw = size.w;
-                const ph = size.h;
-
+                const pw = size.w, ph = size.h;
                 let orient = orientation;
-                if (orient === 'auto') {
-                    orient = (img.width / img.height) > (pw / ph) ? 'l' : 'p';
-                }
-
+                if (orient === 'auto') orient = (img.width / img.height) > (pw / ph) ? 'l' : 'p';
                 if (i > 0) pdf.addPage([pw, ph], orient);
-                else if (orient !== pdf.internal.pageSize.orientation) {
-                    pdf = new jsPDF({ orientation: orient, unit: 'mm', format: [pw, ph] });
-                }
+                else if (orient !== pdf.internal.pageSize.orientation) pdf = new jsPDF({ orientation: orient, unit: 'mm', format: [pw, ph] });
 
                 const canvas = document.createElement('canvas');
                 canvas.width = img.width;
@@ -1120,74 +962,938 @@ if (btnMergeGenerate) {
                 const availH = ph - (marginMm * 2);
                 const imgRatio = img.width / img.height;
                 const availRatio = availW / availH;
-
                 let drawW, drawH, drawX, drawY;
-                if (imgRatio > availRatio) {
-                    drawW = availW;
-                    drawH = availW / imgRatio;
-                } else {
-                    drawH = availH;
-                    drawW = availH * imgRatio;
-                }
+                if (imgRatio > availRatio) { drawW = availW; drawH = availW / imgRatio; }
+                else { drawH = availH; drawW = availH * imgRatio; }
                 drawX = (pw - drawW) / 2;
                 drawY = (ph - drawH) / 2;
-
                 pdf.addImage(dataUrl, 'JPEG', drawX, drawY, drawW, drawH);
             }
-
             await new Promise(r => setTimeout(r, 10));
         }
 
         generatedPdfDoc = pdf;
         generatedPdfFilename = `${filename}.pdf`;
         mergeSuccessCount.textContent = total;
-
         mergeStateLoading.classList.add('hidden');
         mergeStateResult.classList.remove('hidden');
         showToast(`PDF created with ${total} page(s)!`);
     });
 }
 
-function loadImage(src) {
-    return new Promise((resolve) => {
-        const img = new Image();
-        img.onload = () => resolve(img);
-        img.src = src;
-    });
-}
-
 if (btnMergeDownload) {
     btnMergeDownload.addEventListener('click', () => {
-        if (!generatedPdfDoc) {
-            showToast('No PDF generated yet. Please generate a PDF first.', 'error');
-            return;
-        }
-
+        if (!generatedPdfDoc) { showToast('No PDF generated.', 'error'); return; }
         try {
             generatedPdfDoc.save(generatedPdfFilename);
-            showToast('PDF downloaded successfully!');
+            showToast('PDF downloaded!');
         } catch (err) {
             console.error('PDF download failed:', err);
-            showToast('PDF download failed. Please try again.', 'error');
+            showToast('PDF download failed.', 'error');
         }
     });
 }
 
 
 /* ═══════════════════════════════════════════════════════════
-   FAQ ACCORDION (EVENT BUBBLING FIX)
+   TOOL 3: HEIC TO JPG CONVERTER
+   ═══════════════════════════════════════════════════════════ */
+
+let heicQueue = [];
+const MAX_HEIC_FILES = 20;
+
+const heicDropzone       = document.getElementById('heicDropzone');
+const heicFileInput      = document.getElementById('heicFileInput');
+const heicStateUpload    = document.getElementById('heic-state-upload');
+const heicStateSettings  = document.getElementById('heic-state-settings');
+const heicStateLoading   = document.getElementById('heic-state-loading');
+const heicStateResult    = document.getElementById('heic-state-result');
+const heicPreviewContainer = document.getElementById('heicPreviewContainer');
+const heicQueueCount     = document.getElementById('heicQueueCount');
+const heicQuality        = document.getElementById('heicQuality');
+const heicProgressText   = document.getElementById('heicProgressText');
+const heicProgressBar    = document.getElementById('heicProgressBar');
+const heicLoadingPercent = document.getElementById('heicLoadingPercent');
+const heicResultsContainer = document.getElementById('heicResultsContainer');
+const heicSuccessCount   = document.getElementById('heicSuccessCount');
+const btnHeicCancel      = document.getElementById('btnHeicCancel');
+const btnHeicConvert     = document.getElementById('btnHeicConvert');
+const btnHeicDownloadZip = document.getElementById('btnHeicDownloadZip');
+const btnHeicStartOver   = document.getElementById('btnHeicStartOver');
+
+setupDropzone(heicDropzone, heicFileInput, handleHeicFiles);
+
+function handleHeicFiles(files) {
+    if (files.length === 0) return;
+    let addedCount = 0;
+    Array.from(files).forEach(file => {
+        if (heicQueue.length >= MAX_HEIC_FILES) return;
+        const name = file.name.toLowerCase();
+        if (!name.endsWith('.heic') && !name.endsWith('.heif') && !file.type.match('heic|heif')) return;
+        const fileId = Date.now().toString() + Math.random().toString(36).substr(2, 5);
+        heicQueue.push({ id: fileId, file: file, url: null, jpgBlob: null, jpgUrl: null, status: 'pending' });
+        addedCount++;
+    });
+    if (addedCount > 0) {
+        renderHeicPreview();
+        heicStateUpload.classList.add('hidden');
+        heicStateSettings.classList.remove('hidden');
+    }
+    if (addedCount === 0) {
+        showToast('No valid HEIC/HEIF files found.', 'error');
+    }
+}
+
+function renderHeicPreview() {
+    heicQueueCount.textContent = heicQueue.length;
+    heicPreviewContainer.innerHTML = '';
+    heicQueue.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'relative rounded-xl overflow-hidden bg-orange-50 border border-orange-200 aspect-square flex items-center justify-center';
+        div.innerHTML = `
+            <div class="text-center p-2">
+                <svg class="w-8 h-8 text-orange-400 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
+                <p class="text-[10px] font-semibold text-orange-700 truncate px-1">${item.file.name}</p>
+            </div>
+            <button onclick="removeHeicFile(${index})" class="absolute top-1 right-1 bg-red-500 text-white p-1 rounded-full hover:bg-red-600 transition-colors shadow" style="padding:2px;">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        `;
+        heicPreviewContainer.appendChild(div);
+    });
+}
+
+window.removeHeicFile = function(index) {
+    heicQueue.splice(index, 1);
+    renderHeicPreview();
+    if (heicQueue.length === 0) {
+        heicStateSettings.classList.add('hidden');
+        heicStateUpload.classList.remove('hidden');
+    }
+};
+
+if (btnHeicCancel) {
+    btnHeicCancel.addEventListener('click', () => {
+        heicQueue.forEach(item => { if (item.url) URL.revokeObjectURL(item.url); if (item.jpgUrl) URL.revokeObjectURL(item.jpgUrl); });
+        heicQueue = [];
+        heicFileInput.value = '';
+        heicStateSettings.classList.add('hidden');
+        heicStateUpload.classList.remove('hidden');
+    });
+}
+
+if (btnHeicStartOver) {
+    btnHeicStartOver.addEventListener('click', () => {
+        heicQueue.forEach(item => { if (item.url) URL.revokeObjectURL(item.url); if (item.jpgUrl) URL.revokeObjectURL(item.jpgUrl); });
+        heicQueue = [];
+        heicFileInput.value = '';
+        heicStateResult.classList.add('hidden');
+        heicStateUpload.classList.remove('hidden');
+    });
+}
+
+if (btnHeicConvert) {
+    btnHeicConvert.addEventListener('click', async () => {
+        if (heicQueue.length === 0) { showToast('Please add HEIC files.', 'error'); return; }
+        if (typeof heic2any === 'undefined') { showToast('HEIC library loading. Please wait...', 'error'); return; }
+
+        heicStateLoading.classList.remove('hidden');
+        heicStateSettings.classList.add('hidden');
+        const quality = parseFloat(heicQuality.value);
+        let successCount = 0;
+        const total = heicQueue.length;
+
+        for (let i = 0; i < total; i++) {
+            const item = heicQueue[i];
+            heicProgressText.textContent = `${i + 1} / ${total} converting...`;
+            heicLoadingPercent.textContent = `${Math.round(((i + 1) / total) * 100)}%`;
+            heicProgressBar.style.width = `${Math.round(((i + 1) / total) * 100)}%`;
+
+            try {
+                const result = await heic2any({
+                    blob: item.file,
+                    toType: 'image/jpeg',
+                    quality: quality
+                });
+                // heic2any returns a blob or array of blobs
+                const blob = Array.isArray(result) ? result[0] : result;
+                item.jpgBlob = blob;
+                item.jpgUrl = URL.createObjectURL(blob);
+                item.status = 'done';
+                successCount++;
+            } catch (err) {
+                console.error('HEIC conversion failed:', item.file.name, err);
+                item.status = 'error';
+            }
+            await new Promise(r => setTimeout(r, 10));
+        }
+
+        heicSuccessCount.textContent = successCount;
+        renderHeicResults();
+        heicStateLoading.classList.add('hidden');
+        heicStateResult.classList.remove('hidden');
+        showToast(`Converted ${successCount} HEIC photo(s) to JPG!`);
+    });
+}
+
+function renderHeicResults() {
+    heicResultsContainer.innerHTML = '';
+    heicQueue.forEach((item, index) => {
+        if (item.status !== 'done') return;
+        const originalName = item.file.name.replace(/\.(heic|heif)$/i, '');
+        const div = document.createElement('div');
+        div.className = 'bg-white border border-slate-200 p-3 rounded-xl flex items-center gap-3 shadow-sm';
+        div.innerHTML = `
+            <img src="${item.jpgUrl}" class="w-12 h-12 object-cover rounded-lg border border-slate-200 flex-shrink-0" alt="Converted">
+            <div class="min-w-0 flex-1">
+                <p class="text-sm font-bold text-slate-800 truncate">${originalName}.jpg</p>
+                <p class="text-xs text-slate-500">${formatBytes(item.jpgBlob.size)}</p>
+            </div>
+            <a href="${item.jpgUrl}" download="${originalName}.jpg" class="p-2 text-orange-600 hover:bg-orange-50 rounded-xl transition-colors border border-transparent hover:border-orange-200 flex-shrink-0" title="Download JPG">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            </a>
+        `;
+        heicResultsContainer.appendChild(div);
+    });
+}
+
+if (btnHeicDownloadZip) {
+    btnHeicDownloadZip.addEventListener('click', async () => {
+        if (typeof JSZip === 'undefined') { showToast('ZIP library loading...', 'error'); return; }
+        const zip = new JSZip();
+        let count = 0;
+        heicQueue.forEach(item => {
+            if (item.status === 'done' && item.jpgBlob) {
+                const originalName = item.file.name.replace(/\.(heic|heif)$/i, '');
+                zip.file(`${originalName}.jpg`, item.jpgBlob);
+                count++;
+            }
+        });
+        if (count === 0) { showToast('No files to download.', 'error'); return; }
+        const zipBlob = await zip.generateAsync({ type: 'blob' });
+        const zipUrl = URL.createObjectURL(zipBlob);
+        const a = document.createElement('a');
+        a.href = zipUrl;
+        a.download = 'OptiDrop-HEIC-to-JPG.zip';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(zipUrl);
+        showToast('ZIP downloaded!');
+    });
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   TOOL 4: PDF TO JPG EXTRACTOR
+   ═══════════════════════════════════════════════════════════ */
+
+let pdf2jpgDoc = null;
+let pdf2jpgPages = [];
+
+const pdf2jpgDropzone       = document.getElementById('pdf2jpgDropzone');
+const pdf2jpgFileInput      = document.getElementById('pdf2jpgFileInput');
+const pdf2jpgStateUpload    = document.getElementById('pdf2jpg-state-upload');
+const pdf2jpgStateSettings  = document.getElementById('pdf2jpg-state-settings');
+const pdf2jpgStateLoading   = document.getElementById('pdf2jpg-state-loading');
+const pdf2jpgStateResult    = document.getElementById('pdf2jpg-state-result');
+const pdf2jpgFileName       = document.getElementById('pdf2jpgFileName');
+const pdf2jpgPageCount      = document.getElementById('pdf2jpgPageCount');
+const pdf2jpgQuality        = document.getElementById('pdf2jpgQuality');
+const pdf2jpgScale          = document.getElementById('pdf2jpgScale');
+const pdf2jpgProgressText   = document.getElementById('pdf2jpgProgressText');
+const pdf2jpgProgressBar    = document.getElementById('pdf2jpgProgressBar');
+const pdf2jpgLoadingPercent = document.getElementById('pdf2jpgLoadingPercent');
+const pdf2jpgResultsContainer = document.getElementById('pdf2jpgResultsContainer');
+const pdf2jpgSuccessCount   = document.getElementById('pdf2jpgSuccessCount');
+const btnPdf2jpgCancel      = document.getElementById('btnPdf2jpgCancel');
+const btnPdf2jpgExtract     = document.getElementById('btnPdf2jpgExtract');
+const btnPdf2jpgDownloadZip = document.getElementById('btnPdf2jpgDownloadZip');
+const btnPdf2jpgStartOver   = document.getElementById('btnPdf2jpgStartOver');
+
+setupDropzone(pdf2jpgDropzone, pdf2jpgFileInput, handlePdf2jpgFile);
+
+async function handlePdf2jpgFile(files) {
+    if (!files || files.length === 0) return;
+    const file = files[0];
+    if (!file.name.toLowerCase().endsWith('.pdf')) {
+        showToast('Please select a PDF file.', 'error');
+        return;
+    }
+
+    // Check if pdfjsLib is available
+    if (typeof pdfjsLib === 'undefined') {
+        showToast('PDF library is still loading. Please try again.', 'error');
+        return;
+    }
+
+    try {
+        const arrayBuffer = await file.arrayBuffer();
+        pdf2jpgDoc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+        pdf2jpgFileName.textContent = file.name;
+        pdf2jpgPageCount.textContent = `${pdf2jpgDoc.numPages} pages detected`;
+        pdf2jpgStateUpload.classList.add('hidden');
+        pdf2jpgStateSettings.classList.remove('hidden');
+    } catch (err) {
+        console.error('Failed to load PDF:', err);
+        showToast('Failed to load PDF. It may be corrupted or password-protected.', 'error');
+    }
+}
+
+if (btnPdf2jpgCancel) {
+    btnPdf2jpgCancel.addEventListener('click', () => {
+        pdf2jpgDoc = null;
+        pdf2jpgPages.forEach(p => { if (p.url) URL.revokeObjectURL(p.url); });
+        pdf2jpgPages = [];
+        pdf2jpgFileInput.value = '';
+        pdf2jpgStateSettings.classList.add('hidden');
+        pdf2jpgStateUpload.classList.remove('hidden');
+    });
+}
+
+if (btnPdf2jpgStartOver) {
+    btnPdf2jpgStartOver.addEventListener('click', () => {
+        pdf2jpgDoc = null;
+        pdf2jpgPages.forEach(p => { if (p.url) URL.revokeObjectURL(p.url); });
+        pdf2jpgPages = [];
+        pdf2jpgFileInput.value = '';
+        pdf2jpgStateResult.classList.add('hidden');
+        pdf2jpgStateUpload.classList.remove('hidden');
+    });
+}
+
+if (btnPdf2jpgExtract) {
+    btnPdf2jpgExtract.addEventListener('click', async () => {
+        if (!pdf2jpgDoc) { showToast('No PDF loaded.', 'error'); return; }
+
+        pdf2jpgStateLoading.classList.remove('hidden');
+        pdf2jpgStateSettings.classList.add('hidden');
+
+        const qualityMap = { high: 0.95, medium: 0.85, low: 0.7 };
+        const jpegQuality = qualityMap[pdf2jpgQuality.value] || 0.95;
+        const scale = parseFloat(pdf2jpgScale.value) || 2;
+        const total = pdf2jpgDoc.numPages;
+        pdf2jpgPages = [];
+
+        for (let i = 1; i <= total; i++) {
+            const pct = Math.round((i / total) * 100);
+            pdf2jpgProgressText.textContent = `${i} / ${total} pages extracted`;
+            pdf2jpgProgressBar.style.width = `${pct}%`;
+            pdf2jpgLoadingPercent.textContent = `${pct}%`;
+
+            try {
+                const page = await pdf2jpgDoc.getPage(i);
+                const viewport = page.getViewport({ scale: scale });
+                const canvas = document.createElement('canvas');
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                const ctx = canvas.getContext('2d');
+                ctx.fillStyle = '#FFFFFF';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+
+                const blob = await new Promise(resolve => {
+                    canvas.toBlob(b => resolve(b), 'image/jpeg', jpegQuality);
+                });
+
+                pdf2jpgPages.push({
+                    pageNum: i,
+                    blob: blob,
+                    url: URL.createObjectURL(blob)
+                });
+            } catch (err) {
+                console.error(`Failed to extract page ${i}:`, err);
+            }
+            await new Promise(r => setTimeout(r, 10));
+        }
+
+        pdf2jpgSuccessCount.textContent = pdf2jpgPages.length;
+        renderPdf2jpgResults();
+        pdf2jpgStateLoading.classList.add('hidden');
+        pdf2jpgStateResult.classList.remove('hidden');
+        showToast(`Extracted ${pdf2jpgPages.length} pages as JPG!`);
+    });
+}
+
+function renderPdf2jpgResults() {
+    pdf2jpgResultsContainer.innerHTML = '';
+    pdf2jpgPages.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'pdf2jpg-result-item';
+        div.innerHTML = `
+            <img src="${item.url}" alt="Page ${item.pageNum}">
+            <div class="pdf2jpg-item-actions justify-between items-center px-2">
+                <span class="text-xs font-bold text-slate-600">Page ${item.pageNum}</span>
+                <a href="${item.url}" download="page-${item.pageNum}.jpg" class="text-purple-600 hover:text-purple-800 p-1" title="Download">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                </a>
+            </div>
+        `;
+        pdf2jpgResultsContainer.appendChild(div);
+    });
+}
+
+if (btnPdf2jpgDownloadZip) {
+    btnPdf2jpgDownloadZip.addEventListener('click', async () => {
+        if (typeof JSZip === 'undefined') { showToast('ZIP library loading...', 'error'); return; }
+        if (pdf2jpgPages.length === 0) { showToast('No pages extracted.', 'error'); return; }
+        const zip = new JSZip();
+        pdf2jpgPages.forEach(item => {
+            zip.file(`page-${item.pageNum}.jpg`, item.blob);
+        });
+        const zipBlob = await zip.generateAsync({ type: 'blob' });
+        const zipUrl = URL.createObjectURL(zipBlob);
+        const a = document.createElement('a');
+        a.href = zipUrl;
+        a.download = 'OptiDrop-PDF-Pages.zip';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(zipUrl);
+        showToast('ZIP downloaded!');
+    });
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   TOOL 5: 300 DPI PHOTO RESIZER
+   ═══════════════════════════════════════════════════════════ */
+
+let resizerFile = null;
+let resizerOriginalImg = null;
+let resizerResultBlob = null;
+let resizerResultUrl = null;
+
+const resizerDropzone      = document.getElementById('resizerDropzone');
+const resizerFileInput     = document.getElementById('resizerFileInput');
+const resizerStateUpload   = document.getElementById('resizer-state-upload');
+const resizerStateSettings = document.getElementById('resizer-state-settings');
+const resizerStateResult   = document.getElementById('resizer-state-result');
+const resizerCanvas        = document.getElementById('resizerCanvas');
+const resizerWidthInput    = document.getElementById('resizerWidth');
+const resizerHeightInput   = document.getElementById('resizerHeight');
+const resizerDPI           = document.getElementById('resizerDPI');
+const resizerBg            = document.getElementById('resizerBg');
+const resizerResultDims    = document.getElementById('resizerResultDims');
+const resizerResultDPI     = document.getElementById('resizerResultDPI');
+const resizerResultPreview = document.getElementById('resizerResultPreview');
+const btnResizerCancel     = document.getElementById('btnResizerCancel');
+const btnResizerResize     = document.getElementById('btnResizerResize');
+const btnResizerDownload   = document.getElementById('btnResizerDownload');
+const btnResizerStartOver  = document.getElementById('btnResizerStartOver');
+const resizerPresetBtns    = document.querySelectorAll('.resizer-preset-btn');
+
+setupDropzone(resizerDropzone, resizerFileInput, handleResizerFile);
+
+function handleResizerFile(files) {
+    if (!files || files.length === 0) return;
+    const file = files[0];
+    if (!file.type.match('image.*')) { showToast('Please select an image file.', 'error'); return; }
+
+    resizerFile = file;
+    const url = URL.createObjectURL(file);
+    resizerOriginalImg = new Image();
+    resizerOriginalImg.onload = function() {
+        // Set default dimensions if empty
+        if (!resizerWidthInput.value && !resizerHeightInput.value) {
+            resizerWidthInput.value = this.width;
+            resizerHeightInput.value = this.height;
+        }
+        drawResizerPreview();
+        resizerStateUpload.classList.add('hidden');
+        resizerStateSettings.classList.remove('hidden');
+    };
+    resizerOriginalImg.src = url;
+}
+
+// Resizer presets
+resizerPresetBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        resizerWidthInput.value = btn.dataset.w;
+        resizerHeightInput.value = btn.dataset.h;
+        resizerPresetBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        drawResizerPreview();
+        showToast(`Preset: ${btn.dataset.label} (${btn.dataset.w}x${btn.dataset.h})`);
+    });
+});
+
+[resizerWidthInput, resizerHeightInput].forEach(input => {
+    input.addEventListener('input', () => {
+        resizerPresetBtns.forEach(b => {
+            b.classList.toggle('active', b.dataset.w === resizerWidthInput.value && b.dataset.h === resizerHeightInput.value);
+        });
+        drawResizerPreview();
+    });
+});
+
+function drawResizerPreview() {
+    if (!resizerOriginalImg || !resizerCanvas) return;
+    const ctx = resizerCanvas.getContext('2d');
+    const container = resizerCanvas.parentElement;
+    const maxW = container.clientWidth || 400;
+    const maxH = 300;
+
+    const imgW = resizerOriginalImg.width;
+    const imgH = resizerOriginalImg.height;
+    const ratio = Math.min(maxW / imgW, maxH / imgH, 1);
+    const displayW = Math.floor(imgW * ratio);
+    const displayH = Math.floor(imgH * ratio);
+
+    resizerCanvas.width = displayW;
+    resizerCanvas.height = displayH;
+    ctx.fillStyle = '#f1f5f9';
+    ctx.fillRect(0, 0, displayW, displayH);
+    ctx.drawImage(resizerOriginalImg, 0, 0, displayW, displayH);
+
+    // Draw crop overlay if dimensions are set
+    const targetW = parseInt(resizerWidthInput.value) || 0;
+    const targetH = parseInt(resizerHeightInput.value) || 0;
+    if (targetW > 0 && targetH > 0) {
+        const cropRatio = targetW / targetH;
+        const imgActualRatio = imgW / imgH;
+        let cropW, cropH, cropX, cropY;
+        if (cropRatio > imgActualRatio) {
+            cropW = imgW;
+            cropH = imgW / cropRatio;
+            cropX = 0;
+            cropY = (imgH - cropH) / 2;
+        } else {
+            cropH = imgH;
+            cropW = imgH * cropRatio;
+            cropX = (imgW - cropW) / 2;
+            cropY = 0;
+        }
+        // Draw dimmed overlay
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+        ctx.fillRect(0, 0, displayW, displayH);
+        // Clear crop area
+        ctx.drawImage(resizerOriginalImg, cropX, cropY, cropW, cropH, cropX * ratio, cropY * ratio, cropW * ratio, cropH * ratio);
+        // Draw crop border
+        ctx.strokeStyle = '#10b981';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(cropX * ratio, cropY * ratio, cropW * ratio, cropH * ratio);
+    }
+}
+
+if (btnResizerCancel) {
+    btnResizerCancel.addEventListener('click', () => {
+        resizerFile = null;
+        resizerOriginalImg = null;
+        resizerWidthInput.value = '';
+        resizerHeightInput.value = '';
+        resizerPresetBtns.forEach(b => b.classList.remove('active'));
+        resizerStateSettings.classList.add('hidden');
+        resizerStateUpload.classList.remove('hidden');
+    });
+}
+
+if (btnResizerStartOver) {
+    btnResizerStartOver.addEventListener('click', () => {
+        if (resizerResultUrl) URL.revokeObjectURL(resizerResultUrl);
+        resizerFile = null;
+        resizerOriginalImg = null;
+        resizerResultBlob = null;
+        resizerResultUrl = null;
+        resizerWidthInput.value = '';
+        resizerHeightInput.value = '';
+        resizerPresetBtns.forEach(b => b.classList.remove('active'));
+        resizerStateResult.classList.add('hidden');
+        resizerStateUpload.classList.remove('hidden');
+    });
+}
+
+if (btnResizerResize) {
+    btnResizerResize.addEventListener('click', async () => {
+        if (!resizerOriginalImg) { showToast('Please upload a photo first.', 'error'); return; }
+
+        const targetW = parseInt(resizerWidthInput.value) || 0;
+        const targetH = parseInt(resizerHeightInput.value) || 0;
+        if (targetW <= 0 || targetH <= 0) {
+            showToast('Please enter valid width and height.', 'error');
+            return;
+        }
+
+        const dpi = parseInt(resizerDPI.value) || 300;
+        const bgType = resizerBg.value;
+
+        const canvas = document.createElement('canvas');
+        canvas.width = targetW;
+        canvas.height = targetH;
+        const ctx = canvas.getContext('2d');
+
+        if (bgType === 'transparent') {
+            ctx.clearRect(0, 0, targetW, targetH);
+        } else {
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, targetW, targetH);
+        }
+
+        // Center-crop to fit target aspect ratio
+        const imgW = resizerOriginalImg.width;
+        const imgH = resizerOriginalImg.height;
+        const targetRatio = targetW / targetH;
+        const imgRatio = imgW / imgH;
+
+        let sx, sy, sw, sh;
+        if (targetRatio > imgRatio) {
+            sh = imgH;
+            sw = imgH * targetRatio;
+            sx = (imgW - sw) / 2;
+            sy = 0;
+        } else {
+            sw = imgW;
+            sh = imgW / targetRatio;
+            sx = 0;
+            sy = (imgH - sh) / 2;
+        }
+
+        ctx.drawImage(resizerOriginalImg, sx, sy, sw, sh, 0, 0, targetW, targetH);
+
+        const mimeType = bgType === 'transparent' ? 'image/png' : 'image/jpeg';
+        const quality = bgType === 'transparent' ? undefined : 0.95;
+
+        resizerResultBlob = await new Promise(resolve => {
+            canvas.toBlob(b => resolve(b), mimeType, quality);
+        });
+
+        if (resizerResultUrl) URL.revokeObjectURL(resizerResultUrl);
+        resizerResultUrl = URL.createObjectURL(resizerResultBlob);
+
+        resizerResultDims.textContent = `${targetW} x ${targetH} px`;
+        resizerResultDPI.textContent = `${dpi} DPI`;
+        resizerResultPreview.innerHTML = `<img src="${resizerResultUrl}" class="max-w-[200px] max-h-[200px] object-contain rounded-lg border border-slate-200" alt="Resized">`;
+
+        resizerStateSettings.classList.add('hidden');
+        resizerStateResult.classList.remove('hidden');
+        showToast('Photo resized successfully!');
+    });
+}
+
+if (btnResizerDownload) {
+    btnResizerDownload.addEventListener('click', () => {
+        if (!resizerResultUrl) { showToast('No resized photo available.', 'error'); return; }
+        const ext = resizerBg.value === 'transparent' ? 'png' : 'jpg';
+        const a = document.createElement('a');
+        a.href = resizerResultUrl;
+        a.download = `optidrop-resized-${resizerWidthInput.value}x${resizerHeightInput.value}.${ext}`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        showToast('Photo downloaded!');
+    });
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   TOOL 6: NAME & DATE STAMPER
+   ═══════════════════════════════════════════════════════════ */
+
+let stamperFile = null;
+let stamperOriginalImg = null;
+let stamperResultBlob = null;
+let stamperResultUrl = null;
+
+const stamperDropzone      = document.getElementById('stamperDropzone');
+const stamperFileInput     = document.getElementById('stamperFileInput');
+const stamperStateUpload   = document.getElementById('stamper-state-upload');
+const stamperStateSettings = document.getElementById('stamper-state-settings');
+const stamperStateResult   = document.getElementById('stamper-state-result');
+const stamperCanvas        = document.getElementById('stamperCanvas');
+const stamperNameInput     = document.getElementById('stamperName');
+const stamperDateInput     = document.getElementById('stamperDate');
+const stamperPosition      = document.getElementById('stamperPosition');
+const stamperFontSize      = document.getElementById('stamperFontSize');
+const stamperResultPreview = document.getElementById('stamperResultPreview');
+const btnStamperCancel     = document.getElementById('btnStamperCancel');
+const btnStamperStamp      = document.getElementById('btnStamperStamp');
+const btnStamperDownload   = document.getElementById('btnStamperDownload');
+const btnStamperStartOver  = document.getElementById('btnStamperStartOver');
+const stamperColorBtns     = document.querySelectorAll('.stamper-color-btn');
+
+let stamperColor = 'white';
+
+// Set default date to today
+if (stamperDateInput) {
+    const today = new Date();
+    stamperDateInput.value = today.toISOString().split('T')[0];
+}
+
+setupDropzone(stamperDropzone, stamperFileInput, handleStamperFile);
+
+function handleStamperFile(files) {
+    if (!files || files.length === 0) return;
+    const file = files[0];
+    if (!file.type.match('image.*')) { showToast('Please select an image file.', 'error'); return; }
+
+    stamperFile = file;
+    const url = URL.createObjectURL(file);
+    stamperOriginalImg = new Image();
+    stamperOriginalImg.onload = function() {
+        drawStamperPreview();
+        stamperStateUpload.classList.add('hidden');
+        stamperStateSettings.classList.remove('hidden');
+    };
+    stamperOriginalImg.src = url;
+}
+
+// Color picker
+stamperColorBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        stamperColor = btn.dataset.color;
+        stamperColorBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        drawStamperPreview();
+    });
+});
+
+// Live preview on input changes
+[stamperNameInput, stamperDateInput, stamperPosition, stamperFontSize].forEach(el => {
+    if (el) {
+        el.addEventListener('input', drawStamperPreview);
+        el.addEventListener('change', drawStamperPreview);
+    }
+});
+
+function drawStamperPreview() {
+    if (!stamperOriginalImg || !stamperCanvas) return;
+    const ctx = stamperCanvas.getContext('2d');
+    const container = stamperCanvas.parentElement;
+    const maxW = container.clientWidth || 400;
+    const maxH = 300;
+
+    const imgW = stamperOriginalImg.width;
+    const imgH = stamperOriginalImg.height;
+    const ratio = Math.min(maxW / imgW, maxH / imgH, 1);
+    const displayW = Math.floor(imgW * ratio);
+    const displayH = Math.floor(imgH * ratio);
+
+    stamperCanvas.width = displayW;
+    stamperCanvas.height = displayH;
+    ctx.drawImage(stamperOriginalImg, 0, 0, displayW, displayH);
+
+    // Draw stamp text
+    const name = stamperNameInput.value.trim();
+    const dateVal = stamperDateInput.value;
+    if (!name && !dateVal) return;
+
+    let dateFormatted = '';
+    if (dateVal) {
+        const d = new Date(dateVal);
+        const day = String(d.getDate()).padStart(2, '0');
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const year = d.getFullYear();
+        dateFormatted = `${day}/${month}/${year}`;
+    }
+
+    const stampText = [name, dateFormatted].filter(Boolean).join('  |  ');
+
+    const fontSizeMap = { small: 0.025, medium: 0.035, large: 0.05 };
+    const fontSizeRatio = fontSizeMap[stamperFontSize.value] || 0.035;
+    const fontSize = Math.max(10, Math.floor(imgW * fontSizeRatio));
+    const scaledFontSize = fontSize * ratio;
+
+    ctx.font = `bold ${scaledFontSize}px Inter, Arial, sans-serif`;
+    ctx.textBaseline = 'bottom';
+
+    const padding = Math.floor(scaledFontSize * 0.5);
+    const textMetrics = ctx.measureText(stampText);
+    const textW = textMetrics.width;
+    const textH = scaledFontSize;
+
+    // Position
+    let x, y, textAlign;
+    const pos = stamperPosition.value;
+    switch (pos) {
+        case 'bottom-left':
+            x = padding;
+            y = displayH - padding;
+            textAlign = 'left';
+            break;
+        case 'bottom-center':
+            x = displayW / 2;
+            y = displayH - padding;
+            textAlign = 'center';
+            break;
+        case 'bottom-right':
+            x = displayW - padding;
+            y = displayH - padding;
+            textAlign = 'right';
+            break;
+        case 'top-left':
+            x = padding;
+            y = padding + textH;
+            textAlign = 'left';
+            break;
+        case 'top-right':
+            x = displayW - padding;
+            y = padding + textH;
+            textAlign = 'right';
+            break;
+        default:
+            x = padding;
+            y = displayH - padding;
+            textAlign = 'left';
+    }
+
+    ctx.textAlign = textAlign;
+
+    // Draw background strip
+    const bgPad = Math.floor(scaledFontSize * 0.3);
+    let bgX;
+    if (textAlign === 'left') bgX = x - bgPad;
+    else if (textAlign === 'center') bgX = x - textW / 2 - bgPad;
+    else bgX = x - textW - bgPad;
+
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    ctx.fillRect(bgX, y - textH - bgPad, textW + bgPad * 2, textH + bgPad * 2);
+
+    // Draw text
+    const colorMap = { white: '#FFFFFF', black: '#000000', red: '#FF0000', blue: '#0066FF' };
+    ctx.fillStyle = colorMap[stamperColor] || '#FFFFFF';
+    ctx.fillText(stampText, x, y);
+}
+
+if (btnStamperCancel) {
+    btnStamperCancel.addEventListener('click', () => {
+        stamperFile = null;
+        stamperOriginalImg = null;
+        stamperStateSettings.classList.add('hidden');
+        stamperStateUpload.classList.remove('hidden');
+    });
+}
+
+if (btnStamperStartOver) {
+    btnStamperStartOver.addEventListener('click', () => {
+        if (stamperResultUrl) URL.revokeObjectURL(stamperResultUrl);
+        stamperFile = null;
+        stamperOriginalImg = null;
+        stamperResultBlob = null;
+        stamperResultUrl = null;
+        stamperStateResult.classList.add('hidden');
+        stamperStateUpload.classList.remove('hidden');
+    });
+}
+
+if (btnStamperStamp) {
+    btnStamperStamp.addEventListener('click', async () => {
+        if (!stamperOriginalImg) { showToast('Please upload a photo first.', 'error'); return; }
+
+        const name = stamperNameInput.value.trim();
+        const dateVal = stamperDateInput.value;
+        if (!name && !dateVal) {
+            showToast('Please enter a name or select a date.', 'error');
+            return;
+        }
+
+        const imgW = stamperOriginalImg.width;
+        const imgH = stamperOriginalImg.height;
+
+        const canvas = document.createElement('canvas');
+        canvas.width = imgW;
+        canvas.height = imgH;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(stamperOriginalImg, 0, 0, imgW, imgH);
+
+        let dateFormatted = '';
+        if (dateVal) {
+            const d = new Date(dateVal);
+            const day = String(d.getDate()).padStart(2, '0');
+            const month = String(d.getMonth() + 1).padStart(2, '0');
+            const year = d.getFullYear();
+            dateFormatted = `${day}/${month}/${year}`;
+        }
+
+        const stampText = [name, dateFormatted].filter(Boolean).join('  |  ');
+
+        const fontSizeMap = { small: 0.025, medium: 0.035, large: 0.05 };
+        const fontSizeRatio = fontSizeMap[stamperFontSize.value] || 0.035;
+        const fontSize = Math.max(12, Math.floor(imgW * fontSizeRatio));
+
+        ctx.font = `bold ${fontSize}px Inter, Arial, sans-serif`;
+        ctx.textBaseline = 'bottom';
+
+        const padding = Math.floor(fontSize * 0.5);
+        const textMetrics = ctx.measureText(stampText);
+        const textW = textMetrics.width;
+        const textH = fontSize;
+
+        let x, y, textAlign;
+        const pos = stamperPosition.value;
+        switch (pos) {
+            case 'bottom-left':
+                x = padding; y = imgH - padding; textAlign = 'left'; break;
+            case 'bottom-center':
+                x = imgW / 2; y = imgH - padding; textAlign = 'center'; break;
+            case 'bottom-right':
+                x = imgW - padding; y = imgH - padding; textAlign = 'right'; break;
+            case 'top-left':
+                x = padding; y = padding + textH; textAlign = 'left'; break;
+            case 'top-right':
+                x = imgW - padding; y = padding + textH; textAlign = 'right'; break;
+            default:
+                x = padding; y = imgH - padding; textAlign = 'left';
+        }
+
+        ctx.textAlign = textAlign;
+
+        const bgPad = Math.floor(fontSize * 0.3);
+        let bgX;
+        if (textAlign === 'left') bgX = x - bgPad;
+        else if (textAlign === 'center') bgX = x - textW / 2 - bgPad;
+        else bgX = x - textW - bgPad;
+
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+        ctx.fillRect(bgX, y - textH - bgPad, textW + bgPad * 2, textH + bgPad * 2);
+
+        const colorMap = { white: '#FFFFFF', black: '#000000', red: '#FF0000', blue: '#0066FF' };
+        ctx.fillStyle = colorMap[stamperColor] || '#FFFFFF';
+        ctx.fillText(stampText, x, y);
+
+        stamperResultBlob = await new Promise(resolve => {
+            canvas.toBlob(b => resolve(b), 'image/jpeg', 0.95);
+        });
+
+        if (stamperResultUrl) URL.revokeObjectURL(stamperResultUrl);
+        stamperResultUrl = URL.createObjectURL(stamperResultBlob);
+
+        stamperResultPreview.innerHTML = `<img src="${stamperResultUrl}" class="max-w-[250px] max-h-[250px] object-contain rounded-lg border border-slate-200" alt="Stamped">`;
+
+        stamperStateSettings.classList.add('hidden');
+        stamperStateResult.classList.remove('hidden');
+        showToast('Photo stamped successfully!');
+    });
+}
+
+if (btnStamperDownload) {
+    btnStamperDownload.addEventListener('click', () => {
+        if (!stamperResultUrl) { showToast('No stamped photo available.', 'error'); return; }
+        const a = document.createElement('a');
+        a.href = stamperResultUrl;
+        const baseName = stamperFile ? stamperFile.name.replace(/\.[^.]+$/, '') : 'photo';
+        a.download = `${baseName}-stamped.jpg`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        showToast('Stamped photo downloaded!');
+    });
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   FAQ ACCORDION
    ═══════════════════════════════════════════════════════════ */
 document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', (e) => {
-        // Prevent inner SVG tracking bugs
         const targetButton = e.target.closest('.faq-question');
         if (!targetButton) return;
-
         const item = targetButton.parentElement;
         const answer = item.querySelector('.faq-answer');
         const isOpen = item.classList.contains('open');
 
-        // Close all other elements cleanly
         document.querySelectorAll('.faq-item').forEach(i => {
             i.classList.remove('open');
             const ans = i.querySelector('.faq-answer');
