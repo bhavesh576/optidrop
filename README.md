@@ -1,58 +1,60 @@
-# OptiDrop
 
-OptiDrop is a **100% browser-based image compression tool** that allows users to compress images to an exact file size (KB) without uploading anything to a server.
 
-It is designed for strict file-size requirements such as:
-- Passport photos
-- Government forms
-- Exam portals
-- Visa applications
+# 💧 OptiDrop - The Ultimate Free Document Toolkit
 
----
+OptiDrop is a **100% browser-based document processing toolkit** designed to help users quickly format, compress, and edit files for strict government portals, university exams, and visa applications. 
 
-## 🚀 Features
+The best part? **Zero server uploads.** Everything runs locally in your browser, ensuring 100% privacy for your sensitive documents like passports, IDs, and signatures.
 
-- 🎯 Compress images to **exact target size (e.g., 50KB, 100KB)**
-- 🔒 Fully **client-side processing (no uploads)**
-- ⚡ Fast browser-based compression using HTML5 Canvas
-- 📦 Batch image processing (up to 20 images)
-- 🧠 Smart quality + dimension optimization algorithm
-- 📁 Download individual files or ZIP all results
-- 📱 Works on mobile and desktop
-- 🌐 No login, no tracking, no limits
+![OptiDrop Features](Generated_image-removebg-preview.png) *(Note: Ensure this image is uploaded to your repo)*
 
 ---
 
-## 🧠 How It Works
+## 🚀 Features (The 8 Tools)
 
-1. Upload images (JPG, PNG, WebP)
-2. Enter target size in KB (e.g., 50KB)
-3. OptiDrop:
-   - Reduces image quality (binary search)
-   - Scales dimensions if needed
-   - Iterates until target size is reached
-4. Download optimized images instantly
+OptiDrop includes 8 powerful tools designed to solve the most common document formatting headaches:
+
+1. 🎯 **Image Compressor:** Compress photos to exact KB limits (e.g., exactly under 50KB or 20KB).
+2. 📄 **Images to PDF Merger:** Combine multiple JPG/PNG files into a single PDF document.
+3. 📱 **HEIC to JPG Converter:** Instantly convert iPhone HEIC photos to JPG format.
+4. ✂️ **PDF to JPG Extractor:** Extract each page of a PDF as a separate, high-quality JPG image.
+5. 🖼️ **300 DPI Photo Resizer:** Crop and resize photos to exact passport dimensions (India, US, UK, Schengen, etc.) and force 300 DPI print-ready output.
+6. ✍️ **Signature Scanner:** Turn messy, phone-taken photos of signatures into clean, B&W, high-contrast images under 20KB.
+7. 📅 **Name & Date Stamper:** Overlay custom text (Name and Date) directly onto photos for Indian exam requirements (NEET, JEE, UPSC).
+8. 🔍 **Image Text Extractor (OCR):** Extract text from screenshots, forms, or notes directly in the browser and copy to clipboard.
+
+---
+
+## 🔐 100% Client-Side Privacy
+
+OptiDrop processes everything inside your web browser. 
+- **No server uploads**
+- **No data storage**
+- **No tracking**
+- **Works offline** (once the page and CDNs are loaded)
 
 ---
 
 ## 🛠 Tech Stack
 
-- HTML5 Canvas API
-- JavaScript (Vanilla)
-- Tailwind CSS
-- JSZip (for batch downloads)
+OptiDrop is built to be lightweight, fast, and highly accessible without complex backend infrastructure.
+
+* **Frontend:** HTML5, Vanilla JavaScript, Tailwind CSS
+* **Core APIs:** HTML5 Canvas, Web Workers
+* **External Libraries (via CDN):**
+  * `heic2any`: Client-side HEIC decoding
+  * `pdf.js`: PDF rendering and extraction
+  * `tesseract.js`: Optical Character Recognition (OCR)
+  * `jsPDF`: PDF generation
+  * `JSZip`: Batch file zipping and downloading
 
 ---
 
-## 🔐 Privacy
+## 💻 Getting Started (Local Development)
 
-All processing happens inside your browser.
+Since OptiDrop has no backend, setting it up locally is incredibly simple.
 
-- No server upload
-- No data storage
-- No tracking
-- Fully offline-capable after load
-
----
-
-## 📂 Project Structure
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/optidrop.git
+   cd optidrop
