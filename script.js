@@ -118,8 +118,101 @@ const toolPanelMap = {
     'heic':     'mode-heic',
     'pdf2jpg':  'mode-pdf2jpg',
     'resizer':  'mode-resizer',
-    'stamper':  'mode-stamper'
+    'stamper':  'mode-stamper',
+    'signature':'mode-signature',
+    'ocr':      'mode-ocr'
 };
+
+// Tool metadata for sidebar/bottom nav
+const toolMeta = {
+    'compress':  { name: 'Compressor',    color: 'bg-blue-100 text-blue-600',  svg: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>' },
+    'merge':     { name: 'PDF Merger',     color: 'bg-indigo-100 text-indigo-600', svg: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>' },
+    'heic':      { name: 'HEIC to JPG',    color: 'bg-orange-100 text-orange-600', svg: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>' },
+    'pdf2jpg':   { name: 'PDF to JPG',     color: 'bg-purple-100 text-purple-600', svg: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>' },
+    'resizer':   { name: 'Photo Resizer',  color: 'bg-emerald-100 text-emerald-600', svg: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>' },
+    'stamper':   { name: 'Stamper',        color: 'bg-rose-100 text-rose-600',    svg: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>' },
+    'signature': { name: 'Signature Scan', color: 'bg-teal-100 text-teal-600',    svg: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>' },
+    'ocr':       { name: 'Text Extractor', color: 'bg-cyan-100 text-cyan-600',    svg: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>' }
+};
+
+let currentTool = null;
+let isNavigating = false;
+
+// ── Sidebar & Bottom Nav ───────────────────────────────────
+function buildSidebarNav() {
+    const sidebarList = document.getElementById('sidebarToolList');
+    const bottomList = document.getElementById('bottomNavList');
+    if (!sidebarList || !bottomList) return;
+
+    sidebarList.innerHTML = '';
+    bottomList.innerHTML = '';
+
+    Object.keys(toolPanelMap).forEach(key => {
+        const meta = toolMeta[key];
+        if (!meta) return;
+
+        // Sidebar button
+        const sbBtn = document.createElement('button');
+        sbBtn.className = 'sidebar-tool-btn';
+        sbBtn.dataset.tool = key;
+        sbBtn.innerHTML = `<span class="sidebar-icon ${meta.color}">${meta.svg}</span>${meta.name}`;
+        sbBtn.addEventListener('click', () => openTool(key));
+        sidebarList.appendChild(sbBtn);
+
+        // Bottom nav button
+        const bnBtn = document.createElement('button');
+        bnBtn.className = 'bottom-nav-btn';
+        bnBtn.dataset.tool = key;
+        bnBtn.innerHTML = `<span class="bottom-nav-icon ${meta.color}">${meta.svg}</span>${meta.name}`;
+        bnBtn.addEventListener('click', () => openTool(key));
+        bottomList.appendChild(bnBtn);
+    });
+}
+
+function updateNavHighlight(toolName) {
+    document.querySelectorAll('.sidebar-tool-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tool === toolName);
+    });
+    document.querySelectorAll('.bottom-nav-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tool === toolName);
+    });
+}
+
+// ── URL Hash Routing ───────────────────────────────────────
+function getToolFromHash() {
+    const hash = window.location.hash.replace('#', '').trim();
+    return toolPanelMap[hash] ? hash : null;
+}
+
+function setToolHash(toolName) {
+    if (toolName && history.pushState) {
+        history.pushState(null, '', '#' + toolName);
+    } else if (!toolName && history.replaceState) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+}
+
+window.addEventListener('hashchange', () => {
+    isNavigating = true;
+    const tool = getToolFromHash();
+    if (tool && tool !== currentTool) {
+        openTool(tool);
+    } else if (!tool && currentTool) {
+        goToDashboard();
+    }
+    isNavigating = false;
+});
+
+window.addEventListener('popstate', () => {
+    isNavigating = true;
+    const tool = getToolFromHash();
+    if (tool && tool !== currentTool) {
+        openTool(tool);
+    } else if (!tool && currentTool) {
+        goToDashboard();
+    }
+    isNavigating = false;
+});
 
 // Tool card click handlers
 document.querySelectorAll('.tool-card').forEach(card => {
@@ -143,6 +236,10 @@ function openTool(toolName) {
     toolDashboard.parentElement.classList.add('hidden');
     appSection.classList.remove('hidden');
 
+    currentTool = toolName;
+    if (!isNavigating) setToolHash(toolName);
+    updateNavHighlight(toolName);
+
     // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -159,6 +256,9 @@ function goToDashboard() {
     // Show dashboard
     toolDashboard.parentElement.classList.remove('hidden');
 
+    currentTool = null;
+    if (!isNavigating) setToolHash(null);
+
     // Reset all tool states
     resetAllTools();
 
@@ -167,6 +267,17 @@ function goToDashboard() {
 }
 
 btnBackToDashboard.addEventListener('click', goToDashboard);
+
+// Build sidebar/bottom nav on load
+buildSidebarNav();
+
+// Handle hash on page load
+(function() {
+    const tool = getToolFromHash();
+    if (tool) {
+        openTool(tool);
+    }
+})();
 
 function resetAllTools() {
     // Reset compress
@@ -214,6 +325,23 @@ function resetAllTools() {
     document.getElementById('stamper-state-upload').classList.remove('hidden');
     document.getElementById('stamper-state-settings').classList.add('hidden');
     document.getElementById('stamper-state-result').classList.add('hidden');
+
+    // Reset signature scanner
+    signatureFile = null;
+    signatureOriginalImg = null;
+    if (signatureResultUrl) URL.revokeObjectURL(signatureResultUrl);
+    signatureResultBlob = null;
+    signatureResultUrl = null;
+    document.getElementById('signature-state-upload').classList.remove('hidden');
+    document.getElementById('signature-state-settings').classList.add('hidden');
+    document.getElementById('signature-state-result').classList.add('hidden');
+
+    // Reset OCR
+    ocrFile = null;
+    document.getElementById('ocr-state-upload').classList.remove('hidden');
+    document.getElementById('ocr-state-processing').classList.add('hidden');
+    document.getElementById('ocr-state-result').classList.add('hidden');
+    document.getElementById('ocrTextOutput').value = '';
 }
 
 
@@ -1906,3 +2034,300 @@ document.querySelectorAll('.faq-question').forEach(btn => {
         }
     });
 });
+
+
+/* ═══════════════════════════════════════════════════════════
+   TOOL 7: SIGNATURE SCANNER
+   ═══════════════════════════════════════════════════════════ */
+
+let signatureFile = null;
+let signatureOriginalImg = null;
+let signatureResultBlob = null;
+let signatureResultUrl = null;
+
+const signatureDropzone      = document.getElementById('signatureDropzone');
+const signatureFileInput     = document.getElementById('signatureFileInput');
+const signatureStateUpload   = document.getElementById('signature-state-upload');
+const signatureStateSettings = document.getElementById('signature-state-settings');
+const signatureStateResult   = document.getElementById('signature-state-result');
+const signatureCanvas        = document.getElementById('signatureCanvas');
+const signatureThreshold     = document.getElementById('signatureThreshold');
+const signatureThresholdVal  = document.getElementById('signatureThresholdVal');
+const signatureSizeLimit     = document.getElementById('signatureSizeLimit');
+const signatureResultSize    = document.getElementById('signatureResultSize');
+const signatureResultPreview = document.getElementById('signatureResultPreview');
+const btnSignatureCancel     = document.getElementById('btnSignatureCancel');
+const btnSignatureProcess    = document.getElementById('btnSignatureProcess');
+const btnSignatureDownload   = document.getElementById('btnSignatureDownload');
+const btnSignatureStartOver  = document.getElementById('btnSignatureStartOver');
+
+if (signatureThreshold) {
+    signatureThreshold.addEventListener('input', () => {
+        signatureThresholdVal.textContent = signatureThreshold.value;
+        if (signatureOriginalImg) drawSignaturePreview();
+    });
+}
+
+setupDropzone(signatureDropzone, signatureFileInput, handleSignatureFile);
+
+function handleSignatureFile(files) {
+    if (!files || files.length === 0) return;
+    const file = files[0];
+    if (!file.type.match('image.*')) { showToast('Please select an image file.', 'error'); return; }
+
+    signatureFile = file;
+    const url = URL.createObjectURL(file);
+    signatureOriginalImg = new Image();
+    signatureOriginalImg.onload = function() {
+        drawSignaturePreview();
+        signatureStateUpload.classList.add('hidden');
+        signatureStateSettings.classList.remove('hidden');
+    };
+    signatureOriginalImg.src = url;
+}
+
+function drawSignaturePreview() {
+    if (!signatureOriginalImg || !signatureCanvas) return;
+    const ctx = signatureCanvas.getContext('2d');
+    const container = signatureCanvas.parentElement;
+    const maxW = container.clientWidth || 400;
+    const maxH = 300;
+
+    const imgW = signatureOriginalImg.width;
+    const imgH = signatureOriginalImg.height;
+    const ratio = Math.min(maxW / imgW, maxH / imgH, 1);
+    const displayW = Math.floor(imgW * ratio);
+    const displayH = Math.floor(imgH * ratio);
+
+    signatureCanvas.width = displayW;
+    signatureCanvas.height = displayH;
+    ctx.drawImage(signatureOriginalImg, 0, 0, displayW, displayH);
+
+    // Apply threshold preview
+    const threshold = parseInt(signatureThreshold.value) || 140;
+    try {
+        const imageData = ctx.getImageData(0, 0, displayW, displayH);
+        const data = imageData.data;
+        for (let i = 0; i < data.length; i += 4) {
+            const gray = data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114;
+            const val = gray > threshold ? 255 : 0;
+            data[i] = val;
+            data[i + 1] = val;
+            data[i + 2] = val;
+        }
+        ctx.putImageData(imageData, 0, 0);
+    } catch (e) {
+        // Canvas tainted - just show original
+    }
+}
+
+if (btnSignatureCancel) {
+    btnSignatureCancel.addEventListener('click', () => {
+        signatureFile = null;
+        signatureOriginalImg = null;
+        signatureStateSettings.classList.add('hidden');
+        signatureStateUpload.classList.remove('hidden');
+    });
+}
+
+if (btnSignatureStartOver) {
+    btnSignatureStartOver.addEventListener('click', () => {
+        if (signatureResultUrl) URL.revokeObjectURL(signatureResultUrl);
+        signatureFile = null;
+        signatureOriginalImg = null;
+        signatureResultBlob = null;
+        signatureResultUrl = null;
+        signatureStateResult.classList.add('hidden');
+        signatureStateUpload.classList.remove('hidden');
+    });
+}
+
+if (btnSignatureProcess) {
+    btnSignatureProcess.addEventListener('click', async () => {
+        if (!signatureOriginalImg) { showToast('Please upload a signature photo.', 'error'); return; }
+
+        const threshold = parseInt(signatureThreshold.value) || 140;
+        const sizeLimitKB = parseInt(signatureSizeLimit.value) || 20;
+        const sizeLimitBytes = sizeLimitKB * 1024;
+
+        const canvas = document.createElement('canvas');
+        canvas.width = signatureOriginalImg.width;
+        canvas.height = signatureOriginalImg.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(signatureOriginalImg, 0, 0);
+
+        // Apply B&W threshold
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+        for (let i = 0; i < data.length; i += 4) {
+            const gray = data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114;
+            const val = gray > threshold ? 255 : 0;
+            data[i] = val;
+            data[i + 1] = val;
+            data[i + 2] = val;
+            data[i + 3] = 255;
+        }
+        ctx.putImageData(imageData, 0, 0);
+
+        // Try to fit under size limit by reducing dimensions
+        let blob = await new Promise(resolve => canvas.toBlob(b => resolve(b), 'image/jpeg', 0.92));
+        let currentW = canvas.width;
+        let currentH = canvas.height;
+
+        // Iteratively reduce if over limit
+        while (blob.size > sizeLimitBytes && (currentW > 100 || currentH > 100)) {
+            const scale = Math.sqrt(sizeLimitBytes / blob.size) * 0.9;
+            currentW = Math.max(100, Math.floor(currentW * scale));
+            currentH = Math.max(100, Math.floor(currentH * scale));
+
+            const tmpCanvas = document.createElement('canvas');
+            tmpCanvas.width = currentW;
+            tmpCanvas.height = currentH;
+            const tmpCtx = tmpCanvas.getContext('2d');
+            tmpCtx.drawImage(canvas, 0, 0, currentW, currentH);
+            blob = await new Promise(resolve => tmpCanvas.toBlob(b => resolve(b), 'image/jpeg', 0.85));
+        }
+
+        // If still over, try lower quality
+        if (blob.size > sizeLimitBytes) {
+            const tmpCanvas = document.createElement('canvas');
+            tmpCanvas.width = currentW;
+            tmpCanvas.height = currentH;
+            const tmpCtx = tmpCanvas.getContext('2d');
+            tmpCtx.drawImage(canvas, 0, 0, currentW, currentH);
+            blob = await new Promise(resolve => tmpCanvas.toBlob(b => resolve(b), 'image/jpeg', 0.6));
+        }
+
+        if (signatureResultUrl) URL.revokeObjectURL(signatureResultUrl);
+        signatureResultBlob = blob;
+        signatureResultUrl = URL.createObjectURL(blob);
+
+        signatureResultSize.textContent = formatBytes(blob.size);
+        signatureResultPreview.innerHTML = `<img src="${signatureResultUrl}" class="max-w-[250px] max-h-[200px] object-contain" style="background:#f1f5f9;" alt="Clean signature">`;
+
+        signatureStateSettings.classList.add('hidden');
+        signatureStateResult.classList.remove('hidden');
+        showToast('Signature cleaned and compressed!');
+    });
+}
+
+if (btnSignatureDownload) {
+    btnSignatureDownload.addEventListener('click', () => {
+        if (!signatureResultUrl) { showToast('No signature available.', 'error'); return; }
+        const a = document.createElement('a');
+        a.href = signatureResultUrl;
+        const baseName = signatureFile ? signatureFile.name.replace(/\.[^.]+$/, '') : 'signature';
+        a.download = `${baseName}-clean.jpg`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        showToast('Signature downloaded!');
+    });
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   TOOL 8: IMAGE TEXT EXTRACTOR (OCR)
+   ═══════════════════════════════════════════════════════════ */
+
+let ocrFile = null;
+
+const ocrDropzone      = document.getElementById('ocrDropzone');
+const ocrFileInput     = document.getElementById('ocrFileInput');
+const ocrStateUpload   = document.getElementById('ocr-state-upload');
+const ocrStateProcessing = document.getElementById('ocr-state-processing');
+const ocrStateResult   = document.getElementById('ocr-state-result');
+const ocrProgressText  = document.getElementById('ocrProgressText');
+const ocrPreviewImage  = document.getElementById('ocrPreviewImage');
+const ocrTextOutput    = document.getElementById('ocrTextOutput');
+const ocrConfidence    = document.getElementById('ocrConfidence');
+const btnOcrCopy       = document.getElementById('btnOcrCopy');
+const btnOcrStartOver  = document.getElementById('btnOcrStartOver');
+
+setupDropzone(ocrDropzone, ocrFileInput, handleOcrFile);
+
+function handleOcrFile(files) {
+    if (!files || files.length === 0) return;
+    const file = files[0];
+    if (!file.type.match('image.*')) { showToast('Please select an image file.', 'error'); return; }
+
+    ocrFile = file;
+    ocrStateUpload.classList.add('hidden');
+    ocrStateProcessing.classList.remove('hidden');
+    ocrProgressText.textContent = 'Initializing OCR engine...';
+
+    const imageUrl = URL.createObjectURL(file);
+
+    // Use Tesseract.js
+    if (typeof Tesseract === 'undefined') {
+        showToast('OCR library is still loading. Please try again.', 'error');
+        ocrStateProcessing.classList.add('hidden');
+        ocrStateUpload.classList.remove('hidden');
+        return;
+    }
+
+    Tesseract.recognize(imageUrl, 'eng', {
+        logger: (m) => {
+            if (m.status === 'recognizing text') {
+                const pct = Math.round((m.progress || 0) * 100);
+                ocrProgressText.textContent = `Recognizing text... ${pct}%`;
+            } else if (m.status === 'loading tesseract core') {
+                ocrProgressText.textContent = 'Loading OCR engine...';
+            } else if (m.status === 'loading language traineddata') {
+                ocrProgressText.textContent = 'Loading language data...';
+            } else if (m.status === 'initializing tesseract') {
+                ocrProgressText.textContent = 'Preparing...';
+            }
+        }
+    }).then(({ data: { text, confidence } }) => {
+        URL.revokeObjectURL(imageUrl);
+
+        ocrPreviewImage.src = URL.createObjectURL(ocrFile);
+        ocrTextOutput.value = text.trim();
+        ocrConfidence.textContent = confidence + '%';
+
+        ocrStateProcessing.classList.add('hidden');
+        ocrStateResult.classList.remove('hidden');
+
+        if (text.trim().length > 0) {
+            showToast('Text extracted successfully!');
+        } else {
+            showToast('No text found in the image. Try a clearer image.', 'info');
+        }
+    }).catch((err) => {
+        console.error('OCR error:', err);
+        URL.revokeObjectURL(imageUrl);
+        showToast('Failed to extract text. Please try again.', 'error');
+        ocrStateProcessing.classList.add('hidden');
+        ocrStateUpload.classList.remove('hidden');
+    });
+}
+
+if (btnOcrCopy) {
+    btnOcrCopy.addEventListener('click', () => {
+        const text = ocrTextOutput.value;
+        if (!text) { showToast('No text to copy.', 'error'); return; }
+        navigator.clipboard.writeText(text).then(() => {
+            showToast('Text copied to clipboard!');
+            btnOcrCopy.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Copied!`;
+            setTimeout(() => {
+                btnOcrCopy.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg> Copy`;
+            }, 2000);
+        }).catch(() => {
+            // Fallback for older browsers
+            ocrTextOutput.select();
+            document.execCommand('copy');
+            showToast('Text copied!');
+        });
+    });
+}
+
+if (btnOcrStartOver) {
+    btnOcrStartOver.addEventListener('click', () => {
+        ocrFile = null;
+        if (ocrPreviewImage.src) URL.revokeObjectURL(ocrPreviewImage.src);
+        ocrTextOutput.value = '';
+        ocrStateResult.classList.add('hidden');
+        ocrStateUpload.classList.remove('hidden');
+    });
+}
