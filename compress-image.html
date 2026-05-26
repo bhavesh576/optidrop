@@ -1,0 +1,496 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compress Image to 100KB Online Free — No Upload | OptiDrop</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <meta name="description" content="Compress images to exact KB limits (20KB, 50KB, 100KB) for passport photos, WhatsApp, government portals, and exam forms. 100% private, no upload.">
+    <meta name="keywords" content="compress image to 100kb, compress image for whatsapp, compress image for US visa application, reduce image file size online free, image compressor no upload, compress image to 50kb for passport photo, compress image to 20kb, compress image for government portal, compress image for exam form, reduce photo size for neet jee upsc, compress jpg to exact size, passport photo compressor online free, compress image without losing quality, image size reducer online, compress png to 100kb">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Compress Image to 100KB Online Free — No Upload | OptiDrop">
+    <meta property="og:description" content="Compress images to exact KB limits (20KB, 50KB, 100KB) for passport photos, government portals, and exam forms. 100% private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/compress-image.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Compress Image to 100KB Online Free — No Upload | OptiDrop">
+    <meta name="twitter:description" content="Compress images to exact KB limits for passport photos, government portals, and exam forms. 100% private.">
+    <link rel="canonical" href="https://optidrop.online/compress-image.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Compress Image", "item": "https://optidrop.online/compress-image.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Image Compressor",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Compress images to exact KB limits (20KB, 50KB, 100KB) for passport photos, government portals, and exam forms. Runs entirely in your browser with no upload."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I compress an image to exactly 100KB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open the Compress Image tool, drop your photo, type 100 in the Target KB box (or click the 100 KB preset pill), and press Compress. OptiDrop iteratively adjusts quality and dimensions until your file is under the exact limit you set."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this image compressor work for passport photos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. OptiDrop is perfect for passport photos. Use the preset pills to set your target size to 20KB, 50KB, or 100KB. You can also set exact passport dimensions like India Passport 35x45, US Visa 2x2, or UK Passport using the dimension presets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this image compressor really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. OptiDrop is 100% free with no hidden fees, no sign-up walls, and no watermarks. Every compression runs client-side in your browser so you can compress images without paying anything."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What image formats are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OptiDrop supports JPG, PNG, and WebP input formats. You can output compressed files as JPG (recommended for smallest size), PNG (lossless), or WebP (modern compression). JPG is recommended for government and exam portals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I compress images for WhatsApp profile picture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Simply upload your photo and set the target to 100KB or 200KB. The tool will compress your image to fit WhatsApp's requirements while maintaining the best possible quality."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- JSZip (Batch Downloads) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- jsPDF (PDF Export) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="preload" href="./styles.css" as="style">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">
+                <img src="./Generated_image-removebg-preview.png" alt="OptiDrop">
+            </a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/">All Tools</a>
+            <a href="/blog/">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Compress Image to Exact KB — Free Online, No Upload</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Compress your JPG, PNG, or WebP images to any exact file size — 20KB, 50KB, 100KB, or a custom limit. Perfect for passport photos, US visa applications, government portals, WhatsApp, NEET, JEE, UPSC exam forms, and more. Everything runs in your browser; your files never leave your device.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden relative">
+
+                    <!-- STATE 1: UPLOAD ZONE -->
+                    <div id="state-upload" class="p-8 sm:p-12 text-center">
+                        <div id="dropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 cursor-pointer transition-all-ease hover:bg-slate-50 hover:border-brand-400 group flex flex-col items-center justify-center min-h-[260px]">
+                            <input type="file" id="fileInput" class="hidden" accept="image/jpeg, image/png, image/webp" multiple />
+                            <div class="bg-brand-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-10 h-10 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Drop Images Here or Tap to Browse</h3>
+                            <p class="text-sm text-slate-500">Supports JPG, PNG, WebP (Max 20 images)</p>
+                        </div>
+                        <div class="mt-5 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                            </svg>
+                            No upload? Seriously. Files never leave your device.
+                        </div>
+                    </div>
+
+                    <!-- STATE 2: SETTINGS -->
+                    <div id="state-settings" class="hidden p-6 sm:p-8">
+                        <div class="flex flex-col md:flex-row gap-8 items-start">
+
+                            <!-- Left: Batch Image Preview + Info -->
+                            <div class="w-full md:w-1/2 flex flex-col">
+                                <h3 class="text-lg font-bold text-slate-800 mb-3">
+                                    Selected Images (<span id="queueCount">0</span>/20)
+                                </h3>
+                                <div id="batchPreviewContainer" class="grid grid-cols-3 gap-3 max-h-[240px] overflow-y-auto pr-2 mb-3">
+                                </div>
+                                <div id="imageInfoPanel" class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-600 hidden">
+                                    <div class="flex items-center gap-2 font-semibold text-slate-700 mb-1">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                        Original Details
+                                    </div>
+                                    <div id="imageInfoContent" class="space-y-0.5"></div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Settings Form -->
+                            <div class="w-full md:w-1/2 flex flex-col justify-center space-y-5 sticky top-0">
+                                <div>
+                                    <label for="targetKB" class="block text-sm font-bold text-slate-700 mb-2">Target File Size (in KB)</label>
+                                    <div class="relative">
+                                        <input type="number" id="targetKB" placeholder="e.g., 50"
+                                            class="block w-full pl-4 pr-12 py-4 text-xl border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-bold"
+                                            min="1" max="10000">
+                                        <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                                            <span class="text-slate-400 font-bold">KB</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2 mt-3 flex-wrap">
+                                        <button class="preset-btn" data-kb="20">20 KB</button>
+                                        <button class="preset-btn" data-kb="50">50 KB</button>
+                                        <button class="preset-btn" data-kb="100">100 KB</button>
+                                        <button class="preset-btn" data-kb="200">200 KB</button>
+                                    </div>
+                                    <p class="mt-2 text-xs text-slate-500">Perfect for strict portal requirements (e.g., passports, signatures, exam forms).</p>
+                                </div>
+
+                                <details class="advanced-settings">
+                                    <summary>Advanced Settings</summary>
+                                    <div class="advanced-content space-y-5">
+                                        <div>
+                                            <label for="outputFormat" class="block text-sm font-bold text-slate-700 mb-2">Output Format</label>
+                                            <select id="outputFormat" class="settings-select">
+                                                <option value="image/jpeg">JPG — Best for photos &amp; smallest size</option>
+                                                <option value="image/png">PNG — Lossless, larger file size</option>
+                                                <option value="image/webp">WebP — Modern, great compression</option>
+                                            </select>
+                                            <p class="mt-1 text-xs text-slate-500">JPG is recommended for government &amp; exam portals.</p>
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-bold text-slate-700 mb-2">
+                                                Exact Dimensions <span class="text-slate-400 font-normal">(optional)</span>
+                                            </label>
+                                            <div class="flex gap-3">
+                                                <div class="relative flex-1">
+                                                    <input type="number" id="targetWidth" placeholder="Width" min="1" class="dim-input pr-10">
+                                                    <span class="absolute inset-y-0 right-3 flex items-center text-xs text-slate-400 font-semibold pointer-events-none">px</span>
+                                                </div>
+                                                <div class="flex items-center text-slate-300 font-bold">&times;</div>
+                                                <div class="relative flex-1">
+                                                    <input type="number" id="targetHeight" placeholder="Height" min="1" class="dim-input pr-10">
+                                                    <span class="absolute inset-y-0 right-3 flex items-center text-xs text-slate-400 font-semibold pointer-events-none">px</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-2 mt-3 flex-wrap">
+                                                <button class="passport-preset-btn" data-w="413" data-h="531" title="India Passport 35x45 mm at 300dpi">IND Passport 35x45</button>
+                                                <button class="passport-preset-btn" data-w="413" data-h="531" title="Schengen Visa 35x45 mm at 300dpi">Schengen Visa</button>
+                                                <button class="passport-preset-btn" data-w="413" data-h="531" title="UK Passport 35x45 mm at 300dpi">UK Passport</button>
+                                                <button class="passport-preset-btn" data-w="600" data-h="600" title="US Visa 2x2 inch at 300dpi">US Visa 2x2</button>
+                                                <button class="passport-preset-btn" data-w="600" data-h="600" title="US Visa / NEET / JEE">US Visa / NEET</button>
+                                                <button class="passport-preset-btn" data-w="200" data-h="230" title="UPSC / OCI Photo">UPSC / OCI</button>
+                                                <button class="passport-preset-btn" data-w="150" data-h="200" title="PAN Card Photo">PAN Card</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+
+                                <div class="flex gap-3 pt-1">
+                                    <button id="btnCancel" class="w-1/3 px-4 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors focus:outline-none">
+                                        Cancel
+                                    </button>
+                                    <button id="btnCompress" class="w-2/3 px-4 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
+                                        <span>Compress All</span>
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STATE 3: LOADING -->
+                    <div id="state-loading" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center z-10 rounded-3xl">
+                        <div class="relative w-20 h-20 mb-4">
+                            <div class="absolute inset-0 border-4 border-brand-100 rounded-full"></div>
+                            <div class="absolute inset-0 border-4 border-brand-600 rounded-full border-t-transparent animate-spin"></div>
+                            <div class="absolute inset-0 flex items-center justify-center text-xs font-bold text-brand-700" id="loadingPercent">0%</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">Compressing locally...</h3>
+                        <p class="text-sm font-medium text-brand-600 mt-2 bg-brand-50 px-4 py-2 rounded-full" id="batchProgressText">0 / 0 completed</p>
+                        <div class="w-full max-w-xs bg-slate-200 rounded-full h-2 mt-4 overflow-hidden shadow-inner">
+                            <div id="batchProgressBar" class="bg-brand-600 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-4 max-w-xs text-center">Finding the perfect balance for your target size. Please keep this tab open.</p>
+                    </div>
+
+                    <!-- STATE 4: RESULT -->
+                    <div id="state-result" class="hidden p-6 sm:p-10 text-center flex flex-col items-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-2">Batch Compression Complete!</h2>
+                        <p class="text-slate-600 mb-2">
+                            Successfully compressed <span id="successCount" class="font-bold text-brand-600">0</span> images.
+                        </p>
+                        <p class="text-xs text-slate-400 mb-6 flex items-center justify-center gap-1">
+                            <svg class="w-3.5 h-3.5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Click the red PDF icon to save as PDF. Click the eye icon to compare before/after.
+                        </p>
+                        <div id="resultsContainer" class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-left max-h-[320px] overflow-y-auto pr-2"></div>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2 w-full max-w-lg mx-auto">
+                            <button id="btnDownloadZip" class="w-full sm:w-auto px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-lg shadow-brand-200 transition-all focus:outline-none flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download All (ZIP)
+                            </button>
+                            <button id="btnStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all focus:outline-none">
+                                Compress More
+                            </button>
+                        </div>
+                    </div>
+
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Compress Images to Exact KB — Free Online, No Upload Required</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Image Compressor is a free online tool that lets you compress your JPG, PNG, and WebP images to any exact file size you need. Whether you need to compress an image to 100KB for a government portal, 50KB for a passport photo, or 20KB for an exam form upload, our smart client-side algorithm preserves maximum visual quality while strictly adhering to your target size limit. Unlike other online compressors, OptiDrop processes everything locally in your browser — your images are never uploaded to any server, making it completely safe for sensitive documents like passport photos, visa applications, Aadhaar cards, and PAN cards.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Perfect for Passport Photos, US Visa, UK Passport, and Schengen Visa</h3>
+                <p class="text-slate-600 mb-4">Applying for a US visa, UK passport, Schengen visa, Australian visa, Canadian visa, UAE visa, China visa, Japan visa, or South Korea visa? Many embassy and government portals require your photo to be under a specific file size. OptiDrop includes one-click presets for common passport dimensions: India Passport (413x531 px), US Visa 2x2 (600x600 px), UK Passport (413x531 px), Schengen Visa (413x531 px), NEET/JEE (600x600 px), and more. Simply select a preset, set your target KB, and compress — all in seconds, completely free.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Batch Compression for Multiple Images</h3>
+                <p class="text-slate-600">Need to compress multiple images at once? OptiDrop supports batch compression of up to 20 images simultaneously. Upload all your files, set a single target size, and download everything as a ZIP file. This is perfect for students uploading multiple documents to exam portals, job applicants submitting forms, or anyone who needs to reduce the file size of several images quickly and efficiently.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I compress an image to exactly 100KB?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Open the Compress Image tool, drop your photo, type 100 in the Target KB box (or click the 100 KB preset pill), and press Compress. OptiDrop iteratively adjusts quality and dimensions until your file is under the exact limit you set.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does this image compressor work for passport photos?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. OptiDrop is perfect for passport photos. Use the preset pills to set your target size to 20KB, 50KB, or 100KB. You can also set exact passport dimensions like India Passport 35x45, US Visa 2x2, or UK Passport using the dimension presets.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is this image compressor really free?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. OptiDrop is 100% free with no hidden fees, no sign-up walls, and no watermarks. Every compression runs client-side in your browser so you can compress images without paying anything.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What image formats are supported?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        OptiDrop supports JPG, PNG, and WebP input formats. You can output compressed files as JPG (recommended for smallest size), PNG (lossless), or WebP (modern compression). JPG is recommended for government and exam portals.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I compress images for WhatsApp profile picture?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. Simply upload your photo and set the target to 100KB or 200KB. The tool will compress your image to fit WhatsApp's requirements while maintaining the best possible quality.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/heic-to-jpg.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">HEIC to JPG</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Convert iPhone HEIC photos to universal JPG format.</span>
+            </a>
+            <a href="/image-format-converter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Format Converter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Convert between JPG, PNG, and WebP image formats.</span>
+            </a>
+            <a href="/compress-pdf.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">PDF Compressor</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Reduce PDF file size while keeping quality.</span>
+            </a>
+            <a href="/remove-background.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Background Remover</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Remove backgrounds from photos instantly in your browser.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                </div>
+                <div class="footer-col">
+                    <h4>PDF Tools</h4>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculators</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/gst-calculator.html">GST Calculator</a>
+                    <a href="/tools/age-calculator.html">Age Calculator</a>
+                    <a href="/tools/percentage-calculator.html">Percentage Calculator</a>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Text &amp; Utility Tools</h4>
+                    <a href="/tools/word-counter.html">Word Counter</a>
+                    <a href="/tools/text-case-converter.html">Text Case Converter</a>
+                    <a href="/tools/password-generator.html">Password Generator</a>
+                    <a href="/tools/unit-converter.html">Unit Converter</a>
+                    <a href="/qr-code-generator.html">QR Code Generator</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. Compress images, convert files, generate QR codes, and more — everything runs in your browser. No uploads, no sign-ups, no data leaves your device.</p>
+                    <a href="/category/image-tools.html">Image Tools</a>
+                    <a href="/category/pdf-tools.html">PDF Tools</a>
+                    <a href="/category/calculator-tools.html">Calculators</a>
+                    <a href="/category/text-tools.html">Text Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/">All Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="./common.js"></script>
+    <script src="./script.js"></script>
+    <script>
+    // Standalone init for Compress Image tool
+    // The script.js already initializes the compress tool DOM elements and event listeners.
+    // No additional initialization needed since the compress tool is the first tool defined
+    // and its DOM elements exist on this page with matching IDs.
+    </script>
+</body>
+</html>

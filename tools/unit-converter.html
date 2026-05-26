@@ -1,0 +1,542 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter Free Online — No Upload Required | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <meta name="description" content="Convert units online free — length, weight, temperature, and speed. Instant results with a swap button. No upload, no sign-up required at all.">
+    <meta name="keywords" content="unit converter online, length converter, kg to pounds converter, celsius to fahrenheit, speed converter free online">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Unit Converter Free Online — No Upload Required | OptiDrop">
+    <meta property="og:description" content="Convert units online free — length, weight, temperature, speed. Instant conversion with swap button. No upload, no sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/unit-converter.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Unit Converter Free Online — No Upload Required | OptiDrop">
+    <meta name="twitter:description" content="Convert units online free — length, weight, temperature, speed. Instant results. No upload.">
+    <link rel="canonical" href="https://optidrop.online/tools/unit-converter.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Unit Converter", "item": "https://optidrop.online/tools/unit-converter.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Unit Converter",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Convert units online free. Length, weight, temperature, and speed conversion. Instant results with swap functionality."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to convert km to miles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To convert kilometers to miles, multiply the distance in km by 0.621371. For example, 10 km x 0.621371 = 6.21371 miles. This converter does the calculation instantly — select Length, choose km as the input unit and miles as the output unit, then enter your value."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many pounds in a kg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There are approximately 2.20462 pounds in 1 kilogram. To convert kg to pounds, multiply the weight in kg by 2.20462. To convert pounds to kg, multiply by 0.453592. This converter handles both directions automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to convert Celsius to Fahrenheit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To convert Celsius to Fahrenheit, multiply the temperature by 1.8 (or 9/5) and then add 32. For example, 100 C x 1.8 + 32 = 212 F. To convert Fahrenheit to Celsius, subtract 32 and then multiply by 5/9."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the formula for unit conversion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most unit conversions use a simple multiplication factor. You multiply the input value by a conversion factor to get the output. For example, 1 km = 1000 meters (factor: 1000), 1 mile = 1.60934 km (factor: 1.60934). Temperature is the exception, requiring an offset in addition to multiplication."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">
+                <img src="../Generated_image-removebg-preview.png" alt="OptiDrop">
+            </a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/">All Tools</a>
+            <a href="/blog/">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Unit Converter Online — Length, Weight, Temperature, Speed</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Convert between units instantly — kilometers to miles, kg to pounds, Celsius to Fahrenheit, and more. Free online unit converter with swap button. No upload, no sign-up — 100% private.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Category Tabs -->
+                    <div class="flex flex-wrap justify-center gap-2 mb-8">
+                        <button class="unit-tab active" data-category="length">
+                            <svg class="w-5 h-5 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                            Length
+                        </button>
+                        <button class="unit-tab" data-category="weight">
+                            <svg class="w-5 h-5 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                            Weight
+                        </button>
+                        <button class="unit-tab" data-category="temperature">
+                            <svg class="w-5 h-5 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                            Temperature
+                        </button>
+                        <button class="unit-tab" data-category="speed">
+                            <svg class="w-5 h-5 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            Speed
+                        </button>
+                    </div>
+
+                    <!-- Converter Area -->
+                    <div class="max-w-lg mx-auto space-y-5">
+                        <!-- Input -->
+                        <div>
+                            <label for="ucInput" class="block text-sm font-bold text-slate-700 mb-2">Value</label>
+                            <input type="number" id="ucInput" placeholder="Enter value" step="any"
+                                class="block w-full px-4 py-4 text-lg border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+
+                        <!-- From Unit -->
+                        <div>
+                            <label for="ucFrom" class="block text-sm font-bold text-slate-700 mb-2">From</label>
+                            <select id="ucFrom" class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-medium bg-white cursor-pointer">
+                            </select>
+                        </div>
+
+                        <!-- Swap Button -->
+                        <div class="flex justify-center">
+                            <button id="btnSwap" class="w-12 h-12 bg-brand-50 text-brand-600 rounded-full hover:bg-brand-100 transition-all flex items-center justify-center border-2 border-brand-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/></svg>
+                            </button>
+                        </div>
+
+                        <!-- To Unit -->
+                        <div>
+                            <label for="ucTo" class="block text-sm font-bold text-slate-700 mb-2">To</label>
+                            <select id="ucTo" class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-medium bg-white cursor-pointer">
+                            </select>
+                        </div>
+
+                        <!-- Result -->
+                        <div id="ucResult" class="bg-brand-50 border-2 border-brand-100 rounded-xl p-5 text-center">
+                            <p class="text-sm font-bold text-brand-600 uppercase tracking-wider mb-1">Result</p>
+                            <p id="ucResultValue" class="text-3xl font-extrabold text-slate-900">—</p>
+                            <p id="ucResultFormula" class="text-sm text-slate-500 mt-2"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Unit Converter — Convert Length, Weight, Temperature, Speed Online</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Unit Converter is a free online tool that instantly converts between different units of measurement. Whether you need to convert kilometers to miles, kilograms to pounds, Celsius to Fahrenheit, or km/h to mph, this tool handles it all. Simply select a category, choose your input and output units, enter a value, and see the result instantly. The swap button lets you reverse the conversion direction with one click.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Four Conversion Categories</h3>
+                <p class="text-slate-600 mb-4">The converter supports four common categories. Length conversions include kilometers, meters, centimeters, miles, feet, and inches. Weight conversions cover kilograms, grams, pounds, and ounces. Temperature conversions handle Celsius, Fahrenheit, and Kelvin. Speed conversions support km/h, mph, and m/s. Each category provides all the commonly needed unit pairs for everyday use.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Instant and Private</h3>
+                <p class="text-slate-600">All conversions happen instantly in your browser using standard conversion formulas. No data is uploaded to any server — enter any value with confidence that your calculations remain completely private. The tool works offline once loaded, making it reliable anywhere you have a browser.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to convert km to miles?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To convert kilometers to miles, multiply the distance in km by 0.621371. For example, 10 km x 0.621371 = 6.21371 miles. This converter does the calculation instantly — select Length, choose km as the input unit and miles as the output unit, then enter your value.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How many pounds in a kg?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        There are approximately 2.20462 pounds in 1 kilogram. To convert kg to pounds, multiply the weight in kg by 2.20462. To convert pounds to kg, multiply by 0.453592. This converter handles both directions automatically.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to convert Celsius to Fahrenheit?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To convert Celsius to Fahrenheit, multiply the temperature by 1.8 (or 9/5) and then add 32. For example, 100 C x 1.8 + 32 = 212 F. To convert Fahrenheit to Celsius, subtract 32 and then multiply by 5/9.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the formula for unit conversion?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Most unit conversions use a simple multiplication factor. You multiply the input value by a conversion factor to get the output. For example, 1 km = 1000 meters (factor: 1000), 1 mile = 1.60934 km (factor: 1.60934). Temperature is the exception, requiring an offset in addition to multiplication.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/bmi-calculator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">BMI Calculator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your Body Mass Index with metric or imperial units.</span>
+            </a>
+            <a href="/tools/percentage-calculator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Percentage Calculator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Calculate percentages, increases, decreases, and differences.</span>
+            </a>
+            <a href="/tools/age-calculator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Age Calculator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your exact age in years, months, and days.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                </div>
+                <div class="footer-col">
+                    <h4>PDF Tools</h4>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculators</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/gst-calculator.html">GST Calculator</a>
+                    <a href="/tools/age-calculator.html">Age Calculator</a>
+                    <a href="/tools/percentage-calculator.html">Percentage Calculator</a>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Text &amp; Utility Tools</h4>
+                    <a href="/tools/word-counter.html">Word Counter</a>
+                    <a href="/tools/text-case-converter.html">Text Case Converter</a>
+                    <a href="/tools/password-generator.html">Password Generator</a>
+                    <a href="/tools/unit-converter.html">Unit Converter</a>
+                    <a href="/qr-code-generator.html">QR Code Generator</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. Compress images, convert files, generate QR codes, and more — everything runs in your browser. No uploads, no sign-ups, no data leaves your device.</p>
+                    <a href="/category/image-tools.html">Image Tools</a>
+                    <a href="/category/pdf-tools.html">PDF Tools</a>
+                    <a href="/category/calculator-tools.html">Calculators</a>
+                    <a href="/category/text-tools.html">Text Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/">All Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../common.js"></script>
+    <script>
+    (function(){
+        var ucInput = document.getElementById('ucInput');
+        var ucFrom = document.getElementById('ucFrom');
+        var ucTo = document.getElementById('ucTo');
+        var ucResultValue = document.getElementById('ucResultValue');
+        var ucResultFormula = document.getElementById('ucResultFormula');
+        var btnSwap = document.getElementById('btnSwap');
+        var tabs = document.querySelectorAll('.unit-tab');
+
+        var currentCategory = 'length';
+
+        // Unit definitions: each unit has a factor relative to the base unit
+        // For temperature, we use special conversion functions
+        var categories = {
+            length: {
+                base: 'meter',
+                units: {
+                    'km':           { name: 'Kilometers (km)',  factor: 1000 },
+                    'meter':        { name: 'Meters (m)',       factor: 1 },
+                    'cm':           { name: 'Centimeters (cm)', factor: 0.01 },
+                    'mile':         { name: 'Miles (mi)',       factor: 1609.344 },
+                    'feet':         { name: 'Feet (ft)',        factor: 0.3048 },
+                    'inches':       { name: 'Inches (in)',      factor: 0.0254 }
+                }
+            },
+            weight: {
+                base: 'kg',
+                units: {
+                    'kg':           { name: 'Kilograms (kg)',   factor: 1 },
+                    'gram':         { name: 'Grams (g)',        factor: 0.001 },
+                    'pound':        { name: 'Pounds (lbs)',     factor: 0.453592 },
+                    'ounce':        { name: 'Ounces (oz)',      factor: 0.0283495 }
+                }
+            },
+            temperature: {
+                base: 'celsius',
+                units: {
+                    'celsius':      { name: 'Celsius (C)' },
+                    'fahrenheit':   { name: 'Fahrenheit (F)' },
+                    'kelvin':       { name: 'Kelvin (K)' }
+                }
+            },
+            speed: {
+                base: 'kmh',
+                units: {
+                    'kmh':          { name: 'km/h',             factor: 1 },
+                    'mph':          { name: 'mph',              factor: 1.60934 },
+                    'ms':           { name: 'm/s',              factor: 3.6 }
+                }
+            }
+        };
+
+        // Style for unit tabs
+        var style = document.createElement('style');
+        style.textContent = '.unit-tab { padding: 0.6rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 0.75rem; background: #fff; cursor: pointer; transition: all 0.2s ease; text-align: center; font-size: 0.8rem; font-weight: 700; color: #64748b; } .unit-tab:hover { border-color: #93c5fd; background: #eff6ff; color: #1d4ed8; } .unit-tab.active { border-color: #1d4ed8; background: #1d4ed8; color: #fff; }';
+        document.head.appendChild(style);
+
+        // Populate unit dropdowns
+        function populateDropdowns() {
+            var cat = categories[currentCategory];
+            var units = cat.units;
+            ucFrom.innerHTML = '';
+            ucTo.innerHTML = '';
+            var keys = Object.keys(units);
+            keys.forEach(function(key) {
+                var opt1 = document.createElement('option');
+                opt1.value = key;
+                opt1.textContent = units[key].name;
+                ucFrom.appendChild(opt1);
+
+                var opt2 = document.createElement('option');
+                opt2.value = key;
+                opt2.textContent = units[key].name;
+                ucTo.appendChild(opt2);
+            });
+            // Default: first to second
+            if (keys.length > 1) {
+                ucTo.value = keys[1];
+            }
+        }
+
+        // Convert temperature
+        function convertTemperature(value, from, to) {
+            // Convert to Celsius first
+            var celsius;
+            if (from === 'celsius') celsius = value;
+            else if (from === 'fahrenheit') celsius = (value - 32) * 5 / 9;
+            else if (from === 'kelvin') celsius = value - 273.15;
+
+            // Convert from Celsius to target
+            if (to === 'celsius') return celsius;
+            if (to === 'fahrenheit') return (celsius * 9 / 5) + 32;
+            if (to === 'kelvin') return celsius + 273.15;
+            return celsius;
+        }
+
+        // Perform conversion
+        function convert() {
+            var inputVal = parseFloat(ucInput.value);
+            if (isNaN(inputVal)) {
+                ucResultValue.textContent = '—';
+                ucResultFormula.textContent = '';
+                return;
+            }
+
+            var fromKey = ucFrom.value;
+            var toKey = ucTo.value;
+            var result;
+
+            if (currentCategory === 'temperature') {
+                result = convertTemperature(inputVal, fromKey, toKey);
+            } else {
+                var cat = categories[currentCategory];
+                var fromFactor = cat.units[fromKey].factor;
+                var toFactor = cat.units[toKey].factor;
+                // Convert: input * fromFactor / toFactor
+                result = (inputVal * fromFactor) / toFactor;
+            }
+
+            // Format result
+            var formatted;
+            if (Math.abs(result) >= 1000000 || (Math.abs(result) < 0.001 && result !== 0)) {
+                formatted = result.toExponential(4);
+            } else {
+                formatted = parseFloat(result.toFixed(6)).toString();
+            }
+
+            ucResultValue.textContent = formatted + ' ' + getUnitLabel(toKey);
+
+            // Show formula hint
+            var fromLabel = getUnitLabel(fromKey);
+            var toLabel = getUnitLabel(toKey);
+            ucResultFormula.textContent = inputVal + ' ' + fromLabel + ' = ' + formatted + ' ' + toLabel;
+        }
+
+        function getUnitLabel(key) {
+            var labels = {
+                'km': 'km', 'meter': 'm', 'cm': 'cm', 'mile': 'mi', 'feet': 'ft', 'inches': 'in',
+                'kg': 'kg', 'gram': 'g', 'pound': 'lbs', 'ounce': 'oz',
+                'celsius': 'C', 'fahrenheit': 'F', 'kelvin': 'K',
+                'kmh': 'km/h', 'mph': 'mph', 'ms': 'm/s'
+            };
+            return labels[key] || key;
+        }
+
+        // Tab click
+        tabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                tabs.forEach(function(t) { t.classList.remove('active'); });
+                tab.classList.add('active');
+                currentCategory = tab.getAttribute('data-category');
+                populateDropdowns();
+                ucInput.value = '';
+                ucResultValue.textContent = '—';
+                ucResultFormula.textContent = '';
+            });
+        });
+
+        // Swap button
+        btnSwap.addEventListener('click', function() {
+            var temp = ucFrom.value;
+            ucFrom.value = ucTo.value;
+            ucTo.value = temp;
+            convert();
+        });
+
+        // Convert on input change
+        ucInput.addEventListener('input', convert);
+        ucFrom.addEventListener('change', convert);
+        ucTo.addEventListener('change', convert);
+
+        // Initialize
+        populateDropdowns();
+    })();
+    </script>
+</body>
+</html>

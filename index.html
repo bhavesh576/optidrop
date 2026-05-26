@@ -1,0 +1,604 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>OptiDrop — Free Online Document Tools | Compress, Convert, Resize, OCR | No Upload Required</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+
+    <meta name="description" content="Free browser-based document toolkit. Compress images to exact KB, convert HEIC to JPG, extract PDF pages, resize passport photos, generate QR codes, remove backgrounds. 100% private — no upload.">
+    <meta name="keywords" content="compress image to 100kb, heic to jpg converter online free, pdf to jpg extractor, passport photo resizer 300dpi, remove background from photo online, qr code generator free, compress pdf online, image format converter, ocr online free, signature scanner, name date stamp photo, jpg to pdf converter free, passport photo size uk, schengen visa photo requirements, us visa photo 2x2, australian passport photo maker, compress image for whatsapp, pdf to jpg converter free no watermark">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+
+    <meta property="og:title" content="OptiDrop — Free Online Document Tools | No Upload Required">
+    <meta property="og:description" content="Compress images, convert HEIC to JPG, extract PDF pages, resize passport photos, remove backgrounds, generate QR codes — all in your browser, 100% private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OptiDrop — Free Online Document Tools | No Upload Required">
+    <meta name="twitter:description" content="Compress, convert, resize, extract, OCR, merge — all in your browser. 100% private.">
+
+    <link rel="canonical" href="https://optidrop.online">
+
+    <!-- WebSite Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "OptiDrop",
+      "url": "https://optidrop.online",
+      "description": "Free all-in-one browser-based document toolkit for compressing images, converting HEIC to JPG, extracting PDF pages, resizing passport photos, removing backgrounds, generating QR codes, and more."
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free browser-based document toolkit with 12 tools including image compression, HEIC conversion, PDF extraction, passport photo resizing, background removal, QR code generation, and OCR.",
+      "featureList": "Image compression to exact KB, HEIC to JPG conversion, PDF to JPG extraction, 300 DPI passport photo maker, Background remover, PDF compressor, QR code generator, Image format converter, Signature scanner, OCR text extraction, Name and date stamp, JPG to PDF merger"
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2TXPNV88YM');
+    </script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                    colors: {
+                        brand: { 50:'#eff6ff', 100:'#dbeafe', 500:'#3b82f6', 600:'#2563eb', 700:'#1d4ed8', 900:'#1e3a8a' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Global Styles -->
+    <link rel="preload" href="./styles.css" as="style">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">
+                <img src="./Generated_image-removebg-preview.png" alt="OptiDrop" >
+            </a>
+            <nav class="header-nav">
+                <a href="#tools" class="hide-mobile">Tools</a>
+                <a href="#how-it-works" class="hide-mobile">How it Works</a>
+                <a href="#faq" class="hide-mobile">FAQ</a>
+                <a href="/blog/" class="hide-mobile">Blog</a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="#tools" onclick="this.parentElement.classList.remove('open')">Tools</a>
+            <a href="#how-it-works" onclick="this.parentElement.classList.remove('open')">How it Works</a>
+            <a href="#faq" onclick="this.parentElement.classList.remove('open')">FAQ</a>
+            <a href="/blog/">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header (728x90 leaderboard) -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <!-- REPLACE WITH YOUR AD SLOT ID -->
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+
+        <!-- HERO SECTION -->
+        <section class="w-full max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-6 text-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">
+                Free Online Document Tools
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">— No Upload Required</span>
+            </h1>
+            <p class="text-lg text-slate-600 mb-8 max-w-3xl mx-auto">
+                Compress images to exact KB, convert HEIC to JPG, extract PDF pages, resize passport photos to 300 DPI, remove backgrounds, generate QR codes, and extract text with OCR.
+                <br class="hidden sm:block"/>
+                <strong class="text-slate-800">Works globally in any browser. 100% private — no files leave your device.</strong>
+            </p>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <svg class="search-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <input type="text" id="toolSearch" placeholder="Search tools...">
+            </div>
+        </section>
+
+        <!-- TRUST BADGES -->
+        <section class="w-full max-w-4xl mx-auto px-4 sm:px-6 pb-10">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="trust-badge">
+                    <div class="trust-badge-icon bg-blue-50 text-brand-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-800">No Upload</span>
+                    <span class="text-xs text-slate-500">Files stay on your device</span>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon bg-green-50 text-green-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-800">100% Free</span>
+                    <span class="text-xs text-slate-500">No hidden fees or limits</span>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon bg-purple-50 text-purple-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-800">Works Globally</span>
+                    <span class="text-xs text-slate-500">Any browser, any country</span>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon bg-rose-50 text-rose-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-800">No Sign-up</span>
+                    <span class="text-xs text-slate-500">Start using instantly</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOL GRID DASHBOARD -->
+        <section id="tools" class="w-full max-w-6xl mx-auto px-4 sm:px-6 pb-12">
+            <div id="toolDashboard" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                <a href="/compress-image.html" class="tool-card group">
+                    <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">Image Compressor</h3>
+                    <p class="tool-card-desc">Compress photos to exact KB limits (20KB, 50KB, 100KB). Perfect for government portals, exam forms, and passport uploads.</p>
+                    <span class="tool-card-tag blue">Most Popular</span>
+                </a>
+
+                <a href="/jpg-to-pdf.html" class="tool-card group">
+                    <div class="tool-card-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">Images to PDF Merger</h3>
+                    <p class="tool-card-desc">Combine multiple JPG, PNG, or WebP images into a single PDF document. Choose A4, Letter, or auto-fit page sizes.</p>
+                    <span class="tool-card-tag indigo">Forms &amp; Docs</span>
+                </a>
+
+                <a href="/heic-to-jpg.html" class="tool-card group">
+                    <div class="tool-card-icon bg-orange-50 text-orange-600 group-hover:bg-orange-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">HEIC to JPG Converter</h3>
+                    <p class="tool-card-desc">Convert iPhone HEIC photos to JPG format instantly. Portals reject HEIC files — fix it in one click, no app needed.</p>
+                    <span class="tool-card-tag orange">iPhone Users</span>
+                </a>
+
+                <a href="/pdf-to-jpg.html" class="tool-card group">
+                    <div class="tool-card-icon bg-purple-50 text-purple-600 group-hover:bg-purple-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">PDF to JPG Extractor</h3>
+                    <p class="tool-card-desc">Extract each page of a PDF as a separate high-quality JPG image. Download individual pages or all as a ZIP file.</p>
+                    <span class="tool-card-tag purple">High Demand</span>
+                </a>
+
+                <a href="/passport-photo-resizer.html" class="tool-card group">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">300 DPI Photo Resizer</h3>
+                    <p class="tool-card-desc">Crop and resize photos to exact passport dimensions at 300 DPI. Presets for India, US, UK, Schengen, Canada, Australia, UAE, China, Japan, Korea.</p>
+                    <span class="tool-card-tag emerald">Passport &amp; Visa</span>
+                </a>
+
+                <a href="/name-date-stamp.html" class="tool-card group">
+                    <div class="tool-card-icon bg-rose-50 text-rose-600 group-hover:bg-rose-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">Name &amp; Date Stamper</h3>
+                    <p class="tool-card-desc">Overlay your name and date on photos for exam forms, government applications, and official document requirements.</p>
+                    <span class="tool-card-tag rose">Exam Ready</span>
+                </a>
+
+                <a href="/signature-scanner.html" class="tool-card group">
+                    <div class="tool-card-icon bg-teal-50 text-teal-600 group-hover:bg-teal-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">Signature Scanner</h3>
+                    <p class="tool-card-desc">Clean up messy phone-taken signature photos. Turns grey backgrounds pure white and ink jet-black. Outputs under 20KB.</p>
+                    <span class="tool-card-tag teal">Clean Scan</span>
+                </a>
+
+                <a href="/image-to-text-ocr.html" class="tool-card group">
+                    <div class="tool-card-icon bg-cyan-50 text-cyan-600 group-hover:bg-cyan-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">Image Text Extractor (OCR)</h3>
+                    <p class="tool-card-desc">Extract text from screenshots, forms, and notes using OCR. Copy text to clipboard instantly. 100% browser-based.</p>
+                    <span class="tool-card-tag cyan">OCR</span>
+                </a>
+
+                <a href="/remove-background.html" class="tool-card group">
+                    <div class="tool-card-icon bg-amber-50 text-amber-600 group-hover:bg-amber-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L4.939 4.939m7.061 7.061l-2.879-2.879M12 12l2.879-2.879"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">Background Remover</h3>
+                    <p class="tool-card-desc">Remove background from any photo online. Create transparent PNGs for passport photos, products, and profiles.</p>
+                    <span class="tool-card-tag amber">New</span>
+                </a>
+
+                <a href="/compress-pdf.html" class="tool-card group">
+                    <div class="tool-card-icon bg-lime-50 text-lime-600 group-hover:bg-lime-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">PDF Compressor</h3>
+                    <p class="tool-card-desc">Reduce PDF file size while maintaining quality. Perfect for email attachments and portal uploads with size limits.</p>
+                    <span class="tool-card-tag lime">New</span>
+                </a>
+
+                <a href="/qr-code-generator.html" class="tool-card group">
+                    <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">QR Code Generator</h3>
+                    <p class="tool-card-desc">Generate QR codes for URLs, text, email, and phone numbers. Download as PNG or SVG. Free, unlimited.</p>
+                    <span class="tool-card-tag blue">New</span>
+                </a>
+
+                <a href="/image-format-converter.html" class="tool-card group">
+                    <div class="tool-card-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">Image Format Converter</h3>
+                    <p class="tool-card-desc">Convert images between JPG, PNG, WebP, and BMP formats. Adjust quality for JPG and WebP output.</p>
+                    <span class="tool-card-tag indigo">New</span>
+                </a>
+
+                <!-- New Calculator Tools -->
+                <a href="/tools/emi-calculator.html" class="tool-card group">
+                    <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">EMI Calculator</h3>
+                    <p class="tool-card-desc">Calculate monthly EMI for home, car, and personal loans. Shows total payment and interest breakdown.</p>
+                    <span class="tool-card-tag blue">Calculator</span>
+                </a>
+
+                <a href="/tools/gst-calculator.html" class="tool-card group">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">GST Calculator</h3>
+                    <p class="tool-card-desc">Calculate GST at 5%, 12%, 18%, or 28%. Also removes GST from inclusive prices. India-focused.</p>
+                    <span class="tool-card-tag emerald">Calculator</span>
+                </a>
+
+                <a href="/tools/age-calculator.html" class="tool-card group">
+                    <div class="tool-card-icon bg-purple-50 text-purple-600 group-hover:bg-purple-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">Age Calculator</h3>
+                    <p class="tool-card-desc">Find your exact age in years, months, and days. Also shows days until your next birthday.</p>
+                    <span class="tool-card-tag purple">Calculator</span>
+                </a>
+
+                <a href="/tools/percentage-calculator.html" class="tool-card group">
+                    <div class="tool-card-icon bg-amber-50 text-amber-600 group-hover:bg-amber-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">Percentage Calculator</h3>
+                    <p class="tool-card-desc">Find X% of Y, calculate what percent one number is of another, and compute percentage change.</p>
+                    <span class="tool-card-tag amber">Calculator</span>
+                </a>
+
+                <!-- New Text Tools -->
+                <a href="/tools/word-counter.html" class="tool-card group">
+                    <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">Word Counter</h3>
+                    <p class="tool-card-desc">Count words, characters, sentences, and paragraphs. Shows estimated reading time.</p>
+                    <span class="tool-card-tag blue">Text Tool</span>
+                </a>
+
+                <a href="/tools/text-case-converter.html" class="tool-card group">
+                    <div class="tool-card-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">Text Case Converter</h3>
+                    <p class="tool-card-desc">Convert text to UPPERCASE, lowercase, Title Case, Sentence case, and alternating case.</p>
+                    <span class="tool-card-tag indigo">Text Tool</span>
+                </a>
+
+                <a href="/tools/password-generator.html" class="tool-card group">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">Password Generator</h3>
+                    <p class="tool-card-desc">Generate strong, random passwords with customizable length and character types. Cryptographically secure.</p>
+                    <span class="tool-card-tag emerald">Security</span>
+                </a>
+
+                <a href="/tools/bmi-calculator.html" class="tool-card group">
+                    <div class="tool-card-icon bg-rose-50 text-rose-600 group-hover:bg-rose-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">BMI Calculator</h3>
+                    <p class="tool-card-desc">Calculate Body Mass Index with metric or imperial units. Shows BMI category and healthy weight range.</p>
+                    <span class="tool-card-tag rose">Health</span>
+                </a>
+
+                <a href="/tools/unit-converter.html" class="tool-card group">
+                    <div class="tool-card-icon bg-teal-50 text-teal-600 group-hover:bg-teal-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                    </div>
+                    <h3 class="tool-card-title">Unit Converter</h3>
+                    <p class="tool-card-desc">Convert length, weight, temperature, and speed units. Supports metric and imperial systems.</p>
+                    <span class="tool-card-tag teal">Utility</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Browse by Category -->
+        <section class="py-12 bg-white border-t border-slate-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                <h2 class="text-2xl font-bold text-slate-900 mb-2 text-center">Browse by Category</h2>
+                <p class="text-center text-slate-500 text-sm mb-8">Find the right tool for your task</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="/category/image-tools.html" class="tool-card group" style="text-align:center;">
+                        <div class="tool-card-icon bg-blue-50 text-blue-600 mx-auto">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3 class="tool-card-title">Image Tools</h3>
+                        <p class="tool-card-desc">Compress, convert, resize, remove backgrounds, OCR, and more.</p>
+                        <span class="tool-card-tag blue">8 Tools</span>
+                    </a>
+                    <a href="/category/pdf-tools.html" class="tool-card group" style="text-align:center;">
+                        <div class="tool-card-icon bg-indigo-50 text-indigo-600 mx-auto">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        </div>
+                        <h3 class="tool-card-title">PDF Tools</h3>
+                        <p class="tool-card-desc">Compress PDFs, merge images to PDF, extract PDF pages.</p>
+                        <span class="tool-card-tag indigo">3 Tools</span>
+                    </a>
+                    <a href="/category/calculator-tools.html" class="tool-card group" style="text-align:center;">
+                        <div class="tool-card-icon bg-emerald-50 text-emerald-600 mx-auto">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3 class="tool-card-title">Calculators</h3>
+                        <p class="tool-card-desc">EMI, GST, Age, and Percentage calculators.</p>
+                        <span class="tool-card-tag emerald">4 Tools</span>
+                    </a>
+                    <a href="/category/text-tools.html" class="tool-card group" style="text-align:center;">
+                        <div class="tool-card-icon bg-purple-50 text-purple-600 mx-auto">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg>
+                        </div>
+                        <h3 class="tool-card-title">Text Tools</h3>
+                        <p class="tool-card-desc">Word counter, case converter, and password generator.</p>
+                        <span class="tool-card-tag purple">3 Tools</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool grid (336x280 rectangle) -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:0 auto 2rem;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <!-- REPLACE WITH YOUR AD SLOT ID -->
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- HOW IT WORKS -->
+        <section id="how-it-works" class="py-16 bg-white border-t border-slate-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl font-bold text-slate-900 mb-3 text-center">How OptiDrop Works</h2>
+                <p class="text-center text-slate-500 text-sm mb-12 max-w-2xl mx-auto">Every tool runs 100% in your browser. No server uploads, no data collection, no waiting.</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-100 text-brand-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Pick a Tool</h3>
+                        <p class="text-slate-600 text-sm">Choose from 12 powerful tools: compress, convert, resize, stamp, merge, extract, scan, OCR, QR codes, and more.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Drop Your File</h3>
+                        <p class="text-slate-600 text-sm">Drag and drop or tap to browse. Supports JPG, PNG, WebP, HEIC, PDF, and BMP files.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Set Your Options</h3>
+                        <p class="text-slate-600 text-sm">Choose target size, dimensions, DPI, format, quality, or text to stamp. One-click presets available.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Download Instantly</h3>
+                        <p class="text-slate-600 text-sm">Get your processed file in seconds. Download individual files or everything as a ZIP.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section id="faq" class="py-16 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
+                <div class="space-y-3" id="faqContainer">
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            Is OptiDrop completely free to use?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            Yes. OptiDrop is 100% free. There are no hidden fees, no sign-up walls, and no watermarks. Every tool runs client-side in your browser so you can compress, convert, resize, and merge without paying anything.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            Are my files uploaded to a server?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            No. OptiDrop uses HTML5 Canvas, PDF.js, and JavaScript to process files directly inside your web browser. Your images and documents never leave your device, making it safe for sensitive documents.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            Does OptiDrop work on mobile phones?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            Yes. OptiDrop is fully responsive and works on Android and iPhone directly in your mobile browser. All tools are optimized for touch screens.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            What passport photo sizes does OptiDrop support?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            We provide one-click presets for India (413x531 px), US Visa (600x600 px), UK (413x531 px), Schengen (413x531 px), Canada (591x827 px), Australia (413x531 px), UAE (472x708 px), China (390x567 px), Japan (413x531 px), and South Korea (413x531 px).
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            Can I compress images for WhatsApp?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            Yes. Upload your photo to the Image Compressor and set the target to 100KB or 200KB. The tool compresses your image to fit WhatsApp's requirements while maintaining the best quality.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            How do I convert HEIC photos from my iPhone?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            Open the HEIC to JPG Converter, drop your iPhone HEIC photo, and click Convert. The conversion happens entirely in your browser. No app installation needed.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                </div>
+                <div class="footer-col">
+                    <h4>PDF Tools</h4>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculators</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/gst-calculator.html">GST Calculator</a>
+                    <a href="/tools/age-calculator.html">Age Calculator</a>
+                    <a href="/tools/percentage-calculator.html">Percentage Calculator</a>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Text &amp; Utility Tools</h4>
+                    <a href="/tools/word-counter.html">Word Counter</a>
+                    <a href="/tools/text-case-converter.html">Text Case Converter</a>
+                    <a href="/tools/password-generator.html">Password Generator</a>
+                    <a href="/tools/unit-converter.html">Unit Converter</a>
+                    <a href="/qr-code-generator.html">QR Code Generator</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. Compress images, convert files, generate QR codes, and more — everything runs in your browser. No uploads, no sign-ups, no data leaves your device.</p>
+                    <a href="/category/image-tools.html">Image Tools</a>
+                    <a href="/category/pdf-tools.html">PDF Tools</a>
+                    <a href="/category/calculator-tools.html">Calculators</a>
+                    <a href="/category/text-tools.html">Text Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/">All Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+
+    <script src="./common.js"></script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to JPG Converter Free — Extract PDF Pages as Images | OptiDrop</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <meta name="description" content="Extract each page of a PDF as a separate JPG image online free. Download individual pages or all as ZIP. No upload required.">
+    <meta name="keywords" content="pdf to jpg converter free no watermark, extract pdf pages as images, pdf to image converter, pdf page to jpg, convert pdf to jpg online">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="PDF to JPG Converter Free — Extract PDF Pages as Images | OptiDrop">
+    <meta property="og:description" content="Extract each page of a PDF as a separate JPG image online free. Download individual pages or all as ZIP. No upload required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/pdf-to-jpg.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PDF to JPG Converter Free — Extract PDF Pages as Images | OptiDrop">
+    <meta name="twitter:description" content="Extract PDF pages as JPG images online free. Download individual pages or all as ZIP. No upload.">
+    <link rel="canonical" href="https://optidrop.online/pdf-to-jpg.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "PDF to JPG Converter", "item": "https://optidrop.online/pdf-to-jpg.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop PDF to JPG Extractor",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Extract each page of a PDF as a separate JPG image online free. Download individual pages or all as ZIP. Runs entirely in your browser with no upload."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I extract pages from a PDF as JPG images?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upload your PDF file by dropping it into the upload zone or tapping to browse. Choose your preferred quality and scale settings, then click Extract Pages. Each page will be rendered as a separate JPG image that you can download individually or all at once as a ZIP file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What quality options are available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There are three quality levels: High (95% JPEG quality), Medium (85% JPEG quality), and Low (70% JPEG quality). Higher quality produces sharper images with larger file sizes. For most use cases, High quality at 2x scale is recommended."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a file size limit for PDFs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no hard file size limit, but processing depends on your device memory. Typically, PDFs up to 100MB work well on modern devices. Very large PDFs with many pages may take longer to process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are all pages extracted at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All pages in the PDF are extracted as individual JPG images. You can download each page separately or download all pages at once as a ZIP archive for convenience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the PDF to JPG converter work on mobile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The tool is fully responsive and works on Android and iPhone directly in your mobile browser. No app installation is required."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- JSZip (Batch Downloads) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- PDF.js (PDF Rendering) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        if (typeof pdfjsLib !== 'undefined') {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="preload" href="./styles.css" as="style">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">
+                <img src="./Generated_image-removebg-preview.png" alt="OptiDrop">
+            </a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/">All Tools</a>
+            <a href="/blog/">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Extract PDF Pages as JPG Images — Free Online Converter</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Convert each page of your PDF document into a high-quality JPG image. Choose quality and scale settings, then download individual pages or all at once as a ZIP file. Everything runs in your browser — your files never leave your device.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden relative">
+
+                    <!-- STATE 1: UPLOAD ZONE -->
+                    <div id="pdf2jpg-state-upload" class="p-8 sm:p-12 text-center">
+                        <div id="pdf2jpgDropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 cursor-pointer transition-all-ease hover:bg-slate-50 hover:border-purple-400 group flex flex-col items-center justify-center min-h-[260px]">
+                            <input type="file" id="pdf2jpgFileInput" class="hidden" accept="application/pdf,.pdf" />
+                            <div class="bg-purple-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Drop PDF Here or Tap to Browse</h3>
+                            <p class="text-sm text-slate-500">Supports PDF files only</p>
+                        </div>
+                        <div class="mt-5 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                            </svg>
+                            No upload? Seriously. Files never leave your device.
+                        </div>
+                    </div>
+
+                    <!-- STATE 2: SETTINGS -->
+                    <div id="pdf2jpg-state-settings" class="hidden p-6 sm:p-8">
+                        <div class="flex flex-col md:flex-row gap-8 items-start">
+
+                            <!-- Left: PDF Info -->
+                            <div class="w-full md:w-1/2 flex flex-col">
+                                <h3 class="text-lg font-bold text-slate-800 mb-3">PDF Loaded</h3>
+                                <div id="pdf2jpgInfo" class="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="bg-purple-100 p-3 rounded-xl flex-shrink-0">
+                                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                        </div>
+                                        <div class="min-w-0">
+                                            <p class="text-sm font-bold text-slate-800 truncate" id="pdf2jpgFileName">document.pdf</p>
+                                            <p class="text-xs text-slate-500" id="pdf2jpgPageCount">0 pages detected</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-purple-50 border border-purple-200 rounded-xl p-4">
+                                    <div class="flex items-start gap-2">
+                                        <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                        <div>
+                                            <p class="text-sm font-semibold text-purple-800">All pages will be extracted</p>
+                                            <p class="text-xs text-purple-700 mt-1">Each page becomes a separate JPG image. Download individually or all as ZIP.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Settings Form -->
+                            <div class="w-full md:w-1/2 flex flex-col justify-center space-y-5 sticky top-0">
+                                <div>
+                                    <label for="pdf2jpgQuality" class="block text-sm font-bold text-slate-700 mb-2">Image Quality</label>
+                                    <select id="pdf2jpgQuality" class="settings-select">
+                                        <option value="high" selected>High (95% JPEG) — Best for printing</option>
+                                        <option value="medium">Medium (85% JPEG) — Good balance</option>
+                                        <option value="low">Low (70% JPEG) — Smaller files</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="pdf2jpgScale" class="block text-sm font-bold text-slate-700 mb-2">Resolution Scale</label>
+                                    <select id="pdf2jpgScale" class="settings-select">
+                                        <option value="2" selected>2x — High resolution (recommended)</option>
+                                        <option value="1.5">1.5x — Medium resolution</option>
+                                        <option value="1">1x — Standard resolution</option>
+                                    </select>
+                                    <p class="mt-1 text-xs text-slate-500">Higher scale produces sharper images with larger file sizes.</p>
+                                </div>
+
+                                <div class="flex gap-3 pt-1">
+                                    <button id="btnPdf2jpgCancel" class="w-1/3 px-4 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors focus:outline-none">
+                                        Cancel
+                                    </button>
+                                    <button id="btnPdf2jpgExtract" class="w-2/3 px-4 py-4 bg-purple-600 text-white font-bold rounded-xl hover:bg-purple-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
+                                        <span>Extract Pages</span>
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STATE 3: LOADING -->
+                    <div id="pdf2jpg-state-loading" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center z-10 rounded-3xl">
+                        <div class="relative w-20 h-20 mb-4">
+                            <div class="absolute inset-0 border-4 border-purple-100 rounded-full"></div>
+                            <div class="absolute inset-0 border-4 border-purple-600 rounded-full border-t-transparent animate-spin"></div>
+                            <div class="absolute inset-0 flex items-center justify-center text-xs font-bold text-purple-700" id="pdf2jpgLoadingPercent">0%</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">Extracting pages as JPG...</h3>
+                        <p class="text-sm font-medium text-purple-600 mt-2 bg-purple-50 px-4 py-2 rounded-full" id="pdf2jpgProgressText">0 / 0 pages extracted</p>
+                        <div class="w-full max-w-xs bg-slate-200 rounded-full h-2 mt-4 overflow-hidden shadow-inner">
+                            <div id="pdf2jpgProgressBar" class="bg-purple-600 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-4 max-w-xs text-center">Rendering each PDF page as a JPG image. Please keep this tab open.</p>
+                    </div>
+
+                    <!-- STATE 4: RESULT -->
+                    <div id="pdf2jpg-state-result" class="hidden p-6 sm:p-10 text-center flex flex-col items-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-2">Extraction Complete!</h2>
+                        <p class="text-slate-600 mb-2">
+                            Successfully extracted <span id="pdf2jpgSuccessCount" class="font-bold text-purple-600">0</span> pages as JPG images.
+                        </p>
+                        <p class="text-xs text-slate-400 mb-6">Download individual pages or grab everything as a ZIP.</p>
+                        <div id="pdf2jpgResultsContainer" class="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-8 text-left"></div>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2 w-full max-w-lg mx-auto">
+                            <button id="btnPdf2jpgDownloadZip" class="w-full sm:w-auto px-6 py-4 bg-purple-600 text-white font-bold rounded-xl hover:bg-purple-700 shadow-lg shadow-purple-200 transition-all focus:outline-none flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download All (ZIP)
+                            </button>
+                            <button id="btnPdf2jpgStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all focus:outline-none">
+                                Extract Another PDF
+                            </button>
+                        </div>
+                    </div>
+
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Extract PDF Pages as JPG Images — Free Online, No Upload Required</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's PDF to JPG Extractor converts each page of your PDF document into a separate, high-quality JPG image. Whether you need to extract a single page, grab presentation slides as images, convert a scanned document into shareable pictures, or pull charts and graphs from a report, this tool handles it all — completely free and entirely in your browser. Your PDF files are never uploaded to any server, making it safe for confidential documents like contracts, financial reports, and personal records.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Adjustable Quality and Resolution</h3>
+                <p class="text-slate-600 mb-4">Choose from three JPEG quality levels (High, Medium, Low) and three resolution scales (2x, 1.5x, 1x) to balance image clarity against file size. The default High quality at 2x scale produces crisp, print-ready images. For web use or email sharing where smaller files are preferred, Medium quality at 1.5x is a good compromise. All rendering happens client-side using PDF.js, ensuring fast processing and complete privacy.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Download Individual Pages or All as ZIP</h3>
+                <p class="text-slate-600">After extraction, each page appears as a preview thumbnail that you can download individually. Need all pages? Click the Download All (ZIP) button to get every extracted JPG bundled into a single convenient ZIP archive. This is perfect for students extracting textbook pages, professionals pulling charts from reports, or anyone who needs PDF content in image format.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I extract pages from a PDF as JPG images?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Upload your PDF file by dropping it into the upload zone or tapping to browse. Choose your preferred quality and scale settings, then click Extract Pages. Each page will be rendered as a separate JPG image that you can download individually or all at once as a ZIP file.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What quality options are available?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        There are three quality levels: High (95% JPEG quality), Medium (85% JPEG quality), and Low (70% JPEG quality). Higher quality produces sharper images with larger file sizes. For most use cases, High quality at 2x scale is recommended.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is there a file size limit for PDFs?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        There is no hard file size limit, but processing depends on your device memory. Typically, PDFs up to 100MB work well on modern devices. Very large PDFs with many pages may take longer to process.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Are all pages extracted at once?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. All pages in the PDF are extracted as individual JPG images. You can download each page separately or download all pages at once as a ZIP archive for convenience.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does the PDF to JPG converter work on mobile?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. The tool is fully responsive and works on Android and iPhone directly in your mobile browser. No app installation is required.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/jpg-to-pdf.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">JPG to PDF</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Merge multiple images into a single PDF document.</span>
+            </a>
+            <a href="/compress-pdf.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">PDF Compressor</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Reduce PDF file size while keeping quality.</span>
+            </a>
+            <a href="/compress-image.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Image Compressor</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Compress images to exact KB for web, forms, and email.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                </div>
+                <div class="footer-col">
+                    <h4>PDF Tools</h4>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculators</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/gst-calculator.html">GST Calculator</a>
+                    <a href="/tools/age-calculator.html">Age Calculator</a>
+                    <a href="/tools/percentage-calculator.html">Percentage Calculator</a>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Text &amp; Utility Tools</h4>
+                    <a href="/tools/word-counter.html">Word Counter</a>
+                    <a href="/tools/text-case-converter.html">Text Case Converter</a>
+                    <a href="/tools/password-generator.html">Password Generator</a>
+                    <a href="/tools/unit-converter.html">Unit Converter</a>
+                    <a href="/qr-code-generator.html">QR Code Generator</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. Compress images, convert files, generate QR codes, and more — everything runs in your browser. No uploads, no sign-ups, no data leaves your device.</p>
+                    <a href="/category/image-tools.html">Image Tools</a>
+                    <a href="/category/pdf-tools.html">PDF Tools</a>
+                    <a href="/category/calculator-tools.html">Calculators</a>
+                    <a href="/category/text-tools.html">Text Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/">All Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="./common.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

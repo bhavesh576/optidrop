@@ -1,0 +1,455 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPG to PDF Converter Online Free — Merge Images to PDF | OptiDrop</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <meta name="description" content="Convert JPG, PNG, and WebP images to PDF online free. Merge multiple photos into one PDF document. No upload required.">
+    <meta name="keywords" content="jpg to pdf converter free, merge images to pdf online, combine photos into pdf, image to pdf converter, convert png to pdf">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="JPG to PDF Converter Online Free — Merge Images to PDF | OptiDrop">
+    <meta property="og:description" content="Convert JPG, PNG, and WebP images to PDF online free. Merge multiple photos into one PDF document. No upload required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/jpg-to-pdf.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JPG to PDF Converter Online Free — Merge Images to PDF | OptiDrop">
+    <meta name="twitter:description" content="Convert JPG, PNG, and WebP images to PDF online free. Merge multiple photos into one PDF. No upload.">
+    <link rel="canonical" href="https://optidrop.online/jpg-to-pdf.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "JPG to PDF Converter", "item": "https://optidrop.online/jpg-to-pdf.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop JPG to PDF Converter",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Convert JPG, PNG, and WebP images to PDF online free. Merge multiple photos into one PDF document with custom page sizes. Runs entirely in your browser with no upload."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I merge JPG images into a PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open the JPG to PDF tool, drop your images into the upload zone, arrange them in the desired order using drag and drop or the up/down buttons, choose your page size and orientation, then click Generate PDF. Your merged PDF will be ready to download instantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many images can I merge into one PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can merge up to 50 images into a single PDF document. This limit ensures smooth performance in your browser. Supported formats include JPG, PNG, and WebP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What page sizes are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OptiDrop supports three page size options: A4 (210 x 297 mm), US Letter (216 x 279 mm), and Auto-fit which matches each page to the image's original dimensions. You can also choose portrait, landscape, or auto orientation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I reorder the pages in my PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. After adding your images, you can reorder pages by dragging and dropping them in the queue, or by using the up and down arrow buttons next to each image. You can also remove individual images before generating the PDF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the JPG to PDF converter free with no watermark?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. OptiDrop's JPG to PDF converter is 100% free with no hidden fees, no sign-up requirements, and no watermarks added to your PDF. Everything runs locally in your browser."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- JSZip (Batch Downloads) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- jsPDF (PDF Export) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="preload" href="./styles.css" as="style">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">
+                <img src="./Generated_image-removebg-preview.png" alt="OptiDrop">
+            </a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/">All Tools</a>
+            <a href="/blog/">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Convert JPG Images to PDF — Free Online PDF Merger</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Combine multiple JPG, PNG, or WebP images into a single PDF document. Choose A4, US Letter, or auto-fit page sizes. Reorder pages with drag and drop. Everything runs in your browser — your files never leave your device.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden relative">
+
+                    <!-- STATE 1: UPLOAD ZONE -->
+                    <div id="merge-state-upload" class="p-8 sm:p-12 text-center">
+                        <div id="mergeDropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 cursor-pointer transition-all-ease hover:bg-slate-50 hover:border-brand-400 group flex flex-col items-center justify-center min-h-[260px]">
+                            <input type="file" id="mergeFileInput" class="hidden" accept="image/jpeg, image/png, image/webp" multiple />
+                            <div class="bg-indigo-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Drop Images Here or Tap to Browse</h3>
+                            <p class="text-sm text-slate-500">Supports JPG, PNG, WebP (Max 50 images)</p>
+                        </div>
+                        <div class="mt-5 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                            </svg>
+                            No upload? Seriously. Files never leave your device.
+                        </div>
+                    </div>
+
+                    <!-- STATE 2: SETTINGS -->
+                    <div id="merge-state-settings" class="hidden p-6 sm:p-8">
+                        <div class="flex flex-col md:flex-row gap-8 items-start">
+
+                            <!-- Left: Image Queue -->
+                            <div class="w-full md:w-1/2 flex flex-col">
+                                <div class="flex items-center justify-between mb-3">
+                                    <h3 class="text-lg font-bold text-slate-800">
+                                        Selected Images (<span id="mergeQueueCount">0</span>/50)
+                                    </h3>
+                                    <button id="btnMergeAddMore" class="text-sm font-semibold text-brand-600 hover:text-brand-700 transition-colors flex items-center gap-1">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                                        Add More
+                                    </button>
+                                </div>
+                                <div id="mergeQueueContainer" class="space-y-2 max-h-[320px] overflow-y-auto pr-2 mb-3">
+                                </div>
+                                <p class="text-xs text-slate-400 mt-1">Drag and drop to reorder pages. Use arrows to move up/down.</p>
+                            </div>
+
+                            <!-- Right: Settings Form -->
+                            <div class="w-full md:w-1/2 flex flex-col justify-center space-y-5 sticky top-0">
+                                <div>
+                                    <label for="mergePageSize" class="block text-sm font-bold text-slate-700 mb-2">Page Size</label>
+                                    <select id="mergePageSize" class="settings-select">
+                                        <option value="a4">A4 (210 x 297 mm)</option>
+                                        <option value="letter">US Letter (216 x 279 mm)</option>
+                                        <option value="auto">Auto-fit to Image</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="mergeOrientation" class="block text-sm font-bold text-slate-700 mb-2">Orientation</label>
+                                    <select id="mergeOrientation" class="settings-select">
+                                        <option value="auto">Auto</option>
+                                        <option value="portrait">Portrait</option>
+                                        <option value="landscape">Landscape</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="mergeMargin" class="block text-sm font-bold text-slate-700 mb-2">Page Margin</label>
+                                    <select id="mergeMargin" class="settings-select">
+                                        <option value="0">No Margin</option>
+                                        <option value="5">5 mm</option>
+                                        <option value="10" selected>10 mm</option>
+                                        <option value="20">20 mm</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="mergeFilename" class="block text-sm font-bold text-slate-700 mb-2">Output Filename</label>
+                                    <input type="text" id="mergeFilename" value="merged-document" placeholder="merged-document"
+                                        class="block w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-medium">
+                                    <p class="mt-1 text-xs text-slate-500">.pdf extension will be added automatically.</p>
+                                </div>
+
+                                <div class="flex gap-3 pt-1">
+                                    <button id="btnMergeCancel" class="w-1/3 px-4 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors focus:outline-none">
+                                        Cancel
+                                    </button>
+                                    <button id="btnMergeGenerate" class="w-2/3 px-4 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
+                                        <span>Generate PDF</span>
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STATE 3: LOADING -->
+                    <div id="merge-state-loading" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center z-10 rounded-3xl">
+                        <div class="relative w-20 h-20 mb-4">
+                            <div class="absolute inset-0 border-4 border-indigo-100 rounded-full"></div>
+                            <div class="absolute inset-0 border-4 border-indigo-600 rounded-full border-t-transparent animate-spin"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">Building your PDF...</h3>
+                        <p class="text-sm font-medium text-indigo-600 mt-2 bg-indigo-50 px-4 py-2 rounded-full" id="mergeProgressText">0 / 0 pages added</p>
+                        <div class="w-full max-w-xs bg-slate-200 rounded-full h-2 mt-4 overflow-hidden shadow-inner">
+                            <div id="mergeProgressBar" class="bg-indigo-600 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-4 max-w-xs text-center">Combining your images into a PDF. Please keep this tab open.</p>
+                    </div>
+
+                    <!-- STATE 4: RESULT -->
+                    <div id="merge-state-result" class="hidden p-6 sm:p-10 text-center flex flex-col items-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-2">PDF Created Successfully!</h2>
+                        <p class="text-slate-600 mb-6">
+                            Merged <span id="mergeSuccessCount" class="font-bold text-indigo-600">0</span> images into a single PDF document.
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2 w-full max-w-lg mx-auto">
+                            <button id="btnMergeDownload" class="w-full sm:w-auto px-6 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-lg shadow-indigo-200 transition-all focus:outline-none flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download PDF
+                            </button>
+                            <button id="btnMergeStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all focus:outline-none">
+                                Merge More Images
+                            </button>
+                        </div>
+                    </div>
+
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Convert JPG Images to PDF — Free Online, No Upload Required</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's JPG to PDF Converter lets you combine multiple JPG, PNG, and WebP images into a single, professionally formatted PDF document. Whether you need to merge scanned documents, combine receipts, create a photo album, or prepare images for printing, this tool handles it all — completely free and entirely in your browser. Your images are never uploaded to any server, making it safe for sensitive documents like contracts, IDs, and personal photos.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Flexible Page Sizes and Layout Options</h3>
+                <p class="text-slate-600 mb-4">Choose from standard A4 or US Letter page sizes, or let the tool auto-fit each page to match the image's original dimensions. You can set the orientation to portrait, landscape, or auto-detect based on each image's aspect ratio. Adjustable margins (0mm, 5mm, 10mm, or 20mm) give you full control over the final layout. Drag and drop images to reorder them, or use the arrow buttons to fine-tune the page sequence.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Merge Up to 50 Images into One PDF</h3>
+                <p class="text-slate-600">Need to combine a large batch of images? OptiDrop supports merging up to 50 images in a single operation. The tool processes each image sequentially, showing real-time progress, and outputs a clean PDF with no watermarks. Perfect for students submitting assignments, professionals preparing reports, or anyone who needs to convert multiple images into a single shareable document.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I merge JPG images into a PDF?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Open the JPG to PDF tool, drop your images into the upload zone, arrange them in the desired order using drag and drop or the up/down buttons, choose your page size and orientation, then click Generate PDF. Your merged PDF will be ready to download instantly.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How many images can I merge into one PDF?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        You can merge up to 50 images into a single PDF document. This limit ensures smooth performance in your browser. Supported formats include JPG, PNG, and WebP.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What page sizes are supported?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        OptiDrop supports three page size options: A4 (210 x 297 mm), US Letter (216 x 279 mm), and Auto-fit which matches each page to the image's original dimensions. You can also choose portrait, landscape, or auto orientation.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I reorder the pages in my PDF?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. After adding your images, you can reorder pages by dragging and dropping them in the queue, or by using the up and down arrow buttons next to each image. You can also remove individual images before generating the PDF.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is the JPG to PDF converter free with no watermark?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. OptiDrop's JPG to PDF converter is 100% free with no hidden fees, no sign-up requirements, and no watermarks added to your PDF. Everything runs locally in your browser.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/pdf-to-jpg.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">PDF to JPG</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Extract pages from PDF as high-quality JPG images.</span>
+            </a>
+            <a href="/compress-pdf.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">PDF Compressor</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Reduce PDF file size while keeping quality.</span>
+            </a>
+            <a href="/compress-image.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Image Compressor</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Compress images to exact KB for web, forms, and email.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                </div>
+                <div class="footer-col">
+                    <h4>PDF Tools</h4>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculators</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/gst-calculator.html">GST Calculator</a>
+                    <a href="/tools/age-calculator.html">Age Calculator</a>
+                    <a href="/tools/percentage-calculator.html">Percentage Calculator</a>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Text &amp; Utility Tools</h4>
+                    <a href="/tools/word-counter.html">Word Counter</a>
+                    <a href="/tools/text-case-converter.html">Text Case Converter</a>
+                    <a href="/tools/password-generator.html">Password Generator</a>
+                    <a href="/tools/unit-converter.html">Unit Converter</a>
+                    <a href="/qr-code-generator.html">QR Code Generator</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. Compress images, convert files, generate QR codes, and more — everything runs in your browser. No uploads, no sign-ups, no data leaves your device.</p>
+                    <a href="/category/image-tools.html">Image Tools</a>
+                    <a href="/category/pdf-tools.html">PDF Tools</a>
+                    <a href="/category/calculator-tools.html">Calculators</a>
+                    <a href="/category/text-tools.html">Text Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/">All Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="./common.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

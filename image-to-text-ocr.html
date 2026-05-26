@@ -1,0 +1,369 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Online Free — Extract Text from Image | OptiDrop</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <meta name="description" content="Extract text from images, screenshots, and forms using OCR. Copy text to clipboard instantly. Free, private, no upload.">
+    <meta name="keywords" content="ocr online free, extract text from image online, image to text extractor, text extractor from screenshot, ocr text extractor from image online">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="OCR Online Free — Extract Text from Image | OptiDrop">
+    <meta property="og:description" content="Extract text from images, screenshots, and forms using OCR. Copy text to clipboard instantly. Free, private, no upload.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/image-to-text-ocr.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OCR Online Free — Extract Text from Image | OptiDrop">
+    <meta name="twitter:description" content="Extract text from images, screenshots, and forms using OCR. Copy text to clipboard instantly. Free, private, no upload.">
+    <link rel="canonical" href="https://optidrop.online/image-to-text-ocr.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Image to Text OCR", "item": "https://optidrop.online/image-to-text-ocr.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Image to Text OCR",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Extract text from images, screenshots, and forms using OCR. Copy text to clipboard instantly. Runs entirely in your browser with no upload."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What languages does the OCR tool support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "English is the default language. Tesseract.js, the OCR engine used by OptiDrop, supports over 100 languages including Hindi, French, Spanish, German, Arabic, Chinese, and more."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is the text extraction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Accuracy is very high for printed and typed text. The tool also shows a confidence score after extraction. Handwriting recognition support is limited and works best with clearly written text."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a file size limit for images?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool works with images up to 20MB on most devices. Very large images may take longer to process depending on your device's available memory."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I copy the extracted text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. After extraction, click the Copy button to copy the entire extracted text to your clipboard. You can then paste it into any document, email, or form."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tesseract.js (OCR Engine) -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="preload" href="./styles.css" as="style">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">
+                <img src="./Generated_image-removebg-preview.png" alt="OptiDrop">
+            </a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/">All Tools</a>
+            <a href="/blog/">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Extract Text from Images — Free Online OCR Tool</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Extract text from photos, screenshots, scanned documents, and forms using OCR. Supports English and 100+ languages. Copy extracted text to your clipboard instantly. Everything runs in your browser — your images never leave your device.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden relative">
+
+                <!-- STATE 1: UPLOAD ZONE -->
+                <div id="ocr-state-upload" class="p-8 sm:p-12 text-center">
+                    <div id="ocrDropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 cursor-pointer transition-all-ease hover:bg-slate-50 hover:border-brand-400 group flex flex-col items-center justify-center min-h-[260px]">
+                        <input type="file" id="ocrFileInput" class="hidden" accept="image/jpeg, image/png, image/webp, image/bmp" />
+                        <div class="bg-brand-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                            <svg class="w-10 h-10 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Drop Image Here or Tap to Browse</h3>
+                        <p class="text-sm text-slate-500">Supports JPG, PNG, WebP, BMP</p>
+                    </div>
+                    <div class="mt-5 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
+                        <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                        </svg>
+                        No upload? Seriously. Files never leave your device.
+                    </div>
+                </div>
+
+                <!-- STATE 2: PROCESSING -->
+                <div id="ocr-state-processing" class="hidden p-8 sm:p-12 text-center flex flex-col items-center justify-center">
+                    <div class="relative w-20 h-20 mb-4">
+                        <div class="absolute inset-0 border-4 border-brand-100 rounded-full"></div>
+                        <div class="absolute inset-0 border-4 border-brand-600 rounded-full border-t-transparent animate-spin"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800">Extracting text...</h3>
+                    <p class="text-sm font-medium text-brand-600 mt-2 bg-brand-50 px-4 py-2 rounded-full" id="ocrProgressText">Initializing OCR engine...</p>
+                    <p class="text-sm text-slate-500 mt-4 max-w-xs text-center">This may take a moment depending on image size. Please keep this tab open.</p>
+                </div>
+
+                <!-- STATE 3: RESULT -->
+                <div id="ocr-state-result" class="hidden p-6 sm:p-10 text-center flex flex-col items-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Text Extracted Successfully!</h2>
+                    <p class="text-sm text-slate-500 mb-6">Confidence: <span id="ocrConfidence" class="font-bold text-brand-600">--</span></p>
+
+                    <div class="w-full max-w-2xl mb-6">
+                        <div class="mb-4 flex justify-center">
+                            <img id="ocrPreviewImage" loading="lazy" class="max-w-[200px] max-h-[200px] object-contain rounded-lg border border-slate-200" alt="Uploaded image" />
+                        </div>
+                        <textarea id="ocrTextOutput" readonly rows="10"
+                            class="w-full px-4 py-3 text-sm border-2 border-slate-200 rounded-xl bg-white text-slate-800 font-mono resize-y focus:outline-none focus:border-brand-500"
+                            placeholder="Extracted text will appear here..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2 w-full max-w-lg mx-auto">
+                        <button id="btnOcrCopy" class="w-full sm:w-auto px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-lg shadow-brand-200 transition-all focus:outline-none flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            Copy
+                        </button>
+                        <button id="btnOcrStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all focus:outline-none">
+                            Extract Another
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Extract Text from Images — Free Online OCR, No Upload</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Image to Text OCR tool uses Tesseract.js, one of the most accurate open-source OCR engines, to extract text from any image directly in your browser. Whether you have a screenshot of a document, a photo of a form, a scanned receipt, or a picture of handwritten notes, this tool converts the visual text into editable, copyable digital text in seconds. Unlike other OCR services, OptiDrop processes everything locally — your images are never uploaded to any server, making it completely safe for sensitive documents like ID cards, bank statements, medical records, and legal papers.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How Image to Text OCR Works</h3>
+                <p class="text-slate-600 mb-4">Upload or drop your image into the tool. The Tesseract.js engine loads in your browser and begins analyzing the image pixel by pixel, identifying character shapes and converting them into digital text. The process shows real-time progress updates so you know exactly what stage it's at — loading the engine, loading language data, and recognizing text. Once complete, the extracted text appears in a textarea where you can review it and copy it to your clipboard with one click. A confidence score tells you how certain the engine is about the accuracy of the extraction.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Supports 100+ Languages</h3>
+                <p class="text-slate-600">While English is the default language, Tesseract.js supports over 100 languages including Hindi, French, Spanish, German, Arabic, Chinese, Japanese, Korean, Portuguese, Russian, and many more. The tool works best with printed and typed text but can also handle clearly written handwriting. It accepts JPG, PNG, WebP, and BMP images up to 20MB — covering virtually any image format you're likely to encounter.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What languages does the OCR tool support?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        English is the default language. Tesseract.js, the OCR engine used by OptiDrop, supports over 100 languages including Hindi, French, Spanish, German, Arabic, Chinese, and more.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How accurate is the text extraction?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Accuracy is very high for printed and typed text. The tool also shows a confidence score after extraction. Handwriting recognition support is limited and works best with clearly written text.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is there a file size limit for images?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The tool works with images up to 20MB on most devices. Very large images may take longer to process depending on your device's available memory.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I copy the extracted text?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. After extraction, click the Copy button to copy the entire extracted text to your clipboard. You can then paste it into any document, email, or form.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/signature-scanner.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Signature Scanner</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Scan and extract clean signatures from paper documents.</span>
+            </a>
+            <a href="/compress-image.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Image Compressor</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Compress images to exact KB for web, forms, and email.</span>
+            </a>
+            <a href="/remove-background.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Background Remover</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Remove backgrounds from photos instantly in your browser.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                </div>
+                <div class="footer-col">
+                    <h4>PDF Tools</h4>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculators</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/gst-calculator.html">GST Calculator</a>
+                    <a href="/tools/age-calculator.html">Age Calculator</a>
+                    <a href="/tools/percentage-calculator.html">Percentage Calculator</a>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Text &amp; Utility Tools</h4>
+                    <a href="/tools/word-counter.html">Word Counter</a>
+                    <a href="/tools/text-case-converter.html">Text Case Converter</a>
+                    <a href="/tools/password-generator.html">Password Generator</a>
+                    <a href="/tools/unit-converter.html">Unit Converter</a>
+                    <a href="/qr-code-generator.html">QR Code Generator</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. Compress images, convert files, generate QR codes, and more — everything runs in your browser. No uploads, no sign-ups, no data leaves your device.</p>
+                    <a href="/category/image-tools.html">Image Tools</a>
+                    <a href="/category/pdf-tools.html">PDF Tools</a>
+                    <a href="/category/calculator-tools.html">Calculators</a>
+                    <a href="/category/text-tools.html">Text Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/">All Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="./common.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

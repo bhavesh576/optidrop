@@ -1,0 +1,438 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEIC to JPG Converter Online Free — iPhone Photos | OptiDrop</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <meta name="description" content="Convert iPhone HEIC photos to JPG format online free. No upload — runs in your browser. Batch convert multiple HEIC files.">
+    <meta name="keywords" content="heic to jpg converter iphone, convert heic to jpg without uploading, heic converter online free, convert heic to jpg online, iphone photo converter">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="HEIC to JPG Converter Online Free — iPhone Photos | OptiDrop">
+    <meta property="og:description" content="Convert iPhone HEIC photos to JPG format online free. No upload — runs in your browser. Batch convert multiple HEIC files.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/heic-to-jpg.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HEIC to JPG Converter Online Free — iPhone Photos | OptiDrop">
+    <meta name="twitter:description" content="Convert iPhone HEIC photos to JPG format online free. No upload. Batch convert multiple files.">
+    <link rel="canonical" href="https://optidrop.online/heic-to-jpg.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "HEIC to JPG Converter", "item": "https://optidrop.online/heic-to-jpg.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop HEIC to JPG Converter",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Convert iPhone HEIC photos to JPG format online free. No upload — runs entirely in your browser. Batch convert multiple HEIC files and download as ZIP."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a HEIC file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HEIC stands for High Efficiency Image Container. It is the default photo format used by iPhones and iPads since iOS 11. HEIC files offer better compression than JPG while maintaining higher quality, but they are not universally supported by websites and applications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why should I convert HEIC to JPG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many websites, government portals, exam forms, and social media platforms do not accept HEIC files. JPG is the most universally supported image format. Converting HEIC to JPG ensures your photos can be uploaded and viewed anywhere without compatibility issues."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does converting HEIC to JPG reduce quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is minimal quality loss when converting at the default 92% quality setting. The difference is virtually imperceptible to the human eye. You can choose 85% or 75% for smaller file sizes if needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this work on Android phones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The HEIC to JPG converter works in any modern web browser on Android, iPhone, Windows, Mac, and Linux. No app installation is needed — just open the page in your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I batch convert multiple HEIC files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can convert up to 20 HEIC files at once. After conversion, you can download individual JPG files or download all converted files as a single ZIP archive."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- JSZip (Batch Downloads) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- heic2any (HEIC Conversion) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/heic2any/0.0.4/heic2any.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="preload" href="./styles.css" as="style">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">
+                <img src="./Generated_image-removebg-preview.png" alt="OptiDrop">
+            </a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/">All Tools</a>
+            <a href="/blog/">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Convert HEIC to JPG Online Free — No Upload Required</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Convert iPhone HEIC and HEIF photos to universally compatible JPG format. Batch convert up to 20 files at once and download as ZIP. Everything runs in your browser — your photos never leave your device.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden relative">
+
+                    <!-- STATE 1: UPLOAD ZONE -->
+                    <div id="heic-state-upload" class="p-8 sm:p-12 text-center">
+                        <div id="heicDropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 cursor-pointer transition-all-ease hover:bg-slate-50 hover:border-orange-400 group flex flex-col items-center justify-center min-h-[260px]">
+                            <input type="file" id="heicFileInput" class="hidden" accept=".heic,.heif,image/heic,image/heif" multiple />
+                            <div class="bg-orange-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Drop HEIC Photos Here or Tap to Browse</h3>
+                            <p class="text-sm text-slate-500">Supports .HEIC and .HEIF files from iPhone (Max 20 files)</p>
+                        </div>
+                        <div class="mt-5 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                            </svg>
+                            No upload? Seriously. Photos never leave your device.
+                        </div>
+                    </div>
+
+                    <!-- STATE 2: SETTINGS -->
+                    <div id="heic-state-settings" class="hidden p-6 sm:p-8">
+                        <div class="flex flex-col md:flex-row gap-8 items-start">
+
+                            <!-- Left: File Preview -->
+                            <div class="w-full md:w-1/2 flex flex-col">
+                                <h3 class="text-lg font-bold text-slate-800 mb-3">
+                                    Selected Photos (<span id="heicQueueCount">0</span>/20)
+                                </h3>
+                                <div id="heicPreviewContainer" class="grid grid-cols-3 gap-3 max-h-[280px] overflow-y-auto pr-2 mb-3">
+                                </div>
+                                <p class="text-xs text-slate-400 mt-1">Click the X to remove a file before converting.</p>
+                            </div>
+
+                            <!-- Right: Settings Form -->
+                            <div class="w-full md:w-1/2 flex flex-col justify-center space-y-5 sticky top-0">
+                                <div>
+                                    <label for="heicQuality" class="block text-sm font-bold text-slate-700 mb-2">JPG Quality</label>
+                                    <select id="heicQuality" class="settings-select">
+                                        <option value="0.92" selected>High Quality (92%) — Recommended</option>
+                                        <option value="0.85">Medium Quality (85%) — Smaller file</option>
+                                        <option value="0.75">Low Quality (75%) — Smallest file</option>
+                                    </select>
+                                    <p class="mt-2 text-xs text-slate-500">Higher quality produces larger JPG files. 92% is visually identical to the original.</p>
+                                </div>
+
+                                <div class="bg-orange-50 border border-orange-200 rounded-xl p-4">
+                                    <div class="flex items-start gap-2">
+                                        <svg class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                        <div>
+                                            <p class="text-sm font-semibold text-orange-800">Why convert HEIC to JPG?</p>
+                                            <p class="text-xs text-orange-700 mt-1">Many websites, government portals, and exam forms do not accept HEIC files. JPG is universally supported everywhere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3 pt-1">
+                                    <button id="btnHeicCancel" class="w-1/3 px-4 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors focus:outline-none">
+                                        Cancel
+                                    </button>
+                                    <button id="btnHeicConvert" class="w-2/3 px-4 py-4 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
+                                        <span>Convert to JPG</span>
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STATE 3: LOADING -->
+                    <div id="heic-state-loading" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center z-10 rounded-3xl">
+                        <div class="relative w-20 h-20 mb-4">
+                            <div class="absolute inset-0 border-4 border-orange-100 rounded-full"></div>
+                            <div class="absolute inset-0 border-4 border-orange-600 rounded-full border-t-transparent animate-spin"></div>
+                            <div class="absolute inset-0 flex items-center justify-center text-xs font-bold text-orange-700" id="heicLoadingPercent">0%</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">Converting HEIC to JPG...</h3>
+                        <p class="text-sm font-medium text-orange-600 mt-2 bg-orange-50 px-4 py-2 rounded-full" id="heicProgressText">0 / 0 converting...</p>
+                        <div class="w-full max-w-xs bg-slate-200 rounded-full h-2 mt-4 overflow-hidden shadow-inner">
+                            <div id="heicProgressBar" class="bg-orange-600 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-4 max-w-xs text-center">Converting your iPhone photos to JPG. This may take a moment for large files.</p>
+                    </div>
+
+                    <!-- STATE 4: RESULT -->
+                    <div id="heic-state-result" class="hidden p-6 sm:p-10 text-center flex flex-col items-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-2">Conversion Complete!</h2>
+                        <p class="text-slate-600 mb-2">
+                            Successfully converted <span id="heicSuccessCount" class="font-bold text-orange-600">0</span> HEIC photos to JPG.
+                        </p>
+                        <p class="text-xs text-slate-400 mb-6">Download individual files or grab everything as a ZIP.</p>
+                        <div id="heicResultsContainer" class="w-full space-y-3 mb-8 text-left max-h-[320px] overflow-y-auto pr-2"></div>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2 w-full max-w-lg mx-auto">
+                            <button id="btnHeicDownloadZip" class="w-full sm:w-auto px-6 py-4 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 shadow-lg shadow-orange-200 transition-all focus:outline-none flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download All (ZIP)
+                            </button>
+                            <button id="btnHeicStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all focus:outline-none">
+                                Convert More
+                            </button>
+                        </div>
+                    </div>
+
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Convert HEIC to JPG Online Free — No Upload Required</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's HEIC to JPG Converter transforms your iPhone photos from the HEIC (High Efficiency Image Container) format to universally compatible JPG. Since iOS 11, iPhones save photos as HEIC by default — a format that offers excellent compression but is not accepted by many websites, government portals, and exam form uploaders. With OptiDrop, you can convert your HEIC photos to JPG in seconds, entirely within your browser. No files are uploaded to any server, keeping your personal photos completely private.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Why iPhone Users Need a HEIC Converter</h3>
+                <p class="text-slate-600 mb-4">If you have ever tried to upload an iPhone photo to a government portal, exam form, job application, or social media platform and received an error saying the format is not supported, you have encountered the HEIC compatibility problem. While HEIC is technically superior to JPG in compression efficiency, widespread adoption has been slow. OptiDrop bridges this gap by converting your HEIC photos to JPG format instantly, with minimal quality loss at the default 92% quality setting.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Batch Convert Up to 20 HEIC Files at Once</h3>
+                <p class="text-slate-600">Need to convert multiple iPhone photos? OptiDrop supports batch conversion of up to 20 HEIC files in a single operation. Upload all your photos, choose your preferred quality level, and convert them all at once. Download individual JPG files or grab everything as a single ZIP archive. The entire process runs locally in your browser — no internet connection required after the page loads, and your photos never leave your device.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is a HEIC file?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        HEIC stands for High Efficiency Image Container. It is the default photo format used by iPhones and iPads since iOS 11. HEIC files offer better compression than JPG while maintaining higher quality, but they are not universally supported by websites and applications.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Why should I convert HEIC to JPG?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Many websites, government portals, exam forms, and social media platforms do not accept HEIC files. JPG is the most universally supported image format. Converting HEIC to JPG ensures your photos can be uploaded and viewed anywhere without compatibility issues.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does converting HEIC to JPG reduce quality?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        There is minimal quality loss when converting at the default 92% quality setting. The difference is virtually imperceptible to the human eye. You can choose 85% or 75% for smaller file sizes if needed.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does this work on Android phones?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. The HEIC to JPG converter works in any modern web browser on Android, iPhone, Windows, Mac, and Linux. No app installation is needed — just open the page in your browser.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I batch convert multiple HEIC files?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. You can convert up to 20 HEIC files at once. After conversion, you can download individual JPG files or download all converted files as a single ZIP archive.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/image-format-converter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Format Converter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Convert between JPG, PNG, and WebP image formats.</span>
+            </a>
+            <a href="/compress-image.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Image Compressor</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Compress images to exact KB for web, forms, and email.</span>
+            </a>
+            <a href="/remove-background.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Background Remover</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Remove backgrounds from photos instantly in your browser.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                </div>
+                <div class="footer-col">
+                    <h4>PDF Tools</h4>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculators</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/gst-calculator.html">GST Calculator</a>
+                    <a href="/tools/age-calculator.html">Age Calculator</a>
+                    <a href="/tools/percentage-calculator.html">Percentage Calculator</a>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Text &amp; Utility Tools</h4>
+                    <a href="/tools/word-counter.html">Word Counter</a>
+                    <a href="/tools/text-case-converter.html">Text Case Converter</a>
+                    <a href="/tools/password-generator.html">Password Generator</a>
+                    <a href="/tools/unit-converter.html">Unit Converter</a>
+                    <a href="/qr-code-generator.html">QR Code Generator</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. Compress images, convert files, generate QR codes, and more — everything runs in your browser. No uploads, no sign-ups, no data leaves your device.</p>
+                    <a href="/category/image-tools.html">Image Tools</a>
+                    <a href="/category/pdf-tools.html">PDF Tools</a>
+                    <a href="/category/calculator-tools.html">Calculators</a>
+                    <a href="/category/text-tools.html">Text Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/">All Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="./common.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,470 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Case Converter Free Online — No Upload Required | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <meta name="description" content="Free online text case converter. Convert text to UPPERCASE, lowercase, Title Case, Sentence case, and aLtErNaTiNg CaSe instantly. No upload or sign-up.">
+    <meta name="keywords" content="text case converter online, uppercase to lowercase converter, title case converter, alternating case converter, free text converter">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#7c3aed">
+    <meta property="og:title" content="Text Case Converter Free Online — No Upload Required | OptiDrop">
+    <meta property="og:description" content="Free online text case converter. Convert text to UPPERCASE, lowercase, Title Case, Sentence case, and alternating case instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/text-case-converter.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Text Case Converter Free Online — No Upload Required | OptiDrop">
+    <meta name="twitter:description" content="Free online text case converter. Convert between uppercase, lowercase, title case, and more.">
+    <link rel="canonical" href="https://optidrop.online/tools/text-case-converter.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Text Case Converter", "item": "https://optidrop.online/tools/text-case-converter.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Text Case Converter",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online text case converter. Convert text to UPPERCASE, lowercase, Title Case, Sentence case, and alternating case instantly."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to convert text to uppercase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Paste or type your text into the input area on our Text Case Converter, then click the 'UPPERCASE' button. All letters will be converted to capital letters instantly. You can then copy the result using the Copy button."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Title Case?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Title Case capitalizes the first letter of each major word in a sentence. Articles (a, an, the), short prepositions (in, on, at), and coordinating conjunctions (and, but, or) are typically left lowercase unless they are the first word. Example: 'the quick brown fox' becomes 'The Quick Brown Fox'."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to convert lowercase to uppercase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Paste your lowercase text into the input field and click the 'UPPERCASE' button. The tool converts every lowercase letter to its uppercase equivalent instantly. This works for any language that uses Latin alphabet characters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is alternating case?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Alternating case (also called SpongeBob case or mocking case) alternates between uppercase and lowercase letters for each character. For example, 'hello world' becomes 'hElLo wOrLd'. It is commonly used in internet humor and memes."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .case-btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.625rem 1.25rem; font-size: 0.85rem; font-weight: 700;
+            border-radius: 0.75rem; border: 2px solid #e2e8f0;
+            background: #fff; color: #475569; cursor: pointer;
+            transition: all 0.2s ease; white-space: nowrap;
+        }
+        .case-btn:hover { border-color: #3b82f6; color: #2563eb; background: #eff6ff; }
+        .case-btn:active { transform: scale(0.97); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">
+                <img src="../Generated_image-removebg-preview.png" alt="OptiDrop">
+            </a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/">All Tools</a>
+            <a href="/blog/">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Text Case Converter Online — Uppercase, Lowercase &amp; More</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Convert text between UPPERCASE, lowercase, Title Case, Sentence case, and aLtErNaTiNg CaSe instantly. Paste your text, click a button, and copy the result. No upload, no sign-up — 100% free.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Input Textarea -->
+                    <div class="mb-5">
+                        <label for="inputText" class="block text-sm font-bold text-slate-700 mb-2">Input Text</label>
+                        <textarea id="inputText" placeholder="Paste or type your text here..." class="block w-full px-5 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y" style="min-height:160px;font-family:inherit;line-height:1.7;"></textarea>
+                    </div>
+
+                    <!-- Case Buttons -->
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <button class="case-btn" onclick="convertCase('upper')">
+                            <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+                            UPPERCASE
+                        </button>
+                        <button class="case-btn" onclick="convertCase('lower')">
+                            <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            lowercase
+                        </button>
+                        <button class="case-btn" onclick="convertCase('title')">
+                            <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
+                            Title Case
+                        </button>
+                        <button class="case-btn" onclick="convertCase('sentence')">
+                            <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Sentence case
+                        </button>
+                        <button class="case-btn" onclick="convertCase('alternating')">
+                            <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            aLtErNaTiNg CaSe
+                        </button>
+                    </div>
+
+                    <!-- Output Textarea -->
+                    <div class="mb-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <label for="outputText" class="block text-sm font-bold text-slate-700">Converted Text</label>
+                            <button id="btnCopy" onclick="copyOutput()" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all flex items-center gap-1.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                                Copy to Clipboard
+                            </button>
+                        </div>
+                        <textarea id="outputText" readonly placeholder="Converted text will appear here..." class="block w-full px-5 py-4 text-base border-2 border-slate-200 rounded-xl bg-slate-50 text-slate-900 font-medium resize-y cursor-default" style="min-height:160px;font-family:inherit;line-height:1.7;"></textarea>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="flex flex-wrap gap-4 text-sm text-slate-500">
+                        <span>Input: <strong id="inputCharCount" class="text-slate-700">0</strong> characters</span>
+                        <span>Output: <strong id="outputCharCount" class="text-slate-700">0</strong> characters</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online Text Case Converter</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Text Case Converter is a free, browser-based tool that lets you instantly convert text between different letter cases. Whether you need to convert text to ALL CAPS for emphasis, switch to lowercase for consistency, apply Title Case for headings, use Sentence case for paragraphs, or create alternating case for fun, this tool handles it all with a single click.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Five Case Conversion Modes</h3>
+                <p class="text-slate-600 mb-4"><strong>UPPERCASE</strong> converts all letters to capital letters. <strong>lowercase</strong> converts all letters to small letters. <strong>Title Case</strong> capitalizes the first letter of each word. <strong>Sentence case</strong> capitalizes only the first letter of each sentence. <strong>aLtErNaTiNg CaSe</strong> alternates between upper and lower case for each character.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Private — No Data Uploaded</h3>
+                <p class="text-slate-600">All text processing happens directly in your browser using JavaScript. Your text is never sent to any server, never stored anywhere, and never leaves your device. This makes it safe for converting sensitive text, passwords, personal notes, and confidential documents.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to convert text to uppercase?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Paste or type your text into the input area on our Text Case Converter, then click the "UPPERCASE" button. All letters will be converted to capital letters instantly. You can then copy the result using the Copy button.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is Title Case?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Title Case capitalizes the first letter of each major word in a sentence. Articles (a, an, the), short prepositions (in, on, at), and coordinating conjunctions (and, but, or) are typically left lowercase unless they are the first word. Example: "the quick brown fox" becomes "The Quick Brown Fox".
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to convert lowercase to uppercase?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Paste your lowercase text into the input field and click the "UPPERCASE" button. The tool converts every lowercase letter to its uppercase equivalent instantly. This works for any language that uses Latin alphabet characters.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is alternating case?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Alternating case (also called SpongeBob case or mocking case) alternates between uppercase and lowercase letters for each character. For example, "hello world" becomes "hElLo wOrLd". It is commonly used in internet humor and memes.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/word-counter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Word Counter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Count words, characters, sentences, and paragraphs in your text online.</span>
+            </a>
+            <a href="/qr-code-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Password Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate strong, secure random passwords with custom length and character options.</span>
+            </a>
+            <a href="/tools/percentage-calculator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Percentage Calculator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Calculate percentages, percentage increase, and percentage decrease instantly.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                </div>
+                <div class="footer-col">
+                    <h4>PDF Tools</h4>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculators</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/gst-calculator.html">GST Calculator</a>
+                    <a href="/tools/age-calculator.html">Age Calculator</a>
+                    <a href="/tools/percentage-calculator.html">Percentage Calculator</a>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Text &amp; Utility Tools</h4>
+                    <a href="/tools/word-counter.html">Word Counter</a>
+                    <a href="/tools/text-case-converter.html">Text Case Converter</a>
+                    <a href="/tools/password-generator.html">Password Generator</a>
+                    <a href="/tools/unit-converter.html">Unit Converter</a>
+                    <a href="/qr-code-generator.html">QR Code Generator</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. Compress images, convert files, generate QR codes, and more — everything runs in your browser. No uploads, no sign-ups, no data leaves your device.</p>
+                    <a href="/category/image-tools.html">Image Tools</a>
+                    <a href="/category/pdf-tools.html">PDF Tools</a>
+                    <a href="/category/calculator-tools.html">Calculators</a>
+                    <a href="/category/text-tools.html">Text Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/">All Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../common.js"></script>
+    <script>
+    (function(){
+        var inputText = document.getElementById('inputText');
+        var outputText = document.getElementById('outputText');
+        var inputCharCount = document.getElementById('inputCharCount');
+        var outputCharCount = document.getElementById('outputCharCount');
+
+        var smallWords = ['a','an','the','and','but','or','nor','for','yet','so','in','on','at','to','by','of','up','as','is','if','it','be'];
+
+        function toTitleCase(str) {
+            return str.replace(/\S+/g, function(word, index) {
+                var lower = word.toLowerCase();
+                // Always capitalize first word, or if not a small word
+                if (index === 0 || smallWords.indexOf(lower) === -1) {
+                    return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
+                }
+                return lower;
+            });
+        }
+
+        function toSentenceCase(str) {
+            // Lowercase everything first, then capitalize after . ! ? and at start
+            var lower = str.toLowerCase();
+            // Capitalize first character
+            if (lower.length > 0) {
+                lower = lower.charAt(0).toUpperCase() + lower.substr(1);
+            }
+            // Capitalize after sentence-ending punctuation followed by space(s)
+            lower = lower.replace(/([.!?])\s+([a-z])/g, function(match, punct, letter) {
+                return punct + ' ' + letter.toUpperCase();
+            });
+            return lower;
+        }
+
+        function toAlternatingCase(str) {
+            var upper = true;
+            var result = '';
+            for (var i = 0; i < str.length; i++) {
+                var ch = str.charAt(i);
+                if (ch.match(/[a-zA-Z]/)) {
+                    result += upper ? ch.toUpperCase() : ch.toLowerCase();
+                    upper = !upper;
+                } else {
+                    result += ch;
+                }
+            }
+            return result;
+        }
+
+        window.convertCase = function(type) {
+            var text = inputText.value;
+            if (!text.trim()) {
+                showToast('Please enter some text to convert.', 'error');
+                return;
+            }
+            var result = '';
+            switch (type) {
+                case 'upper':
+                    result = text.toUpperCase();
+                    break;
+                case 'lower':
+                    result = text.toLowerCase();
+                    break;
+                case 'title':
+                    result = toTitleCase(text);
+                    break;
+                case 'sentence':
+                    result = toSentenceCase(text);
+                    break;
+                case 'alternating':
+                    result = toAlternatingCase(text);
+                    break;
+            }
+            outputText.value = result;
+            updateCounts();
+            showToast('Text converted successfully!', 'info');
+        };
+
+        window.copyOutput = function() {
+            var text = outputText.value;
+            if (!text) {
+                showToast('Nothing to copy. Convert some text first.', 'error');
+                return;
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showToast('Copied to clipboard!', 'info');
+                }).catch(function() {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        };
+
+        function fallbackCopy(text) {
+            outputText.select();
+            outputText.setSelectionRange(0, 99999);
+            try {
+                document.execCommand('copy');
+                showToast('Copied to clipboard!', 'info');
+            } catch (err) {
+                showToast('Failed to copy. Please select and copy manually.', 'error');
+            }
+        }
+
+        function updateCounts() {
+            inputCharCount.textContent = inputText.value.length.toLocaleString();
+            outputCharCount.textContent = outputText.value.length.toLocaleString();
+        }
+
+        inputText.addEventListener('input', updateCounts);
+        updateCounts();
+    })();
+    </script>
+</body>
+</html>

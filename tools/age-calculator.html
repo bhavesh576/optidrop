@@ -1,0 +1,464 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator Free Online — No Upload Required | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <meta name="description" content="Calculate your exact age online free. Get age in years, months, days, total days lived, hours, minutes, and days until next birthday. No sign-up required.">
+    <meta name="keywords" content="age calculator by date of birth, online age calculator, exact age calculator, age calculator free, calculate age from date of birth, days until birthday calculator">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Age Calculator Free Online — No Upload Required | OptiDrop">
+    <meta property="og:description" content="Calculate your exact age online free. Get age in years, months, days, total days lived, and days until next birthday. No sign-up required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/age-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Age Calculator Free Online — No Upload Required | OptiDrop">
+    <meta name="twitter:description" content="Calculate your exact age online free. Get age in years, months, days. No sign-up required.">
+    <link rel="canonical" href="https://optidrop.online/tools/age-calculator.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Age Calculator", "item": "https://optidrop.online/tools/age-calculator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Age Calculator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate your exact age online free. Get age in years, months, days, total days lived, and days until next birthday."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to calculate age?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To calculate age, subtract your date of birth from today's date. Start with the year difference, then adjust if the birthday hasn't occurred yet this year. This calculator does it automatically and gives you the exact age in years, months, and days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many days until my birthday?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This calculator shows the exact number of days remaining until your next birthday. Simply enter your date of birth and the tool will calculate and display the countdown to your upcoming birthday."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is my exact age?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your exact age includes years, months, and days from your date of birth to today. For example, you might be 25 years, 3 months, and 17 days old. This calculator provides the precise breakdown along with total days lived, total hours, and total minutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I calculate age from any date?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. This age calculator works with any valid date of birth, past or present. Enter any date and the calculator will compute the exact time elapsed from that date to today. It also works for calculating the age of events, items, or anything with a start date."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">
+                <img src="../Generated_image-removebg-preview.png" alt="OptiDrop">
+            </a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/">All Tools</a>
+            <a href="/blog/">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Age Calculator by Date of Birth — Online Age Calculator Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Calculate your exact age in years, months, and days from your date of birth. Also see total days lived, hours, minutes, and days until your next birthday. 100% free, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Input -->
+                    <div class="max-w-md mx-auto mb-8">
+                        <label for="dobInput" class="block text-sm font-bold text-slate-700 mb-2">Date of Birth</label>
+                        <input type="date" id="dobInput"
+                            class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                            autocomplete="off">
+                    </div>
+
+                    <div class="max-w-md mx-auto">
+                        <button id="btnCalculateAge" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            Calculate Age
+                        </button>
+                    </div>
+
+                    <!-- Results -->
+                    <div id="ageResults" class="hidden mt-8">
+
+                        <!-- Main Age Display -->
+                        <div class="text-center mb-8">
+                            <p class="text-sm font-semibold text-slate-500 mb-2">Your Age</p>
+                            <div class="flex flex-wrap justify-center gap-3">
+                                <div class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl px-6 py-5 min-w-[100px] shadow-lg">
+                                    <p id="ageYears" class="text-3xl sm:text-4xl font-extrabold">0</p>
+                                    <p class="text-sm font-medium opacity-80">Years</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl px-6 py-5 min-w-[100px] shadow-lg">
+                                    <p id="ageMonths" class="text-3xl sm:text-4xl font-extrabold">0</p>
+                                    <p class="text-sm font-medium opacity-80">Months</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-blue-400 to-indigo-500 text-white rounded-2xl px-6 py-5 min-w-[100px] shadow-lg">
+                                    <p id="ageDays" class="text-3xl sm:text-4xl font-extrabold">0</p>
+                                    <p class="text-sm font-medium opacity-80">Days</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                            <div class="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-slate-600 mb-1">Total Days Lived</p>
+                                <p id="totalDays" class="text-2xl sm:text-3xl font-extrabold text-slate-900">0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-indigo-700 mb-1">Total Hours</p>
+                                <p id="totalHours" class="text-2xl sm:text-3xl font-extrabold text-indigo-900">0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-purple-700 mb-1">Total Minutes</p>
+                                <p id="totalMinutes" class="text-2xl sm:text-3xl font-extrabold text-purple-900">0</p>
+                            </div>
+                        </div>
+
+                        <!-- Next Birthday -->
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200 rounded-2xl p-6 text-center">
+                            <div class="flex items-center justify-center gap-2 mb-2">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+                                <p class="text-sm font-bold text-green-800">Days Until Next Birthday</p>
+                            </div>
+                            <p id="nextBirthday" class="text-4xl sm:text-5xl font-extrabold text-green-900">0</p>
+                            <p id="nextBirthdayDate" class="text-sm text-green-700 mt-1 font-medium"></p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Age Calculator Online — Find Your Exact Age</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Age Calculator is a free online tool that calculates your exact age from your date of birth. It provides a precise breakdown in years, months, and days, along with interesting statistics like total days lived, total hours, total minutes, and the countdown to your next birthday. All calculations happen instantly in your browser.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How Does the Age Calculator Work?</h3>
+                <p class="text-slate-600 mb-4">Simply enter your date of birth using the date picker and click "Calculate Age." The tool computes the difference between your birth date and today's date, accounting for varying month lengths and leap years. It then displays your age in multiple formats: years/months/days, total days, total hours, and total minutes.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Birthday Countdown</h3>
+                <p class="text-slate-600">The calculator also tells you exactly how many days are left until your next birthday. Whether you are planning a celebration or just curious, this countdown helps you keep track. The tool works with any date — past or present — so you can also use it to find out the age of historical events, buildings, or anything else with a known start date.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to calculate age?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To calculate age, subtract your date of birth from today's date. Start with the year difference, then adjust if the birthday hasn't occurred yet this year. This calculator does it automatically and gives you the exact age in years, months, and days.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How many days until my birthday?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        This calculator shows the exact number of days remaining until your next birthday. Simply enter your date of birth and the tool will calculate and display the countdown to your upcoming birthday.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is my exact age?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Your exact age includes years, months, and days from your date of birth to today. For example, you might be 25 years, 3 months, and 17 days old. This calculator provides the precise breakdown along with total days lived, total hours, and total minutes.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I calculate age from any date?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. This age calculator works with any valid date of birth, past or present. Enter any date and the calculator will compute the exact time elapsed from that date to today. It also works for calculating the age of events, items, or anything with a start date.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/emi-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">EMI Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate monthly EMI for home, car, or personal loans.</span>
+                </a>
+                <a href="/tools/gst-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">GST Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate GST amount and reverse GST instantly online.</span>
+                </a>
+                <a href="/tools/percentage-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Percentage Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate percentages, percentage change, and more online.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                </div>
+                <div class="footer-col">
+                    <h4>PDF Tools</h4>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculators</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/gst-calculator.html">GST Calculator</a>
+                    <a href="/tools/age-calculator.html">Age Calculator</a>
+                    <a href="/tools/percentage-calculator.html">Percentage Calculator</a>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Text &amp; Utility Tools</h4>
+                    <a href="/tools/word-counter.html">Word Counter</a>
+                    <a href="/tools/text-case-converter.html">Text Case Converter</a>
+                    <a href="/tools/password-generator.html">Password Generator</a>
+                    <a href="/tools/unit-converter.html">Unit Converter</a>
+                    <a href="/qr-code-generator.html">QR Code Generator</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. Compress images, convert files, generate QR codes, and more — everything runs in your browser. No uploads, no sign-ups, no data leaves your device.</p>
+                    <a href="/category/image-tools.html">Image Tools</a>
+                    <a href="/category/pdf-tools.html">PDF Tools</a>
+                    <a href="/category/calculator-tools.html">Calculators</a>
+                    <a href="/category/text-tools.html">Text Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/">All Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../common.js"></script>
+    <script>
+    (function() {
+        var btnCalculate = document.getElementById('btnCalculateAge');
+        var dobInput = document.getElementById('dobInput');
+        var ageResults = document.getElementById('ageResults');
+
+        // Set max date to today
+        var today = new Date();
+        var todayStr = today.toISOString().split('T')[0];
+        dobInput.setAttribute('max', todayStr);
+
+        function formatNumber(num) {
+            return Math.round(num).toLocaleString('en-IN');
+        }
+
+        function getDaysInMonth(year, month) {
+            return new Date(year, month + 1, 0).getDate();
+        }
+
+        btnCalculate.addEventListener('click', function() {
+            var dobStr = dobInput.value;
+            if (!dobStr) {
+                showToast('Please select your date of birth.', 'error');
+                return;
+            }
+
+            var dob = new Date(dobStr + 'T00:00:00');
+            var now = new Date();
+
+            if (dob > now) {
+                showToast('Date of birth cannot be in the future.', 'error');
+                return;
+            }
+
+            // Calculate exact age
+            var years = now.getFullYear() - dob.getFullYear();
+            var months = now.getMonth() - dob.getMonth();
+            var days = now.getDate() - dob.getDate();
+
+            if (days < 0) {
+                months--;
+                var prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                days += prevMonth.getDate();
+            }
+
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            // Display age
+            document.getElementById('ageYears').textContent = years;
+            document.getElementById('ageMonths').textContent = months;
+            document.getElementById('ageDays').textContent = days;
+
+            // Total days, hours, minutes
+            var diffMs = now.getTime() - dob.getTime();
+            var totalDays = diffMs / (1000 * 60 * 60 * 24);
+            var totalHours = diffMs / (1000 * 60 * 60);
+            var totalMinutes = diffMs / (1000 * 60);
+
+            document.getElementById('totalDays').textContent = formatNumber(totalDays);
+            document.getElementById('totalHours').textContent = formatNumber(totalHours);
+            document.getElementById('totalMinutes').textContent = formatNumber(totalMinutes);
+
+            // Next birthday
+            var nextBday = new Date(now.getFullYear(), dob.getMonth(), dob.getDate());
+            if (nextBday <= now) {
+                nextBday.setFullYear(now.getFullYear() + 1);
+            }
+            var daysUntil = Math.ceil((nextBday.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+
+            document.getElementById('nextBirthday').textContent = daysUntil;
+
+            var bdayOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('nextBirthdayDate').textContent = 'Your next birthday is on ' + nextBday.toLocaleDateString('en-IN', bdayOptions);
+
+            // Show results
+            ageResults.classList.remove('hidden');
+            ageResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Calculate on Enter or date change
+        dobInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') btnCalculate.click();
+        });
+        dobInput.addEventListener('change', function() {
+            if (dobInput.value) btnCalculate.click();
+        });
+    })();
+    </script>
+</body>
+</html>

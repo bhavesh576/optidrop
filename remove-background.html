@@ -1,0 +1,466 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Background from Photo Online Free | OptiDrop</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <meta name="description" content="Remove background from any photo online free. Make transparent PNGs instantly. No upload — runs in your browser.">
+    <meta name="keywords" content="remove background from photo online free, transparent background maker, background remover no upload, remove bg online free, transparent png maker">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#d97706">
+    <meta property="og:title" content="Remove Background from Photo Online Free | OptiDrop">
+    <meta property="og:description" content="Remove background from any photo online free. Make transparent PNGs instantly. No upload — runs in your browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/remove-background.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Remove Background from Photo Online Free | OptiDrop">
+    <meta name="twitter:description" content="Remove background from any photo online free. Make transparent PNGs instantly. No upload.">
+    <link rel="canonical" href="https://optidrop.online/remove-background.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Remove Background", "item": "https://optidrop.online/remove-background.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Background Remover",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Remove background from any photo online free. Make transparent PNGs instantly. Runs entirely in your browser with no upload."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this background remover really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. OptiDrop's background remover is 100% free with no hidden fees, no sign-up walls, and no watermarks. You can remove as many backgrounds as you like without paying anything."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool upload my photo to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The entire background removal process runs locally in your browser using AI-powered technology. Your photos never leave your device, making it completely private and safe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What image formats are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can upload JPG and PNG images. The output is always a transparent PNG file, which is the standard format for images with removed backgrounds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this for passport photos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. This tool works great for passport photos. Upload your photo, remove the background, and you will get a clean transparent PNG that you can place on any background color required by your passport application."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is the background removal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The AI-powered background removal is very high accuracy, especially for photos of people and common objects. It uses advanced machine learning models to precisely detect edges and separate foreground from background."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Background Removal CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.5/dist/index.umd.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="preload" href="./styles.css" as="style">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">
+                <img src="./Generated_image-removebg-preview.png" alt="OptiDrop">
+            </a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/">All Tools</a>
+            <a href="/blog/">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Remove Image Background Online — Free, No Upload</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Remove the background from any photo instantly using AI-powered technology. Get a clean transparent PNG in seconds. Everything runs locally in your browser — your images never leave your device.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden relative">
+
+                    <!-- STATE 1: UPLOAD ZONE -->
+                    <div id="bg-state-upload" class="p-8 sm:p-12 text-center">
+                        <div id="bgDropzone" class="border-2 border-dashed border-amber-200 rounded-2xl p-10 cursor-pointer transition-all hover:bg-amber-50 hover:border-amber-400 group flex flex-col items-center justify-center min-h-[260px]">
+                            <input type="file" id="bgFileInput" class="hidden" accept="image/jpeg,image/png" />
+                            <div class="bg-amber-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-10 h-10 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L4.939 4.939m7.061 7.061l-2.879-2.879M12 12l2.879-2.879"/></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Drop a Photo to Remove Background</h3>
+                            <p class="text-sm text-slate-500">Supports JPG and PNG. Output is a transparent PNG.</p>
+                        </div>
+                        <div class="mt-5 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+                            AI-powered background removal in your browser. No upload.
+                        </div>
+                    </div>
+
+                    <!-- STATE 2: LOADING -->
+                    <div id="bg-state-loading" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center z-10 rounded-3xl">
+                        <div class="relative w-20 h-20 mb-4">
+                            <div class="absolute inset-0 border-4 border-amber-100 rounded-full"></div>
+                            <div class="absolute inset-0 border-4 border-amber-500 rounded-full border-t-transparent animate-spin"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">Removing background...</h3>
+                        <p class="text-sm font-medium text-amber-600 mt-2 bg-amber-50 px-4 py-2 rounded-full" id="bgProgressText">Processing...</p>
+                    </div>
+
+                    <!-- STATE 3: RESULT -->
+                    <div id="bg-state-result" class="hidden p-6 sm:p-10 text-center flex flex-col items-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-100 mb-6">
+                            <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-2">Background Removed!</h2>
+                        <p class="text-slate-600 mb-4">Your image now has a transparent background.</p>
+                        <div id="bgResultPreview" class="mb-6 rounded-xl p-4 border border-slate-200 inline-block" style="background: repeating-conic-gradient(#e2e8f0 0% 25%, #fff 0% 50%) 50% / 20px 20px;">
+                            <img id="bgResultImage" loading="lazy" class="max-w-full max-h-[300px]" alt="Result">
+                        </div>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2 w-full max-w-lg mx-auto">
+                            <button id="btnBgDownload" class="w-full sm:w-auto px-6 py-4 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 shadow-lg transition-all flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download PNG
+                            </button>
+                            <button id="btnBgStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all">Remove Another</button>
+                        </div>
+                    </div>
+
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Remove Image Background Online — Free, No Upload Required</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Background Remover is a free online tool that uses advanced AI technology to remove the background from any photo. Whether you need a transparent PNG for a product listing, a passport photo, a profile picture, or a design project, our tool delivers clean, precise results in seconds. Unlike other background removal services, OptiDrop processes everything locally in your browser — your photos are never uploaded to any server, making it completely safe for sensitive images like passport photos, ID pictures, and personal snapshots.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">AI-Powered Precision for Perfect Results</h3>
+                <p class="text-slate-600 mb-4">Our background remover uses state-of-the-art machine learning models to accurately detect and separate the foreground subject from the background. It works exceptionally well with photos of people, products, animals, and objects. The AI carefully traces edges — even around hair, fur, and transparent objects — to produce a clean cutout that looks professional and natural.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Private — Your Photos Stay on Your Device</h3>
+                <p class="text-slate-600">Privacy is at the core of OptiDrop. The entire background removal process runs in your browser using WebAssembly and JavaScript. No data is sent to external servers. This means you can safely remove backgrounds from passport photos, confidential documents, product images, and personal photos without worrying about privacy. The AI model is downloaded once and cached locally for fast repeat use.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is this background remover really free?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. OptiDrop's background remover is 100% free with no hidden fees, no sign-up walls, and no watermarks. You can remove as many backgrounds as you like without paying anything.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does this tool upload my photo to a server?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        No. The entire background removal process runs locally in your browser using AI-powered technology. Your photos never leave your device, making it completely private and safe.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What image formats are supported?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        You can upload JPG and PNG images. The output is always a transparent PNG file, which is the standard format for images with removed backgrounds.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I use this for passport photos?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. This tool works great for passport photos. Upload your photo, remove the background, and you will get a clean transparent PNG that you can place on any background color required by your passport application.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How accurate is the background removal?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The AI-powered background removal is very high accuracy, especially for photos of people and common objects. It uses advanced machine learning models to precisely detect edges and separate foreground from background.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/compress-image.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Image Compressor</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Compress images to exact KB for web, forms, and email.</span>
+            </a>
+            <a href="/image-format-converter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Format Converter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Convert between JPG, PNG, and WebP image formats.</span>
+            </a>
+            <a href="/heic-to-jpg.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">HEIC to JPG</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Convert iPhone HEIC photos to universal JPG format.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                </div>
+                <div class="footer-col">
+                    <h4>PDF Tools</h4>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculators</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/gst-calculator.html">GST Calculator</a>
+                    <a href="/tools/age-calculator.html">Age Calculator</a>
+                    <a href="/tools/percentage-calculator.html">Percentage Calculator</a>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Text &amp; Utility Tools</h4>
+                    <a href="/tools/word-counter.html">Word Counter</a>
+                    <a href="/tools/text-case-converter.html">Text Case Converter</a>
+                    <a href="/tools/password-generator.html">Password Generator</a>
+                    <a href="/tools/unit-converter.html">Unit Converter</a>
+                    <a href="/qr-code-generator.html">QR Code Generator</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. Compress images, convert files, generate QR codes, and more — everything runs in your browser. No uploads, no sign-ups, no data leaves your device.</p>
+                    <a href="/category/image-tools.html">Image Tools</a>
+                    <a href="/category/pdf-tools.html">PDF Tools</a>
+                    <a href="/category/calculator-tools.html">Calculators</a>
+                    <a href="/category/text-tools.html">Text Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/">All Tools</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="./common.js"></script>
+    <script>
+    (function(){
+        var dropzone = document.getElementById('bgDropzone');
+        var fileInput = document.getElementById('bgFileInput');
+        var stateUpload = document.getElementById('bg-state-upload');
+        var stateLoading = document.getElementById('bg-state-loading');
+        var stateResult = document.getElementById('bg-state-result');
+        var progressText = document.getElementById('bgProgressText');
+        var resultImage = document.getElementById('bgResultImage');
+        var btnDownload = document.getElementById('btnBgDownload');
+        var btnStartOver = document.getElementById('btnBgStartOver');
+        var resultBlob = null;
+
+        setupDropzone(dropzone, fileInput, handleFile);
+
+        function handleFile(files) {
+            if (!files || !files.length) return;
+            var file = files[0];
+            if (!file.type.match('image.*')) { showToast('Please select a JPG or PNG image.', 'error'); return; }
+
+            stateUpload.classList.add('hidden');
+            stateLoading.classList.remove('hidden');
+            progressText.textContent = 'Loading AI model...';
+
+            // Use @imgly/background-removal
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var blob = dataURLtoBlob(e.target.result);
+                processRemoval(blob);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function dataURLtoBlob(dataURL) {
+            var arr = dataURL.split(',');
+            var mime = arr[0].match(/:(.*?);/)[1];
+            var bstr = atob(arr[1]);
+            var n = bstr.length;
+            var u8arr = new Uint8Array(n);
+            while(n--) { u8arr[n] = bstr.charCodeAt(n); }
+            return new Blob([u8arr], {type: mime});
+        }
+
+        async function processRemoval(blob) {
+            try {
+                // @imgly/background-removal exposes window.removeBackground
+                if (typeof removeBackground === 'undefined') {
+                    showToast('AI model library not loaded. Please refresh and try again.', 'error');
+                    stateLoading.classList.add('hidden');
+                    stateUpload.classList.remove('hidden');
+                    return;
+                }
+
+                var result = await removeBackground(blob, {
+                    progress: function(key, current, total) {
+                        if (key === 'compute:inference') {
+                            var pct = Math.round((current / total) * 100);
+                            progressText.textContent = 'Processing: ' + pct + '%';
+                        } else if (key.startsWith('fetch:')) {
+                            progressText.textContent = 'Downloading AI model...';
+                        }
+                    }
+                });
+
+                resultBlob = result;
+                resultImage.src = URL.createObjectURL(result);
+                stateLoading.classList.add('hidden');
+                stateResult.classList.remove('hidden');
+            } catch (err) {
+                console.error('Background removal error:', err);
+                showToast('Background removal failed. Please try again with a different image.', 'error');
+                stateLoading.classList.add('hidden');
+                stateUpload.classList.remove('hidden');
+            }
+        }
+
+        btnDownload.addEventListener('click', function() {
+            if (!resultBlob) return;
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(resultBlob);
+            a.download = 'background-removed.png';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+
+        btnStartOver.addEventListener('click', function() {
+            if (resultBlob) resultBlob = null;
+            resultImage.src = '';
+            stateResult.classList.add('hidden');
+            stateUpload.classList.remove('hidden');
+        });
+    })();
+    </script>
+</body>
+</html>
