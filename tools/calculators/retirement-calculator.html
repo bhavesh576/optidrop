@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Savings Calculator Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Plan your retirement with our free online calculator. Enter your age, savings, monthly contribution, and expected returns to see your retirement projection.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Retirement Savings Calculator Free Online | OptiDrop">
+    <meta property="og:description" content="Plan your retirement with our free online calculator. Enter your age, savings, monthly contribution, and expected returns to see your retirement projection.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/calculators/retirement-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools/calculators/retirement-calculator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://optidrop.online/category/calculator-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Retirement Calculator", "item": "https://optidrop.online/tools/calculators/retirement-calculator.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Retirement Savings Calculator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Plan your retirement with our free online calculator. Enter your age, savings, monthly contribution, and expected returns."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How much should I save for retirement?", "acceptedAnswer": {"@type": "Answer", "text": "A common guideline is to save 15-20% of your gross income for retirement, starting as early as possible. By age 30, aim to have 1x your annual salary saved; by 40, 3x; by 50, 6x; and by retirement (65-67), 10-12x your annual salary. However, the exact amount depends on your desired lifestyle, expected expenses, healthcare costs, and when you plan to retire."}},
+        {"@type": "Question", "name": "What is the 4 percent withdrawal rule?", "acceptedAnswer": {"@type": "Answer", "text": "The 4% rule is a retirement spending guideline that says you can safely withdraw 4% of your retirement savings in the first year of retirement, then adjust that amount for inflation each subsequent year. For example, if you have Rs. 1 crore saved, you can withdraw Rs. 4 lakhs in year one. This rule is designed to make your savings last at least 30 years in retirement. It is based on historical market returns and is a useful starting point for planning."}},
+        {"@type": "Question", "name": "How to start saving for retirement?", "acceptedAnswer": {"@type": "Answer", "text": "Start by contributing to any employer-matched retirement accounts — that is essentially free money. Then open a PPF, NPS, or mutual fund SIP account. Automate your contributions so they happen before you can spend the money. Increase your savings rate by at least 1% each year. Invest in a diversified portfolio appropriate for your age — generally more stocks when young, gradually shifting to bonds as you near retirement."}},
+        {"@type": "Question", "name": "What is a good retirement corpus?", "acceptedAnswer": {"@type": "Answer", "text": "A good retirement corpus depends on your expected annual expenses in retirement and how many years you expect to be retired. A simple formula is: Annual Expenses x 25 (based on the 4% rule). For example, if you need Rs. 5 lakhs per year in retirement, you would need approximately Rs. 1.25 crore. Factor in inflation, healthcare costs, and any pension or social security income you may receive. This calculator helps you estimate whether your current savings plan will meet your needs."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Retirement Savings Calculator — Plan Your Future</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Estimate how much you will have saved by retirement and whether your plan is on track. Enter your current age, retirement age, savings, and monthly contributions. 100% free, no sign-up required.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="currentAge" class="block text-sm font-bold text-slate-700 mb-2">Current Age</label>
+                            <input type="number" id="currentAge" placeholder="e.g. 30" min="18" max="80" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="retireAge" class="block text-sm font-bold text-slate-700 mb-2">Retirement Age</label>
+                            <input type="number" id="retireAge" placeholder="e.g. 60" min="30" max="80" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="currentSavings" class="block text-sm font-bold text-slate-700 mb-2">Current Savings (Rs.)</label>
+                            <input type="number" id="currentSavings" placeholder="e.g. 500000" min="0" step="10000"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="monthlyContribution" class="block text-sm font-bold text-slate-700 mb-2">Monthly Contribution (Rs.)</label>
+                            <input type="number" id="monthlyContribution" placeholder="e.g. 15000" min="0" step="1000"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="expectedReturn" class="block text-sm font-bold text-slate-700 mb-2">Expected Annual Return (%)</label>
+                            <input type="number" id="expectedReturn" placeholder="e.g. 10" min="1" max="30" step="0.5"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                    </div>
+
+                    <button id="btnCalculate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        Calculate Retirement Projection
+                    </button>
+
+                    <div id="retireResults" class="hidden mt-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-blue-700 mb-1">Years to Retirement</p>
+                                <p id="resultYears" class="text-2xl sm:text-3xl font-extrabold text-blue-900">0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-green-700 mb-1">Total Invested</p>
+                                <p id="resultInvested" class="text-xl sm:text-2xl font-extrabold text-green-900">Rs. 0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-indigo-700 mb-1">Projected Corpus</p>
+                                <p id="resultCorpus" class="text-xl sm:text-2xl font-extrabold text-indigo-900">Rs. 0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-amber-700 mb-1">Monthly Income (4% Rule)</p>
+                                <p id="resultIncome" class="text-xl sm:text-2xl font-extrabold text-amber-900">Rs. 0</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 rounded-xl p-5">
+                            <h3 class="text-lg font-bold text-slate-800 mb-4">Summary</h3>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between"><span class="text-slate-600">Current Savings Growth</span><span id="labelSavingsGrowth" class="font-bold text-slate-800">Rs. 0</span></div>
+                                <div class="flex justify-between"><span class="text-slate-600">Monthly Contributions Growth</span><span id="labelContribGrowth" class="font-bold text-slate-800">Rs. 0</span></div>
+                                <div class="flex justify-between"><span class="text-slate-600">Total Contributions Made</span><span id="labelTotalContrib" class="font-bold text-slate-800">Rs. 0</span></div>
+                                <div class="flex justify-between"><span class="text-slate-600">Total Interest Earned</span><span id="labelInterest" class="font-bold text-green-600">Rs. 0</span></div>
+                                <div class="flex justify-between border-t border-slate-200 pt-3"><span class="text-slate-800 font-bold">Annual Retirement Income (4%)</span><span id="labelAnnualIncome" class="font-bold text-indigo-700">Rs. 0</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How much should I save for retirement?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A common guideline is to save 15-20% of your gross income for retirement, starting as early as possible. By age 30, aim to have 1x your annual salary saved; by 40, 3x; by 50, 6x; and by retirement (65-67), 10-12x your annual salary. However, the exact amount depends on your desired lifestyle, expected expenses, healthcare costs, and when you plan to retire.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the 4 percent withdrawal rule?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The 4% rule is a retirement spending guideline that says you can safely withdraw 4% of your retirement savings in the first year of retirement, then adjust that amount for inflation each subsequent year. For example, if you have Rs. 1 crore saved, you can withdraw Rs. 4 lakhs in year one. This rule is designed to make your savings last at least 30 years in retirement.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to start saving for retirement?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Start by contributing to any employer-matched retirement accounts — that is essentially free money. Then open a PPF, NPS, or mutual fund SIP account. Automate your contributions so they happen before you can spend the money. Increase your savings rate by at least 1% each year. Invest in a diversified portfolio appropriate for your age — generally more stocks when young, gradually shifting to bonds as you near retirement.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is a good retirement corpus?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A good retirement corpus depends on your expected annual expenses in retirement and how many years you expect to be retired. A simple formula is: Annual Expenses x 25 (based on the 4% rule). For example, if you need Rs. 5 lakhs per year in retirement, you would need approximately Rs. 1.25 crore. Factor in inflation, healthcare costs, and any pension or social security income you may receive.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/calculators/compound-interest.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Compound Interest</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate how your investment grows with compound interest.</span>
+                </a>
+                <a href="/tools/calculators/sip-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">SIP Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate mutual fund SIP returns with monthly investments.</span>
+                </a>
+                <a href="/tools/emi-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">EMI Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate monthly EMI for home, car, or personal loans.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var btnCalculate = document.getElementById('btnCalculate');
+
+        function formatRs(num) {
+            return 'Rs. ' + Math.round(num).toLocaleString('en-IN');
+        }
+
+        btnCalculate.addEventListener('click', function() {
+            var currentAge = parseInt(document.getElementById('currentAge').value);
+            var retireAge = parseInt(document.getElementById('retireAge').value);
+            var currentSavings = parseFloat(document.getElementById('currentSavings').value) || 0;
+            var monthlyContrib = parseFloat(document.getElementById('monthlyContribution').value) || 0;
+            var annualReturn = parseFloat(document.getElementById('expectedReturn').value);
+
+            if (!currentAge || currentAge < 18) {
+                showToast('Please enter a valid current age (18+).', 'error');
+                return;
+            }
+            if (!retireAge || retireAge <= currentAge) {
+                showToast('Retirement age must be greater than current age.', 'error');
+                return;
+            }
+            if (!annualReturn || annualReturn <= 0) {
+                showToast('Please enter a valid expected annual return.', 'error');
+                return;
+            }
+
+            var years = retireAge - currentAge;
+            var r = annualReturn / 100;
+            var monthlyRate = r / 12;
+            var totalMonths = years * 12;
+
+            // Future value of current savings: FV = PV * (1 + r)^n
+            var savingsGrowth = currentSavings * Math.pow(1 + r, years);
+
+            // Future value of monthly contributions (annuity)
+            // FV = PMT * [((1 + r)^n - 1) / r] where r is monthly rate, n is total months
+            var contribGrowth = 0;
+            if (monthlyRate > 0) {
+                contribGrowth = monthlyContrib * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate);
+            } else {
+                contribGrowth = monthlyContrib * totalMonths;
+            }
+
+            var totalCorpus = savingsGrowth + contribGrowth;
+            var totalContributed = currentSavings + (monthlyContrib * totalMonths);
+            var totalInterest = totalCorpus - totalContributed;
+
+            // 4% withdrawal rule
+            var annualIncome = totalCorpus * 0.04;
+            var monthlyIncome = annualIncome / 12;
+
+            // Display results
+            document.getElementById('resultYears').textContent = years;
+            document.getElementById('resultInvested').textContent = formatRs(totalContributed);
+            document.getElementById('resultCorpus').textContent = formatRs(totalCorpus);
+            document.getElementById('resultIncome').textContent = formatRs(monthlyIncome);
+
+            document.getElementById('labelSavingsGrowth').textContent = formatRs(savingsGrowth);
+            document.getElementById('labelContribGrowth').textContent = formatRs(contribGrowth);
+            document.getElementById('labelTotalContrib').textContent = formatRs(totalContributed);
+            document.getElementById('labelInterest').textContent = formatRs(totalInterest);
+            document.getElementById('labelAnnualIncome').textContent = formatRs(annualIncome);
+
+            document.getElementById('retireResults').classList.remove('hidden');
+            document.getElementById('retireResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        ['currentAge', 'retireAge', 'currentSavings', 'monthlyContribution', 'expectedReturn'].forEach(function(id) {
+            document.getElementById(id).addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') btnCalculate.click();
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

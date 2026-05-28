@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Business Proposal Generator Online — Download PDF | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Create a professional business proposal online free. Add services, timeline, and pricing. Download PDF instantly.">
+    <meta name="keywords" content="business proposal generator, proposal template, business proposal PDF, free proposal maker, create business proposal online, project proposal template">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Free Business Proposal Generator Online — Download PDF | OptiDrop">
+    <meta property="og:description" content="Create a professional business proposal online free. Add services, timeline, and pricing. Download PDF instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/business/business-proposal.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Business Proposal Generator Online — Download PDF | OptiDrop">
+    <meta name="twitter:description" content="Create a professional business proposal online free. Download PDF instantly.">
+    <link rel="canonical" href="https://optidrop.online/tools/business/business-proposal.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Business Tools", "item": "https://optidrop.online/tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Business Proposal Generator", "item": "https://optidrop.online/tools/business/business-proposal.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Business Proposal Generator",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Create a professional business proposal online free. Add services, timeline, and pricing. Download PDF instantly."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What should a business proposal include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A strong business proposal should include a cover page, an executive summary that outlines the problem and your proposed solution, a detailed list of services or deliverables, a project timeline with milestones, transparent pricing, your qualifications or company background, and clear terms and conditions. A well-structured proposal demonstrates professionalism and increases your chances of winning the project."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long should a proposal be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The length of a business proposal depends on the project complexity. For simple projects, 2-4 pages is sufficient. For larger or more complex projects, 8-15 pages may be appropriate. The key is to be thorough but concise — include all relevant information without unnecessary filler. Decision-makers appreciate proposals that get to the point while covering all essential details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a proposal and a quote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A quote (or quotation) is a simple document that lists products or services with their prices. It is straightforward and focused on cost. A business proposal is more comprehensive — it explains the problem, presents your solution, demonstrates your expertise, outlines the approach and methodology, and includes pricing as part of a persuasive argument for why the client should choose you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to win proposals?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To win more proposals: research the client and tailor your proposal to their specific needs, clearly articulate the value you bring, use professional formatting, include social proof like testimonials or case studies, be transparent with pricing, demonstrate your understanding of their challenges, and follow up after sending. The most winning proposals focus on the client's problems rather than just listing your services."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Free Business Proposal Generator Online — Download PDF</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Create a professional business proposal in minutes. Add your company details, services, timeline, pricing, and competitive advantages. Download a polished PDF — 100% free, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Company Details -->
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Company Details</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label for="yourCompany" class="block text-sm font-bold text-slate-700 mb-2">Your Company Name</label>
+                            <input type="text" id="yourCompany" placeholder="Your company name"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="clientCompany" class="block text-sm font-bold text-slate-700 mb-2">Client Company Name</label>
+                            <input type="text" id="clientCompany" placeholder="Client's company name"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="projectTitle" class="block text-sm font-bold text-slate-700 mb-2">Project Title</label>
+                        <input type="text" id="projectTitle" placeholder="e.g. Website Redesign & Development"
+                            class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                            autocomplete="off">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="execSummary" class="block text-sm font-bold text-slate-700 mb-2">Executive Summary</label>
+                        <textarea id="execSummary" rows="4" placeholder="Briefly describe the client's problem and your proposed solution..."
+                            class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                            autocomplete="off"></textarea>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="servicesOffered" class="block text-sm font-bold text-slate-700 mb-2">Services Offered</label>
+                        <textarea id="servicesOffered" rows="5" placeholder="List the services or deliverables you will provide (one per line)..."
+                            class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                            autocomplete="off"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="timeline" class="block text-sm font-bold text-slate-700 mb-2">Project Timeline</label>
+                            <textarea id="timeline" rows="4" placeholder="e.g. Week 1-2: Discovery and planning&#10;Week 3-6: Design and development&#10;Week 7: Testing and revisions&#10;Week 8: Launch"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off"></textarea>
+                        </div>
+                        <div>
+                            <label for="pricing" class="block text-sm font-bold text-slate-700 mb-2">Pricing</label>
+                            <textarea id="pricing" rows="4" placeholder="e.g. Website Design: $3,000&#10;Development: $5,000&#10;SEO Setup: $1,000&#10;Total: $9,000"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <label for="whyChooseYou" class="block text-sm font-bold text-slate-700 mb-2">Why Choose Us</label>
+                        <textarea id="whyChooseYou" rows="4" placeholder="Describe your qualifications, experience, unique strengths, or past successes..."
+                            class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                            autocomplete="off"></textarea>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3">
+                        <button id="btnGenerate" class="px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Download PDF
+                        </button>
+                        <button id="btnCopy" class="px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            Copy Text
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Business Proposal Generator — Win More Clients</h2>
+                <p class="text-slate-600 mb-4">A well-crafted business proposal can be the difference between winning and losing a client. OptiDrop's Business Proposal Generator helps you create professional, persuasive proposals in minutes. Simply fill in your details, describe your services, set your timeline and pricing, and download a polished PDF ready to send.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Structured for Success</h3>
+                <p class="text-slate-600 mb-4">Our proposal template follows proven business proposal best practices: a compelling executive summary, clear service descriptions, transparent pricing, defined timelines, and a strong value proposition. These elements work together to demonstrate your professionalism and win client confidence.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Professional PDF Output</h3>
+                <p class="text-slate-600">Download your completed proposal as a clean, professionally formatted PDF document. The output includes all sections laid out in a logical, easy-to-read format that impresses clients and positions your business as the right choice for their project.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What should a business proposal include?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A strong business proposal should include a cover page, an executive summary that outlines the problem and your proposed solution, a detailed list of services or deliverables, a project timeline with milestones, transparent pricing, your qualifications or company background, and clear terms and conditions. A well-structured proposal demonstrates professionalism and increases your chances of winning the project.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How long should a proposal be?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The length of a business proposal depends on the project complexity. For simple projects, 2-4 pages is sufficient. For larger or more complex projects, 8-15 pages may be appropriate. The key is to be thorough but concise — include all relevant information without unnecessary filler. Decision-makers appreciate proposals that get to the point while covering all essential details.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the difference between a proposal and a quote?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A quote (or quotation) is a simple document that lists products or services with their prices. It is straightforward and focused on cost. A business proposal is more comprehensive — it explains the problem, presents your solution, demonstrates your expertise, outlines the approach and methodology, and includes pricing as part of a persuasive argument for why the client should choose you.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to win proposals?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To win more proposals: research the client and tailor your proposal to their specific needs, clearly articulate the value you bring, use professional formatting, include social proof like testimonials or case studies, be transparent with pricing, demonstrate your understanding of their challenges, and follow up after sending. The most winning proposals focus on the client's problems rather than just listing your services.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/business/invoice-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Invoice Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Create professional invoices with line items, tax, and PDF download.</span>
+                </a>
+                <a href="/tools/business/freelance-contract.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Freelance Contract</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate professional freelance service agreements with payment terms.</span>
+                </a>
+                <a href="/tools/business/offer-letter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Offer Letter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate formal job offer letters with salary and benefits details.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        function saveData() {
+            autoSave('business_proposal', {
+                yourCompany: document.getElementById('yourCompany').value,
+                clientCompany: document.getElementById('clientCompany').value,
+                projectTitle: document.getElementById('projectTitle').value,
+                execSummary: document.getElementById('execSummary').value,
+                services: document.getElementById('servicesOffered').value,
+                timeline: document.getElementById('timeline').value,
+                pricing: document.getElementById('pricing').value,
+                whyChoose: document.getElementById('whyChooseYou').value
+            });
+        }
+
+        function loadData() {
+            var d = autoLoad('business_proposal');
+            if (!d) return;
+            document.getElementById('yourCompany').value = d.yourCompany || '';
+            document.getElementById('clientCompany').value = d.clientCompany || '';
+            document.getElementById('projectTitle').value = d.projectTitle || '';
+            document.getElementById('execSummary').value = d.execSummary || '';
+            document.getElementById('servicesOffered').value = d.services || '';
+            document.getElementById('timeline').value = d.timeline || '';
+            document.getElementById('pricing').value = d.pricing || '';
+            document.getElementById('whyChooseYou').value = d.whyChoose || '';
+        }
+
+        function getFormData() {
+            return {
+                yourCompany: document.getElementById('yourCompany').value || '[Your Company]',
+                clientCompany: document.getElementById('clientCompany').value || '[Client Company]',
+                projectTitle: document.getElementById('projectTitle').value || '[Project Title]',
+                execSummary: document.getElementById('execSummary').value || '[Executive Summary]',
+                services: document.getElementById('servicesOffered').value || '[Services]',
+                timeline: document.getElementById('timeline').value || '[Timeline]',
+                pricing: document.getElementById('pricing').value || '[Pricing]',
+                whyChoose: document.getElementById('whyChooseYou').value || '[Why Choose Us]'
+            };
+        }
+
+        function generatePDF() {
+            var d = getFormData();
+            var jsPDF = window.jspdf.jsPDF;
+            var doc = new jsPDF();
+            var y = 0;
+
+            // Cover Page
+            doc.setFillColor(37, 99, 235);
+            doc.rect(0, 0, 210, 297, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(28);
+            doc.setFont('helvetica', 'bold');
+            doc.text('BUSINESS PROPOSAL', 105, 80, {align:'center'});
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'normal');
+            doc.text(d.projectTitle, 105, 100, {align:'center'});
+            doc.setFontSize(12);
+            doc.text('Prepared by: ' + d.yourCompany, 105, 140, {align:'center'});
+            doc.text('Prepared for: ' + d.clientCompany, 105, 150, {align:'center'});
+            doc.text('Date: ' + new Date().toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'}), 105, 160, {align:'center'});
+
+            // Page 2 - Executive Summary
+            doc.addPage();
+            y = 20;
+            doc.setTextColor(0, 0, 0);
+
+            doc.setFontSize(20);
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(37, 99, 235);
+            doc.text('Executive Summary', 14, y);
+            y += 4;
+            doc.setDrawColor(37, 99, 235);
+            doc.line(14, y, 80, y);
+            y += 10;
+            doc.setTextColor(0, 0, 0);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(11);
+            var summaryLines = doc.splitTextToSize(d.execSummary, 180);
+            summaryLines.forEach(function(line) {
+                if (y > 275) { doc.addPage(); y = 20; }
+                doc.text(line, 14, y);
+                y += 6;
+            });
+            y += 8;
+
+            // Services Offered
+            if (y > 240) { doc.addPage(); y = 20; }
+            doc.setFontSize(20);
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(37, 99, 235);
+            doc.text('Services Offered', 14, y);
+            y += 4;
+            doc.line(14, y, 80, y);
+            y += 10;
+            doc.setTextColor(0, 0, 0);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(11);
+            d.services.split('\n').forEach(function(item) {
+                if (y > 275) { doc.addPage(); y = 20; }
+                if (item.trim()) {
+                    doc.setFillColor(37, 99, 235);
+                    doc.circle(18, y - 1.5, 1.5, 'F');
+                    var sLines = doc.splitTextToSize(item.trim(), 170);
+                    sLines.forEach(function(line) {
+                        if (y > 275) { doc.addPage(); y = 20; }
+                        doc.text(line, 24, y);
+                        y += 6;
+                    });
+                }
+            });
+            y += 8;
+
+            // Timeline
+            if (y > 220) { doc.addPage(); y = 20; }
+            doc.setFontSize(20);
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(37, 99, 235);
+            doc.text('Project Timeline', 14, y);
+            y += 4;
+            doc.line(14, y, 80, y);
+            y += 10;
+            doc.setTextColor(0, 0, 0);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(11);
+            d.timeline.split('\n').forEach(function(item) {
+                if (y > 275) { doc.addPage(); y = 20; }
+                if (item.trim()) {
+                    doc.text(item.trim(), 14, y);
+                    y += 7;
+                }
+            });
+            y += 8;
+
+            // Pricing
+            if (y > 220) { doc.addPage(); y = 20; }
+            doc.setFontSize(20);
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(37, 99, 235);
+            doc.text('Pricing', 14, y);
+            y += 4;
+            doc.line(14, y, 80, y);
+            y += 10;
+            doc.setTextColor(0, 0, 0);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(11);
+            d.pricing.split('\n').forEach(function(item) {
+                if (y > 275) { doc.addPage(); y = 20; }
+                if (item.trim()) {
+                    doc.text(item.trim(), 14, y);
+                    y += 7;
+                }
+            });
+            y += 8;
+
+            // Why Choose Us
+            if (y > 220) { doc.addPage(); y = 20; }
+            doc.setFontSize(20);
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(37, 99, 235);
+            doc.text('Why Choose ' + d.yourCompany, 14, y);
+            y += 4;
+            doc.line(14, y, 80, y);
+            y += 10;
+            doc.setTextColor(0, 0, 0);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(11);
+            var whyLines = doc.splitTextToSize(d.whyChoose, 180);
+            whyLines.forEach(function(line) {
+                if (y > 275) { doc.addPage(); y = 20; }
+                doc.text(line, 14, y);
+                y += 6;
+            });
+
+            doc.save('Business_Proposal_' + d.projectTitle.replace(/\s+/g, '_') + '.pdf');
+            showToast('Business proposal PDF downloaded!');
+        }
+
+        function generateText() {
+            var d = getFormData();
+            var lines = [
+                'BUSINESS PROPOSAL',
+                d.projectTitle,
+                '',
+                'Prepared by: ' + d.yourCompany,
+                'Prepared for: ' + d.clientCompany,
+                'Date: ' + new Date().toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'}),
+                '',
+                'EXECUTIVE SUMMARY',
+                d.execSummary,
+                '',
+                'SERVICES OFFERED',
+                d.services,
+                '',
+                'PROJECT TIMELINE',
+                d.timeline,
+                '',
+                'PRICING',
+                d.pricing,
+                '',
+                'WHY CHOOSE ' + d.yourCompany.toUpperCase(),
+                d.whyChoose
+            ];
+            return lines.join('\n');
+        }
+
+        // Init
+        loadData();
+        var fields = ['yourCompany','clientCompany','projectTitle','execSummary','servicesOffered','timeline','pricing','whyChooseYou'];
+        fields.forEach(function(id) {
+            document.getElementById(id).addEventListener('input', saveData);
+        });
+
+        document.getElementById('btnGenerate').addEventListener('click', generatePDF);
+        document.getElementById('btnCopy').addEventListener('click', function() { copyToClipboard(generateText(), 'Proposal text copied!'); });
+    })();
+    </script>
+</body>
+</html>

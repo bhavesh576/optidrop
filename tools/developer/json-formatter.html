@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Formatter and Validator Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Free online JSON formatter, validator, and minifier. Pretty print, minify, and validate JSON with syntax highlighting and line number error reporting. No upload required.">
+    <meta name="keywords" content="json formatter online, json validator, json minifier, json beautifier, json pretty print, format json free, validate json online">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="JSON Formatter and Validator Free Online | OptiDrop">
+    <meta property="og:description" content="Free online JSON formatter, validator, and minifier. Pretty print, minify, and validate JSON with syntax highlighting. No upload required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/json-formatter.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JSON Formatter and Validator Free Online | OptiDrop">
+    <meta name="twitter:description" content="Free online JSON formatter, validator, and minifier with syntax highlighting. No upload required.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/json-formatter.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/tools/developer/"},
+        {"@type": "ListItem", "position": 3, "name": "JSON Formatter", "item": "https://optidrop.online/tools/developer/json-formatter.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop JSON Formatter",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online JSON formatter, validator, and minifier with syntax highlighting. Pretty print, minify, and validate JSON instantly in your browser."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is JSON formatting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JSON formatting (also called pretty printing) is the process of taking raw or minified JSON data and adding indentation, line breaks, and proper spacing to make it human-readable. A JSON formatter indents nested objects and arrays, making it easy to understand the structure of the data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to validate JSON?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Paste your JSON text into the input field and click the Validate button. The tool will parse the JSON and report whether it is valid or invalid. If invalid, it shows the exact line number and error message so you can quickly find and fix the problem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to minify JSON?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Paste your formatted JSON into the input area and click the Minify button. This removes all unnecessary whitespace, line breaks, and indentation, producing a compact single-line JSON string. Minified JSON is useful for reducing file size when transmitting data over a network."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What causes JSON parse errors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common JSON parse errors include: trailing commas after the last item in an object or array, single quotes instead of double quotes for strings, unquoted keys, missing commas between items, unclosed brackets or braces, and invalid escape sequences. Our tool identifies these errors and shows the exact line number."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .json-output {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-all;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            min-height: 200px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        .json-key { color: #60a5fa; }
+        .json-string { color: #4ade80; }
+        .json-number { color: #fb923c; }
+        .json-boolean { color: #c084fc; }
+        .json-null { color: #f87171; }
+        .json-bracket { color: #94a3b8; }
+        .error-box {
+            background: #fef2f2;
+            border: 2px solid #fca5a5;
+            color: #dc2626;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: none;
+        }
+        .tab-btn-json {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 0.75rem;
+            border: 2px solid #e2e8f0;
+            background: #fff;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .tab-btn-json.active {
+            border-color: #2563eb;
+            background: #2563eb;
+            color: #fff;
+        }
+        .tab-btn-json:hover:not(.active) {
+            border-color: #93c5fd;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-5xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">JSON Formatter and Validator Online — Pretty Print, Minify &amp; Validate Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Paste raw or minified JSON to format, minify, or validate it instantly. Syntax highlighting, line number error reporting. No upload, no sign-up — 100% private.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-5xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Input Area -->
+                    <div class="mb-4">
+                        <label for="jsonInput" class="block text-sm font-bold text-slate-700 mb-2">Paste your JSON here</label>
+                        <textarea id="jsonInput" placeholder='{"name": "OptiDrop", "type": "tool", "version": 2, "active": true, "tags": null}' class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y" style="min-height:180px;font-family:'Courier New',Courier,monospace;font-size:0.875rem;line-height:1.6;"></textarea>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3 mb-4">
+                        <button id="btnFormat" class="flex-1 min-w-[120px] px-5 py-3 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+                            Format
+                        </button>
+                        <button id="btnMinify" class="flex-1 min-w-[120px] px-5 py-3 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all flex justify-center items-center gap-2 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            Minify
+                        </button>
+                        <button id="btnValidate" class="flex-1 min-w-[120px] px-5 py-3 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Validate
+                        </button>
+                    </div>
+
+                    <!-- Error Box -->
+                    <div id="errorBox" class="error-box mb-4"></div>
+
+                    <!-- Output Area -->
+                    <div class="mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <label class="block text-sm font-bold text-slate-700">Output</label>
+                            <div class="flex gap-2">
+                                <button id="btnCopy" class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-blue-600 bg-white border border-slate-200 rounded-lg hover:border-blue-300 transition-all">Copy</button>
+                                <button id="btnDownload" class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-blue-600 bg-white border border-slate-200 rounded-lg hover:border-blue-300 transition-all">Download .json</button>
+                            </div>
+                        </div>
+                        <div id="jsonOutput" class="json-output">
+                            <span style="color:#64748b;">Output will appear here...</span>
+                        </div>
+                    </div>
+
+                    <!-- Output Stats -->
+                    <div class="flex flex-wrap gap-4 text-sm text-slate-500">
+                        <span>Output size: <strong id="outputSize" class="text-slate-800">0</strong> characters</span>
+                        <span>Lines: <strong id="outputLines" class="text-slate-800">0</strong></span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online JSON Formatter, Minifier &amp; Validator</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's JSON Formatter is a free, browser-based tool that lets you format (pretty print), minify, and validate JSON data instantly. Whether you are a developer debugging API responses, a student learning JSON, or anyone working with structured data, this tool makes it easy to work with JSON. Paste your raw or minified JSON, click a button, and get clean, syntax-highlighted output in seconds.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Syntax Highlighting</h3>
+                <p class="text-slate-600 mb-4">The output uses color-coded syntax highlighting to make JSON easy to read at a glance. Keys are shown in blue, strings in green, numbers in orange, booleans (true/false) in purple, and null values in red. Brackets and structural characters are displayed in gray for clarity.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Error Detection with Line Numbers</h3>
+                <p class="text-slate-600 mb-4">If your JSON contains syntax errors, the validator reports the exact line number and a descriptive error message. Common issues like trailing commas, missing quotes, or mismatched brackets are detected immediately so you can fix them quickly.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Private — Runs in Your Browser</h3>
+                <p class="text-slate-600">All JSON processing happens locally in your browser. No data is sent to any server, making it completely safe for sensitive configuration files, API responses, and private data. Copy the output to clipboard or download it as a .json file.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is JSON formatting?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        JSON formatting (also called pretty printing) is the process of taking raw or minified JSON data and adding indentation, line breaks, and proper spacing to make it human-readable. A JSON formatter indents nested objects and arrays, making it easy to understand the structure of the data.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to validate JSON?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Paste your JSON text into the input field and click the Validate button. The tool will parse the JSON and report whether it is valid or invalid. If invalid, it shows the exact line number and error message so you can quickly find and fix the problem.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to minify JSON?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Paste your formatted JSON into the input area and click the Minify button. This removes all unnecessary whitespace, line breaks, and indentation, producing a compact single-line JSON string. Minified JSON is useful for reducing file size when transmitting data over a network.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What causes JSON parse errors?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Common JSON parse errors include: trailing commas after the last item in an object or array, single quotes instead of double quotes for strings, unquoted keys, missing commas between items, unclosed brackets or braces, and invalid escape sequences. Our tool identifies these errors and shows the exact line number.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/developer/base64.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Base64 Encoder</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode Base64 text and files instantly in your browser.</span>
+            </a>
+            <a href="/tools/developer/url-encoder.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">URL Encoder</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode URLs and HTML entities online for free.</span>
+            </a>
+            <a href="/tools/developer/hash-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Hash Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate SHA-256 and SHA-512 hashes using native SubtleCrypto API.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var jsonInput = document.getElementById('jsonInput');
+        var jsonOutput = document.getElementById('jsonOutput');
+        var errorBox = document.getElementById('errorBox');
+        var outputSize = document.getElementById('outputSize');
+        var outputLines = document.getElementById('outputLines');
+        var btnFormat = document.getElementById('btnFormat');
+        var btnMinify = document.getElementById('btnMinify');
+        var btnValidate = document.getElementById('btnValidate');
+        var btnCopy = document.getElementById('btnCopy');
+        var btnDownload = document.getElementById('btnDownload');
+
+        var rawOutput = '';
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        function syntaxHighlight(json) {
+            var escaped = escapeHtml(json);
+            return escaped.replace(
+                /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
+                function (match) {
+                    var cls = 'json-number';
+                    if (/^"/.test(match)) {
+                        if (/:$/.test(match)) {
+                            cls = 'json-key';
+                            // Remove trailing colon from match for styling, add it back
+                            return '<span class="' + cls + '">' + match.slice(0, -1) + '</span>:';
+                        } else {
+                            cls = 'json-string';
+                        }
+                    } else if (/true|false/.test(match)) {
+                        cls = 'json-boolean';
+                    } else if (/null/.test(match)) {
+                        cls = 'json-null';
+                    }
+                    return '<span class="' + cls + '">' + match + '</span>';
+                }
+            );
+        }
+
+        function showError(msg) {
+            errorBox.textContent = msg;
+            errorBox.style.display = 'block';
+        }
+
+        function hideError() {
+            errorBox.style.display = 'none';
+        }
+
+        function updateStats(text) {
+            rawOutput = text;
+            outputSize.textContent = text.length.toLocaleString();
+            outputLines.textContent = text.split('\n').length.toLocaleString();
+        }
+
+        function findErrorLine(input, errorMsg) {
+            var posMatch = errorMsg.match(/position\s+(\d+)/i);
+            if (posMatch) {
+                var pos = parseInt(posMatch[1]);
+                var lines = input.substring(0, pos).split('\n');
+                return lines.length;
+            }
+            var lineMatch = errorMsg.match(/line\s+(\d+)/i);
+            if (lineMatch) return parseInt(lineMatch[1]);
+            return null;
+        }
+
+        btnFormat.addEventListener('click', function() {
+            hideError();
+            var input = jsonInput.value.trim();
+            if (!input) {
+                showToast('Please paste some JSON first.', 'error');
+                return;
+            }
+            try {
+                var parsed = JSON.parse(input);
+                var formatted = JSON.stringify(parsed, null, 2);
+                jsonOutput.innerHTML = syntaxHighlight(formatted);
+                updateStats(formatted);
+                showToast('JSON formatted successfully!');
+            } catch (e) {
+                var line = findErrorLine(input, e.message);
+                var lineInfo = line ? ' (Line ' + line + ')' : '';
+                showError('Invalid JSON' + lineInfo + ': ' + e.message);
+                jsonOutput.innerHTML = '<span style="color:#f87171;">Error: Could not format invalid JSON.</span>';
+                updateStats('');
+            }
+        });
+
+        btnMinify.addEventListener('click', function() {
+            hideError();
+            var input = jsonInput.value.trim();
+            if (!input) {
+                showToast('Please paste some JSON first.', 'error');
+                return;
+            }
+            try {
+                var parsed = JSON.parse(input);
+                var minified = JSON.stringify(parsed);
+                jsonOutput.innerHTML = syntaxHighlight(minified);
+                updateStats(minified);
+                showToast('JSON minified successfully!');
+            } catch (e) {
+                var line = findErrorLine(input, e.message);
+                var lineInfo = line ? ' (Line ' + line + ')' : '';
+                showError('Invalid JSON' + lineInfo + ': ' + e.message);
+                jsonOutput.innerHTML = '<span style="color:#f87171;">Error: Could not minify invalid JSON.</span>';
+                updateStats('');
+            }
+        });
+
+        btnValidate.addEventListener('click', function() {
+            hideError();
+            var input = jsonInput.value.trim();
+            if (!input) {
+                showToast('Please paste some JSON first.', 'error');
+                return;
+            }
+            try {
+                JSON.parse(input);
+                jsonOutput.innerHTML = '<span style="color:#4ade80;font-size:1.1rem;font-weight:700;">Valid JSON</span>';
+                updateStats('');
+                showToast('JSON is valid!');
+            } catch (e) {
+                var line = findErrorLine(input, e.message);
+                var lineInfo = line ? ' (Line ' + line + ')' : '';
+                showError('Invalid JSON' + lineInfo + ': ' + e.message);
+                jsonOutput.innerHTML = '<span style="color:#f87171;font-size:1.1rem;font-weight:700;">Invalid JSON</span>';
+                updateStats('');
+            }
+        });
+
+        btnCopy.addEventListener('click', function() {
+            if (!rawOutput) {
+                showToast('Nothing to copy. Format or minify JSON first.', 'error');
+                return;
+            }
+            copyToClipboard(rawOutput);
+        });
+
+        btnDownload.addEventListener('click', function() {
+            if (!rawOutput) {
+                showToast('Nothing to download. Format or minify JSON first.', 'error');
+                return;
+            }
+            downloadTextFile(rawOutput, 'formatted.json');
+            showToast('File downloaded!');
+        });
+    })();
+    </script>
+</body>
+</html>

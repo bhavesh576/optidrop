@@ -1,47 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://optidrop.online/</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <!-- Existing Image Tools -->
-  <url><loc>https://optidrop.online/compress-image.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/heic-to-jpg.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/image-format-converter.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/remove-background.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/passport-photo-resizer.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/name-date-stamp.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/signature-scanner.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/image-to-text-ocr.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <!-- Existing PDF Tools -->
-  <url><loc>https://optidrop.online/compress-pdf.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/jpg-to-pdf.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/pdf-to-jpg.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <!-- Existing Utility Tools -->
-  <url><loc>https://optidrop.online/qr-code-generator.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <!-- New Calculator Tools -->
-  <url><loc>https://optidrop.online/tools/emi-calculator.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/tools/gst-calculator.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/tools/age-calculator.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/tools/percentage-calculator.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <!-- New Text Tools -->
-  <url><loc>https://optidrop.online/tools/word-counter.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/tools/text-case-converter.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/tools/password-generator.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <!-- New Health/Utility Tools -->
-  <url><loc>https://optidrop.online/tools/bmi-calculator.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://optidrop.online/tools/unit-converter.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <!-- Category Pages -->
-  <url><loc>https://optidrop.online/category/image-tools.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://optidrop.online/category/pdf-tools.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://optidrop.online/category/calculator-tools.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://optidrop.online/category/text-tools.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <!-- Blog -->
-  <url><loc>https://optidrop.online/blog/</loc><lastmod>2026-05-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://optidrop.online/blog/how-to-resize-passport-photo-online.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://optidrop.online/blog/how-to-convert-heic-to-jpg.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://optidrop.online/blog/compress-image-for-visa-application.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://optidrop.online/blog/passport-photo-size-guide-all-countries.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://optidrop.online</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Directory & Site Pages -->
+    <url>
+        <loc>https://optidrop.online/tools.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/about.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/privacy-policy.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/terms.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/contact.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Category Pages -->
+    <url>
+        <loc>https://optidrop.online/category/image-tools.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/category/pdf-tools.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/category/calculator-tools.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/category/text-tools.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/category/career-tools.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/category/business-tools.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/category/professional-tools.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/category/utility-tools.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/category/developer-tools.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/category/health-tools.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Image Tools (Root) -->
+    <url><loc>https://optidrop.online/compress-image.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/heic-to-jpg.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/image-format-converter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/remove-background.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/passport-photo-resizer.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/name-date-stamp.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/signature-scanner.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/image-to-text-ocr.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+    <!-- PDF Tools (Root) -->
+    <url><loc>https://optidrop.online/compress-pdf.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/jpg-to-pdf.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/pdf-to-jpg.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+    <!-- QR Code Generator (Root) -->
+    <url><loc>https://optidrop.online/qr-code-generator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+    <!-- Existing Tools (/tools/) -->
+    <url><loc>https://optidrop.online/tools/emi-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/gst-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/age-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/percentage-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/bmi-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/unit-converter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/word-counter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/text-case-converter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/password-generator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+    <!-- New Calculator Tools (/tools/calculators/) -->
+    <url><loc>https://optidrop.online/tools/calculators/sip-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/income-tax-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/mortgage-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/tip-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/grade-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/loan-comparison.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/compound-interest.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/retirement-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/discount-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/date-difference.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/time-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/fuel-cost.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/currency-converter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/calorie-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+    <!-- New Text Tools (/tools/text/) -->
+    <url><loc>https://optidrop.online/tools/text/lorem-ipsum-generator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/text/random-name-generator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/text/text-repeater.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/text/binary-to-text.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/text/character-counter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/text/remove-duplicate-lines.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/text/find-and-replace.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/text/number-to-words.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/text/reverse-text.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/text/text-to-slug.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+    <!-- Career Tools (/tools/career/) -->
+    <url><loc>https://optidrop.online/tools/career/resume-builder.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/career/cover-letter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/career/resignation-letter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/career/thank-you-letter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/career/linkedin-generator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/career/internship-letter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/career/job-tracker.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+    <!-- Business Tools (/tools/business/) -->
+    <url><loc>https://optidrop.online/tools/business/invoice-generator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/business/freelance-contract.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/business/salary-slip.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/business/business-proposal.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/business/offer-letter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/business/noc-generator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/business/experience-letter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/business/profit-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/business/receipt-generator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+    <!-- Professional Tools (/tools/professional/) -->
+    <url><loc>https://optidrop.online/tools/professional/email-signature.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/professional/business-card.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/professional/bio-generator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/professional/sop-generator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+    <!-- Developer Tools (/tools/developer/) -->
+    <url><loc>https://optidrop.online/tools/developer/json-formatter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/developer/base64.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/developer/url-encoder.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/developer/color-converter.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/developer/markdown-preview.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/developer/hash-generator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+    <!-- Health Tools (/tools/health/) -->
+    <url><loc>https://optidrop.online/tools/health/ideal-weight.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/health/water-intake.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/health/sleep-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/health/pregnancy-due-date.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/health/ovulation-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/health/calorie-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+    <!-- Blog -->
+    <url><loc>https://optidrop.online/blog/</loc><lastmod>2026-05-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/blog/how-to-resize-passport-photo-online.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://optidrop.online/blog/how-to-convert-heic-to-jpg.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://optidrop.online/blog/compress-image-for-visa-application.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://optidrop.online/blog/passport-photo-size-guide-all-countries.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
 </urlset>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 Encoder Decoder Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Free online Base64 encoder and decoder. Encode text to Base64, decode Base64 to text, and convert files to Base64. No upload required, 100% browser-side.">
+    <meta name="keywords" content="base64 encoder online, base64 decoder, base64 encode, base64 decode, convert file to base64, base64 converter free">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Base64 Encoder Decoder Free Online | OptiDrop">
+    <meta property="og:description" content="Free online Base64 encoder and decoder. Encode text, decode Base64, convert files to Base64. 100% browser-side, no upload.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/base64.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Base64 Encoder Decoder Free Online | OptiDrop">
+    <meta name="twitter:description" content="Free online Base64 encoder and decoder. Encode and decode text and files. No upload required.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/base64.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/tools/developer/"},
+        {"@type": "ListItem", "position": 3, "name": "Base64 Encoder", "item": "https://optidrop.online/tools/developer/base64.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Base64 Encoder Decoder",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online Base64 encoder and decoder. Encode text to Base64, decode Base64 to text, and convert files to Base64 entirely in your browser."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Base64 encoding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Base64 is a binary-to-text encoding scheme that represents binary data using 64 ASCII characters (A-Z, a-z, 0-9, +, and /). It is commonly used to embed binary data like images in HTML, CSS, or JSON, and to safely transmit data over text-based protocols like email and HTTP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to encode a file to Base64?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use the File to Base64 section of this tool. Click the file upload area or drag and drop a file. The tool reads the file using the FileReader API entirely in your browser (no upload to any server) and displays the Base64 encoded string. You can then copy it to your clipboard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When to use Base64?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Base64 is used when you need to embed binary data in text-only formats. Common use cases include: embedding images in HTML or CSS using data URIs, attaching files in emails (MIME), including binary data in JSON or XML, and transmitting data over APIs that only accept text."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to decode Base64 online?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Paste your Base64 encoded string into the input area and click the Decode button. The tool will decode the Base64 string back to its original text. Note that Base64 encoded files (like images) will produce binary data that may not display as readable text."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .base64-output {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-all;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            color: #1e293b;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            min-height: 120px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .file-dropzone {
+            border: 2px dashed #cbd5e1;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #f8fafc;
+        }
+        .file-dropzone:hover, .file-dropzone.dropzone-active {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+        .base64-tab-btn {
+            padding: 0.5rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 0.75rem;
+            border: 2px solid #e2e8f0;
+            background: #fff;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .base64-tab-btn.active {
+            border-color: #2563eb;
+            background: #2563eb;
+            color: #fff;
+        }
+        .base64-tab-btn:hover:not(.active) {
+            border-color: #93c5fd;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Base64 Encoder &amp; Decoder Online — Encode Text &amp; Files Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Encode text to Base64, decode Base64 to text, and convert files to Base64 — all in your browser. No upload, no sign-up, 100% private.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Mode Tabs -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <button class="base64-tab-btn active" data-tab="text" onclick="switchTab('text')">Text Encode/Decode</button>
+                        <button class="base64-tab-btn" data-tab="file" onclick="switchTab('file')">File to Base64</button>
+                    </div>
+
+                    <!-- TEXT TAB -->
+                    <div id="tab-text" class="tab-panel active">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <!-- Input -->
+                            <div>
+                                <label for="b64Input" class="block text-sm font-bold text-slate-700 mb-2">Input Text</label>
+                                <textarea id="b64Input" placeholder="Type or paste text here..." class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y" style="min-height:180px;font-family:inherit;line-height:1.7;"></textarea>
+                                <div class="mt-2 flex gap-3">
+                                    <button id="btnEncode" class="flex-1 px-5 py-3 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md transition-all text-sm">
+                                        Encode to Base64
+                                    </button>
+                                    <button id="btnDecode" class="flex-1 px-5 py-3 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 shadow-md transition-all text-sm">
+                                        Decode from Base64
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Output -->
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <label class="block text-sm font-bold text-slate-700">Output</label>
+                                    <button id="btnCopyText" class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-blue-600 bg-white border border-slate-200 rounded-lg hover:border-blue-300 transition-all">Copy</button>
+                                </div>
+                                <div id="b64Output" class="base64-output" style="min-height:180px;">Output will appear here...</div>
+                                <div class="mt-2 text-sm text-slate-500">
+                                    Characters: <strong id="outputCharCount" class="text-slate-800">0</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FILE TAB -->
+                    <div id="tab-file" class="tab-panel">
+                        <div class="file-dropzone mb-4" id="fileDropzone">
+                            <svg class="w-10 h-10 mx-auto mb-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                            <p class="text-sm font-bold text-slate-700 mb-1">Drop a file here or click to browse</p>
+                            <p class="text-xs text-slate-500">File is processed locally — never uploaded</p>
+                            <input type="file" id="fileInput" class="hidden">
+                        </div>
+                        <div id="fileInfo" class="hidden mt-3 text-sm text-slate-600 mb-3"></div>
+                        <div class="flex items-center justify-between mb-2 mt-4">
+                            <label class="block text-sm font-bold text-slate-700">Base64 Output</label>
+                            <button id="btnCopyFile" class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-blue-600 bg-white border border-slate-200 rounded-lg hover:border-blue-300 transition-all">Copy</button>
+                        </div>
+                        <div id="fileOutput" class="base64-output" style="min-height:120px;">Base64 output will appear here after selecting a file...</div>
+                        <div class="mt-2 text-sm text-slate-500">
+                            Characters: <strong id="fileOutputCharCount" class="text-slate-800">0</strong>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online Base64 Encoder &amp; Decoder</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Base64 tool lets you encode text to Base64 and decode Base64 back to text instantly. You can also convert any file to its Base64 representation using the File to Base64 feature. The entire process runs in your browser using the FileReader API — no files are uploaded to any server.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Text to Base64 and Back</h3>
+                <p class="text-slate-600 mb-4">Paste any text in the input field and click Encode to convert it to Base64. To reverse the process, paste a Base64 string and click Decode. The tool handles UTF-8 text correctly, so emojis and non-Latin characters are supported.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">File to Base64 Conversion</h3>
+                <p class="text-slate-600 mb-4">Drop or select any file to convert it to Base64. This is useful for embedding files in data URIs, HTML, CSS, or JSON. The file is read locally using the FileReader API and is never uploaded anywhere. Output includes a character count so you can gauge the size of the encoded string.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Private &amp; Secure</h3>
+                <p class="text-slate-600">All encoding and decoding happens in your browser. No data is transmitted to any server. This makes it safe for sensitive text and files. Copy the output to clipboard with a single click.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is Base64 encoding?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Base64 is a binary-to-text encoding scheme that represents binary data using 64 ASCII characters (A-Z, a-z, 0-9, +, and /). It is commonly used to embed binary data like images in HTML, CSS, or JSON, and to safely transmit data over text-based protocols like email and HTTP.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to encode a file to Base64?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Use the File to Base64 section of this tool. Click the file upload area or drag and drop a file. The tool reads the file using the FileReader API entirely in your browser (no upload to any server) and displays the Base64 encoded string. You can then copy it to your clipboard.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        When to use Base64?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Base64 is used when you need to embed binary data in text-only formats. Common use cases include: embedding images in HTML or CSS using data URIs, attaching files in emails (MIME), including binary data in JSON or XML, and transmitting data over APIs that only accept text.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to decode Base64 online?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Paste your Base64 encoded string into the input area and click the Decode button. The tool will decode the Base64 string back to its original text. Note that Base64 encoded files (like images) will produce binary data that may not display as readable text.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Format, minify, and validate JSON with syntax highlighting.</span>
+            </a>
+            <a href="/tools/developer/url-encoder.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">URL Encoder</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode URLs and HTML entities online.</span>
+            </a>
+            <a href="/tools/developer/hash-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Hash Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate SHA-256 and SHA-512 hashes instantly.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var b64Input = document.getElementById('b64Input');
+        var b64Output = document.getElementById('b64Output');
+        var outputCharCount = document.getElementById('outputCharCount');
+        var btnEncode = document.getElementById('btnEncode');
+        var btnDecode = document.getElementById('btnDecode');
+        var btnCopyText = document.getElementById('btnCopyText');
+        var fileDropzone = document.getElementById('fileDropzone');
+        var fileInput = document.getElementById('fileInput');
+        var fileInfo = document.getElementById('fileInfo');
+        var fileOutput = document.getElementById('fileOutput');
+        var fileOutputCharCount = document.getElementById('fileOutputCharCount');
+        var btnCopyFile = document.getElementById('btnCopyFile');
+
+        var currentTextOutput = '';
+        var currentFileOutput = '';
+
+        // Tab switching
+        window.switchTab = function(tab) {
+            document.querySelectorAll('.base64-tab-btn').forEach(function(btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-tab') === tab);
+            });
+            document.querySelectorAll('.tab-panel').forEach(function(panel) {
+                panel.classList.toggle('active', panel.id === 'tab-' + tab);
+            });
+        };
+
+        // UTF-8 safe Base64 encode
+        function utf8ToBase64(str) {
+            return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+                return String.fromCharCode('0x' + p1);
+            }));
+        }
+
+        // UTF-8 safe Base64 decode
+        function base64ToUtf8(str) {
+            return decodeURIComponent(Array.prototype.map.call(atob(str), function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+        }
+
+        btnEncode.addEventListener('click', function() {
+            var input = b64Input.value;
+            if (!input) {
+                showToast('Please enter some text to encode.', 'error');
+                return;
+            }
+            try {
+                currentTextOutput = utf8ToBase64(input);
+                b64Output.textContent = currentTextOutput;
+                outputCharCount.textContent = currentTextOutput.length.toLocaleString();
+                showToast('Text encoded to Base64!');
+            } catch (e) {
+                showToast('Encoding failed: ' + e.message, 'error');
+            }
+        });
+
+        btnDecode.addEventListener('click', function() {
+            var input = b64Input.value.trim();
+            if (!input) {
+                showToast('Please paste a Base64 string to decode.', 'error');
+                return;
+            }
+            try {
+                currentTextOutput = base64ToUtf8(input);
+                b64Output.textContent = currentTextOutput;
+                outputCharCount.textContent = currentTextOutput.length.toLocaleString();
+                showToast('Base64 decoded successfully!');
+            } catch (e) {
+                showToast('Invalid Base64 string. Please check your input.', 'error');
+            }
+        });
+
+        btnCopyText.addEventListener('click', function() {
+            if (!currentTextOutput) {
+                showToast('Nothing to copy. Encode or decode first.', 'error');
+                return;
+            }
+            copyToClipboard(currentTextOutput);
+        });
+
+        // File to Base64
+        fileDropzone.addEventListener('click', function() {
+            fileInput.click();
+        });
+
+        fileDropzone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            fileDropzone.classList.add('dropzone-active');
+        });
+
+        fileDropzone.addEventListener('dragleave', function() {
+            fileDropzone.classList.remove('dropzone-active');
+        });
+
+        fileDropzone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            fileDropzone.classList.remove('dropzone-active');
+            if (e.dataTransfer.files.length > 0) {
+                processFile(e.dataTransfer.files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', function() {
+            if (this.files.length > 0) {
+                processFile(this.files[0]);
+            }
+        });
+
+        function processFile(file) {
+            fileInfo.classList.remove('hidden');
+            fileInfo.innerHTML = '<strong>File:</strong> ' + escapeHtml(file.name) + ' | <strong>Size:</strong> ' + formatBytes(file.size) + ' | <strong>Type:</strong> ' + (file.type || 'unknown');
+
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var base64 = e.target.result.split(',')[1] || e.target.result;
+                currentFileOutput = base64;
+                fileOutput.textContent = base64;
+                fileOutputCharCount.textContent = base64.length.toLocaleString();
+                showToast('File converted to Base64!');
+            };
+            reader.onerror = function() {
+                showToast('Failed to read file.', 'error');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        btnCopyFile.addEventListener('click', function() {
+            if (!currentFileOutput) {
+                showToast('Nothing to copy. Select a file first.', 'error');
+                return;
+            }
+            copyToClipboard(currentFileOutput);
+        });
+    })();
+    </script>
+</body>
+</html>

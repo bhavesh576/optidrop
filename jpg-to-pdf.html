@@ -125,9 +125,7 @@
     <!-- HEADER -->
     <header class="site-header">
         <div class="header-inner">
-            <a href="/" class="site-logo">
-                <img src="./Generated_image-removebg-preview.png" alt="OptiDrop">
-            </a>
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
             <nav class="header-nav">
                 <a href="/" class="back-link">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
@@ -140,8 +138,8 @@
             </nav>
         </div>
         <nav class="mobile-nav">
-            <a href="/">All Tools</a>
-            <a href="/blog/">Blog</a>
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
         </nav>
     </header>
 
@@ -390,47 +388,61 @@
                 <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
-            <div class="footer-grid">
+                        <div class="footer-grid">
                 <div class="footer-col">
-                    <h4>Image Tools</h4>
+                    <h4>Image &amp; PDF Tools</h4>
                     <a href="/compress-image.html">Image Compressor</a>
                     <a href="/heic-to-jpg.html">HEIC to JPG</a>
                     <a href="/image-format-converter.html">Format Converter</a>
                     <a href="/remove-background.html">Background Remover</a>
                     <a href="/passport-photo-resizer.html">Photo Resizer</a>
-                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
-                    <a href="/signature-scanner.html">Signature Scanner</a>
-                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
-                </div>
-                <div class="footer-col">
-                    <h4>PDF Tools</h4>
                     <a href="/compress-pdf.html">PDF Compressor</a>
                     <a href="/jpg-to-pdf.html">JPG to PDF</a>
                     <a href="/pdf-to-jpg.html">PDF to JPG</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Calculators</h4>
-                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
-                    <a href="/tools/gst-calculator.html">GST Calculator</a>
-                    <a href="/tools/age-calculator.html">Age Calculator</a>
-                    <a href="/tools/percentage-calculator.html">Percentage Calculator</a>
-                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Text &amp; Utility Tools</h4>
-                    <a href="/tools/word-counter.html">Word Counter</a>
-                    <a href="/tools/text-case-converter.html">Text Case Converter</a>
-                    <a href="/tools/password-generator.html">Password Generator</a>
-                    <a href="/tools/unit-converter.html">Unit Converter</a>
-                    <a href="/qr-code-generator.html">QR Code Generator</a>
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
                 </div>
                 <div class="footer-col footer-about">
                     <h4>OptiDrop</h4>
-                    <p>Free, fast, and 100% private browser-based tools. Compress images, convert files, generate QR codes, and more — everything runs in your browser. No uploads, no sign-ups, no data leaves your device.</p>
-                    <a href="/category/image-tools.html">Image Tools</a>
-                    <a href="/category/pdf-tools.html">PDF Tools</a>
-                    <a href="/category/calculator-tools.html">Calculators</a>
-                    <a href="/category/text-tools.html">Text Tools</a>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
                     <a href="/blog/">Blog</a>
                 </div>
             </div>
@@ -438,8 +450,8 @@
             <div class="footer-bottom">
                 <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="/">All Tools</a>
-                    <a href="/blog/">Blog</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
                 </div>
             </div>
         </div>

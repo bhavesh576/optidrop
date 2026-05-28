@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Comparison Calculator — Compare Two Loans Online Free | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Compare two loan offers side by side. Find out which loan costs less in total interest. Free loan comparison calculator online.">
+    <meta name="keywords" content="loan comparison calculator, compare loans online, loan comparison tool, best loan calculator, compare EMI online">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Loan Comparison Calculator — Compare Two Loans Online Free | OptiDrop">
+    <meta property="og:description" content="Compare two loan offers side by side. Find out which loan costs less in total interest. Free loan comparison calculator online.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/calculators/loan-comparison.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Loan Comparison Calculator — Compare Two Loans Online Free | OptiDrop">
+    <meta name="twitter:description" content="Compare two loan offers side by side. Free loan comparison calculator online.">
+    <link rel="canonical" href="https://optidrop.online/tools/calculators/loan-comparison.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Loan Comparison", "item": "https://optidrop.online/tools/calculators/loan-comparison.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Loan Comparison Calculator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Compare two loan offers side by side. Find out which loan costs less in total interest. Free loan comparison calculator online."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to compare loan offers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When comparing loan offers, look at three key factors: the interest rate (lower is better), the total cost of the loan (principal + total interest), and the monthly EMI amount. A loan with a lower interest rate may not always be cheaper if the tenure is longer. Always compare the total amount you will pay over the loan period. This calculator shows all three metrics side by side for easy comparison."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between flat and reducing interest?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In a flat interest rate loan, interest is calculated on the original principal amount throughout the loan tenure. In a reducing (or diminishing) balance loan, interest is calculated on the outstanding principal, which decreases with each EMI payment. Reducing balance loans are more common and generally more favorable to borrowers because you pay less interest over time as the principal reduces."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to choose the best loan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To choose the best loan: compare the total cost (not just the interest rate), check for hidden fees like processing charges and prepayment penalties, consider the loan tenure and your monthly budget, look at the effective interest rate (APR), and read the fine print about late payment charges. A loan with a slightly higher rate but no hidden fees may be cheaper overall than one with a lower rate but high processing charges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does prepayment reduce loan cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, making prepayments on your loan reduces the outstanding principal, which in turn reduces the total interest you pay over the loan tenure. Even small prepayments can save a significant amount in interest, especially in the early years of the loan. However, some lenders charge a prepayment penalty (typically 2-5% of the prepaid amount), so factor that in when deciding. Always check your loan agreement for prepayment terms."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Loan Comparison Calculator — Compare Two Loans Side by Side</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Compare two loan offers instantly. Enter the principal, interest rate, and tenure for each loan to see which one costs less in total interest. 100% free, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Loan Inputs -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <!-- Loan A -->
+                        <div>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="w-8 h-8 rounded-lg bg-blue-500 text-white flex items-center justify-center text-sm font-bold">A</span>
+                                <h3 class="text-lg font-bold text-slate-800">Loan Option A</h3>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="principalA" class="block text-sm font-bold text-slate-700 mb-2">Loan Amount (Rs.)</label>
+                                    <input type="number" id="principalA" placeholder="e.g. 2000000" min="10000" step="10000"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                </div>
+                                <div>
+                                    <label for="rateA" class="block text-sm font-bold text-slate-700 mb-2">Annual Interest Rate (%)</label>
+                                    <input type="number" id="rateA" placeholder="e.g. 8.5" min="0.1" max="50" step="0.1"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                </div>
+                                <div>
+                                    <label for="tenureA" class="block text-sm font-bold text-slate-700 mb-2">Tenure (Years)</label>
+                                    <input type="number" id="tenureA" placeholder="e.g. 5" min="1" max="40" step="1"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Loan B -->
+                        <div>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="w-8 h-8 rounded-lg bg-indigo-500 text-white flex items-center justify-center text-sm font-bold">B</span>
+                                <h3 class="text-lg font-bold text-slate-800">Loan Option B</h3>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="principalB" class="block text-sm font-bold text-slate-700 mb-2">Loan Amount (Rs.)</label>
+                                    <input type="number" id="principalB" placeholder="e.g. 2000000" min="10000" step="10000"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                </div>
+                                <div>
+                                    <label for="rateB" class="block text-sm font-bold text-slate-700 mb-2">Annual Interest Rate (%)</label>
+                                    <input type="number" id="rateB" placeholder="e.g. 9.0" min="0.1" max="50" step="0.1"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                </div>
+                                <div>
+                                    <label for="tenureB" class="block text-sm font-bold text-slate-700 mb-2">Tenure (Years)</label>
+                                    <input type="number" id="tenureB" placeholder="e.g. 7" min="1" max="40" step="1"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="btnCompare" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        Compare Loans
+                    </button>
+
+                    <!-- Results -->
+                    <div id="compareResults" class="hidden mt-8">
+                        <!-- Recommendation Banner -->
+                        <div id="recommendation" class="mb-6 rounded-2xl p-5 text-center"></div>
+
+                        <!-- Side-by-Side Comparison -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Loan A Results -->
+                            <div id="loanACard" class="border-2 rounded-2xl overflow-hidden">
+                                <div class="bg-blue-500 text-white px-5 py-3 text-center">
+                                    <h3 class="font-bold text-lg">Loan A</h3>
+                                </div>
+                                <div class="p-5 space-y-3">
+                                    <div class="flex justify-between text-sm"><span class="text-slate-600">Principal Amount</span><span id="resPrincipalA" class="font-bold text-slate-800">Rs. 0</span></div>
+                                    <div class="flex justify-between text-sm"><span class="text-slate-600">Interest Rate</span><span id="resRateA" class="font-bold text-slate-800">0%</span></div>
+                                    <div class="flex justify-between text-sm"><span class="text-slate-600">Tenure</span><span id="resTenureA" class="font-bold text-slate-800">0 years</span></div>
+                                    <hr class="border-slate-200">
+                                    <div class="flex justify-between text-sm"><span class="text-slate-600">Monthly EMI</span><span id="resEMIA" class="font-bold text-slate-800">Rs. 0</span></div>
+                                    <div class="flex justify-between text-sm"><span class="text-slate-600">Total Interest</span><span id="resInterestA" class="font-bold text-red-600">Rs. 0</span></div>
+                                    <hr class="border-slate-200">
+                                    <div class="flex justify-between"><span class="font-bold text-slate-800">Total Payment</span><span id="resTotalA" class="font-extrabold text-xl text-slate-900">Rs. 0</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Loan B Results -->
+                            <div id="loanBCard" class="border-2 rounded-2xl overflow-hidden">
+                                <div class="bg-indigo-500 text-white px-5 py-3 text-center">
+                                    <h3 class="font-bold text-lg">Loan B</h3>
+                                </div>
+                                <div class="p-5 space-y-3">
+                                    <div class="flex justify-between text-sm"><span class="text-slate-600">Principal Amount</span><span id="resPrincipalB" class="font-bold text-slate-800">Rs. 0</span></div>
+                                    <div class="flex justify-between text-sm"><span class="text-slate-600">Interest Rate</span><span id="resRateB" class="font-bold text-slate-800">0%</span></div>
+                                    <div class="flex justify-between text-sm"><span class="text-slate-600">Tenure</span><span id="resTenureB" class="font-bold text-slate-800">0 years</span></div>
+                                    <hr class="border-slate-200">
+                                    <div class="flex justify-between text-sm"><span class="text-slate-600">Monthly EMI</span><span id="resEMIB" class="font-bold text-slate-800">Rs. 0</span></div>
+                                    <div class="flex justify-between text-sm"><span class="text-slate-600">Total Interest</span><span id="resInterestB" class="font-bold text-red-600">Rs. 0</span></div>
+                                    <hr class="border-slate-200">
+                                    <div class="flex justify-between"><span class="font-bold text-slate-800">Total Payment</span><span id="resTotalB" class="font-extrabold text-xl text-slate-900">Rs. 0</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Savings Card -->
+                        <div id="savingsCard" class="mt-6 bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-5 text-center">
+                            <p class="text-sm font-semibold text-green-700 mb-1">You Save</p>
+                            <p id="savingsAmount" class="text-2xl sm:text-3xl font-extrabold text-green-900">Rs. 0</p>
+                            <p id="savingsNote" class="text-sm text-green-600 mt-1"></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Loan Comparison Calculator — Compare Two Loans Side by Side</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Loan Comparison Calculator lets you compare two loan offers side by side to find out which one costs less. Enter the principal amount, interest rate, and tenure for each loan option, and the calculator instantly shows the monthly EMI, total interest, and total payment for both. A clear recommendation highlights which loan saves you more money.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How Does the Loan Comparison Work?</h3>
+                <p class="text-slate-600 mb-4">The calculator uses the standard EMI formula for each loan option. It computes the monthly installment, total amount paid over the loan period, and the total interest charged. By comparing these three metrics side by side, you can easily see which loan offer is more economical. The savings card at the bottom shows exactly how much you save by choosing the cheaper option.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">What to Look for When Comparing Loans</h3>
+                <p class="text-slate-600">When comparing loans, do not just look at the interest rate. A loan with a lower rate but longer tenure may end up costing more in total interest. Always compare the total payment amount (principal + interest) and the monthly EMI to ensure it fits your budget. Also factor in processing fees, prepayment charges, and other hidden costs that this calculator does not include. All calculations happen instantly in your browser with no data uploaded.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to compare loan offers?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        When comparing loan offers, look at three key factors: the interest rate (lower is better), the total cost of the loan (principal + total interest), and the monthly EMI amount. A loan with a lower interest rate may not always be cheaper if the tenure is longer. Always compare the total amount you will pay over the loan period. This calculator shows all three metrics side by side for easy comparison.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the difference between flat and reducing interest?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        In a flat interest rate loan, interest is calculated on the original principal amount throughout the loan tenure. In a reducing (or diminishing) balance loan, interest is calculated on the outstanding principal, which decreases with each EMI payment. Reducing balance loans are more common and generally more favorable to borrowers because you pay less interest over time as the principal reduces.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to choose the best loan?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To choose the best loan: compare the total cost (not just the interest rate), check for hidden fees like processing charges and prepayment penalties, consider the loan tenure and your monthly budget, look at the effective interest rate (APR), and read the fine print about late payment charges. A loan with a slightly higher rate but no hidden fees may be cheaper overall than one with a lower rate but high processing charges.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does prepayment reduce loan cost?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, making prepayments on your loan reduces the outstanding principal, which in turn reduces the total interest you pay over the loan tenure. Even small prepayments can save a significant amount in interest, especially in the early years of the loan. However, some lenders charge a prepayment penalty (typically 2-5% of the prepaid amount), so factor that in when deciding. Always check your loan agreement for prepayment terms.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/emi-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">EMI Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate monthly EMI for home, car, or personal loans instantly.</span>
+                </a>
+                <a href="/tools/calculators/mortgage-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Mortgage Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your monthly mortgage payment and total interest.</span>
+                </a>
+                <a href="/tools/calculators/sip-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">SIP Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate mutual fund SIP returns and maturity value online.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var btnCompare = document.getElementById('btnCompare');
+        var compareResults = document.getElementById('compareResults');
+
+        function formatCurrency(num) {
+            return 'Rs. ' + Math.round(num).toLocaleString('en-IN');
+        }
+
+        function calcEMI(principal, annualRate, years) {
+            var N = Math.round(years * 12);
+            var r = annualRate / 12 / 100;
+            if (r === 0) return { emi: principal / N, total: principal, interest: 0 };
+            var emi = principal * (r * Math.pow(1 + r, N)) / (Math.pow(1 + r, N) - 1);
+            var total = emi * N;
+            return { emi: emi, total: total, interest: total - principal };
+        }
+
+        btnCompare.addEventListener('click', function() {
+            var principalA = parseFloat(document.getElementById('principalA').value);
+            var rateA = parseFloat(document.getElementById('rateA').value);
+            var tenureA = parseFloat(document.getElementById('tenureA').value);
+
+            var principalB = parseFloat(document.getElementById('principalB').value);
+            var rateB = parseFloat(document.getElementById('rateB').value);
+            var tenureB = parseFloat(document.getElementById('tenureB').value);
+
+            if (!principalA || principalA <= 0) {
+                showToast('Please enter a valid loan amount for Loan A.', 'error');
+                return;
+            }
+            if (!rateA || rateA <= 0) {
+                showToast('Please enter a valid interest rate for Loan A.', 'error');
+                return;
+            }
+            if (!tenureA || tenureA <= 0) {
+                showToast('Please enter a valid tenure for Loan A.', 'error');
+                return;
+            }
+            if (!principalB || principalB <= 0) {
+                showToast('Please enter a valid loan amount for Loan B.', 'error');
+                return;
+            }
+            if (!rateB || rateB <= 0) {
+                showToast('Please enter a valid interest rate for Loan B.', 'error');
+                return;
+            }
+            if (!tenureB || tenureB <= 0) {
+                showToast('Please enter a valid tenure for Loan B.', 'error');
+                return;
+            }
+
+            var resultA = calcEMI(principalA, rateA, tenureA);
+            var resultB = calcEMI(principalB, rateB, tenureB);
+
+            // Display Loan A
+            document.getElementById('resPrincipalA').textContent = formatCurrency(principalA);
+            document.getElementById('resRateA').textContent = rateA + '% p.a.';
+            document.getElementById('resTenureA').textContent = tenureA + ' years (' + Math.round(tenureA * 12) + ' months)';
+            document.getElementById('resEMIA').textContent = formatCurrency(resultA.emi);
+            document.getElementById('resInterestA').textContent = formatCurrency(resultA.interest);
+            document.getElementById('resTotalA').textContent = formatCurrency(resultA.total);
+
+            // Display Loan B
+            document.getElementById('resPrincipalB').textContent = formatCurrency(principalB);
+            document.getElementById('resRateB').textContent = rateB + '% p.a.';
+            document.getElementById('resTenureB').textContent = tenureB + ' years (' + Math.round(tenureB * 12) + ' months)';
+            document.getElementById('resEMIB').textContent = formatCurrency(resultB.emi);
+            document.getElementById('resInterestB').textContent = formatCurrency(resultB.interest);
+            document.getElementById('resTotalB').textContent = formatCurrency(resultB.total);
+
+            // Recommendation
+            var recommendation = document.getElementById('recommendation');
+            var savingsCard = document.getElementById('savingsCard');
+            var savings = Math.abs(resultA.total - resultB.total);
+            var loanACard = document.getElementById('loanACard');
+            var loanBCard = document.getElementById('loanBCard');
+
+            // Reset borders
+            loanACard.className = 'border-2 border-slate-200 rounded-2xl overflow-hidden';
+            loanBCard.className = 'border-2 border-slate-200 rounded-2xl overflow-hidden';
+
+            if (resultA.total < resultB.total) {
+                recommendation.className = 'mb-6 rounded-2xl p-5 text-center bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300';
+                recommendation.innerHTML = '<p class="text-lg font-bold text-blue-800">Loan A is cheaper!</p><p class="text-sm text-blue-600 mt-1">Loan A saves you ' + formatCurrency(savings) + ' in total payment.</p>';
+                loanACard.className = 'border-2 border-blue-400 rounded-2xl overflow-hidden shadow-md';
+                savingsCard.querySelector('#savingsAmount').textContent = formatCurrency(savings);
+                savingsCard.querySelector('#savingsNote').textContent = 'by choosing Loan A over Loan B';
+            } else if (resultB.total < resultA.total) {
+                recommendation.className = 'mb-6 rounded-2xl p-5 text-center bg-gradient-to-br from-indigo-50 to-indigo-100 border-2 border-indigo-300';
+                recommendation.innerHTML = '<p class="text-lg font-bold text-indigo-800">Loan B is cheaper!</p><p class="text-sm text-indigo-600 mt-1">Loan B saves you ' + formatCurrency(savings) + ' in total payment.</p>';
+                loanBCard.className = 'border-2 border-indigo-400 rounded-2xl overflow-hidden shadow-md';
+                savingsCard.querySelector('#savingsAmount').textContent = formatCurrency(savings);
+                savingsCard.querySelector('#savingsNote').textContent = 'by choosing Loan B over Loan A';
+            } else {
+                recommendation.className = 'mb-6 rounded-2xl p-5 text-center bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-slate-300';
+                recommendation.innerHTML = '<p class="text-lg font-bold text-slate-800">Both loans have the same total cost!</p><p class="text-sm text-slate-600 mt-1">The total payment for both loans is equal.</p>';
+                savingsCard.querySelector('#savingsAmount').textContent = 'Rs. 0';
+                savingsCard.querySelector('#savingsNote').textContent = 'Both loans are equal in total cost';
+            }
+
+            compareResults.classList.remove('hidden');
+            compareResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Calculate on Enter key
+        document.querySelectorAll('#principalA, #rateA, #tenureA, #principalB, #rateB, #tenureB').forEach(function(el) {
+            el.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') btnCompare.click();
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

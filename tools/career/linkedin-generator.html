@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free LinkedIn Headline Generator — LinkedIn Bio Generator | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Generate optimized LinkedIn headlines and About sections free. Get noticed by recruiters. No sign-up required.">
+    <meta name="keywords" content="LinkedIn headline generator, LinkedIn bio generator, LinkedIn About section, optimized LinkedIn profile, LinkedIn summary generator, professional headline">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Free LinkedIn Headline Generator — LinkedIn Bio Generator | OptiDrop">
+    <meta property="og:description" content="Generate optimized LinkedIn headlines and About sections free. Get noticed by recruiters. No sign-up required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/career/linkedin-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free LinkedIn Headline Generator — LinkedIn Bio Generator | OptiDrop">
+    <meta name="twitter:description" content="Generate optimized LinkedIn headlines and About sections free. Get noticed by recruiters.">
+    <link rel="canonical" href="https://optidrop.online/tools/career/linkedin-generator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Career Tools", "item": "https://optidrop.online/tools/career/"},
+        {"@type": "ListItem", "position": 3, "name": "LinkedIn Generator", "item": "https://optidrop.online/tools/career/linkedin-generator.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop LinkedIn Headline Generator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Generate optimized LinkedIn headlines and About sections free. Get noticed by recruiters. No sign-up required."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long should a LinkedIn headline be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LinkedIn allows up to 220 characters for your headline. However, only the first 60-70 characters are visible in most views, so front-load the most important information. Include your current role, key skills, and value proposition. A good headline goes beyond just your job title to showcase what makes you unique."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes a good LinkedIn About section?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A good LinkedIn About section tells your professional story in a compelling way. Start with a strong hook, describe your expertise and what drives you, highlight key achievements with specific numbers, mention your core skills, and end with a call to action. Use first person, keep paragraphs short, and include relevant keywords for searchability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I include keywords in my LinkedIn profile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, including relevant keywords in your LinkedIn profile is essential for being found by recruiters. LinkedIn's search algorithm uses keywords from your headline, About section, experience, and skills to surface profiles in search results. Research the keywords used in job postings for your target roles and incorporate them naturally throughout your profile."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I update my LinkedIn profile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You should review and update your LinkedIn profile at least every few months, or whenever you have a significant career change such as a new job, promotion, certification, or skill. Regular updates signal to recruiters that your profile is current and active. Even small tweaks to your headline or About section can improve your visibility in LinkedIn search results."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a></nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Free LinkedIn Headline Generator — Bio Generator</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate 3 optimized LinkedIn headline variations and a full About section. Stand out to recruiters and grow your network. No sign-up required.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-4">Your Details</h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-1">Current Job Title</label>
+                                    <input type="text" id="liTitle" placeholder="e.g. Senior Software Engineer" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-1">Industry</label>
+                                    <input type="text" id="liIndustry" placeholder="e.g. Technology, Healthcare, Finance" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-1">Top 3 Skills</label>
+                                    <input type="text" id="liSkills" placeholder="e.g. Python, Machine Learning, Data Visualization" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-1">Years of Experience</label>
+                                    <input type="number" id="liYears" placeholder="e.g. 8" min="0" max="50" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-1">What You Help People/Companies With</label>
+                                    <textarea id="liHelp" placeholder="e.g. Building scalable data pipelines that turn raw data into actionable business insights" rows="2" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"></textarea>
+                                </div>
+                            </div>
+                            <button onclick="generate()" class="w-full mt-6 px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                Generate LinkedIn Content
+                            </button>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-3">Results</h3>
+                            <div id="resultsArea">
+                                <p class="text-center text-slate-400 py-16">Fill in your details and click Generate to see optimized LinkedIn content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">LinkedIn Headline and Bio Generator</h2>
+                <p class="text-slate-600 mb-4">Your LinkedIn headline is the first thing recruiters and connections see. A well-crafted headline can dramatically increase your profile views and connection requests. OptiDrop's LinkedIn Generator creates three distinct headline variations and a full optimized About section, all tailored to your experience, skills, and the value you bring.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Optimized for LinkedIn Search</h3>
+                <p class="text-slate-600 mb-4">The generated content includes relevant keywords that recruiters search for, helping your profile appear in more search results. Each headline variation uses a different approach: one emphasizes your role and skills, another focuses on the value you provide, and a third combines both for maximum impact.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Copy, Customize, and Stand Out</h3>
+                <p class="text-slate-600">Copy any headline or About section directly to your clipboard and paste it into your LinkedIn profile. Feel free to mix and match elements from different variations or customize the generated text to perfectly reflect your personal brand.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How long should a LinkedIn headline be?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        LinkedIn allows up to 220 characters for your headline. However, only the first 60-70 characters are visible in most views, so front-load the most important information. Include your current role, key skills, and value proposition. A good headline goes beyond just your job title to showcase what makes you unique.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What makes a good LinkedIn About section?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A good LinkedIn About section tells your professional story in a compelling way. Start with a strong hook, describe your expertise and what drives you, highlight key achievements with specific numbers, mention your core skills, and end with a call to action. Use first person, keep paragraphs short, and include relevant keywords for searchability.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Should I include keywords in my LinkedIn profile?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, including relevant keywords in your LinkedIn profile is essential for being found by recruiters. LinkedIn's search algorithm uses keywords from your headline, About section, experience, and skills to surface profiles in search results. Research the keywords used in job postings for your target roles and incorporate them naturally throughout your profile.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How often should I update my LinkedIn profile?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        You should review and update your LinkedIn profile at least every few months, or whenever you have a significant career change such as a new job, promotion, certification, or skill. Regular updates signal to recruiters that your profile is current and active. Even small tweaks to your headline or About section can improve your visibility in LinkedIn search results.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/career/resume-builder.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Resume Builder</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Build a professional resume with 4 templates and live preview.</span>
+            </a>
+            <a href="/tools/career/cover-letter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Cover Letter Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate a professional cover letter for your job application.</span>
+            </a>
+            <a href="/tools/career/job-tracker.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Job Tracker</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Track all your job applications in one place with status updates.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        setInterval(function(){
+            autoSave('linkedin_generator', {
+                title: document.getElementById('liTitle').value,
+                industry: document.getElementById('liIndustry').value,
+                skills: document.getElementById('liSkills').value,
+                years: document.getElementById('liYears').value,
+                help: document.getElementById('liHelp').value
+            });
+        }, 2000);
+
+        var saved = autoLoad('linkedin_generator');
+        if (saved) {
+            document.getElementById('liTitle').value = saved.title || '';
+            document.getElementById('liIndustry').value = saved.industry || '';
+            document.getElementById('liSkills').value = saved.skills || '';
+            document.getElementById('liYears').value = saved.years || '';
+            document.getElementById('liHelp').value = saved.help || '';
+        }
+
+        window.generate = function() {
+            var title = document.getElementById('liTitle').value.trim();
+            var industry = document.getElementById('liIndustry').value.trim();
+            var skillsRaw = document.getElementById('liSkills').value.trim();
+            var years = document.getElementById('liYears').value.trim();
+            var help = document.getElementById('liHelp').value.trim();
+
+            if (!title) {
+                showToast('Please enter your current job title.', 'error');
+                return;
+            }
+
+            var skills = skillsRaw ? skillsRaw.split(',').map(function(s){ return s.trim(); }).filter(function(s){ return s; }) : [];
+            var skillsText = skills.length > 1 ? skills.slice(0, -1).join(', ') + ' & ' + skills[skills.length - 1] : (skills[0] || '');
+            var yearsText = years ? years + '+ years' : '';
+            var industryText = industry || 'the industry';
+
+            // Generate 3 headline variations
+            var headline1 = title;
+            if (skillsText) headline1 += ' | ' + skillsText;
+            if (help) headline1 += ' | ' + help.substring(0, 60) + (help.length > 60 ? '...' : '');
+
+            var headline2 = title;
+            if (yearsText) headline2 += ' with ' + yearsText + ' of experience';
+            if (skills.length) headline2 += ' specializing in ' + skills[0];
+            if (skills.length > 1) headline2 += ' & ' + skills[1];
+            headline2 += ' | Helping ' + (help ? help.substring(0, 50) : 'teams achieve their goals');
+
+            var headline3 = '';
+            if (help) headline3 = help.charAt(0).toUpperCase() + help.slice(1);
+            else headline3 = 'Driving results in ' + industryText;
+            headline3 += ' | ' + title;
+            if (skillsText) headline3 += ' | ' + skillsText;
+
+            // Generate About section
+            var about = 'I am a ';
+            if (yearsText) about += yearsText + ' ';
+            about += title + ' passionate about ';
+            about += help ? help.charAt(0).toLowerCase() + help.slice(1) : 'delivering exceptional results in ' + industryText;
+            if (about.slice(-1) !== '.') about += '.';
+
+            about += '\n\n';
+
+            about += 'My core strengths include ' + (skillsText || 'a diverse set of professional skills') + '. ';
+            about += 'Throughout my career in ' + industryText + ', I have developed a deep understanding of what it takes to ';
+            about += help ? help.charAt(0).toLowerCase() + help.slice(1) : 'drive meaningful outcomes';
+            if (about.slice(-1) !== '.') about += '.';
+            about += ' I thrive in environments that challenge me to grow and innovate.\n\n';
+
+            about += 'I am always open to connecting with like-minded professionals, exploring new opportunities, and sharing knowledge. ';
+            about += 'Feel free to reach out if you would like to collaborate or discuss how I can add value to your team.\n\n';
+
+            about += '#OpenToWork #Hiring #' + (industry || 'Professional').replace(/\s+/g, '') + ' #' + title.replace(/\s+/g, '');
+
+            var html = '';
+
+            // Headlines
+            html += '<div class="mb-6">';
+            html += '<h4 class="text-base font-bold text-slate-900 mb-3">LinkedIn Headlines</h4>';
+
+            [{label: 'Role + Skills + Value', text: headline1}, {label: 'Experience + Specialty', text: headline2}, {label: 'Value-First', text: headline3}].forEach(function(h, i){
+                html += '<div class="mb-3 p-4 bg-slate-50 border border-slate-200 rounded-xl">';
+                html += '<div class="flex items-center justify-between mb-2">';
+                html += '<span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Variation ' + (i+1) + ': ' + h.label + '</span>';
+                html += '<span class="text-xs text-slate-400">' + h.text.length + '/220 chars</span>';
+                html += '</div>';
+                html += '<p class="text-sm font-medium text-slate-800 mb-2">' + escHtml(h.text) + '</p>';
+                html += '<button onclick="copyToClipboard(\'' + h.text.replace(/'/g, "\\'").replace(/\n/g, '\\n') + '\', \'Headline copied!\')" class="text-xs font-bold text-blue-600 hover:text-blue-800">Copy</button>';
+                html += '</div>';
+            });
+            html += '</div>';
+
+            // About section
+            html += '<div>';
+            html += '<h4 class="text-base font-bold text-slate-900 mb-3">LinkedIn About Section</h4>';
+            html += '<div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">';
+            html += '<div class="flex items-center justify-between mb-2">';
+            html += '<span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Optimized About</span>';
+            html += '<span class="text-xs text-slate-400">' + about.split(/\s+/).filter(function(w){ return w; }).length + ' words</span>';
+            html += '</div>';
+            html += '<div class="text-sm text-slate-800 mb-3" style="white-space:pre-wrap;line-height:1.7;">' + escHtml(about) + '</div>';
+            html += '<button onclick="copyToClipboard(aboutText, \'About section copied!\')" class="text-xs font-bold text-blue-600 hover:text-blue-800">Copy About Section</button>';
+            html += '</div>';
+            html += '</div>';
+
+            document.getElementById('resultsArea').innerHTML = html;
+
+            // Store for copy
+            window.aboutText = about;
+
+            showToast('LinkedIn content generated!');
+        };
+
+        function escHtml(str) {
+            var div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+    })();
+    </script>
+</body>
+</html>

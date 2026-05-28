@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Calculator Free Online — Margin and Markup | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Calculate profit, profit margin, markup percentage, and break-even point instantly. Free online profit calculator — no sign-up required.">
+    <meta name="keywords" content="profit calculator, profit margin calculator, markup calculator, break even calculator, margin vs markup, profit percentage calculator">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Profit Calculator Free Online — Margin and Markup | OptiDrop">
+    <meta property="og:description" content="Calculate profit, profit margin, markup percentage, and break-even point instantly. Free online profit calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/business/profit-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Profit Calculator Free Online — Margin and Markup | OptiDrop">
+    <meta name="twitter:description" content="Calculate profit, profit margin, markup percentage, and break-even point instantly. Free online profit calculator.">
+    <link rel="canonical" href="https://optidrop.online/tools/business/profit-calculator.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Business Tools", "item": "https://optidrop.online/tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Profit Calculator", "item": "https://optidrop.online/tools/business/profit-calculator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Profit Calculator",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate profit, profit margin, markup percentage, and break-even point instantly. Free online profit calculator — no sign-up required."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is profit margin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Profit margin is the percentage of revenue that remains after subtracting the cost of goods sold. It is calculated as: Profit Margin = (Profit / Selling Price) x 100. For example, if you sell a product for $100 and it costs you $60 to make, your profit is $40 and your profit margin is 40%. A higher profit margin means your business retains more money from each sale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is markup?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Markup is the percentage added to the cost price of a product to determine its selling price. It is calculated as: Markup = (Profit / Cost Price) x 100. For example, if a product costs $60 and you sell it for $100, the markup is ($40 / $60) x 100 = 66.67%. Markup is always calculated based on the cost price, while margin is calculated based on the selling price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to calculate break-even point?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The break-even point is where total revenue equals total costs, meaning you neither make a profit nor a loss. It is calculated as: Break-Even Units = Fixed Costs / (Selling Price per Unit - Variable Cost per Unit). The result tells you how many units you must sell to cover all your costs. Beyond the break-even point, every additional unit sold generates profit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between margin and markup?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Margin and markup both measure profitability but use different bases. Margin is profit as a percentage of the selling price (revenue), while markup is profit as a percentage of the cost price. For example, if cost is $60 and selling price is $100, the margin is 40% ($40/$100) but the markup is 66.67% ($40/$60). Margin will always be lower than markup for the same transaction. Use margin for financial reporting and markup for pricing strategy."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Free Profit Calculator Online — Margin &amp; Markup</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Calculate profit amount, profit margin percentage, markup percentage, and break-even point instantly. 100% free, no sign-up, everything stays in your browser.</p>
+        </section>
+
+        <!-- TAB SWITCHER -->
+        <section class="max-w-4xl mx-auto px-4 pb-4">
+            <div class="flex gap-2 bg-slate-100 rounded-xl p-1 max-w-md mx-auto">
+                <button class="tab-btn active flex-1 py-3 px-4 rounded-lg font-bold text-sm transition-all" data-tab="profit" onclick="switchTab('profit')">Profit Calculator</button>
+                <button class="tab-btn flex-1 py-3 px-4 rounded-lg font-bold text-sm transition-all" data-tab="breakeven" onclick="switchTab('breakeven')">Break-Even Calculator</button>
+            </div>
+        </section>
+
+        <!-- PROFIT CALCULATOR TAB -->
+        <section id="tab-profit" class="tab-panel active max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label for="sellingPrice" class="block text-sm font-bold text-slate-700 mb-2">Selling Price</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-base">$</span>
+                                <input type="number" id="sellingPrice" placeholder="0.00" min="0" step="0.01"
+                                    class="block w-full pl-8 pr-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="costPrice" class="block text-sm font-bold text-slate-700 mb-2">Cost Price</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-base">$</span>
+                                <input type="number" id="costPrice" placeholder="0.00" min="0" step="0.01"
+                                    class="block w-full pl-8 pr-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profit Results -->
+                    <div id="profitResults" class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4" style="display:none;">
+                        <div class="stat-card green">
+                            <div class="stat-card-label">Profit Amount</div>
+                            <div class="stat-card-value" id="profitAmount">$0.00</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-label">Profit Margin</div>
+                            <div class="stat-card-value" id="profitMargin">0%</div>
+                        </div>
+                        <div class="stat-card purple">
+                            <div class="stat-card-label">Markup</div>
+                            <div class="stat-card-value" id="markupPct">0%</div>
+                        </div>
+                    </div>
+
+                    <div id="profitError" class="hidden text-center py-4">
+                        <p class="text-sm text-slate-500">Enter both selling price and cost price to see results.</p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3 mt-6 pt-6 border-t border-slate-200">
+                        <button id="btnCalcProfit" class="px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Calculate
+                        </button>
+                        <button id="btnCopyProfit" class="px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            Copy Results
+                        </button>
+                        <button id="btnResetProfit" class="px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            Reset
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- BREAK-EVEN CALCULATOR TAB -->
+        <section id="tab-breakeven" class="tab-panel max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+                        <div>
+                            <label for="fixedCosts" class="block text-sm font-bold text-slate-700 mb-2">Fixed Costs</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-base">$</span>
+                                <input type="number" id="fixedCosts" placeholder="0.00" min="0" step="0.01"
+                                    class="block w-full pl-8 pr-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="varCostPerUnit" class="block text-sm font-bold text-slate-700 mb-2">Variable Cost / Unit</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-base">$</span>
+                                <input type="number" id="varCostPerUnit" placeholder="0.00" min="0" step="0.01"
+                                    class="block w-full pl-8 pr-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="sellPricePerUnit" class="block text-sm font-bold text-slate-700 mb-2">Selling Price / Unit</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-base">$</span>
+                                <input type="number" id="sellPricePerUnit" placeholder="0.00" min="0" step="0.01"
+                                    class="block w-full pl-8 pr-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Break-Even Results -->
+                    <div id="beResults" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4" style="display:none;">
+                        <div class="stat-card amber">
+                            <div class="stat-card-label">Break-Even Units</div>
+                            <div class="stat-card-value" id="beUnits">0</div>
+                        </div>
+                        <div class="stat-card green">
+                            <div class="stat-card-label">Break-Even Revenue</div>
+                            <div class="stat-card-value" id="beRevenue">$0.00</div>
+                        </div>
+                    </div>
+
+                    <div id="beError" class="hidden text-center py-4">
+                        <p class="text-sm text-slate-500">Enter all three values to calculate break-even point.</p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3 mt-6 pt-6 border-t border-slate-200">
+                        <button id="btnCalcBE" class="px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Calculate
+                        </button>
+                        <button id="btnCopyBE" class="px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            Copy Results
+                        </button>
+                        <button id="btnResetBE" class="px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            Reset
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Profit &amp; Break-Even Calculator — Make Smarter Business Decisions</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Profit Calculator helps you instantly determine your profit amount, profit margin, and markup percentage. Whether you are pricing products, evaluating business performance, or planning a new venture, this tool gives you the numbers you need in seconds.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Understand Margin vs. Markup</h3>
+                <p class="text-slate-600 mb-4">Margin and markup are two sides of the same coin. Margin tells you what percentage of your selling price is profit, while markup tells you how much more you charge compared to your cost. Both are essential for pricing strategy and financial reporting. Use the Profit Calculator tab to see both values side by side.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Plan with Break-Even Analysis</h3>
+                <p class="text-slate-600">The Break-Even Calculator tells you exactly how many units you need to sell to cover your fixed and variable costs. This is invaluable for startups, new product launches, and business planning. Knowing your break-even point helps you set realistic sales targets and pricing strategies.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is profit margin?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Profit margin is the percentage of revenue that remains after subtracting the cost of goods sold. It is calculated as: Profit Margin = (Profit / Selling Price) x 100. For example, if you sell a product for $100 and it costs you $60 to make, your profit is $40 and your profit margin is 40%. A higher profit margin means your business retains more money from each sale.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is markup?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Markup is the percentage added to the cost price of a product to determine its selling price. It is calculated as: Markup = (Profit / Cost Price) x 100. For example, if a product costs $60 and you sell it for $100, the markup is ($40 / $60) x 100 = 66.67%. Markup is always calculated based on the cost price, while margin is calculated based on the selling price.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to calculate break-even point?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The break-even point is where total revenue equals total costs, meaning you neither make a profit nor a loss. It is calculated as: Break-Even Units = Fixed Costs / (Selling Price per Unit - Variable Cost per Unit). The result tells you how many units you must sell to cover all your costs. Beyond the break-even point, every additional unit sold generates profit.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the difference between margin and markup?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Margin and markup both measure profitability but use different bases. Margin is profit as a percentage of the selling price (revenue), while markup is profit as a percentage of the cost price. For example, if cost is $60 and selling price is $100, the margin is 40% ($40/$100) but the markup is 66.67% ($40/$60). Margin will always be lower than markup for the same transaction. Use margin for financial reporting and markup for pricing strategy.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/business/invoice-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Invoice Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Create professional invoices with line items and tax calculation.</span>
+                </a>
+                <a href="/tools/discount-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Discount Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate discounted prices, savings amount, and discount percentage.</span>
+                </a>
+                <a href="/tools/gst-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">GST Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate GST inclusive and exclusive amounts for any tax slab.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        // ── Tab Switching ──────────────────────────────────────
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+            document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+            document.querySelector('[data-tab="' + tab + '"]').classList.add('active');
+            document.getElementById('tab-' + tab).classList.add('active');
+        }
+        window.switchTab = switchTab;
+
+        // ── Profit Calculator ──────────────────────────────────
+        var lastProfitResult = '';
+
+        function calcProfit() {
+            var sp = parseFloat(document.getElementById('sellingPrice').value);
+            var cp = parseFloat(document.getElementById('costPrice').value);
+            var resultsEl = document.getElementById('profitResults');
+            var errorEl = document.getElementById('profitError');
+
+            if (isNaN(sp) || isNaN(cp) || sp <= 0 || cp < 0) {
+                resultsEl.style.display = 'none';
+                errorEl.classList.remove('hidden');
+                return;
+            }
+
+            errorEl.classList.add('hidden');
+            resultsEl.style.display = '';
+
+            var profit = sp - cp;
+            var margin = (profit / sp) * 100;
+            var markup = cp > 0 ? (profit / cp) * 100 : 0;
+
+            document.getElementById('profitAmount').textContent = '$' + profit.toFixed(2);
+            document.getElementById('profitMargin').textContent = margin.toFixed(2) + '%';
+            document.getElementById('markupPct').textContent = markup.toFixed(2) + '%';
+
+            // Color profit card based on positive/negative
+            var profitCard = document.getElementById('profitAmount').parentElement;
+            profitCard.className = 'stat-card ' + (profit >= 0 ? 'green' : 'red');
+
+            lastProfitResult = 'Profit Calculator Results\n' +
+                'Selling Price: $' + sp.toFixed(2) + '\n' +
+                'Cost Price: $' + cp.toFixed(2) + '\n' +
+                'Profit Amount: $' + profit.toFixed(2) + '\n' +
+                'Profit Margin: ' + margin.toFixed(2) + '%\n' +
+                'Markup: ' + markup.toFixed(2) + '%';
+        }
+
+        function resetProfit() {
+            document.getElementById('sellingPrice').value = '';
+            document.getElementById('costPrice').value = '';
+            document.getElementById('profitResults').style.display = 'none';
+            document.getElementById('profitError').classList.add('hidden');
+            lastProfitResult = '';
+        }
+
+        document.getElementById('btnCalcProfit').addEventListener('click', calcProfit);
+        document.getElementById('btnCopyProfit').addEventListener('click', function() {
+            if (lastProfitResult) { copyToClipboard(lastProfitResult, 'Profit results copied!'); }
+            else { showToast('Calculate profit first.', 'error'); }
+        });
+        document.getElementById('btnResetProfit').addEventListener('click', resetProfit);
+
+        // Real-time calculation
+        document.getElementById('sellingPrice').addEventListener('input', calcProfit);
+        document.getElementById('costPrice').addEventListener('input', calcProfit);
+
+        // ── Break-Even Calculator ──────────────────────────────
+        var lastBEResult = '';
+
+        function calcBE() {
+            var fc = parseFloat(document.getElementById('fixedCosts').value);
+            var vc = parseFloat(document.getElementById('varCostPerUnit').value);
+            var sp = parseFloat(document.getElementById('sellPricePerUnit').value);
+            var resultsEl = document.getElementById('beResults');
+            var errorEl = document.getElementById('beError');
+
+            if (isNaN(fc) || isNaN(vc) || isNaN(sp) || fc <= 0 || vc < 0 || sp <= 0) {
+                resultsEl.style.display = 'none';
+                errorEl.classList.remove('hidden');
+                return;
+            }
+
+            if (sp <= vc) {
+                resultsEl.style.display = 'none';
+                errorEl.classList.remove('hidden');
+                errorEl.querySelector('p').textContent = 'Selling price must be greater than variable cost per unit to break even.';
+                return;
+            }
+
+            errorEl.classList.add('hidden');
+            errorEl.querySelector('p').textContent = 'Enter all three values to calculate break-even point.';
+            resultsEl.style.display = '';
+
+            var beUnits = Math.ceil(fc / (sp - vc));
+            var beRevenue = beUnits * sp;
+
+            document.getElementById('beUnits').textContent = beUnits.toLocaleString();
+            document.getElementById('beRevenue').textContent = '$' + beRevenue.toFixed(2);
+
+            lastBEResult = 'Break-Even Calculator Results\n' +
+                'Fixed Costs: $' + fc.toFixed(2) + '\n' +
+                'Variable Cost per Unit: $' + vc.toFixed(2) + '\n' +
+                'Selling Price per Unit: $' + sp.toFixed(2) + '\n' +
+                'Break-Even Units: ' + beUnits.toLocaleString() + '\n' +
+                'Break-Even Revenue: $' + beRevenue.toFixed(2);
+        }
+
+        function resetBE() {
+            document.getElementById('fixedCosts').value = '';
+            document.getElementById('varCostPerUnit').value = '';
+            document.getElementById('sellPricePerUnit').value = '';
+            document.getElementById('beResults').style.display = 'none';
+            var errorEl = document.getElementById('beError');
+            errorEl.classList.add('hidden');
+            errorEl.querySelector('p').textContent = 'Enter all three values to calculate break-even point.';
+            lastBEResult = '';
+        }
+
+        document.getElementById('btnCalcBE').addEventListener('click', calcBE);
+        document.getElementById('btnCopyBE').addEventListener('click', function() {
+            if (lastBEResult) { copyToClipboard(lastBEResult, 'Break-even results copied!'); }
+            else { showToast('Calculate break-even first.', 'error'); }
+        });
+        document.getElementById('btnResetBE').addEventListener('click', resetBE);
+
+        // Real-time calculation
+        document.getElementById('fixedCosts').addEventListener('input', calcBE);
+        document.getElementById('varCostPerUnit').addEventListener('input', calcBE);
+        document.getElementById('sellPricePerUnit').addEventListener('input', calcBE);
+
+        // ── Load Saved Data ────────────────────────────────────
+        var saved = autoLoad('profit_calc');
+        if (saved) {
+            if (saved.sellingPrice) document.getElementById('sellingPrice').value = saved.sellingPrice;
+            if (saved.costPrice) document.getElementById('costPrice').value = saved.costPrice;
+            if (saved.fixedCosts) document.getElementById('fixedCosts').value = saved.fixedCosts;
+            if (saved.varCostPerUnit) document.getElementById('varCostPerUnit').value = saved.varCostPerUnit;
+            if (saved.sellPricePerUnit) document.getElementById('sellPricePerUnit').value = saved.sellPricePerUnit;
+            if (saved.sellingPrice && saved.costPrice) calcProfit();
+            if (saved.fixedCosts && saved.varCostPerUnit && saved.sellPricePerUnit) calcBE();
+        }
+
+        // Auto-save on input
+        function saveAll() {
+            autoSave('profit_calc', {
+                sellingPrice: document.getElementById('sellingPrice').value,
+                costPrice: document.getElementById('costPrice').value,
+                fixedCosts: document.getElementById('fixedCosts').value,
+                varCostPerUnit: document.getElementById('varCostPerUnit').value,
+                sellPricePerUnit: document.getElementById('sellPricePerUnit').value
+            });
+        }
+        document.getElementById('sellingPrice').addEventListener('input', saveAll);
+        document.getElementById('costPrice').addEventListener('input', saveAll);
+        document.getElementById('fixedCosts').addEventListener('input', saveAll);
+        document.getElementById('varCostPerUnit').addEventListener('input', saveAll);
+        document.getElementById('sellPricePerUnit').addEventListener('input', saveAll);
+    })();
+    </script>
+</body>
+</html>

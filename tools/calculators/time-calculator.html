@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Calculator Free Online — Add and Subtract Time | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Add, subtract, and convert time values online free. Calculate hours and minutes, convert decimal hours, and find duration between two times. No login needed.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Time Calculator Free Online — Add and Subtract Time | OptiDrop">
+    <meta property="og:description" content="Add, subtract, and convert time values online free. Calculate hours and minutes, convert decimal hours, and find duration between two times. No login needed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/calculators/time-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools/calculators/time-calculator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://optidrop.online/category/calculator-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Time Calculator", "item": "https://optidrop.online/tools/calculators/time-calculator.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Time Calculator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Add, subtract, and convert time values online free. Calculate hours and minutes, convert decimal hours, and find duration between two times."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How to add hours and minutes?", "acceptedAnswer": {"@type": "Answer", "text": "To add hours and minutes, add the hours together and the minutes together separately. If the minutes total 60 or more, convert 60 minutes into 1 hour and add it to the hours. For example, 2 hours 45 minutes + 1 hour 30 minutes = 3 hours 75 minutes = 4 hours 15 minutes. Our calculator handles this conversion automatically, so you just enter the values and get the result."}},
+        {"@type": "Question", "name": "How to convert decimal hours to minutes?", "acceptedAnswer": {"@type": "Answer", "text": "To convert decimal hours to hours and minutes, the whole number part is the hours, and multiply the decimal part by 60 to get the minutes. For example, 7.5 hours = 7 hours + (0.5 x 60) minutes = 7 hours 30 minutes. Similarly, 3.75 hours = 3 hours 45 minutes, and 8.25 hours = 8 hours 15 minutes. This is commonly needed for timesheets and payroll calculations."}},
+        {"@type": "Question", "name": "How to calculate time between two times?", "acceptedAnswer": {"@type": "Answer", "text": "To calculate the duration between two times, subtract the start time from the end time. If the end time is earlier than the start time (e.g., crossing midnight), add 24 hours to the end time before subtracting. For example, from 9:30 AM to 5:15 PM = 7 hours 45 minutes. From 10:00 PM to 2:30 AM = 4 hours 30 minutes. Our calculator handles AM/PM and overnight durations automatically."}},
+        {"@type": "Question", "name": "What is 7.5 hours in hours and minutes?", "acceptedAnswer": {"@type": "Answer", "text": "7.5 hours equals 7 hours and 30 minutes. The 0.5 decimal part represents half an hour: 0.5 x 60 = 30 minutes. This is a very common conversion needed for work timesheets, as many employees log 7.5 or 8.5 hour workdays. Other common conversions: 7.25 hours = 7 hours 15 minutes, 7.75 hours = 7 hours 45 minutes."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Time Calculator — Add, Subtract &amp; Convert Time</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Add or subtract hours and minutes, convert decimal hours to hours:minutes format, and calculate duration between two times with AM/PM. 100% free.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Tabs -->
+                    <div class="flex bg-slate-100 rounded-xl p-1 mb-8">
+                        <button class="tab-btn flex-1 py-3 px-2 text-xs sm:text-sm font-bold rounded-lg transition-all active" data-tab="tab1">Add/Subtract</button>
+                        <button class="tab-btn flex-1 py-3 px-2 text-xs sm:text-sm font-bold rounded-lg transition-all" data-tab="tab2">Decimal Convert</button>
+                        <button class="tab-btn flex-1 py-3 px-2 text-xs sm:text-sm font-bold rounded-lg transition-all" data-tab="tab3">Duration</button>
+                    </div>
+
+                    <!-- Tab 1: Add/Subtract hours and minutes -->
+                    <div id="tab1" class="tab-panel active">
+                        <div class="space-y-4 mb-6">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Hours</label>
+                                    <input type="number" id="addHours1" placeholder="0" min="0" step="1" value="2"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Minutes</label>
+                                    <input type="number" id="addMins1" placeholder="0" min="0" step="1" value="30"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="flex justify-center">
+                                <select id="addOperation" class="px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                    <option value="add">+ Add</option>
+                                    <option value="subtract">- Subtract</option>
+                                </select>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Hours</label>
+                                    <input type="number" id="addHours2" placeholder="0" min="0" step="1" value="1"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Minutes</label>
+                                    <input type="number" id="addMins2" placeholder="0" min="0" step="1" value="45"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <button id="btnTab1" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Calculate
+                        </button>
+                        <div id="result1" class="hidden mt-8">
+                            <div class="bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200 rounded-2xl p-6 text-center">
+                                <p class="text-sm font-semibold text-blue-700 mb-2">Result</p>
+                                <p id="r1Result" class="text-3xl sm:text-4xl font-extrabold text-blue-900">0h 0m</p>
+                                <p id="r1Alt" class="text-sm text-blue-600 mt-2"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Decimal to Hours:Minutes -->
+                    <div id="tab2" class="tab-panel">
+                        <div class="mb-6">
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Decimal Hours</label>
+                            <input type="number" id="decimalHours" placeholder="e.g. 7.5" min="0" step="0.01" value="7.5"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <button id="btnTab2" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Convert
+                        </button>
+                        <div id="result2" class="hidden mt-8">
+                            <div class="bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200 rounded-2xl p-6 text-center">
+                                <p class="text-sm font-semibold text-green-700 mb-2">Result</p>
+                                <p id="r2Result" class="text-3xl sm:text-4xl font-extrabold text-green-900">0h 0m</p>
+                                <p id="r2Alt" class="text-sm text-green-600 mt-2"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Duration between two times -->
+                    <div id="tab3" class="tab-panel">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Start Time</label>
+                                <div class="flex gap-2">
+                                    <input type="number" id="startHour" placeholder="9" min="1" max="12" step="1" value="9"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                    <input type="number" id="startMin" placeholder="00" min="0" max="59" step="1" value="0"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                    <select id="startAMPM" class="px-3 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                        <option value="AM">AM</option>
+                                        <option value="PM" selected>PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">End Time</label>
+                                <div class="flex gap-2">
+                                    <input type="number" id="endHour" placeholder="5" min="1" max="12" step="1" value="5"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                    <input type="number" id="endMin" placeholder="00" min="0" max="59" step="1" value="30"
+                                        class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                        autocomplete="off">
+                                    <select id="endAMPM" class="px-3 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                        <option value="AM">AM</option>
+                                        <option value="PM" selected>PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="btnTab3" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Calculate Duration
+                        </button>
+                        <div id="result3" class="hidden mt-8">
+                            <div class="bg-gradient-to-br from-purple-50 to-violet-100 border border-purple-200 rounded-2xl p-6 text-center">
+                                <p class="text-sm font-semibold text-purple-700 mb-2">Duration</p>
+                                <p id="r3Result" class="text-3xl sm:text-4xl font-extrabold text-purple-900">0h 0m</p>
+                                <p id="r3Alt" class="text-sm text-purple-600 mt-2"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to add hours and minutes?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To add hours and minutes, add the hours together and the minutes together separately. If the minutes total 60 or more, convert 60 minutes into 1 hour and add it to the hours. For example, 2 hours 45 minutes + 1 hour 30 minutes = 3 hours 75 minutes = 4 hours 15 minutes. Our calculator handles this conversion automatically.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to convert decimal hours to minutes?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To convert decimal hours to hours and minutes, the whole number part is the hours, and multiply the decimal part by 60 to get the minutes. For example, 7.5 hours = 7 hours + (0.5 x 60) minutes = 7 hours 30 minutes. Similarly, 3.75 hours = 3 hours 45 minutes, and 8.25 hours = 8 hours 15 minutes.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to calculate time between two times?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To calculate the duration between two times, subtract the start time from the end time. If the end time is earlier than the start time (e.g., crossing midnight), add 24 hours to the end time before subtracting. For example, from 9:30 AM to 5:15 PM = 7 hours 45 minutes. From 10:00 PM to 2:30 AM = 4 hours 30 minutes.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is 7.5 hours in hours and minutes?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        7.5 hours equals 7 hours and 30 minutes. The 0.5 decimal part represents half an hour: 0.5 x 60 = 30 minutes. This is a very common conversion needed for work timesheets, as many employees log 7.5 or 8.5 hour workdays. Other common conversions: 7.25 hours = 7 hours 15 minutes, 7.75 hours = 7 hours 45 minutes.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/calculators/date-difference.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Date Difference</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate days, weeks, and months between two dates.</span>
+                </a>
+                <a href="/tools/age-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Age Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your exact age in years, months, and days.</span>
+                </a>
+                <a href="/tools/unit-converter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Unit Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert between various units of measurement.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        // Tab switching
+        var tabBtns = document.querySelectorAll('.tab-btn');
+        var tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                tabBtns.forEach(function(b) { b.classList.remove('active'); });
+                tabPanels.forEach(function(p) { p.classList.remove('active'); });
+                btn.classList.add('active');
+                document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+
+        function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+        // Tab 1: Add/Subtract
+        document.getElementById('btnTab1').addEventListener('click', function() {
+            var h1 = parseInt(document.getElementById('addHours1').value) || 0;
+            var m1 = parseInt(document.getElementById('addMins1').value) || 0;
+            var h2 = parseInt(document.getElementById('addHours2').value) || 0;
+            var m2 = parseInt(document.getElementById('addMins2').value) || 0;
+            var op = document.getElementById('addOperation').value;
+
+            var totalMins1 = h1 * 60 + m1;
+            var totalMins2 = h2 * 60 + m2;
+            var result;
+
+            if (op === 'add') {
+                result = totalMins1 + totalMins2;
+            } else {
+                result = totalMins1 - totalMins2;
+                if (result < 0) {
+                    showToast('Result is negative. The second time is larger than the first.', 'error');
+                    return;
+                }
+            }
+
+            var rh = Math.floor(result / 60);
+            var rm = result % 60;
+
+            document.getElementById('r1Result').textContent = rh + 'h ' + rm + 'm';
+            document.getElementById('r1Alt').textContent = '= ' + result + ' total minutes';
+            document.getElementById('result1').classList.remove('hidden');
+        });
+
+        // Tab 2: Decimal conversion
+        document.getElementById('btnTab2').addEventListener('click', function() {
+            var decimal = parseFloat(document.getElementById('decimalHours').value);
+
+            if (isNaN(decimal) || decimal < 0) {
+                showToast('Please enter a valid positive number.', 'error');
+                return;
+            }
+
+            var h = Math.floor(decimal);
+            var m = Math.round((decimal - h) * 60);
+
+            document.getElementById('r2Result').textContent = h + 'h ' + pad(m) + 'm';
+            document.getElementById('r2Alt').textContent = '= ' + (h * 60 + m) + ' total minutes';
+            document.getElementById('result2').classList.remove('hidden');
+        });
+
+        // Tab 3: Duration between two times
+        document.getElementById('btnTab3').addEventListener('click', function() {
+            var startH = parseInt(document.getElementById('startHour').value);
+            var startM = parseInt(document.getElementById('startMin').value) || 0;
+            var startAP = document.getElementById('startAMPM').value;
+            var endH = parseInt(document.getElementById('endHour').value);
+            var endM = parseInt(document.getElementById('endMin').value) || 0;
+            var endAP = document.getElementById('endAMPM').value;
+
+            if (!startH || !endH) {
+                showToast('Please enter valid times.', 'error');
+                return;
+            }
+
+            // Convert to 24-hour format
+            function to24(h, ampm) {
+                if (ampm === 'AM') {
+                    return h === 12 ? 0 : h;
+                } else {
+                    return h === 12 ? 12 : h + 12;
+                }
+            }
+
+            var start24 = to24(startH, startAP);
+            var end24 = to24(endH, endAP);
+
+            var startTotal = start24 * 60 + startM;
+            var endTotal = end24 * 60 + endM;
+
+            var diff = endTotal - startTotal;
+            if (diff < 0) diff += 24 * 60; // crosses midnight
+
+            var dh = Math.floor(diff / 60);
+            var dm = diff % 60;
+
+            document.getElementById('r3Result').textContent = dh + 'h ' + pad(dm) + 'm';
+            var decimalEquiv = (diff / 60).toFixed(2);
+            document.getElementById('r3Alt').textContent = '= ' + diff + ' minutes = ' + decimalEquiv + ' decimal hours';
+            document.getElementById('result3').classList.remove('hidden');
+        });
+
+        // Enter key support
+        ['addHours1', 'addMins1', 'addHours2', 'addMins2'].forEach(function(id) {
+            document.getElementById(id).addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') document.getElementById('btnTab1').click();
+            });
+        });
+        document.getElementById('decimalHours').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') document.getElementById('btnTab2').click();
+        });
+        ['startHour', 'startMin', 'endHour', 'endMin'].forEach(function(id) {
+            document.getElementById(id).addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') document.getElementById('btnTab3').click();
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

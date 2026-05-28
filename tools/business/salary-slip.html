@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Salary Slip Generator Online — Download Payslip PDF | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Generate professional salary slips online free. Add earnings and deductions, download as PDF. No sign-up required.">
+    <meta name="keywords" content="salary slip generator, payslip generator, salary slip online, free payslip maker, salary slip PDF, pay slip template">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Free Salary Slip Generator Online — Download Payslip PDF | OptiDrop">
+    <meta property="og:description" content="Generate professional salary slips online free. Add earnings and deductions, download as PDF. No sign-up required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/business/salary-slip.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Salary Slip Generator Online — Download Payslip PDF | OptiDrop">
+    <meta name="twitter:description" content="Generate professional salary slips online free. Download as PDF.">
+    <link rel="canonical" href="https://optidrop.online/tools/business/salary-slip.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Business Tools", "item": "https://optidrop.online/tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Salary Slip Generator", "item": "https://optidrop.online/tools/business/salary-slip.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Salary Slip Generator",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Generate professional salary slips online free. Add earnings and deductions, download as PDF. No sign-up required."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a salary slip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A salary slip (or payslip) is a document issued by an employer to an employee that details the employee's earnings and deductions for a specific pay period. It shows the gross salary, all deductions such as tax and provident fund, and the net take-home salary. Salary slips serve as proof of income and are required for loan applications, tax filing, and visa processing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the components of a salary slip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A salary slip typically includes earnings components like Basic Salary, House Rent Allowance (HRA), Special Allowance, and Other Allowances. Deductions include Provident Fund (PF), Professional Tax, Income Tax (TDS), and Other Deductions. The difference between total earnings and total deductions gives the Net Take-Home Salary."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is salary slip mandatory?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In most countries, employers are legally required to provide salary slips to their employees. In India, the Payment of Wages Act mandates that employers provide a wage slip containing prescribed details. Salary slips are important for employees as they serve as proof of income, help in tax filing, and are required for loan and credit card applications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to read a salary slip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To read a salary slip, first identify the earnings section which shows all income components (basic, HRA, allowances). Then check the deductions section for taxes, PF, and other deductions. The CTC (Cost to Company) is the total cost to the employer. Gross Salary is total earnings before deductions. Net Salary (take-home) is what you actually receive after all deductions are subtracted from gross salary."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Free Salary Slip Generator Online — Download Payslip PDF</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate professional salary slips with earnings and deductions. Auto-calculate gross salary, total deductions, and net take-home pay. Download as a formatted PDF — 100% free.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Employee Details -->
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Employee Details</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                        <div>
+                            <label for="empName" class="block text-sm font-bold text-slate-700 mb-2">Employee Name</label>
+                            <input type="text" id="empName" placeholder="Full name"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="designation" class="block text-sm font-bold text-slate-700 mb-2">Designation</label>
+                            <input type="text" id="designation" placeholder="e.g. Software Engineer"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="department" class="block text-sm font-bold text-slate-700 mb-2">Department</label>
+                            <input type="text" id="department" placeholder="e.g. Engineering"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="monthYear" class="block text-sm font-bold text-slate-700 mb-2">Month / Year</label>
+                            <input type="month" id="monthYear"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                    </div>
+
+                    <!-- Earnings -->
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <span class="w-3 h-3 bg-green-500 rounded-full"></span> Earnings
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                        <div>
+                            <label for="basicSalary" class="block text-sm font-bold text-slate-700 mb-2">Basic Salary</label>
+                            <input type="number" id="basicSalary" placeholder="0" min="0" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="hra" class="block text-sm font-bold text-slate-700 mb-2">HRA</label>
+                            <input type="number" id="hra" placeholder="0" min="0" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="specialAllowance" class="block text-sm font-bold text-slate-700 mb-2">Special Allowance</label>
+                            <input type="number" id="specialAllowance" placeholder="0" min="0" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="otherAllowances" class="block text-sm font-bold text-slate-700 mb-2">Other Allowances</label>
+                            <input type="number" id="otherAllowances" placeholder="0" min="0" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                    </div>
+
+                    <!-- Deductions -->
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <span class="w-3 h-3 bg-red-500 rounded-full"></span> Deductions
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+                        <div>
+                            <label for="pf" class="block text-sm font-bold text-slate-700 mb-2">Provident Fund (PF)</label>
+                            <input type="number" id="pf" placeholder="0" min="0" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="profTax" class="block text-sm font-bold text-slate-700 mb-2">Professional Tax</label>
+                            <input type="number" id="profTax" placeholder="0" min="0" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="otherDeductions" class="block text-sm font-bold text-slate-700 mb-2">Other Deductions</label>
+                            <input type="number" id="otherDeductions" placeholder="0" min="0" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                    </div>
+
+                    <!-- Summary Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                        <div class="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-5 text-center">
+                            <p class="text-sm font-semibold text-green-700 mb-1">Gross Salary</p>
+                            <p id="grossSalary" class="text-2xl sm:text-3xl font-extrabold text-green-900">0</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-red-50 to-red-100 border border-red-200 rounded-2xl p-5 text-center">
+                            <p class="text-sm font-semibold text-red-700 mb-1">Total Deductions</p>
+                            <p id="totalDeductions" class="text-2xl sm:text-3xl font-extrabold text-red-900">0</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-5 text-center">
+                            <p class="text-sm font-semibold text-blue-700 mb-1">Net Take-Home</p>
+                            <p id="netSalary" class="text-2xl sm:text-3xl font-extrabold text-blue-900">0</p>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3">
+                        <button id="btnGenerate" class="px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Download PDF
+                        </button>
+                        <button id="btnCopy" class="px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            Copy Text
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Salary Slip Generator — Create Professional Payslips Online</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Salary Slip Generator helps HR professionals, small business owners, and freelancers create professional payslips in minutes. Enter employee details, earnings components (Basic, HRA, Special Allowance), and deductions (PF, Professional Tax) — the tool automatically calculates gross salary, total deductions, and net take-home pay.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Automatic Calculations</h3>
+                <p class="text-slate-600 mb-4">No manual math needed. The tool instantly calculates your gross salary from all earnings, sums up all deductions, and shows you the exact net take-home amount. The PDF output is formatted professionally with clear tables for earnings and deductions.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Professional PDF Format</h3>
+                <p class="text-slate-600">Download a clean, professionally formatted salary slip as PDF. The document includes employee details, month/year, a detailed breakdown of earnings and deductions, and the final net salary. Perfect for official records and employee distribution.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is a salary slip?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A salary slip (or payslip) is a document issued by an employer to an employee that details the employee's earnings and deductions for a specific pay period. It shows the gross salary, all deductions such as tax and provident fund, and the net take-home salary. Salary slips serve as proof of income and are required for loan applications, tax filing, and visa processing.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What are the components of a salary slip?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A salary slip typically includes earnings components like Basic Salary, House Rent Allowance (HRA), Special Allowance, and Other Allowances. Deductions include Provident Fund (PF), Professional Tax, Income Tax (TDS), and Other Deductions. The difference between total earnings and total deductions gives the Net Take-Home Salary.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is salary slip mandatory?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        In most countries, employers are legally required to provide salary slips to their employees. In India, the Payment of Wages Act mandates that employers provide a wage slip containing prescribed details. Salary slips are important for employees as they serve as proof of income, help in tax filing, and are required for loan and credit card applications.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to read a salary slip?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To read a salary slip, first identify the earnings section which shows all income components (basic, HRA, allowances). Then check the deductions section for taxes, PF, and other deductions. The CTC (Cost to Company) is the total cost to the employer. Gross Salary is total earnings before deductions. Net Salary (take-home) is what you actually receive after all deductions are subtracted from gross salary.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/business/invoice-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Invoice Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Create professional invoices with line items, tax, and PDF download.</span>
+                </a>
+                <a href="/tools/business/offer-letter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Offer Letter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate formal job offer letters with salary and benefits details.</span>
+                </a>
+                <a href="/tools/business/experience-letter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Experience Letter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate professional experience certificates and relieving letters.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        function saveData() {
+            autoSave('salary_slip', {
+                empName: document.getElementById('empName').value,
+                designation: document.getElementById('designation').value,
+                department: document.getElementById('department').value,
+                monthYear: document.getElementById('monthYear').value,
+                basic: document.getElementById('basicSalary').value,
+                hra: document.getElementById('hra').value,
+                special: document.getElementById('specialAllowance').value,
+                other: document.getElementById('otherAllowances').value,
+                pf: document.getElementById('pf').value,
+                profTax: document.getElementById('profTax').value,
+                otherDed: document.getElementById('otherDeductions').value
+            });
+        }
+
+        function loadData() {
+            var d = autoLoad('salary_slip');
+            if (!d) return;
+            document.getElementById('empName').value = d.empName || '';
+            document.getElementById('designation').value = d.designation || '';
+            document.getElementById('department').value = d.department || '';
+            document.getElementById('monthYear').value = d.monthYear || '';
+            document.getElementById('basicSalary').value = d.basic || '';
+            document.getElementById('hra').value = d.hra || '';
+            document.getElementById('specialAllowance').value = d.special || '';
+            document.getElementById('otherAllowances').value = d.other || '';
+            document.getElementById('pf').value = d.pf || '';
+            document.getElementById('profTax').value = d.profTax || '';
+            document.getElementById('otherDeductions').value = d.otherDed || '';
+        }
+
+        function getVal(id) { return parseFloat(document.getElementById(id).value) || 0; }
+
+        function recalculate() {
+            var basic = getVal('basicSalary');
+            var hra = getVal('hra');
+            var special = getVal('specialAllowance');
+            var other = getVal('otherAllowances');
+            var pf = getVal('pf');
+            var profTax = getVal('profTax');
+            var otherDed = getVal('otherDeductions');
+
+            var gross = basic + hra + special + other;
+            var totalDed = pf + profTax + otherDed;
+            var net = gross - totalDed;
+
+            document.getElementById('grossSalary').textContent = gross.toLocaleString('en-IN');
+            document.getElementById('totalDeductions').textContent = totalDed.toLocaleString('en-IN');
+            document.getElementById('netSalary').textContent = net.toLocaleString('en-IN');
+        }
+
+        function getMonthName(ym) {
+            if (!ym) return 'N/A';
+            var parts = ym.split('-');
+            var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+            return months[parseInt(parts[1],10) - 1] + ' ' + parts[0];
+        }
+
+        function generatePDF() {
+            var jsPDF = window.jspdf.jsPDF;
+            var doc = new jsPDF();
+            var y = 20;
+            var basic = getVal('basicSalary');
+            var hra = getVal('hra');
+            var special = getVal('specialAllowance');
+            var other = getVal('otherAllowances');
+            var pf = getVal('pf');
+            var profTax = getVal('profTax');
+            var otherDed = getVal('otherDeductions');
+            var gross = basic + hra + special + other;
+            var totalDed = pf + profTax + otherDed;
+            var net = gross - totalDed;
+            var monthStr = getMonthName(document.getElementById('monthYear').value);
+
+            // Header
+            doc.setFillColor(37, 99, 235);
+            doc.rect(0, 0, 210, 35, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(18);
+            doc.setFont('helvetica', 'bold');
+            doc.text('SALARY SLIP', 105, 16, {align:'center'});
+            doc.setFontSize(11);
+            doc.setFont('helvetica', 'normal');
+            doc.text('Pay Period: ' + monthStr, 105, 26, {align:'center'});
+            y = 48;
+
+            // Employee Info
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(10);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Employee Name:', 14, y);
+            doc.setFont('helvetica', 'normal');
+            doc.text(document.getElementById('empName').value || 'N/A', 55, y);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Designation:', 120, y);
+            doc.setFont('helvetica', 'normal');
+            doc.text(document.getElementById('designation').value || 'N/A', 155, y);
+            y += 7;
+            doc.setFont('helvetica', 'bold');
+            doc.text('Department:', 14, y);
+            doc.setFont('helvetica', 'normal');
+            doc.text(document.getElementById('department').value || 'N/A', 55, y);
+            y += 14;
+
+            // Earnings Table
+            doc.setFillColor(240, 253, 244);
+            doc.rect(14, y, 90, 8, 'F');
+            doc.setFillColor(254, 242, 242);
+            doc.rect(106, y, 90, 8, 'F');
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11);
+            doc.setTextColor(22, 101, 52);
+            doc.text('EARNINGS', 59, y + 5.5, {align:'center'});
+            doc.setTextColor(185, 28, 28);
+            doc.text('DEDUCTIONS', 151, y + 5.5, {align:'center'});
+            y += 12;
+
+            doc.setTextColor(0, 0, 0);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(10);
+            var earnings = [
+                ['Basic Salary', basic],
+                ['HRA', hra],
+                ['Special Allowance', special],
+                ['Other Allowances', other]
+            ];
+            var deductions = [
+                ['Provident Fund (PF)', pf],
+                ['Professional Tax', profTax],
+                ['Other Deductions', otherDed]
+            ];
+            var maxRows = Math.max(earnings.length, deductions.length);
+            for (var i = 0; i < maxRows; i++) {
+                if (i < earnings.length) {
+                    doc.text(earnings[i][0], 16, y);
+                    doc.text(earnings[i][1].toLocaleString('en-IN'), 98, y, {align:'right'});
+                }
+                if (i < deductions.length) {
+                    doc.text(deductions[i][0], 108, y);
+                    doc.text(deductions[i][1].toLocaleString('en-IN'), 190, y, {align:'right'});
+                }
+                doc.setDrawColor(226, 232, 240);
+                doc.line(14, y + 2, 196, y + 2);
+                y += 8;
+            }
+
+            // Totals
+            y += 4;
+            doc.setFillColor(219, 234, 254);
+            doc.rect(14, y, 90, 8, 'F');
+            doc.setFillColor(254, 226, 226);
+            doc.rect(106, y, 90, 8, 'F');
+            doc.setFont('helvetica', 'bold');
+            doc.text('Gross Earnings', 16, y + 5.5);
+            doc.text(gross.toLocaleString('en-IN'), 98, y + 5.5, {align:'right'});
+            doc.text('Total Deductions', 108, y + 5.5);
+            doc.text(totalDed.toLocaleString('en-IN'), 190, y + 5.5, {align:'right'});
+            y += 18;
+
+            // Net Salary
+            doc.setFillColor(37, 99, 235);
+            doc.rect(14, y, 182, 12, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(13);
+            doc.text('NET TAKE-HOME SALARY', 16, y + 8);
+            doc.text(net.toLocaleString('en-IN'), 190, y + 8, {align:'right'});
+            y += 24;
+
+            // Footer
+            doc.setTextColor(148, 163, 184);
+            doc.setFontSize(8);
+            doc.setFont('helvetica', 'normal');
+            doc.text('This is a computer-generated salary slip and does not require a signature.', 105, y, {align:'center'});
+
+            doc.save('Salary_Slip_' + (document.getElementById('empName').value || 'employee').replace(/\s+/g,'_') + '_' + monthStr.replace(/\s+/g,'_') + '.pdf');
+            showToast('Salary slip PDF downloaded!');
+        }
+
+        function generateText() {
+            var basic = getVal('basicSalary');
+            var hra = getVal('hra');
+            var special = getVal('specialAllowance');
+            var other = getVal('otherAllowances');
+            var pf = getVal('pf');
+            var profTax = getVal('profTax');
+            var otherDed = getVal('otherDeductions');
+            var gross = basic + hra + special + other;
+            var totalDed = pf + profTax + otherDed;
+            var net = gross - totalDed;
+
+            var lines = [
+                'SALARY SLIP — ' + getMonthName(document.getElementById('monthYear').value),
+                '',
+                'Employee: ' + (document.getElementById('empName').value || 'N/A'),
+                'Designation: ' + (document.getElementById('designation').value || 'N/A'),
+                'Department: ' + (document.getElementById('department').value || 'N/A'),
+                '',
+                'EARNINGS:',
+                '  Basic Salary: ' + basic.toLocaleString('en-IN'),
+                '  HRA: ' + hra.toLocaleString('en-IN'),
+                '  Special Allowance: ' + special.toLocaleString('en-IN'),
+                '  Other Allowances: ' + other.toLocaleString('en-IN'),
+                '  Gross Earnings: ' + gross.toLocaleString('en-IN'),
+                '',
+                'DEDUCTIONS:',
+                '  PF: ' + pf.toLocaleString('en-IN'),
+                '  Professional Tax: ' + profTax.toLocaleString('en-IN'),
+                '  Other Deductions: ' + otherDed.toLocaleString('en-IN'),
+                '  Total Deductions: ' + totalDed.toLocaleString('en-IN'),
+                '',
+                'NET TAKE-HOME SALARY: ' + net.toLocaleString('en-IN')
+            ];
+            return lines.join('\n');
+        }
+
+        // Init
+        loadData();
+        recalculate();
+
+        var earnFields = ['basicSalary','hra','specialAllowance','otherAllowances','pf','profTax','otherDeductions'];
+        earnFields.forEach(function(id) {
+            document.getElementById(id).addEventListener('input', function() { recalculate(); saveData(); });
+        });
+        ['empName','designation','department','monthYear'].forEach(function(id) {
+            document.getElementById(id).addEventListener('input', saveData);
+        });
+
+        document.getElementById('btnGenerate').addEventListener('click', generatePDF);
+        document.getElementById('btnCopy').addEventListener('click', function() { copyToClipboard(generateText(), 'Salary slip text copied!'); });
+    })();
+    </script>
+</body>
+</html>

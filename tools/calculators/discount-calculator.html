@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator Free Online — Percent Off Calculator | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Calculate discounts instantly online free. Find the sale price after a percent off, calculate what percent off you got, or find the original price. No login needed.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Discount Calculator Free Online — Percent Off Calculator | OptiDrop">
+    <meta property="og:description" content="Calculate discounts instantly online free. Find the sale price after a percent off, calculate what percent off you got, or find the original price. No login needed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/calculators/discount-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools/calculators/discount-calculator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://optidrop.online/category/calculator-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Discount Calculator", "item": "https://optidrop.online/tools/calculators/discount-calculator.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Discount Calculator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate discounts instantly online free. Find the sale price after a percent off, calculate what percent off you got, or find the original price."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How to calculate percent off?", "acceptedAnswer": {"@type": "Answer", "text": "To calculate a percent off, multiply the original price by the discount percentage and divide by 100. For example, 20% off Rs. 500 = (500 x 20) / 100 = Rs. 100 discount. The sale price is the original price minus the discount: Rs. 500 - Rs. 100 = Rs. 400. You can also calculate it directly: Sale Price = Original Price x (1 - Discount% / 100)."}},
+        {"@type": "Question", "name": "How to find the original price after a discount?", "acceptedAnswer": {"@type": "Answer", "text": "To find the original price from a discounted price, divide the sale price by (1 - discount%/100). For example, if you paid Rs. 400 after a 20% discount, the original price was 400 / (1 - 0.20) = 400 / 0.80 = Rs. 500. This reverse calculation is useful when stores show the discounted price but not the original."}},
+        {"@type": "Question", "name": "What is 20 percent off?", "acceptedAnswer": {"@type": "Answer", "text": "20 percent off means the price is reduced by 20%. You pay 80% of the original price. For example, 20% off Rs. 1,000 means you save Rs. 200 and pay Rs. 800. 20% off Rs. 2,500 means you save Rs. 500 and pay Rs. 2,000. This is one of the most common discount percentages offered during sales and promotions."}},
+        {"@type": "Question", "name": "How do shops calculate discounts?", "acceptedAnswer": {"@type": "Answer", "text": "Shops typically calculate discounts as a percentage of the original price (called the MRP or Maximum Retail Price in some countries). The discount is subtracted from the original price to get the sale price. Some shops offer flat discounts (e.g., Rs. 200 off) while others offer percentage discounts (e.g., 25% off). During sales, multiple discounts may be applied sequentially — for example, a store may apply 20% off, then an additional 10% off the reduced price."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Discount Calculator — Percent Off &amp; Sale Price</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Calculate discounts instantly. Find the sale price after a percent off, figure out what percent off you received, or find the original price. 100% free, no sign-up.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Tabs -->
+                    <div class="flex bg-slate-100 rounded-xl p-1 mb-8">
+                        <button class="tab-btn flex-1 py-3 px-3 text-sm font-bold rounded-lg transition-all active" data-tab="tab1">Percent Off</button>
+                        <button class="tab-btn flex-1 py-3 px-3 text-sm font-bold rounded-lg transition-all" data-tab="tab2">What % Off?</button>
+                        <button class="tab-btn flex-1 py-3 px-3 text-sm font-bold rounded-lg transition-all" data-tab="tab3">Original Price</button>
+                    </div>
+
+                    <!-- Tab 1: Percent Off -->
+                    <div id="tab1" class="tab-panel active">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="originalPrice" class="block text-sm font-bold text-slate-700 mb-2">Original Price</label>
+                                <input type="number" id="originalPrice" placeholder="e.g. 1500" min="0.01" step="0.01"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                            <div>
+                                <label for="discountPercent" class="block text-sm font-bold text-slate-700 mb-2">Discount (%)</label>
+                                <input type="number" id="discountPercent" placeholder="e.g. 20" min="0.01" max="99.99" step="0.5"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                        <button id="btnTab1" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Calculate Sale Price
+                        </button>
+                        <div id="result1" class="hidden mt-8">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-gradient-to-br from-red-50 to-red-100 border border-red-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-red-700 mb-1">You Save</p>
+                                    <p id="r1Save" class="text-2xl sm:text-3xl font-extrabold text-red-900">0</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-green-700 mb-1">Sale Price</p>
+                                    <p id="r1Sale" class="text-2xl sm:text-3xl font-extrabold text-green-900">0</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-slate-600 mb-1">Original Price</p>
+                                    <p id="r1Orig" class="text-2xl sm:text-3xl font-extrabold text-slate-800">0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: What percent off -->
+                    <div id="tab2" class="tab-panel">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="origPrice2" class="block text-sm font-bold text-slate-700 mb-2">Original Price</label>
+                                <input type="number" id="origPrice2" placeholder="e.g. 2000" min="0.01" step="0.01"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                            <div>
+                                <label for="salePrice2" class="block text-sm font-bold text-slate-700 mb-2">Sale Price (After Discount)</label>
+                                <input type="number" id="salePrice2" placeholder="e.g. 1600" min="0.01" step="0.01"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                        <button id="btnTab2" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Calculate Discount Percent
+                        </button>
+                        <div id="result2" class="hidden mt-8">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-purple-700 mb-1">Discount</p>
+                                    <p id="r2Pct" class="text-3xl sm:text-4xl font-extrabold text-purple-900">0%</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-red-50 to-red-100 border border-red-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-red-700 mb-1">You Save</p>
+                                    <p id="r2Save" class="text-2xl sm:text-3xl font-extrabold text-red-900">0</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-slate-600 mb-1">Original Price</p>
+                                    <p id="r2Orig" class="text-2xl sm:text-3xl font-extrabold text-slate-800">0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Find original price -->
+                    <div id="tab3" class="tab-panel">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="salePrice3" class="block text-sm font-bold text-slate-700 mb-2">Sale Price (After Discount)</label>
+                                <input type="number" id="salePrice3" placeholder="e.g. 800" min="0.01" step="0.01"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                            <div>
+                                <label for="discountPct3" class="block text-sm font-bold text-slate-700 mb-2">Discount (%)</label>
+                                <input type="number" id="discountPct3" placeholder="e.g. 20" min="0.01" max="99.99" step="0.5"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                        <button id="btnTab3" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Find Original Price
+                        </button>
+                        <div id="result3" class="hidden mt-8">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-blue-700 mb-1">Original Price</p>
+                                    <p id="r3Orig" class="text-2xl sm:text-3xl font-extrabold text-blue-900">0</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-red-50 to-red-100 border border-red-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-red-700 mb-1">Discount Amount</p>
+                                    <p id="r3Disc" class="text-2xl sm:text-3xl font-extrabold text-red-900">0</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-green-700 mb-1">Sale Price</p>
+                                    <p id="r3Sale" class="text-2xl sm:text-3xl font-extrabold text-green-900">0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to calculate percent off?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To calculate a percent off, multiply the original price by the discount percentage and divide by 100. For example, 20% off Rs. 500 = (500 x 20) / 100 = Rs. 100 discount. The sale price is the original price minus the discount: Rs. 500 - Rs. 100 = Rs. 400. You can also calculate it directly: Sale Price = Original Price x (1 - Discount% / 100).
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to find the original price after a discount?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To find the original price from a discounted price, divide the sale price by (1 - discount%/100). For example, if you paid Rs. 400 after a 20% discount, the original price was 400 / (1 - 0.20) = 400 / 0.80 = Rs. 500. This reverse calculation is useful when stores show the discounted price but not the original.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is 20 percent off?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        20 percent off means the price is reduced by 20%. You pay 80% of the original price. For example, 20% off Rs. 1,000 means you save Rs. 200 and pay Rs. 800. 20% off Rs. 2,500 means you save Rs. 500 and pay Rs. 2,000. This is one of the most common discount percentages offered during sales and promotions.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do shops calculate discounts?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Shops typically calculate discounts as a percentage of the original price (called the MRP or Maximum Retail Price in some countries). The discount is subtracted from the original price to get the sale price. Some shops offer flat discounts (e.g., Rs. 200 off) while others offer percentage discounts (e.g., 25% off). During sales, multiple discounts may be applied sequentially.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/percentage-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Percentage Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate percentages, percentage change, and more.</span>
+                </a>
+                <a href="/tools/gst-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">GST Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate GST inclusive and exclusive amounts instantly.</span>
+                </a>
+                <a href="/tools/calculators/tip-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Tip Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate tip and split the bill between people.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        function formatNum(num) {
+            return num.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        // Tab switching
+        var tabBtns = document.querySelectorAll('.tab-btn');
+        var tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                tabBtns.forEach(function(b) { b.classList.remove('active'); });
+                tabPanels.forEach(function(p) { p.classList.remove('active'); });
+                btn.classList.add('active');
+                document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+
+        // Tab 1: Percent Off
+        document.getElementById('btnTab1').addEventListener('click', function() {
+            var original = parseFloat(document.getElementById('originalPrice').value);
+            var discount = parseFloat(document.getElementById('discountPercent').value);
+
+            if (!original || original <= 0) {
+                showToast('Please enter a valid original price.', 'error');
+                return;
+            }
+            if (!discount || discount <= 0 || discount >= 100) {
+                showToast('Please enter a valid discount (0.01 - 99.99%).', 'error');
+                return;
+            }
+
+            var saveAmount = original * (discount / 100);
+            var salePrice = original - saveAmount;
+
+            document.getElementById('r1Save').textContent = formatNum(saveAmount);
+            document.getElementById('r1Sale').textContent = formatNum(salePrice);
+            document.getElementById('r1Orig').textContent = formatNum(original);
+            document.getElementById('result1').classList.remove('hidden');
+        });
+
+        // Tab 2: What percent off
+        document.getElementById('btnTab2').addEventListener('click', function() {
+            var original = parseFloat(document.getElementById('origPrice2').value);
+            var sale = parseFloat(document.getElementById('salePrice2').value);
+
+            if (!original || original <= 0) {
+                showToast('Please enter a valid original price.', 'error');
+                return;
+            }
+            if (!sale || sale <= 0) {
+                showToast('Please enter a valid sale price.', 'error');
+                return;
+            }
+            if (sale >= original) {
+                showToast('Sale price must be less than original price.', 'error');
+                return;
+            }
+
+            var saveAmount = original - sale;
+            var discountPct = (saveAmount / original) * 100;
+
+            document.getElementById('r2Pct').textContent = discountPct.toFixed(2) + '%';
+            document.getElementById('r2Save').textContent = formatNum(saveAmount);
+            document.getElementById('r2Orig').textContent = formatNum(original);
+            document.getElementById('result2').classList.remove('hidden');
+        });
+
+        // Tab 3: Find original price
+        document.getElementById('btnTab3').addEventListener('click', function() {
+            var sale = parseFloat(document.getElementById('salePrice3').value);
+            var discount = parseFloat(document.getElementById('discountPct3').value);
+
+            if (!sale || sale <= 0) {
+                showToast('Please enter a valid sale price.', 'error');
+                return;
+            }
+            if (!discount || discount <= 0 || discount >= 100) {
+                showToast('Please enter a valid discount (0.01 - 99.99%).', 'error');
+                return;
+            }
+
+            var original = sale / (1 - discount / 100);
+            var discAmount = original - sale;
+
+            document.getElementById('r3Orig').textContent = formatNum(original);
+            document.getElementById('r3Disc').textContent = formatNum(discAmount);
+            document.getElementById('r3Sale').textContent = formatNum(sale);
+            document.getElementById('result3').classList.remove('hidden');
+        });
+
+        // Enter key support
+        ['originalPrice', 'discountPercent'].forEach(function(id) {
+            document.getElementById(id).addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') document.getElementById('btnTab1').click();
+            });
+        });
+        ['origPrice2', 'salePrice2'].forEach(function(id) {
+            document.getElementById(id).addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') document.getElementById('btnTab2').click();
+            });
+        });
+        ['salePrice3', 'discountPct3'].forEach(function(id) {
+            document.getElementById(id).addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') document.getElementById('btnTab3').click();
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Free Online Tools — OptiDrop</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <meta name="description" content="Browse all 50+ free browser-based tools. Image tools, PDF tools, resume builder, invoice generator, calculators, text tools and more. No upload required.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="All Free Online Tools — OptiDrop">
+    <meta property="og:description" content="Browse all 50+ free browser-based tools. Image tools, PDF tools, resume builder, invoice generator, calculators, text tools and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://optidrop.online/tools.html"}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/tools.html" class="hide-mobile">Tools</a>
+                <a href="#categories" class="hide-mobile">Categories</a>
+                <a href="/blog/" class="hide-mobile">Blog</a>
+                <a href="/about.html" class="hide-mobile">About</a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/tools.html" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="#categories" onclick="this.parentElement.classList.remove('open')">Categories</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+            <a href="/about.html" onclick="this.parentElement.classList.remove('open')" >About</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-6 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">All Free Online Tools</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto mb-6">Browse all 70+ free browser-based tools. Everything runs in your browser — no upload, no sign-up, 100% private.</p>
+            <div class="search-bar">
+                <svg class="search-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <input type="text" id="dirSearch" placeholder="Search all tools...">
+            </div>
+        </section>
+
+        <!-- Category Filter Chips -->
+        <section id="categories" class="max-w-7xl mx-auto px-4 sm:px-6 pb-6">
+            <div class="flex flex-wrap justify-center gap-2">
+                <button class="category-chip active" data-filter="all">All Tools</button>
+                <button class="category-chip" data-filter="image">Image Tools</button>
+                <button class="category-chip" data-filter="pdf">PDF Tools</button>
+                <button class="category-chip" data-filter="career">Career Tools</button>
+                <button class="category-chip" data-filter="business">Business Tools</button>
+                <button class="category-chip" data-filter="professional">Professional Tools</button>
+                <button class="category-chip" data-filter="calculator">Calculators</button>
+                <button class="category-chip" data-filter="text">Text Tools</button>
+                <button class="category-chip" data-filter="utility">Utility Tools</button>
+                <button class="category-chip" data-filter="developer">Developer Tools</button>
+                <button class="category-chip" data-filter="health">Health Tools</button>
+            </div>
+        </section>
+
+        <!-- All Tools Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="allToolsGrid">
+
+                <!-- IMAGE TOOLS -->
+                <a href="/compress-image.html" class="tool-card group" data-category="image">
+                    <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                    <h3 class="tool-card-title">Image Compressor</h3>
+                    <p class="tool-card-desc">Compress photos to exact KB limits for portals and forms.</p>
+                    <span class="tool-card-tag blue">Image</span>
+                </a>
+                <a href="/heic-to-jpg.html" class="tool-card group" data-category="image">
+                    <div class="tool-card-icon bg-orange-50 text-orange-600 group-hover:bg-orange-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+                    <h3 class="tool-card-title">HEIC to JPG Converter</h3>
+                    <p class="tool-card-desc">Convert iPhone HEIC photos to JPG format instantly.</p>
+                    <span class="tool-card-tag orange">Image</span>
+                </a>
+                <a href="/image-format-converter.html" class="tool-card group" data-category="image">
+                    <div class="tool-card-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div>
+                    <h3 class="tool-card-title">Image Format Converter</h3>
+                    <p class="tool-card-desc">Convert between JPG, PNG, WebP, and BMP formats.</p>
+                    <span class="tool-card-tag indigo">Image</span>
+                </a>
+                <a href="/remove-background.html" class="tool-card group" data-category="image">
+                    <div class="tool-card-icon bg-amber-50 text-amber-600 group-hover:bg-amber-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L4.939 4.939m7.061 7.061l-2.879-2.879M12 12l2.879-2.879"/></svg></div>
+                    <h3 class="tool-card-title">Background Remover</h3>
+                    <p class="tool-card-desc">Remove background from any photo. Create transparent PNGs.</p>
+                    <span class="tool-card-tag amber">Image</span>
+                </a>
+                <a href="/passport-photo-resizer.html" class="tool-card group" data-category="image">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg></div>
+                    <h3 class="tool-card-title">300 DPI Photo Resizer</h3>
+                    <p class="tool-card-desc">Resize photos to passport dimensions at 300 DPI.</p>
+                    <span class="tool-card-tag emerald">Image</span>
+                </a>
+                <a href="/name-date-stamp.html" class="tool-card group" data-category="image">
+                    <div class="tool-card-icon bg-rose-50 text-rose-600 group-hover:bg-rose-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg></div>
+                    <h3 class="tool-card-title">Name &amp; Date Stamper</h3>
+                    <p class="tool-card-desc">Overlay name and date on photos for exam forms.</p>
+                    <span class="tool-card-tag rose">Image</span>
+                </a>
+                <a href="/signature-scanner.html" class="tool-card group" data-category="image">
+                    <div class="tool-card-icon bg-teal-50 text-teal-600 group-hover:bg-teal-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></div>
+                    <h3 class="tool-card-title">Signature Scanner</h3>
+                    <p class="tool-card-desc">Clean up signature photos. White background, jet-black ink.</p>
+                    <span class="tool-card-tag teal">Image</span>
+                </a>
+                <a href="/image-to-text-ocr.html" class="tool-card group" data-category="image">
+                    <div class="tool-card-icon bg-cyan-50 text-cyan-600 group-hover:bg-cyan-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <h3 class="tool-card-title">Image Text Extractor (OCR)</h3>
+                    <p class="tool-card-desc">Extract text from images using OCR. Copy to clipboard.</p>
+                    <span class="tool-card-tag cyan">Image</span>
+                </a>
+
+                <!-- PDF TOOLS -->
+                <a href="/compress-pdf.html" class="tool-card group" data-category="pdf">
+                    <div class="tool-card-icon bg-lime-50 text-lime-600 group-hover:bg-lime-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg></div>
+                    <h3 class="tool-card-title">PDF Compressor</h3>
+                    <p class="tool-card-desc">Reduce PDF file size while maintaining quality.</p>
+                    <span class="tool-card-tag lime">PDF</span>
+                </a>
+                <a href="/jpg-to-pdf.html" class="tool-card group" data-category="pdf">
+                    <div class="tool-card-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <h3 class="tool-card-title">Images to PDF Merger</h3>
+                    <p class="tool-card-desc">Combine multiple images into a single PDF document.</p>
+                    <span class="tool-card-tag indigo">PDF</span>
+                </a>
+                <a href="/pdf-to-jpg.html" class="tool-card group" data-category="pdf">
+                    <div class="tool-card-icon bg-purple-50 text-purple-600 group-hover:bg-purple-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                    <h3 class="tool-card-title">PDF to JPG Extractor</h3>
+                    <p class="tool-card-desc">Extract each PDF page as a JPG image.</p>
+                    <span class="tool-card-tag purple">PDF</span>
+                </a>
+
+                <!-- CAREER TOOLS -->
+                <a href="/tools/career/resume-builder.html" class="tool-card group" data-category="career">
+                    <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <h3 class="tool-card-title">Resume Builder</h3>
+                    <p class="tool-card-desc">Build professional resumes with 4 templates. Download as PDF.</p>
+                    <span class="tool-card-tag blue">Career</span>
+                </a>
+                <a href="/tools/career/cover-letter.html" class="tool-card group" data-category="career">
+                    <div class="tool-card-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+                    <h3 class="tool-card-title">Cover Letter Generator</h3>
+                    <p class="tool-card-desc">Generate professional cover letters in seconds.</p>
+                    <span class="tool-card-tag indigo">Career</span>
+                </a>
+                <a href="/tools/career/resignation-letter.html" class="tool-card group" data-category="career">
+                    <div class="tool-card-icon bg-rose-50 text-rose-600 group-hover:bg-rose-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg></div>
+                    <h3 class="tool-card-title">Resignation Letter</h3>
+                    <p class="tool-card-desc">Write a professional resignation letter in minutes.</p>
+                    <span class="tool-card-tag rose">Career</span>
+                </a>
+                <a href="/tools/career/thank-you-letter.html" class="tool-card group" data-category="career">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+                    <h3 class="tool-card-title">Thank You Letter</h3>
+                    <p class="tool-card-desc">Write a post-interview thank you letter.</p>
+                    <span class="tool-card-tag emerald">Career</span>
+                </a>
+                <a href="/tools/career/linkedin-generator.html" class="tool-card group" data-category="career">
+                    <div class="tool-card-icon bg-cyan-50 text-cyan-600 group-hover:bg-cyan-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
+                    <h3 class="tool-card-title">LinkedIn Headline Generator</h3>
+                    <p class="tool-card-desc">Generate optimized LinkedIn headlines and About sections.</p>
+                    <span class="tool-card-tag cyan">Career</span>
+                </a>
+                <a href="/tools/career/internship-letter.html" class="tool-card group" data-category="career">
+                    <div class="tool-card-icon bg-amber-50 text-amber-600 group-hover:bg-amber-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+                    <h3 class="tool-card-title">Internship Application Letter</h3>
+                    <p class="tool-card-desc">Write internship letters for students and freshers.</p>
+                    <span class="tool-card-tag amber">Career</span>
+                </a>
+                <a href="/tools/career/job-tracker.html" class="tool-card group" data-category="career">
+                    <div class="tool-card-icon bg-teal-50 text-teal-600 group-hover:bg-teal-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+                    <h3 class="tool-card-title">Job Application Tracker</h3>
+                    <p class="tool-card-desc">Track applications with status, notes, and CSV export.</p>
+                    <span class="tool-card-tag teal">Career</span>
+                </a>
+
+                <!-- BUSINESS TOOLS -->
+                <a href="/tools/business/invoice-generator.html" class="tool-card group" data-category="business">
+                    <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg></div>
+                    <h3 class="tool-card-title">Invoice Generator</h3>
+                    <p class="tool-card-desc">Create professional invoices with tax and multi-currency support.</p>
+                    <span class="tool-card-tag blue">Business</span>
+                </a>
+                <a href="/tools/business/freelance-contract.html" class="tool-card group" data-category="business">
+                    <div class="tool-card-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <h3 class="tool-card-title">Freelance Contract</h3>
+                    <p class="tool-card-desc">Generate professional service agreements with payment terms.</p>
+                    <span class="tool-card-tag indigo">Business</span>
+                </a>
+                <a href="/tools/business/salary-slip.html" class="tool-card group" data-category="business">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
+                    <h3 class="tool-card-title">Salary Slip Generator</h3>
+                    <p class="tool-card-desc">Generate professional payslips with earnings and deductions.</p>
+                    <span class="tool-card-tag emerald">Business</span>
+                </a>
+                <a href="/tools/business/business-proposal.html" class="tool-card group" data-category="business">
+                    <div class="tool-card-icon bg-purple-50 text-purple-600 group-hover:bg-purple-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <h3 class="tool-card-title">Business Proposal</h3>
+                    <p class="tool-card-desc">Create professional business proposals with services and pricing.</p>
+                    <span class="tool-card-tag purple">Business</span>
+                </a>
+                <a href="/tools/business/offer-letter.html" class="tool-card group" data-category="business">
+                    <div class="tool-card-icon bg-amber-50 text-amber-600 group-hover:bg-amber-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <h3 class="tool-card-title">Offer Letter Generator</h3>
+                    <p class="tool-card-desc">Create formal job offer letters with salary and benefits.</p>
+                    <span class="tool-card-tag amber">Business</span>
+                </a>
+                <a href="/tools/business/noc-generator.html" class="tool-card group" data-category="business">
+                    <div class="tool-card-icon bg-cyan-50 text-cyan-600 group-hover:bg-cyan-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+                    <h3 class="tool-card-title">NOC Generator</h3>
+                    <p class="tool-card-desc">Generate No Objection Certificates for visa, travel, employment.</p>
+                    <span class="tool-card-tag cyan">Business</span>
+                </a>
+                <a href="/tools/business/experience-letter.html" class="tool-card group" data-category="business">
+                    <div class="tool-card-icon bg-teal-50 text-teal-600 group-hover:bg-teal-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div>
+                    <h3 class="tool-card-title">Experience Letter</h3>
+                    <p class="tool-card-desc">Generate experience certificates and relieving letters.</p>
+                    <span class="tool-card-tag teal">Business</span>
+                </a>
+
+                <!-- PROFESSIONAL TOOLS -->
+                <a href="/tools/professional/email-signature.html" class="tool-card group" data-category="professional">
+                    <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+                    <h3 class="tool-card-title">Email Signature Generator</h3>
+                    <p class="tool-card-desc">Create HTML email signatures for Gmail, Outlook, Apple Mail.</p>
+                    <span class="tool-card-tag blue">Professional</span>
+                </a>
+                <a href="/tools/professional/business-card.html" class="tool-card group" data-category="professional">
+                    <div class="tool-card-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0"/></svg></div>
+                    <h3 class="tool-card-title">Business Card Maker</h3>
+                    <p class="tool-card-desc">Design professional business cards and download as PNG.</p>
+                    <span class="tool-card-tag indigo">Professional</span>
+                </a>
+                <a href="/tools/professional/bio-generator.html" class="tool-card group" data-category="professional">
+                    <div class="tool-card-icon bg-purple-50 text-purple-600 group-hover:bg-purple-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
+                    <h3 class="tool-card-title">Professional Bio Generator</h3>
+                    <p class="tool-card-desc">Generate professional bios for LinkedIn, websites, profiles.</p>
+                    <span class="tool-card-tag purple">Professional</span>
+                </a>
+                <a href="/tools/professional/sop-generator.html" class="tool-card group" data-category="professional">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+                    <h3 class="tool-card-title">SOP Generator</h3>
+                    <p class="tool-card-desc">Write a Statement of Purpose for university applications.</p>
+                    <span class="tool-card-tag emerald">Professional</span>
+                </a>
+
+                <!-- CALCULATOR TOOLS -->
+                <a href="/tools/emi-calculator.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <h3 class="tool-card-title">EMI Calculator</h3>
+                    <p class="tool-card-desc">Calculate monthly EMI for any loan type.</p>
+                    <span class="tool-card-tag blue">Calculator</span>
+                </a>
+                <a href="/tools/calculators/sip-calculator.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
+                    <h3 class="tool-card-title">SIP Calculator</h3>
+                    <p class="tool-card-desc">Calculate mutual fund SIP returns and maturity value.</p>
+                    <span class="tool-card-tag emerald">Calculator</span>
+                </a>
+                <a href="/tools/calculators/income-tax-calculator.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-amber-50 text-amber-600 group-hover:bg-amber-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+                    <h3 class="tool-card-title">Income Tax Calculator</h3>
+                    <p class="tool-card-desc">Compare old vs new tax regime for FY 2025-26.</p>
+                    <span class="tool-card-tag amber">Calculator</span>
+                </a>
+                <a href="/tools/calculators/mortgage-calculator.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-purple-50 text-purple-600 group-hover:bg-purple-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+                    <h3 class="tool-card-title">Mortgage Calculator</h3>
+                    <p class="tool-card-desc">Calculate monthly mortgage payments and total interest.</p>
+                    <span class="tool-card-tag purple">Calculator</span>
+                </a>
+                <a href="/tools/calculators/tip-calculator.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-rose-50 text-rose-600 group-hover:bg-rose-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
+                    <h3 class="tool-card-title">Tip Calculator</h3>
+                    <p class="tool-card-desc">Calculate tip and split the bill between people.</p>
+                    <span class="tool-card-tag rose">Calculator</span>
+                </a>
+                <a href="/tools/calculators/grade-calculator.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+                    <h3 class="tool-card-title">Grade Calculator</h3>
+                    <p class="tool-card-desc">Calculate GPA and convert percentage to grade.</p>
+                    <span class="tool-card-tag indigo">Calculator</span>
+                </a>
+                <a href="/tools/calculators/loan-comparison.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-teal-50 text-teal-600 group-hover:bg-teal-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+                    <h3 class="tool-card-title">Loan Comparison</h3>
+                    <p class="tool-card-desc">Compare two loan offers side by side.</p>
+                    <span class="tool-card-tag teal">Calculator</span>
+                </a>
+                <a href="/tools/gst-calculator.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-lime-50 text-lime-600 group-hover:bg-lime-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+                    <h3 class="tool-card-title">GST Calculator</h3>
+                    <p class="tool-card-desc">Calculate GST at 5%, 12%, 18%, or 28%.</p>
+                    <span class="tool-card-tag lime">Calculator</span>
+                </a>
+                <a href="/tools/age-calculator.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-orange-50 text-orange-600 group-hover:bg-orange-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                    <h3 class="tool-card-title">Age Calculator</h3>
+                    <p class="tool-card-desc">Find your exact age in years, months, and days.</p>
+                    <span class="tool-card-tag orange">Calculator</span>
+                </a>
+                <a href="/tools/percentage-calculator.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-cyan-50 text-cyan-600 group-hover:bg-cyan-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg></div>
+                    <h3 class="tool-card-title">Percentage Calculator</h3>
+                    <p class="tool-card-desc">Find X% of Y, percentage change, and more.</p>
+                    <span class="tool-card-tag cyan">Calculator</span>
+                </a>
+
+                <!-- TEXT TOOLS -->
+                <a href="/tools/word-counter.html" class="tool-card group" data-category="text">
+                    <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <h3 class="tool-card-title">Word Counter</h3>
+                    <p class="tool-card-desc">Count words, characters, sentences, and reading time.</p>
+                    <span class="tool-card-tag blue">Text</span>
+                </a>
+                <a href="/tools/text-case-converter.html" class="tool-card group" data-category="text">
+                    <div class="tool-card-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg></div>
+                    <h3 class="tool-card-title">Text Case Converter</h3>
+                    <p class="tool-card-desc">Convert text to UPPERCASE, lowercase, Title Case, and more.</p>
+                    <span class="tool-card-tag indigo">Text</span>
+                </a>
+                <a href="/tools/text/lorem-ipsum-generator.html" class="tool-card group" data-category="text">
+                    <div class="tool-card-icon bg-purple-50 text-purple-600 group-hover:bg-purple-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg></div>
+                    <h3 class="tool-card-title">Lorem Ipsum Generator</h3>
+                    <p class="tool-card-desc">Generate placeholder text by paragraphs, sentences, or words.</p>
+                    <span class="tool-card-tag purple">Text</span>
+                </a>
+                <a href="/tools/text/random-name-generator.html" class="tool-card group" data-category="text">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+                    <h3 class="tool-card-title">Random Name Generator</h3>
+                    <p class="tool-card-desc">Generate random names by country and gender.</p>
+                    <span class="tool-card-tag emerald">Text</span>
+                </a>
+                <a href="/tools/text/text-repeater.html" class="tool-card group" data-category="text">
+                    <div class="tool-card-icon bg-amber-50 text-amber-600 group-hover:bg-amber-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div>
+                    <h3 class="tool-card-title">Text Repeater</h3>
+                    <p class="tool-card-desc">Repeat any text multiple times with custom separators.</p>
+                    <span class="tool-card-tag amber">Text</span>
+                </a>
+                <a href="/tools/text/binary-to-text.html" class="tool-card group" data-category="text">
+                    <div class="tool-card-icon bg-cyan-50 text-cyan-600 group-hover:bg-cyan-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                    <h3 class="tool-card-title">Binary to Text Converter</h3>
+                    <p class="tool-card-desc">Convert between binary, decimal, hex, and text.</p>
+                    <span class="tool-card-tag cyan">Text</span>
+                </a>
+
+                <!-- UTILITY TOOLS -->
+                <a href="/qr-code-generator.html" class="tool-card group" data-category="utility">
+                    <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg></div>
+                    <h3 class="tool-card-title">QR Code Generator</h3>
+                    <p class="tool-card-desc">Generate QR codes for URLs, text, email, and phone.</p>
+                    <span class="tool-card-tag blue">Utility</span>
+                </a>
+                <a href="/tools/bmi-calculator.html" class="tool-card group" data-category="utility">
+                    <div class="tool-card-icon bg-rose-50 text-rose-600 group-hover:bg-rose-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg></div>
+                    <h3 class="tool-card-title">BMI Calculator</h3>
+                    <p class="tool-card-desc">Calculate Body Mass Index with metric or imperial units.</p>
+                    <span class="tool-card-tag rose">Utility</span>
+                </a>
+                <a href="/tools/unit-converter.html" class="tool-card group" data-category="utility">
+                    <div class="tool-card-icon bg-teal-50 text-teal-600 group-hover:bg-teal-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div>
+                    <h3 class="tool-card-title">Unit Converter</h3>
+                    <p class="tool-card-desc">Convert length, weight, temperature, and speed units.</p>
+                    <span class="tool-card-tag teal">Utility</span>
+                </a>
+                <a href="/tools/password-generator.html" class="tool-card group" data-category="utility">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg></div>
+                    <h3 class="tool-card-title">Password Generator</h3>
+                    <p class="tool-card-desc">Generate strong, random passwords securely.</p>
+                    <span class="tool-card-tag emerald">Utility</span>
+                </a>
+
+                <!-- DEVELOPER TOOLS -->
+                <a href="/tools/developer/json-formatter.html" class="tool-card group" data-category="developer">
+                    <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div>
+                    <h3 class="tool-card-title">JSON Formatter</h3>
+                    <p class="tool-card-desc">Format, minify, and validate JSON with syntax highlighting.</p>
+                    <span class="tool-card-tag blue">Developer</span>
+                </a>
+                <a href="/tools/developer/base64.html" class="tool-card group" data-category="developer">
+                    <div class="tool-card-icon bg-purple-50 text-purple-600 group-hover:bg-purple-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                    <h3 class="tool-card-title">Base64 Encoder</h3>
+                    <p class="tool-card-desc">Encode and decode Base64 text and files.</p>
+                    <span class="tool-card-tag purple">Developer</span>
+                </a>
+                <a href="/tools/developer/url-encoder.html" class="tool-card group" data-category="developer">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div>
+                    <h3 class="tool-card-title">URL Encoder</h3>
+                    <p class="tool-card-desc">Encode and decode URLs and HTML entities.</p>
+                    <span class="tool-card-tag emerald">Developer</span>
+                </a>
+                <a href="/tools/developer/color-converter.html" class="tool-card group" data-category="developer">
+                    <div class="tool-card-icon bg-rose-50 text-rose-600 group-hover:bg-rose-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg></div>
+                    <h3 class="tool-card-title">Color Converter</h3>
+                    <p class="tool-card-desc">Convert HEX to RGB, HSL, RGBA with live preview.</p>
+                    <span class="tool-card-tag rose">Developer</span>
+                </a>
+                <a href="/tools/developer/markdown-preview.html" class="tool-card group" data-category="developer">
+                    <div class="tool-card-icon bg-amber-50 text-amber-600 group-hover:bg-amber-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <h3 class="tool-card-title">Markdown Preview</h3>
+                    <p class="tool-card-desc">Write Markdown and see live HTML preview.</p>
+                    <span class="tool-card-tag amber">Developer</span>
+                </a>
+                <a href="/tools/developer/hash-generator.html" class="tool-card group" data-category="developer">
+                    <div class="tool-card-icon bg-teal-50 text-teal-600 group-hover:bg-teal-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
+                    <h3 class="tool-card-title">Hash Generator</h3>
+                    <p class="tool-card-desc">Generate SHA-256 and SHA-512 hashes.</p>
+                    <span class="tool-card-tag teal">Developer</span>
+                </a>
+
+                <!-- HEALTH TOOLS -->
+                <a href="/tools/health/ideal-weight.html" class="tool-card group" data-category="health">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
+                    <h3 class="tool-card-title">Ideal Weight Calculator</h3>
+                    <p class="tool-card-desc">Find your ideal weight using 4 medical formulas.</p>
+                    <span class="tool-card-tag emerald">Health</span>
+                </a>
+                <a href="/tools/health/calorie-calculator.html" class="tool-card group" data-category="health">
+                    <div class="tool-card-icon bg-orange-50 text-orange-600 group-hover:bg-orange-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg></div>
+                    <h3 class="tool-card-title">Calorie Calculator</h3>
+                    <p class="tool-card-desc">Calculate daily calorie needs with BMR and TDEE.</p>
+                    <span class="tool-card-tag orange">Health</span>
+                </a>
+                <a href="/tools/health/water-intake.html" class="tool-card group" data-category="health">
+                    <div class="tool-card-icon bg-cyan-50 text-cyan-600 group-hover:bg-cyan-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
+                    <h3 class="tool-card-title">Water Intake Calculator</h3>
+                    <p class="tool-card-desc">Calculate daily water needs with hydration tracker.</p>
+                    <span class="tool-card-tag cyan">Health</span>
+                </a>
+                <a href="/tools/health/sleep-calculator.html" class="tool-card group" data-category="health">
+                    <div class="tool-card-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg></div>
+                    <h3 class="tool-card-title">Sleep Calculator</h3>
+                    <p class="tool-card-desc">Find the best bedtime and wake-up time.</p>
+                    <span class="tool-card-tag indigo">Health</span>
+                </a>
+                <a href="/tools/health/pregnancy-due-date.html" class="tool-card group" data-category="health">
+                    <div class="tool-card-icon bg-pink-50 text-pink-600 group-hover:bg-pink-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+                    <h3 class="tool-card-title">Pregnancy Due Date</h3>
+                    <p class="tool-card-desc">Calculate estimated due date and pregnancy week.</p>
+                    <span class="tool-card-tag pink">Health</span>
+                </a>
+                <a href="/tools/health/ovulation-calculator.html" class="tool-card group" data-category="health">
+                    <div class="tool-card-icon bg-rose-50 text-rose-600 group-hover:bg-rose-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                    <h3 class="tool-card-title">Ovulation Calculator</h3>
+                    <p class="tool-card-desc">Calculate fertile window and ovulation date.</p>
+                    <span class="tool-card-tag rose">Health</span>
+                </a>
+
+                <!-- NEW CALCULATOR TOOLS -->
+                <a href="/tools/calculators/compound-interest.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-teal-50 text-teal-600 group-hover:bg-teal-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
+                    <h3 class="tool-card-title">Compound Interest Calculator</h3>
+                    <p class="tool-card-desc">Calculate compound interest with different frequencies.</p>
+                    <span class="tool-card-tag teal">Calculator</span>
+                </a>
+                <a href="/tools/calculators/retirement-calculator.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <h3 class="tool-card-title">Retirement Calculator</h3>
+                    <p class="tool-card-desc">Plan your retirement savings and monthly income.</p>
+                    <span class="tool-card-tag indigo">Calculator</span>
+                </a>
+                <a href="/tools/calculators/discount-calculator.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-rose-50 text-rose-600 group-hover:bg-rose-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg></div>
+                    <h3 class="tool-card-title">Discount Calculator</h3>
+                    <p class="tool-card-desc">Calculate sale price, savings, and original price.</p>
+                    <span class="tool-card-tag rose">Calculator</span>
+                </a>
+                <a href="/tools/calculators/date-difference.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-cyan-50 text-cyan-600 group-hover:bg-cyan-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                    <h3 class="tool-card-title">Date Difference Calculator</h3>
+                    <p class="tool-card-desc">Calculate days, weeks, and months between dates.</p>
+                    <span class="tool-card-tag cyan">Calculator</span>
+                </a>
+                <a href="/tools/calculators/time-calculator.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-lime-50 text-lime-600 group-hover:bg-lime-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <h3 class="tool-card-title">Time Calculator</h3>
+                    <p class="tool-card-desc">Add, subtract, and convert hours and minutes.</p>
+                    <span class="tool-card-tag lime">Calculator</span>
+                </a>
+                <a href="/tools/calculators/fuel-cost.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-orange-50 text-orange-600 group-hover:bg-orange-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg></div>
+                    <h3 class="tool-card-title">Fuel Cost Calculator</h3>
+                    <p class="tool-card-desc">Estimate fuel cost for road trips.</p>
+                    <span class="tool-card-tag orange">Calculator</span>
+                </a>
+                <a href="/tools/calculators/currency-converter.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <h3 class="tool-card-title">Currency Converter</h3>
+                    <p class="tool-card-desc">Convert between 25 world currencies.</p>
+                    <span class="tool-card-tag emerald">Calculator</span>
+                </a>
+                <a href="/tools/health/calorie-calculator.html" class="tool-card group" data-category="calculator">
+                    <div class="tool-card-icon bg-red-50 text-red-600 group-hover:bg-red-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg></div>
+                    <h3 class="tool-card-title">Calorie Calculator</h3>
+                    <p class="tool-card-desc">Calculate daily calorie needs with BMR and TDEE.</p>
+                    <span class="tool-card-tag red">Calculator</span>
+                </a>
+
+                <!-- NEW TEXT TOOLS -->
+                <a href="/tools/text/character-counter.html" class="tool-card group" data-category="text">
+                    <div class="tool-card-icon bg-cyan-50 text-cyan-600 group-hover:bg-cyan-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <h3 class="tool-card-title">Character Counter</h3>
+                    <p class="tool-card-desc">Count characters with platform limit bars.</p>
+                    <span class="tool-card-tag cyan">Text</span>
+                </a>
+                <a href="/tools/text/remove-duplicate-lines.html" class="tool-card group" data-category="text">
+                    <div class="tool-card-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+                    <h3 class="tool-card-title">Remove Duplicate Lines</h3>
+                    <p class="tool-card-desc">Deduplicate and sort text lines instantly.</p>
+                    <span class="tool-card-tag indigo">Text</span>
+                </a>
+                <a href="/tools/text/find-and-replace.html" class="tool-card group" data-category="text">
+                    <div class="tool-card-icon bg-rose-50 text-rose-600 group-hover:bg-rose-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+                    <h3 class="tool-card-title">Find and Replace</h3>
+                    <p class="tool-card-desc">Bulk find and replace text with options.</p>
+                    <span class="tool-card-tag rose">Text</span>
+                </a>
+                <a href="/tools/text/number-to-words.html" class="tool-card group" data-category="text">
+                    <div class="tool-card-icon bg-amber-50 text-amber-600 group-hover:bg-amber-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg></div>
+                    <h3 class="tool-card-title">Number to Words</h3>
+                    <p class="tool-card-desc">Convert numbers to words in International and Indian formats.</p>
+                    <span class="tool-card-tag amber">Text</span>
+                </a>
+                <a href="/tools/text/reverse-text.html" class="tool-card group" data-category="text">
+                    <div class="tool-card-icon bg-teal-50 text-teal-600 group-hover:bg-teal-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div>
+                    <h3 class="tool-card-title">Reverse Text</h3>
+                    <p class="tool-card-desc">Reverse characters, words, or word order.</p>
+                    <span class="tool-card-tag teal">Text</span>
+                </a>
+                <a href="/tools/text/text-to-slug.html" class="tool-card group" data-category="text">
+                    <div class="tool-card-icon bg-purple-50 text-purple-600 group-hover:bg-purple-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div>
+                    <h3 class="tool-card-title">Text to Slug</h3>
+                    <p class="tool-card-desc">Convert text to URL-friendly slug format.</p>
+                    <span class="tool-card-tag purple">Text</span>
+                </a>
+
+                <!-- NEW BUSINESS TOOLS -->
+                <a href="/tools/business/profit-calculator.html" class="tool-card group" data-category="business">
+                    <div class="tool-card-icon bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
+                    <h3 class="tool-card-title">Profit Calculator</h3>
+                    <p class="tool-card-desc">Calculate profit margin, markup, and break-even point.</p>
+                    <span class="tool-card-tag emerald">Business</span>
+                </a>
+                <a href="/tools/business/receipt-generator.html" class="tool-card group" data-category="business">
+                    <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg></div>
+                    <h3 class="tool-card-title">Receipt Generator</h3>
+                    <p class="tool-card-desc">Create receipts and download as PDF.</p>
+                    <span class="tool-card-tag blue">Business</span>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="./common.js"></script>
+    <script>initToolsDirectory();</script>
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Encoder Decoder Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Free online URL encoder and decoder. Encode and decode URLs and HTML entities instantly. Percent encoding, HTML entity conversion. No upload required.">
+    <meta name="keywords" content="url encoder online, url decoder, percent encoding, url encode, url decode, html entity encoder, html entity decoder, encode url free">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="URL Encoder Decoder Free Online | OptiDrop">
+    <meta property="og:description" content="Free online URL encoder and decoder. Encode/decode URLs and HTML entities instantly. No upload required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/url-encoder.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="URL Encoder Decoder Free Online | OptiDrop">
+    <meta name="twitter:description" content="Free online URL encoder and decoder. Encode/decode URLs and HTML entities. No upload.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/url-encoder.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/tools/developer/"},
+        {"@type": "ListItem", "position": 3, "name": "URL Encoder", "item": "https://optidrop.online/tools/developer/url-encoder.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop URL Encoder Decoder",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online URL encoder and decoder. Encode and decode URLs and HTML entities instantly in your browser."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is URL encoding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "URL encoding (also called percent encoding) is a mechanism for encoding unsafe or reserved characters in a URL by replacing them with a percent sign (%) followed by two hexadecimal digits. For example, a space becomes %20, and an ampersand (&) becomes %26."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is percent encoding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Percent encoding is the technical term for URL encoding. Each character that needs encoding is replaced with a percent sign followed by its ASCII hexadecimal value. Characters that are safe in URLs (letters, digits, hyphens, underscores, periods, tildes) are left unchanged."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When to encode a URL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You need to encode a URL when it contains special characters such as spaces, ampersands, question marks, or non-ASCII characters. This is especially important for query parameters in URLs, form submissions, and API requests where special characters could break the URL structure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is HTML entity encoding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HTML entity encoding replaces special HTML characters with their entity representations. For example, < becomes &amp;lt;, > becomes &amp;gt;, & becomes &amp;amp;, and \" becomes &amp;quot;. This prevents browsers from interpreting these characters as HTML code and is essential for preventing XSS attacks."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .url-output {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-all;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            color: #1e293b;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            min-height: 120px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .url-tab-btn {
+            padding: 0.5rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 0.75rem;
+            border: 2px solid #e2e8f0;
+            background: #fff;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .url-tab-btn.active {
+            border-color: #2563eb;
+            background: #2563eb;
+            color: #fff;
+        }
+        .url-tab-btn:hover:not(.active) {
+            border-color: #93c5fd;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">URL Encoder &amp; Decoder Online — Percent Encoding &amp; HTML Entities Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Encode and decode URLs with percent encoding. Convert HTML entities. Instant processing, copy to clipboard. No upload, 100% private.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Mode Tabs -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <button class="url-tab-btn active" data-tab="url" onclick="switchUrlTab('url')">URL Encode/Decode</button>
+                        <button class="url-tab-btn" data-tab="html" onclick="switchUrlTab('html')">HTML Entities</button>
+                    </div>
+
+                    <!-- URL TAB -->
+                    <div id="tab-url" class="tab-panel active">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div>
+                                <label for="urlInput" class="block text-sm font-bold text-slate-700 mb-2">Input</label>
+                                <textarea id="urlInput" placeholder="https://example.com/search?q=hello world&lang=en" class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y" style="min-height:160px;font-family:inherit;line-height:1.7;"></textarea>
+                                <div class="mt-3 flex gap-3">
+                                    <button id="btnUrlEncode" class="flex-1 px-5 py-3 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md transition-all text-sm">
+                                        Encode
+                                    </button>
+                                    <button id="btnUrlDecode" class="flex-1 px-5 py-3 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 shadow-md transition-all text-sm">
+                                        Decode
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <label class="block text-sm font-bold text-slate-700">Output</label>
+                                    <button id="btnCopyUrl" class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-blue-600 bg-white border border-slate-200 rounded-lg hover:border-blue-300 transition-all">Copy</button>
+                                </div>
+                                <div id="urlOutput" class="url-output" style="min-height:160px;">Output will appear here...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HTML ENTITIES TAB -->
+                    <div id="tab-html" class="tab-panel">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div>
+                                <label for="htmlInput" class="block text-sm font-bold text-slate-700 mb-2">Input</label>
+                                <textarea id="htmlInput" placeholder='<div class="hello">Hello & Welcome</div>' class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y" style="min-height:160px;font-family:inherit;line-height:1.7;"></textarea>
+                                <div class="mt-3 flex gap-3">
+                                    <button id="btnHtmlEncode" class="flex-1 px-5 py-3 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md transition-all text-sm">
+                                        Encode
+                                    </button>
+                                    <button id="btnHtmlDecode" class="flex-1 px-5 py-3 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 shadow-md transition-all text-sm">
+                                        Decode
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <label class="block text-sm font-bold text-slate-700">Output</label>
+                                    <button id="btnCopyHtml" class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-blue-600 bg-white border border-slate-200 rounded-lg hover:border-blue-300 transition-all">Copy</button>
+                                </div>
+                                <div id="htmlOutput" class="url-output" style="min-height:160px;">Output will appear here...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online URL Encoder &amp; Decoder</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's URL Encoder/Decoder lets you encode and decode URLs using percent encoding, and convert HTML entities. This is essential for web developers working with query strings, API requests, and HTML content that contains special characters.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Percent Encoding (URL Encoding)</h3>
+                <p class="text-slate-600 mb-4">URL encoding replaces unsafe ASCII characters with a percent sign (%) followed by two hexadecimal digits. Spaces become %20, ampersands become %26, and so on. This ensures URLs remain valid when they contain characters that have special meaning in URLs or are not allowed in certain URL components.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">HTML Entity Encoding</h3>
+                <p class="text-slate-600 mb-4">HTML entity encoding converts special HTML characters into their entity equivalents. For example, the less-than sign (&lt;) becomes &amp;lt; and the ampersand (&amp;) becomes &amp;amp;. This is critical for safely displaying user-generated content on web pages and preventing cross-site scripting (XSS) attacks.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Instant Processing</h3>
+                <p class="text-slate-600">All encoding and decoding happens instantly in your browser. No data is sent to any server. Results are processed in real time and can be copied to clipboard with one click.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is URL encoding?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        URL encoding (also called percent encoding) is a mechanism for encoding unsafe or reserved characters in a URL by replacing them with a percent sign (%) followed by two hexadecimal digits. For example, a space becomes %20, and an ampersand (&amp;) becomes %26.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is percent encoding?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Percent encoding is the technical term for URL encoding. Each character that needs encoding is replaced with a percent sign followed by its ASCII hexadecimal value. Characters that are safe in URLs (letters, digits, hyphens, underscores, periods, tildes) are left unchanged.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        When to encode a URL?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        You need to encode a URL when it contains special characters such as spaces, ampersands, question marks, or non-ASCII characters. This is especially important for query parameters in URLs, form submissions, and API requests where special characters could break the URL structure.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is HTML entity encoding?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        HTML entity encoding replaces special HTML characters with their entity representations. For example, &lt; becomes &amp;lt;, &gt; becomes &amp;gt;, &amp; becomes &amp;amp;, and " becomes &amp;quot;. This prevents browsers from interpreting these characters as HTML code and is essential for preventing XSS attacks.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/developer/base64.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Base64 Encoder</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode Base64 text and files instantly.</span>
+            </a>
+            <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Format, minify, and validate JSON with syntax highlighting.</span>
+            </a>
+            <a href="/tools/developer/hash-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Hash Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate SHA-256 and SHA-512 hashes instantly.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var urlInput = document.getElementById('urlInput');
+        var urlOutput = document.getElementById('urlOutput');
+        var btnUrlEncode = document.getElementById('btnUrlEncode');
+        var btnUrlDecode = document.getElementById('btnUrlDecode');
+        var btnCopyUrl = document.getElementById('btnCopyUrl');
+        var htmlInput = document.getElementById('htmlInput');
+        var htmlOutput = document.getElementById('htmlOutput');
+        var btnHtmlEncode = document.getElementById('btnHtmlEncode');
+        var btnHtmlDecode = document.getElementById('btnHtmlDecode');
+        var btnCopyHtml = document.getElementById('btnCopyHtml');
+
+        var currentUrlOutput = '';
+        var currentHtmlOutput = '';
+
+        // Tab switching
+        window.switchUrlTab = function(tab) {
+            document.querySelectorAll('.url-tab-btn').forEach(function(btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-tab') === tab);
+            });
+            document.querySelectorAll('.tab-panel').forEach(function(panel) {
+                panel.classList.toggle('active', panel.id === 'tab-' + tab);
+            });
+        };
+
+        // URL Encode/Decode
+        btnUrlEncode.addEventListener('click', function() {
+            var input = urlInput.value;
+            if (!input) {
+                showToast('Please enter a URL or text to encode.', 'error');
+                return;
+            }
+            currentUrlOutput = encodeURIComponent(input);
+            urlOutput.textContent = currentUrlOutput;
+            showToast('URL encoded successfully!');
+        });
+
+        btnUrlDecode.addEventListener('click', function() {
+            var input = urlInput.value;
+            if (!input) {
+                showToast('Please enter an encoded URL to decode.', 'error');
+                return;
+            }
+            try {
+                currentUrlOutput = decodeURIComponent(input);
+                urlOutput.textContent = currentUrlOutput;
+                showToast('URL decoded successfully!');
+            } catch (e) {
+                showToast('Invalid encoded URL. Please check your input.', 'error');
+            }
+        });
+
+        btnCopyUrl.addEventListener('click', function() {
+            if (!currentUrlOutput) {
+                showToast('Nothing to copy.', 'error');
+                return;
+            }
+            copyToClipboard(currentUrlOutput);
+        });
+
+        // HTML Entity Encode/Decode
+        function encodeHtmlEntities(str) {
+            return str.replace(/&/g, '&amp;')
+                      .replace(/</g, '&lt;')
+                      .replace(/>/g, '&gt;')
+                      .replace(/"/g, '&quot;')
+                      .replace(/'/g, '&#39;');
+        }
+
+        function decodeHtmlEntities(str) {
+            var textarea = document.createElement('textarea');
+            textarea.innerHTML = str;
+            return textarea.value;
+        }
+
+        btnHtmlEncode.addEventListener('click', function() {
+            var input = htmlInput.value;
+            if (!input) {
+                showToast('Please enter text to encode.', 'error');
+                return;
+            }
+            currentHtmlOutput = encodeHtmlEntities(input);
+            htmlOutput.textContent = currentHtmlOutput;
+            showToast('HTML entities encoded!');
+        });
+
+        btnHtmlDecode.addEventListener('click', function() {
+            var input = htmlInput.value;
+            if (!input) {
+                showToast('Please enter HTML entities to decode.', 'error');
+                return;
+            }
+            currentHtmlOutput = decodeHtmlEntities(input);
+            htmlOutput.textContent = currentHtmlOutput;
+            showToast('HTML entities decoded!');
+        });
+
+        btnCopyHtml.addEventListener('click', function() {
+            if (!currentHtmlOutput) {
+                showToast('Nothing to copy.', 'error');
+                return;
+            }
+            copyToClipboard(currentHtmlOutput);
+        });
+    })();
+    </script>
+</body>
+</html>

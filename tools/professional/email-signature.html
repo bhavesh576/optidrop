@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Email Signature Generator — HTML Email Signature | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Create a professional HTML email signature free. Compatible with Gmail, Outlook, and Apple Mail. Copy code instantly. No sign-up.">
+    <meta name="keywords" content="free email signature generator, html email signature, email signature maker, professional email signature, gmail signature generator, outlook signature generator">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Free Email Signature Generator — HTML Email Signature | OptiDrop">
+    <meta property="og:description" content="Create a professional HTML email signature free. Compatible with Gmail, Outlook, and Apple Mail. Copy code instantly. No sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/professional/email-signature.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Email Signature Generator — HTML Email Signature | OptiDrop">
+    <meta name="twitter:description" content="Create a professional HTML email signature free. Compatible with Gmail, Outlook, and Apple Mail.">
+    <link rel="canonical" href="https://optidrop.online/tools/professional/email-signature.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Professional Tools", "item": "https://optidrop.online/tools/professional/"},
+        {"@type": "ListItem", "position": 3, "name": "Email Signature Generator", "item": "https://optidrop.online/tools/professional/email-signature.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Email Signature Generator",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Create a professional HTML email signature free. Compatible with Gmail, Outlook, and Apple Mail."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I add an email signature in Gmail?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Go to Gmail Settings (gear icon > See all settings). Scroll down to the Signature section. Click Create New, name your signature, paste the HTML code from this generator into the editor, and save changes. Set it as your default signature for new emails and replies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I add an email signature in Outlook?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Outlook, go to File > Options > Mail > Signatures. Click New to create a signature, name it, then paste the HTML code into the editor. Assign it to new messages and replies/forwards, then click OK to save."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should an email signature include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A professional email signature should include your full name, job title, company name, email address, phone number, and website URL. Optionally add your LinkedIn profile, social media links, and a professional headshot or company logo. Keep it clean and not overly cluttered."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I add an image to my email signature?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This generator produces a clean text-based HTML signature that works reliably across all email clients. While you can manually add an image URL to the HTML code, many email clients block images by default. Text-based signatures are recommended for maximum compatibility and deliverability."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Free Email Signature Generator — Create HTML Email Signatures</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Create a professional HTML email signature in minutes. Works with Gmail, Outlook, Apple Mail, and Yahoo. Copy the code and paste it into your email settings. No sign-up, no watermarks, 100% free.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="flex flex-col lg:flex-row gap-8">
+
+                        <!-- Left: Form -->
+                        <div class="w-full lg:w-1/2 flex flex-col space-y-4">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Design Style</label>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <button class="sig-style-btn active" data-style="classic">
+                                        <span class="block text-sm font-bold">Classic</span>
+                                    </button>
+                                    <button class="sig-style-btn" data-style="modern">
+                                        <span class="block text-sm font-bold">Modern</span>
+                                    </button>
+                                    <button class="sig-style-btn" data-style="minimal">
+                                        <span class="block text-sm font-bold">Minimal</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="sigName" class="block text-sm font-bold text-slate-700 mb-2">Full Name *</label>
+                                <input type="text" id="sigName" placeholder="John Smith"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                            <div>
+                                <label for="sigTitle" class="block text-sm font-bold text-slate-700 mb-2">Job Title</label>
+                                <input type="text" id="sigTitle" placeholder="Marketing Manager"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                            <div>
+                                <label for="sigCompany" class="block text-sm font-bold text-slate-700 mb-2">Company Name</label>
+                                <input type="text" id="sigCompany" placeholder="Acme Inc."
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                            <div>
+                                <label for="sigEmail" class="block text-sm font-bold text-slate-700 mb-2">Email</label>
+                                <input type="email" id="sigEmail" placeholder="john@acme.com"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                            <div>
+                                <label for="sigPhone" class="block text-sm font-bold text-slate-700 mb-2">Phone</label>
+                                <input type="tel" id="sigPhone" placeholder="+1 (555) 123-4567"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                            <div>
+                                <label for="sigWebsite" class="block text-sm font-bold text-slate-700 mb-2">Website</label>
+                                <input type="url" id="sigWebsite" placeholder="https://acme.com"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                            <div>
+                                <label for="sigLinkedIn" class="block text-sm font-bold text-slate-700 mb-2">LinkedIn URL <span class="text-slate-400 font-normal">(optional)</span></label>
+                                <input type="url" id="sigLinkedIn" placeholder="https://linkedin.com/in/johnsmith"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                            <div>
+                                <label for="sigTwitter" class="block text-sm font-bold text-slate-700 mb-2">Twitter URL <span class="text-slate-400 font-normal">(optional)</span></label>
+                                <input type="url" id="sigTwitter" placeholder="https://twitter.com/johnsmith"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+
+                            <button id="btnGenerate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                Generate Signature
+                            </button>
+                        </div>
+
+                        <!-- Right: Preview -->
+                        <div class="w-full lg:w-1/2 flex flex-col">
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Live Preview</label>
+                            <div id="sigPreview" class="w-full min-h-[200px] border-2 border-dashed border-slate-200 rounded-2xl flex items-center justify-center text-center p-6">
+                                <p class="text-slate-400 font-semibold">Fill in your details and click Generate</p>
+                            </div>
+
+                            <div id="sigActions" class="hidden mt-4 flex flex-col sm:flex-row gap-3">
+                                <button id="btnCopyHTML" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md transition-all flex justify-center items-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                                    Copy HTML Code
+                                </button>
+                                <button id="btnCopyPlain" class="w-full px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all flex justify-center items-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                    View HTML Code
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Email Signature Generator — Professional HTML Signatures</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Email Signature Generator creates professional, clean HTML email signatures that work across all major email clients including Gmail, Outlook, Apple Mail, and Yahoo Mail. Choose from three design styles — Classic, Modern, or Minimal — and customize your signature with your name, job title, company, contact details, and social media links. The generated HTML code is optimized for maximum compatibility, ensuring your signature looks great whether your recipient is reading on desktop or mobile.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How to Add Your Email Signature</h3>
+                <p class="text-slate-600 mb-4">After generating your signature, copy the HTML code. In Gmail, go to Settings (gear icon) > See all settings > Signature section, create a new signature, and paste the code. In Outlook, navigate to File > Options > Mail > Signatures, create a new signature, and paste. In Apple Mail, go to Mail > Preferences > Signatures, create a new signature, and paste the HTML. The process is simple and takes less than two minutes.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Why Use an Email Signature?</h3>
+                <p class="text-slate-600">A professional email signature establishes credibility, promotes your brand, and makes it easy for recipients to contact you. It acts as a digital business card that appears at the bottom of every email you send. Including your website URL and social links drives traffic to your online presence. A well-designed signature shows attention to detail and professionalism in every communication.</p>
+            </div>
+        </section>
+
+        <!-- Instructions Section -->
+        <section class="max-w-4xl mx-auto px-4 py-6">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">How to Install Your Signature</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white border border-slate-200 rounded-xl p-6">
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Gmail</h3>
+                    <p class="text-sm text-slate-600">Settings (gear icon) > See all settings > Signature > Create new > Paste HTML > Save Changes.</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-6">
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Outlook</h3>
+                    <p class="text-sm text-slate-600">File > Options > Mail > Signatures > New > Paste HTML > Assign to messages > OK.</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-6">
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Apple Mail</h3>
+                    <p class="text-sm text-slate-600">Mail > Preferences > Signatures > Select account > + > Paste HTML > Close to save.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I add an email signature in Gmail?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Go to Gmail Settings (gear icon > See all settings). Scroll down to the Signature section. Click Create New, name your signature, paste the HTML code from this generator into the editor, and save changes. Set it as your default signature for new emails and replies.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I add an email signature in Outlook?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        In Outlook, go to File > Options > Mail > Signatures. Click New to create a signature, name it, then paste the HTML code into the editor. Assign it to new messages and replies/forwards, then click OK to save.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What should an email signature include?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A professional email signature should include your full name, job title, company name, email address, phone number, and website URL. Optionally add your LinkedIn profile, social media links, and a professional headshot or company logo. Keep it clean and not overly cluttered.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I add an image to my email signature?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        This generator produces a clean text-based HTML signature that works reliably across all email clients. While you can manually add an image URL to the HTML code, many email clients block images by default. Text-based signatures are recommended for maximum compatibility and deliverability.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/professional/business-card.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Business Card Maker</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Design a professional business card and download as PNG.</span>
+            </a>
+            <a href="/tools/professional/bio-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Bio Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate a professional bio for LinkedIn or your website.</span>
+            </a>
+            <a href="/qr-code-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">LinkedIn Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate optimized LinkedIn profile content.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var styleButtons = document.querySelectorAll('.sig-style-btn');
+        var btnGenerate = document.getElementById('btnGenerate');
+        var btnCopyHTML = document.getElementById('btnCopyHTML');
+        var btnCopyPlain = document.getElementById('btnCopyPlain');
+        var sigPreview = document.getElementById('sigPreview');
+        var sigActions = document.getElementById('sigActions');
+
+        var currentStyle = 'classic';
+        var currentHTML = '';
+
+        // Style button CSS
+        var style = document.createElement('style');
+        style.textContent = '.sig-style-btn { padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 0.75rem; background: #fff; cursor: pointer; transition: all 0.2s ease; text-align: center; color: #64748b; } .sig-style-btn:hover { border-color: #93c5fd; background: #eff6ff; color: #2563eb; } .sig-style-btn.active { border-color: #2563eb; background: #2563eb; color: #fff; }';
+        document.head.appendChild(style);
+
+        // Style buttons
+        styleButtons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                styleButtons.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                currentStyle = btn.getAttribute('data-style');
+            });
+        });
+
+        // Auto-save form data
+        var fields = ['sigName','sigTitle','sigCompany','sigEmail','sigPhone','sigWebsite','sigLinkedIn','sigTwitter'];
+        var saved = autoLoad('emailSig');
+        if (saved) {
+            fields.forEach(function(f) {
+                if (saved[f]) document.getElementById(f).value = saved[f];
+            });
+            if (saved.style) {
+                currentStyle = saved.style;
+                styleButtons.forEach(function(b) {
+                    b.classList.toggle('active', b.getAttribute('data-style') === currentStyle);
+                });
+            }
+        }
+
+        function saveFormData() {
+            var data = { style: currentStyle };
+            fields.forEach(function(f) { data[f] = document.getElementById(f).value; });
+            autoSave('emailSig', data);
+        }
+
+        fields.forEach(function(f) {
+            document.getElementById(f).addEventListener('input', saveFormData);
+        });
+
+        function generateSignature() {
+            var name = document.getElementById('sigName').value.trim();
+            if (!name) {
+                showToast('Please enter your full name.', 'error');
+                return;
+            }
+
+            var title = document.getElementById('sigTitle').value.trim();
+            var company = document.getElementById('sigCompany').value.trim();
+            var email = document.getElementById('sigEmail').value.trim();
+            var phone = document.getElementById('sigPhone').value.trim();
+            var website = document.getElementById('sigWebsite').value.trim();
+            var linkedin = document.getElementById('sigLinkedIn').value.trim();
+            var twitter = document.getElementById('sigTwitter').value.trim();
+
+            var html = '';
+            var display = '';
+
+            if (currentStyle === 'classic') {
+                html = buildClassic(name, title, company, email, phone, website, linkedin, twitter);
+                display = html;
+            } else if (currentStyle === 'modern') {
+                html = buildModern(name, title, company, email, phone, website, linkedin, twitter);
+                display = html;
+            } else {
+                html = buildMinimal(name, title, company, email, phone, website, linkedin, twitter);
+                display = html;
+            }
+
+            currentHTML = html;
+            sigPreview.innerHTML = display;
+            sigPreview.style.border = '1px solid #e2e8f0';
+            sigPreview.style.borderStyle = 'solid';
+            sigPreview.classList.remove('flex', 'items-center', 'justify-center');
+            sigActions.classList.remove('hidden');
+            saveFormData();
+            showToast('Signature generated! Copy the HTML code below.');
+        }
+
+        function buildClassic(name, title, company, email, phone, website, linkedin, twitter) {
+            var lines = [];
+            lines.push('<table cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#333333;">');
+            lines.push('<tr><td style="padding-bottom:8px;"><span style="font-size:16px;font-weight:bold;color:#1a1a1a;">' + esc(name) + '</span></td></tr>');
+            if (title || company) {
+                lines.push('<tr><td style="padding-bottom:8px;color:#555555;">' + esc(title) + (title && company ? ' at ' : '') + '<span style="font-weight:bold;">' + esc(company) + '</span></td></tr>');
+            }
+            lines.push('<tr><td style="border-top:2px solid #2563eb;padding-top:8px;"></td></tr>');
+            var contactParts = [];
+            if (email) contactParts.push('<span style="color:#555;">Email:</span> <a href="mailto:' + esc(email) + '" style="color:#2563eb;text-decoration:none;">' + esc(email) + '</a>');
+            if (phone) contactParts.push('<span style="color:#555;">Phone:</span> <a href="tel:' + esc(phone) + '" style="color:#2563eb;text-decoration:none;">' + esc(phone) + '</a>');
+            if (website) contactParts.push('<span style="color:#555;">Web:</span> <a href="' + esc(website) + '" style="color:#2563eb;text-decoration:none;">' + esc(website.replace(/^https?:\/\//, '')) + '</a>');
+            if (contactParts.length) lines.push('<tr><td style="padding-bottom:4px;font-size:12px;">' + contactParts.join(' &nbsp;|&nbsp; ') + '</td></tr>');
+            var socialParts = [];
+            if (linkedin) socialParts.push('<a href="' + esc(linkedin) + '" style="color:#2563eb;text-decoration:none;font-size:12px;">LinkedIn</a>');
+            if (twitter) socialParts.push('<a href="' + esc(twitter) + '" style="color:#2563eb;text-decoration:none;font-size:12px;">Twitter</a>');
+            if (socialParts.length) lines.push('<tr><td style="font-size:12px;">' + socialParts.join(' &nbsp;|&nbsp; ') + '</td></tr>');
+            lines.push('</table>');
+            return lines.join('\n');
+        }
+
+        function buildModern(name, title, company, email, phone, website, linkedin, twitter) {
+            var lines = [];
+            lines.push('<table cellpadding="0" cellspacing="0" style="font-family:\'Segoe UI\',Arial,sans-serif;font-size:13px;color:#333333;">');
+            lines.push('<tr>');
+            lines.push('<td style="border-left:4px solid #2563eb;padding-left:12px;vertical-align:top;">');
+            lines.push('<span style="font-size:18px;font-weight:bold;color:#0f172a;">' + esc(name) + '</span><br>');
+            if (title || company) {
+                lines.push('<span style="font-size:13px;color:#2563eb;font-weight:600;">' + esc(title) + (title && company ? ' | ' : '') + esc(company) + '</span><br>');
+            }
+            lines.push('<span style="font-size:12px;color:#64748b;line-height:1.8;">');
+            var contactParts = [];
+            if (email) contactParts.push('<a href="mailto:' + esc(email) + '" style="color:#475569;text-decoration:none;">' + esc(email) + '</a>');
+            if (phone) contactParts.push('<a href="tel:' + esc(phone) + '" style="color:#475569;text-decoration:none;">' + esc(phone) + '</a>');
+            if (website) contactParts.push('<a href="' + esc(website) + '" style="color:#2563eb;text-decoration:none;">' + esc(website.replace(/^https?:\/\//, '')) + '</a>');
+            lines.push(contactParts.join('<br>'));
+            lines.push('</span>');
+            if (linkedin || twitter) {
+                lines.push('<br><span style="font-size:11px;">');
+                var socialParts = [];
+                if (linkedin) socialParts.push('<a href="' + esc(linkedin) + '" style="color:#2563eb;text-decoration:none;font-weight:600;">LinkedIn</a>');
+                if (twitter) socialParts.push('<a href="' + esc(twitter) + '" style="color:#2563eb;text-decoration:none;font-weight:600;">Twitter</a>');
+                lines.push(socialParts.join(' &bull; '));
+                lines.push('</span>');
+            }
+            lines.push('</td></tr></table>');
+            return lines.join('\n');
+        }
+
+        function buildMinimal(name, title, company, email, phone, website, linkedin, twitter) {
+            var lines = [];
+            lines.push('<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:13px;color:#333;line-height:1.6;">');
+            lines.push('<strong style="font-size:15px;">' + esc(name) + '</strong>');
+            if (title || company) {
+                lines.push('<br><em style="color:#555;">' + esc(title) + (title && company ? ', ' : '') + esc(company) + '</em>');
+            }
+            if (email) lines.push('<br><a href="mailto:' + esc(email) + '" style="color:#2563eb;text-decoration:none;">' + esc(email) + '</a>');
+            if (phone) lines.push('<br>' + esc(phone));
+            if (website) lines.push('<br><a href="' + esc(website) + '" style="color:#2563eb;text-decoration:none;">' + esc(website.replace(/^https?:\/\//, '')) + '</a>');
+            if (linkedin || twitter) {
+                lines.push('<br>');
+                var socialParts = [];
+                if (linkedin) socialParts.push('<a href="' + esc(linkedin) + '" style="color:#2563eb;text-decoration:none;">LinkedIn</a>');
+                if (twitter) socialParts.push('<a href="' + esc(twitter) + '" style="color:#2563eb;text-decoration:none;">Twitter</a>');
+                lines.push(socialParts.join(' &middot; '));
+            }
+            lines.push('</div>');
+            return lines.join('\n');
+        }
+
+        function esc(str) {
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        btnGenerate.addEventListener('click', generateSignature);
+
+        btnCopyHTML.addEventListener('click', function() {
+            if (!currentHTML) { showToast('Generate a signature first.', 'error'); return; }
+            copyToClipboard(currentHTML, 'HTML signature copied to clipboard!');
+        });
+
+        btnCopyPlain.addEventListener('click', function() {
+            if (!currentHTML) { showToast('Generate a signature first.', 'error'); return; }
+            // Show in a modal-like textarea
+            var modal = document.createElement('div');
+            modal.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem;';
+            modal.innerHTML = '<div style="background:#fff;border-radius:1rem;max-width:700px;width:100%;max-height:80vh;overflow:auto;padding:1.5rem;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;"><h3 style="font-size:1.1rem;font-weight:700;color:#0f172a;">HTML Code</h3><button id="closeModal" style="background:none;border:none;cursor:pointer;padding:0.5rem;color:#64748b;"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></div><textarea readonly style="width:100%;height:300px;padding:1rem;font-family:monospace;font-size:12px;border:1px solid #e2e8f0;border-radius:0.5rem;resize:vertical;background:#f8fafc;color:#334155;">' + currentHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</textarea></div>';
+            document.body.appendChild(modal);
+            modal.querySelector('#closeModal').addEventListener('click', function() { modal.remove(); });
+            modal.addEventListener('click', function(e) { if (e.target === modal) modal.remove(); });
+        });
+
+        // Auto-generate if data exists
+        if (saved && saved.sigName) {
+            setTimeout(function() { btnGenerate.click(); }, 100);
+        }
+    })();
+    </script>
+</body>
+</html>

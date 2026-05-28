@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Repeater Online Free — Repeat Any Text | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Repeat any text or word multiple times with a custom separator. Free online text repeater tool. No login required.">
+    <meta name="keywords" content="text repeater, repeat text online, word repeater, string repeater, text duplicator, repeat text multiple times">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#7c3aed">
+    <meta property="og:title" content="Text Repeater Online Free — Repeat Any Text | OptiDrop">
+    <meta property="og:description" content="Repeat any text or word multiple times with a custom separator. Free online text repeater tool. No login required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/text/text-repeater.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Text Repeater Online Free — Repeat Any Text | OptiDrop">
+    <meta name="twitter:description" content="Repeat any text or word multiple times with a custom separator. Free online text repeater tool.">
+    <link rel="canonical" href="https://optidrop.online/tools/text/text-repeater.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Text Tools", "item": "https://optidrop.online/category/text-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Text Repeater", "item": "https://optidrop.online/tools/text/text-repeater.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Text Repeater",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Repeat any text or word multiple times with a custom separator. Free online text repeater tool. No login required."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many times can I repeat text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can repeat text up to 1000 times with our Text Repeater tool. The limit is in place to ensure your browser handles the output smoothly. For most use cases, this is more than enough."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I add custom separators between repeated text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can choose from several separator options: none (no separator), newline, comma, space, or a custom separator of your choice. The custom option lets you type any character or string to use as a separator."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the character limit for the input text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no strict character limit for the input text. However, repeating very long text many times may cause your browser to slow down due to memory constraints. For best performance, keep input text reasonably short when using high repeat counts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I download the repeated text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, after generating your repeated text, you can use the Download button to save the output as a plain text (.txt) file. You can also copy the result directly to your clipboard using the Copy button."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Text Repeater Online — Repeat Any Text Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Repeat any text or word multiple times with a custom separator. Choose from newline, comma, space, or your own separator. Copy or download the result. No upload, no sign-up — 100% free.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Input -->
+                    <div class="mb-5">
+                        <label for="inputText" class="block text-sm font-bold text-slate-700 mb-2">Text to Repeat</label>
+                        <input type="text" id="inputText" placeholder="Enter text or word to repeat..." class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                        <!-- Repeat Count -->
+                        <div>
+                            <label for="repeatCount" class="block text-sm font-bold text-slate-700 mb-2">Repeat Count</label>
+                            <input type="number" id="repeatCount" value="10" min="1" max="1000" class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            <p class="text-xs text-slate-400 mt-1">Maximum: 1000</p>
+                        </div>
+                        <!-- Separator -->
+                        <div>
+                            <label for="separator" class="block text-sm font-bold text-slate-700 mb-2">Separator</label>
+                            <select id="separator" class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                <option value="none">None</option>
+                                <option value="newline" selected>Newline</option>
+                                <option value="comma">Comma (,)</option>
+                                <option value="space">Space</option>
+                                <option value="custom">Custom...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Custom separator input (hidden by default) -->
+                    <div id="customSepWrap" class="mb-5 hidden">
+                        <label for="customSep" class="block text-sm font-bold text-slate-700 mb-2">Custom Separator</label>
+                        <input type="text" id="customSep" placeholder="Enter custom separator..." class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                    </div>
+
+                    <!-- Repeat Button -->
+                    <button id="btnRepeat" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md mb-5 flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                        Repeat Text
+                    </button>
+
+                    <!-- Output -->
+                    <div class="mb-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <label for="outputText" class="block text-sm font-bold text-slate-700">Output</label>
+                            <div class="flex gap-2">
+                                <button onclick="copyOutput()" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all flex items-center gap-1.5">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                                    Copy
+                                </button>
+                                <button onclick="downloadTextFile(document.getElementById('outputText').value, 'repeated-text.txt')" class="px-4 py-2 text-sm font-bold text-slate-600 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition-all flex items-center gap-1.5">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                    Download
+                                </button>
+                            </div>
+                        </div>
+                        <textarea id="outputText" readonly placeholder="Repeated text will appear here..." class="block w-full px-5 py-4 text-base border-2 border-slate-200 rounded-xl bg-slate-50 text-slate-900 font-medium resize-y cursor-default" style="min-height:200px;font-family:inherit;line-height:1.7;"></textarea>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="flex flex-wrap gap-4 text-sm text-slate-500">
+                        <span>Characters: <strong id="charCount" class="text-slate-700">0</strong></span>
+                        <span>Words: <strong id="wordCount" class="text-slate-700">0</strong></span>
+                        <span>Lines: <strong id="lineCount" class="text-slate-700">0</strong></span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online Text Repeater Tool</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Text Repeater is a free, browser-based tool that repeats any text or word a specified number of times. Whether you need to generate repeated patterns for testing, create text fills for design mockups, or simply repeat a word for fun, this tool does it instantly with your choice of separator.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Flexible Separator Options</h3>
+                <p class="text-slate-600 mb-4">Choose from no separator, newline, comma, space, or define your own custom separator. This makes it easy to generate comma-separated lists, vertical lists, space-separated text, or any custom format you need.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Up to 1000 Repetitions</h3>
+                <p class="text-slate-600">Repeat text up to 1000 times with a single click. The tool shows real-time character count, word count, and line count for the output. Copy the result to clipboard or download it as a text file. Everything runs in your browser — no data is sent to any server.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How many times can I repeat text?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        You can repeat text up to 1000 times with our Text Repeater tool. The limit is in place to ensure your browser handles the output smoothly. For most use cases, this is more than enough.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I add custom separators between repeated text?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, you can choose from several separator options: none (no separator), newline, comma, space, or a custom separator of your choice. The custom option lets you type any character or string to use as a separator.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the character limit for the input text?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        There is no strict character limit for the input text. However, repeating very long text many times may cause your browser to slow down due to memory constraints. For best performance, keep input text reasonably short when using high repeat counts.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I download the repeated text?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, after generating your repeated text, you can use the Download button to save the output as a plain text (.txt) file. You can also copy the result directly to your clipboard using the Copy button.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/word-counter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Word Counter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Count words, characters, sentences, and paragraphs in your text online.</span>
+            </a>
+            <a href="/tools/text-case-converter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Text Case Converter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Convert text to uppercase, lowercase, title case, and more instantly.</span>
+            </a>
+            <a href="/tools/text/lorem-ipsum-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Lorem Ipsum Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate Lorem Ipsum placeholder text instantly with paragraphs, sentences, or words.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var inputText = document.getElementById('inputText');
+        var repeatCount = document.getElementById('repeatCount');
+        var separator = document.getElementById('separator');
+        var customSepWrap = document.getElementById('customSepWrap');
+        var customSep = document.getElementById('customSep');
+        var outputText = document.getElementById('outputText');
+        var charCount = document.getElementById('charCount');
+        var wordCount = document.getElementById('wordCount');
+        var lineCount = document.getElementById('lineCount');
+
+        // Show/hide custom separator input
+        separator.addEventListener('change', function() {
+            if (separator.value === 'custom') {
+                customSepWrap.classList.remove('hidden');
+            } else {
+                customSepWrap.classList.add('hidden');
+            }
+        });
+
+        function getSeparator() {
+            switch (separator.value) {
+                case 'none': return '';
+                case 'newline': return '\n';
+                case 'comma': return ',';
+                case 'space': return ' ';
+                case 'custom': return customSep.value;
+                default: return '\n';
+            }
+        }
+
+        function repeatText() {
+            var text = inputText.value;
+            if (!text) {
+                showToast('Please enter some text to repeat.', 'error');
+                return;
+            }
+            var count = parseInt(repeatCount.value, 10);
+            if (isNaN(count) || count < 1) {
+                showToast('Please enter a valid repeat count (1-1000).', 'error');
+                return;
+            }
+            if (count > 1000) {
+                count = 1000;
+                repeatCount.value = 1000;
+            }
+
+            var sep = getSeparator();
+            var parts = [];
+            for (var i = 0; i < count; i++) {
+                parts.push(text);
+            }
+            var result;
+            if (separator.value === 'none') {
+                result = parts.join('');
+            } else {
+                result = parts.join(sep);
+            }
+
+            outputText.value = result;
+            updateStats();
+            showToast('Text repeated ' + count + ' times!', 'info');
+        }
+
+        function updateStats() {
+            var text = outputText.value;
+            charCount.textContent = text.length.toLocaleString();
+            var w = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+            wordCount.textContent = w.toLocaleString();
+            var l = text === '' ? 0 : text.split('\n').length;
+            lineCount.textContent = l.toLocaleString();
+        }
+
+        document.getElementById('btnRepeat').addEventListener('click', repeatText);
+
+        window.copyOutput = function() {
+            var text = outputText.value;
+            if (!text) {
+                showToast('Nothing to copy. Repeat some text first.', 'error');
+                return;
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showToast('Copied to clipboard!', 'info');
+                }).catch(function() {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        };
+
+        function fallbackCopy(text) {
+            outputText.select();
+            outputText.setSelectionRange(0, 99999);
+            try {
+                document.execCommand('copy');
+                showToast('Copied to clipboard!', 'info');
+            } catch (err) {
+                showToast('Failed to copy. Please select and copy manually.', 'error');
+            }
+        }
+
+        updateStats();
+    })();
+    </script>
+</body>
+</html>

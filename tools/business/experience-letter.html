@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Experience Letter Generator Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Generate professional experience certificates and relieving letters free. Download PDF instantly. No sign-up required.">
+    <meta name="keywords" content="experience letter generator, experience certificate, relieving letter, work experience letter, employment certificate, experience letter PDF, experience certificate online">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Free Experience Letter Generator Online | OptiDrop">
+    <meta property="og:description" content="Generate professional experience certificates and relieving letters free. Download PDF instantly. No sign-up required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/business/experience-letter.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Experience Letter Generator Online | OptiDrop">
+    <meta name="twitter:description" content="Generate professional experience certificates and relieving letters free. Download PDF.">
+    <link rel="canonical" href="https://optidrop.online/tools/business/experience-letter.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Business Tools", "item": "https://optidrop.online/tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Experience Letter Generator", "item": "https://optidrop.online/tools/business/experience-letter.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Experience Letter Generator",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Generate professional experience certificates and relieving letters free. Download PDF instantly. No sign-up required."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an experience letter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An experience letter (also called an experience certificate) is an official document issued by an employer to a departing or former employee. It certifies that the employee worked at the organization and includes details such as their job title, department, duration of employment, and a brief assessment of their conduct and performance. It serves as proof of work experience for future employment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should an experience letter include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An experience letter should include: the company name and address, employee's full name, employee's designation/job title, department, date of joining and last working day, a brief description of roles and responsibilities, a conduct and performance assessment, and the signature of the authorized person with company stamp. The letter should be on company letterhead for authenticity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is experience letter same as relieving letter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While often used interchangeably, there is a subtle difference. An experience letter details the employee's tenure, role, and performance during their time at the company. A relieving letter specifically confirms that the employee has been relieved from their duties and has completed all formalities. Some companies issue both separately, while others combine them into a single document."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to get experience letter from employer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To get an experience letter: submit a formal written request to your HR department or manager before your last working day, follow up if you don't receive it within a reasonable timeframe, check if your company has a standard process for issuing experience letters, and ensure all exit formalities (knowledge transfer, equipment return, clearance) are completed. Most companies issue it on or before the last working day."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Free Experience Letter Generator Online</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate professional experience certificates and relieving letters in minutes. Enter employee details, employment dates, and conduct rating — download a formal PDF instantly. 100% free, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Letter Type -->
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Letter Type</h3>
+                    <div class="flex bg-slate-100 rounded-xl p-1 mb-8 max-w-md">
+                        <button id="tabExperience" class="tab-btn active flex-1 px-4 py-3 text-sm font-bold rounded-lg transition-all">Experience Letter</button>
+                        <button id="tabRelieving" class="tab-btn flex-1 px-4 py-3 text-sm font-bold rounded-lg transition-all">Relieving Letter</button>
+                    </div>
+
+                    <!-- Company Details -->
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Company Details</h3>
+                    <div class="mb-6">
+                        <label for="companyName" class="block text-sm font-bold text-slate-700 mb-2">Company Name</label>
+                        <input type="text" id="companyName" placeholder="Your company name"
+                            class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                            autocomplete="off">
+                    </div>
+
+                    <!-- Employee Details -->
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Employee Details</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="empName" class="block text-sm font-bold text-slate-700 mb-2">Employee Name</label>
+                            <input type="text" id="empName" placeholder="Employee's full name"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="designation" class="block text-sm font-bold text-slate-700 mb-2">Designation</label>
+                            <input type="text" id="designation" placeholder="e.g. Software Engineer"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="department" class="block text-sm font-bold text-slate-700 mb-2">Department</label>
+                            <input type="text" id="department" placeholder="e.g. Engineering, Marketing"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="conduct" class="block text-sm font-bold text-slate-700 mb-2">Conduct Rating</label>
+                            <select id="conduct"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white cursor-pointer">
+                                <option value="Excellent">Excellent</option>
+                                <option value="Good" selected>Good</option>
+                                <option value="Satisfactory">Satisfactory</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Employment Dates -->
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Employment Period</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label for="joiningDate" class="block text-sm font-bold text-slate-700 mb-2">Joining Date</label>
+                            <input type="date" id="joiningDate"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="lastDate" class="block text-sm font-bold text-slate-700 mb-2">Last Working Date</label>
+                            <input type="date" id="lastDate"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3">
+                        <button id="btnGenerate" class="px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Download PDF
+                        </button>
+                        <button id="btnCopy" class="px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            Copy Text
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Experience Letter Generator — Create Professional Certificates Online</h2>
+                <p class="text-slate-600 mb-4">An experience letter is one of the most important documents an employee receives when leaving an organization. It serves as proof of employment, validates their professional experience, and is often required by new employers during the hiring process. OptiDrop's Experience Letter Generator creates formal, professional experience certificates and relieving letters in minutes.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Two Letter Types</h3>
+                <p class="text-slate-600 mb-4">Choose between an Experience Letter (which details the employee's tenure, role, and performance assessment) and a Relieving Letter (which formally confirms the employee has been relieved of duties). Both are commonly requested by employers and serve slightly different purposes in the hiring process.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Conduct Rating System</h3>
+                <p class="text-slate-600">The generator includes a conduct rating system (Excellent, Good, Satisfactory) that is incorporated into the letter's assessment of the employee. This provides a standardized way to communicate the employee's performance and behavior during their tenure.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is an experience letter?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        An experience letter (also called an experience certificate) is an official document issued by an employer to a departing or former employee. It certifies that the employee worked at the organization and includes details such as their job title, department, duration of employment, and a brief assessment of their conduct and performance. It serves as proof of work experience for future employment.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What should an experience letter include?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        An experience letter should include: the company name and address, employee's full name, employee's designation/job title, department, date of joining and last working day, a brief description of roles and responsibilities, a conduct and performance assessment, and the signature of the authorized person with company stamp. The letter should be on company letterhead for authenticity.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is experience letter same as relieving letter?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        While often used interchangeably, there is a subtle difference. An experience letter details the employee's tenure, role, and performance during their time at the company. A relieving letter specifically confirms that the employee has been relieved from their duties and has completed all formalities. Some companies issue both separately, while others combine them into a single document.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to get experience letter from employer?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To get an experience letter: submit a formal written request to your HR department or manager before your last working day, follow up if you don't receive it within a reasonable timeframe, check if your company has a standard process for issuing experience letters, and ensure all exit formalities (knowledge transfer, equipment return, clearance) are completed. Most companies issue it on or before the last working day.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/business/offer-letter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Offer Letter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate formal job offer letters with salary and benefits details.</span>
+                </a>
+                <a href="/tools/business/noc-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">NOC Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate No Objection Certificates for visa, education, and employment.</span>
+                </a>
+                <a href="/tools/business/freelance-contract.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Freelance Contract</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate professional freelance service agreements with payment terms.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var letterType = 'experience'; // or 'relieving'
+
+        var tabExp = document.getElementById('tabExperience');
+        var tabRel = document.getElementById('tabRelieving');
+
+        tabExp.addEventListener('click', function() {
+            letterType = 'experience';
+            tabExp.classList.add('active');
+            tabRel.classList.remove('active');
+            saveData();
+        });
+        tabRel.addEventListener('click', function() {
+            letterType = 'relieving';
+            tabRel.classList.add('active');
+            tabExp.classList.remove('active');
+            saveData();
+        });
+
+        function saveData() {
+            autoSave('experience_letter', {
+                type: letterType,
+                company: document.getElementById('companyName').value,
+                empName: document.getElementById('empName').value,
+                designation: document.getElementById('designation').value,
+                department: document.getElementById('department').value,
+                conduct: document.getElementById('conduct').value,
+                joining: document.getElementById('joiningDate').value,
+                lastDate: document.getElementById('lastDate').value
+            });
+        }
+
+        function loadData() {
+            var d = autoLoad('experience_letter');
+            if (!d) return;
+            letterType = d.type || 'experience';
+            if (letterType === 'relieving') {
+                tabRel.classList.add('active');
+                tabExp.classList.remove('active');
+            }
+            document.getElementById('companyName').value = d.company || '';
+            document.getElementById('empName').value = d.empName || '';
+            document.getElementById('designation').value = d.designation || '';
+            document.getElementById('department').value = d.department || '';
+            if (d.conduct) document.getElementById('conduct').value = d.conduct;
+            document.getElementById('joiningDate').value = d.joining || '';
+            document.getElementById('lastDate').value = d.lastDate || '';
+        }
+
+        function getFormData() {
+            return {
+                company: document.getElementById('companyName').value || '[Company Name]',
+                empName: document.getElementById('empName').value || '[Employee Name]',
+                designation: document.getElementById('designation').value || '[Designation]',
+                department: document.getElementById('department').value || '[Department]',
+                conduct: document.getElementById('conduct').value,
+                joining: document.getElementById('joiningDate').value || '[Joining Date]',
+                lastDate: document.getElementById('lastDate').value || '[Last Date]'
+            };
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return '[Date]';
+            var d = new Date(dateStr + 'T00:00:00');
+            return d.toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'});
+        }
+
+        function calcDuration(join, last) {
+            if (!join || !last) return '[Duration]';
+            var j = new Date(join);
+            var l = new Date(last);
+            var months = (l.getFullYear() - j.getFullYear()) * 12 + (l.getMonth() - j.getMonth());
+            var years = Math.floor(months / 12);
+            var remMonths = months % 12;
+            var parts = [];
+            if (years > 0) parts.push(years + (years === 1 ? ' year' : ' years'));
+            if (remMonths > 0) parts.push(remMonths + (remMonths === 1 ? ' month' : ' months'));
+            return parts.join(' and ') || 'Less than a month';
+        }
+
+        function buildText() {
+            var d = getFormData();
+            var duration = calcDuration(d.joining, d.lastDate);
+            var date = new Date().toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'});
+
+            if (letterType === 'experience') {
+                var text = 'EXPERIENCE CERTIFICATE\n\n';
+                text += 'Date: ' + date + '\n\n';
+                text += 'To Whom It May Concern,\n\n';
+                text += 'This is to certify that ' + d.empName + ' was employed with ' + d.company + ' as ' + d.designation + ' in the ' + d.department + ' department from ' + formatDate(d.joining) + ' to ' + formatDate(d.lastDate) + ' (a period of ' + duration + ').\n\n';
+                text += 'During their tenure, ' + d.empName + ' demonstrated ' + d.conduct.toLowerCase() + ' conduct and performance. They were responsible for the duties associated with their role and performed them diligently.\n\n';
+                text += 'We wish ' + d.empName + ' all the best in their future endeavors.\n\n';
+                text += 'Sincerely,\n';
+                text += 'Authorized Signatory\n';
+                text += d.company + '\n';
+                return text;
+            } else {
+                var text = 'RELIEVING LETTER\n\n';
+                text += 'Date: ' + date + '\n\n';
+                text += 'To Whom It May Concern,\n\n';
+                text += 'This is to certify that ' + d.empName + ', who held the position of ' + d.designation + ' in the ' + d.department + ' department at ' + d.company + ', has been relieved from their duties effective ' + formatDate(d.lastDate) + '.\n\n';
+                text += d.empName + ' was employed with us from ' + formatDate(d.joining) + ' to ' + formatDate(d.lastDate) + ' (a period of ' + duration + ').\n\n';
+                text += 'During their employment, their conduct and performance were ' + d.conduct.toLowerCase() + '. They have been relieved of all responsibilities and obligations towards the organization.\n\n';
+                text += 'We wish them success in their future career.\n\n';
+                text += 'Sincerely,\n';
+                text += 'Authorized Signatory\n';
+                text += d.company + '\n';
+                return text;
+            }
+        }
+
+        function generatePDF() {
+            var d = getFormData();
+            var jsPDF = window.jspdf.jsPDF;
+            var doc = new jsPDF();
+            var y = 20;
+            var duration = calcDuration(d.joining, d.lastDate);
+            var date = new Date().toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'});
+            var title = letterType === 'experience' ? 'EXPERIENCE CERTIFICATE' : 'RELIEVING LETTER';
+
+            // Header
+            doc.setFillColor(37, 99, 235);
+            doc.rect(0, 0, 210, 25, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'bold');
+            doc.text(title, 105, 16, {align:'center'});
+            y = 40;
+
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(10);
+            doc.setFont('helvetica', 'normal');
+            doc.text('Date: ' + date, 14, y);
+            y += 12;
+
+            doc.setFont('helvetica', 'bold');
+            doc.text('To Whom It May Concern,', 14, y);
+            y += 12;
+
+            doc.setFont('helvetica', 'normal');
+
+            if (letterType === 'experience') {
+                var bodyText = 'This is to certify that ' + d.empName + ' was employed with ' + d.company + ' as ' + d.designation + ' in the ' + d.department + ' department from ' + formatDate(d.joining) + ' to ' + formatDate(d.lastDate) + ' (a period of ' + duration + ').';
+                doc.splitTextToSize(bodyText, 180).forEach(function(line) {
+                    if (y > 275) { doc.addPage(); y = 20; }
+                    doc.text(line, 14, y); y += 6;
+                });
+                y += 6;
+
+                var conductText = 'During their tenure, ' + d.empName + ' demonstrated ' + d.conduct.toLowerCase() + ' conduct and performance. They were responsible for the duties associated with their role and performed them diligently.';
+                doc.splitTextToSize(conductText, 180).forEach(function(line) {
+                    if (y > 275) { doc.addPage(); y = 20; }
+                    doc.text(line, 14, y); y += 6;
+                });
+                y += 6;
+
+                var wishText = 'We wish ' + d.empName + ' all the best in their future endeavors.';
+                doc.splitTextToSize(wishText, 180).forEach(function(line) {
+                    if (y > 275) { doc.addPage(); y = 20; }
+                    doc.text(line, 14, y); y += 6;
+                });
+            } else {
+                var relBody = 'This is to certify that ' + d.empName + ', who held the position of ' + d.designation + ' in the ' + d.department + ' department at ' + d.company + ', has been relieved from their duties effective ' + formatDate(d.lastDate) + '.';
+                doc.splitTextToSize(relBody, 180).forEach(function(line) {
+                    if (y > 275) { doc.addPage(); y = 20; }
+                    doc.text(line, 14, y); y += 6;
+                });
+                y += 6;
+
+                var relPeriod = d.empName + ' was employed with us from ' + formatDate(d.joining) + ' to ' + formatDate(d.lastDate) + ' (a period of ' + duration + ').';
+                doc.splitTextToSize(relPeriod, 180).forEach(function(line) {
+                    if (y > 275) { doc.addPage(); y = 20; }
+                    doc.text(line, 14, y); y += 6;
+                });
+                y += 6;
+
+                var relConduct = 'During their employment, their conduct and performance were ' + d.conduct.toLowerCase() + '. They have been relieved of all responsibilities and obligations towards the organization.';
+                doc.splitTextToSize(relConduct, 180).forEach(function(line) {
+                    if (y > 275) { doc.addPage(); y = 20; }
+                    doc.text(line, 14, y); y += 6;
+                });
+                y += 6;
+
+                doc.splitTextToSize('We wish them success in their future career.', 180).forEach(function(line) {
+                    if (y > 275) { doc.addPage(); y = 20; }
+                    doc.text(line, 14, y); y += 6;
+                });
+            }
+
+            y += 20;
+            if (y > 260) { doc.addPage(); y = 20; }
+            doc.setFont('helvetica', 'normal');
+            doc.text('Sincerely,', 14, y);
+            y += 16;
+            doc.text('___________________________', 14, y);
+            y += 6;
+            doc.setFont('helvetica', 'bold');
+            doc.text('Authorized Signatory', 14, y);
+            y += 6;
+            doc.setFont('helvetica', 'normal');
+            doc.text(d.company, 14, y);
+
+            var suffix = letterType === 'experience' ? 'Experience_Letter' : 'Relieving_Letter';
+            doc.save(suffix + '_' + d.empName.replace(/\s+/g, '_') + '.pdf');
+            showToast(title + ' PDF downloaded!');
+        }
+
+        // Init
+        loadData();
+        ['companyName','empName','designation','department','joiningDate','lastDate'].forEach(function(id) {
+            document.getElementById(id).addEventListener('input', saveData);
+        });
+        document.getElementById('conduct').addEventListener('change', saveData);
+
+        document.getElementById('btnGenerate').addEventListener('click', generatePDF);
+        document.getElementById('btnCopy').addEventListener('click', function() { copyToClipboard(buildText(), 'Letter text copied!'); });
+    })();
+    </script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 
 // ── Footer Year ──────────────────────────────────────────────
 (function () {
-    const el = document.getElementById('year');
+    var el = document.getElementById('year');
     if (el) el.textContent = new Date().getFullYear();
 })();
 
@@ -91,6 +91,83 @@ function setupDropzone(dropzoneEl, fileInputEl, callback, acceptMultiple) {
     }
 }
 
+// ── Copy to Clipboard ───────────────────────────────────────
+function copyToClipboard(text, successMsg) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+            showToast(successMsg || 'Copied to clipboard!');
+        }).catch(function () {
+            fallbackCopy(text, successMsg);
+        });
+    } else {
+        fallbackCopy(text, successMsg);
+    }
+}
+function fallbackCopy(text, successMsg) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); showToast(successMsg || 'Copied to clipboard!'); }
+    catch (e) { showToast('Copy failed. Please select and copy manually.', 'error'); }
+    document.body.removeChild(ta);
+}
+
+// ── localStorage Auto-Save ───────────────────────────────────
+function autoSave(key, data) {
+    try { localStorage.setItem('optidrop_' + key, JSON.stringify(data)); } catch (e) {}
+}
+function autoLoad(key) {
+    try { var d = localStorage.getItem('optidrop_' + key); return d ? JSON.parse(d) : null; } catch (e) { return null; }
+}
+
+// ── Format Currency ──────────────────────────────────────────
+function formatCurrency(num, symbol) {
+    symbol = symbol || 'Rs. ';
+    return symbol + Math.round(num).toLocaleString('en-IN');
+}
+
+// ── Download Text as File ────────────────────────────────────
+function downloadTextFile(content, filename) {
+    var blob = new Blob([content], { type: 'text/plain' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a); URL.revokeObjectURL(url);
+}
+
+// ── Tools Directory Search + Filter ──────────────────────────
+function initToolsDirectory() {
+    var searchInput = document.getElementById('dirSearch');
+    var chips = document.querySelectorAll('.category-chip');
+    var cards = document.querySelectorAll('.tool-card[data-category]');
+    if (!searchInput || !cards.length) return;
+
+    var activeCategory = 'all';
+
+    function filterCards() {
+        var query = searchInput.value.toLowerCase().trim();
+        cards.forEach(function (card) {
+            var title = (card.querySelector('.tool-card-title') || {}).textContent || '';
+            var desc = (card.querySelector('.tool-card-desc') || {}).textContent || '';
+            var cat = card.getAttribute('data-category') || '';
+            var matchSearch = !query || title.toLowerCase().indexOf(query) !== -1 || desc.toLowerCase().indexOf(query) !== -1;
+            var matchCat = activeCategory === 'all' || cat === activeCategory;
+            card.style.display = (matchSearch && matchCat) ? '' : 'none';
+        });
+    }
+
+    searchInput.addEventListener('input', filterCards);
+    chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+            chips.forEach(function (c) { c.classList.remove('active'); });
+            chip.classList.add('active');
+            activeCategory = chip.getAttribute('data-filter') || 'all';
+            filterCards();
+        });
+    });
+}
+
 // ── FAQ Accordion ────────────────────────────────────────────
 document.querySelectorAll('.faq-question').forEach(function (btn) {
     btn.addEventListener('click', function (e) {
@@ -117,12 +194,28 @@ document.querySelectorAll('.faq-question').forEach(function (btn) {
     if (!searchInput) return;
     searchInput.addEventListener('input', function () {
         var query = this.value.toLowerCase().trim();
+        var sections = document.querySelectorAll('.category-section');
         var cards = document.querySelectorAll('.tool-card');
-        cards.forEach(function (card) {
-            var title = (card.querySelector('.tool-card-title') || {}).textContent || '';
-            var desc = (card.querySelector('.tool-card-desc') || {}).textContent || '';
-            var match = !query || title.toLowerCase().indexOf(query) !== -1 || desc.toLowerCase().indexOf(query) !== -1;
-            card.style.display = match ? '' : 'none';
-        });
+        if (sections.length) {
+            sections.forEach(function (section) {
+                var sectionCards = section.querySelectorAll('.tool-card');
+                var anyVisible = false;
+                sectionCards.forEach(function (card) {
+                    var title = (card.querySelector('.tool-card-title') || {}).textContent || '';
+                    var desc = (card.querySelector('.tool-card-desc') || {}).textContent || '';
+                    var match = !query || title.toLowerCase().indexOf(query) !== -1 || desc.toLowerCase().indexOf(query) !== -1;
+                    card.style.display = match ? '' : 'none';
+                    if (match) anyVisible = true;
+                });
+                section.style.display = anyVisible ? '' : 'none';
+            });
+        } else {
+            cards.forEach(function (card) {
+                var title = (card.querySelector('.tool-card-title') || {}).textContent || '';
+                var desc = (card.querySelector('.tool-card-desc') || {}).textContent || '';
+                var match = !query || title.toLowerCase().indexOf(query) !== -1 || desc.toLowerCase().indexOf(query) !== -1;
+                card.style.display = match ? '' : 'none';
+            });
+        }
     });
 })();

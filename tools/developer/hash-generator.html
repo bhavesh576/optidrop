@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Generator Free Online — SHA256 SHA512 | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Free online hash generator. Generate SHA-256 and SHA-512 hashes instantly using native SubtleCrypto API. Copy hashes, see hash length. No upload required.">
+    <meta name="keywords" content="hash generator online, sha256 generator, sha512 generator, hash calculator, sha hash online, generate hash free, cryptographic hash">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Hash Generator Free Online — SHA256 SHA512 | OptiDrop">
+    <meta property="og:description" content="Free online hash generator. Generate SHA-256 and SHA-512 hashes using native SubtleCrypto API. No upload required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/hash-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hash Generator Free Online — SHA256 SHA512 | OptiDrop">
+    <meta name="twitter:description" content="Free online hash generator. Generate SHA-256 and SHA-512 hashes. No upload required.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/hash-generator.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/tools/developer/"},
+        {"@type": "ListItem", "position": 3, "name": "Hash Generator", "item": "https://optidrop.online/tools/developer/hash-generator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Hash Generator",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online hash generator. Generate SHA-256 and SHA-512 hashes using the native SubtleCrypto API. All processing happens in your browser."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a hash?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A hash is a fixed-size string of characters generated from input data using a mathematical algorithm. The same input always produces the same hash, but the hash cannot be reversed to get the original input. Hashes are used for data integrity verification, password storage, and digital signatures."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is SHA-256 used for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SHA-256 (Secure Hash Algorithm 256-bit) is widely used for: verifying file integrity (checksums), digital signatures, blockchain and cryptocurrency (Bitcoin uses SHA-256), password hashing (with salting), and SSL/TLS certificates. It produces a 256-bit (64 character) hexadecimal hash."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to hash a password?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To hash a password, type it into the input field and click Generate. The tool produces SHA-256 and SHA-512 hashes. Note that for production password storage, you should always use a unique salt per password and a slow hashing algorithm like bcrypt or Argon2. Plain SHA hashes are too fast for secure password storage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between SHA-256 and SHA-512?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SHA-256 produces a 256-bit (64 hex character) hash, while SHA-512 produces a 512-bit (128 hex character) hash. SHA-512 is not necessarily more secure than SHA-256 for most purposes, but it is faster on 64-bit processors and provides a larger hash space. Both are part of the SHA-2 family and are considered cryptographically secure."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .hash-result-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.2s;
+        }
+        .hash-result-card:hover {
+            border-color: #93c5fd;
+        }
+        .hash-label {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .hash-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.15rem 0.5rem;
+            border-radius: 9999px;
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+        .hash-value {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: #0f172a;
+            word-break: break-all;
+            background: #fff;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e2e8f0;
+            min-height: 60px;
+            max-height: 120px;
+            overflow-y: auto;
+            margin-bottom: 0.5rem;
+        }
+        .hash-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .hash-length {
+            font-size: 0.75rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+        .hash-copy-btn {
+            padding: 0.35rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            background: #fff;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .hash-copy-btn:hover {
+            border-color: #3b82f6;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Hash Generator Online — SHA-256 &amp; SHA-512 Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate SHA-256 and SHA-512 hashes instantly using the native SubtleCrypto API. Copy each hash, see hash length. No upload, no sign-up, 100% private.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Input -->
+                    <div class="mb-6">
+                        <label for="hashInput" class="block text-sm font-bold text-slate-700 mb-2">Input Text</label>
+                        <textarea id="hashInput" placeholder="Type or paste text here to generate hashes..." class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y" style="min-height:120px;font-family:inherit;line-height:1.7;"></textarea>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <div class="mb-6">
+                        <button id="btnGenerate" class="w-full px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+                            Generate Hashes
+                        </button>
+                    </div>
+
+                    <!-- SHA-256 Result -->
+                    <div class="hash-result-card">
+                        <div class="hash-label">
+                            SHA-256
+                            <span class="hash-badge">256-bit</span>
+                        </div>
+                        <div class="hash-value" id="sha256Output">Hash will appear here...</div>
+                        <div class="hash-meta">
+                            <span class="hash-length">Length: <strong id="sha256Length">0</strong> hex characters</span>
+                            <button class="hash-copy-btn" onclick="copyHash('sha256Output')">Copy SHA-256</button>
+                        </div>
+                    </div>
+
+                    <!-- SHA-512 Result -->
+                    <div class="hash-result-card">
+                        <div class="hash-label">
+                            SHA-512
+                            <span class="hash-badge">512-bit</span>
+                        </div>
+                        <div class="hash-value" id="sha512Output">Hash will appear here...</div>
+                        <div class="hash-meta">
+                            <span class="hash-length">Length: <strong id="sha512Length">0</strong> hex characters</span>
+                            <button class="hash-copy-btn" onclick="copyHash('sha512Output')">Copy SHA-512</button>
+                        </div>
+                    </div>
+
+                    <!-- Input Stats -->
+                    <div class="flex flex-wrap gap-4 text-sm text-slate-500 mt-4">
+                        <span>Input characters: <strong id="inputCharCount" class="text-slate-800">0</strong></span>
+                        <span>Input bytes (UTF-8): <strong id="inputByteCount" class="text-slate-800">0</strong></span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online Hash Generator — SHA-256 &amp; SHA-512</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Hash Generator creates SHA-256 and SHA-512 hashes from any text input using the browser's native SubtleCrypto API (window.crypto.subtle.digest). No external libraries are used. All hashing happens locally in your browser — nothing is sent to any server.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">SHA-256 Hash</h3>
+                <p class="text-slate-600 mb-4">SHA-256 produces a 256-bit (32-byte) hash, displayed as 64 hexadecimal characters. It is part of the SHA-2 family designed by the NSA and is widely used in blockchain technology (Bitcoin), SSL certificates, file integrity checks, and digital signatures.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">SHA-512 Hash</h3>
+                <p class="text-slate-600 mb-4">SHA-512 produces a 512-bit (64-byte) hash, displayed as 128 hexadecimal characters. It uses 64-bit operations which makes it faster than SHA-256 on 64-bit processors. SHA-512 is commonly used in TLS/SSL, Unix/Linux password hashing (as SHA-512crypt), and various security protocols.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Cryptographically Secure</h3>
+                <p class="text-slate-600">The SubtleCrypto API provided by modern browsers is designed to be timing-safe and resistant to side-channel attacks. It provides the same quality of hashing as dedicated cryptographic libraries, making it suitable for security-sensitive applications.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is a hash?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A hash is a fixed-size string of characters generated from input data using a mathematical algorithm. The same input always produces the same hash, but the hash cannot be reversed to get the original input. Hashes are used for data integrity verification, password storage, and digital signatures.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is SHA-256 used for?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        SHA-256 (Secure Hash Algorithm 256-bit) is widely used for: verifying file integrity (checksums), digital signatures, blockchain and cryptocurrency (Bitcoin uses SHA-256), password hashing (with salting), and SSL/TLS certificates. It produces a 256-bit (64 character) hexadecimal hash.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to hash a password?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To hash a password, type it into the input field and click Generate. The tool produces SHA-256 and SHA-512 hashes. Note that for production password storage, you should always use a unique salt per password and a slow hashing algorithm like bcrypt or Argon2. Plain SHA hashes are too fast for secure password storage.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the difference between SHA-256 and SHA-512?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        SHA-256 produces a 256-bit (64 hex character) hash, while SHA-512 produces a 512-bit (128 hex character) hash. SHA-512 is not necessarily more secure than SHA-256 for most purposes, but it is faster on 64-bit processors and provides a larger hash space. Both are part of the SHA-2 family and are considered cryptographically secure.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/password-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Password Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate strong, secure random passwords with custom options.</span>
+            </a>
+            <a href="/tools/developer/base64.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Base64 Encoder</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode Base64 text and files instantly.</span>
+            </a>
+            <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Format, minify, and validate JSON with syntax highlighting.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var hashInput = document.getElementById('hashInput');
+        var btnGenerate = document.getElementById('btnGenerate');
+        var sha256Output = document.getElementById('sha256Output');
+        var sha512Output = document.getElementById('sha512Output');
+        var sha256Length = document.getElementById('sha256Length');
+        var sha512Length = document.getElementById('sha512Length');
+        var inputCharCount = document.getElementById('inputCharCount');
+        var inputByteCount = document.getElementById('inputByteCount');
+
+        function arrayBufferToHex(buffer) {
+            var bytes = new Uint8Array(buffer);
+            var hex = '';
+            for (var i = 0; i < bytes.length; i++) {
+                var h = bytes[i].toString(16);
+                hex += (h.length === 1 ? '0' : '') + h;
+            }
+            return hex;
+        }
+
+        function getUtf8ByteCount(str) {
+            return new TextEncoder().encode(str).length;
+        }
+
+        async function generateHashes() {
+            var text = hashInput.value;
+            if (!text) {
+                showToast('Please enter some text to hash.', 'error');
+                return;
+            }
+
+            // Update input stats
+            inputCharCount.textContent = text.length.toLocaleString();
+            inputByteCount.textContent = getUtf8ByteCount(text).toLocaleString();
+
+            var encoded = new TextEncoder().encode(text);
+
+            try {
+                // SHA-256
+                var sha256Buffer = await crypto.subtle.digest('SHA-256', encoded);
+                var sha256Hex = arrayBufferToHex(sha256Buffer);
+                sha256Output.textContent = sha256Hex;
+                sha256Length.textContent = sha256Hex.length;
+
+                // SHA-512
+                var sha512Buffer = await crypto.subtle.digest('SHA-512', encoded);
+                var sha512Hex = arrayBufferToHex(sha512Buffer);
+                sha512Output.textContent = sha512Hex;
+                sha512Length.textContent = sha512Hex.length;
+
+                showToast('Hashes generated successfully!');
+            } catch (e) {
+                showToast('Hashing failed: ' + e.message, 'error');
+            }
+        }
+
+        btnGenerate.addEventListener('click', generateHashes);
+
+        // Generate on Enter key (Ctrl+Enter for textarea)
+        hashInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+                e.preventDefault();
+                generateHashes();
+            }
+        });
+
+        // Live update input stats
+        hashInput.addEventListener('input', function() {
+            var text = this.value;
+            inputCharCount.textContent = text.length.toLocaleString();
+            inputByteCount.textContent = getUtf8ByteCount(text).length.toLocaleString();
+        });
+
+        // Copy function
+        window.copyHash = function(elId) {
+            var el = document.getElementById(elId);
+            if (!el || el.textContent.indexOf('Hash will appear') !== -1) {
+                showToast('Nothing to copy. Generate hashes first.', 'error');
+                return;
+            }
+            copyToClipboard(el.textContent);
+        };
+    })();
+    </script>
+</body>
+</html>

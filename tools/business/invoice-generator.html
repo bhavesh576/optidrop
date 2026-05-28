@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Invoice Generator Online — Download PDF Invoice | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Create professional invoices online free. Add line items, tax, and download as PDF. No sign-up, no watermark.">
+    <meta name="keywords" content="invoice generator, free invoice maker, online invoice, PDF invoice generator, create invoice online, invoice template">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Free Invoice Generator Online — Download PDF Invoice | OptiDrop">
+    <meta property="og:description" content="Create professional invoices online free. Add line items, tax, and download as PDF. No sign-up, no watermark.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/business/invoice-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Invoice Generator Online — Download PDF Invoice | OptiDrop">
+    <meta name="twitter:description" content="Create professional invoices online free. Add line items, tax, and download as PDF.">
+    <link rel="canonical" href="https://optidrop.online/tools/business/invoice-generator.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Business Tools", "item": "https://optidrop.online/tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Invoice Generator", "item": "https://optidrop.online/tools/business/invoice-generator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Invoice Generator",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Create professional invoices online free. Add line items, tax, and download as PDF. No sign-up, no watermark."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What should an invoice include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A professional invoice should include your business name and contact details, the client's name and address, a unique invoice number, the invoice date and due date, a detailed list of products or services with quantities and unit prices, the subtotal, applicable tax rate and amount, and the total amount due. Payment terms and accepted payment methods should also be specified."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to number invoices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Invoice numbers should be unique and sequential. Common formats include simple numbering (INV-001, INV-002), date-based numbering (INV-2024-001), or client-based numbering (ACME-001). The key is consistency — choose a format and stick with it. Never reuse an invoice number, as this helps with bookkeeping and tax records."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is an invoice due?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The due date depends on the payment terms you set. Common terms include Net 30 (due 30 days from invoice date), Net 15 (due in 15 days), Net 60, or Due on Receipt. For freelancers, Net 15 or Net 30 is most common. Always clearly state the due date on your invoice to avoid payment delays."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between an invoice and a receipt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An invoice is a bill sent to a client requesting payment for goods or services — it is issued before payment is made. A receipt is proof of payment that is issued after payment has been received. Invoices are used for accounting and record-keeping before transactions are complete, while receipts confirm that a transaction has been finalized."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Free Invoice Generator Online — Download PDF Invoice</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Create professional invoices in minutes. Add your business details, line items, tax rate, and currency — then download a clean PDF invoice instantly. 100% free, no sign-up required.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Business & Client Details -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label for="bizName" class="block text-sm font-bold text-slate-700 mb-2">Your Business Name &amp; Address</label>
+                            <textarea id="bizName" rows="3" placeholder="Acme Corp&#10;123 Business St, City, Country"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off"></textarea>
+                        </div>
+                        <div>
+                            <label for="clientName" class="block text-sm font-bold text-slate-700 mb-2">Client Name &amp; Address</label>
+                            <textarea id="clientName" rows="3" placeholder="Client Corp&#10;456 Client Ave, City, Country"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Invoice Details -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                        <div>
+                            <label for="invNumber" class="block text-sm font-bold text-slate-700 mb-2">Invoice Number</label>
+                            <input type="text" id="invNumber" placeholder="INV-001"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="invDate" class="block text-sm font-bold text-slate-700 mb-2">Invoice Date</label>
+                            <input type="date" id="invDate"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="dueDate" class="block text-sm font-bold text-slate-700 mb-2">Due Date</label>
+                            <input type="date" id="dueDate"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="currency" class="block text-sm font-bold text-slate-700 mb-2">Currency</label>
+                            <select id="currency"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white cursor-pointer">
+                                <option value="USD">USD ($)</option>
+                                <option value="GBP">GBP (&pound;)</option>
+                                <option value="EUR">EUR (&euro;)</option>
+                                <option value="INR">INR (&#8377;)</option>
+                                <option value="AUD">AUD (A$)</option>
+                                <option value="CAD">CAD (C$)</option>
+                                <option value="JPY">JPY (&yen;)</option>
+                                <option value="CNY">CNY (&yen;)</option>
+                                <option value="BRL">BRL (R$)</option>
+                                <option value="MXN">MXN (MX$)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Line Items Table -->
+                    <h3 class="text-lg font-bold text-slate-800 mb-3">Line Items</h3>
+                    <div class="table-responsive mb-4">
+                        <table class="w-full text-sm" id="itemsTable">
+                            <thead>
+                                <tr class="bg-slate-50">
+                                    <th class="text-left px-3 py-3 font-bold text-slate-600">Description</th>
+                                    <th class="text-center px-3 py-3 font-bold text-slate-600" style="width:100px">Qty</th>
+                                    <th class="text-right px-3 py-3 font-bold text-slate-600" style="width:130px">Unit Price</th>
+                                    <th class="text-right px-3 py-3 font-bold text-slate-600" style="width:120px">Amount</th>
+                                    <th class="px-3 py-3" style="width:50px"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="itemsBody">
+                            </tbody>
+                        </table>
+                    </div>
+                    <button id="addItemBtn" class="mb-6 px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors inline-flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                        Add Line Item
+                    </button>
+
+                    <!-- Tax & Totals -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label for="taxRate" class="block text-sm font-bold text-slate-700 mb-2">Tax Rate</label>
+                            <select id="taxRate"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white cursor-pointer">
+                                <option value="0">0% — No Tax</option>
+                                <option value="5">5%</option>
+                                <option value="10">10%</option>
+                                <option value="15">15%</option>
+                                <option value="18" selected>18%</option>
+                                <option value="20">20%</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col justify-end">
+                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2">
+                                <div class="flex justify-between text-sm font-semibold text-slate-600">
+                                    <span>Subtotal:</span>
+                                    <span id="subtotalDisplay">$0.00</span>
+                                </div>
+                                <div class="flex justify-between text-sm font-semibold text-slate-600">
+                                    <span>Tax (<span id="taxRateDisplay">18</span>%):</span>
+                                    <span id="taxDisplay">$0.00</span>
+                                </div>
+                                <div class="border-t border-slate-300 my-1"></div>
+                                <div class="flex justify-between text-lg font-extrabold text-slate-900">
+                                    <span>Total:</span>
+                                    <span id="totalDisplay">$0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3">
+                        <button id="btnGenerate" class="px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Download PDF
+                        </button>
+                        <button id="btnCopy" class="px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            Copy Text
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Invoice Generator — Create Professional PDF Invoices Online</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Invoice Generator lets you create polished, professional invoices in minutes without any design skills or expensive software. Simply enter your business details, add line items with quantities and prices, select your currency and tax rate, and download a clean PDF invoice ready to send to your clients.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Multi-Currency Support</h3>
+                <p class="text-slate-600 mb-4">Support for 10+ currencies including USD, EUR, GBP, INR, AUD, CAD, JPY, CNY, BRL, and MXN. Whether you are billing locally or internationally, the invoice generator formats everything correctly with the right currency symbol.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Automatic Tax Calculation</h3>
+                <p class="text-slate-600">Select from common tax rates (0%, 5%, 10%, 15%, 18%, 20%) and the tool automatically calculates the subtotal, tax amount, and grand total. No manual math needed — just focus on your business.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What should an invoice include?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A professional invoice should include your business name and contact details, the client's name and address, a unique invoice number, the invoice date and due date, a detailed list of products or services with quantities and unit prices, the subtotal, applicable tax rate and amount, and the total amount due. Payment terms and accepted payment methods should also be specified.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to number invoices?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Invoice numbers should be unique and sequential. Common formats include simple numbering (INV-001, INV-002), date-based numbering (INV-2024-001), or client-based numbering (ACME-001). The key is consistency — choose a format and stick with it. Never reuse an invoice number, as this helps with bookkeeping and tax records.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        When is an invoice due?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The due date depends on the payment terms you set. Common terms include Net 30 (due 30 days from invoice date), Net 15 (due in 15 days), Net 60, or Due on Receipt. For freelancers, Net 15 or Net 30 is most common. Always clearly state the due date on your invoice to avoid payment delays.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the difference between an invoice and a receipt?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        An invoice is a bill sent to a client requesting payment for goods or services — it is issued before payment is made. A receipt is proof of payment that is issued after payment has been received. Invoices are used for accounting and record-keeping before transactions are complete, while receipts confirm that a transaction has been finalized.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/business/freelance-contract.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Freelance Contract</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate professional freelance service agreements with payment terms.</span>
+                </a>
+                <a href="/tools/business/business-proposal.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Business Proposal</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Create professional business proposals with services and pricing.</span>
+                </a>
+                <a href="/tools/business/salary-slip.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Salary Slip</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate professional salary slips with earnings and deductions.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var CURRENCY_SYMBOLS = {USD:'$',GBP:'£',EUR:'€',INR:'₹',AUD:'A$',CAD:'C$',JPY:'¥',CNY:'¥',BRL:'R$',MXN:'MX$'};
+        var itemCount = 0;
+
+        function getCurrencySymbol() {
+            return CURRENCY_SYMBOLS[document.getElementById('currency').value] || '$';
+        }
+
+        function setDefaultDates() {
+            var today = new Date();
+            var due = new Date(today);
+            due.setDate(due.getDate() + 30);
+            document.getElementById('invDate').value = today.toISOString().split('T')[0];
+            document.getElementById('dueDate').value = due.toISOString().split('T')[0];
+        }
+
+        function addRow(desc, qty, price) {
+            itemCount++;
+            var tbody = document.getElementById('itemsBody');
+            var tr = document.createElement('tr');
+            tr.className = 'border-b border-slate-100';
+            tr.setAttribute('data-id', itemCount);
+            tr.innerHTML =
+                '<td class="px-2 py-2"><input type="text" placeholder="Item description" value="' + (desc || '') + '" class="block w-full px-3 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium item-desc" autocomplete="off"></td>' +
+                '<td class="px-2 py-2"><input type="number" placeholder="1" min="0" step="1" value="' + (qty || '') + '" class="block w-full px-3 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium text-center item-qty" autocomplete="off"></td>' +
+                '<td class="px-2 py-2"><input type="number" placeholder="0.00" min="0" step="0.01" value="' + (price || '') + '" class="block w-full px-3 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium text-right item-price" autocomplete="off"></td>' +
+                '<td class="px-2 py-2 text-right font-bold text-slate-800 item-amount">$0.00</td>' +
+                '<td class="px-2 py-2 text-center"><button class="remove-item text-slate-400 hover:text-red-500 transition-colors p-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button></td>';
+            tbody.appendChild(tr);
+            attachRowEvents(tr);
+            recalculate();
+            saveData();
+        }
+
+        function attachRowEvents(tr) {
+            tr.querySelector('.item-qty').addEventListener('input', function() { recalculate(); saveData(); });
+            tr.querySelector('.item-price').addEventListener('input', function() { recalculate(); saveData(); });
+            tr.querySelector('.item-desc').addEventListener('input', saveData);
+            tr.querySelector('.remove-item').addEventListener('click', function() {
+                tr.remove();
+                recalculate();
+                saveData();
+            });
+        }
+
+        function recalculate() {
+            var sym = getCurrencySymbol();
+            var subtotal = 0;
+            var rows = document.getElementById('itemsBody').querySelectorAll('tr');
+            rows.forEach(function(row) {
+                var qty = parseFloat(row.querySelector('.item-qty').value) || 0;
+                var price = parseFloat(row.querySelector('.item-price').value) || 0;
+                var amount = qty * price;
+                row.querySelector('.item-amount').textContent = sym + amount.toFixed(2);
+                subtotal += amount;
+            });
+            var taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+            var tax = subtotal * taxRate / 100;
+            var total = subtotal + tax;
+            document.getElementById('subtotalDisplay').textContent = sym + subtotal.toFixed(2);
+            document.getElementById('taxRateDisplay').textContent = taxRate;
+            document.getElementById('taxDisplay').textContent = sym + tax.toFixed(2);
+            document.getElementById('totalDisplay').textContent = sym + total.toFixed(2);
+        }
+
+        function getItems() {
+            var items = [];
+            document.getElementById('itemsBody').querySelectorAll('tr').forEach(function(row) {
+                items.push({
+                    desc: row.querySelector('.item-desc').value || '',
+                    qty: parseFloat(row.querySelector('.item-qty').value) || 0,
+                    price: parseFloat(row.querySelector('.item-price').value) || 0
+                });
+            });
+            return items;
+        }
+
+        function saveData() {
+            autoSave('invoice_gen', {
+                biz: document.getElementById('bizName').value,
+                client: document.getElementById('clientName').value,
+                invNum: document.getElementById('invNumber').value,
+                invDate: document.getElementById('invDate').value,
+                dueDate: document.getElementById('dueDate').value,
+                currency: document.getElementById('currency').value,
+                taxRate: document.getElementById('taxRate').value,
+                items: getItems()
+            });
+        }
+
+        function loadData() {
+            var d = autoLoad('invoice_gen');
+            if (!d) return;
+            document.getElementById('bizName').value = d.biz || '';
+            document.getElementById('clientName').value = d.client || '';
+            document.getElementById('invNumber').value = d.invNum || '';
+            document.getElementById('invDate').value = d.invDate || '';
+            document.getElementById('dueDate').value = d.dueDate || '';
+            if (d.currency) document.getElementById('currency').value = d.currency;
+            if (d.taxRate) document.getElementById('taxRate').value = d.taxRate;
+            if (d.items && d.items.length) {
+                d.items.forEach(function(it) { addRow(it.desc, it.qty, it.price); });
+            } else {
+                addRow('', '', '');
+            }
+            recalculate();
+        }
+
+        function generatePDF() {
+            var jsPDF = window.jspdf.jsPDF;
+            var doc = new jsPDF();
+            var sym = getCurrencySymbol();
+            var items = getItems();
+            var y = 20;
+
+            doc.setFontSize(22);
+            doc.setFont('helvetica', 'bold');
+            doc.text('INVOICE', 14, y);
+            y += 10;
+
+            doc.setFontSize(10);
+            doc.setFont('helvetica', 'normal');
+            doc.text('Invoice #: ' + (document.getElementById('invNumber').value || 'N/A'), 14, y);
+            doc.text('Date: ' + (document.getElementById('invDate').value || 'N/A'), 120, y);
+            y += 6;
+            doc.text('Due Date: ' + (document.getElementById('dueDate').value || 'N/A'), 14, y);
+            y += 12;
+
+            doc.setFont('helvetica', 'bold');
+            doc.text('From:', 14, y);
+            doc.text('Bill To:', 120, y);
+            y += 6;
+            doc.setFont('helvetica', 'normal');
+            var bizLines = (document.getElementById('bizName').value || 'Your Business').split('\n');
+            var clientLines = (document.getElementById('clientName').value || 'Client').split('\n');
+            var maxLines = Math.max(bizLines.length, clientLines.length);
+            for (var i = 0; i < maxLines; i++) {
+                if (bizLines[i]) doc.text(bizLines[i], 14, y);
+                if (clientLines[i]) doc.text(clientLines[i], 120, y);
+                y += 5;
+            }
+            y += 8;
+
+            doc.setFillColor(37, 99, 235);
+            doc.rect(14, y, 182, 8, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(9);
+            doc.text('Description', 16, y + 5.5);
+            doc.text('Qty', 130, y + 5.5);
+            doc.text('Unit Price', 148, y + 5.5);
+            doc.text('Amount', 175, y + 5.5);
+            y += 10;
+
+            doc.setTextColor(0, 0, 0);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(10);
+            var subtotal = 0;
+            items.forEach(function(item) {
+                var amount = item.qty * item.price;
+                subtotal += amount;
+                doc.text(item.desc.substring(0, 50) || '-', 16, y);
+                doc.text(String(item.qty), 134, y);
+                doc.text(sym + item.price.toFixed(2), 150, y);
+                doc.text(sym + amount.toFixed(2), 177, y);
+                y += 7;
+                if (y > 270) { doc.addPage(); y = 20; }
+            });
+
+            y += 5;
+            doc.setDrawColor(200, 200, 200);
+            doc.line(130, y, 196, y);
+            y += 8;
+            var taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+            var tax = subtotal * taxRate / 100;
+            var total = subtotal + tax;
+
+            doc.setFontSize(11);
+            doc.text('Subtotal:', 135, y);
+            doc.text(sym + subtotal.toFixed(2), 177, y);
+            y += 7;
+            doc.text('Tax (' + taxRate + '%):', 135, y);
+            doc.text(sym + tax.toFixed(2), 177, y);
+            y += 3;
+            doc.line(130, y, 196, y);
+            y += 7;
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(13);
+            doc.text('Total:', 135, y);
+            doc.text(sym + total.toFixed(2), 173, y);
+
+            doc.save('Invoice_' + (document.getElementById('invNumber').value || 'document') + '.pdf');
+            showToast('Invoice PDF downloaded!');
+        }
+
+        function generateText() {
+            var sym = getCurrencySymbol();
+            var items = getItems();
+            var subtotal = 0;
+            var lines = ['INVOICE', '', 'Invoice #: ' + (document.getElementById('invNumber').value || 'N/A'),
+                'Date: ' + (document.getElementById('invDate').value || 'N/A'),
+                'Due Date: ' + (document.getElementById('dueDate').value || 'N/A'), '',
+                'From:', document.getElementById('bizName').value || 'Your Business', '',
+                'Bill To:', document.getElementById('clientName').value || 'Client', '',
+                '--- Line Items ---'];
+            items.forEach(function(item) {
+                var amount = item.qty * item.price;
+                subtotal += amount;
+                lines.push(item.desc + ' | Qty: ' + item.qty + ' | ' + sym + item.price.toFixed(2) + ' | ' + sym + amount.toFixed(2));
+            });
+            var taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+            var tax = subtotal * taxRate / 100;
+            var total = subtotal + tax;
+            lines.push('', 'Subtotal: ' + sym + subtotal.toFixed(2), 'Tax (' + taxRate + '%): ' + sym + tax.toFixed(2), 'Total: ' + sym + total.toFixed(2));
+            return lines.join('\n');
+        }
+
+        // Init
+        setDefaultDates();
+        loadData();
+
+        document.getElementById('addItemBtn').addEventListener('click', function() { addRow('', '', ''); });
+        document.getElementById('taxRate').addEventListener('change', function() { recalculate(); saveData(); });
+        document.getElementById('currency').addEventListener('change', function() { recalculate(); saveData(); });
+        document.getElementById('bizName').addEventListener('input', saveData);
+        document.getElementById('clientName').addEventListener('input', saveData);
+        document.getElementById('invNumber').addEventListener('input', saveData);
+        document.getElementById('invDate').addEventListener('input', saveData);
+        document.getElementById('dueDate').addEventListener('input', saveData);
+
+        document.getElementById('btnGenerate').addEventListener('click', generatePDF);
+        document.getElementById('btnCopy').addEventListener('click', function() { copyToClipboard(generateText(), 'Invoice text copied!'); });
+    })();
+    </script>
+</body>
+</html>

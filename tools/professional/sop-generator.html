@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free SOP Generator Online — Statement of Purpose | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Write a compelling Statement of Purpose for university applications free. Generate, edit, and download as PDF. No sign-up.">
+    <meta name="keywords" content="free sop generator, statement of purpose generator, sop writer online, university application sop, graduate school sop, sop template free">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Free SOP Generator Online — Statement of Purpose | OptiDrop">
+    <meta property="og:description" content="Write a compelling Statement of Purpose for university applications free. Generate, edit, and download as PDF. No sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/professional/sop-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free SOP Generator Online — Statement of Purpose | OptiDrop">
+    <meta name="twitter:description" content="Write a compelling Statement of Purpose for university applications. Generate and download as PDF.">
+    <link rel="canonical" href="https://optidrop.online/tools/professional/sop-generator.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Professional Tools", "item": "https://optidrop.online/tools/professional/"},
+        {"@type": "ListItem", "position": 3, "name": "SOP Generator", "item": "https://optidrop.online/tools/professional/sop-generator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop SOP Generator",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Write a compelling Statement of Purpose for university applications free. Generate, edit, and download as PDF."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long should a Statement of Purpose be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most universities require an SOP between 500 to 1000 words, typically fitting on one to two single-spaced pages. Some programs specify a word limit, so always check the application guidelines. This generator creates SOPs of approximately 600-800 words by default, which is within the standard range."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I include in an SOP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An SOP should include your academic background, relevant work experience, research interests, why you chose the specific program and university, your career goals, and what makes you a strong candidate. It should tell a coherent story that connects your past experiences to your future aspirations through this specific program."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I start a Statement of Purpose?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with a compelling opening that captures the reader's attention — this could be a defining moment, a key motivation, or a specific experience that sparked your interest in the field. Avoid generic openings like 'I have always been passionate about...' Instead, be specific and personal. Then transition into your academic and professional background."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do universities look for in an SOP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Universities look for clarity of purpose, a genuine connection between your background and the program, evidence of research or professional competence, a clear articulation of career goals, and fit with the department's strengths. They want to see that you have done your research about the program and can articulate why it is the right next step for your career."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Free SOP Generator — Write a Statement of Purpose Online</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate a compelling Statement of Purpose for graduate school, MBA, or PhD applications. Enter your details, generate a structured SOP, edit it, and download as PDF. No sign-up, 100% free.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-5xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Form Section -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                        <div class="space-y-4">
+                            <div>
+                                <label for="sopName" class="block text-sm font-bold text-slate-700 mb-2">Your Name *</label>
+                                <input type="text" id="sopName" placeholder="John Smith"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                            <div>
+                                <label for="sopUniversity" class="block text-sm font-bold text-slate-700 mb-2">Target University *</label>
+                                <input type="text" id="sopUniversity" placeholder="Stanford University"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                            <div>
+                                <label for="sopProgram" class="block text-sm font-bold text-slate-700 mb-2">Target Program *</label>
+                                <input type="text" id="sopProgram" placeholder="M.S. Computer Science"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                            <div>
+                                <label for="sopQualification" class="block text-sm font-bold text-slate-700 mb-2">Current Qualification</label>
+                                <input type="text" id="sopQualification" placeholder="B.Tech Computer Science, IIT Delhi"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="sopWork" class="block text-sm font-bold text-slate-700 mb-2">Work Experience</label>
+                                <textarea id="sopWork" rows="2" placeholder="2 years as Software Engineer at Google, working on ML infrastructure"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y"></textarea>
+                            </div>
+                            <div>
+                                <label for="sopResearch" class="block text-sm font-bold text-slate-700 mb-2">Research Interests</label>
+                                <textarea id="sopResearch" rows="2" placeholder="Machine learning, natural language processing, deep learning"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y"></textarea>
+                            </div>
+                            <div>
+                                <label for="sopGoals" class="block text-sm font-bold text-slate-700 mb-2">Career Goals</label>
+                                <textarea id="sopGoals" rows="2" placeholder="Become a research scientist in AI, contribute to cutting-edge NLP research"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y"></textarea>
+                            </div>
+                            <div>
+                                <label for="sopWhy" class="block text-sm font-bold text-slate-700 mb-2">Why This University</label>
+                                <textarea id="sopWhy" rows="2" placeholder="World-class AI lab, Prof. Smith's work on transformers, Silicon Valley location"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center mb-6">
+                        <button id="btnGenerate" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                            Generate Statement of Purpose
+                        </button>
+                    </div>
+
+                    <!-- Preview Section -->
+                    <div id="sopPreviewSection" class="hidden">
+                        <div class="flex items-center justify-between mb-3">
+                            <label class="block text-sm font-bold text-slate-700">Generated SOP (editable)</label>
+                            <div class="flex items-center gap-4">
+                                <span id="sopWordCount" class="text-xs font-semibold text-slate-400">0 words</span>
+                            </div>
+                        </div>
+                        <textarea id="sopOutput" rows="20"
+                            class="block w-full px-6 py-6 text-base border-2 border-slate-200 rounded-2xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y leading-relaxed"
+                            style="font-family:Georgia,serif;min-height:400px;"></textarea>
+
+                        <div class="flex flex-col sm:flex-row gap-3 mt-4">
+                            <button id="btnCopy" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md transition-all flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                                Copy to Clipboard
+                            </button>
+                            <button id="btnDownloadPDF" class="w-full px-6 py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 shadow-md transition-all flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download as PDF
+                            </button>
+                            <button id="btnRegenerate" class="w-full px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                                Regenerate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free SOP Generator — Write Your Statement of Purpose</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's SOP Generator creates a well-structured Statement of Purpose based on the information you provide. A Statement of Purpose is one of the most important components of a graduate school application — it tells the admissions committee who you are, what you have accomplished, and what you hope to achieve. This tool generates a complete, editable SOP that you can further customize to match your voice and specific program requirements.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Structured for Maximum Impact</h3>
+                <p class="text-slate-600 mb-4">The generated SOP follows a proven structure used by successful applicants: a compelling introduction, your academic background, relevant work and research experience, why you chose this specific program and university, your career goals, and a strong conclusion. Each section flows logically into the next, creating a coherent narrative that demonstrates your fit for the program.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Edit and Download as PDF</h3>
+                <p class="text-slate-600">After generating your SOP, you can edit it directly in the text area to add personal details, adjust the tone, or incorporate specific experiences. The word count updates in real-time as you edit. When you are satisfied, download the final version as a clean PDF document ready for submission. The PDF uses a professional serif font and proper formatting for academic documents.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How long should a Statement of Purpose be?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Most universities require an SOP between 500 to 1000 words, typically fitting on one to two single-spaced pages. Some programs specify a word limit, so always check the application guidelines. This generator creates SOPs of approximately 600-800 words by default, which is within the standard range.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What should I include in an SOP?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        An SOP should include your academic background, relevant work experience, research interests, why you chose the specific program and university, your career goals, and what makes you a strong candidate. It should tell a coherent story that connects your past experiences to your future aspirations through this specific program.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I start a Statement of Purpose?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Start with a compelling opening that captures the reader's attention — this could be a defining moment, a key motivation, or a specific experience that sparked your interest in the field. Avoid generic openings like 'I have always been passionate about...' Instead, be specific and personal. Then transition into your academic and professional background.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What do universities look for in an SOP?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Universities look for clarity of purpose, a genuine connection between your background and the program, evidence of research or professional competence, a clear articulation of career goals, and fit with the department's strengths. They want to see that you have done your research about the program and can articulate why it is the right next step for your career.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/qr-code-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Resume Builder</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Build a professional resume with templates and download as PDF.</span>
+            </a>
+            <a href="/qr-code-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Cover Letter Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate a tailored cover letter for your job application.</span>
+            </a>
+            <a href="/qr-code-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Internship Letter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Create a professional internship request or completion letter.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var btnGenerate = document.getElementById('btnGenerate');
+        var btnCopy = document.getElementById('btnCopy');
+        var btnDownloadPDF = document.getElementById('btnDownloadPDF');
+        var btnRegenerate = document.getElementById('btnRegenerate');
+        var sopOutput = document.getElementById('sopOutput');
+        var sopPreviewSection = document.getElementById('sopPreviewSection');
+        var sopWordCount = document.getElementById('sopWordCount');
+
+        var fields = ['sopName','sopUniversity','sopProgram','sopQualification','sopWork','sopResearch','sopGoals','sopWhy'];
+
+        // Auto-save
+        var saved = autoLoad('sopGen');
+        if (saved) {
+            fields.forEach(function(f) {
+                if (saved[f]) document.getElementById(f).value = saved[f];
+            });
+        }
+
+        function saveFormData() {
+            var data = {};
+            fields.forEach(function(f) { data[f] = document.getElementById(f).value; });
+            autoSave('sopGen', data);
+        }
+
+        fields.forEach(function(f) {
+            document.getElementById(f).addEventListener('input', saveFormData);
+        });
+
+        function updateWordCount() {
+            var text = sopOutput.value.trim();
+            var count = text ? text.split(/\s+/).filter(function(w){return w.length>0;}).length : 0;
+            sopWordCount.textContent = count + ' words';
+        }
+
+        sopOutput.addEventListener('input', updateWordCount);
+
+        function generateSOP() {
+            var name = document.getElementById('sopName').value.trim();
+            var university = document.getElementById('sopUniversity').value.trim();
+            var program = document.getElementById('sopProgram').value.trim();
+
+            if (!name || !university || !program) {
+                showToast('Please fill in your name, target university, and target program.', 'error');
+                return;
+            }
+
+            var qualification = document.getElementById('sopQualification').value.trim();
+            var work = document.getElementById('sopWork').value.trim();
+            var research = document.getElementById('sopResearch').value.trim();
+            var goals = document.getElementById('sopGoals').value.trim();
+            var why = document.getElementById('sopWhy').value.trim();
+
+            var sop = buildSOP(name, university, program, qualification, work, research, goals, why);
+            sopOutput.value = sop;
+
+            sopPreviewSection.classList.remove('hidden');
+            updateWordCount();
+            saveFormData();
+
+            // Scroll to preview
+            sopPreviewSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            showToast('SOP generated! Edit as needed and download as PDF.');
+        }
+
+        function buildSOP(name, university, program, qualification, work, research, goals, why) {
+            var paragraphs = [];
+
+            // Introduction
+            var intro = 'My interest in ' + (research || program) + ' was first sparked during ';
+            if (qualification) {
+                intro += 'my studies at ' + qualification.split(',')[0].trim() + ', ';
+            } else {
+                intro += 'my undergraduate studies, ';
+            }
+            intro += 'when I encountered the profound impact that advanced knowledge in this field can have on solving real-world problems. ';
+            intro += 'This realization has guided my academic and professional journey, and it is with great enthusiasm that I submit my application for the ' + program + ' program at ' + university + '. ';
+            intro += 'I am confident that the rigorous academic environment and cutting-edge research opportunities at ' + university + ' will provide the ideal platform for me to achieve my scholarly and professional aspirations.';
+            paragraphs.push(intro);
+
+            // Academic Background
+            if (qualification) {
+                var academic = 'I completed my ' + qualification + ', where I developed a strong foundation in ';
+                if (research) {
+                    academic += research.split(',').slice(0,2).join(' and ') + '. ';
+                } else {
+                    academic += 'the core principles of my discipline. ';
+                }
+                academic += 'My academic journey was marked by a consistent pursuit of excellence, and I was fortunate to work on projects that deepened my understanding of ';
+                academic += (research || 'the subject') + '. ';
+                academic += 'The rigorous curriculum and collaborative learning environment shaped my analytical thinking and prepared me for advanced study.';
+                paragraphs.push(academic);
+            }
+
+            // Work Experience
+            if (work) {
+                var workPara = 'Following my academic pursuits, I gained valuable professional experience as ' + work + '. ';
+                workPara += 'This experience provided me with practical insights into the challenges and opportunities within the field. ';
+                workPara += 'I was able to apply theoretical knowledge to real-world scenarios, develop problem-solving skills, and understand the importance of innovation in driving progress. ';
+                workPara += 'The professional exposure reinforced my desire to pursue advanced studies and contribute meaningfully to the field through research and scholarship.';
+                paragraphs.push(workPara);
+            }
+
+            // Research Interests
+            if (research) {
+                var researchPara = 'My research interests lie primarily in ' + research + '. ';
+                researchPara += 'I am particularly fascinated by the intersection of theory and application in this domain, and I believe there is immense potential for groundbreaking contributions. ';
+                researchPara += 'I am eager to explore these areas further under the guidance of distinguished faculty members at ' + university + ', whose work in these fields has been widely recognized and celebrated.';
+                paragraphs.push(researchPara);
+            }
+
+            // Why This University
+            var whyPara = 'I have chosen ' + university + ' for my graduate studies for several compelling reasons. ';
+            if (why) {
+                whyPara += why + '. ';
+            }
+            whyPara += 'The ' + program + ' program at ' + university + ' is renowned for its academic rigor, innovative research, and commitment to nurturing the next generation of scholars and professionals. ';
+            whyPara += 'I am particularly drawn to the collaborative research culture and the opportunity to work alongside faculty members who are leaders in their respective fields. ';
+            whyPara += 'I am confident that the resources, mentorship, and intellectual environment at ' + university + ' will enable me to make significant contributions to the field.';
+            paragraphs.push(whyPara);
+
+            // Career Goals
+            if (goals) {
+                var goalsPara = 'My long-term career goal is to ' + goals + '. ';
+                goalsPara += 'I believe that the ' + program + ' at ' + university + ' will equip me with the advanced knowledge, research skills, and professional network necessary to achieve this ambition. ';
+                goalsPara += 'I envision myself contributing to the field through a combination of research, practice, and mentorship, and I am committed to making a positive impact on both the academic community and society at large.';
+                paragraphs.push(goalsPara);
+            }
+
+            // Conclusion
+            var conclusion = 'In conclusion, I bring to ' + university + ' a strong academic background';
+            if (work) conclusion += ', relevant professional experience';
+            if (research) conclusion += ', and a deep passion for ' + research;
+            conclusion += '. ';
+            conclusion += 'I am eager to immerse myself in the vibrant academic community at ' + university + ' and contribute to the ' + program + ' program through hard work, intellectual curiosity, and a commitment to excellence. ';
+            conclusion += 'I look forward to the opportunity to be part of ' + university + ' and to grow both as a scholar and as a professional. Thank you for considering my application.';
+            paragraphs.push(conclusion);
+
+            return paragraphs.join('\n\n');
+        }
+
+        btnGenerate.addEventListener('click', generateSOP);
+        btnRegenerate.addEventListener('click', generateSOP);
+
+        btnCopy.addEventListener('click', function() {
+            if (!sopOutput.value.trim()) { showToast('Generate an SOP first.', 'error'); return; }
+            copyToClipboard(sopOutput.value, 'SOP copied to clipboard!');
+        });
+
+        btnDownloadPDF.addEventListener('click', function() {
+            var text = sopOutput.value.trim();
+            if (!text) { showToast('Generate an SOP first.', 'error'); return; }
+
+            try {
+                var jsPDF = window.jspdf.jsPDF;
+                var doc = new jsPDF('p', 'mm', 'a4');
+                var pageWidth = doc.internal.pageSize.getWidth();
+                var pageHeight = doc.internal.pageSize.getHeight();
+                var margin = 25;
+                var maxWidth = pageWidth - margin * 2;
+                var y = margin;
+
+                // Title
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(16);
+                var name = document.getElementById('sopName').value.trim();
+                var program = document.getElementById('sopProgram').value.trim();
+                var university = document.getElementById('sopUniversity').value.trim();
+                doc.text('Statement of Purpose', pageWidth / 2, y, { align: 'center' });
+                y += 8;
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(11);
+                doc.text(name + ' — ' + program + ', ' + university, pageWidth / 2, y, { align: 'center' });
+                y += 12;
+
+                // Body
+                doc.setFont('times', 'normal');
+                doc.setFontSize(12);
+                var paragraphs = text.split(/\n\n+/);
+                paragraphs.forEach(function(para) {
+                    var lines = doc.splitTextToSize(para.trim(), maxWidth);
+                    lines.forEach(function(line) {
+                        if (y > pageHeight - margin) {
+                            doc.addPage();
+                            y = margin;
+                        }
+                        doc.text(line, margin, y);
+                        y += 6;
+                    });
+                    y += 4;
+                });
+
+                doc.save('Statement_of_Purpose_' + name.replace(/\s+/g, '_') + '.pdf');
+                showToast('PDF downloaded successfully!');
+            } catch (e) {
+                console.error('PDF generation error:', e);
+                showToast('Failed to generate PDF. Please try again.', 'error');
+            }
+        });
+
+        // Auto-generate if data exists
+        if (saved && saved.sopName && saved.sopUniversity && saved.sopProgram) {
+            setTimeout(function() { btnGenerate.click(); }, 100);
+        }
+    })();
+    </script>
+</body>
+</html>

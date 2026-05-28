@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Resume Builder Online — Download PDF Resume | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Build a professional resume online free. Choose from 4 templates including ATS friendly. Download as PDF instantly. No sign-up required.">
+    <meta name="keywords" content="resume builder, free resume builder, online resume maker, PDF resume download, ATS friendly resume, resume template">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Free Resume Builder Online — Download PDF Resume | OptiDrop">
+    <meta property="og:description" content="Build a professional resume online free. Choose from 4 templates including ATS friendly. Download as PDF instantly. No sign-up required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/career/resume-builder.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Resume Builder Online — Download PDF Resume | OptiDrop">
+    <meta name="twitter:description" content="Build a professional resume online free. Choose from 4 templates including ATS friendly. Download as PDF instantly. No sign-up required.">
+    <link rel="canonical" href="https://optidrop.online/tools/career/resume-builder.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Career Tools", "item": "https://optidrop.online/tools/career/"},
+        {"@type": "ListItem", "position": 3, "name": "Resume Builder", "item": "https://optidrop.online/tools/career/resume-builder.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Resume Builder",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Build a professional resume online free. Choose from 4 templates including ATS friendly. Download as PDF instantly. No sign-up required."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an ATS friendly resume?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An ATS friendly resume is designed to pass through Applicant Tracking Systems used by employers to scan and filter resumes. It uses simple formatting, standard section headings, no graphics or tables, and clean text that automated systems can easily parse. The ATS Friendly template in this builder uses a straightforward layout optimized for these systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long should a resume be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For most professionals, a resume should be one page. If you have more than 10 years of relevant experience, two pages is acceptable. Recent graduates and entry-level candidates should always aim for one page. Focus on the most relevant and recent experience that matches the job you are applying for."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What to include in a professional summary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A professional summary should be 2-3 sentences that highlight your years of experience, key skills, and career achievements. It should be tailored to each job application and include relevant keywords from the job description. Focus on what value you bring to the employer rather than what you want from the job."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to list skills on a resume?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "List your skills in a dedicated section using comma-separated values or bullet points. Include both hard skills (technical abilities like programming languages, software proficiency) and soft skills (communication, leadership). Prioritize skills mentioned in the job description. Group related skills together and place the most relevant ones first."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .template-thumb { border: 3px solid #e2e8f0; border-radius: 0.75rem; padding: 0.75rem; cursor: pointer; transition: all 0.2s; text-align: center; background: #fff; }
+        .template-thumb:hover { border-color: #93c5fd; }
+        .template-thumb.active { border-color: #2563eb; background: #eff6ff; }
+        .template-thumb .tpl-name { font-size: 0.75rem; font-weight: 700; margin-top: 0.375rem; }
+        /* Resume preview styles */
+        .resume-preview { background: #fff; padding: 2rem; font-size: 0.85rem; line-height: 1.6; color: #1e293b; min-height: 800px; }
+        .resume-preview h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.25rem; }
+        .resume-preview h2 { font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.25rem; margin: 1rem 0 0.5rem; }
+        .resume-preview .contact-line { font-size: 0.8rem; color: #64748b; }
+        .resume-preview .exp-item { margin-bottom: 0.75rem; }
+        .resume-preview .exp-header { display: flex; justify-content: space-between; font-weight: 600; }
+        .resume-preview .exp-sub { color: #64748b; font-size: 0.8rem; }
+        .resume-preview .skills-list { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+        .resume-preview .skill-tag { background: #f1f5f9; padding: 0.15rem 0.5rem; border-radius: 0.25rem; font-size: 0.8rem; }
+
+        /* Template: Modern */
+        .tpl-modern h2 { border-bottom-color: #2563eb; color: #2563eb; }
+        .tpl-modern h1 { color: #1e3a8a; }
+
+        /* Template: Minimal */
+        .tpl-minimal h2 { border-bottom: 1px solid #cbd5e1; text-transform: none; letter-spacing: 0; }
+        .tpl-minimal h1 { font-weight: 600; font-size: 1.25rem; }
+
+        /* Template: ATS Friendly */
+        .tpl-ats { font-family: 'Times New Roman', serif; }
+        .tpl-ats h1 { font-size: 1.35rem; text-align: center; }
+        .tpl-ats h2 { font-size: 0.95rem; }
+        .tpl-ats .contact-line { text-align: center; }
+
+        @media print {
+            .resume-preview { border: none; padding: 0.5in; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Free Resume Builder Online — Download PDF Resume</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Build a professional resume in minutes. Choose from 4 templates, fill in your details, preview live, and download as PDF. No sign-up, no watermarks, 100% free.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-6xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Template Selector -->
+                    <div class="mb-8">
+                        <label class="block text-sm font-bold text-slate-700 mb-3">Choose Template</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <div class="template-thumb active" data-tpl="classic" onclick="selectTemplate('classic')">
+                                <div class="text-2xl">&#128196;</div>
+                                <div class="tpl-name">Classic</div>
+                            </div>
+                            <div class="template-thumb" data-tpl="modern" onclick="selectTemplate('modern')">
+                                <div class="text-2xl">&#127912;</div>
+                                <div class="tpl-name">Modern</div>
+                            </div>
+                            <div class="template-thumb" data-tpl="minimal" onclick="selectTemplate('minimal')">
+                                <div class="text-2xl">&#9998;</div>
+                                <div class="tpl-name">Minimal</div>
+                            </div>
+                            <div class="template-thumb" data-tpl="ats" onclick="selectTemplate('ats')">
+                                <div class="text-2xl">&#9989;</div>
+                                <div class="tpl-name">ATS Friendly</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- LEFT: Form -->
+                        <div>
+                            <!-- Personal Info -->
+                            <h3 class="text-lg font-bold text-slate-900 mb-4">Personal Information</h3>
+                            <div class="space-y-3 mb-6">
+                                <input type="text" id="rName" placeholder="Full Name" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <input type="email" id="rEmail" placeholder="Email Address" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                                    <input type="tel" id="rPhone" placeholder="Phone Number" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <input type="text" id="rLocation" placeholder="City, State" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                                    <input type="url" id="rLinkedin" placeholder="LinkedIn URL (optional)" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                                </div>
+                            </div>
+
+                            <!-- Professional Summary -->
+                            <h3 class="text-lg font-bold text-slate-900 mb-4">Professional Summary</h3>
+                            <div class="mb-6">
+                                <textarea id="rSummary" placeholder="Brief overview of your professional background, key strengths, and career goals..." rows="4" maxlength="400" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"></textarea>
+                                <p class="text-xs text-slate-400 mt-1"><span id="summaryCount">0</span>/400 characters</p>
+                            </div>
+
+                            <!-- Work Experience -->
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-bold text-slate-900">Work Experience</h3>
+                                <button onclick="addExperience()" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">+ Add</button>
+                            </div>
+                            <div id="experienceList" class="mb-6"></div>
+
+                            <!-- Education -->
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-bold text-slate-900">Education</h3>
+                                <button onclick="addEducation()" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">+ Add</button>
+                            </div>
+                            <div id="educationList" class="mb-6"></div>
+
+                            <!-- Skills -->
+                            <h3 class="text-lg font-bold text-slate-900 mb-4">Skills</h3>
+                            <div class="mb-6">
+                                <textarea id="rSkills" placeholder="e.g. JavaScript, Project Management, Data Analysis, Communication" rows="2" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"></textarea>
+                                <p class="text-xs text-slate-400 mt-1">Separate skills with commas</p>
+                            </div>
+
+                            <!-- Certifications -->
+                            <h3 class="text-lg font-bold text-slate-900 mb-4">Certifications <span class="text-slate-400 font-normal text-sm">(optional)</span></h3>
+                            <div class="mb-6">
+                                <textarea id="rCerts" placeholder="e.g. AWS Certified Solutions Architect (2023), PMP Certification (2022)" rows="2" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"></textarea>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="flex flex-wrap gap-3 mt-6 pt-6 border-t border-slate-200">
+                                <button onclick="downloadPDF()" class="px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                    Download PDF
+                                </button>
+                                <button onclick="window.print()" class="px-6 py-3 bg-slate-800 text-white font-bold rounded-xl hover:bg-slate-900 shadow-md flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                                    Print
+                                </button>
+                                <button onclick="saveAsJSON()" class="px-4 py-3 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 shadow-md text-sm">Save JSON</button>
+                                <label class="px-4 py-3 bg-amber-600 text-white font-bold rounded-xl hover:bg-amber-700 shadow-md text-sm cursor-pointer">
+                                    Load JSON
+                                    <input type="file" accept=".json" onchange="loadFromJSON(event)" class="hidden">
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: Live Preview -->
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-lg font-bold text-slate-900">Live Preview</h3>
+                            </div>
+                            <div class="border-2 border-slate-200 rounded-xl overflow-hidden" style="max-height:800px;overflow-y:auto;">
+                                <div id="resumePreview" class="resume-preview tpl-classic">
+                                    <p class="text-center text-slate-400 py-20">Start filling in your details to see a live preview here.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Resume Builder — Create a Professional Resume Online</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Resume Builder lets you create a polished, professional resume in minutes without any sign-up or hidden fees. Choose from four carefully designed templates: Classic for traditional industries, Modern for creative roles, Minimal for clean aesthetics, and ATS Friendly for passing automated screening systems. Every template is optimized for readability and impact.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How It Works</h3>
+                <p class="text-slate-600 mb-4">Simply fill in your personal information, professional summary, work experience, education, skills, and optional certifications. The live preview updates instantly as you type, so you can see exactly how your resume will look. When you are satisfied, download your resume as a PDF, print it directly, or save your data as a JSON file for future editing. Your draft auto-saves every 2 seconds to your browser's local storage, so you never lose your work.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Private and Free</h3>
+                <p class="text-slate-600">All processing happens entirely in your browser. Your resume data never leaves your device. No account creation, no email required, no watermarks on your downloaded PDF. OptiDrop's career tools are designed to help job seekers without barriers or costs.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is an ATS friendly resume?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        An ATS friendly resume is designed to pass through Applicant Tracking Systems used by employers to scan and filter resumes. It uses simple formatting, standard section headings, no graphics or tables, and clean text that automated systems can easily parse. The ATS Friendly template in this builder uses a straightforward layout optimized for these systems.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How long should a resume be?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        For most professionals, a resume should be one page. If you have more than 10 years of relevant experience, two pages is acceptable. Recent graduates and entry-level candidates should always aim for one page. Focus on the most relevant and recent experience that matches the job you are applying for.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What to include in a professional summary?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A professional summary should be 2-3 sentences that highlight your years of experience, key skills, and career achievements. It should be tailored to each job application and include relevant keywords from the job description. Focus on what value you bring to the employer rather than what you want from the job.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to list skills on a resume?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        List your skills in a dedicated section using comma-separated values or bullet points. Include both hard skills (technical abilities like programming languages, software proficiency) and soft skills (communication, leadership). Prioritize skills mentioned in the job description. Group related skills together and place the most relevant ones first.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/career/cover-letter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Cover Letter Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate a professional cover letter tailored to any job application.</span>
+            </a>
+            <a href="/tools/career/linkedin-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">LinkedIn Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate optimized LinkedIn headlines and About sections.</span>
+            </a>
+            <a href="/tools/career/job-tracker.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Job Tracker</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Track all your job applications in one place with status updates.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var currentTemplate = 'classic';
+        var expCount = 0;
+        var eduCount = 0;
+
+        // Select template
+        window.selectTemplate = function(tpl) {
+            currentTemplate = tpl;
+            document.querySelectorAll('.template-thumb').forEach(function(t){
+                t.classList.toggle('active', t.getAttribute('data-tpl') === tpl);
+            });
+            updatePreview();
+        };
+
+        // Character counter
+        var summaryEl = document.getElementById('rSummary');
+        summaryEl.addEventListener('input', function(){
+            document.getElementById('summaryCount').textContent = this.value.length;
+        });
+
+        // Add work experience entry
+        window.addExperience = function(data) {
+            expCount++;
+            var id = expCount;
+            var div = document.createElement('div');
+            div.className = 'entry-row';
+            div.id = 'exp-' + id;
+            div.innerHTML = '<button class="remove-entry" onclick="removeExperience(' + id + ')" title="Remove"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>' +
+                '<div class="space-y-2 mt-1">' +
+                '<input type="text" placeholder="Job Title" class="exp-title block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.title || '' : '') + '">' +
+                '<input type="text" placeholder="Company Name" class="exp-company block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.company || '' : '') + '">' +
+                '<div class="grid grid-cols-2 gap-2">' +
+                '<input type="text" placeholder="Start Date" class="exp-start block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.start || '' : '') + '">' +
+                '<input type="text" placeholder="End Date" class="exp-end block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.end || '' : '') + '">' +
+                '</div>' +
+                '<textarea placeholder="Key responsibilities and achievements..." rows="2" class="exp-desc block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium">' + (data ? data.desc || '' : '') + '</textarea>' +
+                '</div>';
+            document.getElementById('experienceList').appendChild(div);
+            bindLiveUpdate();
+        };
+
+        window.removeExperience = function(id) {
+            var el = document.getElementById('exp-' + id);
+            if (el) el.remove();
+            updatePreview();
+        };
+
+        // Add education entry
+        window.addEducation = function(data) {
+            eduCount++;
+            var id = eduCount;
+            var div = document.createElement('div');
+            div.className = 'entry-row';
+            div.id = 'edu-' + id;
+            div.innerHTML = '<button class="remove-entry" onclick="removeEducation(' + id + ')" title="Remove"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>' +
+                '<div class="space-y-2 mt-1">' +
+                '<input type="text" placeholder="School / University" class="edu-school block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.school || '' : '') + '">' +
+                '<input type="text" placeholder="Degree & Major" class="edu-degree block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.degree || '' : '') + '">' +
+                '<div class="grid grid-cols-3 gap-2">' +
+                '<input type="text" placeholder="Start Year" class="edu-start block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.start || '' : '') + '">' +
+                '<input type="text" placeholder="End Year" class="edu-end block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.end || '' : '') + '">' +
+                '<input type="text" placeholder="GPA (optional)" class="edu-gpa block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.gpa || '' : '') + '">' +
+                '</div>' +
+                '</div>';
+            document.getElementById('educationList').appendChild(div);
+            bindLiveUpdate();
+        };
+
+        window.removeEducation = function(id) {
+            var el = document.getElementById('edu-' + id);
+            if (el) el.remove();
+            updatePreview();
+        };
+
+        // Live preview update
+        function updatePreview() {
+            var preview = document.getElementById('resumePreview');
+            var name = document.getElementById('rName').value.trim();
+            var email = document.getElementById('rEmail').value.trim();
+            var phone = document.getElementById('rPhone').value.trim();
+            var location = document.getElementById('rLocation').value.trim();
+            var linkedin = document.getElementById('rLinkedin').value.trim();
+            var summary = document.getElementById('rSummary').value.trim();
+            var skills = document.getElementById('rSkills').value.trim();
+            var certs = document.getElementById('rCerts').value.trim();
+
+            if (!name && !email && !summary) {
+                preview.innerHTML = '<p class="text-center text-slate-400 py-20">Start filling in your details to see a live preview here.</p>';
+                preview.className = 'resume-preview tpl-' + currentTemplate;
+                return;
+            }
+
+            var contactParts = [];
+            if (email) contactParts.push(email);
+            if (phone) contactParts.push(phone);
+            if (location) contactParts.push(location);
+            if (linkedin) contactParts.push(linkedin);
+
+            var html = '';
+            html += '<h1>' + escHtml(name || 'Your Name') + '</h1>';
+            if (contactParts.length) {
+                html += '<p class="contact-line">' + contactParts.map(escHtml).join(' | ') + '</p>';
+            }
+
+            if (summary) {
+                html += '<h2>Professional Summary</h2>';
+                html += '<p>' + escHtml(summary) + '</p>';
+            }
+
+            // Work Experience
+            var expEntries = document.querySelectorAll('#experienceList .entry-row');
+            if (expEntries.length) {
+                html += '<h2>Work Experience</h2>';
+                expEntries.forEach(function(row){
+                    var title = row.querySelector('.exp-title').value.trim();
+                    var company = row.querySelector('.exp-company').value.trim();
+                    var start = row.querySelector('.exp-start').value.trim();
+                    var end = row.querySelector('.exp-end').value.trim();
+                    var desc = row.querySelector('.exp-desc').value.trim();
+                    if (title || company) {
+                        html += '<div class="exp-item">';
+                        html += '<div class="exp-header"><span>' + escHtml(title || 'Job Title') + '</span><span>' + escHtml((start || '') + (start && end ? ' - ' : '') + (end || '')) + '</span></div>';
+                        if (company) html += '<div class="exp-sub">' + escHtml(company) + '</div>';
+                        if (desc) html += '<p style="margin-top:0.25rem;font-size:0.83rem;">' + escHtml(desc) + '</p>';
+                        html += '</div>';
+                    }
+                });
+            }
+
+            // Education
+            var eduEntries = document.querySelectorAll('#educationList .entry-row');
+            if (eduEntries.length) {
+                html += '<h2>Education</h2>';
+                eduEntries.forEach(function(row){
+                    var school = row.querySelector('.edu-school').value.trim();
+                    var degree = row.querySelector('.edu-degree').value.trim();
+                    var start = row.querySelector('.edu-start').value.trim();
+                    var end = row.querySelector('.edu-end').value.trim();
+                    var gpa = row.querySelector('.edu-gpa').value.trim();
+                    if (school || degree) {
+                        html += '<div class="exp-item">';
+                        html += '<div class="exp-header"><span>' + escHtml(degree || 'Degree') + '</span><span>' + escHtml((start || '') + (start && end ? ' - ' : '') + (end || '')) + '</span></div>';
+                        html += '<div class="exp-sub">' + escHtml(school || 'School') + (gpa ? ' | GPA: ' + escHtml(gpa) : '') + '</div>';
+                        html += '</div>';
+                    }
+                });
+            }
+
+            // Skills
+            if (skills) {
+                html += '<h2>Skills</h2>';
+                var skillArr = skills.split(',').map(function(s){ return s.trim(); }).filter(function(s){ return s; });
+                html += '<div class="skills-list">' + skillArr.map(function(s){ return '<span class="skill-tag">' + escHtml(s) + '</span>'; }).join('') + '</div>';
+            }
+
+            // Certifications
+            if (certs) {
+                html += '<h2>Certifications</h2>';
+                var certArr = certs.split(',').map(function(s){ return s.trim(); }).filter(function(s){ return s; });
+                html += '<ul style="padding-left:1.25rem;margin:0;">' + certArr.map(function(c){ return '<li>' + escHtml(c) + '</li>'; }).join('') + '</ul>';
+            }
+
+            preview.className = 'resume-preview tpl-' + currentTemplate;
+            preview.innerHTML = html;
+        }
+
+        function escHtml(str) {
+            var div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function bindLiveUpdate() {
+            document.querySelectorAll('#experienceList input, #experienceList textarea, #educationList input').forEach(function(el){
+                el.removeEventListener('input', updatePreview);
+                el.addEventListener('input', updatePreview);
+            });
+        }
+
+        // Bind all form inputs to live preview
+        ['rName','rEmail','rPhone','rLocation','rLinkedin','rSummary','rSkills','rCerts'].forEach(function(id){
+            document.getElementById(id).addEventListener('input', updatePreview);
+        });
+
+        // Auto-save every 2 seconds
+        setInterval(function(){
+            var data = collectData();
+            autoSave('resume_builder', data);
+        }, 2000);
+
+        function collectData() {
+            var data = {
+                template: currentTemplate,
+                name: document.getElementById('rName').value,
+                email: document.getElementById('rEmail').value,
+                phone: document.getElementById('rPhone').value,
+                location: document.getElementById('rLocation').value,
+                linkedin: document.getElementById('rLinkedin').value,
+                summary: document.getElementById('rSummary').value,
+                skills: document.getElementById('rSkills').value,
+                certs: document.getElementById('rCerts').value,
+                experience: [],
+                education: []
+            };
+            document.querySelectorAll('#experienceList .entry-row').forEach(function(row){
+                data.experience.push({
+                    title: row.querySelector('.exp-title').value,
+                    company: row.querySelector('.exp-company').value,
+                    start: row.querySelector('.exp-start').value,
+                    end: row.querySelector('.exp-end').value,
+                    desc: row.querySelector('.exp-desc').value
+                });
+            });
+            document.querySelectorAll('#educationList .entry-row').forEach(function(row){
+                data.education.push({
+                    school: row.querySelector('.edu-school').value,
+                    degree: row.querySelector('.edu-degree').value,
+                    start: row.querySelector('.edu-start').value,
+                    end: row.querySelector('.edu-end').value,
+                    gpa: row.querySelector('.edu-gpa').value
+                });
+            });
+            return data;
+        }
+
+        function loadData(data) {
+            if (!data) return;
+            if (data.template) selectTemplate(data.template);
+            document.getElementById('rName').value = data.name || '';
+            document.getElementById('rEmail').value = data.email || '';
+            document.getElementById('rPhone').value = data.phone || '';
+            document.getElementById('rLocation').value = data.location || '';
+            document.getElementById('rLinkedin').value = data.linkedin || '';
+            document.getElementById('rSummary').value = data.summary || '';
+            document.getElementById('rSkills').value = data.skills || '';
+            document.getElementById('rCerts').value = data.certs || '';
+            document.getElementById('summaryCount').textContent = (data.summary || '').length;
+
+            document.getElementById('experienceList').innerHTML = '';
+            document.getElementById('educationList').innerHTML = '';
+            expCount = 0; eduCount = 0;
+
+            if (data.experience && data.experience.length) {
+                data.experience.forEach(function(exp){ addExperience(exp); });
+            }
+            if (data.education && data.education.length) {
+                data.education.forEach(function(edu){ addEducation(edu); });
+            }
+            updatePreview();
+        }
+
+        // Load saved data on page load
+        var saved = autoLoad('resume_builder');
+        if (saved) loadData(saved);
+
+        // Save as JSON
+        window.saveAsJSON = function() {
+            var data = collectData();
+            var json = JSON.stringify(data, null, 2);
+            downloadTextFile(json, 'resume-data.json');
+            showToast('Resume data saved as JSON file.');
+        };
+
+        // Load from JSON
+        window.loadFromJSON = function(e) {
+            var file = e.target.files[0];
+            if (!file) return;
+            var reader = new FileReader();
+            reader.onload = function(ev) {
+                try {
+                    var data = JSON.parse(ev.target.result);
+                    loadData(data);
+                    showToast('Resume data loaded successfully.');
+                } catch(err) {
+                    showToast('Invalid JSON file.', 'error');
+                }
+            };
+            reader.readAsText(file);
+        };
+
+        // Download PDF
+        window.downloadPDF = function() {
+            var jsPDF = window.jspdf.jsPDF;
+            var doc = new jsPDF('p', 'mm', 'a4');
+            var data = collectData();
+            var y = 20;
+            var lm = 15; // left margin
+            var rm = 195; // right margin
+            var pw = 180; // page width content
+
+            function checkPage(needed) {
+                if (y + needed > 277) {
+                    doc.addPage();
+                    y = 20;
+                }
+            }
+
+            // Name
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(22);
+            doc.text(data.name || 'Your Name', 105, y, { align: 'center' });
+            y += 8;
+
+            // Contact
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9);
+            var contactParts = [];
+            if (data.email) contactParts.push(data.email);
+            if (data.phone) contactParts.push(data.phone);
+            if (data.location) contactParts.push(data.location);
+            if (data.linkedin) contactParts.push(data.linkedin);
+            if (contactParts.length) {
+                doc.text(contactParts.join(' | '), 105, y, { align: 'center' });
+                y += 6;
+            }
+
+            // Summary
+            if (data.summary) {
+                y += 4;
+                checkPage(20);
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(12);
+                doc.text('PROFESSIONAL SUMMARY', lm, y);
+                y += 2;
+                doc.setDrawColor(200);
+                doc.line(lm, y, rm, y);
+                y += 5;
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(10);
+                var summaryLines = doc.splitTextToSize(data.summary, pw);
+                checkPage(summaryLines.length * 5);
+                doc.text(summaryLines, lm, y);
+                y += summaryLines.length * 5;
+            }
+
+            // Work Experience
+            if (data.experience && data.experience.length) {
+                y += 4;
+                checkPage(15);
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(12);
+                doc.text('WORK EXPERIENCE', lm, y);
+                y += 2;
+                doc.setDrawColor(200);
+                doc.line(lm, y, rm, y);
+                y += 5;
+
+                data.experience.forEach(function(exp){
+                    if (!exp.title && !exp.company) return;
+                    checkPage(20);
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(10);
+                    doc.text(exp.title || 'Job Title', lm, y);
+                    if (exp.start || exp.end) {
+                        doc.setFont('helvetica', 'normal');
+                        doc.text((exp.start || '') + (exp.start && exp.end ? ' - ' : '') + (exp.end || ''), rm, y, { align: 'right' });
+                    }
+                    y += 5;
+                    if (exp.company) {
+                        doc.setFont('helvetica', 'normal');
+                        doc.setFontSize(9);
+                        doc.setTextColor(100);
+                        doc.text(exp.company, lm, y);
+                        doc.setTextColor(0);
+                        y += 5;
+                    }
+                    if (exp.desc) {
+                        doc.setFontSize(10);
+                        var descLines = doc.splitTextToSize(exp.desc, pw);
+                        checkPage(descLines.length * 5);
+                        doc.text(descLines, lm, y);
+                        y += descLines.length * 5;
+                    }
+                    y += 3;
+                });
+            }
+
+            // Education
+            if (data.education && data.education.length) {
+                y += 4;
+                checkPage(15);
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(12);
+                doc.text('EDUCATION', lm, y);
+                y += 2;
+                doc.setDrawColor(200);
+                doc.line(lm, y, rm, y);
+                y += 5;
+
+                data.education.forEach(function(edu){
+                    if (!edu.school && !edu.degree) return;
+                    checkPage(15);
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(10);
+                    doc.text(edu.degree || 'Degree', lm, y);
+                    if (edu.start || edu.end) {
+                        doc.setFont('helvetica', 'normal');
+                        doc.text((edu.start || '') + (edu.start && edu.end ? ' - ' : '') + (edu.end || ''), rm, y, { align: 'right' });
+                    }
+                    y += 5;
+                    doc.setFont('helvetica', 'normal');
+                    doc.setFontSize(9);
+                    doc.setTextColor(100);
+                    var schoolText = edu.school || 'School';
+                    if (edu.gpa) schoolText += ' | GPA: ' + edu.gpa;
+                    doc.text(schoolText, lm, y);
+                    doc.setTextColor(0);
+                    y += 8;
+                });
+            }
+
+            // Skills
+            if (data.skills) {
+                y += 4;
+                checkPage(15);
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(12);
+                doc.text('SKILLS', lm, y);
+                y += 2;
+                doc.setDrawColor(200);
+                doc.line(lm, y, rm, y);
+                y += 5;
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(10);
+                var skillLines = doc.splitTextToSize(data.skills, pw);
+                checkPage(skillLines.length * 5);
+                doc.text(skillLines, lm, y);
+                y += skillLines.length * 5;
+            }
+
+            // Certifications
+            if (data.certs) {
+                y += 4;
+                checkPage(15);
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(12);
+                doc.text('CERTIFICATIONS', lm, y);
+                y += 2;
+                doc.setDrawColor(200);
+                doc.line(lm, y, rm, y);
+                y += 5;
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(10);
+                var certLines = doc.splitTextToSize(data.certs, pw);
+                checkPage(certLines.length * 5);
+                doc.text(certLines, lm, y);
+            }
+
+            doc.save((data.name || 'resume').replace(/\s+/g, '_') + '_resume.pdf');
+            showToast('Resume downloaded as PDF!');
+        };
+    })();
+    </script>
+</body>
+</html>

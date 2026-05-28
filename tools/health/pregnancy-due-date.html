@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregnancy Due Date Calculator Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Calculate your pregnancy due date based on your last menstrual period. See current week, trimester, days remaining, and weekly milestones. 100% private, runs in browser.">
+    <meta name="keywords" content="pregnancy due date calculator, due date calculator, pregnancy calculator, estimated due date, gestational age, pregnancy week calculator">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Pregnancy Due Date Calculator Free Online | OptiDrop">
+    <meta property="og:description" content="Calculate your pregnancy due date based on your last menstrual period. See current week, trimester, and milestones. 100% private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/health/pregnancy-due-date.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pregnancy Due Date Calculator Free Online | OptiDrop">
+    <meta name="twitter:description" content="Calculate your pregnancy due date. See current week, trimester, and milestones. 100% private.">
+    <link rel="canonical" href="https://optidrop.online/tools/health/pregnancy-due-date.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Health Tools", "item": "https://optidrop.online/tools/health/"},
+        {"@type": "ListItem", "position": 3, "name": "Pregnancy Due Date Calculator", "item": "https://optidrop.online/tools/health/pregnancy-due-date.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Pregnancy Due Date Calculator",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate your pregnancy due date based on your last menstrual period. See current week, trimester, days remaining, and weekly milestones."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is due date calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The due date is calculated using Naegele's rule: add 280 days (40 weeks) to the first day of your last menstrual period (LMP). This assumes a 28-day cycle. If your cycle is longer or shorter, the calculator adjusts accordingly by adding or subtracting the difference from 28 days. Only about 5% of babies are born on their exact due date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is gestational age?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gestational age is the age of the pregnancy measured from the first day of the last menstrual period (LMP). It is typically expressed in weeks. For example, if your LMP was 12 weeks ago, you are 12 weeks pregnant. Gestational age is about 2 weeks longer than fetal age (the actual age of the baby), because it includes the time before conception."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is the due date?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Due date calculations are estimates. Only about 5% of babies are born on their exact due date. Most babies are born within 2 weeks before or after the estimated due date. The accuracy depends on how well you remember your last menstrual period and whether your cycles are regular. Ultrasound dating in the first trimester provides the most accurate estimate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a trimester?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A trimester is one of the three phases of pregnancy, each lasting approximately 13 weeks. The first trimester (weeks 1-13) involves major organ development. The second trimester (weeks 14-27) is often called the 'comfortable' period when many early symptoms ease. The third trimester (weeks 28-40) involves rapid growth and preparation for birth."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .milestone-item {
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            padding: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0;
+            border-radius: 0.75rem; margin-bottom: 0.5rem;
+        }
+        .milestone-week {
+            width: 2.5rem; height: 2.5rem; flex-shrink: 0;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border: 1px solid #bfdbfe; border-radius: 0.75rem;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem; font-weight: 800; color: #1d4ed8;
+        }
+        .milestone-text { font-size: 0.85rem; color: #475569; line-height: 1.5; }
+        .milestone-text strong { color: #1e293b; }
+        .progress-bar-container {
+            background: #e2e8f0; border-radius: 9999px; height: 12px;
+            overflow: hidden; position: relative;
+        }
+        .progress-bar-fill {
+            height: 100%; border-radius: 9999px;
+            background: linear-gradient(90deg, #3b82f6, #6366f1);
+            transition: width 0.8s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Pregnancy Due Date Calculator Online — Estimate Your Due Date</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Calculate your estimated due date based on your last menstrual period (LMP). See your current week of pregnancy, trimester, days remaining, and upcoming milestones. No upload, no sign-up — runs entirely in your browser.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Inputs -->
+                    <div class="max-w-md mx-auto space-y-4">
+                        <div>
+                            <label for="lmpDate" class="block text-sm font-bold text-slate-700 mb-2">First Day of Last Menstrual Period (LMP)</label>
+                            <input type="date" id="lmpDate"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="cycleLength" class="block text-sm font-bold text-slate-700 mb-2">Average Cycle Length (days)</label>
+                            <input type="number" id="cycleLength" value="28" min="20" max="45" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                            <p class="text-xs text-slate-400 mt-1">Standard is 28 days. Adjust if your cycle is different.</p>
+                        </div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <div class="max-w-md mx-auto mt-6">
+                        <button id="btnCalculate" class="w-full px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Calculate Due Date
+                        </button>
+                    </div>
+
+                    <!-- Result Area -->
+                    <div id="resultArea" class="hidden mt-8">
+
+                        <!-- Due Date Highlight -->
+                        <div class="text-center mb-6">
+                            <p class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-1">Estimated Due Date</p>
+                            <p id="dueDate" class="text-4xl font-extrabold text-slate-900">--</p>
+                            <p id="dueDateDay" class="text-lg font-semibold text-slate-500 mt-1">--</p>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="max-w-md mx-auto mb-6">
+                            <div class="flex justify-between text-xs font-bold text-slate-500 mb-1">
+                                <span>Week 1</span>
+                                <span>Week 40</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div id="progressFill" class="progress-bar-fill" style="width:0%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto mb-6">
+                            <div class="stat-card">
+                                <p class="stat-card-label">Current Week</p>
+                                <p id="currentWeek" class="stat-card-value">--</p>
+                            </div>
+                            <div class="stat-card green">
+                                <p class="stat-card-label">Trimester</p>
+                                <p id="trimester" class="stat-card-value">--</p>
+                            </div>
+                            <div class="stat-card purple">
+                                <p class="stat-card-label">Days Remaining</p>
+                                <p id="daysRemaining" class="stat-card-value">--</p>
+                            </div>
+                            <div class="stat-card amber">
+                                <p class="stat-card-label">Days Elapsed</p>
+                                <p id="daysElapsed" class="stat-card-value">--</p>
+                            </div>
+                        </div>
+
+                        <!-- Milestones -->
+                        <div class="max-w-md mx-auto mb-6">
+                            <h3 class="font-bold text-slate-800 mb-3 text-center">Upcoming Milestones</h3>
+                            <div id="milestones">
+                                <!-- Generated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Copy Button -->
+                        <div class="text-center">
+                            <button id="btnCopy" class="px-6 py-3 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all inline-flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                Copy Results
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Pregnancy Due Date Calculator</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Pregnancy Due Date Calculator estimates your baby's arrival date using Naegele's rule, the standard medical method for calculating due dates. Simply enter the first day of your last menstrual period (LMP) and your average cycle length. The calculator adds 280 days (40 weeks) to your LMP, adjusting for cycle lengths that differ from the standard 28 days.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Track Your Pregnancy Progress</h3>
+                <p class="text-slate-600 mb-4">Beyond the due date, this calculator shows your current gestational week, which trimester you are in, how many days have elapsed, and how many days remain. The milestone list highlights key developmental events for the next 4 weeks, helping you understand what to expect during each stage of your pregnancy.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Important Disclaimer</h3>
+                <p class="text-slate-600">This calculator provides an estimate based on standard medical formulas. Only about 5% of babies are born on their exact due date. Most babies arrive within 2 weeks before or after the estimated date. Always consult your healthcare provider for personalized prenatal care and accurate dating through ultrasound examinations.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How is due date calculated?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The due date is calculated using Naegele's rule: add 280 days (40 weeks) to the first day of your last menstrual period (LMP). This assumes a 28-day cycle. If your cycle is longer or shorter, the calculator adjusts accordingly by adding or subtracting the difference from 28 days. Only about 5% of babies are born on their exact due date.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is gestational age?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Gestational age is the age of the pregnancy measured from the first day of the last menstrual period (LMP). It is typically expressed in weeks. For example, if your LMP was 12 weeks ago, you are 12 weeks pregnant. Gestational age is about 2 weeks longer than fetal age (the actual age of the baby), because it includes the time before conception.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How accurate is the due date?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Due date calculations are estimates. Only about 5% of babies are born on their exact due date. Most babies are born within 2 weeks before or after the estimated due date. The accuracy depends on how well you remember your last menstrual period and whether your cycles are regular. Ultrasound dating in the first trimester provides the most accurate estimate.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is a trimester?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A trimester is one of the three phases of pregnancy, each lasting approximately 13 weeks. The first trimester (weeks 1-13) involves major organ development. The second trimester (weeks 14-27) is often called the 'comfortable' period when many early symptoms ease. The third trimester (weeks 28-40) involves rapid growth and preparation for birth.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/health/ovulation-calculator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Ovulation Calculator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Find your fertile window and estimated ovulation day.</span>
+            </a>
+            <a href="/tools/age-calculator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Age Calculator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your exact age in years, months, and days.</span>
+            </a>
+            <a href="/tools/health/water-intake.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Water Intake Calculator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Find your recommended daily water intake.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var btnCalculate = document.getElementById('btnCalculate');
+        var btnCopy = document.getElementById('btnCopy');
+        var resultArea = document.getElementById('resultArea');
+        var milestonesDiv = document.getElementById('milestones');
+
+        // Set default date to today minus 12 weeks
+        var defaultDate = new Date();
+        defaultDate.setDate(defaultDate.getDate() - 84);
+        var dateStr = defaultDate.getFullYear() + '-' +
+            String(defaultDate.getMonth() + 1).padStart(2, '0') + '-' +
+            String(defaultDate.getDate()).padStart(2, '0');
+        document.getElementById('lmpDate').value = dateStr;
+
+        // Milestone data (week-specific)
+        var milestones = {
+            4: 'Your baby is the size of a poppy seed. The neural tube is forming.',
+            5: 'Heart begins to beat. The baby is about the size of a sesame seed.',
+            6: 'Facial features start forming. Arms and leg buds appear.',
+            7: 'Baby is about the size of a blueberry. Brain developing rapidly.',
+            8: 'Fingers and toes begin to form. Baby starts moving.',
+            9: 'Baby is now called a fetus. All major organs are developing.',
+            10: 'Baby is about the size of a kumquat. Bones begin to harden.',
+            11: 'Baby can open and close fists. Tooth buds appear.',
+            12: 'End of first trimester. Baby has reflexes and can suck a thumb.',
+            13: 'Second trimester begins. Baby has fingerprints now.',
+            14: 'Baby can make facial expressions. Lanugo (fine hair) covers the body.',
+            15: 'Baby can sense light. Legs are growing longer than arms.',
+            16: 'Baby is about the size of an avocado. Toenails start growing.',
+            17: 'Baby begins to store fat. The skeleton hardens from cartilage to bone.',
+            18: 'Baby may start to hear sounds. Ears are in final position.',
+            19: 'Vernix caseosa (waxy coating) covers the skin for protection.',
+            20: 'Halfway point! Baby is about the size of a banana.',
+            21: 'Baby swallows amniototic fluid for digestion practice.',
+            22: 'Baby looks like a miniature newborn. Lips and eyelids more defined.',
+            23: 'Baby can hear your voice. Rapid brain development continues.',
+            24: 'Baby is about the size of an ear of corn. Lungs developing.',
+            25: 'Baby responds to touch and sound. Nostrils begin to open.',
+            26: 'Baby opens eyes for the first time. Eyelashes have formed.',
+            27: 'End of second trimester. Baby has regular sleep and wake cycles.',
+            28: 'Third trimester begins. Baby can dream during REM sleep.',
+            29: 'Baby is more active. Muscles and lungs continue to mature.',
+            30: 'Baby is about the size of a large cabbage. Weight gain accelerates.',
+            31: 'Baby processes information, tracks light, and follows sounds.',
+            32: 'Baby practices breathing movements. Toenails and fingernails are present.',
+            33: 'Baby bones harden further but skull remains flexible for birth.',
+            34: 'Baby\'s central nervous system and lungs are maturing.',
+            35: 'Baby is getting into head-down position for birth.',
+            36: 'Baby is about the size of a papaya. Gaining about 1/2 pound per week.',
+            37: 'Baby is considered early term. Organs are fully developed.',
+            38: 'Baby has a firm grasp. The brain continues to develop.',
+            39: 'Baby is full term. Chest becomes more prominent.',
+            40: 'Your due date! Baby is about the size of a small pumpkin.'
+        };
+
+        function formatDate(date) {
+            var months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+        }
+
+        function formatDay(date) {
+            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            return days[date.getDay()];
+        }
+
+        btnCalculate.addEventListener('click', function() {
+            var lmpVal = document.getElementById('lmpDate').value;
+            var cycleLen = parseInt(document.getElementById('cycleLength').value, 10);
+
+            if (!lmpVal) {
+                showToast('Please enter the first day of your last menstrual period.', 'error');
+                return;
+            }
+            if (!cycleLen || cycleLen < 20 || cycleLen > 45) {
+                showToast('Please enter a valid cycle length (20-45 days).', 'error');
+                return;
+            }
+
+            var lmp = new Date(lmpVal + 'T00:00:00');
+            var today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            // Calculate due date: LMP + 280 days + (cycle length - 28) adjustment
+            var dueDate = new Date(lmp);
+            dueDate.setDate(dueDate.getDate() + 280 + (cycleLen - 28));
+
+            // Current gestational age in days
+            var daysElapsed = Math.floor((today - lmp) / (1000 * 60 * 60 * 24));
+            var currentWeek = Math.floor(daysElapsed / 7);
+            var currentDay = daysElapsed % 7;
+
+            // Days remaining
+            var daysRemaining = Math.floor((dueDate - today) / (1000 * 60 * 60 * 24));
+
+            // Trimester
+            var trimesterNum;
+            if (currentWeek <= 13) trimesterNum = 1;
+            else if (currentWeek <= 27) trimesterNum = 2;
+            else trimesterNum = 3;
+
+            // Progress percentage (out of 280 days)
+            var progressPct = Math.max(0, Math.min(100, (daysElapsed / 280) * 100));
+
+            // Display results
+            document.getElementById('dueDate').textContent = formatDate(dueDate);
+            document.getElementById('dueDateDay').textContent = formatDay(dueDate);
+            document.getElementById('currentWeek').textContent = currentWeek + 'w ' + currentDay + 'd';
+            document.getElementById('trimester').textContent = trimesterNum === 1 ? '1st' : trimesterNum === 2 ? '2nd' : '3rd';
+            document.getElementById('daysRemaining').textContent = daysRemaining > 0 ? daysRemaining : 'Due!';
+            document.getElementById('daysElapsed').textContent = daysElapsed;
+            document.getElementById('progressFill').style.width = progressPct + '%';
+
+            // Build milestones for next 4 weeks
+            milestonesDiv.innerHTML = '';
+            var startWeek = Math.max(4, currentWeek);
+            var endWeek = Math.min(40, startWeek + 3);
+
+            for (var w = startWeek; w <= endWeek; w++) {
+                if (milestones[w]) {
+                    var item = document.createElement('div');
+                    item.className = 'milestone-item';
+                    item.innerHTML =
+                        '<div class="milestone-week">W' + w + '</div>' +
+                        '<div class="milestone-text"><strong>Week ' + w + ':</strong> ' + milestones[w] + '</div>';
+                    milestonesDiv.appendChild(item);
+                }
+            }
+
+            if (milestonesDiv.children.length === 0) {
+                milestonesDiv.innerHTML = '<p class="text-sm text-slate-500 text-center">No milestones to show for the current stage.</p>';
+            }
+
+            resultArea.classList.remove('hidden');
+
+            if (window.innerWidth < 768) {
+                resultArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+
+        // Copy results
+        btnCopy.addEventListener('click', function() {
+            var dueDate = document.getElementById('dueDate').textContent;
+            var week = document.getElementById('currentWeek').textContent;
+            var tri = document.getElementById('trimester').textContent;
+            var remaining = document.getElementById('daysRemaining').textContent;
+
+            var text = 'Pregnancy Due Date Results (OptiDrop)\n' +
+                'Estimated Due Date: ' + dueDate + '\n' +
+                'Current Week: ' + week + '\n' +
+                'Trimester: ' + tri + '\n' +
+                'Days Remaining: ' + remaining;
+
+            copyToClipboard(text);
+        });
+
+        // Calculate on Enter key
+        document.getElementById('cycleLength').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') btnCalculate.click();
+        });
+    })();
+    </script>
+</body>
+</html>

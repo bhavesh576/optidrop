@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Converter Free Online — HEX to RGB HSL | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Free online color converter. Convert HEX to RGB, RGBA, HSL, HSLA. Color picker, manual HEX input, large preview, CSS named color matching. No upload required.">
+    <meta name="keywords" content="color converter online, hex to rgb, hex to hsl, color picker online, rgb to hex, hsl to hex, color conversion free, css color converter">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Color Converter Free Online — HEX to RGB HSL | OptiDrop">
+    <meta property="og:description" content="Free online color converter. Convert HEX to RGB, RGBA, HSL, HSLA. Color picker, large preview, CSS named colors. No upload.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/color-converter.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Color Converter Free Online — HEX to RGB HSL | OptiDrop">
+    <meta name="twitter:description" content="Free online color converter. Convert HEX to RGB, HSL and more. No upload required.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/color-converter.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/tools/developer/"},
+        {"@type": "ListItem", "position": 3, "name": "Color Converter", "item": "https://optidrop.online/tools/developer/color-converter.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Color Converter",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online color converter. Convert HEX to RGB, RGBA, HSL, HSLA. Color picker and CSS named color matching."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to convert HEX to RGB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter a HEX color code (like #FF5733) in the HEX input field or use the color picker. The tool instantly displays the equivalent RGB values (e.g., rgb(255, 87, 51)). Each pair of HEX digits represents the Red, Green, and Blue channels in decimal (0-255)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is HSL color?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HSL stands for Hue, Saturation, and Lightness. Hue is the color angle on the color wheel (0-360 degrees), saturation is how vivid the color is (0-100%), and lightness is how bright the color is (0-100%). HSL is often more intuitive than RGB because it mirrors how humans think about color."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to use a color picker online?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Click the color picker input to open your browser's native color picker. Select any color visually and the tool instantly converts it to HEX, RGB, RGBA, HSL, and HSLA formats. You can also type a HEX code manually for precise control."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between RGB and HEX?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RGB and HEX represent the same colors but in different formats. RGB uses decimal numbers (e.g., rgb(255, 87, 51)) while HEX uses hexadecimal notation (e.g., #FF5733). HEX is more compact and commonly used in CSS and design tools, while RGB is more readable for understanding individual color channels."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .color-preview {
+            width: 100%;
+            height: 180px;
+            border-radius: 1rem;
+            border: 2px solid #e2e8f0;
+            transition: background-color 0.2s;
+        }
+        .color-format-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .color-format-label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            min-width: 50px;
+        }
+        .color-format-value {
+            flex: 1;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #1e293b;
+            word-break: break-all;
+        }
+        .color-copy-btn {
+            padding: 0.35rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            background: #fff;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .color-copy-btn:hover {
+            border-color: #3b82f6;
+            color: #2563eb;
+        }
+        .named-color-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Color Converter Online — HEX to RGB, HSL &amp; More Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Pick a color or enter a HEX code. Instantly convert to RGB, RGBA, HSL, and HSLA. Large preview, CSS named color matching, copy each format. 100% private.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Left: Picker + Input -->
+                        <div>
+                            <!-- Color Preview -->
+                            <div id="colorPreview" class="color-preview mb-4" style="background-color:#2563eb;"></div>
+
+                            <!-- Color Picker -->
+                            <div class="flex items-center gap-4 mb-4">
+                                <label class="text-sm font-bold text-slate-700">Color Picker</label>
+                                <input type="color" id="colorPicker" value="#2563eb" class="w-14 h-10 border-2 border-slate-200 rounded-lg cursor-pointer">
+                            </div>
+
+                            <!-- HEX Input -->
+                            <div class="mb-4">
+                                <label for="hexInput" class="block text-sm font-bold text-slate-700 mb-2">HEX Code</label>
+                                <div class="flex gap-2">
+                                    <input type="text" id="hexInput" value="#2563eb" placeholder="#2563eb" maxlength="7" class="flex-1 px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-bold font-mono">
+                                </div>
+                            </div>
+
+                            <!-- Alpha Slider -->
+                            <div class="mb-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <label for="alphaSlider" class="text-sm font-bold text-slate-700">Alpha (Opacity)</label>
+                                    <span id="alphaVal" class="text-sm font-extrabold text-brand-600 bg-brand-50 px-3 py-1 rounded-lg">100%</span>
+                                </div>
+                                <input type="range" id="alphaSlider" min="0" max="100" value="100" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-600">
+                            </div>
+
+                            <!-- Named Color -->
+                            <div id="namedColorWrap" class="hidden">
+                                <label class="block text-sm font-bold text-slate-700 mb-2">CSS Named Color</label>
+                                <span id="namedColor" class="named-color-badge"></span>
+                            </div>
+                        </div>
+
+                        <!-- Right: Formats -->
+                        <div>
+                            <h3 class="text-sm font-bold text-slate-700 mb-3 uppercase tracking-wide">Color Formats</h3>
+
+                            <div class="color-format-row">
+                                <span class="color-format-label">HEX</span>
+                                <span class="color-format-value" id="outHex">#2563EB</span>
+                                <button class="color-copy-btn" onclick="copyColor('outHex')">Copy</button>
+                            </div>
+
+                            <div class="color-format-row">
+                                <span class="color-format-label">RGB</span>
+                                <span class="color-format-value" id="outRgb">rgb(37, 99, 235)</span>
+                                <button class="color-copy-btn" onclick="copyColor('outRgb')">Copy</button>
+                            </div>
+
+                            <div class="color-format-row">
+                                <span class="color-format-label">RGBA</span>
+                                <span class="color-format-value" id="outRgba">rgba(37, 99, 235, 1)</span>
+                                <button class="color-copy-btn" onclick="copyColor('outRgba')">Copy</button>
+                            </div>
+
+                            <div class="color-format-row">
+                                <span class="color-format-label">HSL</span>
+                                <span class="color-format-value" id="outHsl">hsl(217, 83%, 53%)</span>
+                                <button class="color-copy-btn" onclick="copyColor('outHsl')">Copy</button>
+                            </div>
+
+                            <div class="color-format-row">
+                                <span class="color-format-label">HSLA</span>
+                                <span class="color-format-value" id="outHsla">hsla(217, 83%, 53%, 1)</span>
+                                <button class="color-copy-btn" onclick="copyColor('outHsla')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online Color Converter — HEX, RGB, HSL &amp; More</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Color Converter lets you pick any color or enter a HEX code and instantly see it in multiple formats: HEX, RGB, RGBA, HSL, and HSLA. Each format can be copied to clipboard with one click. If the color matches a CSS named color (like "blue" or "coral"), the name is displayed.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Color Picker &amp; Manual Input</h3>
+                <p class="text-slate-600 mb-4">Use the native browser color picker to visually select a color, or type a HEX code manually for precise values. The alpha slider lets you adjust opacity from 0% (fully transparent) to 100% (fully opaque), which updates the RGBA and HSLA values.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">CSS Named Color Matching</h3>
+                <p class="text-slate-600 mb-4">If your selected color matches one of the 148 standard CSS named colors (like "steelblue", "tomato", or "gold"), the tool displays the matching name. This is helpful for writing more readable CSS code.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Large Color Preview</h3>
+                <p class="text-slate-600">A large preview square shows exactly how the color looks, including transparency. All conversions happen instantly in your browser — no data is sent to any server.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to convert HEX to RGB?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Enter a HEX color code (like #FF5733) in the HEX input field or use the color picker. The tool instantly displays the equivalent RGB values (e.g., rgb(255, 87, 51)). Each pair of HEX digits represents the Red, Green, and Blue channels in decimal (0-255).
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is HSL color?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        HSL stands for Hue, Saturation, and Lightness. Hue is the color angle on the color wheel (0-360 degrees), saturation is how vivid the color is (0-100%), and lightness is how bright the color is (0-100%). HSL is often more intuitive than RGB because it mirrors how humans think about color.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to use a color picker online?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Click the color picker input to open your browser's native color picker. Select any color visually and the tool instantly converts it to HEX, RGB, RGBA, HSL, and HSLA formats. You can also type a HEX code manually for precise control.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the difference between RGB and HEX?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        RGB and HEX represent the same colors but in different formats. RGB uses decimal numbers (e.g., rgb(255, 87, 51)) while HEX uses hexadecimal notation (e.g., #FF5733). HEX is more compact and commonly used in CSS and design tools, while RGB is more readable for understanding individual color channels.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Format, minify, and validate JSON with syntax highlighting.</span>
+            </a>
+            <a href="/tools/password-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Password Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate strong, secure random passwords with custom options.</span>
+            </a>
+            <a href="/tools/developer/hash-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Hash Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate SHA-256 and SHA-512 hashes instantly.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var colorPicker = document.getElementById('colorPicker');
+        var hexInput = document.getElementById('hexInput');
+        var alphaSlider = document.getElementById('alphaSlider');
+        var alphaVal = document.getElementById('alphaVal');
+        var colorPreview = document.getElementById('colorPreview');
+        var namedColorWrap = document.getElementById('namedColorWrap');
+        var namedColor = document.getElementById('namedColor');
+
+        var outHex = document.getElementById('outHex');
+        var outRgb = document.getElementById('outRgb');
+        var outRgba = document.getElementById('outRgba');
+        var outHsl = document.getElementById('outHsl');
+        var outHsla = document.getElementById('outHsla');
+
+        // CSS named colors map
+        var NAMED_COLORS = {
+            'aliceblue':'#F0F8FF','antiquewhite':'#FAEBD7','aqua':'#00FFFF','aquamarine':'#7FFFD4','azure':'#F0FFFF',
+            'beige':'#F5F5DC','bisque':'#FFE4C4','black':'#000000','blanchedalmond':'#FFEBCD','blue':'#0000FF',
+            'blueviolet':'#8A2BE2','brown':'#A52A2A','burlywood':'#DEB887','cadetblue':'#5F9EA0','chartreuse':'#7FFF00',
+            'chocolate':'#D2691E','coral':'#FF7F50','cornflowerblue':'#6495ED','cornsilk':'#FFF8DC','crimson':'#DC143C',
+            'cyan':'#00FFFF','darkblue':'#00008B','darkcyan':'#008B8B','darkgoldenrod':'#B8860B','darkgray':'#A9A9A9',
+            'darkgreen':'#006400','darkkhaki':'#BDB76B','darkmagenta':'#8B008B','darkolivegreen':'#556B2F','darkorange':'#FF8C00',
+            'darkorchid':'#9932CC','darkred':'#8B0000','darksalmon':'#E9967A','darkseagreen':'#8FBC8F','darkslateblue':'#483D8B',
+            'darkslategray':'#2F4F4F','darkturquoise':'#00CED1','darkviolet':'#9400D3','deeppink':'#FF1493','deepskyblue':'#00BFFF',
+            'dimgray':'#696969','dodgerblue':'#1E90FF','firebrick':'#B22222','floralwhite':'#FFFAF0','forestgreen':'#228B22',
+            'fuchsia':'#FF00FF','gainsboro':'#DCDCDC','ghostwhite':'#F8F8FF','gold':'#FFD700','goldenrod':'#DAA520',
+            'gray':'#808080','green':'#008000','greenyellow':'#ADFF2F','honeydew':'#F0FFF0','hotpink':'#FF69B4',
+            'indianred':'#CD5C5C','indigo':'#4B0082','ivory':'#FFFFF0','khaki':'#F0E68C','lavender':'#E6E6FA',
+            'lavenderblush':'#FFF0F5','lawngreen':'#7CFC00','lemonchiffon':'#FFFACD','lightblue':'#ADD8E6','lightcoral':'#F08080',
+            'lightcyan':'#E0FFFF','lightgoldenrodyellow':'#FAFAD2','lightgray':'#D3D3D3','lightgreen':'#90EE90','lightpink':'#FFB6C1',
+            'lightsalmon':'#FFA07A','lightseagreen':'#20B2AA','lightskyblue':'#87CEFA','lightslategray':'#778899','lightsteelblue':'#B0C4DE',
+            'lightyellow':'#FFFFE0','lime':'#00FF00','limegreen':'#32CD32','linen':'#FAF0E6','magenta':'#FF00FF',
+            'maroon':'#800000','mediumaquamarine':'#66CDAA','mediumblue':'#0000CD','mediumorchid':'#BA55D3','mediumpurple':'#9370DB',
+            'mediumseagreen':'#3CB371','mediumslateblue':'#7B68EE','mediumspringgreen':'#00FA9A','mediumturquoise':'#48D1CC',
+            'mediumvioletred':'#C71585','midnightblue':'#191970','mintcream':'#F5FFFA','mistyrose':'#FFE4E1','moccasin':'#FFE4B5',
+            'navajowhite':'#FFDEAD','navy':'#000080','oldlace':'#FDF5E6','olive':'#808000','olivedrab':'#6B8E23',
+            'orange':'#FFA500','orangered':'#FF4500','orchid':'#DA70D6','palegoldenrod':'#EEE8AA','palegreen':'#98FB98',
+            'paleturquoise':'#AFEEEE','palevioletred':'#DB7093','papayawhip':'#FFEFD5','peachpuff':'#FFDAB9','peru':'#CD853F',
+            'pink':'#FFC0CB','plum':'#DDA0DD','powderblue':'#B0E0E6','purple':'#800080','rebeccapurple':'#663399',
+            'red':'#FF0000','rosybrown':'#BC8F8F','royalblue':'#4169E1','saddlebrown':'#8B4513','salmon':'#FA8072',
+            'sandybrown':'#F4A460','seagreen':'#2E8B57','seashell':'#FFF5EE','sienna':'#A0522D','silver':'#C0C0C0',
+            'skyblue':'#87CEEB','slateblue':'#6A5ACD','slategray':'#708090','snow':'#FFFAFA','springgreen':'#00FF7F',
+            'steelblue':'#4682B4','tan':'#D2B48C','teal':'#008080','thistle':'#D8BFD8','tomato':'#FF6347',
+            'turquoise':'#40E0D0','violet':'#EE82EE','wheat':'#F5DEB3','white':'#FFFFFF','whitesmoke':'#F5F5F5',
+            'yellow':'#FFFF00','yellowgreen':'#9ACD32'
+        };
+
+        // Build reverse map: hex -> name
+        var HEX_TO_NAME = {};
+        for (var name in NAMED_COLORS) {
+            HEX_TO_NAME[NAMED_COLORS[name].toLowerCase()] = name;
+        }
+
+        function hexToRgb(hex) {
+            hex = hex.replace('#', '');
+            if (hex.length === 3) {
+                hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+            }
+            var r = parseInt(hex.substring(0,2), 16);
+            var g = parseInt(hex.substring(2,4), 16);
+            var b = parseInt(hex.substring(4,6), 16);
+            return { r: r, g: g, b: b };
+        }
+
+        function rgbToHsl(r, g, b) {
+            r /= 255; g /= 255; b /= 255;
+            var max = Math.max(r, g, b), min = Math.min(r, g, b);
+            var h, s, l = (max + min) / 2;
+            if (max === min) {
+                h = s = 0;
+            } else {
+                var d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                switch (max) {
+                    case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+                    case g: h = ((b - r) / d + 2) / 6; break;
+                    case b: h = ((r - g) / d + 4) / 6; break;
+                }
+            }
+            return {
+                h: Math.round(h * 360),
+                s: Math.round(s * 100),
+                l: Math.round(l * 100)
+            };
+        }
+
+        function isValidHex(hex) {
+            return /^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/.test(hex);
+        }
+
+        function updateAll(hex) {
+            if (!isValidHex(hex)) return;
+
+            var rgb = hexToRgb(hex);
+            var hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+            var alpha = parseInt(alphaSlider.value) / 100;
+            var hexUpper = '#' + hex.replace('#','').toUpperCase();
+            if (hexUpper.length === 4) {
+                hexUpper = '#' + hexUpper[1]+hexUpper[1]+hexUpper[2]+hexUpper[2]+hexUpper[3]+hexUpper[3];
+            }
+
+            // Update preview
+            colorPreview.style.backgroundColor = 'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + alpha + ')';
+
+            // Update outputs
+            outHex.textContent = hexUpper;
+            outRgb.textContent = 'rgb(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ')';
+            outRgba.textContent = 'rgba(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ', ' + alpha + ')';
+            outHsl.textContent = 'hsl(' + hsl.h + ', ' + hsl.s + '%, ' + hsl.l + '%)';
+            outHsla.textContent = 'hsla(' + hsl.h + ', ' + hsl.s + '%, ' + hsl.l + '%, ' + alpha + ')';
+
+            // Named color
+            var hexLower = hexUpper.toLowerCase();
+            if (HEX_TO_NAME[hexLower]) {
+                namedColorWrap.classList.remove('hidden');
+                namedColor.textContent = HEX_TO_NAME[hexLower];
+            } else {
+                namedColorWrap.classList.add('hidden');
+            }
+
+            // Sync picker
+            colorPicker.value = hexUpper.length === 7 ? hexUpper : hex;
+        }
+
+        // Color picker change
+        colorPicker.addEventListener('input', function() {
+            hexInput.value = this.value;
+            updateAll(this.value);
+        });
+
+        // HEX input
+        hexInput.addEventListener('input', function() {
+            var val = this.value.trim();
+            if (val.charAt(0) !== '#') val = '#' + val;
+            if (isValidHex(val)) {
+                colorPicker.value = val.length === 4 ? '#' + val[1]+val[1]+val[2]+val[2]+val[3]+val[3] : val;
+                updateAll(val);
+            }
+        });
+
+        // Alpha slider
+        alphaSlider.addEventListener('input', function() {
+            alphaVal.textContent = this.value + '%';
+            var val = hexInput.value.trim();
+            if (val.charAt(0) !== '#') val = '#' + val;
+            if (isValidHex(val)) updateAll(val);
+        });
+
+        // Copy function
+        window.copyColor = function(elId) {
+            var el = document.getElementById(elId);
+            if (el) copyToClipboard(el.textContent);
+        };
+
+        // Initialize
+        updateAll('#2563eb');
+    })();
+    </script>
+</body>
+</html>

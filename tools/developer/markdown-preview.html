@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Editor Preview Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Free online Markdown editor with live HTML preview. Write Markdown on the left, see rendered HTML on the right. Copy HTML, download .md file. No upload required.">
+    <meta name="keywords" content="markdown editor online, markdown preview, markdown to html, live markdown editor, markdown converter free, write markdown online">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Markdown Editor Preview Free Online | OptiDrop">
+    <meta property="og:description" content="Free online Markdown editor with live HTML preview. Write Markdown and see rendered HTML instantly. No upload required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/markdown-preview.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Markdown Editor Preview Free Online | OptiDrop">
+    <meta name="twitter:description" content="Free online Markdown editor with live HTML preview. Write and preview Markdown. No upload.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/markdown-preview.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/tools/developer/"},
+        {"@type": "ListItem", "position": 3, "name": "Markdown Preview", "item": "https://optidrop.online/tools/developer/markdown-preview.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Markdown Editor Preview",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online Markdown editor with live HTML preview. Write Markdown, see rendered HTML, copy HTML, download .md files."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Markdown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Markdown is a lightweight markup language created by John Gruber that uses plain text formatting syntax. It allows you to write formatted text using simple symbols like # for headers, * for bold/italic, and - for lists. Markdown is widely used for documentation, README files, blog posts, and messaging platforms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to bold text in Markdown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To bold text in Markdown, wrap it with double asterisks or double underscores. For example, **bold text** or __bold text__ will render as bold text. You can also use a single asterisk or underscore for italic: *italic text* or _italic text_."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to add links in Markdown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To add a link in Markdown, use the format [link text](URL). For example, [Google](https://google.com) creates a clickable link with 'Google' as the text. You can also add title text: [Google](https://google.com 'Visit Google')."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to create tables in Markdown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Markdown tables use pipes (|) and hyphens (-). The first row is the header, the second row separates headers from data with hyphens, and subsequent rows are data. Example: | Name | Age | followed by | --- | --- | then | John | 25 |. Colons can align columns: |:---| for left, |---:| for right, |:---:| for center."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <!-- Marked.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
+
+    <style>
+        .md-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 500px;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+        .md-editor-pane {
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #e2e8f0;
+        }
+        .md-preview-pane {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+        .md-pane-header {
+            padding: 0.6rem 1rem;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .md-textarea {
+            flex: 1;
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+            line-height: 1.7;
+            color: #1e293b;
+            resize: none;
+            background: #fff;
+        }
+        .md-preview-content {
+            flex: 1;
+            padding: 1.25rem;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+        .md-preview-content h1 { font-size: 1.5rem; font-weight: 800; margin: 1rem 0 0.5rem; color: #0f172a; }
+        .md-preview-content h2 { font-size: 1.25rem; font-weight: 800; margin: 1rem 0 0.5rem; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.25rem; }
+        .md-preview-content h3 { font-size: 1.1rem; font-weight: 700; margin: 0.75rem 0 0.5rem; color: #1e293b; }
+        .md-preview-content p { margin: 0 0 0.75rem; }
+        .md-preview-content ul, .md-preview-content ol { padding-left: 1.5rem; margin: 0 0 0.75rem; }
+        .md-preview-content li { margin-bottom: 0.25rem; }
+        .md-preview-content a { color: #2563eb; text-decoration: underline; }
+        .md-preview-content code {
+            background: #f1f5f9; padding: 0.15rem 0.4rem; border-radius: 0.25rem;
+            font-family: 'Courier New', Courier, monospace; font-size: 0.85em; color: #e11d48;
+        }
+        .md-preview-content pre {
+            background: #0f172a; color: #e2e8f0; padding: 1rem; border-radius: 0.5rem;
+            overflow-x: auto; margin: 0.75rem 0;
+        }
+        .md-preview-content pre code { background: transparent; color: inherit; padding: 0; }
+        .md-preview-content blockquote {
+            border-left: 4px solid #3b82f6; padding: 0.5rem 1rem; margin: 0.75rem 0;
+            background: #eff6ff; border-radius: 0 0.5rem 0.5rem 0; color: #1e3a8a;
+        }
+        .md-preview-content table { border-collapse: collapse; width: 100%; margin: 0.75rem 0; }
+        .md-preview-content th, .md-preview-content td {
+            border: 1px solid #e2e8f0; padding: 0.5rem 0.75rem; text-align: left;
+        }
+        .md-preview-content th { background: #f8fafc; font-weight: 700; }
+        .md-preview-content img { max-width: 100%; border-radius: 0.5rem; }
+        .md-preview-content hr { border: none; border-top: 1px solid #e2e8f0; margin: 1rem 0; }
+
+        @media (max-width: 768px) {
+            .md-split {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .md-editor-pane { border-right: none; border-bottom: 1px solid #e2e8f0; }
+            .md-textarea { min-height: 250px; }
+            .md-preview-content { min-height: 250px; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-6xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Markdown Editor &amp; Preview Online — Live HTML Preview Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Write Markdown on the left, see rendered HTML on the right. Supports headers, bold, italic, links, lists, code blocks, tables, and blockquotes. Copy HTML, download .md file.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-6xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-4 sm:p-6">
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <button id="btnCopyHtml" class="px-4 py-2.5 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md transition-all text-sm flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            Copy HTML
+                        </button>
+                        <button id="btnDownloadMd" class="px-4 py-2.5 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all text-sm flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Download .md
+                        </button>
+                        <button id="btnClear" class="px-4 py-2.5 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all text-sm flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                            Clear
+                        </button>
+                    </div>
+
+                    <!-- Split Pane -->
+                    <div class="md-split">
+                        <div class="md-editor-pane">
+                            <div class="md-pane-header">
+                                <span>Markdown</span>
+                                <span id="mdCharCount" class="text-slate-400 font-normal">0 chars</span>
+                            </div>
+                            <textarea id="mdInput" class="md-textarea" placeholder="# Hello World
+
+Start writing **Markdown** here...
+
+- Item 1
+- Item 2
+- Item 3
+
+> This is a blockquote
+
+```javascript
+console.log('Hello!');
+```"></textarea>
+                        </div>
+                        <div class="md-preview-pane">
+                            <div class="md-pane-header">
+                                <span>Preview</span>
+                                <span id="mdWordCount" class="text-slate-400 font-normal">0 words</span>
+                            </div>
+                            <div id="mdPreview" class="md-preview-content">
+                                <p style="color:#94a3b8;">Preview will appear here...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online Markdown Editor with Live Preview</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Markdown Editor lets you write Markdown text and see the rendered HTML preview in real time. The split-pane interface shows your Markdown source on the left and the formatted output on the right. It supports all common Markdown syntax including headers, bold, italic, links, lists, code blocks, tables, blockquotes, and horizontal rules.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Full Markdown Support</h3>
+                <p class="text-slate-600 mb-4">The editor uses the popular marked.js library for accurate Markdown parsing. Write headers with #, bold with **, italic with *, links with [text](url), code blocks with triple backticks, tables with pipes, and blockquotes with >. The preview updates instantly as you type.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Copy HTML &amp; Download</h3>
+                <p class="text-slate-600 mb-4">Once you are happy with your Markdown, copy the rendered HTML to clipboard with one click. You can also download the raw Markdown as a .md file. This is useful for blog posts, documentation, README files, and any content that needs to be written in Markdown.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Browser-Side</h3>
+                <p class="text-slate-600">Everything runs in your browser. No data is sent to any server. Your Markdown content stays completely private. The editor is fully responsive and works great on mobile devices.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is Markdown?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Markdown is a lightweight markup language created by John Gruber that uses plain text formatting syntax. It allows you to write formatted text using simple symbols like # for headers, * for bold/italic, and - for lists. Markdown is widely used for documentation, README files, blog posts, and messaging platforms.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to bold text in Markdown?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To bold text in Markdown, wrap it with double asterisks or double underscores. For example, **bold text** or __bold text__ will render as bold text. You can also use a single asterisk or underscore for italic: *italic text* or _italic text_.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to add links in Markdown?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To add a link in Markdown, use the format [link text](URL). For example, [Google](https://google.com) creates a clickable link with 'Google' as the text. You can also add title text: [Google](https://google.com 'Visit Google').
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to create tables in Markdown?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Markdown tables use pipes (|) and hyphens (-). The first row is the header, the second row separates headers from data with hyphens, and subsequent rows are data. Example: | Name | Age | followed by | --- | --- | then | John | 25 |. Colons can align columns: |:---| for left, |---:| for right, |:---:| for center.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/word-counter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Word Counter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Count words, characters, sentences, and paragraphs instantly.</span>
+            </a>
+            <a href="/tools/text-case-converter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Character Counter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Count characters with and without spaces in any text.</span>
+            </a>
+            <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Format, minify, and validate JSON with syntax highlighting.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var mdInput = document.getElementById('mdInput');
+        var mdPreview = document.getElementById('mdPreview');
+        var mdCharCount = document.getElementById('mdCharCount');
+        var mdWordCount = document.getElementById('mdWordCount');
+        var btnCopyHtml = document.getElementById('btnCopyHtml');
+        var btnDownloadMd = document.getElementById('btnDownloadMd');
+        var btnClear = document.getElementById('btnClear');
+
+        // Configure marked
+        if (typeof marked !== 'undefined') {
+            marked.setOptions({
+                breaks: true,
+                gfm: true
+            });
+        }
+
+        var defaultMarkdown = '# Welcome to Markdown Preview\n\nStart writing **Markdown** on the left and see the *rendered* HTML on the right.\n\n## Features\n\n- **Bold** and *italic* text\n- [Links](https://example.com)\n- Lists (ordered and unordered)\n- Code blocks\n- Tables\n- Blockquotes\n\n## Code Example\n\n```javascript\nfunction hello(name) {\n    console.log(\'Hello, \' + name + \'!\');\n}\n\nhello(\'World\');\n```\n\n## Table Example\n\n| Feature | Supported |\n|---------|----------|\n| Headers | Yes |\n| Bold | Yes |\n| Italic | Yes |\n| Links | Yes |\n| Code | Yes |\n| Tables | Yes |\n\n> This is a blockquote. It can span multiple lines and is great for highlighting important information.\n\n---\n\nHappy writing!';
+
+        function renderPreview() {
+            var text = mdInput.value;
+            if (typeof marked !== 'undefined') {
+                mdPreview.innerHTML = marked.parse(text);
+            } else {
+                // Fallback: basic rendering
+                mdPreview.innerHTML = '<p style="color:#94a3b8;">Loading Markdown parser...</p>';
+            }
+
+            // Update counts
+            mdCharCount.textContent = text.length.toLocaleString() + ' chars';
+            var words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+            mdWordCount.textContent = words.toLocaleString() + ' words';
+        }
+
+        mdInput.addEventListener('input', renderPreview);
+
+        btnCopyHtml.addEventListener('click', function() {
+            var html = mdPreview.innerHTML;
+            if (!html || html.indexOf('Preview will appear') !== -1) {
+                showToast('Nothing to copy. Write some Markdown first.', 'error');
+                return;
+            }
+            copyToClipboard(html, 'HTML copied to clipboard!');
+        });
+
+        btnDownloadMd.addEventListener('click', function() {
+            var text = mdInput.value;
+            if (!text.trim()) {
+                showToast('Nothing to download. Write some Markdown first.', 'error');
+                return;
+            }
+            downloadTextFile(text, 'document.md');
+            showToast('Markdown file downloaded!');
+        });
+
+        btnClear.addEventListener('click', function() {
+            mdInput.value = '';
+            renderPreview();
+            mdInput.focus();
+        });
+
+        // Initialize with sample content
+        mdInput.value = defaultMarkdown;
+        renderPreview();
+    })();
+    </script>
+</body>
+</html>

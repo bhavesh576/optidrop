@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideal Weight Calculator Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Calculate your ideal weight range using 4 proven formulas: Devine, Robinson, Miller, and Hamwi. Supports metric and imperial units. 100% private, runs in browser.">
+    <meta name="keywords" content="ideal weight calculator, ideal body weight, devine formula, robinson formula, miller formula, hamwi formula, healthy weight calculator">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Ideal Weight Calculator Free Online | OptiDrop">
+    <meta property="og:description" content="Calculate your ideal weight range using 4 proven formulas: Devine, Robinson, Miller, and Hamwi. 100% private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/health/ideal-weight.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ideal Weight Calculator Free Online | OptiDrop">
+    <meta name="twitter:description" content="Calculate your ideal weight range using 4 proven formulas. 100% private, runs in browser.">
+    <link rel="canonical" href="https://optidrop.online/tools/health/ideal-weight.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Health Tools", "item": "https://optidrop.online/tools/health/"},
+        {"@type": "ListItem", "position": 3, "name": "Ideal Weight Calculator", "item": "https://optidrop.online/tools/health/ideal-weight.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Ideal Weight Calculator",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate your ideal weight range using 4 proven formulas: Devine, Robinson, Miller, and Hamwi. Supports metric and imperial units."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is my ideal weight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your ideal weight is a healthy weight range based on your height and gender. It is calculated using medical formulas such as Devine, Robinson, Miller, and Hamwi. These formulas provide a range rather than a single number because healthy weight varies between individuals based on body composition, frame size, and muscle mass."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is ideal weight calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ideal weight is calculated using mathematical formulas that take your height and gender as inputs. Each formula uses different coefficients. For example, the Devine formula starts at a base weight and adds a fixed amount per inch of height above 5 feet. This calculator shows results from 4 formulas and their average for a well-rounded estimate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Devine formula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Devine formula (1974) is one of the most widely used ideal body weight formulas. For men: 50 kg + 2.3 kg per inch over 5 feet. For women: 45.5 kg + 2.3 kg per inch over 5 feet. Originally designed for calculating medication dosages, it has become a standard reference for ideal body weight estimation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What weight is healthy for my height?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A healthy weight for your height falls within the range provided by ideal weight formulas, typically corresponding to a BMI between 18.5 and 24.9. This calculator shows the average ideal weight from four medical formulas. However, factors like muscle mass, bone density, age, and overall health should also be considered. Consult a healthcare professional for personalized advice."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Ideal Weight Calculator Online — Calculate Healthy Weight Range Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Find your ideal weight range using 4 trusted medical formulas: Devine, Robinson, Miller, and Hamwi. Enter your height and gender to see results instantly. Supports metric and imperial units. No upload, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Unit Toggle -->
+                    <div class="flex justify-center mb-6">
+                        <div class="inline-flex bg-slate-100 rounded-xl p-1">
+                            <button id="btnMetric" class="unit-btn active px-5 py-2.5 rounded-lg text-sm font-bold transition-all">Metric (cm)</button>
+                            <button id="btnImperial" class="unit-btn px-5 py-2.5 rounded-lg text-sm font-bold transition-all text-slate-500">Imperial (ft/in)</button>
+                        </div>
+                    </div>
+
+                    <!-- Gender Toggle -->
+                    <div class="flex justify-center mb-6">
+                        <div class="inline-flex bg-slate-100 rounded-xl p-1">
+                            <button id="btnMale" class="gender-btn active px-5 py-2.5 rounded-lg text-sm font-bold transition-all">Male</button>
+                            <button id="btnFemale" class="gender-btn px-5 py-2.5 rounded-lg text-sm font-bold transition-all text-slate-500">Female</button>
+                        </div>
+                    </div>
+
+                    <!-- Metric Input -->
+                    <div id="metricInput" class="max-w-md mx-auto">
+                        <label for="metricHeight" class="block text-sm font-bold text-slate-700 mb-2">Height (cm)</label>
+                        <input type="number" id="metricHeight" placeholder="e.g. 175" min="100" max="250" step="0.1"
+                            class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-medium"
+                            autocomplete="off">
+                    </div>
+
+                    <!-- Imperial Input -->
+                    <div id="imperialInput" class="max-w-md mx-auto hidden">
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Height</label>
+                        <div class="flex gap-3">
+                            <div class="flex-1">
+                                <input type="number" id="impFeet" placeholder="Feet" min="3" max="8" step="1"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                            <div class="flex-1">
+                                <input type="number" id="impInches" placeholder="Inches" min="0" max="11" step="1"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <div class="max-w-md mx-auto mt-6">
+                        <button id="btnCalculate" class="w-full px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Calculate Ideal Weight
+                        </button>
+                    </div>
+
+                    <!-- Result Area -->
+                    <div id="resultArea" class="hidden mt-8">
+
+                        <!-- Average Highlight -->
+                        <div class="text-center mb-6">
+                            <p class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-1">Average Ideal Weight</p>
+                            <p id="avgWeight" class="text-5xl font-extrabold text-slate-900">--</p>
+                            <p id="avgWeightLbs" class="text-lg font-semibold text-slate-500 mt-1">--</p>
+                        </div>
+
+                        <!-- Formula Results Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto mb-6">
+                            <div class="stat-card">
+                                <p class="stat-card-label">Devine (1974)</p>
+                                <p id="devineWeight" class="stat-card-value">--</p>
+                            </div>
+                            <div class="stat-card green">
+                                <p class="stat-card-label">Robinson (1983)</p>
+                                <p id="robinsonWeight" class="stat-card-value">--</p>
+                            </div>
+                            <div class="stat-card purple">
+                                <p class="stat-card-label">Miller (1983)</p>
+                                <p id="millerWeight" class="stat-card-value">--</p>
+                            </div>
+                            <div class="stat-card amber">
+                                <p class="stat-card-label">Hamwi (1964)</p>
+                                <p id="hamwiWeight" class="stat-card-value">--</p>
+                            </div>
+                        </div>
+
+                        <!-- Copy Button -->
+                        <div class="text-center">
+                            <button id="btnCopy" class="px-6 py-3 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all inline-flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                Copy Results
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Ideal Weight Calculator — Find Your Healthy Weight Range</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Ideal Weight Calculator uses four well-established medical formulas to estimate your ideal body weight based on your height and gender. Rather than relying on a single formula, this calculator shows results from Devine, Robinson, Miller, and Hamwi methods, along with their average, giving you a comprehensive healthy weight range to aim for.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Understanding the Four Formulas</h3>
+                <p class="text-slate-600 mb-4">Each formula was developed independently by medical researchers. The <strong>Devine formula</strong> (1974) is the most commonly used, originally designed for drug dosage calculations. The <strong>Robinson formula</strong> (1983) was developed as a refinement of Devine's work. The <strong>Miller formula</strong> (1983) provides slightly different estimates. The <strong>Hamwi formula</strong> (1964) is one of the oldest methods, often used in clinical settings. By comparing all four, you get a more reliable weight range than any single formula provides.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Metric and Imperial Support</h3>
+                <p class="text-slate-600">Switch between metric (centimeters) and imperial (feet and inches) units at any time. All calculations happen instantly in your browser. No data is uploaded or stored. Your ideal weight results are private and calculated entirely on your device.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is my ideal weight?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Your ideal weight is a healthy weight range based on your height and gender. It is calculated using medical formulas such as Devine, Robinson, Miller, and Hamwi. These formulas provide a range rather than a single number because healthy weight varies between individuals based on body composition, frame size, and muscle mass.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How is ideal weight calculated?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Ideal weight is calculated using mathematical formulas that take your height and gender as inputs. Each formula uses different coefficients. For example, the Devine formula starts at a base weight and adds a fixed amount per inch of height above 5 feet. This calculator shows results from 4 formulas and their average for a well-rounded estimate.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the Devine formula?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The Devine formula (1974) is one of the most widely used ideal body weight formulas. For men: 50 kg + 2.3 kg per inch over 5 feet. For women: 45.5 kg + 2.3 kg per inch over 5 feet. Originally designed for calculating medication dosages, it has become a standard reference for ideal body weight estimation.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What weight is healthy for my height?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A healthy weight for your height falls within the range provided by ideal weight formulas, typically corresponding to a BMI between 18.5 and 24.9. This calculator shows the average ideal weight from four medical formulas. However, factors like muscle mass, bone density, age, and overall health should also be considered. Consult a healthcare professional for personalized advice.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/bmi-calculator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">BMI Calculator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your Body Mass Index instantly with metric and imperial support.</span>
+            </a>
+            <a href="/tools/health/water-intake.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Water Intake Calculator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Find your recommended daily water intake based on weight and activity level.</span>
+            </a>
+            <a href="/tools/health/sleep-calculator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Sleep Calculator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Find the best bedtime or wake-up time based on sleep cycles.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var btnMetric = document.getElementById('btnMetric');
+        var btnImperial = document.getElementById('btnImperial');
+        var metricInput = document.getElementById('metricInput');
+        var imperialInput = document.getElementById('imperialInput');
+        var btnMale = document.getElementById('btnMale');
+        var btnFemale = document.getElementById('btnFemale');
+        var btnCalculate = document.getElementById('btnCalculate');
+        var btnCopy = document.getElementById('btnCopy');
+        var resultArea = document.getElementById('resultArea');
+
+        var isMetric = true;
+        var isMale = true;
+
+        // Style for toggle buttons
+        var style = document.createElement('style');
+        style.textContent = '.unit-btn.active, .gender-btn.active { background: #1d4ed8; color: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }';
+        document.head.appendChild(style);
+
+        // Unit toggle
+        btnMetric.addEventListener('click', function() {
+            isMetric = true;
+            btnMetric.classList.add('active');
+            btnImperial.classList.remove('active');
+            btnImperial.classList.add('text-slate-500');
+            metricInput.classList.remove('hidden');
+            imperialInput.classList.add('hidden');
+            resultArea.classList.add('hidden');
+        });
+
+        btnImperial.addEventListener('click', function() {
+            isMetric = false;
+            btnImperial.classList.add('active');
+            btnImperial.classList.remove('text-slate-500');
+            btnMetric.classList.remove('active');
+            imperialInput.classList.remove('hidden');
+            metricInput.classList.add('hidden');
+            resultArea.classList.add('hidden');
+        });
+
+        // Gender toggle
+        btnMale.addEventListener('click', function() {
+            isMale = true;
+            btnMale.classList.add('active');
+            btnFemale.classList.remove('active');
+            btnFemale.classList.add('text-slate-500');
+            resultArea.classList.add('hidden');
+        });
+
+        btnFemale.addEventListener('click', function() {
+            isMale = false;
+            btnFemale.classList.add('active');
+            btnFemale.classList.remove('text-slate-500');
+            btnMale.classList.remove('active');
+            resultArea.classList.add('hidden');
+        });
+
+        // Calculate ideal weight
+        btnCalculate.addEventListener('click', function() {
+            var heightCm;
+
+            if (isMetric) {
+                heightCm = parseFloat(document.getElementById('metricHeight').value);
+                if (!heightCm || heightCm <= 0) {
+                    showToast('Please enter a valid height.', 'error');
+                    return;
+                }
+            } else {
+                var feet = parseFloat(document.getElementById('impFeet').value) || 0;
+                var inches = parseFloat(document.getElementById('impInches').value) || 0;
+                var totalInches = (feet * 12) + inches;
+                if (!totalInches || totalInches <= 0) {
+                    showToast('Please enter a valid height.', 'error');
+                    return;
+                }
+                heightCm = totalInches * 2.54;
+            }
+
+            // Convert to inches for formulas (all formulas use inches above 5 feet)
+            var totalInchesCalc = heightCm / 2.54;
+            var inchesAbove5Feet = totalInchesCalc - 60; // 5 feet = 60 inches
+
+            var devine, robinson, miller, hamwi;
+
+            if (isMale) {
+                // Devine (1974) - Men: 50 kg + 2.3 kg per inch over 5ft
+                devine = 50 + (2.3 * inchesAbove5Feet);
+                // Robinson (1983) - Men: 52 kg + 1.9 kg per inch over 5ft
+                robinson = 52 + (1.9 * inchesAbove5Feet);
+                // Miller (1983) - Men: 56.2 kg + 1.41 kg per inch over 5ft
+                miller = 56.2 + (1.41 * inchesAbove5Feet);
+                // Hamwi (1964) - Men: 48 kg + 2.7 kg per inch over 5ft
+                hamwi = 48 + (2.7 * inchesAbove5Feet);
+            } else {
+                // Devine (1974) - Women: 45.5 kg + 2.3 kg per inch over 5ft
+                devine = 45.5 + (2.3 * inchesAbove5Feet);
+                // Robinson (1983) - Women: 49 kg + 1.7 kg per inch over 5ft
+                robinson = 49 + (1.7 * inchesAbove5Feet);
+                // Miller (1983) - Women: 53.1 kg + 1.36 kg per inch over 5ft
+                miller = 53.1 + (1.36 * inchesAbove5Feet);
+                // Hamwi (1964) - Women: 45.5 kg + 2.2 kg per inch over 5ft
+                hamwi = 45.5 + (2.2 * inchesAbove5Feet);
+            }
+
+            var avg = (devine + robinson + miller + hamwi) / 4;
+
+            // Display results
+            var kgToLbs = 2.20462;
+
+            document.getElementById('avgWeight').textContent = avg.toFixed(1) + ' kg';
+            document.getElementById('avgWeightLbs').textContent = (avg * kgToLbs).toFixed(1) + ' lbs';
+
+            document.getElementById('devineWeight').textContent = devine.toFixed(1) + ' kg';
+            document.getElementById('robinsonWeight').textContent = robinson.toFixed(1) + ' kg';
+            document.getElementById('millerWeight').textContent = miller.toFixed(1) + ' kg';
+            document.getElementById('hamwiWeight').textContent = hamwi.toFixed(1) + ' kg';
+
+            resultArea.classList.remove('hidden');
+
+            // Scroll to results on mobile
+            if (window.innerWidth < 768) {
+                resultArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+
+        // Copy results
+        btnCopy.addEventListener('click', function() {
+            var avg = document.getElementById('avgWeight').textContent;
+            var avgLbs = document.getElementById('avgWeightLbs').textContent;
+            var devine = document.getElementById('devineWeight').textContent;
+            var robinson = document.getElementById('robinsonWeight').textContent;
+            var miller = document.getElementById('millerWeight').textContent;
+            var hamwi = document.getElementById('hamwiWeight').textContent;
+
+            var text = 'Ideal Weight Calculator Results (OptiDrop)\n' +
+                'Average: ' + avg + ' (' + avgLbs + ')\n' +
+                'Devine: ' + devine + '\n' +
+                'Robinson: ' + robinson + '\n' +
+                'Miller: ' + miller + '\n' +
+                'Hamwi: ' + hamwi;
+
+            copyToClipboard(text);
+        });
+
+        // Calculate on Enter key
+        var allInputs = document.querySelectorAll('#metricHeight, #impFeet, #impInches');
+        allInputs.forEach(function(inp) {
+            inp.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') btnCalculate.click();
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator Free — GPA Calculator Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Calculate your GPA and convert percentage to grade instantly. Free online grade calculator for students. No login required.">
+    <meta name="keywords" content="grade calculator online, GPA calculator, percentage to grade converter, CGPA calculator, GPA calculator 4.0 scale">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Grade Calculator Free — GPA Calculator Online | OptiDrop">
+    <meta property="og:description" content="Calculate your GPA and convert percentage to grade instantly. Free online grade calculator for students. No login required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/calculators/grade-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grade Calculator Free — GPA Calculator Online | OptiDrop">
+    <meta name="twitter:description" content="Calculate your GPA and convert percentage to grade instantly. Free online grade calculator.">
+    <link rel="canonical" href="https://optidrop.online/tools/calculators/grade-calculator.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Grade Calculator", "item": "https://optidrop.online/tools/calculators/grade-calculator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Grade Calculator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate your GPA and convert percentage to grade instantly. Free online grade calculator for students."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is GPA calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GPA (Grade Point Average) is calculated by multiplying the grade points earned in each course by the credit hours for that course, summing all these values, and then dividing by the total number of credit hours. For example, if you earned an A (4.0) in a 3-credit course and a B (3.0) in a 4-credit course, your GPA would be (4.0x3 + 3.0x4) / (3+4) = 24/7 = 3.43."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On a 4.0 scale, a GPA of 3.5 or above is generally considered good, while 3.7 or above is excellent. A GPA of 3.0-3.49 is above average, 2.5-2.99 is average, and below 2.5 is below average. For graduate school admissions, most programs require a minimum GPA of 3.0. For competitive programs, a GPA of 3.5 or higher is preferred."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to convert percentage to GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To convert a percentage to GPA on a 4.0 scale, a common formula is: GPA = (Percentage / 100) x 4. For example, 85% would be (85/100) x 4 = 3.4 GPA. However, different institutions use different conversion scales. Some use a more generous scale where 90-100% = 4.0, 80-89% = 3.0, 70-79% = 2.0, etc. Use this calculator for both percentage to grade and GPA calculations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is CGPA vs GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GPA (Grade Point Average) is typically calculated for a single semester or term, while CGPA (Cumulative Grade Point Average) is the overall average across all semesters. CGPA takes into account all courses taken throughout your academic program. In India, CGPA is often calculated on a 10-point scale, while in the US it is commonly on a 4.0 scale. Both represent the same concept of averaging grade points."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .mode-btn { padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 700; border-radius: 0.5rem; border: 2px solid #e2e8f0; background: #fff; color: #64748b; cursor: pointer; transition: all 0.2s; }
+        .mode-btn.active { border-color: #2563eb; background: #2563eb; color: #fff; box-shadow: 0 2px 4px rgba(37,99,235,0.3); }
+        .entry-row { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1rem; margin-bottom: 0.75rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Grade Calculator Online — GPA Calculator Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Convert percentage to grade or calculate your cumulative GPA on a 4.0 scale. Two tools in one — free for students. No sign-up required.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Mode Toggle -->
+                    <div class="flex justify-center gap-3 mb-8">
+                        <button id="btnPercentMode" class="mode-btn active">Percentage to Grade</button>
+                        <button id="btnGpaMode" class="mode-btn">GPA Calculator</button>
+                    </div>
+
+                    <!-- MODE 1: Percentage to Grade -->
+                    <div id="percentMode">
+                        <div class="max-w-md mx-auto">
+                            <div class="mb-4">
+                                <label for="percentageInput" class="block text-sm font-bold text-slate-700 mb-2">Enter Percentage (%)</label>
+                                <input type="number" id="percentageInput" placeholder="e.g. 85" min="0" max="100" step="0.1"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Grading Scale</label>
+                                <div class="flex gap-2">
+                                    <button id="btnUSAScale" class="mode-btn active flex-1">USA (4.0)</button>
+                                    <button id="btnIndiaScale" class="mode-btn flex-1">India (10)</button>
+                                </div>
+                            </div>
+                            <button id="btnConvertGrade" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                Convert to Grade
+                            </button>
+                        </div>
+
+                        <!-- Percentage Results -->
+                        <div id="percentResults" class="hidden mt-8">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-blue-700 mb-1">Percentage</p>
+                                    <p id="pctResult" class="text-2xl sm:text-3xl font-extrabold text-blue-900">0%</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-green-700 mb-1">Letter Grade</p>
+                                    <p id="letterGrade" class="text-2xl sm:text-3xl font-extrabold text-green-900">-</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-indigo-700 mb-1">GPA</p>
+                                    <p id="gpaResult" class="text-2xl sm:text-3xl font-extrabold text-indigo-900">0</p>
+                                </div>
+                            </div>
+                            <!-- Grade Scale Reference -->
+                            <div class="bg-slate-50 rounded-xl p-5">
+                                <h4 class="text-sm font-bold text-slate-700 mb-3">Grade Scale Reference</h4>
+                                <div id="scaleTable" class="overflow-x-auto rounded-xl border border-slate-200"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MODE 2: GPA Calculator -->
+                    <div id="gpaMode" class="hidden">
+                        <div class="max-w-2xl mx-auto">
+                            <p class="text-sm text-slate-600 mb-4">Add your courses below with the grade received and credit hours for each. The calculator will compute your cumulative GPA on a 4.0 scale.</p>
+
+                            <!-- Course entries container -->
+                            <div id="courseEntries">
+                                <div class="entry-row" data-index="0">
+                                    <div class="grid grid-cols-12 gap-3 items-end">
+                                        <div class="col-span-5">
+                                            <label class="block text-xs font-bold text-slate-600 mb-1">Course Name (optional)</label>
+                                            <input type="text" class="course-name block w-full px-3 py-2.5 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 transition-colors text-slate-900 font-medium" placeholder="e.g. Math 101">
+                                        </div>
+                                        <div class="col-span-3">
+                                            <label class="block text-xs font-bold text-slate-600 mb-1">Grade</label>
+                                            <select class="course-grade block w-full px-3 py-2.5 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                                <option value="4.0">A (4.0)</option>
+                                                <option value="3.7">A- (3.7)</option>
+                                                <option value="3.3">B+ (3.3)</option>
+                                                <option value="3.0" selected>B (3.0)</option>
+                                                <option value="2.7">B- (2.7)</option>
+                                                <option value="2.3">C+ (2.3)</option>
+                                                <option value="2.0">C (2.0)</option>
+                                                <option value="1.7">C- (1.7)</option>
+                                                <option value="1.3">D+ (1.3)</option>
+                                                <option value="1.0">D (1.0)</option>
+                                                <option value="0.0">F (0.0)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-span-3">
+                                            <label class="block text-xs font-bold text-slate-600 mb-1">Credits</label>
+                                            <input type="number" class="course-credits block w-full px-3 py-2.5 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 transition-colors text-slate-900 font-medium" placeholder="3" min="1" max="10" value="3">
+                                        </div>
+                                        <div class="col-span-1">
+                                            <button class="remove-entry w-full py-2.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors text-center" title="Remove" style="display:none;">
+                                                <svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button id="btnAddCourse" class="w-full py-3 border-2 border-dashed border-slate-300 rounded-xl text-slate-500 font-bold text-sm hover:border-blue-400 hover:text-blue-600 transition-colors mb-6">
+                                + Add Another Course
+                            </button>
+
+                            <button id="btnCalculateGPA" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                Calculate GPA
+                            </button>
+                        </div>
+
+                        <!-- GPA Results -->
+                        <div id="gpaResults" class="hidden mt-8 max-w-2xl mx-auto">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-blue-700 mb-1">Total Credits</p>
+                                    <p id="totalCredits" class="text-2xl sm:text-3xl font-extrabold text-blue-900">0</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-green-700 mb-1">Quality Points</p>
+                                    <p id="qualityPoints" class="text-2xl sm:text-3xl font-extrabold text-green-900">0</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200 rounded-2xl p-5 text-center">
+                                    <p class="text-sm font-semibold text-indigo-700 mb-1">Cumulative GPA</p>
+                                    <p id="cumulativeGPA" class="text-2xl sm:text-3xl font-extrabold text-indigo-900">0.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Grade Calculator — GPA Calculator & Percentage to Grade Converter</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Grade Calculator is a free online tool for students. It offers two useful features: a percentage to grade converter (supporting both USA and India grading scales) and a GPA calculator that computes your cumulative GPA on a 4.0 scale based on your course grades and credit hours.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Percentage to Grade Converter</h3>
+                <p class="text-slate-600 mb-4">Enter your percentage score and choose between the USA grading scale (A, B, C, D, F on a 4.0 scale) or the India grading scale (O, A+, A, B+, B, C, F on a 10-point scale). The tool instantly shows your letter grade, GPA equivalent, and a reference table for the full grading scale.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">GPA Calculator (4.0 Scale)</h3>
+                <p class="text-slate-600">Add your courses with the grade received (A through F) and the credit hours for each course. The calculator multiplies grade points by credits, sums them up, and divides by total credits to give your cumulative GPA. You can add as many courses as needed. All calculations happen instantly in your browser with no data uploaded anywhere.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How is GPA calculated?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        GPA (Grade Point Average) is calculated by multiplying the grade points earned in each course by the credit hours for that course, summing all these values, and then dividing by the total number of credit hours. For example, if you earned an A (4.0) in a 3-credit course and a B (3.0) in a 4-credit course, your GPA would be (4.0x3 + 3.0x4) / (3+4) = 24/7 = 3.43.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is a good GPA?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        On a 4.0 scale, a GPA of 3.5 or above is generally considered good, while 3.7 or above is excellent. A GPA of 3.0-3.49 is above average, 2.5-2.99 is average, and below 2.5 is below average. For graduate school admissions, most programs require a minimum GPA of 3.0. For competitive programs, a GPA of 3.5 or higher is preferred.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to convert percentage to GPA?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To convert a percentage to GPA on a 4.0 scale, a common formula is: GPA = (Percentage / 100) x 4. For example, 85% would be (85/100) x 4 = 3.4 GPA. However, different institutions use different conversion scales. Some use a more generous scale where 90-100% = 4.0, 80-89% = 3.0, 70-79% = 2.0, etc. Use this calculator for both percentage to grade and GPA calculations.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is CGPA vs GPA?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        GPA (Grade Point Average) is typically calculated for a single semester or term, while CGPA (Cumulative Grade Point Average) is the overall average across all semesters. CGPA takes into account all courses taken throughout your academic program. In India, CGPA is often calculated on a 10-point scale, while in the US it is commonly on a 4.0 scale. Both represent the same concept of averaging grade points.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/word-counter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Word Counter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Count words, characters, sentences, and paragraphs instantly.</span>
+                </a>
+                <a href="/tools/percentage-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Percentage Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate percentages, percentage change, and more online.</span>
+                </a>
+                <a href="/tools/age-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Age Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your exact age in years, months, and days from date of birth.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        // Mode toggle
+        var btnPercentMode = document.getElementById('btnPercentMode');
+        var btnGpaMode = document.getElementById('btnGpaMode');
+        var percentMode = document.getElementById('percentMode');
+        var gpaMode = document.getElementById('gpaMode');
+
+        btnPercentMode.addEventListener('click', function() {
+            btnPercentMode.classList.add('active');
+            btnGpaMode.classList.remove('active');
+            percentMode.classList.remove('hidden');
+            gpaMode.classList.add('hidden');
+        });
+
+        btnGpaMode.addEventListener('click', function() {
+            btnGpaMode.classList.add('active');
+            btnPercentMode.classList.remove('active');
+            gpaMode.classList.remove('hidden');
+            percentMode.classList.add('hidden');
+        });
+
+        // === MODE 1: Percentage to Grade ===
+        var btnUSAScale = document.getElementById('btnUSAScale');
+        var btnIndiaScale = document.getElementById('btnIndiaScale');
+        var useUSAScale = true;
+
+        btnUSAScale.addEventListener('click', function() {
+            useUSAScale = true;
+            btnUSAScale.classList.add('active');
+            btnIndiaScale.classList.remove('active');
+        });
+
+        btnIndiaScale.addEventListener('click', function() {
+            useUSAScale = false;
+            btnIndiaScale.classList.add('active');
+            btnUSAScale.classList.remove('active');
+        });
+
+        function getUSAGrade(pct) {
+            if (pct >= 93) return { letter: 'A', gpa: '4.0' };
+            if (pct >= 90) return { letter: 'A-', gpa: '3.7' };
+            if (pct >= 87) return { letter: 'B+', gpa: '3.3' };
+            if (pct >= 83) return { letter: 'B', gpa: '3.0' };
+            if (pct >= 80) return { letter: 'B-', gpa: '2.7' };
+            if (pct >= 77) return { letter: 'C+', gpa: '2.3' };
+            if (pct >= 73) return { letter: 'C', gpa: '2.0' };
+            if (pct >= 70) return { letter: 'C-', gpa: '1.7' };
+            if (pct >= 67) return { letter: 'D+', gpa: '1.3' };
+            if (pct >= 60) return { letter: 'D', gpa: '1.0' };
+            return { letter: 'F', gpa: '0.0' };
+        }
+
+        function getIndiaGrade(pct) {
+            if (pct >= 90) return { letter: 'O (Outstanding)', gpa: '10' };
+            if (pct >= 80) return { letter: 'A+ (Excellent)', gpa: '9' };
+            if (pct >= 70) return { letter: 'A (Very Good)', gpa: '8' };
+            if (pct >= 60) return { letter: 'B+ (Good)', gpa: '7' };
+            if (pct >= 50) return { letter: 'B (Above Average)', gpa: '6' };
+            if (pct >= 40) return { letter: 'C (Average)', gpa: '5' };
+            return { letter: 'F (Fail)', gpa: '0' };
+        }
+
+        function buildUSATable() {
+            return '<table class="w-full text-sm text-left"><thead class="bg-slate-100 text-slate-700"><tr><th class="px-4 py-2 font-bold">Percentage</th><th class="px-4 py-2 font-bold">Letter</th><th class="px-4 py-2 font-bold">GPA</th></tr></thead><tbody class="divide-y divide-slate-100">' +
+                '<tr><td class="px-4 py-2">93-100%</td><td class="px-4 py-2 font-semibold">A</td><td class="px-4 py-2">4.0</td></tr>' +
+                '<tr><td class="px-4 py-2">90-92%</td><td class="px-4 py-2 font-semibold">A-</td><td class="px-4 py-2">3.7</td></tr>' +
+                '<tr><td class="px-4 py-2">87-89%</td><td class="px-4 py-2 font-semibold">B+</td><td class="px-4 py-2">3.3</td></tr>' +
+                '<tr><td class="px-4 py-2">83-86%</td><td class="px-4 py-2 font-semibold">B</td><td class="px-4 py-2">3.0</td></tr>' +
+                '<tr><td class="px-4 py-2">80-82%</td><td class="px-4 py-2 font-semibold">B-</td><td class="px-4 py-2">2.7</td></tr>' +
+                '<tr><td class="px-4 py-2">77-79%</td><td class="px-4 py-2 font-semibold">C+</td><td class="px-4 py-2">2.3</td></tr>' +
+                '<tr><td class="px-4 py-2">73-76%</td><td class="px-4 py-2 font-semibold">C</td><td class="px-4 py-2">2.0</td></tr>' +
+                '<tr><td class="px-4 py-2">70-72%</td><td class="px-4 py-2 font-semibold">C-</td><td class="px-4 py-2">1.7</td></tr>' +
+                '<tr><td class="px-4 py-2">67-69%</td><td class="px-4 py-2 font-semibold">D+</td><td class="px-4 py-2">1.3</td></tr>' +
+                '<tr><td class="px-4 py-2">60-66%</td><td class="px-4 py-2 font-semibold">D</td><td class="px-4 py-2">1.0</td></tr>' +
+                '<tr><td class="px-4 py-2">Below 60%</td><td class="px-4 py-2 font-semibold">F</td><td class="px-4 py-2">0.0</td></tr>' +
+                '</tbody></table>';
+        }
+
+        function buildIndiaTable() {
+            return '<table class="w-full text-sm text-left"><thead class="bg-slate-100 text-slate-700"><tr><th class="px-4 py-2 font-bold">Percentage</th><th class="px-4 py-2 font-bold">Grade</th><th class="px-4 py-2 font-bold">GPA</th></tr></thead><tbody class="divide-y divide-slate-100">' +
+                '<tr><td class="px-4 py-2">90-100%</td><td class="px-4 py-2 font-semibold">O</td><td class="px-4 py-2">10</td></tr>' +
+                '<tr><td class="px-4 py-2">80-89%</td><td class="px-4 py-2 font-semibold">A+</td><td class="px-4 py-2">9</td></tr>' +
+                '<tr><td class="px-4 py-2">70-79%</td><td class="px-4 py-2 font-semibold">A</td><td class="px-4 py-2">8</td></tr>' +
+                '<tr><td class="px-4 py-2">60-69%</td><td class="px-4 py-2 font-semibold">B+</td><td class="px-4 py-2">7</td></tr>' +
+                '<tr><td class="px-4 py-2">50-59%</td><td class="px-4 py-2 font-semibold">B</td><td class="px-4 py-2">6</td></tr>' +
+                '<tr><td class="px-4 py-2">40-49%</td><td class="px-4 py-2 font-semibold">C</td><td class="px-4 py-2">5</td></tr>' +
+                '<tr><td class="px-4 py-2">Below 40%</td><td class="px-4 py-2 font-semibold">F</td><td class="px-4 py-2">0</td></tr>' +
+                '</tbody></table>';
+        }
+
+        document.getElementById('btnConvertGrade').addEventListener('click', function() {
+            var pct = parseFloat(document.getElementById('percentageInput').value);
+
+            if (isNaN(pct) || pct < 0 || pct > 100) {
+                showToast('Please enter a valid percentage between 0 and 100.', 'error');
+                return;
+            }
+
+            var grade = useUSAScale ? getUSAGrade(pct) : getIndiaGrade(pct);
+
+            document.getElementById('pctResult').textContent = pct.toFixed(1) + '%';
+            document.getElementById('letterGrade').textContent = grade.letter;
+            document.getElementById('gpaResult').textContent = grade.gpa;
+
+            document.getElementById('scaleTable').innerHTML = useUSAScale ? buildUSATable() : buildIndiaTable();
+
+            document.getElementById('percentResults').classList.remove('hidden');
+            document.getElementById('percentResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        document.getElementById('percentageInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') document.getElementById('btnConvertGrade').click();
+        });
+
+        // === MODE 2: GPA Calculator ===
+        var courseEntries = document.getElementById('courseEntries');
+        var courseIndex = 0;
+
+        function updateRemoveButtons() {
+            var rows = courseEntries.querySelectorAll('.entry-row');
+            rows.forEach(function(row) {
+                var btn = row.querySelector('.remove-entry');
+                btn.style.display = rows.length > 1 ? '' : 'none';
+            });
+        }
+
+        document.getElementById('btnAddCourse').addEventListener('click', function() {
+            courseIndex++;
+            var div = document.createElement('div');
+            div.className = 'entry-row';
+            div.setAttribute('data-index', courseIndex);
+            div.innerHTML = '<div class="grid grid-cols-12 gap-3 items-end">' +
+                '<div class="col-span-5"><label class="block text-xs font-bold text-slate-600 mb-1">Course Name (optional)</label><input type="text" class="course-name block w-full px-3 py-2.5 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 transition-colors text-slate-900 font-medium" placeholder="e.g. Physics 201"></div>' +
+                '<div class="col-span-3"><label class="block text-xs font-bold text-slate-600 mb-1">Grade</label><select class="course-grade block w-full px-3 py-2.5 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">' +
+                '<option value="4.0">A (4.0)</option><option value="3.7">A- (3.7)</option><option value="3.3">B+ (3.3)</option><option value="3.0" selected>B (3.0)</option><option value="2.7">B- (2.7)</option><option value="2.3">C+ (2.3)</option><option value="2.0">C (2.0)</option><option value="1.7">C- (1.7)</option><option value="1.3">D+ (1.3)</option><option value="1.0">D (1.0)</option><option value="0.0">F (0.0)</option>' +
+                '</select></div>' +
+                '<div class="col-span-3"><label class="block text-xs font-bold text-slate-600 mb-1">Credits</label><input type="number" class="course-credits block w-full px-3 py-2.5 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 transition-colors text-slate-900 font-medium" placeholder="3" min="1" max="10" value="3"></div>' +
+                '<div class="col-span-1"><button class="remove-entry w-full py-2.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors text-center"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></div>' +
+                '</div>';
+            courseEntries.appendChild(div);
+            updateRemoveButtons();
+        });
+
+        // Event delegation for remove buttons
+        courseEntries.addEventListener('click', function(e) {
+            var btn = e.target.closest('.remove-entry');
+            if (btn) {
+                var row = btn.closest('.entry-row');
+                if (courseEntries.querySelectorAll('.entry-row').length > 1) {
+                    row.remove();
+                    updateRemoveButtons();
+                }
+            }
+        });
+
+        document.getElementById('btnCalculateGPA').addEventListener('click', function() {
+            var rows = courseEntries.querySelectorAll('.entry-row');
+            var totalCredits = 0;
+            var totalQualityPoints = 0;
+            var hasValidEntry = false;
+
+            for (var i = 0; i < rows.length; i++) {
+                var grade = parseFloat(rows[i].querySelector('.course-grade').value);
+                var credits = parseFloat(rows[i].querySelector('.course-credits').value);
+
+                if (isNaN(credits) || credits <= 0) {
+                    showToast('Please enter valid credit hours for all courses.', 'error');
+                    return;
+                }
+
+                totalCredits += credits;
+                totalQualityPoints += grade * credits;
+                hasValidEntry = true;
+            }
+
+            if (!hasValidEntry) {
+                showToast('Please add at least one course.', 'error');
+                return;
+            }
+
+            var gpa = totalQualityPoints / totalCredits;
+
+            document.getElementById('totalCredits').textContent = totalCredits;
+            document.getElementById('qualityPoints').textContent = totalQualityPoints.toFixed(1);
+            document.getElementById('cumulativeGPA').textContent = gpa.toFixed(2);
+
+            document.getElementById('gpaResults').classList.remove('hidden');
+            document.getElementById('gpaResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    })();
+    </script>
+</body>
+</html>

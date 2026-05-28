@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ovulation Calculator Free Online — Fertile Window Calculator | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Calculate your ovulation date and fertile window based on your menstrual cycle. See a calendar with fertile days highlighted. 100% private, runs in browser.">
+    <meta name="keywords" content="ovulation calculator, fertile window calculator, ovulation date, when do I ovulate, fertility calculator, menstrual cycle calculator, fertile days">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Ovulation Calculator Free Online — Fertile Window Calculator | OptiDrop">
+    <meta property="og:description" content="Calculate your ovulation date and fertile window. See a calendar with fertile days highlighted. 100% private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/health/ovulation-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ovulation Calculator Free Online — Fertile Window Calculator | OptiDrop">
+    <meta name="twitter:description" content="Calculate your ovulation date and fertile window. Calendar display. 100% private.">
+    <link rel="canonical" href="https://optidrop.online/tools/health/ovulation-calculator.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Health Tools", "item": "https://optidrop.online/tools/health/"},
+        {"@type": "ListItem", "position": 3, "name": "Ovulation Calculator", "item": "https://optidrop.online/tools/health/ovulation-calculator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Ovulation Calculator",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate your ovulation date and fertile window based on your menstrual cycle. See a calendar with fertile days highlighted."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to calculate ovulation date?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ovulation typically occurs 14 days before the start of your next period. To calculate it, subtract 14 from your cycle length. For example, with a 28-day cycle, ovulation occurs around day 14. With a 32-day cycle, ovulation occurs around day 18. This calculator uses your last period date and cycle length to estimate your ovulation day accurately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the fertile window?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The fertile window is the 6-day period during which conception is possible. It includes the 5 days before ovulation and the day of ovulation itself. Sperm can survive in the female reproductive tract for up to 5 days, while the egg survives for about 12-24 hours after ovulation. Having intercourse during this window maximizes the chances of conception."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many days before ovulation am I fertile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You are fertile for about 5 days before ovulation and on the day of ovulation itself. This is because sperm can survive in the reproductive tract for up to 5 days. The most fertile days are the 2-3 days leading up to ovulation and the day of ovulation. The probability of conception is highest when intercourse occurs on the day before or day of ovulation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to use an ovulation calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To use an ovulation calculator, enter the first day of your last menstrual period and your average cycle length. The calculator will estimate your ovulation date, fertile window, and next expected period. For the most accurate results, track your cycles for several months to determine your average cycle length. You can also combine this with other methods like basal body temperature tracking or ovulation predictor kits."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .cal-grid {
+            display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;
+        }
+        .cal-header {
+            text-align: center; font-size: 0.7rem; font-weight: 700;
+            color: #94a3b8; padding: 0.25rem 0; text-transform: uppercase;
+        }
+        .cal-day {
+            text-align: center; padding: 0.5rem 0.25rem; font-size: 0.85rem;
+            font-weight: 600; border-radius: 0.5rem; cursor: default;
+            color: #475569; transition: all 0.15s ease; position: relative;
+        }
+        .cal-day.empty { color: transparent; }
+        .cal-day.today {
+            font-weight: 800; color: #1e293b;
+            box-shadow: inset 0 0 0 2px #3b82f6;
+        }
+        .cal-day.period {
+            background: #fecaca; color: #991b1b; font-weight: 700;
+        }
+        .cal-day.fertile {
+            background: #bbf7d0; color: #166534; font-weight: 700;
+        }
+        .cal-day.ovulation {
+            background: #3b82f6; color: #fff; font-weight: 800;
+        }
+        .cal-day.next-period {
+            background: #fecaca; color: #991b1b; font-weight: 700;
+            border: 2px dashed #f87171;
+        }
+        .cal-nav {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        .cal-nav button {
+            background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 0.5rem;
+            padding: 0.375rem 0.75rem; font-size: 0.8rem; font-weight: 600;
+            color: #475569; cursor: pointer; transition: all 0.15s;
+        }
+        .cal-nav button:hover { background: #e2e8f0; }
+        .cal-nav-title { font-size: 1rem; font-weight: 700; color: #0f172a; }
+        .legend-item {
+            display: inline-flex; align-items: center; gap: 0.375rem;
+            font-size: 0.75rem; font-weight: 600; color: #475569;
+            margin-right: 1rem; margin-bottom: 0.5rem;
+        }
+        .legend-dot {
+            width: 0.75rem; height: 0.75rem; border-radius: 0.25rem; flex-shrink: 0;
+        }
+        @media (max-width: 600px) {
+            .cal-day { padding: 0.375rem 0.125rem; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Ovulation Calculator Online — Fertile Window Calculator</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Calculate your estimated ovulation date, fertile window, and next expected period based on your menstrual cycle. View a calendar with fertile days highlighted. No upload, no sign-up — runs entirely in your browser.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Inputs -->
+                    <div class="max-w-md mx-auto space-y-4">
+                        <div>
+                            <label for="periodDate" class="block text-sm font-bold text-slate-700 mb-2">First Day of Last Period</label>
+                            <input type="date" id="periodDate"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="cycleLength" class="block text-sm font-bold text-slate-700 mb-2">Average Cycle Length (days)</label>
+                            <input type="number" id="cycleLength" value="28" min="20" max="45" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-brand-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                            <p class="text-xs text-slate-400 mt-1">Standard is 28 days. Adjust if your cycle is different.</p>
+                        </div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <div class="max-w-md mx-auto mt-6">
+                        <button id="btnCalculate" class="w-full px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Calculate Ovulation Date
+                        </button>
+                    </div>
+
+                    <!-- Result Area -->
+                    <div id="resultArea" class="hidden mt-8">
+
+                        <!-- Key Dates -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-lg mx-auto mb-6">
+                            <div class="stat-card">
+                                <p class="stat-card-label">Estimated Ovulation</p>
+                                <p id="ovulationDate" class="stat-card-value text-lg">--</p>
+                                <p id="ovulationDay" class="text-xs text-slate-500 mt-1">Cycle Day --</p>
+                            </div>
+                            <div class="stat-card green">
+                                <p class="stat-card-label">Fertile Window</p>
+                                <p id="fertileWindow" class="stat-card-value text-lg">--</p>
+                                <p class="text-xs text-slate-500 mt-1">6 fertile days</p>
+                            </div>
+                            <div class="stat-card purple">
+                                <p class="stat-card-label">Next Expected Period</p>
+                                <p id="nextPeriod" class="stat-card-value text-lg">--</p>
+                                <p id="nextPeriodDay" class="text-xs text-slate-500 mt-1">--</p>
+                            </div>
+                        </div>
+
+                        <!-- Calendar -->
+                        <div class="max-w-md mx-auto mb-6">
+                            <div class="cal-nav">
+                                <button id="btnPrevMonth">&larr; Prev</button>
+                                <span id="calTitle" class="cal-nav-title">--</span>
+                                <button id="btnNextMonth">Next &rarr;</button>
+                            </div>
+
+                            <!-- Legend -->
+                            <div class="mb-3">
+                                <span class="legend-item"><span class="legend-dot" style="background:#fecaca;"></span> Period</span>
+                                <span class="legend-item"><span class="legend-dot" style="background:#bbf7d0;"></span> Fertile</span>
+                                <span class="legend-item"><span class="legend-dot" style="background:#3b82f6;"></span> Ovulation</span>
+                            </div>
+
+                            <div id="calendar" class="cal-grid">
+                                <!-- Generated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Copy Button -->
+                        <div class="text-center">
+                            <button id="btnCopy" class="px-6 py-3 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all inline-flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                Copy Results
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Ovulation Calculator — Find Your Fertile Window</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Ovulation Calculator helps you estimate your ovulation date and fertile window based on your menstrual cycle. Ovulation typically occurs 14 days before the start of your next period. By entering the first day of your last period and your average cycle length, the calculator determines your most fertile days and displays them on an easy-to-read calendar.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Understanding Your Fertile Window</h3>
+                <p class="text-slate-600 mb-4">Your fertile window spans 6 days: the 5 days before ovulation and the day of ovulation itself. Sperm can survive in the female reproductive tract for up to 5 days, while the egg survives for only 12-24 hours after being released. Having intercourse during the 2-3 days leading up to ovulation and on ovulation day provides the highest chance of conception.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Calendar View</h3>
+                <p class="text-slate-600">The interactive calendar highlights your period days in red, fertile days in green, and ovulation day in blue. You can navigate between months to see predictions for future cycles. This visual representation makes it easy to plan and track your fertility. For the most accurate results, track your cycles over several months to confirm your average cycle length.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to calculate ovulation date?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Ovulation typically occurs 14 days before the start of your next period. To calculate it, subtract 14 from your cycle length. For example, with a 28-day cycle, ovulation occurs around day 14. With a 32-day cycle, ovulation occurs around day 18. This calculator uses your last period date and cycle length to estimate your ovulation day accurately.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the fertile window?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The fertile window is the 6-day period during which conception is possible. It includes the 5 days before ovulation and the day of ovulation itself. Sperm can survive in the female reproductive tract for up to 5 days, while the egg survives for about 12-24 hours after ovulation. Having intercourse during this window maximizes the chances of conception.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How many days before ovulation am I fertile?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        You are fertile for about 5 days before ovulation and on the day of ovulation itself. This is because sperm can survive in the reproductive tract for up to 5 days. The most fertile days are the 2-3 days leading up to ovulation and the day of ovulation. The probability of conception is highest when intercourse occurs on the day before or day of ovulation.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to use an ovulation calculator?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To use an ovulation calculator, enter the first day of your last menstrual period and your average cycle length. The calculator will estimate your ovulation date, fertile window, and next expected period. For the most accurate results, track your cycles for several months to determine your average cycle length. You can also combine this with other methods like basal body temperature tracking or ovulation predictor kits.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/health/pregnancy-due-date.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Pregnancy Due Date Calculator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Estimate your baby's due date based on your last menstrual period.</span>
+            </a>
+            <a href="/tools/age-calculator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Age Calculator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your exact age in years, months, and days.</span>
+            </a>
+            <a href="/tools/health/water-intake.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Water Intake Calculator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Find your recommended daily water intake.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var btnCalculate = document.getElementById('btnCalculate');
+        var btnCopy = document.getElementById('btnCopy');
+        var resultArea = document.getElementById('resultArea');
+        var calGrid = document.getElementById('calendar');
+        var calTitle = document.getElementById('calTitle');
+        var btnPrev = document.getElementById('btnPrevMonth');
+        var btnNext = document.getElementById('btnNextMonth');
+
+        var currentCalMonth, currentCalYear;
+        var ovulationDateGlobal, fertileStartGlobal, fertileEndGlobal, nextPeriodGlobal;
+        var periodStartGlobal, cycleLenGlobal;
+
+        // Set default date to today minus 10 days
+        var defaultDate = new Date();
+        defaultDate.setDate(defaultDate.getDate() - 10);
+        var dateStr = defaultDate.getFullYear() + '-' +
+            String(defaultDate.getMonth() + 1).padStart(2, '0') + '-' +
+            String(defaultDate.getDate()).padStart(2, '0');
+        document.getElementById('periodDate').value = dateStr;
+
+        function formatDate(date) {
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+        }
+
+        function formatDateFull(date) {
+            var months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            return days[date.getDay()] + ', ' + months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+        }
+
+        function sameDay(d1, d2) {
+            return d1.getFullYear() === d2.getFullYear() &&
+                d1.getMonth() === d2.getMonth() &&
+                d1.getDate() === d2.getDate();
+        }
+
+        function addDays(date, days) {
+            var d = new Date(date);
+            d.setDate(d.getDate() + days);
+            return d;
+        }
+
+        btnCalculate.addEventListener('click', function() {
+            var periodVal = document.getElementById('periodDate').value;
+            cycleLenGlobal = parseInt(document.getElementById('cycleLength').value, 10);
+
+            if (!periodVal) {
+                showToast('Please enter the first day of your last period.', 'error');
+                return;
+            }
+            if (!cycleLenGlobal || cycleLenGlobal < 20 || cycleLenGlobal > 45) {
+                showToast('Please enter a valid cycle length (20-45 days).', 'error');
+                return;
+            }
+
+            periodStartGlobal = new Date(periodVal + 'T00:00:00');
+
+            // Ovulation: cycle length - 14 days from period start
+            var ovulationDayNum = cycleLenGlobal - 14;
+            ovulationDateGlobal = addDays(periodStartGlobal, ovulationDayNum);
+
+            // Fertile window: 5 days before ovulation to ovulation day
+            fertileStartGlobal = addDays(ovulationDateGlobal, -5);
+            fertileEndGlobal = ovulationDateGlobal;
+
+            // Next expected period
+            nextPeriodGlobal = addDays(periodStartGlobal, cycleLenGlobal);
+
+            // Display results
+            document.getElementById('ovulationDate').textContent = formatDate(ovulationDateGlobal);
+            document.getElementById('ovulationDay').textContent = 'Cycle Day ' + ovulationDayNum;
+            document.getElementById('fertileWindow').textContent = formatDate(fertileStartGlobal) + ' - ' + formatDate(fertileEndGlobal);
+            document.getElementById('nextPeriod').textContent = formatDate(nextPeriodGlobal);
+            document.getElementById('nextPeriodDay').textContent = formatDateFull(nextPeriodGlobal);
+
+            // Set calendar to month of ovulation
+            currentCalMonth = ovulationDateGlobal.getMonth();
+            currentCalYear = ovulationDateGlobal.getFullYear();
+            renderCalendar();
+
+            resultArea.classList.remove('hidden');
+
+            if (window.innerWidth < 768) {
+                resultArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+
+        // Render calendar
+        function renderCalendar() {
+            var monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+            calTitle.textContent = monthNames[currentCalMonth] + ' ' + currentCalYear;
+
+            var firstDay = new Date(currentCalYear, currentCalMonth, 1).getDay();
+            var daysInMonth = new Date(currentCalYear, currentCalMonth + 1, 0).getDate();
+            var today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            calGrid.innerHTML = '';
+
+            // Day headers
+            var dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            dayNames.forEach(function(d) {
+                var hdr = document.createElement('div');
+                hdr.className = 'cal-header';
+                hdr.textContent = d;
+                calGrid.appendChild(hdr);
+            });
+
+            // Empty cells before first day
+            for (var e = 0; e < firstDay; e++) {
+                var empty = document.createElement('div');
+                empty.className = 'cal-day empty';
+                empty.textContent = '0';
+                calGrid.appendChild(empty);
+            }
+
+            // Days
+            for (var d = 1; d <= daysInMonth; d++) {
+                var cell = document.createElement('div');
+                cell.className = 'cal-day';
+                cell.textContent = d;
+
+                var cellDate = new Date(currentCalYear, currentCalMonth, d);
+
+                // Check if today
+                if (sameDay(cellDate, today)) {
+                    cell.classList.add('today');
+                }
+
+                // Period days (approx 5 days from period start)
+                var periodEnd = addDays(periodStartGlobal, 4);
+                if (cellDate >= periodStartGlobal && cellDate <= periodEnd) {
+                    cell.classList.add('period');
+                }
+
+                // Also show next period
+                var nextPeriodEnd = addDays(nextPeriodGlobal, 4);
+                if (cellDate >= nextPeriodGlobal && cellDate <= nextPeriodEnd) {
+                    cell.classList.add('next-period');
+                }
+
+                // Fertile window
+                if (cellDate >= fertileStartGlobal && cellDate <= fertileEndGlobal) {
+                    cell.classList.add('fertile');
+                }
+
+                // Ovulation day
+                if (sameDay(cellDate, ovulationDateGlobal)) {
+                    cell.classList.add('ovulation');
+                }
+
+                calGrid.appendChild(cell);
+            }
+        }
+
+        // Calendar navigation
+        btnPrev.addEventListener('click', function() {
+            currentCalMonth--;
+            if (currentCalMonth < 0) {
+                currentCalMonth = 11;
+                currentCalYear--;
+            }
+            renderCalendar();
+        });
+
+        btnNext.addEventListener('click', function() {
+            currentCalMonth++;
+            if (currentCalMonth > 11) {
+                currentCalMonth = 0;
+                currentCalYear++;
+            }
+            renderCalendar();
+        });
+
+        // Copy results
+        btnCopy.addEventListener('click', function() {
+            var ovDate = document.getElementById('ovulationDate').textContent;
+            var fertile = document.getElementById('fertileWindow').textContent;
+            var nextP = document.getElementById('nextPeriod').textContent;
+
+            var text = 'Ovulation Calculator Results (OptiDrop)\n' +
+                'Estimated Ovulation: ' + ovDate + '\n' +
+                'Fertile Window: ' + fertile + '\n' +
+                'Next Expected Period: ' + nextP;
+
+            copyToClipboard(text);
+        });
+
+        // Calculate on Enter key
+        document.getElementById('cycleLength').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') btnCalculate.click();
+        });
+    })();
+    </script>
+</body>
+</html>

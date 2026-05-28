@@ -36,24 +36,17 @@
 
     <header class="site-header">
         <div class="header-inner">
-            <a href="/" class="site-logo">
-                <img src="../Generated_image-removebg-preview.png" alt="OptiDrop">
-            </a>
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
             <nav class="header-nav">
-                <a href="/" class="back-link">
-                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-                    All Tools
-                </a>
+                <a href="/tools.html" class="hide-mobile">Tools</a>
+                <a href="#categories" class="hide-mobile">Categories</a>
+                <a href="/blog/" class="hide-mobile">Blog</a>
+                <a href="/about.html" class="hide-mobile">About</a>
                 <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
-                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
-                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
             </nav>
         </div>
-        <nav class="mobile-nav">
-            <a href="/">All Tools</a>
-            <a href="/blog/">Blog</a>
-        </nav>
+        <nav class="mobile-nav"><a href="/tools.html" onclick="this.parentElement.classList.remove('open')" >All Tools</a><a href="#categories" onclick="this.parentElement.classList.remove('open')" >Categories</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a><a href="/about.html" onclick="this.parentElement.classList.remove('open')" >About</a></nav>
     </header>
 
     <main class="flex-1">
@@ -88,71 +81,113 @@
                     <span class="tool-card-desc">Generate strong, random passwords with customizable length and character types.</span>
                     <span class="tool-card-tag emerald">Security</span>
                 </a>
+
+                <a href="/tools/text/character-counter.html" class="tool-card">
+                    <div class="tool-card-icon bg-cyan-100 text-cyan-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <span class="tool-card-title">Character Counter</span>
+                    <span class="tool-card-desc">Count characters with platform limit bars for Twitter, Instagram, LinkedIn.</span>
+                    <span class="tool-card-tag cyan">Text</span>
+                </a>
+                <a href="/tools/text/remove-duplicate-lines.html" class="tool-card">
+                    <div class="tool-card-icon bg-indigo-100 text-indigo-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+                    <span class="tool-card-title">Remove Duplicate Lines</span>
+                    <span class="tool-card-desc">Deduplicate and sort text lines instantly.</span>
+                    <span class="tool-card-tag indigo">Text</span>
+                </a>
+                <a href="/tools/text/find-and-replace.html" class="tool-card">
+                    <div class="tool-card-icon bg-rose-100 text-rose-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+                    <span class="tool-card-title">Find and Replace</span>
+                    <span class="tool-card-desc">Bulk find and replace text with case-sensitive options.</span>
+                    <span class="tool-card-tag rose">Text</span>
+                </a>
+                <a href="/tools/text/number-to-words.html" class="tool-card">
+                    <div class="tool-card-icon bg-amber-100 text-amber-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg></div>
+                    <span class="tool-card-title">Number to Words</span>
+                    <span class="tool-card-desc">Convert numbers to words in International and Indian formats.</span>
+                    <span class="tool-card-tag amber">Text</span>
+                </a>
+                <a href="/tools/text/reverse-text.html" class="tool-card">
+                    <div class="tool-card-icon bg-teal-100 text-teal-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div>
+                    <span class="tool-card-title">Reverse Text</span>
+                    <span class="tool-card-desc">Reverse characters, words, or word order instantly.</span>
+                    <span class="tool-card-tag teal">Text</span>
+                </a>
+                <a href="/tools/text/text-to-slug.html" class="tool-card">
+                    <div class="tool-card-icon bg-purple-100 text-purple-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div>
+                    <span class="tool-card-title">Text to Slug</span>
+                    <span class="tool-card-desc">Convert text to URL-friendly slug format.</span>
+                    <span class="tool-card-tag purple">Text</span>
+                </a>
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto px-4 pb-12">
+        <section id="categories" class="max-w-7xl mx-auto px-4 pb-12">
             <h2 class="text-xl font-bold text-slate-900 mb-4">Browse Other Categories</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <a href="/category/image-tools.html" class="tool-card" style="padding:1.25rem;">
-                    <span class="tool-card-title" style="font-size:1rem;">Image Tools</span>
-                    <span class="tool-card-desc">Compress, convert, resize, and edit images.</span>
-                </a>
-                <a href="/category/pdf-tools.html" class="tool-card" style="padding:1.25rem;">
-                    <span class="tool-card-title" style="font-size:1rem;">PDF Tools</span>
-                    <span class="tool-card-desc">Compress, convert, and merge PDF files.</span>
-                </a>
-                <a href="/category/calculator-tools.html" class="tool-card" style="padding:1.25rem;">
-                    <span class="tool-card-title" style="font-size:1rem;">Calculators</span>
-                    <span class="tool-card-desc">EMI, GST, Age, and Percentage calculators.</span>
-                </a>
+                <a href="/category/image-tools.html" class="tool-card" style="padding:1.25rem;"><span class="tool-card-title" style="font-size:1rem;">Image Tools</span><span class="tool-card-desc">Compress, convert, resize, and edit images.</span></a>
+                <a href="/category/professional-tools.html" class="tool-card" style="padding:1.25rem;"><span class="tool-card-title" style="font-size:1rem;">Professional Tools</span><span class="tool-card-desc">Email signatures, business cards, bio generator.</span></a>
+                <a href="/category/calculator-tools.html" class="tool-card" style="padding:1.25rem;"><span class="tool-card-title" style="font-size:1rem;">Calculator Tools</span><span class="tool-card-desc">EMI, SIP, tax, mortgage, and more.</span></a>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
-            <div class="footer-grid">
+                        <div class="footer-grid">
                 <div class="footer-col">
-                    <h4>Image Tools</h4>
+                    <h4>Image &amp; PDF Tools</h4>
                     <a href="/compress-image.html">Image Compressor</a>
                     <a href="/heic-to-jpg.html">HEIC to JPG</a>
                     <a href="/image-format-converter.html">Format Converter</a>
                     <a href="/remove-background.html">Background Remover</a>
                     <a href="/passport-photo-resizer.html">Photo Resizer</a>
-                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
-                    <a href="/signature-scanner.html">Signature Scanner</a>
-                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
-                </div>
-                <div class="footer-col">
-                    <h4>PDF Tools</h4>
                     <a href="/compress-pdf.html">PDF Compressor</a>
                     <a href="/jpg-to-pdf.html">JPG to PDF</a>
                     <a href="/pdf-to-jpg.html">PDF to JPG</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Calculators</h4>
-                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
-                    <a href="/tools/gst-calculator.html">GST Calculator</a>
-                    <a href="/tools/age-calculator.html">Age Calculator</a>
-                    <a href="/tools/percentage-calculator.html">Percentage Calculator</a>
-                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Text &amp; Utility Tools</h4>
-                    <a href="/tools/word-counter.html">Word Counter</a>
-                    <a href="/tools/text-case-converter.html">Text Case Converter</a>
-                    <a href="/tools/password-generator.html">Password Generator</a>
-                    <a href="/tools/unit-converter.html">Unit Converter</a>
-                    <a href="/qr-code-generator.html">QR Code Generator</a>
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
                 </div>
                 <div class="footer-col footer-about">
                     <h4>OptiDrop</h4>
-                    <p>Free, fast, and 100% private browser-based tools. Compress images, convert files, generate QR codes, and more — everything runs in your browser. No uploads, no sign-ups, no data leaves your device.</p>
-                    <a href="/category/image-tools.html">Image Tools</a>
-                    <a href="/category/pdf-tools.html">PDF Tools</a>
-                    <a href="/category/calculator-tools.html">Calculators</a>
-                    <a href="/category/text-tools.html">Text Tools</a>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
                     <a href="/blog/">Blog</a>
                 </div>
             </div>
@@ -160,8 +195,8 @@
             <div class="footer-bottom">
                 <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="/">All Tools</a>
-                    <a href="/blog/">Blog</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
                 </div>
             </div>
         </div>

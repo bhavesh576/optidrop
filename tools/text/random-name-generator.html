@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Name Generator Free Online — Fake Name Generator | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Generate random names by country and gender. Perfect for writers, developers, and testing. Free random name generator online.">
+    <meta name="keywords" content="random name generator, fake name generator, name generator online, random names by country, free name generator">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#7c3aed">
+    <meta property="og:title" content="Random Name Generator Free Online — Fake Name Generator | OptiDrop">
+    <meta property="og:description" content="Generate random names by country and gender. Perfect for writers, developers, and testing. Free random name generator online.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/text/random-name-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Random Name Generator Free Online — Fake Name Generator | OptiDrop">
+    <meta name="twitter:description" content="Generate random names by country and gender. Perfect for writers, developers, and testing. Free random name generator online.">
+    <link rel="canonical" href="https://optidrop.online/tools/text/random-name-generator.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Text Tools", "item": "https://optidrop.online/category/text-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Random Name Generator", "item": "https://optidrop.online/tools/text/random-name-generator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Random Name Generator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Generate random names by country and gender. Perfect for writers, developers, and testing. Free random name generator online."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are the generated names real people?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The names generated are based on common first and last names from each country, but the combinations are randomly generated. While individual names may match real people, the full name combinations are randomly created and do not refer to any specific real person."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use these names for software testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, these randomly generated names are perfect for software testing, database seeding, form testing, and placeholder data. They provide realistic-looking names from various countries and cultures for your test datasets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many names can I generate at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can generate up to 10 random names at a time with a single click. You can click the generate button multiple times to create as many names as you need. Each batch of 10 names will be unique."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which countries are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Currently supported countries include USA, UK, India, France, Spain, Japan, Arabic-speaking countries, and Germany. Each country has a curated list of authentic first and last names specific to that culture and language."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .name-card {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0.75rem 1rem; background: #fff; border: 2px solid #e2e8f0;
+            border-radius: 0.75rem; transition: all 0.2s ease;
+        }
+        .name-card:hover { border-color: #3b82f6; background: #eff6ff; }
+        .name-card .name-text { font-weight: 600; color: #1e293b; font-size: 1rem; }
+        .name-card .copy-btn {
+            padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 700;
+            color: #3b82f6; background: transparent; border: 1px solid #bfdbfe;
+            border-radius: 0.5rem; cursor: pointer; transition: all 0.2s;
+        }
+        .name-card .copy-btn:hover { background: #3b82f6; color: #fff; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Random Name Generator Online — Fake Names by Country</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate random names by country and gender. Perfect for writers, developers, testing, and creative projects. Copy individual names or all at once. No upload, no sign-up — 100% free.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Controls -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+                        <!-- Gender -->
+                        <div>
+                            <label for="gender" class="block text-sm font-bold text-slate-700 mb-2">Gender</label>
+                            <select id="gender" class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                <option value="any">Any</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <!-- Country -->
+                        <div>
+                            <label for="country" class="block text-sm font-bold text-slate-700 mb-2">Country</label>
+                            <select id="country" class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                <option value="usa">USA</option>
+                                <option value="uk">UK</option>
+                                <option value="india">India</option>
+                                <option value="french">French</option>
+                                <option value="spanish">Spanish</option>
+                                <option value="japanese">Japanese</option>
+                                <option value="arabic">Arabic</option>
+                                <option value="german">German</option>
+                            </select>
+                        </div>
+                        <!-- Count -->
+                        <div>
+                            <label for="nameCount" class="block text-sm font-bold text-slate-700 mb-2">Names</label>
+                            <select id="nameCount" class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                <option value="5">5 Names</option>
+                                <option value="10" selected>10 Names</option>
+                                <option value="20">20 Names</option>
+                                <option value="50">50 Names</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <button id="btnGenerate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md mb-5 flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        Generate Names
+                    </button>
+
+                    <!-- Copy All Button -->
+                    <div id="copyAllWrap" class="mb-4 hidden">
+                        <button id="btnCopyAll" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all flex items-center gap-1.5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            Copy All Names
+                        </button>
+                    </div>
+
+                    <!-- Names Output -->
+                    <div id="namesList" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                        <p class="text-slate-400 text-sm col-span-2 text-center py-8">Click "Generate Names" to create random names.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online Random Name Generator</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Random Name Generator creates realistic fake names from 8 different countries and cultures. Whether you need placeholder names for a novel, test data for a database, or character names for a game, this tool generates authentic-sounding names instantly. Select a country, choose a gender, and get a batch of random names with one click.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Names from 8 Countries</h3>
+                <p class="text-slate-600 mb-4">Generate names from USA, UK, India, France, Spain, Japan, Arabic-speaking countries, and Germany. Each country has a curated database of authentic first and last names that reflect the naming conventions and cultural patterns of that region.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Private — Browser-Side Generation</h3>
+                <p class="text-slate-600">All name generation happens directly in your browser using JavaScript. No data is sent to any server. Your generated names are completely private and the tool works offline after the initial page load.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Are the generated names real people?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The names generated are based on common first and last names from each country, but the combinations are randomly generated. While individual names may match real people, the full name combinations are randomly created and do not refer to any specific real person.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I use these names for software testing?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, these randomly generated names are perfect for software testing, database seeding, form testing, and placeholder data. They provide realistic-looking names from various countries and cultures for your test datasets.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How many names can I generate at once?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        You can generate up to 50 random names at a time with a single click. You can click the generate button multiple times to create as many names as you need. Each batch of names will be unique.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Which countries are supported?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Currently supported countries include USA, UK, India, France, Spain, Japan, Arabic-speaking countries, and Germany. Each country has a curated list of authentic first and last names specific to that culture and language.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/text/lorem-ipsum-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Lorem Ipsum Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate Lorem Ipsum placeholder text instantly with paragraphs, sentences, or words.</span>
+            </a>
+            <a href="/tools/password-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Password Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate strong, secure random passwords with custom length and character options.</span>
+            </a>
+            <a href="/tools/word-counter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Word Counter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Count words, characters, sentences, and paragraphs in your text online.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:0 auto 2rem;">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        // Name databases: each country has { male: [...first], female: [...first], last: [...] }
+        var namesDB = {
+            usa: {
+                male: ["James","John","Robert","Michael","William","David","Richard","Joseph","Thomas","Charles","Christopher","Daniel","Matthew","Anthony","Mark","Steven","Andrew","Joshua","Kenneth","Kevin"],
+                female: ["Mary","Patricia","Jennifer","Linda","Barbara","Elizabeth","Susan","Jessica","Sarah","Karen","Lisa","Nancy","Betty","Margaret","Sandra","Ashley","Dorothy","Kimberly","Emily","Donna"],
+                last: ["Smith","Johnson","Williams","Brown","Jones","Garcia","Miller","Davis","Rodriguez","Martinez","Hernandez","Lopez","Gonzalez","Wilson","Anderson","Thomas","Taylor","Moore","Jackson","Martin"]
+            },
+            uk: {
+                male: ["Oliver","George","Harry","Jack","Jacob","Charlie","Thomas","Oscar","William","James","Henry","Alfie","Joshua","Freddie","Archie","Ethan","Isaac","Alexander","Edward","Arthur"],
+                female: ["Olivia","Amelia","Isla","Emily","Ava","Jessica","Lily","Sophie","Mia","Grace","Evie","Charlotte","Sophia","Megan","Ella","Lucy","Scarlett","Hannah","Ruby","Poppy"],
+                last: ["Smith","Jones","Williams","Taylor","Brown","Davies","Evans","Wilson","Thomas","Roberts","Johnson","Lewis","Walker","Robinson","Wood","Thompson","White","Watson","Edwards","Green"]
+            },
+            india: {
+                male: ["Aarav","Vivaan","Aditya","Vihaan","Arjun","Sai","Reyansh","Krishna","Ishaan","Shauryan","Atharv","Advik","Pranav","Advaith","Aarush","Kabir","Ansh","Dhruv","Ritvik","Darsh"],
+                female: ["Saanvi","Aanya","Aadhya","Aarohi","Ananya","Pari","Anika","Navya","Diya","Myra","Sara","Ira","Ahana","Kyra","Anvi","Prisha","Riya","Aisha","Kavya","Meera"],
+                last: ["Sharma","Patel","Kumar","Singh","Gupta","Das","Mehta","Joshi","Reddy","Nair","Rao","Shah","Malhotra","Kapoor","Verma","Chauhan","Agarwal","Choudhary","Mishra","Pandey"]
+            },
+            french: {
+                male: ["Louis","Gabriel","Raphael","Jules","Adam","Lucas","Leo","Hugo","Arthur","Nathan","Ethan","Noah","Tom","Sacha","Antoine","Maxime","Alexandre","Thomas","Paul","Victor"],
+                female: ["Emma","Jade","Louise","Alice","Chloe","Lea","Manon","Rose","Anna","Ines","Camille","Juliette","Clemence","Zoe","Eva","Marie","Laura","Lena","Lola","Sofia"],
+                last: ["Martin","Bernard","Dubois","Thomas","Robert","Richard","Petit","Durand","Leroy","Moreau","Simon","Laurent","Lefebvre","Michel","Garcia","David","Bertrand","Roux","Vincent","Fournier"]
+            },
+            spanish: {
+                male: ["Hugo","Lucas","Mateo","Leo","Daniel","Alejandro","Pablo","Martin","Adrian","Alvaro","Manuel","Diego","Mario","Marcos","Sergio","Javier","Carlos","Jorge","Antonio","Miguel"],
+                female: ["Lucia","Sofia","Maria","Julia","Paula","Valeria","Emma","Daniela","Alba","Noa","Carla","Sara","Carmen","Ana","Marta","Elena","Laura","Irene","Clara","Cristina"],
+                last: ["Garcia","Rodriguez","Gonzalez","Fernandez","Lopez","Martinez","Sanchez","Perez","Gomez","Martin","Jimenez","Ruiz","Hernandez","Diaz","Moreno","Munoz","Alvarez","Romero","Alonso","Navarro"]
+            },
+            japanese: {
+                male: ["Haruto","Yuto","Sota","Yuki","Hayato","Haruki","Ryusei","Koki","Sora","Ren","Takumi","Kaito","Shota","Kenji","Daiki","Ryo","Sho","Tatsuki","Minato","Asahi"],
+                female: ["Yui","Aoi","Sakura","Hina","Riko","Akari","Mio","Koharu","Rin","Nana","Yuna","Mei","Ayaka","Misaki","Saki","Nanami","Ema","Haruka","Mao","Kanon"],
+                last: ["Tanaka","Suzuki","Takahashi","Watanabe","Ito","Yamamoto","Nakamura","Kobayashi","Saito","Kato","Yoshida","Yamada","Sasaki","Matsumoto","Inoue","Kimura","Shimizu","Hayashi","Sato","Mori"]
+            },
+            arabic: {
+                male: ["Mohammed","Ahmed","Ali","Omar","Hassan","Youssef","Khalid","Ibrahim","Tariq","Rami","Sami","Fadi","Bilal","Zaid","Hamza","Karim","Nabil","Jamal","Walid","Rayan"],
+                female: ["Fatima","Aisha","Layla","Noor","Yasmin","Sara","Hana","Mariam","Leila","Amira","Dina","Rania","Nadia","Salma","Zahra","Farah","Lina","Huda","Rana","Ghada"],
+                last: ["Al-Farsi","Al-Rashid","Al-Sayed","Hassan","Ali","Ibrahim","Mahmoud","Abdullah","Al-Khalili","Mansour","Nasser","Saleh","Othman","Sabbagh","Khoury","Haddad","Bakri","Darwish","Hamdan","Jaber"]
+            },
+            german: {
+                male: ["Paul","Leon","Finn","Elias","Jonas","Felix","Lukas","Maximilian","Henry","Anton","Emil","Theo","Oskar","Karl","Friedrich","Hans","Wolfgang","Stefan","Thomas","Markus"],
+                female: ["Emilia","Hannah","Emma","Mia","Sofia","Anna","Lea","Marie","Lina","Clara","Lena","Leonie","Sophie","Amelie","Frieda","Mathilda","Ida","Luisa","Johanna","Katharina"],
+                last: ["Muller","Schmidt","Schneider","Fischer","Weber","Meyer","Wagner","Becker","Schulz","Hoffmann","Koch","Richter","Klein","Wolf","Schroder","Neumann","Schwarz","Braun","Zimmermann","Hartmann"]
+            }
+        };
+
+        var namesList = document.getElementById('namesList');
+        var copyAllWrap = document.getElementById('copyAllWrap');
+        var generatedNames = [];
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function generateName(country, gender) {
+            var data = namesDB[country];
+            var firstName;
+            if (gender === 'male') {
+                firstName = data.male[getRandomInt(0, data.male.length - 1)];
+            } else if (gender === 'female') {
+                firstName = data.female[getRandomInt(0, data.female.length - 1)];
+            } else {
+                var pool = Math.random() < 0.5 ? data.male : data.female;
+                firstName = pool[getRandomInt(0, pool.length - 1)];
+            }
+            var lastName = data.last[getRandomInt(0, data.last.length - 1)];
+            return firstName + ' ' + lastName;
+        }
+
+        function renderNames() {
+            var html = '';
+            for (var i = 0; i < generatedNames.length; i++) {
+                html += '<div class="name-card">' +
+                    '<span class="name-text">' + escapeHtml(generatedNames[i]) + '</span>' +
+                    '<button class="copy-btn" onclick="copySingleName(' + i + ')">Copy</button>' +
+                '</div>';
+            }
+            namesList.innerHTML = html;
+            copyAllWrap.classList.remove('hidden');
+        }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        window.copySingleName = function(index) {
+            var name = generatedNames[index];
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(name).then(function() {
+                    showToast('Copied: ' + name, 'info');
+                });
+            } else {
+                showToast('Copied: ' + name, 'info');
+            }
+        };
+
+        document.getElementById('btnGenerate').addEventListener('click', function() {
+            var country = document.getElementById('country').value;
+            var gender = document.getElementById('gender').value;
+            var count = parseInt(document.getElementById('nameCount').value, 10);
+
+            generatedNames = [];
+            for (var i = 0; i < count; i++) {
+                generatedNames.push(generateName(country, gender));
+            }
+            renderNames();
+            showToast(count + ' names generated!', 'info');
+        });
+
+        document.getElementById('btnCopyAll').addEventListener('click', function() {
+            if (generatedNames.length === 0) {
+                showToast('No names to copy.', 'error');
+                return;
+            }
+            var text = generatedNames.join('\n');
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showToast('All names copied to clipboard!', 'info');
+                }).catch(function() {
+                    showToast('Failed to copy.', 'error');
+                });
+            } else {
+                showToast('All names copied to clipboard!', 'info');
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

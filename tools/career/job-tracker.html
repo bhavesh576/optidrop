@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Job Application Tracker Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Track all your job applications in one place. Add status updates, notes, and export as CSV. Free, no sign-up, saved in your browser.">
+    <meta name="keywords" content="job application tracker, job tracker, job search tracker, application tracker, job hunt organizer, job application spreadsheet">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Free Job Application Tracker Online | OptiDrop">
+    <meta property="og:description" content="Track all your job applications in one place. Add status updates, notes, and export as CSV. Free, no sign-up, saved in your browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/career/job-tracker.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Job Application Tracker Online | OptiDrop">
+    <meta name="twitter:description" content="Track all your job applications in one place. Export as CSV. Free, no sign-up.">
+    <link rel="canonical" href="https://optidrop.online/tools/career/job-tracker.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Career Tools", "item": "https://optidrop.online/tools/career/"},
+        {"@type": "ListItem", "position": 3, "name": "Job Application Tracker", "item": "https://optidrop.online/tools/career/job-tracker.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Job Application Tracker",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Track all your job applications in one place. Add status updates, notes, and export as CSV. Free, no sign-up, saved in your browser."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to track job applications?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The most effective way to track job applications is to use a dedicated tracker that records the company name, job title, date applied, current status, and any notes. Update the status each time you hear back or progress to a new stage. Review your tracker regularly to follow up on applications and identify patterns in your job search."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What statuses should I use when tracking applications?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common job application statuses include: Applied (submitted your application), Phone Screen (initial phone or video call), Interview (in-person or panel interview), Offer (received a job offer), Rejected (application was declined), and Withdrawn (you chose to withdraw). Using consistent statuses helps you quickly see where each application stands and identify bottlenecks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export my job application data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this job tracker allows you to export all your application data as a CSV file. CSV files can be opened in Microsoft Excel, Google Sheets, Apple Numbers, or any spreadsheet application. This makes it easy to create backups, share your data, or perform additional analysis on your job search progress."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my job tracker data private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your data is completely private and secure. All job application data is stored locally in your browser using localStorage. No data is ever uploaded to any server or shared with third parties. If you clear your browser data, your tracker data will be removed, so we recommend regularly exporting your data as a CSV backup."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a></nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-5xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Free Job Application Tracker Online</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Track all your job applications in one place. Add status updates, notes, filter by status, sort by date, and export as CSV. Free, no sign-up, saved in your browser.</p>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Status Summary -->
+                    <div id="statusSummary" class="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-6"></div>
+
+                    <!-- Add New Application -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-6">
+                        <h3 class="text-base font-bold text-slate-900 mb-4">Add New Application</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                            <input type="text" id="jtCompany" placeholder="Company Name" class="block w-full px-3 py-2.5 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium">
+                            <input type="text" id="jtTitle" placeholder="Job Title" class="block w-full px-3 py-2.5 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium">
+                            <input type="date" id="jtDate" class="block w-full px-3 py-2.5 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium">
+                            <select id="jtStatus" class="block w-full px-3 py-2.5 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium bg-white">
+                                <option value="Applied">Applied</option>
+                                <option value="Phone Screen">Phone Screen</option>
+                                <option value="Interview">Interview</option>
+                                <option value="Offer">Offer</option>
+                                <option value="Rejected">Rejected</option>
+                                <option value="Withdrawn">Withdrawn</option>
+                            </select>
+                            <button onclick="addApplication()" class="px-4 py-2.5 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 shadow-md text-sm">Add</button>
+                        </div>
+                        <div class="mt-3">
+                            <input type="text" id="jtNotes" placeholder="Notes (optional)" class="block w-full px-3 py-2.5 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium">
+                        </div>
+                    </div>
+
+                    <!-- Filter and Sort -->
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
+                        <select id="jtFilter" onchange="renderTable()" class="px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium bg-white">
+                            <option value="all">All Statuses</option>
+                            <option value="Applied">Applied</option>
+                            <option value="Phone Screen">Phone Screen</option>
+                            <option value="Interview">Interview</option>
+                            <option value="Offer">Offer</option>
+                            <option value="Rejected">Rejected</option>
+                            <option value="Withdrawn">Withdrawn</option>
+                        </select>
+                        <select id="jtSort" onchange="renderTable()" class="px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium bg-white">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="company">Company A-Z</option>
+                        </select>
+                        <button onclick="exportCSV()" class="px-4 py-2 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-700 shadow-md text-sm flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Export CSV
+                        </button>
+                        <button onclick="clearAll()" class="px-4 py-2 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 shadow-md text-sm">Clear All</button>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="table-responsive">
+                        <div id="jobsTable"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Job Application Tracker — Organize Your Job Search</h2>
+                <p class="text-slate-600 mb-4">Staying organized during a job search is critical to success. OptiDrop's Job Application Tracker lets you log every application, track its status through each stage, add notes for follow-ups, and see an overview of your entire job search at a glance. No spreadsheets to set up, no accounts to create, just start tracking.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Track Every Stage</h3>
+                <p class="text-slate-600 mb-4">Use the six status options to track where each application stands: Applied, Phone Screen, Interview, Offer, Rejected, and Withdrawn. The status summary at the top gives you an instant count of applications in each stage, helping you understand your pipeline and focus your efforts.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Export and Back Up</h3>
+                <p class="text-slate-600">Export your entire application history as a CSV file that opens in Excel, Google Sheets, or any spreadsheet tool. Since your data is stored locally in your browser, we recommend exporting regularly as a backup. Your data is 100% private and never leaves your device.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to track job applications?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The most effective way to track job applications is to use a dedicated tracker that records the company name, job title, date applied, current status, and any notes. Update the status each time you hear back or progress to a new stage. Review your tracker regularly to follow up on applications and identify patterns in your job search.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What statuses should I use when tracking applications?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Common job application statuses include: Applied (submitted your application), Phone Screen (initial phone or video call), Interview (in-person or panel interview), Offer (received a job offer), Rejected (application was declined), and Withdrawn (you chose to withdraw). Using consistent statuses helps you quickly see where each application stands and identify bottlenecks.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I export my job application data?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, this job tracker allows you to export all your application data as a CSV file. CSV files can be opened in Microsoft Excel, Google Sheets, Apple Numbers, or any spreadsheet application. This makes it easy to create backups, share your data, or perform additional analysis on your job search progress.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is my job tracker data private?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Your data is completely private and secure. All job application data is stored locally in your browser using localStorage. No data is ever uploaded to any server or shared with third parties. If you clear your browser data, your tracker data will be removed, so we recommend regularly exporting your data as a CSV backup.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/career/resume-builder.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Resume Builder</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Build a professional resume with 4 templates and live preview.</span>
+            </a>
+            <a href="/tools/career/cover-letter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Cover Letter Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate a professional cover letter for your job application.</span>
+            </a>
+            <a href="/tools/career/linkedin-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">LinkedIn Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate optimized LinkedIn headlines and About sections.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var applications = autoLoad('job_tracker') || [];
+        var editId = null;
+
+        // Set today's date as default
+        document.getElementById('jtDate').value = new Date().toISOString().split('T')[0];
+
+        function getNextId() {
+            return applications.length ? Math.max.apply(null, applications.map(function(a){ return a.id; })) + 1 : 1;
+        }
+
+        window.addApplication = function() {
+            var company = document.getElementById('jtCompany').value.trim();
+            var title = document.getElementById('jtTitle').value.trim();
+            var date = document.getElementById('jtDate').value;
+            var status = document.getElementById('jtStatus').value;
+            var notes = document.getElementById('jtNotes').value.trim();
+
+            if (!company || !title) {
+                showToast('Please enter company name and job title.', 'error');
+                return;
+            }
+
+            if (editId !== null) {
+                // Update existing
+                var idx = applications.findIndex(function(a){ return a.id === editId; });
+                if (idx !== -1) {
+                    applications[idx].company = company;
+                    applications[idx].title = title;
+                    applications[idx].date = date;
+                    applications[idx].status = status;
+                    applications[idx].notes = notes;
+                }
+                editId = null;
+                document.querySelector('#jtCompany').closest('.bg-slate-50').querySelector('h3').textContent = 'Add New Application';
+                showToast('Application updated!');
+            } else {
+                applications.push({
+                    id: getNextId(),
+                    company: company,
+                    title: title,
+                    date: date,
+                    status: status,
+                    notes: notes
+                });
+                showToast('Application added!');
+            }
+
+            saveAndRender();
+            document.getElementById('jtCompany').value = '';
+            document.getElementById('jtTitle').value = '';
+            document.getElementById('jtDate').value = new Date().toISOString().split('T')[0];
+            document.getElementById('jtStatus').value = 'Applied';
+            document.getElementById('jtNotes').value = '';
+        };
+
+        window.editApplication = function(id) {
+            var app = applications.find(function(a){ return a.id === id; });
+            if (!app) return;
+            document.getElementById('jtCompany').value = app.company;
+            document.getElementById('jtTitle').value = app.title;
+            document.getElementById('jtDate').value = app.date;
+            document.getElementById('jtStatus').value = app.status;
+            document.getElementById('jtNotes').value = app.notes || '';
+            editId = id;
+            document.querySelector('#jtCompany').closest('.bg-slate-50').querySelector('h3').textContent = 'Edit Application';
+            document.getElementById('jtCompany').focus();
+            showToast('Editing application. Click Add to save changes.');
+        };
+
+        window.deleteApplication = function(id) {
+            if (!confirm('Delete this application?')) return;
+            applications = applications.filter(function(a){ return a.id !== id; });
+            saveAndRender();
+            showToast('Application deleted.');
+        };
+
+        window.updateStatus = function(id, newStatus) {
+            var app = applications.find(function(a){ return a.id === id; });
+            if (app) {
+                app.status = newStatus;
+                saveAndRender();
+            }
+        };
+
+        function saveAndRender() {
+            autoSave('job_tracker', applications);
+            renderTable();
+        }
+
+        function renderTable() {
+            var filter = document.getElementById('jtFilter').value;
+            var sort = document.getElementById('jtSort').value;
+
+            var filtered = filter === 'all' ? applications.slice() : applications.filter(function(a){ return a.status === filter; });
+
+            if (sort === 'newest') {
+                filtered.sort(function(a, b){ return (b.date || '').localeCompare(a.date || ''); });
+            } else if (sort === 'oldest') {
+                filtered.sort(function(a, b){ return (a.date || '').localeCompare(b.date || ''); });
+            } else if (sort === 'company') {
+                filtered.sort(function(a, b){ return a.company.localeCompare(b.company); });
+            }
+
+            // Status summary
+            var counts = { 'Applied': 0, 'Phone Screen': 0, 'Interview': 0, 'Offer': 0, 'Rejected': 0, 'Withdrawn': 0 };
+            applications.forEach(function(a){ if (counts.hasOwnProperty(a.status)) counts[a.status]++; });
+
+            var summaryHtml = '';
+            var statusColors = {
+                'Applied': 'bg-blue-50 border-blue-200 text-blue-800',
+                'Phone Screen': 'bg-amber-50 border-amber-200 text-amber-800',
+                'Interview': 'bg-indigo-50 border-indigo-200 text-indigo-800',
+                'Offer': 'bg-emerald-50 border-emerald-200 text-emerald-800',
+                'Rejected': 'bg-red-50 border-red-200 text-red-800',
+                'Withdrawn': 'bg-slate-100 border-slate-200 text-slate-600'
+            };
+            Object.keys(counts).forEach(function(status){
+                summaryHtml += '<div class="border rounded-xl p-3 text-center ' + statusColors[status] + '">';
+                summaryHtml += '<div class="text-2xl font-extrabold">' + counts[status] + '</div>';
+                summaryHtml += '<div class="text-xs font-bold">' + status + '</div>';
+                summaryHtml += '</div>';
+            });
+            document.getElementById('statusSummary').innerHTML = summaryHtml;
+
+            // Table
+            if (filtered.length === 0) {
+                document.getElementById('jobsTable').innerHTML = '<p class="text-center text-slate-400 py-10">No applications yet. Add your first job application above.</p>';
+                return;
+            }
+
+            var badgeClasses = {
+                'Applied': 'applied',
+                'Phone Screen': 'screen',
+                'Interview': 'interview',
+                'Offer': 'offer',
+                'Rejected': 'rejected',
+                'Withdrawn': 'withdrawn'
+            };
+
+            var tableHtml = '<table class="jobs-table"><thead><tr>';
+            tableHtml += '<th>Company</th><th>Job Title</th><th>Date</th><th>Status</th><th>Notes</th><th>Actions</th>';
+            tableHtml += '</tr></thead><tbody>';
+
+            filtered.forEach(function(app){
+                var dateFormatted = '';
+                if (app.date) {
+                    var d = new Date(app.date + 'T00:00:00');
+                    dateFormatted = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                }
+                tableHtml += '<tr>';
+                tableHtml += '<td class="font-bold">' + escHtml(app.company) + '</td>';
+                tableHtml += '<td>' + escHtml(app.title) + '</td>';
+                tableHtml += '<td>' + dateFormatted + '</td>';
+                tableHtml += '<td><select onchange="updateStatus(' + app.id + ', this.value)" class="text-xs font-bold border border-slate-200 rounded px-2 py-1 ' + badgeClasses[app.status] + '">';
+                ['Applied','Phone Screen','Interview','Offer','Rejected','Withdrawn'].forEach(function(s){
+                    tableHtml += '<option value="' + s + '"' + (app.status === s ? ' selected' : '') + '>' + s + '</option>';
+                });
+                tableHtml += '</select></td>';
+                tableHtml += '<td class="max-w-[200px] truncate" title="' + escHtml(app.notes || '') + '">' + escHtml(app.notes || '-') + '</td>';
+                tableHtml += '<td class="whitespace-nowrap">';
+                tableHtml += '<button onclick="editApplication(' + app.id + ')" class="text-blue-600 hover:text-blue-800 font-bold text-xs mr-2">Edit</button>';
+                tableHtml += '<button onclick="deleteApplication(' + app.id + ')" class="text-red-600 hover:text-red-800 font-bold text-xs">Delete</button>';
+                tableHtml += '</td>';
+                tableHtml += '</tr>';
+            });
+
+            tableHtml += '</tbody></table>';
+            document.getElementById('jobsTable').innerHTML = tableHtml;
+        }
+
+        function escHtml(str) {
+            var div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        window.exportCSV = function() {
+            if (!applications.length) {
+                showToast('No applications to export.', 'error');
+                return;
+            }
+            var csv = 'Company,Job Title,Date Applied,Status,Notes\n';
+            applications.forEach(function(app){
+                csv += '"' + (app.company || '').replace(/"/g, '""') + '",';
+                csv += '"' + (app.title || '').replace(/"/g, '""') + '",';
+                csv += '"' + (app.date || '') + '",';
+                csv += '"' + (app.status || '') + '",';
+                csv += '"' + (app.notes || '').replace(/"/g, '""') + '"\n';
+            });
+            downloadTextFile(csv, 'job-applications.csv');
+            showToast('Applications exported as CSV!');
+        };
+
+        window.clearAll = function() {
+            if (!confirm('Are you sure you want to delete all applications? This cannot be undone.')) return;
+            applications = [];
+            saveAndRender();
+            showToast('All applications cleared.');
+        };
+
+        // Enter key to add
+        ['jtCompany', 'jtTitle', 'jtNotes'].forEach(function(id){
+            document.getElementById(id).addEventListener('keypress', function(e){
+                if (e.key === 'Enter') addApplication();
+            });
+        });
+
+        // Initial render
+        renderTable();
+    })();
+    </script>
+</body>
+</html>

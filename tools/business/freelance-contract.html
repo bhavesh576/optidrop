@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Freelance Contract Generator — Service Agreement Template | OptiDrop</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Generate a professional freelance contract in minutes. Includes payment terms, revisions, and NDA clauses. Download free PDF.">
+    <meta name="keywords" content="freelance contract generator, service agreement template, freelancer contract, independent contractor agreement, freelance agreement PDF">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Free Freelance Contract Generator — Service Agreement Template | OptiDrop">
+    <meta property="og:description" content="Generate a professional freelance contract in minutes. Includes payment terms, revisions, and NDA clauses. Download free PDF.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/business/freelance-contract.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Freelance Contract Generator — Service Agreement Template | OptiDrop">
+    <meta name="twitter:description" content="Generate a professional freelance contract in minutes. Download free PDF.">
+    <link rel="canonical" href="https://optidrop.online/tools/business/freelance-contract.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Business Tools", "item": "https://optidrop.online/tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Freelance Contract Generator", "item": "https://optidrop.online/tools/business/freelance-contract.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Freelance Contract Generator",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Generate a professional freelance contract in minutes. Includes payment terms, revisions, and NDA clauses. Download free PDF."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need a contract as a freelancer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, a contract is essential for freelancers. It protects both parties by clearly defining the scope of work, payment terms, deadlines, and intellectual property rights. Without a contract, disputes over payment, deliverables, or timelines can be difficult to resolve. A written agreement also adds professionalism and builds trust with clients."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should a freelance contract include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A freelance contract should include: names and contact details of both parties, a detailed project description and scope of work, start and end dates, total compensation and payment schedule, number of revision rounds included, intellectual property ownership terms, confidentiality/NDA clauses, termination conditions, and the governing law jurisdiction."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a verbal agreement legally binding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In many jurisdictions, verbal agreements can be legally binding. However, they are extremely difficult to prove in court. Written contracts are always recommended because they provide clear evidence of what was agreed upon. For freelance work, always use a written contract to protect yourself from non-payment or scope disputes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to handle scope creep?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Scope creep occurs when a client requests additional work beyond the original agreement. To handle it: define the scope clearly in your contract, specify the number of revision rounds included, include a clause stating that additional work will be billed separately, and communicate changes in writing before starting extra work. A good contract is your best defense against scope creep."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Free Freelance Contract Generator — Service Agreement Template</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Create a professional freelance service agreement in minutes. Includes payment terms, revision limits, and optional NDA clause. Download as PDF — 100% free, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Party Details -->
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Party Details</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label for="freelancerName" class="block text-sm font-bold text-slate-700 mb-2">Freelancer Name</label>
+                            <input type="text" id="freelancerName" placeholder="Your full name"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="clientName" class="block text-sm font-bold text-slate-700 mb-2">Client Name</label>
+                            <input type="text" id="clientName" placeholder="Client's full name or company"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                    </div>
+
+                    <!-- Project Details -->
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Project Details</h3>
+                    <div class="mb-6">
+                        <label for="projectDesc" class="block text-sm font-bold text-slate-700 mb-2">Project Description</label>
+                        <textarea id="projectDesc" rows="4" placeholder="Describe the scope of work, deliverables, and any specific requirements..."
+                            class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                            autocomplete="off"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label for="startDate" class="block text-sm font-bold text-slate-700 mb-2">Start Date</label>
+                            <input type="date" id="startDate"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="endDate" class="block text-sm font-bold text-slate-700 mb-2">End Date</label>
+                            <input type="date" id="endDate"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                    </div>
+
+                    <!-- Payment & Terms -->
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Payment &amp; Terms</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
+                        <div>
+                            <label for="paymentAmount" class="block text-sm font-bold text-slate-700 mb-2">Payment Amount</label>
+                            <input type="text" id="paymentAmount" placeholder="e.g. $5,000"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="paymentTerms" class="block text-sm font-bold text-slate-700 mb-2">Payment Terms</label>
+                            <select id="paymentTerms"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white cursor-pointer">
+                                <option value="50% upfront, 50% on completion">50% upfront, 50% on completion</option>
+                                <option value="100% upfront">100% upfront</option>
+                                <option value="100% on completion">100% on completion</option>
+                                <option value="30% upfront, 70% on completion">30% upfront, 70% on completion</option>
+                                <option value="Monthly payments">Monthly payments</option>
+                                <option value="Milestone-based payments">Milestone-based payments</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="revisions" class="block text-sm font-bold text-slate-700 mb-2">Number of Revisions</label>
+                            <select id="revisions"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white cursor-pointer">
+                                <option value="1">1 revision</option>
+                                <option value="2">2 revisions</option>
+                                <option value="3" selected>3 revisions</option>
+                                <option value="5">5 revisions</option>
+                                <option value="Unlimited">Unlimited revisions</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label for="governingLaw" class="block text-sm font-bold text-slate-700 mb-2">Governing Law (Country)</label>
+                            <input type="text" id="governingLaw" placeholder="e.g. United States" value="United States"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Include NDA Clause</label>
+                            <div class="flex items-center gap-3 mt-3">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="ndaToggle" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span class="text-sm text-slate-600 font-medium">Non-Disclosure Agreement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3">
+                        <button id="btnGenerate" class="px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Download PDF
+                        </button>
+                        <button id="btnCopy" class="px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            Copy Text
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Freelance Contract Generator — Create Professional Service Agreements</h2>
+                <p class="text-slate-600 mb-4">Whether you are a designer, developer, writer, or consultant, having a solid freelance contract is crucial. OptiDrop's Freelance Contract Generator creates a professional service agreement that covers all essential terms including scope of work, payment schedules, revision limits, and confidentiality clauses.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Protect Yourself and Your Work</h3>
+                <p class="text-slate-600 mb-4">Our contract template includes built-in protections for freelancers: clear payment terms to prevent non-payment disputes, revision limits to prevent scope creep, and an optional NDA clause to protect confidential information shared during the project.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Customizable and Downloadable</h3>
+                <p class="text-slate-600">Fill in your specific details, toggle the NDA clause on or off, choose your payment structure, and download a clean PDF contract ready to send to your client. No legal expertise needed — the template covers the standard terms for most freelance engagements.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Do I need a contract as a freelancer?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, a contract is essential for freelancers. It protects both parties by clearly defining the scope of work, payment terms, deadlines, and intellectual property rights. Without a contract, disputes over payment, deliverables, or timelines can be difficult to resolve. A written agreement also adds professionalism and builds trust with clients.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What should a freelance contract include?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A freelance contract should include: names and contact details of both parties, a detailed project description and scope of work, start and end dates, total compensation and payment schedule, number of revision rounds included, intellectual property ownership terms, confidentiality/NDA clauses, termination conditions, and the governing law jurisdiction.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is a verbal agreement legally binding?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        In many jurisdictions, verbal agreements can be legally binding. However, they are extremely difficult to prove in court. Written contracts are always recommended because they provide clear evidence of what was agreed upon. For freelance work, always use a written contract to protect yourself from non-payment or scope disputes.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to handle scope creep?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer hidden px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Scope creep occurs when a client requests additional work beyond the original agreement. To handle it: define the scope clearly in your contract, specify the number of revision rounds included, include a clause stating that additional work will be billed separately, and communicate changes in writing before starting extra work. A good contract is your best defense against scope creep.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/business/invoice-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Invoice Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Create professional invoices with line items, tax, and PDF download.</span>
+                </a>
+                <a href="/tools/business/business-proposal.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Business Proposal</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Create professional business proposals with services and pricing.</span>
+                </a>
+                <a href="/tools/business/offer-letter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Offer Letter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate formal job offer letters with salary and benefits details.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+                        <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Health Tools</h4>
+                    <a href="/tools/bmi-calculator.html">BMI Calculator</a>
+                    <a href="/tools/health/ideal-weight.html">Ideal Weight</a>
+                    <a href="/tools/health/calorie-calculator.html">Calorie Calculator</a>
+                    <a href="/tools/health/water-intake.html">Water Intake</a>
+                    <a href="/tools/health/sleep-calculator.html">Sleep Calculator</a>
+                    <a href="/tools/health/pregnancy-due-date.html">Pregnancy Due Date</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 70+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        function saveData() {
+            autoSave('freelance_contract', {
+                freelancer: document.getElementById('freelancerName').value,
+                client: document.getElementById('clientName').value,
+                project: document.getElementById('projectDesc').value,
+                startDate: document.getElementById('startDate').value,
+                endDate: document.getElementById('endDate').value,
+                payment: document.getElementById('paymentAmount').value,
+                terms: document.getElementById('paymentTerms').value,
+                revisions: document.getElementById('revisions').value,
+                law: document.getElementById('governingLaw').value,
+                nda: document.getElementById('ndaToggle').checked
+            });
+        }
+
+        function loadData() {
+            var d = autoLoad('freelance_contract');
+            if (!d) return;
+            document.getElementById('freelancerName').value = d.freelancer || '';
+            document.getElementById('clientName').value = d.client || '';
+            document.getElementById('projectDesc').value = d.project || '';
+            document.getElementById('startDate').value = d.startDate || '';
+            document.getElementById('endDate').value = d.endDate || '';
+            document.getElementById('paymentAmount').value = d.payment || '';
+            if (d.terms) document.getElementById('paymentTerms').value = d.terms;
+            if (d.revisions) document.getElementById('revisions').value = d.revisions;
+            document.getElementById('governingLaw').value = d.law || 'United States';
+            if (d.nda !== undefined) document.getElementById('ndaToggle').checked = d.nda;
+        }
+
+        function getFormData() {
+            return {
+                freelancer: document.getElementById('freelancerName').value || '[Freelancer Name]',
+                client: document.getElementById('clientName').value || '[Client Name]',
+                project: document.getElementById('projectDesc').value || '[Project Description]',
+                startDate: document.getElementById('startDate').value || '[Start Date]',
+                endDate: document.getElementById('endDate').value || '[End Date]',
+                payment: document.getElementById('paymentAmount').value || '[Payment Amount]',
+                terms: document.getElementById('paymentTerms').value,
+                revisions: document.getElementById('revisions').value,
+                law: document.getElementById('governingLaw').value || 'United States',
+                nda: document.getElementById('ndaToggle').checked
+            };
+        }
+
+        function buildContractText(d) {
+            var text = 'FREELANCE SERVICE AGREEMENT\n\n';
+            text += 'This Freelance Service Agreement ("Agreement") is entered into as of ' + d.startDate + ' by and between:\n\n';
+            text += 'Freelancer: ' + d.freelancer + '\n';
+            text += 'Client: ' + d.client + '\n\n';
+            text += '1. SCOPE OF WORK\n';
+            text += 'The Freelancer agrees to perform the following services:\n' + d.project + '\n\n';
+            text += '2. TERM\n';
+            text += 'This Agreement shall commence on ' + d.startDate + ' and shall continue until ' + d.endDate + ', unless terminated earlier in accordance with this Agreement.\n\n';
+            text += '3. COMPENSATION\n';
+            text += 'The Client agrees to pay the Freelancer a total of ' + d.payment + ' for the services described herein.\n';
+            text += 'Payment Terms: ' + d.terms + '\n\n';
+            text += '4. REVISIONS\n';
+            text += 'The scope of work includes ' + d.revisions + ' revision(s). Additional revisions beyond this limit will be billed separately at a rate agreed upon by both parties.\n\n';
+            text += '5. INTELLECTUAL PROPERTY\n';
+            text += 'Upon full payment, all work product and deliverables created under this Agreement shall be the exclusive property of the Client. The Freelancer retains the right to display the work in their portfolio unless otherwise agreed in writing.\n\n';
+
+            if (d.nda) {
+                text += '6. NON-DISCLOSURE AGREEMENT (NDA)\n';
+                text += 'The Freelancer agrees to keep confidential all proprietary information, trade secrets, and any other confidential materials shared by the Client during the course of this engagement. This obligation shall survive the termination of this Agreement for a period of two (2) years. The Freelancer shall not disclose, publish, or otherwise reveal any confidential information to any third party without the prior written consent of the Client.\n\n';
+            }
+
+            text += (d.nda ? '7' : '6') + '. TERMINATION\n';
+            text += 'Either party may terminate this Agreement with seven (7) days written notice. In the event of termination, the Client shall pay the Freelancer for all work completed up to the date of termination.\n\n';
+            text += (d.nda ? '8' : '7') + '. GOVERNING LAW\n';
+            text += 'This Agreement shall be governed by and construed in accordance with the laws of ' + d.law + '.\n\n';
+            text += (d.nda ? '9' : '8') + '. ENTIRE AGREEMENT\n';
+            text += 'This Agreement constitutes the entire agreement between the parties and supersedes all prior negotiations, representations, or agreements relating to the subject matter herein.\n\n';
+            text += 'SIGNATURES\n\n';
+            text += '___________________________          ___________________________\n';
+            text += d.freelancer + '                              ' + d.client + '\n';
+            text += 'Freelancer                              Client\n';
+            text += 'Date: ____________                     Date: ____________\n';
+            return text;
+        }
+
+        function generatePDF() {
+            var d = getFormData();
+            var jsPDF = window.jspdf.jsPDF;
+            var doc = new jsPDF();
+            var y = 20;
+            var pageWidth = 190;
+
+            doc.setFontSize(18);
+            doc.setFont('helvetica', 'bold');
+            doc.text('FREELANCE SERVICE AGREEMENT', 105, y, {align:'center'});
+            y += 14;
+
+            doc.setFontSize(10);
+            doc.setFont('helvetica', 'normal');
+            doc.text('This Freelance Service Agreement ("Agreement") is entered into as of ' + d.startDate + ' by and between:', 14, y);
+            y += 8;
+            doc.setFont('helvetica', 'bold');
+            doc.text('Freelancer: ', 14, y);
+            doc.setFont('helvetica', 'normal');
+            doc.text(d.freelancer, 42, y);
+            y += 6;
+            doc.setFont('helvetica', 'bold');
+            doc.text('Client: ', 14, y);
+            doc.setFont('helvetica', 'normal');
+            doc.text(d.client, 32, y);
+            y += 12;
+
+            var sections = [
+                {title:'1. SCOPE OF WORK', body:'The Freelancer agrees to perform the following services:\n' + d.project},
+                {title:'2. TERM', body:'This Agreement shall commence on ' + d.startDate + ' and shall continue until ' + d.endDate + ', unless terminated earlier in accordance with this Agreement.'},
+                {title:'3. COMPENSATION', body:'The Client agrees to pay the Freelancer a total of ' + d.payment + ' for the services described herein.\nPayment Terms: ' + d.terms},
+                {title:'4. REVISIONS', body:'The scope of work includes ' + d.revisions + ' revision(s). Additional revisions beyond this limit will be billed separately at a rate agreed upon by both parties.'},
+                {title:'5. INTELLECTUAL PROPERTY', body:'Upon full payment, all work product and deliverables created under this Agreement shall be the exclusive property of the Client. The Freelancer retains the right to display the work in their portfolio unless otherwise agreed in writing.'}
+            ];
+
+            if (d.nda) {
+                sections.push({title:'6. NON-DISCLOSURE AGREEMENT', body:'The Freelancer agrees to keep confidential all proprietary information, trade secrets, and any other confidential materials shared by the Client during the course of this engagement. This obligation shall survive the termination of this Agreement for a period of two (2) years.'});
+            }
+
+            var termNum = d.nda ? 7 : 6;
+            sections.push({title: termNum + '. TERMINATION', body:'Either party may terminate this Agreement with seven (7) days written notice. In the event of termination, the Client shall pay the Freelancer for all work completed up to the date of termination.'});
+            sections.push({title: (termNum+1) + '. GOVERNING LAW', body:'This Agreement shall be governed by and construed in accordance with the laws of ' + d.law + '.'});
+            sections.push({title: (termNum+2) + '. ENTIRE AGREEMENT', body:'This Agreement constitutes the entire agreement between the parties and supersedes all prior negotiations, representations, or agreements relating to the subject matter herein.'});
+
+            sections.forEach(function(sec) {
+                if (y > 260) { doc.addPage(); y = 20; }
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(11);
+                doc.text(sec.title, 14, y);
+                y += 7;
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(10);
+                var lines = doc.splitTextToSize(sec.body, pageWidth);
+                lines.forEach(function(line) {
+                    if (y > 280) { doc.addPage(); y = 20; }
+                    doc.text(line, 14, y);
+                    y += 5;
+                });
+                y += 4;
+            });
+
+            y += 6;
+            if (y > 250) { doc.addPage(); y = 20; }
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11);
+            doc.text('SIGNATURES', 14, y);
+            y += 14;
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(10);
+            doc.text('___________________________          ___________________________', 14, y);
+            y += 6;
+            doc.text(d.freelancer, 14, y);
+            doc.text(d.client, 110, y);
+            y += 5;
+            doc.text('Freelancer', 14, y);
+            doc.text('Client', 110, y);
+            y += 5;
+            doc.text('Date: ____________', 14, y);
+            doc.text('Date: ____________', 110, y);
+
+            doc.save('Freelance_Contract_' + d.freelancer.replace(/\s+/g, '_') + '.pdf');
+            showToast('Contract PDF downloaded!');
+        }
+
+        // Init
+        loadData();
+        var fields = ['freelancerName','clientName','projectDesc','startDate','endDate','paymentAmount','governingLaw'];
+        fields.forEach(function(id) {
+            document.getElementById(id).addEventListener('input', saveData);
+        });
+        ['paymentTerms','revisions'].forEach(function(id) {
+            document.getElementById(id).addEventListener('change', saveData);
+        });
+        document.getElementById('ndaToggle').addEventListener('change', saveData);
+
+        document.getElementById('btnGenerate').addEventListener('click', generatePDF);
+        document.getElementById('btnCopy').addEventListener('click', function() {
+            var d = getFormData();
+            copyToClipboard(buildContractText(d), 'Contract text copied!');
+        });
+    })();
+    </script>
+</body>
+</html>
