@@ -170,7 +170,7 @@ Browse tools by category:
 
 ## Site Pages
 
-- [Tools Directory](https://optidrop.online/tools.html) — Browse all 70+ tools with search and category filters
+- [Tools Directory](https://optidrop.online/tools.html) — Browse all 85+ tools with search and category filters
 - [About](https://optidrop.online/about.html) — What OptiDrop is and why it is free
 - [Privacy Policy](https://optidrop.online/privacy-policy.html) — No data collection, 100% browser-side processing
 - [Terms of Service](https://optidrop.online/terms.html) — Free to use, no warranties
@@ -265,7 +265,13 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   │   ├── time-calculator.html            # Time add/subtract calculator
 │   │   ├── fuel-cost.html                  # Fuel cost estimator
 │   │   ├── currency-converter.html         # Currency converter (25 currencies)
-│   │   └── calorie-calculator.html         # Calorie / TDEE calculator
+│   │   ├── calorie-calculator.html         # Calorie / TDEE calculator
+│   │   ├── 401k-calculator.html            # 401(k) retirement savings (USA)
+│   │   ├── paycheck-calculator.html        # US take-home pay calculator
+│   │   ├── savings-goal.html               # Savings goal planner
+│   │   ├── invoice-tax-calculator.html     # US sales tax (all 50 states)
+│   │   ├── vat-calculator.html             # VAT calculator (UK/EU/global)
+│   │   └── overtime-calculator.html        # Overtime pay calculator
 │   ├── text/
 │   │   ├── lorem-ipsum-generator.html      # Lorem ipsum generator
 │   │   ├── random-name-generator.html      # Random name generator
@@ -276,7 +282,9 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   │   ├── find-and-replace.html           # Find and replace text
 │   │   ├── number-to-words.html            # Number to words converter
 │   │   ├── reverse-text.html               # Reverse text generator
-│   │   └── text-to-slug.html              # Text to URL slug generator
+│   │   ├── text-to-slug.html               # Text to URL slug generator
+│   │   ├── word-frequency.html             # Word frequency counter
+│   │   └── sentence-reorder.html           # Sentence shuffler
 │   ├── career/
 │   │   ├── resume-builder.html             # Resume builder (4 templates, PDF)
 │   │   ├── cover-letter.html               # Cover letter generator
@@ -306,14 +314,18 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   │   ├── url-encoder.html                # URL encoder/decoder
 │   │   ├── color-converter.html            # HEX/RGB/HSL color converter
 │   │   ├── markdown-preview.html           # Markdown live preview editor
-│   │   └── hash-generator.html             # SHA-256/SHA-512 hash generator
+│   │   ├── hash-generator.html             # SHA-256/SHA-512 hash generator
+│   │   ├── css-minifier.html               # CSS minifier with size comparison
+│   │   └── jwt-decoder.html                # JWT token decoder
 │   └── health/
 │       ├── ideal-weight.html               # Ideal weight calculator (4 formulas)
 │       ├── calorie-calculator.html         # Calorie / TDEE calculator
 │       ├── water-intake.html               # Water intake calculator with tracker
 │       ├── sleep-calculator.html           # Sleep cycle calculator
 │       ├── pregnancy-due-date.html         # Pregnancy due date calculator
-│       └── ovulation-calculator.html       # Ovulation & fertile window calculator
+│       ├── ovulation-calculator.html       # Ovulation & fertile window calculator
+│       ├── macro-calculator.html           # Macronutrient calculator (protein/carbs/fat)
+│       └── body-fat-calculator.html        # Body fat percentage (US Navy method)
 ├── category/
 │   ├── image-tools.html                    # Image tools category
 │   ├── pdf-tools.html                      # PDF tools category
@@ -325,6 +337,12 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   ├── utility-tools.html                  # Utility tools category
 │   ├── developer-tools.html                # Developer tools category
 │   └── health-tools.html                   # Health tools category
+├── compress-image-for-instagram.html       # SEO: compress images for Instagram
+├── jpg-to-pdf-iphone.html                  # SEO: iPhone photos to PDF
+├── pdf-to-jpg-free.html                    # SEO: PDF to JPG free
+├── free-invoice-generator.html             # SEO: free invoice generator
+├── free-resume-builder.html                # SEO: free resume builder
+├── reindex-checklist.html                  # Internal: Google Search Console checklist (noindex)
 ├── blog/
 │   ├── index.html                          # Blog index
 │   ├── compress-image-for-visa-application.html
@@ -343,7 +361,7 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 ├── background-worker.js                    # Web Worker: AI background removal
 ├── favicon.png                             # Favicon
 ├── Generated_image-removebg-preview.png    # Logo
-├── sitemap.xml                             # XML sitemap (103 URLs)
+├── sitemap.xml                             # XML sitemap (119 URLs)
 ├── robots.txt                              # Robots file
 └── ads.txt                                 # Google AdSense
 ```
@@ -389,7 +407,7 @@ All 12 file upload tool pages display a "100% Local — your file never leaves t
 ## SEO Features
 
 - Semantic HTML with proper H1-H3 hierarchy
-- Unique meta titles and descriptions per page (103 pages)
+- Unique meta titles and descriptions per page (120 pages)
 - Canonical tags on every page
 - Open Graph and Twitter Card meta tags on every page
 - JSON-LD structured data:
@@ -400,7 +418,7 @@ All 12 file upload tool pages display a "100% Local — your file never leaves t
   - Article schema (all blog posts)
   - Organization schema (about page)
   - WebPage schema (privacy, terms pages)
-- XML sitemap with 103 URLs
+- XML sitemap with 119 URLs
 - Internal linking: Workflow next-step sections, category pages, footer links
 - Blog with 8 SEO-optimized articles targeting long-tail keywords
 - CSS text logo (no image dependency for logo)
@@ -442,6 +460,19 @@ php -S localhost:8000
 ```
 
 Then open `http://localhost:8000` in your browser.
+
+---
+
+## Security
+
+- All user input inserted into HTML attributes is escaped via `escAttr()` to prevent XSS
+- `showToast()` uses `textContent` for message content (not innerHTML) to prevent injection
+- JSON Formatter escapes HTML entities before applying syntax highlighting
+- No `eval()`, `new Function()`, or dynamic code execution anywhere in the codebase
+- No open redirects — all `window.location` navigations use hardcoded or validated paths
+- No forms with external `action` URLs
+- localStorage data is isolated under `optidrop_*` namespace keys
+- All processing is client-side — no data is sent to any server
 
 ---
 

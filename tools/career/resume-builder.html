@@ -481,13 +481,13 @@
             div.id = 'exp-' + id;
             div.innerHTML = '<button class="remove-entry" onclick="removeExperience(' + id + ')" title="Remove"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>' +
                 '<div class="space-y-2 mt-1">' +
-                '<input type="text" placeholder="Job Title" class="exp-title block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.title || '' : '') + '">' +
-                '<input type="text" placeholder="Company Name" class="exp-company block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.company || '' : '') + '">' +
+                '<input type="text" placeholder="Job Title" class="exp-title block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + escAttr(data ? data.title : '') + '">' +
+                '<input type="text" placeholder="Company Name" class="exp-company block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + escAttr(data ? data.company : '') + '">' +
                 '<div class="grid grid-cols-2 gap-2">' +
-                '<input type="text" placeholder="Start Date" class="exp-start block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.start || '' : '') + '">' +
-                '<input type="text" placeholder="End Date" class="exp-end block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.end || '' : '') + '">' +
+                '<input type="text" placeholder="Start Date" class="exp-start block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + escAttr(data ? data.start : '') + '">' +
+                '<input type="text" placeholder="End Date" class="exp-end block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + escAttr(data ? data.end : '') + '">' +
                 '</div>' +
-                '<textarea placeholder="Key responsibilities and achievements..." rows="2" class="exp-desc block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium">' + (data ? data.desc || '' : '') + '</textarea>' +
+                '<textarea placeholder="Key responsibilities and achievements..." rows="2" class="exp-desc block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium">' + escHtml(data ? data.desc || '' : '') + '</textarea>' +
                 '</div>';
             document.getElementById('experienceList').appendChild(div);
             bindLiveUpdate();
@@ -508,12 +508,12 @@
             div.id = 'edu-' + id;
             div.innerHTML = '<button class="remove-entry" onclick="removeEducation(' + id + ')" title="Remove"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>' +
                 '<div class="space-y-2 mt-1">' +
-                '<input type="text" placeholder="School / University" class="edu-school block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.school || '' : '') + '">' +
-                '<input type="text" placeholder="Degree & Major" class="edu-degree block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.degree || '' : '') + '">' +
+                '<input type="text" placeholder="School / University" class="edu-school block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + escAttr(data ? data.school : '') + '">' +
+                '<input type="text" placeholder="Degree & Major" class="edu-degree block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + escAttr(data ? data.degree : '') + '">' +
                 '<div class="grid grid-cols-3 gap-2">' +
-                '<input type="text" placeholder="Start Year" class="edu-start block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.start || '' : '') + '">' +
-                '<input type="text" placeholder="End Year" class="edu-end block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.end || '' : '') + '">' +
-                '<input type="text" placeholder="GPA (optional)" class="edu-gpa block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + (data ? data.gpa || '' : '') + '">' +
+                '<input type="text" placeholder="Start Year" class="edu-start block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + escAttr(data ? data.start : '') + '">' +
+                '<input type="text" placeholder="End Year" class="edu-end block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + escAttr(data ? data.end : '') + '">' +
+                '<input type="text" placeholder="GPA (optional)" class="edu-gpa block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg focus:border-blue-500 text-slate-900 font-medium" value="' + escAttr(data ? data.gpa : '') + '">' +
                 '</div>' +
                 '</div>';
             document.getElementById('educationList').appendChild(div);
@@ -622,6 +622,9 @@
             var div = document.createElement('div');
             div.textContent = str;
             return div.innerHTML;
+        }
+        function escAttr(str) {
+            return String(str || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
         }
 
         function bindLiveUpdate() {
