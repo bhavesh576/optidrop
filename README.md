@@ -2,7 +2,7 @@
 
 **Free Online Tools — No Upload, No Sign-Up, No Cost**
 
-OptiDrop is a fully browser-based toolkit with **90+ free tools** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
+OptiDrop is a fully browser-based toolkit with **90+ free tools** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, fun, home improvement, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
 
 **Live at:** [https://optidrop.online](https://optidrop.online)
 
@@ -119,7 +119,7 @@ OptiDrop is a fully browser-based toolkit with **90+ free tools** for images, PD
 | Sentence Shuffler | Randomly shuffle or reverse sentence order | [/tools/text/sentence-reorder.html](https://optidrop.online/tools/text/sentence-reorder.html) |
 | Random Number & Name Picker | Generate random numbers or pick names from a list | [/tools/text/random-picker.html](https://optidrop.online/tools/text/random-picker.html) |
 
-### Developer Tools (9)
+### Developer Tools (16)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -132,6 +132,13 @@ OptiDrop is a fully browser-based toolkit with **90+ free tools** for images, PD
 | CSS Minifier | Minify CSS code to reduce file size with comparison | [/tools/developer/css-minifier.html](https://optidrop.online/tools/developer/css-minifier.html) |
 | JWT Decoder | Decode JSON Web Tokens to view header, payload, and expiry | [/tools/developer/jwt-decoder.html](https://optidrop.online/tools/developer/jwt-decoder.html) |
 | EXIF Metadata Stripper | Remove hidden GPS location and camera data from photos | [/tools/developer/exif-stripper.html](https://optidrop.online/tools/developer/exif-stripper.html) |
+| CSS Box Shadow Generator | Create CSS box shadows with live preview and copy-ready code | [/tools/developer/css-box-shadow-generator.html](https://optidrop.online/tools/developer/css-box-shadow-generator.html) |
+| CSS Gradient Generator | Create linear and radial CSS gradients with live preview | [/tools/developer/css-gradient-generator.html](https://optidrop.online/tools/developer/css-gradient-generator.html) |
+| HTML Entities Encoder | Encode and decode HTML special characters instantly | [/tools/developer/html-entities.html](https://optidrop.online/tools/developer/html-entities.html) |
+| JSON to CSV Converter | Convert JSON arrays to CSV format with column selection | [/tools/developer/json-to-csv.html](https://optidrop.online/tools/developer/json-to-csv.html) |
+| Regex Tester | Test regular expressions with live match highlighting | [/tools/developer/regex-tester.html](https://optidrop.online/tools/developer/regex-tester.html) |
+| Timestamp Converter | Convert between Unix timestamps and human-readable dates | [/tools/developer/timestamp-converter.html](https://optidrop.online/tools/developer/timestamp-converter.html) |
+| UUID Generator | Generate v4 UUIDs with crypto.getRandomValues | [/tools/developer/uuid-generator.html](https://optidrop.online/tools/developer/uuid-generator.html) |
 
 ### Health Tools (9)
 
@@ -174,17 +181,19 @@ Browse tools by category:
 - [Utility Tools](https://optidrop.online/category/utility-tools.html) — QR code, BMI, unit converter, password generator
 - [Developer Tools](https://optidrop.online/category/developer-tools.html) — JSON formatter, Base64, URL encoder, color converter
 - [Health Tools](https://optidrop.online/category/health-tools.html) — BMI, calorie, sleep, water intake, pregnancy
+- [Fun & Random Tools](https://optidrop.online/category/fun-tools.html) — Jokes, recipes, coin flip, random generators
+- [Home & DIY Tools](https://optidrop.online/category/home-tools.html) — Paint, wallpaper, concrete calculators, cooking converter
 
 ---
 
 ## Site Pages
 
-- [Tools Directory](https://optidrop.online/tools.html) — Browse all 85+ tools with search and category filters
+- [Tools Directory](https://optidrop.online/tools.html) — Browse all 90+ tools with search and category filters
 - [About](https://optidrop.online/about.html) — What OptiDrop is and why it is free
 - [Privacy Policy](https://optidrop.online/privacy-policy.html) — No data collection, 100% browser-side processing
 - [Terms of Service](https://optidrop.online/terms.html) — Free to use, no warranties
 - [Contact](https://optidrop.online/contact.html) — contact@optidrop.online
-- [Blog](https://optidrop.online/blog/) — Guides and tutorials
+- [Blog](https://optidrop.online/blog/) — 16 guides and tutorials
 
 ---
 
@@ -333,7 +342,14 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   │   ├── hash-generator.html             # SHA-256/SHA-512 hash generator
 │   │   ├── css-minifier.html               # CSS minifier with size comparison
 │   │   ├── jwt-decoder.html                # JWT token decoder
-│   │   └── exif-stripper.html              # EXIF metadata stripper
+│   │   ├── exif-stripper.html              # EXIF metadata stripper
+│   │   ├── css-box-shadow-generator.html   # CSS box shadow generator
+│   │   ├── css-gradient-generator.html     # CSS gradient generator
+│   │   ├── html-entities.html              # HTML entities encoder/decoder
+│   │   ├── json-to-csv.html                # JSON to CSV converter
+│   │   ├── regex-tester.html               # Regex tester with live matching
+│   │   ├── timestamp-converter.html        # Unix timestamp converter
+│   │   └── uuid-generator.html             # UUID v4 generator
 │   └── health/
 │       ├── ideal-weight.html               # Ideal weight calculator (4 formulas)
 │       ├── calorie-calculator.html         # Calorie / TDEE calculator
@@ -354,7 +370,9 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   ├── professional-tools.html             # Professional tools category
 │   ├── utility-tools.html                  # Utility tools category
 │   ├── developer-tools.html                # Developer tools category
-│   └── health-tools.html                   # Health tools category
+│   ├── health-tools.html                   # Health tools category
+│   ├── fun-tools.html                      # Fun & random tools category
+│   └── home-tools.html                     # Home & DIY tools category
 ├── compress-image-for-instagram.html       # SEO: compress images for Instagram
 ├── jpg-to-pdf-iphone.html                  # SEO: iPhone photos to PDF
 ├── pdf-to-jpg-free.html                    # SEO: PDF to JPG free
@@ -374,7 +392,11 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   ├── 401k-calculator-guide.html          # 401(k) retirement guide
 │   ├── paycheck-calculator-us-taxes.html   # US paycheck taxes guide
 │   ├── css-minification-guide.html         # CSS minification guide
-│   └── macro-calculator-diet-planning.html # Macro calculator diet guide
+│   ├── macro-calculator-diet-planning.html # Macro calculator diet guide
+│   ├── css-gradient-generator-guide.html   # CSS gradient generator guide
+│   ├── fun-tools-to-break-boredom.html     # Fun tools for boredom guide
+│   ├── wall-paint-estimate-diy-calculator.html # Wall paint calculator guide
+│   └── blood-pressure-tracking-without-apps.html # Blood pressure tracking guide
 ├── styles.css                              # All CSS (single file)
 ├── common.js                               # Shared JavaScript utilities
 ├── script.js                               # Dashboard + image/PDF tool implementations
@@ -383,7 +405,7 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 ├── background-worker.js                    # Web Worker: AI background removal
 ├── favicon.png                             # Favicon
 ├── Generated_image-removebg-preview.png    # Logo
-├── sitemap.xml                             # XML sitemap (123 URLs)
+├── sitemap.xml                             # XML sitemap
 ├── robots.txt                              # Robots file
 └── ads.txt                                 # Google AdSense
 ```
@@ -396,10 +418,13 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 The homepage shows your last 3 visited tools in a "Pick Up Where You Left Off" section. Tracked via localStorage under `optidrop_recent_tools` (stores last 5, displays last 3). Only visible when history exists.
 
 ### Keyboard Command Palette
-Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 85+ tools. Real-time filtering as you type, arrow key navigation, Enter to open, Escape to close. A small keyboard hint appears in the header on all pages.
+Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 90+ tools. Real-time filtering as you type, arrow key navigation, Enter to open, Escape to close. A small keyboard hint appears in the header on all pages.
 
 ### Dark Mode Toggle
 Sun/moon toggle button in the header on every page. Saves preference to localStorage under `optidrop_dark_mode`. Prevents flash of wrong theme by checking on script load. Deep navy color palette (#0f172a, #1e293b) — covers all components including tool cards, forms, footer, modals, and search.
+
+### Unified Navigation Header
+Every page on the site uses the same standardized navbar structure — logo, 4 desktop nav links (Tools, Categories, Blog, About), privacy badge, mobile hamburger menu with 4-link mobile nav, and responsive behavior. This ensures a consistent, professional experience across all 100+ pages. The navbar supports both light and dark themes with proper color transitions.
 
 ### Smart Clipboard Paste Detection
 On the homepage, pasting an image shows a toast with a link to Image Compressor. Pasting text longer than 20 characters shows a toast with a link to Word Counter.
@@ -449,7 +474,7 @@ All 12 file upload tool pages display a "100% Local — your file never leaves t
 ## SEO Features
 
 - Semantic HTML with proper H1-H3 hierarchy
-- Unique meta titles and descriptions per page (133 pages)
+- Unique meta titles and descriptions per page
 - Canonical tags on every page
 - Open Graph and Twitter Card meta tags on every page
 - JSON-LD structured data:
@@ -460,9 +485,9 @@ All 12 file upload tool pages display a "100% Local — your file never leaves t
   - Article schema (all blog posts)
   - Organization schema (about page)
   - WebPage schema (privacy, terms pages)
-- XML sitemap with 132 URLs
+- XML sitemap with all pages
 - Internal linking: Workflow next-step sections, category pages, footer links
-- Blog with 12 SEO-optimized articles targeting long-tail keywords
+- Blog with 16 SEO-optimized articles targeting long-tail keywords
 - CSS text logo (no image dependency for logo)
 - Mobile-first responsive design
 - Category filter chips on tools directory page (11 categories)

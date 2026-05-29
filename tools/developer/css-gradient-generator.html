@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Gradient Generator — Free Online Tool | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Generate CSS gradients online free. Create linear and radial gradients with multiple color stops, custom angles, and live preview. Copy CSS code instantly.">
+    <meta name="keywords" content="CSS gradient generator, linear gradient generator, radial gradient generator, CSS gradient tool, gradient maker online, CSS gradient code generator">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="CSS Gradient Generator — Free Online Tool | OptiDrop">
+    <meta property="og:description" content="Generate CSS gradients online free. Create linear and radial gradients with multiple color stops, custom angles, and live preview. Copy CSS code instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/css-gradient-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CSS Gradient Generator — Free Online Tool | OptiDrop">
+    <meta name="twitter:description" content="Generate CSS gradients online free. Create linear and radial gradients with multiple color stops. Copy CSS code instantly.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/css-gradient-generator.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "CSS Gradient Generator", "item": "https://optidrop.online/tools/developer/css-gradient-generator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop CSS Gradient Generator",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Generate CSS gradients online free. Create linear and radial gradients with multiple color stops, custom angles, and live preview."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a CSS gradient?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A CSS gradient is a smooth transition between two or more colors applied as a background. CSS supports linear-gradient, radial-gradient, and conic-gradient functions. Gradients are widely used in modern web design for buttons, backgrounds, and decorative elements without needing image files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I add a CSS gradient to my website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use the CSS background or background-image property with a gradient function. For example: background: linear-gradient(to right, #ff0000, #0000ff);. You can paste the generated CSS code directly into your stylesheet or inline style. This tool generates the exact code you need."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between linear and radial gradients?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A linear-gradient creates a straight-line color transition at a specified angle. A radial-gradient creates a circular or elliptical color transition radiating from a center point. Linear gradients are best for backgrounds and banners, while radial gradients work well for spotlight effects and buttons."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use more than two colors in a CSS gradient?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, CSS gradients support multiple color stops. You can add as many colors as you want by specifying additional color values in the gradient function. For example: linear-gradient(to right, #ff0000, #00ff00, #0000ff) creates a three-color gradient. This tool lets you add and remove color stops dynamically."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col dark:bg-slate-900 dark:text-slate-200">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3 dark:text-white">CSS Gradient Generator — Create Linear &amp; Radial Gradients Online</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto dark:text-slate-400">Generate beautiful CSS gradients with live preview. Pick colors, choose linear or radial, adjust angles, and copy the CSS code instantly. 100% free, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden dark:bg-slate-800 dark:border-slate-700">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Controls -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                        <!-- Gradient Type -->
+                        <div>
+                            <label for="gradientType" class="block text-sm font-bold text-slate-700 mb-2 dark:text-slate-300">Gradient Type</label>
+                            <select id="gradientType" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium dark:bg-slate-700 dark:border-slate-600 dark:text-white">
+                                <option value="linear">Linear</option>
+                                <option value="radial">Radial</option>
+                            </select>
+                        </div>
+                        <!-- Angle (for linear) -->
+                        <div id="angleContainer">
+                            <label for="gradientAngle" class="block text-sm font-bold text-slate-700 mb-2 dark:text-slate-300">Angle: <span id="angleValue">90</span>&deg;</label>
+                            <input type="range" id="gradientAngle" min="0" max="360" value="90"
+                                class="block w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 dark:bg-slate-600">
+                        </div>
+                    </div>
+
+                    <!-- Color Stops -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Color Stops</label>
+                            <button id="btnAddColor" class="px-4 py-2 text-sm font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                + Add Color
+                            </button>
+                        </div>
+                        <div id="colorStops" class="space-y-3">
+                            <!-- Color stops will be rendered here -->
+                        </div>
+                    </div>
+
+                    <!-- Preview -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-bold text-slate-700 mb-2 dark:text-slate-300">Live Preview</label>
+                        <div id="gradientPreview" class="w-full h-48 rounded-2xl border-2 border-slate-200 shadow-inner dark:border-slate-600" style="background: linear-gradient(90deg, #ff0000, #0000ff);"></div>
+                    </div>
+
+                    <!-- CSS Output -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-bold text-slate-700 mb-2 dark:text-slate-300">CSS Code</label>
+                        <div class="relative">
+                            <pre id="cssOutput" class="bg-slate-900 text-green-400 rounded-xl p-4 text-sm font-mono overflow-x-auto dark:bg-slate-950">background: linear-gradient(90deg, #ff0000, #0000ff);</pre>
+                            <button id="btnCopyCSS" class="absolute top-3 right-3 px-3 py-1.5 text-xs font-bold bg-slate-700 text-white rounded-lg hover:bg-slate-600 transition-colors">
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- What to do next -->
+                    <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-700">
+                        <h3 class="text-lg font-bold text-slate-800 mb-4 dark:text-white">What do you want to do next?</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="/tools/developer/color-converter.html" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-semibold hover:bg-blue-100 transition-colors dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-900/50">
+                                Color Converter
+                            </a>
+                            <a href="/tools/developer/css-minifier.html" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-semibold hover:bg-blue-100 transition-colors dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-900/50">
+                                CSS Minifier
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 dark:text-white">Free CSS Gradient Generator Online</h2>
+                <p class="text-slate-600 mb-4 dark:text-slate-400">OptiDrop's CSS Gradient Generator lets you create beautiful gradients for your website without any coding knowledge. Choose between linear and radial gradients, add multiple color stops, adjust the angle, and see the result in real time. When you are satisfied, copy the CSS code with a single click.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 dark:text-slate-200">How to Use the Gradient Generator</h3>
+                <p class="text-slate-600 mb-4 dark:text-slate-400">Select a gradient type (linear or radial), pick your colors using the color pickers, and adjust the angle slider for linear gradients. You can add as many color stops as you want. The live preview updates instantly as you make changes. Click the "Copy" button to copy the generated CSS code to your clipboard.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 dark:text-slate-200">Linear vs Radial Gradients</h3>
+                <p class="text-slate-600 dark:text-slate-400">Linear gradients create a straight-line transition between colors, controlled by an angle. They are perfect for backgrounds, headers, and buttons. Radial gradients create circular transitions from a center point, ideal for spotlight effects and card backgrounds. Both types are fully supported by all modern browsers.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center dark:text-white">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        What is a CSS gradient?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        A CSS gradient is a smooth transition between two or more colors applied as a background. CSS supports linear-gradient, radial-gradient, and conic-gradient functions. Gradients are widely used in modern web design for buttons, backgrounds, and decorative elements without needing image files.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        How do I add a CSS gradient to my website?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        Use the CSS background or background-image property with a gradient function. For example: background: linear-gradient(to right, #ff0000, #0000ff);. You can paste the generated CSS code directly into your stylesheet or inline style. This tool generates the exact code you need.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        What is the difference between linear and radial gradients?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        A linear-gradient creates a straight-line color transition at a specified angle. A radial-gradient creates a circular or elliptical color transition radiating from a center point. Linear gradients are best for backgrounds and banners, while radial gradients work well for spotlight effects and buttons.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        Can I use more than two colors in a CSS gradient?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        Yes, CSS gradients support multiple color stops. You can add as many colors as you want by specifying additional color values in the gradient function. For example: linear-gradient(to right, #ff0000, #00ff00, #0000ff) creates a three-color gradient. This tool lets you add and remove color stops dynamically.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/developer/color-converter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Color Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert between HEX, RGB, HSL color formats.</span>
+                </a>
+                <a href="/tools/developer/css-minifier.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">CSS Minifier</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Minify your CSS code to reduce file size.</span>
+                </a>
+                <a href="/tools/developer/css-box-shadow-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Box Shadow Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate CSS box-shadow with live preview.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 80+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var colorStops = ['#ff0000', '#0000ff'];
+        var gradientType = document.getElementById('gradientType');
+        var gradientAngle = document.getElementById('gradientAngle');
+        var angleValue = document.getElementById('angleValue');
+        var angleContainer = document.getElementById('angleContainer');
+        var colorStopsContainer = document.getElementById('colorStops');
+        var gradientPreview = document.getElementById('gradientPreview');
+        var cssOutput = document.getElementById('cssOutput');
+        var btnAddColor = document.getElementById('btnAddColor');
+        var btnCopyCSS = document.getElementById('btnCopyCSS');
+
+        function renderColorStops() {
+            colorStopsContainer.innerHTML = '';
+            colorStops.forEach(function(color, index) {
+                var row = document.createElement('div');
+                row.className = 'flex items-center gap-3';
+                row.innerHTML = '<input type="color" value="' + color + '" data-index="' + index + '" class="w-12 h-10 rounded-lg cursor-pointer border-2 border-slate-200 dark:border-slate-600">' +
+                    '<input type="text" value="' + color + '" data-index="' + index + '" class="flex-1 px-3 py-2 text-sm border-2 border-slate-200 rounded-lg font-mono text-slate-900 dark:bg-slate-700 dark:border-slate-600 dark:text-white">' +
+                    (colorStops.length > 2 ? '<button data-index="' + index + '" class="remove-color px-3 py-2 text-sm font-bold bg-red-100 text-red-600 rounded-lg hover:bg-red-200 transition-colors dark:bg-red-900/30 dark:text-red-400">Remove</button>' : '');
+                colorStopsContainer.appendChild(row);
+            });
+
+            colorStopsContainer.querySelectorAll('input[type="color"]').forEach(function(el) {
+                el.addEventListener('input', function() {
+                    var idx = parseInt(this.getAttribute('data-index'));
+                    colorStops[idx] = this.value;
+                    colorStopsContainer.querySelectorAll('input[type="text"]')[idx].value = this.value;
+                    updatePreview();
+                });
+            });
+
+            colorStopsContainer.querySelectorAll('input[type="text"]').forEach(function(el) {
+                el.addEventListener('input', function() {
+                    var idx = parseInt(this.getAttribute('data-index'));
+                    if (/^#[0-9a-fA-F]{6}$/.test(this.value)) {
+                        colorStops[idx] = this.value;
+                        colorStopsContainer.querySelectorAll('input[type="color"]')[idx].value = this.value;
+                        updatePreview();
+                    }
+                });
+            });
+
+            colorStopsContainer.querySelectorAll('.remove-color').forEach(function(el) {
+                el.addEventListener('click', function() {
+                    var idx = parseInt(this.getAttribute('data-index'));
+                    colorStops.splice(idx, 1);
+                    renderColorStops();
+                    updatePreview();
+                });
+            });
+        }
+
+        function generateCSS() {
+            var type = gradientType.value;
+            var colors = colorStops.join(', ');
+            if (type === 'linear') {
+                return 'background: linear-gradient(' + gradientAngle.value + 'deg, ' + colors + ');';
+            } else {
+                return 'background: radial-gradient(circle, ' + colors + ');';
+            }
+        }
+
+        function updatePreview() {
+            var css = generateCSS();
+            gradientPreview.style.cssText = css + ' border-radius: 1rem; border: 2px solid #e2e8f0;';
+            cssOutput.textContent = css;
+        }
+
+        gradientType.addEventListener('change', function() {
+            angleContainer.style.display = this.value === 'linear' ? 'block' : 'none';
+            updatePreview();
+        });
+
+        gradientAngle.addEventListener('input', function() {
+            angleValue.textContent = this.value;
+            updatePreview();
+        });
+
+        btnAddColor.addEventListener('click', function() {
+            if (colorStops.length >= 10) {
+                showToast('Maximum 10 color stops allowed.', 'error');
+                return;
+            }
+            var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+            colorStops.push(randomColor);
+            renderColorStops();
+            updatePreview();
+        });
+
+        btnCopyCSS.addEventListener('click', function() {
+            var css = generateCSS();
+            navigator.clipboard.writeText(css).then(function() {
+                showToast('CSS code copied to clipboard!', 'success');
+            }).catch(function() {
+                showToast('Failed to copy. Please select and copy manually.', 'error');
+            });
+        });
+
+        // Initialize
+        renderColorStops();
+        updatePreview();
+    })();
+    </script>
+    <script>if(typeof trackRecentTool==='function')trackRecentTool('CSS Gradient Generator','/tools/developer/css-gradient-generator.html');</script>
+</body>
+</html>

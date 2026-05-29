@@ -35,7 +35,7 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}</script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
@@ -140,11 +140,53 @@
                     <span class="tool-card-desc">Convert between 25 world currencies instantly.</span>
                     <span class="tool-card-tag emerald">Finance</span>
                 </a>
-                <a href="/tools/health/calorie-calculator.html" class="tool-card">
+                <a href="/tools/calculators/calorie-calculator.html" class="tool-card">
                     <div class="tool-card-icon bg-red-100 text-red-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg></div>
                     <span class="tool-card-title">Calorie Calculator</span>
                     <span class="tool-card-desc">Calculate daily calorie needs with BMR and TDEE.</span>
                     <span class="tool-card-tag red">Health</span>
+                </a>
+                <a href="/tools/calculators/reverse-sales-tax-calculator.html" class="tool-card">
+                    <div class="tool-card-icon bg-blue-100 text-blue-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg></div>
+                    <span class="tool-card-title">Reverse Sales Tax Calculator</span>
+                    <span class="tool-card-desc">Find pre-tax price from total with tax included.</span>
+                    <span class="tool-card-tag blue">Tax</span>
+                </a>
+                <a href="/tools/calculators/bill-split-calculator.html" class="tool-card">
+                    <div class="tool-card-icon bg-emerald-100 text-emerald-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+                    <span class="tool-card-title">Bill Split Calculator</span>
+                    <span class="tool-card-desc">Split bills evenly with custom tip percentage.</span>
+                    <span class="tool-card-tag emerald">Dining</span>
+                </a>
+                <a href="/tools/calculators/simple-interest-calculator.html" class="tool-card">
+                    <div class="tool-card-icon bg-teal-100 text-teal-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <span class="tool-card-title">Simple Interest Calculator</span>
+                    <span class="tool-card-desc">Calculate simple interest with principal, rate, and time.</span>
+                    <span class="tool-card-tag teal">Finance</span>
+                </a>
+                <a href="/tools/calculators/future-value-annuity.html" class="tool-card">
+                    <div class="tool-card-icon bg-indigo-100 text-indigo-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
+                    <span class="tool-card-title">Future Value of Annuity</span>
+                    <span class="tool-card-desc">Calculate future value of regular periodic payments.</span>
+                    <span class="tool-card-tag indigo">Finance</span>
+                </a>
+                <a href="/tools/calculators/mileage-calculator.html" class="tool-card">
+                    <div class="tool-card-icon bg-lime-100 text-lime-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg></div>
+                    <span class="tool-card-title">Mileage Calculator</span>
+                    <span class="tool-card-desc">Estimate fuel cost for road trips by distance.</span>
+                    <span class="tool-card-tag lime">Travel</span>
+                </a>
+                <a href="/tools/calculators/hourly-to-salary.html" class="tool-card">
+                    <div class="tool-card-icon bg-purple-100 text-purple-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <span class="tool-card-title">Hourly to Salary Converter</span>
+                    <span class="tool-card-desc">Convert hourly rate to annual salary and vice versa.</span>
+                    <span class="tool-card-tag purple">Salary</span>
+                </a>
+                <a href="/tools/calculators/percent-error-calculator.html" class="tool-card">
+                    <div class="tool-card-icon bg-rose-100 text-rose-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg></div>
+                    <span class="tool-card-title">Percent Error Calculator</span>
+                    <span class="tool-card-desc">Calculate percent error between experimental and accepted values.</span>
+                    <span class="tool-card-tag rose">Science</span>
                 </a>
             </div>
         </section>

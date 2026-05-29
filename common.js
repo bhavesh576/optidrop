@@ -673,7 +673,37 @@ function showDraftBar(key, onContinue, onStartFresh) {
         '/tools/developer/exif-stripper.html': 'EXIF Stripper',
         '/tools/pomodoro-timer.html': 'Pomodoro Timer',
         '/tools/aspect-ratio-calculator.html': 'Aspect Ratio',
-        '/tools/health/bmr-calculator.html': 'BMR Calculator'
+        '/tools/health/bmr-calculator.html': 'BMR Calculator',
+        '/tools/developer/css-gradient-generator.html': 'CSS Gradient Generator',
+        '/tools/developer/html-entities.html': 'HTML Entities',
+        '/tools/developer/regex-tester.html': 'Regex Tester',
+        '/tools/developer/uuid-generator.html': 'UUID Generator',
+        '/tools/developer/timestamp-converter.html': 'Timestamp Converter',
+        '/tools/developer/json-to-csv.html': 'JSON to CSV',
+        '/tools/developer/css-box-shadow-generator.html': 'Box Shadow Generator',
+        '/tools/health/blood-pressure-tracker.html': 'Blood Pressure Tracker',
+        '/tools/health/bac-calculator.html': 'BAC Calculator',
+        '/tools/health/dosage-calculator.html': 'Dosage Calculator',
+        '/tools/health/menstrual-cycle-calculator.html': 'Cycle Calculator',
+        '/tools/health/bsa-calculator.html': 'BSA Calculator',
+        '/tools/health/target-heart-rate.html': 'Target Heart Rate',
+        '/tools/calculators/reverse-sales-tax-calculator.html': 'Reverse Sales Tax',
+        '/tools/calculators/bill-split-calculator.html': 'Bill Split Calculator',
+        '/tools/calculators/simple-interest-calculator.html': 'Simple Interest',
+        '/tools/calculators/future-value-annuity.html': 'Future Value Annuity',
+        '/tools/calculators/mileage-calculator.html': 'Mileage Calculator',
+        '/tools/calculators/hourly-to-salary.html': 'Hourly to Salary',
+        '/tools/calculators/percent-error-calculator.html': 'Percent Error',
+        '/tools/home/wallpaper-calculator.html': 'Wallpaper Calculator',
+        '/tools/home/paint-calculator.html': 'Paint Calculator',
+        '/tools/home/concrete-calculator.html': 'Concrete Calculator',
+        '/tools/home/shoe-size-converter.html': 'Shoe Size Converter',
+        '/tools/home/cooking-converter.html': 'Cooking Converter',
+        '/tools/fun/random-recipe.html': 'Random Recipe',
+        '/tools/fun/would-you-rather.html': 'Would You Rather',
+        '/tools/fun/random-joke.html': 'Random Joke',
+        '/tools/fun/coin-flip.html': 'Coin Flip',
+        '/tools/fun/random-color-generator.html': 'Random Color'
     };
 
     var toolName = toolMeta[path];
@@ -691,6 +721,18 @@ function showDraftBar(key, onContinue, onStartFresh) {
         localStorage.setItem('optidrop_recent_tools', JSON.stringify(recent));
     } catch (e) {}
 })();
+
+// ── trackRecentTool — callable from any tool page ─────────
+function trackRecentTool(toolName, toolPath) {
+    if (!toolName || !toolPath) return;
+    try {
+        var recent = JSON.parse(localStorage.getItem('optidrop_recent_tools') || '[]');
+        recent = recent.filter(function (r) { return r.path !== toolPath; });
+        recent.unshift({ name: toolName, path: toolPath, time: Date.now() });
+        if (recent.length > 5) recent = recent.slice(0, 5);
+        localStorage.setItem('optidrop_recent_tools', JSON.stringify(recent));
+    } catch (e) {}
+}
 
 // ── Render Recently Used on Homepage ────────────────────────
 (function () {
@@ -815,7 +857,37 @@ function showDraftBar(key, onContinue, onStartFresh) {
         { name: 'Password Generator', href: '/tools/password-generator.html', cat: 'Utility' },
         { name: 'Unit Converter', href: '/tools/unit-converter.html', cat: 'Utility' },
         { name: 'Pomodoro Timer', href: '/tools/pomodoro-timer.html', cat: 'Utility' },
-        { name: 'Aspect Ratio', href: '/tools/aspect-ratio-calculator.html', cat: 'Utility' }
+        { name: 'Aspect Ratio', href: '/tools/aspect-ratio-calculator.html', cat: 'Utility' },
+        { name: 'CSS Gradient Generator', href: '/tools/developer/css-gradient-generator.html', cat: 'Developer' },
+        { name: 'HTML Entities', href: '/tools/developer/html-entities.html', cat: 'Developer' },
+        { name: 'Regex Tester', href: '/tools/developer/regex-tester.html', cat: 'Developer' },
+        { name: 'UUID Generator', href: '/tools/developer/uuid-generator.html', cat: 'Developer' },
+        { name: 'Timestamp Converter', href: '/tools/developer/timestamp-converter.html', cat: 'Developer' },
+        { name: 'JSON to CSV', href: '/tools/developer/json-to-csv.html', cat: 'Developer' },
+        { name: 'Box Shadow Generator', href: '/tools/developer/css-box-shadow-generator.html', cat: 'Developer' },
+        { name: 'Blood Pressure Tracker', href: '/tools/health/blood-pressure-tracker.html', cat: 'Health' },
+        { name: 'BAC Calculator', href: '/tools/health/bac-calculator.html', cat: 'Health' },
+        { name: 'Dosage Calculator', href: '/tools/health/dosage-calculator.html', cat: 'Health' },
+        { name: 'Cycle Calculator', href: '/tools/health/menstrual-cycle-calculator.html', cat: 'Health' },
+        { name: 'BSA Calculator', href: '/tools/health/bsa-calculator.html', cat: 'Health' },
+        { name: 'Target Heart Rate', href: '/tools/health/target-heart-rate.html', cat: 'Health' },
+        { name: 'Reverse Sales Tax', href: '/tools/calculators/reverse-sales-tax-calculator.html', cat: 'Calculator' },
+        { name: 'Bill Split Calculator', href: '/tools/calculators/bill-split-calculator.html', cat: 'Calculator' },
+        { name: 'Simple Interest', href: '/tools/calculators/simple-interest-calculator.html', cat: 'Calculator' },
+        { name: 'Future Value Annuity', href: '/tools/calculators/future-value-annuity.html', cat: 'Calculator' },
+        { name: 'Mileage Calculator', href: '/tools/calculators/mileage-calculator.html', cat: 'Calculator' },
+        { name: 'Hourly to Salary', href: '/tools/calculators/hourly-to-salary.html', cat: 'Calculator' },
+        { name: 'Percent Error', href: '/tools/calculators/percent-error-calculator.html', cat: 'Calculator' },
+        { name: 'Wallpaper Calculator', href: '/tools/home/wallpaper-calculator.html', cat: 'Utility' },
+        { name: 'Paint Calculator', href: '/tools/home/paint-calculator.html', cat: 'Utility' },
+        { name: 'Concrete Calculator', href: '/tools/home/concrete-calculator.html', cat: 'Utility' },
+        { name: 'Shoe Size Converter', href: '/tools/home/shoe-size-converter.html', cat: 'Utility' },
+        { name: 'Cooking Converter', href: '/tools/home/cooking-converter.html', cat: 'Utility' },
+        { name: 'Random Recipe', href: '/tools/fun/random-recipe.html', cat: 'Fun' },
+        { name: 'Would You Rather', href: '/tools/fun/would-you-rather.html', cat: 'Fun' },
+        { name: 'Random Joke', href: '/tools/fun/random-joke.html', cat: 'Fun' },
+        { name: 'Coin Flip', href: '/tools/fun/coin-flip.html', cat: 'Fun' },
+        { name: 'Random Color Generator', href: '/tools/fun/random-color-generator.html', cat: 'Fun' }
     ];
 
     // Create overlay

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Tester — Free Online Regular Expression Tester | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Test regular expressions online free. Real-time regex pattern matching with highlighted results, match details, and support for g, i, m flags. No sign-up required.">
+    <meta name="keywords" content="regex tester, regular expression tester, regex online, regex matcher, test regex pattern, regex checker, regular expression online tool">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Regex Tester — Free Online Regular Expression Tester | OptiDrop">
+    <meta property="og:description" content="Test regular expressions online free. Real-time regex pattern matching with highlighted results and match details. No sign-up required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/regex-tester.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Regex Tester — Free Online Regular Expression Tester | OptiDrop">
+    <meta name="twitter:description" content="Test regular expressions online free. Real-time regex pattern matching with highlighted results.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/regex-tester.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Regex Tester", "item": "https://optidrop.online/tools/developer/regex-tester.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Regex Tester",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Test regular expressions online free. Real-time regex pattern matching with highlighted results, match details, and support for g, i, m flags."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a regular expression?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A regular expression (regex) is a sequence of characters that defines a search pattern. It is used for pattern matching within strings — finding, replacing, or extracting text that matches specific rules. Regular expressions are supported in virtually all programming languages and text editors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do the g, i, and m flags mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The g (global) flag finds all matches instead of stopping at the first. The i (case-insensitive) flag makes the pattern match regardless of uppercase or lowercase. The m (multiline) flag changes ^ and $ to match the start and end of each line instead of the entire string. You can combine flags like 'gi' for global case-insensitive matching."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I test a regex pattern?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter your regex pattern in the pattern field, type or paste your test text in the textarea, and select the flags you need. The tool instantly highlights all matches in the test string and shows match details including the matched text, position, and captured groups. Results update in real time as you type."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use capture groups in this regex tester?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this regex tester supports capture groups. When your pattern contains groups (parentheses), the match details section shows each captured group separately along with its value and position. This is useful for extracting specific parts of text using regex."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col dark:bg-slate-900 dark:text-slate-200">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3 dark:text-white">Regex Tester — Test Regular Expressions Online Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto dark:text-slate-400">Test and debug regular expressions with real-time pattern matching, highlighted results, and detailed match information. Supports g, i, m flags. 100% free, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden dark:bg-slate-800 dark:border-slate-700">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Regex Pattern -->
+                    <div class="mb-4">
+                        <label for="regexPattern" class="block text-sm font-bold text-slate-700 mb-2 dark:text-slate-300">Regular Expression Pattern</label>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl font-bold text-slate-400">/</span>
+                            <input type="text" id="regexPattern" placeholder="e.g. \b\w+@\w+\.\w+\b"
+                                class="flex-1 px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-mono dark:bg-slate-700 dark:border-slate-600 dark:text-white dark:placeholder-slate-400">
+                            <span class="text-xl font-bold text-slate-400">/</span>
+                            <span id="flagsDisplay" class="text-sm font-mono font-bold text-blue-600 dark:text-blue-400">g</span>
+                        </div>
+                        <p id="regexError" class="text-sm text-red-600 mt-1 hidden dark:text-red-400"></p>
+                    </div>
+
+                    <!-- Flags -->
+                    <div class="flex gap-4 mb-6">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" id="flagG" checked class="w-5 h-5 rounded accent-blue-600">
+                            <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">g (global)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" id="flagI" class="w-5 h-5 rounded accent-blue-600">
+                            <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">i (case-insensitive)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" id="flagM" class="w-5 h-5 rounded accent-blue-600">
+                            <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">m (multiline)</span>
+                        </label>
+                    </div>
+
+                    <!-- Test String -->
+                    <div class="mb-6">
+                        <label for="testString" class="block text-sm font-bold text-slate-700 mb-2 dark:text-slate-300">Test String</label>
+                        <textarea id="testString" rows="5" placeholder="Enter or paste your test string here..."
+                            class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-mono resize-y dark:bg-slate-700 dark:border-slate-600 dark:text-white dark:placeholder-slate-400">Hello world! Test your regex here.
+Email: user@example.com
+Phone: 123-456-7890
+Date: 2024-01-15</textarea>
+                    </div>
+
+                    <!-- Match Count -->
+                    <div id="matchCountBar" class="mb-4 px-4 py-3 bg-blue-50 border border-blue-200 rounded-xl text-sm font-semibold text-blue-800 dark:bg-blue-900/20 dark:border-blue-800 dark:text-blue-300">
+                        <span id="matchCount">0</span> match(es) found
+                    </div>
+
+                    <!-- Highlighted Result -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-bold text-slate-700 mb-2 dark:text-slate-300">Highlighted Matches</label>
+                        <div id="highlightedResult" class="px-4 py-3 text-base border-2 border-slate-200 rounded-xl bg-white text-slate-900 font-mono whitespace-pre-wrap break-words min-h-[60px] dark:bg-slate-700 dark:border-slate-600 dark:text-white">
+                            <span class="text-slate-400 dark:text-slate-500">Matches will be highlighted here...</span>
+                        </div>
+                    </div>
+
+                    <!-- Match Details -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-bold text-slate-700 mb-2 dark:text-slate-300">Match Details</label>
+                        <div id="matchDetails" class="space-y-2 max-h-60 overflow-y-auto">
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Match details will appear here...</p>
+                        </div>
+                    </div>
+
+                    <!-- What to do next -->
+                    <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-700">
+                        <h3 class="text-lg font-bold text-slate-800 mb-4 dark:text-white">What do you want to do next?</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="/tools/developer/json-formatter.html" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-semibold hover:bg-blue-100 transition-colors dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-900/50">
+                                JSON Formatter
+                            </a>
+                            <a href="/tools/developer/html-entities.html" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-semibold hover:bg-blue-100 transition-colors dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-900/50">
+                                HTML Entity Encoder
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 dark:text-white">Free Regex Tester Online — Test Regular Expressions</h2>
+                <p class="text-slate-600 mb-4 dark:text-slate-400">OptiDrop's Regex Tester is a free online tool that lets you test and debug regular expressions in real time. Enter your regex pattern and test string, and the tool instantly highlights all matches, shows the match count, and provides detailed information about each match including captured groups.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 dark:text-slate-200">How to Use the Regex Tester</h3>
+                <p class="text-slate-600 mb-4 dark:text-slate-400">Type your regex pattern in the pattern field and your test text in the textarea. Toggle the flags (global, case-insensitive, multiline) as needed. The tool automatically highlights all matching text and displays detailed match information. No need to click any button — results update instantly as you type.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 dark:text-slate-200">Understanding Regex Flags</h3>
+                <p class="text-slate-600 dark:text-slate-400">Regex flags modify how the pattern is interpreted. The g (global) flag finds all matches, not just the first. The i (case-insensitive) flag ignores letter casing. The m (multiline) flag makes ^ and $ match the start/end of each line. You can combine multiple flags for precise pattern matching.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center dark:text-white">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        What is a regular expression?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        A regular expression (regex) is a sequence of characters that defines a search pattern. It is used for pattern matching within strings — finding, replacing, or extracting text that matches specific rules. Regular expressions are supported in virtually all programming languages and text editors.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        What do the g, i, and m flags mean?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        The g (global) flag finds all matches instead of stopping at the first. The i (case-insensitive) flag makes the pattern match regardless of uppercase or lowercase. The m (multiline) flag changes ^ and $ to match the start and end of each line instead of the entire string. You can combine flags like 'gi' for global case-insensitive matching.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        How do I test a regex pattern?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        Enter your regex pattern in the pattern field, type or paste your test text in the textarea, and select the flags you need. The tool instantly highlights all matches in the test string and shows match details including the matched text, position, and captured groups. Results update in real time as you type.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        Can I use capture groups in this regex tester?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        Yes, this regex tester supports capture groups. When your pattern contains groups (parentheses), the match details section shows each captured group separately along with its value and position. This is useful for extracting specific parts of text using regex.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Format, validate, and minify JSON data.</span>
+                </a>
+                <a href="/tools/developer/html-entities.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">HTML Entity Encoder</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode HTML special characters.</span>
+                </a>
+                <a href="/tools/developer/base64.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Base64 Encoder</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode Base64 strings online.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 80+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var regexPattern = document.getElementById('regexPattern');
+        var testString = document.getElementById('testString');
+        var flagG = document.getElementById('flagG');
+        var flagI = document.getElementById('flagI');
+        var flagM = document.getElementById('flagM');
+        var flagsDisplay = document.getElementById('flagsDisplay');
+        var regexError = document.getElementById('regexError');
+        var matchCount = document.getElementById('matchCount');
+        var highlightedResult = document.getElementById('highlightedResult');
+        var matchDetails = document.getElementById('matchDetails');
+
+        function escapeHTML(str) {
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        function getFlags() {
+            var flags = '';
+            if (flagG.checked) flags += 'g';
+            if (flagI.checked) flags += 'i';
+            if (flagM.checked) flags += 'm';
+            return flags;
+        }
+
+        function testRegex() {
+            var pattern = regexPattern.value;
+            var text = testString.value;
+            var flags = getFlags();
+            flagsDisplay.textContent = flags;
+
+            // Clear error
+            regexError.textContent = '';
+            regexError.classList.add('hidden');
+
+            if (!pattern) {
+                matchCount.textContent = '0';
+                highlightedResult.innerHTML = '<span class="text-slate-400 dark:text-slate-500">Matches will be highlighted here...</span>';
+                matchDetails.innerHTML = '<p class="text-sm text-slate-500 dark:text-slate-400">Match details will appear here...</p>';
+                return;
+            }
+
+            var regex;
+            try {
+                regex = new RegExp(pattern, flags);
+            } catch (e) {
+                regexError.textContent = 'Invalid regex: ' + e.message;
+                regexError.classList.remove('hidden');
+                matchCount.textContent = '0';
+                highlightedResult.innerHTML = '<span class="text-slate-400 dark:text-slate-500">Fix the pattern to see matches...</span>';
+                matchDetails.innerHTML = '<p class="text-sm text-slate-500 dark:text-slate-400">Fix the pattern to see details...</p>';
+                return;
+            }
+
+            if (!text) {
+                matchCount.textContent = '0';
+                highlightedResult.innerHTML = '<span class="text-slate-400 dark:text-slate-500">Enter test text to see matches...</span>';
+                matchDetails.innerHTML = '<p class="text-sm text-slate-500 dark:text-slate-400">Enter test text to see details...</p>';
+                return;
+            }
+
+            // Find all matches
+            var matches = [];
+            var match;
+            if (flags.indexOf('g') !== -1) {
+                while ((match = regex.exec(text)) !== null) {
+                    matches.push({ value: match[0], index: match.index, groups: match.slice(1) });
+                    if (match.index === regex.lastIndex) regex.lastIndex++;
+                }
+            } else {
+                match = regex.exec(text);
+                if (match) {
+                    matches.push({ value: match[0], index: match.index, groups: match.slice(1) });
+                }
+            }
+
+            matchCount.textContent = matches.length;
+
+            // Highlight matches
+            if (matches.length === 0) {
+                highlightedResult.textContent = text;
+                matchDetails.innerHTML = '<p class="text-sm text-slate-500 dark:text-slate-400">No matches found.</p>';
+                return;
+            }
+
+            // Build highlighted HTML
+            var html = '';
+            var lastIndex = 0;
+            for (var i = 0; i < matches.length; i++) {
+                var m = matches[i];
+                html += escapeHTML(text.substring(lastIndex, m.index));
+                html += '<mark class="bg-yellow-300 text-slate-900 rounded px-0.5 dark:bg-yellow-500 dark:text-slate-900">' + escapeHTML(m.value) + '</mark>';
+                lastIndex = m.index + m.value.length;
+            }
+            html += escapeHTML(text.substring(lastIndex));
+            highlightedResult.innerHTML = html;
+
+            // Build match details
+            var detailsHTML = '';
+            for (var j = 0; j < matches.length; j++) {
+                var dm = matches[j];
+                detailsHTML += '<div class="bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm dark:bg-slate-700 dark:border-slate-600">';
+                detailsHTML += '<p class="font-bold text-slate-800 dark:text-slate-200">Match ' + (j + 1) + ': <span class="font-mono text-blue-600 dark:text-blue-400">"' + escapeHTML(dm.value) + '"</span></p>';
+                detailsHTML += '<p class="text-slate-500 dark:text-slate-400">Position: ' + dm.index + ' - ' + (dm.index + dm.value.length - 1) + '</p>';
+                if (dm.groups.length > 0) {
+                    for (var k = 0; k < dm.groups.length; k++) {
+                        detailsHTML += '<p class="text-slate-500 dark:text-slate-400">Group ' + (k + 1) + ': <span class="font-mono">' + escapeHTML(dm.groups[k] || '(empty)') + '</span></p>';
+                    }
+                }
+                detailsHTML += '</div>';
+            }
+            matchDetails.innerHTML = detailsHTML;
+        }
+
+        regexPattern.addEventListener('input', testRegex);
+        testString.addEventListener('input', testRegex);
+        flagG.addEventListener('change', testRegex);
+        flagI.addEventListener('change', testRegex);
+        flagM.addEventListener('change', testRegex);
+
+        // Initial run
+        testRegex();
+    })();
+    </script>
+    <script>if(typeof trackRecentTool==='function')trackRecentTool('Regex Tester','/tools/developer/regex-tester.html');</script>
+</body>
+</html>

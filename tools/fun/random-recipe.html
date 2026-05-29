@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Recipe Generator — Get Cooking Inspiration Free | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Discover random recipes by cuisine and meal type. Get instant cooking inspiration with ingredients lists and quick steps. Italian, Indian, Mexican, Chinese, and more.">
+    <meta name="keywords" content="random recipe generator, recipe ideas, cooking inspiration, random meal generator, what to cook, dinner ideas, breakfast ideas, lunch ideas">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Random Recipe Generator — Get Cooking Inspiration Free | OptiDrop">
+    <meta property="og:description" content="Discover random recipes by cuisine and meal type. Get instant cooking inspiration with ingredients lists and quick steps.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/fun/random-recipe.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Random Recipe Generator — Get Cooking Inspiration Free | OptiDrop">
+    <meta name="twitter:description" content="Discover random recipes by cuisine and meal type. Get instant cooking inspiration.">
+    <link rel="canonical" href="https://optidrop.online/tools/fun/random-recipe.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Fun Tools", "item": "https://optidrop.online/tools/fun/"},
+        {"@type": "ListItem", "position": 3, "name": "Random Recipe Generator", "item": "https://optidrop.online/tools/fun/random-recipe.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Random Recipe Generator",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Discover random recipes by cuisine and meal type. Get instant cooking inspiration with ingredients lists and quick steps."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the Random Recipe Generator work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Select a cuisine type and meal type from the dropdown menus, then click the generate button. The tool randomly picks a recipe from its built-in collection of over 50 recipes and displays the name, description, ingredients, and quick cooking steps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many recipes are in the generator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Random Recipe Generator contains over 50 curated recipes spanning 8 popular cuisines: Italian, Indian, Mexican, Chinese, Japanese, American, Mediterranean, and Thai. Each recipe includes a brief description, ingredients list, and quick preparation steps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I filter recipes by meal type?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can filter recipes by meal type including breakfast, lunch, dinner, and snack. You can also combine meal type with a specific cuisine to get more targeted recipe suggestions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the recipes suitable for beginners?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. All recipes in the generator feature quick, easy-to-follow steps designed for home cooks of any skill level. Each recipe lists clear ingredients and straightforward instructions so even beginners can try them."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Random Recipe Generator — Cooking Inspiration</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Not sure what to cook? Pick a cuisine and meal type, and let us surprise you with a delicious recipe. 50+ recipes across 8 world cuisines.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Inputs -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto mb-6">
+                        <div>
+                            <label for="cuisineType" class="block text-sm font-bold text-slate-700 mb-2">Cuisine</label>
+                            <select id="cuisineType" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                <option value="any">Any Cuisine</option>
+                                <option value="italian">Italian</option>
+                                <option value="indian">Indian</option>
+                                <option value="mexican">Mexican</option>
+                                <option value="chinese">Chinese</option>
+                                <option value="japanese">Japanese</option>
+                                <option value="american">American</option>
+                                <option value="mediterranean">Mediterranean</option>
+                                <option value="thai">Thai</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="mealType" class="block text-sm font-bold text-slate-700 mb-2">Meal Type</label>
+                            <select id="mealType" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                <option value="any">Any Meal</option>
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="dinner">Dinner</option>
+                                <option value="snack">Snack</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="max-w-lg mx-auto">
+                        <button id="btnGenerate" class="w-full px-6 py-4 bg-orange-500 text-white font-bold rounded-xl hover:bg-orange-600 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                            Give Me a Recipe
+                        </button>
+                    </div>
+
+                    <!-- Result -->
+                    <div id="recipeResult" class="hidden mt-8">
+                        <div class="bg-gradient-to-br from-orange-50 to-amber-100 border border-orange-200 rounded-2xl p-6 sm:p-8">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <span id="recipeCuisine" class="inline-block px-3 py-1 bg-orange-200 text-orange-800 text-xs font-bold rounded-full mb-2"></span>
+                                    <span id="recipeMeal" class="inline-block px-3 py-1 bg-amber-200 text-amber-800 text-xs font-bold rounded-full mb-2 ml-2"></span>
+                                    <h2 id="recipeName" class="text-2xl sm:text-3xl font-extrabold text-slate-900"></h2>
+                                </div>
+                                <span class="text-4xl" id="recipeEmoji"></span>
+                            </div>
+                            <p id="recipeDesc" class="text-slate-600 mb-6 text-base leading-relaxed"></p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                        <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                                        Ingredients
+                                    </h3>
+                                    <ul id="recipeIngredients" class="space-y-1 text-sm text-slate-700"></ul>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                        <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                        Quick Steps
+                                    </h3>
+                                    <ol id="recipeSteps" class="space-y-2 text-sm text-slate-700 list-decimal list-inside"></ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Another Recipe Button -->
+                        <div class="text-center mt-6">
+                            <button id="btnAnother" class="px-8 py-3 bg-white text-orange-600 font-bold rounded-xl border-2 border-orange-300 hover:bg-orange-50 shadow-sm hover:shadow-md transition-all inline-flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                                Give Me Another Recipe
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- What do you want to do next? -->
+                    <div class="mt-10 pt-8 border-t border-slate-200 text-center">
+                        <p class="text-lg font-bold text-slate-800 mb-4">What do you want to do next?</p>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <a href="/tools/fun/random-joke.html" class="px-5 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200 transition-colors text-sm">Random Joke Generator</a>
+                            <a href="/tools/fun/would-you-rather.html" class="px-5 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200 transition-colors text-sm">Would You Rather</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Random Recipe Generator — Never Run Out of Ideas</h2>
+                <p class="text-slate-600 mb-4">Stuck deciding what to cook? OptiDrop's Random Recipe Generator is the perfect solution for culinary indecision. Simply choose a cuisine and meal type, and instantly get a complete recipe with ingredients and steps. Whether you crave Italian pasta for dinner or a Thai-inspired snack, this tool has you covered.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How Does the Recipe Generator Work?</h3>
+                <p class="text-slate-600 mb-4">Select your preferred cuisine from 8 world cuisines including Italian, Indian, Mexican, Chinese, Japanese, American, Mediterranean, and Thai. Optionally filter by meal type: breakfast, lunch, dinner, or snack. Hit the button and a random recipe appears with a full ingredients list and quick step-by-step instructions.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">50+ Recipes Across 8 Cuisines</h3>
+                <p class="text-slate-600">Our collection features over 50 curated recipes designed for home cooks. Each recipe uses commonly available ingredients and can be prepared quickly. From creamy Tuscan chicken to spicy Thai basil fried rice, there is always something new to discover.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How does the Random Recipe Generator work?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Select a cuisine type and meal type from the dropdown menus, then click the generate button. The tool randomly picks a recipe from its built-in collection of over 50 recipes and displays the name, description, ingredients, and quick cooking steps.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How many recipes are in the generator?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The Random Recipe Generator contains over 50 curated recipes spanning 8 popular cuisines: Italian, Indian, Mexican, Chinese, Japanese, American, Mediterranean, and Thai. Each recipe includes a brief description, ingredients list, and quick preparation steps.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I filter recipes by meal type?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. You can filter recipes by meal type including breakfast, lunch, dinner, and snack. You can also combine meal type with a specific cuisine to get more targeted recipe suggestions.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Are the recipes suitable for beginners?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Absolutely. All recipes in the generator feature quick, easy-to-follow steps designed for home cooks of any skill level. Each recipe lists clear ingredients and straightforward instructions so even beginners can try them.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/fun/random-joke.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Random Joke Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Get a random clean joke to brighten your day.</span>
+                </a>
+                <a href="/tools/fun/coin-flip.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Coin Flip Simulator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Flip a virtual coin with animation and history.</span>
+                </a>
+                <a href="/tools/fun/random-color-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Random Color Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate random colors with hex, RGB, and HSL values.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 80+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    if(typeof trackRecentTool==='function')trackRecentTool('Random Recipe Generator','/tools/fun/random-recipe.html');
+    (function() {
+        var RECIPES = [
+            {cuisine:"italian",meal:"dinner",name:"Classic Margherita Pizza",emoji:"🍕",desc:"A timeless Italian pizza with fresh mozzarella, San Marzano tomato sauce, and fragrant basil on a crispy thin crust.",ingredients:["1 pizza dough ball","1/2 cup San Marzano tomato sauce","8 oz fresh mozzarella","Fresh basil leaves","2 tbsp olive oil","Salt to taste"],steps:["Preheat oven to 500°F (260°C) with a pizza stone.","Stretch dough into a 12-inch round on a floured surface.","Spread tomato sauce evenly, leaving a 1-inch border.","Tear mozzarella and distribute over the pizza.","Bake 10-12 minutes until crust is golden and cheese bubbles.","Top with fresh basil and a drizzle of olive oil before serving."]},
+            {cuisine:"italian",meal:"lunch",name:"Caprese Salad",emoji:"🥗",desc:"A refreshing Italian salad with ripe tomatoes, fresh mozzarella, basil, and balsamic glaze.",ingredients:["2 large ripe tomatoes","8 oz fresh mozzarella","Fresh basil leaves","2 tbsp extra virgin olive oil","1 tbsp balsamic glaze","Salt and pepper"],steps:["Slice tomatoes and mozzarella into 1/4-inch rounds.","Alternate slices on a plate, overlapping slightly.","Tuck fresh basil leaves between each pair.","Drizzle with olive oil and balsamic glaze.","Season with salt and pepper. Serve immediately."]},
+            {cuisine:"italian",meal:"dinner",name:"Creamy Tuscan Chicken",emoji:"🍗",desc:"Pan-seared chicken in a creamy sun-dried tomato and spinach sauce, perfect over pasta or rice.",ingredients:["4 chicken thighs","1 cup heavy cream","1/2 cup sun-dried tomatoes","2 cups fresh spinach","3 cloves garlic, minced","1/2 cup parmesan cheese","2 tbsp olive oil","Italian seasoning, salt, pepper"],steps:["Season chicken and sear in olive oil until golden, 5 min per side. Set aside.","Sauté garlic for 30 seconds, add sun-dried tomatoes and spinach.","Pour in heavy cream and stir in parmesan until melted.","Return chicken to the pan and simmer 10 minutes.","Serve over pasta or rice."]},
+            {cuisine:"italian",meal:"breakfast",name:"Italian Breakfast Bruschetta",emoji:"🍞",desc:"Toasted bread topped with fresh tomatoes, basil, and a drizzle of olive oil for a light Italian morning.",ingredients:["4 slices crusty bread","2 ripe tomatoes, diced","Fresh basil, chopped","1 clove garlic","2 tbsp olive oil","Salt and pepper"],steps:["Toast bread slices until golden.","Rub each slice with a halved garlic clove.","Mix diced tomatoes with basil, olive oil, salt, and pepper.","Spoon tomato mixture onto toast. Serve immediately."]},
+            {cuisine:"italian",meal:"snack",name:"Bruschetta al Pomodoro",emoji:"🍒",desc:"Crispy toasted bread topped with a fresh tomato and garlic mixture.",ingredients:["1 baguette, sliced","3 tomatoes, diced","2 cloves garlic","Fresh basil","Olive oil","Balsamic vinegar"],steps:["Toast baguette slices until golden.","Mix diced tomatoes with minced garlic, basil, and olive oil.","Season and spoon onto toast.","Drizzle with balsamic vinegar."]},
+            {cuisine:"indian",meal:"dinner",name:"Butter Chicken (Murgh Makhani)",emoji:"🍛",desc:"Tender chicken pieces in a rich, creamy tomato-based sauce with aromatic Indian spices.",ingredients:["1.5 lbs chicken thighs, cubed","1 cup yogurt","2 tbsp butter chicken spice mix","1 can tomato puree","1/2 cup heavy cream","2 tbsp butter","1 onion, diced","3 cloves garlic, ginger paste"],steps:["Marinate chicken in yogurt and spices for 1 hour.","Sauté onion, garlic, and ginger in butter until golden.","Add tomato puree and simmer 10 minutes.","Add marinated chicken and cook 15 minutes.","Stir in heavy cream and simmer 5 more minutes.","Serve with naan or basmati rice."]},
+            {cuisine:"indian",meal:"lunch",name:"Chana Masala",emoji:"🧆",desc:"A hearty North Indian chickpea curry packed with warm spices and tangy tomato gravy.",ingredients:["2 cans chickpeas, drained","1 onion, diced","2 tomatoes, pureed","2 tsp garam masala","1 tsp cumin","1 tsp turmeric","2 tbsp oil","Fresh cilantro"],steps:["Heat oil and sauté onion until golden.","Add spices and cook 1 minute until fragrant.","Add tomato puree and cook 5 minutes.","Add chickpeas and 1/2 cup water. Simmer 20 minutes.","Garnish with cilantro and serve with rice or roti."]},
+            {cuisine:"indian",meal:"breakfast",name:"Masala Dosa",emoji:"🥟",desc:"Crispy South Indian rice crepe filled with spiced potato filling, served with chutney and sambar.",ingredients:["2 cups dosa batter","3 potatoes, boiled and mashed","1 tsp mustard seeds","1 tsp turmeric","Curry leaves","2 green chilies","Oil for cooking"],steps:["Heat a non-stick pan and pour a ladle of batter, spreading thin.","Drizzle oil around the edges and cook until crispy.","Prepare filling: sauté mustard seeds, curry leaves, chilies, turmeric, and potatoes.","Place filling in center and fold dosa. Serve with chutney."]},
+            {cuisine:"indian",meal:"dinner",name:"Palak Paneer",emoji:"🥬",desc:"Cubes of paneer cheese in a smooth, creamy spinach sauce with aromatic spices.",ingredients:["200g paneer, cubed","4 cups fresh spinach","1 onion, diced","2 tomatoes","2 cloves garlic","1 tsp cumin","1/2 cup cream","2 tbsp oil"],steps:["Blanch spinach and blend into a smooth puree.","Sauté onion, garlic, and tomatoes in oil.","Add cumin and cook 1 minute.","Pour in spinach puree and simmer 10 minutes.","Add paneer cubes and cream. Cook 5 minutes.","Serve with naan or jeera rice."]},
+            {cuisine:"indian",meal:"snack",name:"Samosa",emoji:"🥟",desc:"Crispy fried pastry pockets filled with spiced potatoes and peas.",ingredients:["2 cups flour","3 potatoes, boiled and diced","1/2 cup green peas","1 tsp cumin","1 tsp garam masala","Oil for frying","Salt to taste"],steps:["Make dough with flour, oil, and water. Rest 30 minutes.","Cook filling: sauté potatoes, peas, and spices.","Roll dough into circles, cut in half, form cones.","Fill cones with potato mixture and seal edges.","Deep fry until golden and crispy."]},
+            {cuisine:"mexican",meal:"dinner",name:"Chicken Tacos",emoji:"🌮",desc:"Seasoned grilled chicken in warm tortillas topped with fresh salsa, avocado, and lime.",ingredients:["1 lb chicken breast","8 small tortillas","1 avocado, sliced","1 cup pico de gallo","Lime juice","1 tsp chili powder","1 tsp cumin","Sour cream"],steps:["Season chicken with chili powder, cumin, salt, and lime juice.","Grill chicken 6-7 minutes per side until cooked through.","Let rest 5 minutes, then slice thinly.","Warm tortillas on a dry pan.","Assemble tacos with chicken, avocado, pico de gallo, and sour cream."]},
+            {cuisine:"mexican",meal:"lunch",name:"Burrito Bowl",emoji:"🌯",desc:"A deconstructed burrito with cilantro lime rice, black beans, corn, and all your favorite toppings.",ingredients:["1 cup rice","1 can black beans","1 cup corn","1 avocado","Salsa","Sour cream","Lime juice","Cilantro"],steps:["Cook rice and mix with lime juice and chopped cilantro.","Heat black beans and corn in a pan.","Assemble bowls: rice on the bottom.","Top with beans, corn, avocado, salsa, and sour cream.","Squeeze extra lime on top."]},
+            {cuisine:"mexican",meal:"breakfast",name:"Huevos Rancheros",emoji:"🍳",desc:"Eggs served on crispy tortillas with a warm tomato-chili sauce, beans, and avocado.",ingredients:["4 eggs","4 corn tortillas","1 cup salsa ranchera","1 can refried beans","1 avocado","Queso fresco","Oil for frying"],steps:["Fry tortillas until crispy and warm refried beans.","Fry eggs sunny-side up in a separate pan.","Spread beans on tortillas, top with eggs.","Pour warm salsa over eggs.","Crumble queso fresco and serve with sliced avocado."]},
+            {cuisine:"mexican",meal:"dinner",name:"Beef Enchiladas",emoji:"🌮",desc:"Corn tortillas rolled with seasoned beef, smothered in red enchilada sauce and melted cheese.",ingredients:["1 lb ground beef","8 corn tortillas","2 cups enchilada sauce","2 cups shredded cheese","1 onion, diced","1 tsp cumin","Sour cream","Cilantro"],steps:["Brown beef with onion and cumin. Drain excess fat.","Warm tortillas and fill with beef and cheese. Roll tightly.","Place seam-side down in a baking dish.","Pour enchilada sauce over top and add remaining cheese.","Bake at 375°F for 20 minutes until bubbly."]},
+            {cuisine:"mexican",meal:"snack",name:"Guacamole & Chips",emoji:"🥑",desc:"Fresh, chunky guacamole made with ripe avocados, lime, cilantro, and served with crispy tortilla chips.",ingredients:["3 ripe avocados","1 lime, juiced","1/4 cup cilantro, chopped","1/4 red onion, diced","1 jalapeño, minced","Salt to taste","Tortilla chips"],steps:["Cut avocados in half and scoop into a bowl.","Mash with a fork to desired consistency.","Mix in lime juice, cilantro, onion, and jalapeño.","Season with salt and serve with tortilla chips."]},
+            {cuisine:"chinese",meal:"dinner",name:"Kung Pao Chicken",emoji:"🍜",desc:"A spicy Sichuan stir-fry with chicken, peanuts, vegetables, and a bold chili sauce.",ingredients:["1 lb chicken breast, cubed","1/2 cup peanuts","1 red bell pepper, diced","3 dried chilies","2 tbsp soy sauce","1 tbsp rice vinegar","1 tbsp hoisin sauce","Sesame oil"],steps:["Marinate chicken in soy sauce and cornstarch 15 minutes.","Stir-fry dried chilies and peanuts until fragrant.","Add chicken and cook until golden.","Add bell pepper, sauce ingredients, and toss well.","Garnish with green onions and serve over rice."]},
+            {cuisine:"chinese",meal:"lunch",name:"Fried Rice",emoji:"🍚",desc:"Classic Chinese fried rice with egg, vegetables, and savory soy sauce seasoning.",ingredients:["3 cups cooked rice (cold)","2 eggs, beaten","1 cup mixed vegetables","3 tbsp soy sauce","2 green onions","1 tbsp sesame oil","White pepper"],steps:["Heat sesame oil in a wok over high heat.","Scramble eggs and set aside.","Stir-fry vegetables 2 minutes.","Add cold rice and break up clumps.","Add soy sauce, pepper, and eggs back. Toss well.","Garnish with sliced green onions."]},
+            {cuisine:"chinese",meal:"dinner",name:"Sweet and Sour Pork",emoji:"🍖",desc:"Crispy battered pork pieces tossed in a tangy sweet and sour sauce with colorful peppers.",ingredients:["1 lb pork tenderloin, cubed","1 green bell pepper","1 red bell pepper","1/2 cup pineapple chunks","3 tbsp rice vinegar","3 tbsp ketchup","3 tbsp sugar","Cornstarch batter"],steps:["Coat pork in cornstarch batter and deep fry until golden.","Mix sauce: vinegar, ketchup, sugar, soy sauce, and cornstarch slurry.","Stir-fry peppers and pineapple for 2 minutes.","Add pork and sauce. Toss until everything is coated.","Serve over steamed rice."]},
+            {cuisine:"chinese",meal:"breakfast",name:"Congee (Rice Porridge)",emoji:"🍜",desc:"A comforting Chinese rice porridge, silky smooth and topped with savory garnishes.",ingredients:["1 cup jasmine rice","8 cups chicken broth","1 inch ginger, sliced","2 green onions","Soy sauce","Sesame oil","Fried shallots"],steps:["Rinse rice and combine with broth and ginger in a pot.","Bring to a boil, then reduce heat and simmer 1 hour, stirring occasionally.","Season with soy sauce and sesame oil.","Serve topped with green onions and fried shallots."]},
+            {cuisine:"chinese",meal:"snack",name:"Spring Rolls",emoji:"🥟",desc:"Crispy fried rolls filled with vegetables and glass noodles, perfect as a snack or appetizer.",ingredients:["12 spring roll wrappers","1 cup shredded cabbage","1 carrot, julienned","1 cup glass noodles, soaked","2 tbsp soy sauce","Oil for frying","Sweet chili sauce"],steps:["Soak glass noodles and chop vegetables.","Mix vegetables, noodles, and soy sauce for filling.","Place filling on wrapper, fold sides, and roll tightly.","Seal edge with a dab of water.","Deep fry until golden and crispy. Serve with sweet chili sauce."]},
+            {cuisine:"japanese",meal:"dinner",name:"Chicken Teriyaki",emoji:"🍗",desc:"Juicy pan-seared chicken glazed with a sweet and savory homemade teriyaki sauce.",ingredients:["4 chicken thighs","1/4 cup soy sauce","2 tbsp mirin","2 tbsp sake","1 tbsp sugar","1 tsp ginger, grated","Sesame seeds","Steamed rice"],steps:["Mix soy sauce, mirin, sake, sugar, and ginger for teriyaki sauce.","Sear chicken skin-side down until crispy, 5 minutes.","Flip and cook 3 more minutes.","Pour in sauce and simmer until it thickens and coats chicken.","Slice and serve over rice with sesame seeds."]},
+            {cuisine:"japanese",meal:"lunch",name:"Salmon Poke Bowl",emoji:"🍣",desc:"A fresh Hawaiian-Japanese bowl with marinated salmon, rice, edamame, and vibrant toppings.",ingredients:["8 oz sushi-grade salmon, cubed","2 cups sushi rice","1 cup edamame","1 avocado, sliced","Soy sauce","Sesame oil","Rice vinegar","Sesame seeds"],steps:["Marinate salmon in soy sauce, sesame oil, and rice vinegar 15 minutes.","Prepare sushi rice and season with rice vinegar.","Arrange rice in bowls and top with marinated salmon.","Add edamame, avocado slices, and sesame seeds.","Drizzle with extra sauce and serve."]},
+            {cuisine:"japanese",meal:"dinner",name:"Ramen",emoji:"🍜",desc:"Rich pork broth ramen with tender chashu pork, soft-boiled egg, noodles, and fresh toppings.",ingredients:["4 cups pork or chicken broth","7 oz ramen noodles","2 soft-boiled eggs","Chashu pork slices","Nori sheets","Green onions","Soy sauce","Miso paste"],steps:["Heat broth and stir in soy sauce and miso paste.","Cook ramen noodles according to package. Drain and divide into bowls.","Ladle hot broth over noodles.","Top with sliced chashu pork, halved soft-boiled egg, nori, and green onions.","Serve immediately while hot."]},
+            {cuisine:"japanese",meal:"breakfast",name:"Tamagoyaki (Japanese Omelette)",emoji:"🍳",desc:"A slightly sweet, layered Japanese rolled omelette perfect for breakfast or bento boxes.",ingredients:["4 eggs","2 tbsp dashi stock","1 tbsp sugar","1 tbsp mirin","1 tsp soy sauce","Oil for cooking"],steps:["Beat eggs with dashi, sugar, mirin, and soy sauce.","Heat a tamagoyaki or non-stick pan with oil.","Pour a thin layer of egg and roll it to one side.","Add more egg mixture, let it set, and roll again.","Repeat until all egg is used. Slice and serve."]},
+            {cuisine:"japanese",meal:"snack",name:"Edamame with Sea Salt",emoji:"🥦",desc:"Steamed young soybeans sprinkled with flaky sea salt, a classic healthy Japanese snack.",ingredients:["2 cups frozen edamame in pods","1 tsp sea salt","1/2 tsp sesame oil (optional)","Chili flakes (optional)"],steps:["Boil edamame in salted water for 4-5 minutes.","Drain and toss with sea salt and sesame oil.","Sprinkle with chili flakes if desired.","Serve warm. Squeeze beans out of pods to eat."]},
+            {cuisine:"american",meal:"dinner",name:"Classic Cheeseburger",emoji:"🍔",desc:"A juicy beef patty with melted cheese, lettuce, tomato, and all the classic fixings on a toasted bun.",ingredients:["1 lb ground beef (80/20)","4 hamburger buns","4 slices cheddar cheese","Lettuce, tomato, onion","Pickles","Ketchup and mustard","Salt and pepper"],steps:["Divide beef into 4 patties, season with salt and pepper.","Grill or pan-sear 4 minutes per side for medium.","Add cheese in the last minute and cover to melt.","Toast buns on the grill.","Assemble with lettuce, tomato, onion, pickles, ketchup, and mustard."]},
+            {cuisine:"american",meal:"lunch",name:"BLT Sandwich",emoji:"🥪",desc:"The iconic bacon, lettuce, and tomato sandwich with mayo on toasted bread.",ingredients:["8 slices bacon","4 slices bread, toasted","Lettuce leaves","2 tomatoes, sliced","Mayonnaise","Salt and pepper"],steps:["Cook bacon until crispy. Drain on paper towels.","Toast bread until golden.","Spread mayo on each slice of toast.","Layer bacon, lettuce, and tomato on bread.","Season with salt and pepper. Slice diagonally and serve."]},
+            {cuisine:"american",meal:"breakfast",name:"Pancakes with Maple Syrup",emoji:"🥞",desc:"Fluffy, golden pancakes stacked high and drizzled with warm maple syrup and butter.",ingredients:["1.5 cups flour","1 egg","1 cup milk","2 tbsp sugar","2 tsp baking powder","1/4 cup melted butter","Maple syrup","Butter for serving"],steps:["Mix dry ingredients. Whisk wet ingredients separately.","Combine until just mixed (lumps are okay).","Heat a greased pan over medium heat.","Pour 1/4 cup batter per pancake. Cook until bubbles form, flip.","Stack and serve with butter and maple syrup."]},
+            {cuisine:"american",meal:"dinner",name:"BBQ Pulled Pork Sandwich",emoji:"🍖",desc:"Slow-cooked, tender pulled pork tossed in smoky BBQ sauce on a soft bun with coleslaw.",ingredients:["3 lbs pork shoulder","1 cup BBQ sauce","1 onion, sliced","Hamburger buns","Coleslaw","Garlic powder","Paprika","Salt and pepper"],steps:["Rub pork with garlic powder, paprika, salt, and pepper.","Place in slow cooker with onion and 1/2 cup BBQ sauce.","Cook on low 8 hours until fork-tender.","Shred pork and mix with remaining BBQ sauce.","Serve on buns topped with coleslaw."]},
+            {cuisine:"american",meal:"snack",name:"Mac and Cheese Bites",emoji:"🧀",desc:"Crispy on the outside, creamy on the inside bite-sized mac and cheese balls.",ingredients:["2 cups prepared mac and cheese (cold)","1 cup breadcrumbs","2 eggs, beaten","Flour for dredging","Oil for frying","Salt and pepper"],steps:["Scoop cold mac and cheese into small balls.","Roll in flour, dip in egg, then coat in breadcrumbs.","Refrigerate 30 minutes to firm up.","Deep fry at 350°F until golden brown, about 3 minutes.","Drain on paper towels and serve hot."]},
+            {cuisine:"mediterranean",meal:"dinner",name:"Greek Lemon Chicken",emoji:"🍗",desc:"Roasted chicken with lemon, oregano, garlic, and potatoes in the style of a Greek taverna.",ingredients:["1 whole chicken (4 lbs)","4 potatoes, quartered","1 lemon, juiced","4 cloves garlic","2 tbsp olive oil","1 tbsp dried oregano","Salt and pepper"],steps:["Preheat oven to 425°F.","Rub chicken with lemon juice, olive oil, garlic, oregano, salt, and pepper.","Arrange potatoes around the chicken in a roasting pan.","Roast 1 hour 15 minutes until golden and cooked through.","Let rest 10 minutes before carving."]},
+            {cuisine:"mediterranean",meal:"lunch",name:"Falafel Wrap",emoji:"🧆",desc:"Crispy chickpea falafel wrapped in warm pita with tahini sauce, veggies, and pickled onions.",ingredients:["12 falafel balls (homemade or store-bought)","4 pita breads","1 cup lettuce, shredded","1 tomato, diced","1/2 cucumber, sliced","Tahini sauce","Pickled red onions"],steps:["Warm falafel in the oven at 375°F for 10 minutes.","Warm pita bread on a dry pan.","Layer lettuce, tomato, cucumber on pita.","Add falafel balls and drizzle with tahini sauce.","Add pickled onions, wrap, and serve."]},
+            {cuisine:"mediterranean",meal:"dinner",name:"Grilled Lamb Chops",emoji:"🍖",desc:"Perfectly grilled lamb chops marinated in Mediterranean herbs and served with tzatziki.",ingredients:["8 lamb chops","2 tbsp olive oil","2 cloves garlic, minced","1 tbsp rosemary","1 tbsp thyme","Lemon juice","Tzatziki sauce","Salt and pepper"],steps:["Marinate lamb chops in olive oil, garlic, rosemary, thyme, lemon juice for 1 hour.","Grill over high heat 3-4 minutes per side for medium-rare.","Let rest 5 minutes.","Serve with tzatziki sauce and a Greek salad."]},
+            {cuisine:"mediterranean",meal:"breakfast",name:"Shakshuka",emoji:"🍳",desc:"Eggs poached in a spiced tomato and pepper sauce, a beloved Mediterranean breakfast.",ingredients:["4 eggs","1 can crushed tomatoes","1 bell pepper, diced","1 onion, diced","2 cloves garlic","1 tsp cumin","1 tsp paprika","Feta cheese, fresh parsley"],steps:["Sauté onion, pepper, and garlic in olive oil.","Add cumin and paprika, cook 1 minute.","Pour in crushed tomatoes and simmer 10 minutes.","Make wells and crack eggs into them.","Cover and cook until eggs are set. Top with feta and parsley."]},
+            {cuisine:"mediterranean",meal:"snack",name:"Hummus with Pita",emoji:"🧆",desc:"Creamy homemade hummus served warm with soft pita bread and olive oil drizzle.",ingredients:["1 can chickpeas","2 tbsp tahini","1 lemon, juiced","2 cloves garlic","2 tbsp olive oil","Paprika","Pita bread"],steps:["Blend chickpeas, tahini, lemon juice, garlic, and olive oil until smooth.","Add water to reach desired consistency.","Plate and make a well in the center.","Drizzle with olive oil and sprinkle paprika.","Serve with warm pita bread."]},
+            {cuisine:"thai",meal:"dinner",name:"Pad Thai",emoji:"🍜",desc:"Thailand's most famous stir-fried noodle dish with shrimp, egg, bean sprouts, and tangy tamarind sauce.",ingredients:["8 oz rice noodles","1/2 lb shrimp","2 eggs","1 cup bean sprouts","3 tbsp tamarind paste","2 tbsp fish sauce","1 tbsp sugar","Crushed peanuts, lime"],steps:["Soak rice noodles in warm water 30 minutes. Drain.","Mix tamarind paste, fish sauce, and sugar for sauce.","Stir-fry shrimp until pink. Push aside and scramble eggs.","Add noodles and sauce. Toss until noodles absorb sauce.","Add bean sprouts, toss, and serve with peanuts and lime wedge."]},
+            {cuisine:"thai",meal:"lunch",name:"Thai Green Curry",emoji:"🌶️",desc:"A fragrant coconut curry loaded with vegetables and tender chicken in Thai green curry paste.",ingredients:["1 lb chicken breast, sliced","1 can coconut milk","3 tbsp green curry paste","1 cup bamboo shoots","Thai basil","1 tbsp fish sauce","1 tbsp sugar","Jasmine rice"],steps:["Heat thick coconut cream and fry curry paste until fragrant.","Add chicken and cook 5 minutes.","Pour in remaining coconut milk, bamboo shoots, fish sauce, and sugar.","Simmer 15 minutes until chicken is cooked through.","Stir in Thai basil and serve over jasmine rice."]},
+            {cuisine:"thai",meal:"dinner",name:"Tom Yum Soup",emoji:"🍵",desc:"A hot and sour Thai soup with shrimp, mushrooms, lemongrass, and lime in a fragrant broth.",ingredients:["1/2 lb shrimp","1 cup mushrooms","2 stalks lemongrass","3 kaffir lime leaves","3 tbsp lime juice","2 tbsp fish sauce","Thai chilies","Cilantro"],steps:["Bring 4 cups water to a boil with lemongrass and lime leaves.","Add mushrooms and cook 3 minutes.","Add shrimp and cook until pink, about 3 minutes.","Season with lime juice, fish sauce, and chilies.","Garnish with cilantro and serve hot."]},
+            {cuisine:"thai",meal:"breakfast",name:"Thai Coconut Pancakes",emoji:"🥞",desc:"Fluffy coconut milk pancakes with a crispy edge, drizzled with palm sugar syrup.",ingredients:["1 cup flour","1/2 cup coconut milk","1 egg","2 tbsp sugar","1 tsp baking powder","Palm sugar syrup","Toasted coconut flakes"],steps:["Mix flour, coconut milk, egg, sugar, and baking powder.","Heat a greased pan over medium heat.","Pour small rounds of batter and cook until bubbles form.","Flip and cook until golden.","Stack and drizzle with palm sugar syrup and toasted coconut."]},
+            {cuisine:"thai",meal:"snack",name:"Mango Sticky Rice",emoji:"🥤",desc:"Sweet coconut sticky rice served with fresh ripe mango slices, a beloved Thai dessert.",ingredients:["1 cup glutinous rice","1 can coconut milk","1/4 cup sugar","1/4 tsp salt","2 ripe mangoes","Sesame seeds"],steps:["Soak sticky rice 4 hours, then steam 25 minutes.","Heat coconut milk with sugar and salt until dissolved.","Pour half the coconut sauce over cooked rice. Let absorb 15 minutes.","Slice mangoes and arrange alongside rice.","Drizzle with remaining coconut sauce and sesame seeds."]},
+            {cuisine:"italian",meal:"dinner",name:"Spaghetti Carbonara",emoji:"🍝",desc:"A Roman classic with crispy guanciale, egg, pecorino cheese, and black pepper over spaghetti.",ingredients:["12 oz spaghetti","6 oz guanciale or pancetta","4 egg yolks","1 cup pecorino romano, grated","Black pepper","Salt"],steps:["Cook spaghetti until al dente. Reserve 1 cup pasta water.","Crisp guanciale in a pan. Remove from heat.","Whisk egg yolks with pecorino and pepper.","Toss hot pasta with guanciale, then quickly stir in egg mixture.","Add pasta water as needed for a silky sauce. Serve immediately."]},
+            {cuisine:"indian",meal:"dinner",name:"Chicken Biryani",emoji:"🍚",desc:"Fragrant basmati rice layered with spiced chicken, fried onions, and saffron, slow-cooked to perfection.",ingredients:["2 cups basmati rice","1 lb chicken thighs","2 onions, fried","1 cup yogurt","Biryani spice mix","Saffron in milk","Mint and cilantro","Ghee"],steps:["Marinate chicken in yogurt and spices for 1 hour.","Parboil rice with whole spices until 70% cooked.","Layer chicken and rice in a heavy pot.","Sprinkle fried onions, saffron milk, and herbs on top.","Seal and cook on low heat 25 minutes (dum). Rest 10 minutes before serving."]},
+            {cuisine:"mexican",meal:"dinner",name:"Quesadilla",emoji:"🧀",desc:"Crispy grilled tortilla stuffed with melted cheese, chicken, and peppers, served with salsa.",ingredients:["4 large flour tortillas","2 cups shredded cheese","1 cup cooked chicken, shredded","1 bell pepper, sliced","1 onion, sliced","Salsa","Sour cream","Guacamole"],steps:["Sauté pepper and onion until soft.","Layer cheese, chicken, and veggies on half of each tortilla.","Fold in half and cook in a dry pan 3 minutes per side until golden and cheese melts.","Slice into wedges and serve with salsa, sour cream, and guacamole."]},
+            {cuisine:"chinese",meal:"dinner",name:"General Tso's Chicken",emoji:"🍗",desc:"Crispy fried chicken pieces coated in a sweet, spicy, and tangy sauce with broccoli.",ingredients:["1 lb chicken breast, cubed","1/4 cup cornstarch","3 tbsp soy sauce","2 tbsp rice vinegar","2 tbsp sugar","Dried red chilies","Broccoli florets","Garlic"],steps:["Coat chicken in cornstarch and fry until golden and crispy.","Mix sauce: soy sauce, rice vinegar, sugar, and cornstarch slurry.","Stir-fry garlic and chilies for 30 seconds.","Add chicken and sauce, toss until coated.","Add steamed broccoli and serve over rice."]},
+            {cuisine:"japanese",meal:"dinner",name:"Tempura",emoji:"🥩",desc:"Light and crispy battered shrimp and vegetables fried to perfection, served with tentsuyu dipping sauce.",ingredients:["8 large shrimp","Sweet potato, sliced","Broccoli florets","1 cup cake flour","1 cup ice-cold water","1 egg","Oil for frying","Tentsuyu sauce"],steps:["Make batter: whisk flour, ice water, and egg (lumps are fine).","Heat oil to 340°F.","Dip shrimp and vegetables in batter and fry until light golden.","Drain on a wire rack.","Serve immediately with tentsuyu dipping sauce."]},
+            {cuisine:"american",meal:"dinner",name:"Buffalo Wings",emoji:"🍗",desc:"Crispy fried chicken wings tossed in a spicy, buttery buffalo sauce with blue cheese dip.",ingredients:["2 lbs chicken wings","1/2 cup hot sauce","1/4 cup butter, melted","1 tsp garlic powder","Celery sticks","Blue cheese dressing","Oil for frying"],steps:["Pat wings dry and fry at 375°F until crispy, about 10 minutes.","Mix hot sauce, melted butter, and garlic powder.","Toss fried wings in buffalo sauce.","Serve with celery sticks and blue cheese dressing."]},
+            {cuisine:"mediterranean",meal:"lunch",name:"Greek Salad",emoji:"🥗",desc:"A refreshing salad with crisp cucumbers, tomatoes, olives, and tangy feta cheese.",ingredients:["2 cucumbers, diced","4 tomatoes, diced","1/2 red onion, sliced","1/2 cup kalamata olives","200g feta cheese","2 tbsp olive oil","1 tbsp red wine vinegar","Oregano"],steps:["Combine cucumbers, tomatoes, onion, and olives in a bowl.","Crumble feta cheese on top.","Drizzle with olive oil and red wine vinegar.","Sprinkle with oregano, salt, and pepper.","Toss gently and serve immediately."]},
+            {cuisine:"thai",meal:"dinner",name:"Massaman Curry",emoji:"🌶️",desc:"A rich and mildly spiced curry with tender beef, potatoes, and peanuts in coconut sauce.",ingredients:["1.5 lbs beef chuck, cubed","2 potatoes, cubed","1 can coconut milk","3 tbsp massaman curry paste","1/4 cup peanuts","2 tbsp palm sugar","2 tbsp fish sauce","Cinnamon stick"],steps:["Fry curry paste in thick coconut cream until fragrant.","Add beef and sear on all sides.","Pour in coconut milk, fish sauce, palm sugar, and cinnamon.","Simmer 1.5 hours until beef is tender.","Add potatoes and peanuts. Cook 20 more minutes. Serve with rice."]},
+            {cuisine:"italian",meal:"snack",name:"Arancini (Fried Risotto Balls)",emoji:"🍚",desc:"Golden fried risotto balls stuffed with mozzarella, a beloved Sicilian street food.",ingredients:["2 cups leftover risotto","Mozzarella, cubed","Flour for dredging","2 eggs, beaten","Breadcrumbs","Oil for frying","Marinara sauce"],steps:["Take a small amount of risotto, place a mozzarella cube in center, and roll into a ball.","Dredge in flour, dip in egg, then coat in breadcrumbs.","Deep fry at 350°F until golden brown, about 3-4 minutes.","Drain on paper towels and serve with warm marinara sauce."]},
+            {cuisine:"chinese",meal:"snack",name:"Dumplings (Jiaozi)",emoji:"🥟",desc:"Steamed or pan-fried dumplings filled with seasoned pork and vegetables.",ingredients:["1 lb ground pork","1 cup napa cabbage, minced","2 green onions, chopped","1 tbsp ginger, grated","2 tbsp soy sauce","1 tsp sesame oil","Dumpling wrappers","Soy-vinegar dipping sauce"],steps:["Mix pork, cabbage, green onion, ginger, soy sauce, and sesame oil.","Place a spoonful of filling in center of each wrapper.","Fold and pleat edges to seal.","Steam for 10 minutes or pan-fry until bottoms are crispy.","Serve with soy-vinegar dipping sauce."]},
+            {cuisine:"japanese",meal:"lunch",name:"Chicken Katsu Curry",emoji:"🍗",desc:"Crispy breaded chicken cutlet served over rice with a rich Japanese curry sauce.",ingredients:["2 chicken breasts, pounded thin","1 cup panko breadcrumbs","1 egg, beaten","Flour for dredging","2 cups Japanese curry sauce","Steamed rice","Oil for frying"],steps:["Dredge chicken in flour, dip in egg, and coat in panko.","Deep fry until golden and cooked through, about 5 minutes per side.","Slice chicken into strips.","Serve over rice and ladle curry sauce over top."]},
+            {cuisine:"mexican",meal:"snack",name:"Elote (Mexican Street Corn)",emoji:"🌽",desc:"Grilled corn on the cob slathered with mayo, cotija cheese, chili powder, and lime.",ingredients:["4 ears of corn","1/4 cup mayonnaise","1/2 cup cotija cheese, crumbled","Chili powder","Lime wedges","Cilantro","Salt"],steps:["Grill corn directly over heat, turning occasionally, until charred (about 10 minutes).","Brush each ear with mayonnaise.","Sprinkle generously with cotija cheese and chili powder.","Squeeze lime over top and garnish with cilantro.","Serve immediately."]},
+            {cuisine:"mediterranean",meal:"dinner",name:"Moussaka",emoji:"🍛",desc:"A layered Greek casserole with eggplant, seasoned lamb, and creamy béchamel topping.",ingredients:["2 large eggplants, sliced","1 lb ground lamb","1 onion, diced","1 can crushed tomatoes","Cinnamon, nutmeg","2 cups béchamel sauce","Parmesan cheese","Olive oil"],steps:["Salt eggplant slices and let sit 30 minutes. Pat dry and brush with oil.","Grill or roast eggplant until tender.","Cook lamb with onion, tomatoes, cinnamon, and nutmeg.","Layer eggplant and lamb in a baking dish.","Top with béchamel and parmesan. Bake at 350°F for 45 minutes until golden."]},
+            {cuisine:"thai",meal:"lunch",name:"Larb (Thai Salad)",emoji:"🥗",desc:"A refreshing minced meat salad with lime, fish sauce, toasted rice, and fresh herbs.",ingredients:["1 lb ground chicken","3 tbsp lime juice","2 tbsp fish sauce","1 tbsp toasted rice powder","Shallots, sliced","Mint leaves","Cilantro","Thai chilies"],steps:["Cook ground chicken in a dry pan until done.","Toss with lime juice, fish sauce, and toasted rice powder.","Add sliced shallots, mint, cilantro, and chilies.","Toss well and serve at room temperature with lettuce leaves."]},
+            {cuisine:"american",meal:"snack",name:"Loaded Nachos",emoji:"🧀",desc:"Crispy tortilla chips piled high with melted cheese, jalapeños, sour cream, and all the fixings.",ingredients:["1 bag tortilla chips","2 cups shredded cheese","1 can refried beans","Jalapeños, sliced","Sour cream","Guacamole","Salsa","Green onions"],steps:["Spread chips on a baking sheet.","Spoon refried beans over chips and top with cheese.","Add jalapeño slices.","Bake at 375°F for 10 minutes until cheese melts.","Top with sour cream, guacamole, salsa, and green onions."]}
+        ];
+
+        var cuisineNames = {italian:"Italian",indian:"Indian",mexican:"Mexican",chinese:"Chinese",japanese:"Japanese",american:"American",mediterranean:"Mediterranean",thai:"Thai"};
+        var mealNames = {breakfast:"Breakfast",lunch:"Lunch",dinner:"Dinner",snack:"Snack"};
+
+        function getFilteredRecipes(cuisine, meal) {
+            return RECIPES.filter(function(r) {
+                var matchCuisine = cuisine === 'any' || r.cuisine === cuisine;
+                var matchMeal = meal === 'any' || r.meal === meal;
+                return matchCuisine && matchMeal;
+            });
+        }
+
+        function showRecipe() {
+            var cuisine = document.getElementById('cuisineType').value;
+            var meal = document.getElementById('mealType').value;
+            var filtered = getFilteredRecipes(cuisine, meal);
+
+            if (filtered.length === 0) {
+                showToast('No recipes found for that combination. Try different filters!', 'error');
+                return;
+            }
+
+            var recipe = filtered[Math.floor(Math.random() * filtered.length)];
+
+            document.getElementById('recipeCuisine').textContent = cuisineNames[recipe.cuisine];
+            document.getElementById('recipeMeal').textContent = mealNames[recipe.meal];
+            document.getElementById('recipeName').textContent = recipe.name;
+            document.getElementById('recipeEmoji').textContent = recipe.emoji;
+            document.getElementById('recipeDesc').textContent = recipe.desc;
+
+            var ingList = document.getElementById('recipeIngredients');
+            ingList.innerHTML = '';
+            recipe.ingredients.forEach(function(ing) {
+                var li = document.createElement('li');
+                li.className = 'flex items-start gap-2';
+                li.innerHTML = '<span class="text-orange-500 mt-0.5">•</span> ' + ing;
+                ingList.appendChild(li);
+            });
+
+            var stepList = document.getElementById('recipeSteps');
+            stepList.innerHTML = '';
+            recipe.steps.forEach(function(step) {
+                var li = document.createElement('li');
+                li.textContent = step;
+                stepList.appendChild(li);
+            });
+
+            document.getElementById('recipeResult').classList.remove('hidden');
+            document.getElementById('recipeResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        document.getElementById('btnGenerate').addEventListener('click', showRecipe);
+        document.getElementById('btnAnother').addEventListener('click', showRecipe);
+    })();
+    </script>
+</body>
+</html>

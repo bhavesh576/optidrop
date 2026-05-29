@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mileage &amp; Fuel Cost Calculator Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Calculate fuel cost for any trip online free. Enter distance, fuel efficiency, and fuel price to get total fuel needed and cost. Supports km/l and mpg. No sign-up.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Mileage &amp; Fuel Cost Calculator Free Online | OptiDrop">
+    <meta property="og:description" content="Calculate fuel cost for any trip online free. Enter distance, fuel efficiency, and fuel price. Supports km/l and mpg. No sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/calculators/mileage-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mileage &amp; Fuel Cost Calculator Free Online | OptiDrop">
+    <meta name="twitter:description" content="Calculate fuel cost for any trip. Supports km/l and mpg. No sign-up.">
+    <link rel="canonical" href="https://optidrop.online/tools/calculators/mileage-calculator.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://optidrop.online/category/calculator-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Mileage Calculator", "item": "https://optidrop.online/tools/calculators/mileage-calculator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Mileage & Fuel Cost Calculator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate fuel cost for any trip online free. Enter distance, fuel efficiency, and fuel price to get total fuel needed and cost."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate fuel cost for a trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To calculate fuel cost, divide the distance by your fuel efficiency to get the total fuel needed, then multiply by the fuel price per unit. Formula: Fuel Needed = Distance / Fuel Efficiency. Total Cost = Fuel Needed × Price per Unit. This calculator does it automatically for both km/l and mpg systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between km/l and mpg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Km/l (kilometers per liter) is used in most countries worldwide. Mpg (miles per gallon) is used in the US and UK. Note that UK mpg uses imperial gallons (4.546 liters) while US mpg uses US gallons (3.785 liters). This calculator supports both km/l and US mpg."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I improve my car's fuel efficiency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To improve fuel efficiency: maintain steady speeds (use cruise control on highways), keep tires properly inflated, remove excess weight from the car, avoid aggressive acceleration and braking, keep up with regular maintenance (oil changes, air filters), and reduce idling time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this calculator accurate for road trips?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This calculator provides a good estimate based on your inputs. Actual fuel consumption may vary due to driving conditions (city vs highway), traffic, terrain (hills), weather, AC usage, and vehicle load. For road trips, consider adding 10-15% to the estimate for a more realistic budget."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Mileage &amp; Fuel Cost Calculator — Trip Fuel Estimator</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Calculate how much fuel you need and the total cost for any trip. Enter your distance, fuel efficiency (km/l or mpg), and fuel price. Plan your road trips with accurate fuel estimates. 100% free, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Inputs -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="mcDistance" class="block text-sm font-bold text-slate-700 mb-2">Distance</label>
+                            <div class="flex gap-2">
+                                <input type="number" id="mcDistance" placeholder="e.g. 500" min="0" step="0.1"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                                <select id="mcDistUnit"
+                                    class="px-3 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                    <option value="km">km</option>
+                                    <option value="miles">miles</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="mcEfficiency" class="block text-sm font-bold text-slate-700 mb-2">Fuel Efficiency</label>
+                            <div class="flex gap-2">
+                                <input type="number" id="mcEfficiency" placeholder="e.g. 15" min="0" step="0.1"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                                <select id="mcEffUnit"
+                                    class="px-3 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                    <option value="kml">km/l</option>
+                                    <option value="mpg">mpg (US)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="mcPrice" class="block text-sm font-bold text-slate-700 mb-2">Fuel Price per Unit</label>
+                            <div class="flex gap-2">
+                                <input type="number" id="mcPrice" placeholder="e.g. 1.50" min="0" step="0.01"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                    autocomplete="off">
+                                <select id="mcPriceUnit"
+                                    class="px-3 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                    <option value="perLiter">per Liter</option>
+                                    <option value="perGallon">per Gallon (US)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="max-w-md mx-auto">
+                        <button id="btnCalcFuel" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            Calculate Fuel Cost
+                        </button>
+                    </div>
+
+                    <!-- Results -->
+                    <div id="mcResults" class="hidden mt-8">
+                        <!-- Main Display -->
+                        <div class="text-center mb-8">
+                            <p class="text-sm font-semibold text-slate-500 mb-2">Total Fuel Cost</p>
+                            <div class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl px-8 py-6 inline-block shadow-lg">
+                                <p id="mcTotalCost" class="text-4xl sm:text-5xl font-extrabold">$0.00</p>
+                            </div>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-amber-700 mb-1">Fuel Needed</p>
+                                <p id="mcFuelNeeded" class="text-2xl sm:text-3xl font-extrabold text-amber-900">0 L</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-blue-700 mb-1">Distance</p>
+                                <p id="mcDistDisplay" class="text-2xl sm:text-3xl font-extrabold text-blue-900">0 km</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-green-700 mb-1">Cost per km</p>
+                                <p id="mcCostPerUnit" class="text-2xl sm:text-3xl font-extrabold text-green-900">$0.00</p>
+                            </div>
+                        </div>
+
+                        <!-- Formula Breakdown -->
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200 rounded-2xl p-6">
+                            <p class="text-sm font-bold text-blue-800 mb-2">Calculation Breakdown</p>
+                            <p id="mcFormula" class="text-sm text-blue-700 font-medium leading-relaxed"></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- What do you want to do next? -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">What do you want to do next?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="/tools/calculators/fuel-cost.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Fuel Cost Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate fuel cost with different currencies.</span>
+                </a>
+                <a href="/tools/unit-converter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Unit Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert between distance, weight, and more.</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Mileage &amp; Fuel Cost Calculator</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Mileage Calculator estimates the fuel needed and total cost for any trip. Whether you're planning a road trip, a daily commute, or a business journey, this tool helps you budget your fuel expenses accurately. It supports both metric (km/l, liters) and imperial (mpg, gallons) units.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How to Calculate Fuel Cost</h3>
+                <p class="text-slate-600 mb-4">Enter the total distance of your trip, your vehicle's fuel efficiency, and the current fuel price. The calculator divides distance by fuel efficiency to determine how much fuel you need, then multiplies by the price per unit. It also shows the cost per kilometer or mile for easy comparison.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Metric vs Imperial Units</h3>
+                <p class="text-slate-600">This calculator supports both unit systems. Use km/l and liters for metric countries, or mpg and gallons for the US. The tool handles the conversions automatically, so you can mix and match units as needed. Note that US mpg uses US gallons (3.785L), not imperial gallons (4.546L).</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I calculate fuel cost for a trip?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To calculate fuel cost, divide the distance by your fuel efficiency to get the total fuel needed, then multiply by the fuel price per unit. Formula: Fuel Needed = Distance / Fuel Efficiency. Total Cost = Fuel Needed × Price per Unit. This calculator does it automatically for both km/l and mpg systems.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the difference between km/l and mpg?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Km/l (kilometers per liter) is used in most countries worldwide. Mpg (miles per gallon) is used in the US and UK. Note that UK mpg uses imperial gallons (4.546 liters) while US mpg uses US gallons (3.785 liters). This calculator supports both km/l and US mpg.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How can I improve my car's fuel efficiency?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To improve fuel efficiency: maintain steady speeds (use cruise control on highways), keep tires properly inflated, remove excess weight from the car, avoid aggressive acceleration and braking, keep up with regular maintenance (oil changes, air filters), and reduce idling time.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is this calculator accurate for road trips?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        This calculator provides a good estimate based on your inputs. Actual fuel consumption may vary due to driving conditions (city vs highway), traffic, terrain (hills), weather, AC usage, and vehicle load. For road trips, consider adding 10-15% to the estimate for a more realistic budget.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/calculators/fuel-cost.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Fuel Cost Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate fuel cost with different currencies.</span>
+                </a>
+                <a href="/tools/unit-converter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Unit Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert between distance, weight, and more.</span>
+                </a>
+                <a href="/tools/calculators/currency-converter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Currency Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert between world currencies.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div>
+                <div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div>
+                <div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage</a><a href="/tools/calculators/retirement-calculator.html">Retirement</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a></div>
+                <div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/hash-generator.html">Hash Generator</a></div>
+                <div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. No upload required.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        document.getElementById('btnCalcFuel').addEventListener('click', function() {
+            var distance = parseFloat(document.getElementById('mcDistance').value) || 0;
+            var efficiency = parseFloat(document.getElementById('mcEfficiency').value) || 0;
+            var price = parseFloat(document.getElementById('mcPrice').value) || 0;
+            var distUnit = document.getElementById('mcDistUnit').value;
+            var effUnit = document.getElementById('mcEffUnit').value;
+            var priceUnit = document.getElementById('mcPriceUnit').value;
+
+            if (distance <= 0) { showToast('Please enter a valid distance.', 'error'); return; }
+            if (efficiency <= 0) { showToast('Please enter a valid fuel efficiency.', 'error'); return; }
+            if (price <= 0) { showToast('Please enter a valid fuel price.', 'error'); return; }
+
+            // Convert everything to consistent units (liters and km)
+            var distanceKm = distUnit === 'miles' ? distance * 1.60934 : distance;
+            var efficiencyKml; // km per liter
+
+            if (effUnit === 'kml') {
+                efficiencyKml = efficiency;
+            } else {
+                // mpg (US) to km/l: 1 mpg = 0.425144 km/l
+                efficiencyKml = efficiency * 0.425144;
+            }
+
+            var pricePerLiter;
+            if (priceUnit === 'perLiter') {
+                pricePerLiter = price;
+            } else {
+                pricePerLiter = price / 3.78541; // US gallon to liters
+            }
+
+            var fuelLiters = distanceKm / efficiencyKml;
+            var totalCost = fuelLiters * pricePerLiter;
+            var costPerKm = totalCost / distanceKm;
+
+            // Convert fuel for display
+            var fuelDisplay, fuelUnitLabel;
+            if (effUnit === 'kml') {
+                fuelDisplay = fuelLiters.toFixed(2);
+                fuelUnitLabel = 'liters';
+            } else {
+                var fuelGallons = fuelLiters / 3.78541;
+                fuelDisplay = fuelGallons.toFixed(2);
+                fuelUnitLabel = 'gallons';
+            }
+
+            var distLabel = distUnit === 'miles' ? 'miles' : 'km';
+            document.getElementById('mcTotalCost').textContent = '$' + totalCost.toFixed(2);
+            document.getElementById('mcFuelNeeded').textContent = fuelDisplay + ' ' + fuelUnitLabel;
+            document.getElementById('mcDistDisplay').textContent = distance.toFixed(1) + ' ' + distLabel;
+            document.getElementById('mcCostPerUnit').textContent = '$' + costPerKm.toFixed(4) + '/' + distLabel;
+
+            document.getElementById('mcFormula').innerHTML =
+                'Fuel Needed = Distance / Fuel Efficiency<br>' +
+                'Fuel Needed = ' + distanceKm.toFixed(2) + ' km / ' + efficiencyKml.toFixed(4) + ' km/l = ' + fuelLiters.toFixed(4) + ' liters<br><br>' +
+                'Total Cost = Fuel Needed × Price per Liter<br>' +
+                'Total Cost = ' + fuelLiters.toFixed(4) + ' L × $' + pricePerLiter.toFixed(4) + '/L = <strong>$' + totalCost.toFixed(2) + '</strong><br><br>' +
+                'Cost per ' + distLabel + ' = $' + totalCost.toFixed(2) + ' / ' + distanceKm.toFixed(2) + ' km = <strong>$' + costPerKm.toFixed(4) + '/km</strong>';
+
+            document.getElementById('mcResults').classList.remove('hidden');
+            document.getElementById('mcResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            showToast('Fuel cost calculated!');
+        });
+
+        // Enter key support
+        ['mcDistance', 'mcEfficiency', 'mcPrice'].forEach(function(id) {
+            document.getElementById(id).addEventListener('keypress', function(e) { if (e.key === 'Enter') document.getElementById('btnCalcFuel').click(); });
+        });
+
+        if(typeof trackRecentTool==='function')trackRecentTool('Mileage Calculator','/tools/calculators/mileage-calculator.html');
+    })();
+    </script>
+</body>
+</html>

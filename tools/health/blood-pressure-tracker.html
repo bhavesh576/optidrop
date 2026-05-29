@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Pressure Tracker Free Online — Classify Your BP Reading | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Track your blood pressure online free. Enter systolic and diastolic values to classify your reading as Normal, Elevated, High Stage 1/2, or Crisis. Stores last 10 readings. No sign-up required.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Blood Pressure Tracker Free Online | OptiDrop">
+    <meta property="og:description" content="Track your blood pressure online free. Classify readings and view history. No sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/health/blood-pressure-tracker.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blood Pressure Tracker Free Online | OptiDrop">
+    <meta name="twitter:description" content="Track your blood pressure online free. Classify readings and view history. No sign-up.">
+    <link rel="canonical" href="https://optidrop.online/tools/health/blood-pressure-tracker.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Health Tools", "item": "https://optidrop.online/category/health-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Blood Pressure Tracker", "item": "https://optidrop.online/tools/health/blood-pressure-tracker.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Blood Pressure Tracker",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Track your blood pressure online free. Classify readings as Normal, Elevated, High Stage 1/2, or Crisis. Stores last 10 readings."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a normal blood pressure reading?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A normal blood pressure reading is less than 120 mmHg systolic and less than 80 mmHg diastolic. This is written as 120/80 mmHg. Readings consistently above this level may indicate elevated blood pressure or hypertension."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do systolic and diastolic numbers mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Systolic pressure (top number) measures the force your heart exerts on artery walls when it beats. Diastolic pressure (bottom number) measures the force when your heart rests between beats. Both numbers are important for assessing cardiovascular health."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is considered high blood pressure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "High blood pressure (Stage 1 hypertension) starts at 130/80 mmHg. Stage 2 hypertension is 140/90 mmHg or higher. A hypertensive crisis occurs when readings exceed 180/120 mmHg, which requires immediate medical attention."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I check my blood pressure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For general monitoring, check your blood pressure at the same time each day, ideally in the morning before medication. If you have hypertension, your doctor may recommend checking it twice daily. This tracker stores your last 10 readings so you can monitor trends over time."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-3">Blood Pressure Tracker — Free Online BP Monitor</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Enter your systolic and diastolic blood pressure values to classify your reading. Track your last 10 readings over time. 100% private, no sign-up.</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500 mt-2"><span class="privacy-badge" style="display:inline-flex;align-items:center;gap:4px;"><span class="dot"></span> 100% Private – your data never leaves this device.</span></p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <div>
+                            <label for="bpSystolic" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Systolic (top number) mmHg</label>
+                            <input type="number" id="bpSystolic" placeholder="e.g. 120" min="60" max="300" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium" autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="bpDiastolic" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Diastolic (bottom number) mmHg</label>
+                            <input type="number" id="bpDiastolic" placeholder="e.g. 80" min="40" max="200" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium" autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="bpPulse" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Pulse (optional) BPM</label>
+                            <input type="number" id="bpPulse" placeholder="e.g. 72" min="30" max="250" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <button id="btnCheckBP" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                        Check Blood Pressure
+                    </button>
+
+                    <!-- Results -->
+                    <div id="bpResults" class="hidden mt-8">
+                        <div class="text-center mb-6">
+                            <p class="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">Your Reading</p>
+                            <p id="bpReading" class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 mb-2">--/--</p>
+                            <p id="bpPulseDisplay" class="text-lg text-slate-600 dark:text-slate-400 mb-3"></p>
+                            <div id="bpBadge" class="inline-block px-6 py-2 rounded-full text-white font-bold text-lg"></div>
+                        </div>
+
+                        <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-5 mb-6">
+                            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-4">Blood Pressure Categories</h3>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex items-center gap-3"><span class="w-3 h-3 rounded-full bg-green-500 flex-shrink-0"></span><span class="text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Normal:</strong> Less than 120/80 mmHg</span></div>
+                                <div class="flex items-center gap-3"><span class="w-3 h-3 rounded-full bg-yellow-400 flex-shrink-0"></span><span class="text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Elevated:</strong> 120-129 / less than 80 mmHg</span></div>
+                                <div class="flex items-center gap-3"><span class="w-3 h-3 rounded-full bg-orange-500 flex-shrink-0"></span><span class="text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">High BP Stage 1:</strong> 130-139 / 80-89 mmHg</span></div>
+                                <div class="flex items-center gap-3"><span class="w-3 h-3 rounded-full bg-red-500 flex-shrink-0"></span><span class="text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">High BP Stage 2:</strong> 140+ / 90+ mmHg</span></div>
+                                <div class="flex items-center gap-3"><span class="w-3 h-3 rounded-full bg-red-700 flex-shrink-0"></span><span class="text-slate-600 dark:text-slate-400"><strong class="text-slate-800 dark:text-slate-200">Hypertensive Crisis:</strong> Higher than 180/120 mmHg</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- History -->
+                    <div id="bpHistorySection" class="hidden mt-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">Reading History (Last 10)</h3>
+                            <button id="btnClearHistory" class="text-sm text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 font-medium transition-colors">Clear History</button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b-2 border-slate-200 dark:border-slate-700">
+                                        <th class="text-left py-3 px-3 font-bold text-slate-700 dark:text-slate-300">Date &amp; Time</th>
+                                        <th class="text-center py-3 px-3 font-bold text-slate-700 dark:text-slate-300">Systolic</th>
+                                        <th class="text-center py-3 px-3 font-bold text-slate-700 dark:text-slate-300">Diastolic</th>
+                                        <th class="text-center py-3 px-3 font-bold text-slate-700 dark:text-slate-300">Pulse</th>
+                                        <th class="text-center py-3 px-3 font-bold text-slate-700 dark:text-slate-300">Category</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bpHistoryBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- What do you want to do next? -->
+        <section class="max-w-4xl mx-auto px-4 py-6 text-center">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">What do you want to do next?</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/tools/health/bmr-calculator.html" class="tool-card" style="padding:1rem;min-width:200px;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">BMR Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your basal metabolic rate.</span>
+                </a>
+                <a href="/tools/bmi-calculator.html" class="tool-card" style="padding:1rem;min-width:200px;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">BMI Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your Body Mass Index.</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">What is a normal blood pressure reading?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">A normal blood pressure reading is less than 120 mmHg systolic and less than 80 mmHg diastolic, written as 120/80 mmHg. Readings consistently above this level may indicate elevated blood pressure or hypertension.</div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">What do systolic and diastolic numbers mean?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">Systolic pressure (top number) measures the force your heart exerts on artery walls when it beats. Diastolic pressure (bottom number) measures the force when your heart rests between beats. Both numbers are important for assessing cardiovascular health.</div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">What is considered high blood pressure?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">High blood pressure (Stage 1) starts at 130/80 mmHg. Stage 2 is 140/90 mmHg or higher. A hypertensive crisis occurs when readings exceed 180/120 mmHg, which requires immediate medical attention.</div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">How often should I check my blood pressure?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">For general monitoring, check your blood pressure at the same time each day, ideally in the morning before medication. If you have hypertension, your doctor may recommend checking it twice daily. This tracker stores your last 10 readings.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/health/bmr-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">BMR Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your basal metabolic rate.</span>
+                </a>
+                <a href="/tools/bmi-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">BMI Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate Body Mass Index.</span>
+                </a>
+                <a href="/tools/health/bac-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">BAC Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Estimate blood alcohol content.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div>
+                <div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div>
+                <div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage</a><a href="/tools/calculators/retirement-calculator.html">Retirement</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a></div>
+                <div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/hash-generator.html">Hash Generator</a></div>
+                <div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. No upload required.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var STORAGE_KEY = 'optidrop_bp_readings';
+
+        function classifyBP(sys, dia) {
+            if (sys > 180 || dia > 120) return { label: 'Hypertensive Crisis', color: 'bg-red-700', textClass: 'text-red-700 dark:text-red-400' };
+            if (sys >= 140 || dia >= 90) return { label: 'High BP Stage 2', color: 'bg-red-500', textClass: 'text-red-500 dark:text-red-400' };
+            if ((sys >= 130 && sys <= 139) || (dia >= 80 && dia <= 89)) return { label: 'High BP Stage 1', color: 'bg-orange-500', textClass: 'text-orange-500 dark:text-orange-400' };
+            if (sys >= 120 && sys <= 129 && dia < 80) return { label: 'Elevated', color: 'bg-yellow-400', textClass: 'text-yellow-600 dark:text-yellow-400' };
+            if (sys < 120 && dia < 80) return { label: 'Normal', color: 'bg-green-500', textClass: 'text-green-600 dark:text-green-400' };
+            return { label: 'Unknown', color: 'bg-slate-400', textClass: 'text-slate-500' };
+        }
+
+        function getReadings() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch(e) { return []; }
+        }
+
+        function saveReading(reading) {
+            var readings = getReadings();
+            readings.unshift(reading);
+            if (readings.length > 10) readings = readings.slice(0, 10);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(readings));
+        }
+
+        function formatDate(isoStr) {
+            var d = new Date(isoStr);
+            return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) + ' ' + d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+        }
+
+        function renderHistory() {
+            var readings = getReadings();
+            var section = document.getElementById('bpHistorySection');
+            var tbody = document.getElementById('bpHistoryBody');
+            if (readings.length === 0) { section.classList.add('hidden'); return; }
+            section.classList.remove('hidden');
+            var html = '';
+            for (var i = 0; i < readings.length; i++) {
+                var r = readings[i];
+                var cat = classifyBP(r.systolic, r.diastolic);
+                html += '<tr class="border-b border-slate-100 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800">';
+                html += '<td class="py-3 px-3 text-slate-600 dark:text-slate-400">' + formatDate(r.date) + '</td>';
+                html += '<td class="py-3 px-3 text-center font-bold text-slate-800 dark:text-slate-200">' + r.systolic + '</td>';
+                html += '<td class="py-3 px-3 text-center font-bold text-slate-800 dark:text-slate-200">' + r.diastolic + '</td>';
+                html += '<td class="py-3 px-3 text-center text-slate-600 dark:text-slate-400">' + (r.pulse || '--') + '</td>';
+                html += '<td class="py-3 px-3 text-center"><span class="inline-block px-2 py-1 rounded text-xs font-bold text-white ' + cat.color + '">' + cat.label + '</span></td>';
+                html += '</tr>';
+            }
+            tbody.innerHTML = html;
+        }
+
+        document.getElementById('btnCheckBP').addEventListener('click', function() {
+            var sys = parseInt(document.getElementById('bpSystolic').value);
+            var dia = parseInt(document.getElementById('bpDiastolic').value);
+            var pulse = parseInt(document.getElementById('bpPulse').value) || null;
+
+            if (!sys || !dia) { showToast('Please enter both systolic and diastolic values.', 'error'); return; }
+            if (sys < 60 || sys > 300) { showToast('Systolic value must be between 60 and 300.', 'error'); return; }
+            if (dia < 40 || dia > 200) { showToast('Diastolic value must be between 40 and 200.', 'error'); return; }
+            if (pulse && (pulse < 30 || pulse > 250)) { showToast('Pulse must be between 30 and 250.', 'error'); return; }
+
+            var cat = classifyBP(sys, dia);
+
+            document.getElementById('bpReading').textContent = sys + '/' + dia;
+            document.getElementById('bpPulseDisplay').textContent = pulse ? 'Pulse: ' + pulse + ' BPM' : '';
+            var badge = document.getElementById('bpBadge');
+            badge.textContent = cat.label;
+            badge.className = 'inline-block px-6 py-2 rounded-full text-white font-bold text-lg ' + cat.color;
+
+            document.getElementById('bpResults').classList.remove('hidden');
+            document.getElementById('bpResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            var reading = { systolic: sys, diastolic: dia, pulse: pulse, date: new Date().toISOString() };
+            saveReading(reading);
+            renderHistory();
+
+            if (cat.label === 'Hypertensive Crisis') {
+                showToast('Hypertensive Crisis! Seek emergency medical help immediately.', 'error');
+            } else {
+                showToast('Reading recorded: ' + cat.label);
+            }
+        });
+
+        document.getElementById('btnClearHistory').addEventListener('click', function() {
+            if (confirm('Clear all blood pressure history?')) {
+                localStorage.removeItem(STORAGE_KEY);
+                renderHistory();
+                showToast('History cleared.');
+            }
+        });
+
+        renderHistory();
+    })();
+    </script>
+    <script>if(typeof trackRecentTool==='function')trackRecentTool('Blood Pressure Tracker','/tools/health/blood-pressure-tracker.html');</script>
+</body>
+</html>

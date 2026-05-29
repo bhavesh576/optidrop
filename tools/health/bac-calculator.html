@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Alcohol Content (BAC) Calculator Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Estimate your Blood Alcohol Content (BAC) free online. Uses the Widmark formula with weight, gender, drinks, and hours drinking. Shows time to sober and legal limit status. No sign-up.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="BAC Calculator Free Online — Blood Alcohol Content | OptiDrop">
+    <meta property="og:description" content="Estimate your Blood Alcohol Content (BAC) free online. Shows time to sober and legal limit status. No sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/health/bac-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BAC Calculator Free Online | OptiDrop">
+    <meta name="twitter:description" content="Estimate your Blood Alcohol Content (BAC) free online. No sign-up.">
+    <link rel="canonical" href="https://optidrop.online/tools/health/bac-calculator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Health Tools", "item": "https://optidrop.online/category/health-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "BAC Calculator", "item": "https://optidrop.online/tools/health/bac-calculator.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop BAC Calculator",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Estimate your Blood Alcohol Content (BAC) free online using the Widmark formula. Shows time to sober and legal limit status."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Blood Alcohol Content (BAC)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Blood Alcohol Content (BAC) is the percentage of alcohol in your bloodstream. A BAC of 0.08% means 0.08 grams of alcohol per 100 milliliters of blood. In most countries, 0.08% is the legal limit for driving. BAC is affected by weight, gender, number of drinks, time spent drinking, and food intake."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is BAC calculated with the Widmark formula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Widmark formula calculates BAC as: BAC = (Alcohol consumed in grams / (Body weight in grams x Widmark ratio)) x 100 - (Elimination rate x hours drinking). The Widmark ratio is 0.68 for men and 0.55 for women. The average elimination rate is 0.015% per hour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take for alcohol to leave your system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On average, the body eliminates alcohol at a rate of about 0.015% BAC per hour. This means it takes roughly one hour to process one standard drink. However, this varies by individual. The only way to truly sober up is time — coffee, cold showers, and food do not speed up alcohol elimination."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this BAC calculator accurate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This calculator provides an estimate based on the Widmark formula and average physiological values. Actual BAC can vary based on metabolism, food intake, medications, health conditions, and other factors. Never rely solely on a calculator to determine if you are safe to drive. When in doubt, do not drive."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-3">Blood Alcohol Content (BAC) Calculator — Free Online</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Estimate your BAC using the Widmark formula. Enter your weight, gender, number of drinks, and hours spent drinking. Shows estimated BAC, time to sober, and legal limit status. 100% private, no sign-up.</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500 mt-2"><span class="privacy-badge" style="display:inline-flex;align-items:center;gap:4px;"><span class="dot"></span> 100% Private – your data never leaves this device.</span></p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="bacWeight" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Body Weight</label>
+                            <div class="flex gap-2">
+                                <input type="number" id="bacWeight" placeholder="e.g. 70" min="30" max="300" step="0.5"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium" autocomplete="off">
+                                <select id="bacWeightUnit" class="px-3 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                    <option value="kg">kg</option>
+                                    <option value="lbs">lbs</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="bacGender" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Gender</label>
+                            <select id="bacGender" class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="bacDrinks" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Number of Drinks</label>
+                            <input type="number" id="bacDrinks" placeholder="e.g. 3" min="1" max="30" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium" autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="bacDrinkType" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Drink Type</label>
+                            <select id="bacDrinkType" class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                <option value="14">Standard Drink (14g alcohol)</option>
+                                <option value="12">Beer 12oz / 5% (12g)</option>
+                                <option value="14">Wine 5oz / 12% (14g)</option>
+                                <option value="15">Spirits 1.5oz / 40% (15g)</option>
+                                <option value="18">Craft Beer / IPA (18g)</option>
+                                <option value="20">Cocktail / Mixed (20g)</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="bacHours" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Hours Spent Drinking</label>
+                            <input type="number" id="bacHours" placeholder="e.g. 2" min="0.5" max="24" step="0.5"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <button id="btnCalcBAC" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        Calculate BAC
+                    </button>
+
+                    <div id="bacResults" class="hidden mt-8">
+                        <div class="text-center mb-6">
+                            <p class="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">Estimated BAC</p>
+                            <p id="bacValue" class="text-5xl sm:text-6xl font-extrabold text-slate-900 dark:text-slate-100 mb-2">0.000%</p>
+                            <div id="bacBadge" class="inline-block px-6 py-2 rounded-full text-white font-bold text-lg mt-2"></div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 border border-blue-200 dark:border-blue-700 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-blue-700 dark:text-blue-400 mb-1">Time to Sober</p>
+                                <p id="bacTimeToSober" class="text-2xl font-extrabold text-blue-900 dark:text-blue-200">0 hours</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/30 dark:to-amber-800/30 border border-amber-200 dark:border-amber-700 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-amber-700 dark:text-amber-400 mb-1">Legal Limit Status (0.08%)</p>
+                                <p id="bacLegalStatus" class="text-2xl font-extrabold text-amber-900 dark:text-amber-200">--</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-xl p-4 text-center">
+                            <p class="text-sm text-red-700 dark:text-red-400 font-medium">This calculator provides estimates only. Never rely on it to determine if you are safe to drive. When in doubt, do not drive.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- What do you want to do next? -->
+        <section class="max-w-4xl mx-auto px-4 py-6 text-center">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">What do you want to do next?</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/tools/health/dosage-calculator.html" class="tool-card" style="padding:1rem;min-width:200px;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Dosage Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate medicine dosage by weight.</span>
+                </a>
+                <a href="/tools/health/bmr-calculator.html" class="tool-card" style="padding:1rem;min-width:200px;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">BMR Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your basal metabolic rate.</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">What is Blood Alcohol Content (BAC)?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">BAC is the percentage of alcohol in your bloodstream. A BAC of 0.08% means 0.08 grams of alcohol per 100 milliliters of blood. In most countries, 0.08% is the legal limit for driving.</div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">How is BAC calculated with the Widmark formula?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">The Widmark formula calculates BAC as: BAC = (Alcohol in grams / (Body weight in grams x Widmark ratio)) x 100 - (Elimination rate x hours). The ratio is 0.68 for men and 0.55 for women.</div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">How long does it take for alcohol to leave your system?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">The body eliminates alcohol at about 0.015% BAC per hour. It takes roughly one hour to process one standard drink. Coffee and cold showers do not speed up elimination — only time works.</div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">Is this BAC calculator accurate?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">This calculator provides estimates based on the Widmark formula. Actual BAC varies by metabolism, food intake, medications, and health conditions. Never rely solely on a calculator to determine if you are safe to drive.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/health/blood-pressure-tracker.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Blood Pressure Tracker</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Track and classify BP readings.</span>
+                </a>
+                <a href="/tools/health/dosage-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Dosage Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate medicine dosage by weight.</span>
+                </a>
+                <a href="/tools/health/bmr-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">BMR Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate basal metabolic rate.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div>
+                <div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div>
+                <div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage</a><a href="/tools/calculators/retirement-calculator.html">Retirement</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a></div>
+                <div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/hash-generator.html">Hash Generator</a></div>
+                <div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. No upload required.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        document.getElementById('btnCalcBAC').addEventListener('click', function() {
+            var weight = parseFloat(document.getElementById('bacWeight').value);
+            var weightUnit = document.getElementById('bacWeightUnit').value;
+            var gender = document.getElementById('bacGender').value;
+            var drinks = parseInt(document.getElementById('bacDrinks').value);
+            var alcoholPerDrink = parseFloat(document.getElementById('bacDrinkType').value);
+            var hours = parseFloat(document.getElementById('bacHours').value);
+
+            if (!weight || !drinks || !hours) { showToast('Please fill in all fields.', 'error'); return; }
+            if (weight < 30 || weight > 300) { showToast('Please enter a valid weight.', 'error'); return; }
+            if (drinks < 1 || drinks > 30) { showToast('Please enter a valid number of drinks (1-30).', 'error'); return; }
+            if (hours < 0.5 || hours > 24) { showToast('Please enter valid hours (0.5-24).', 'error'); return; }
+
+            // Convert weight to grams
+            var weightGrams = weightUnit === 'lbs' ? weight * 453.592 : weight * 1000;
+
+            // Widmark ratio
+            var widmarkRatio = gender === 'male' ? 0.68 : 0.55;
+
+            // Total alcohol in grams
+            var totalAlcohol = drinks * alcoholPerDrink;
+
+            // Elimination rate: 0.015% per hour
+            var eliminationRate = 0.015;
+
+            // BAC = (alcohol in grams / (body weight in grams * widmark ratio)) * 100 - (elimination rate * hours)
+            var bac = (totalAlcohol / (weightGrams * widmarkRatio)) * 100 - (eliminationRate * hours);
+            bac = Math.max(bac, 0);
+
+            // Display BAC
+            document.getElementById('bacValue').textContent = bac.toFixed(3) + '%';
+
+            // Legal limit status
+            var legalStatus = bac >= 0.08 ? 'OVER LIMIT' : 'Under Limit';
+            var legalColor = bac >= 0.08 ? 'bg-red-500' : 'bg-green-500';
+            document.getElementById('bacLegalStatus').textContent = legalStatus;
+
+            // Badge
+            var badge = document.getElementById('bacBadge');
+            if (bac === 0) {
+                badge.textContent = 'Sober';
+                badge.className = 'inline-block px-6 py-2 rounded-full text-white font-bold text-lg mt-2 bg-green-500';
+            } else if (bac < 0.02) {
+                badge.textContent = 'Minimal Impairment';
+                badge.className = 'inline-block px-6 py-2 rounded-full text-white font-bold text-lg mt-2 bg-green-500';
+            } else if (bac < 0.06) {
+                badge.textContent = 'Mild Impairment';
+                badge.className = 'inline-block px-6 py-2 rounded-full text-white font-bold text-lg mt-2 bg-yellow-500';
+            } else if (bac < 0.08) {
+                badge.textContent = 'Moderate Impairment';
+                badge.className = 'inline-block px-6 py-2 rounded-full text-white font-bold text-lg mt-2 bg-orange-500';
+            } else if (bac < 0.15) {
+                badge.textContent = 'Significant Impairment';
+                badge.className = 'inline-block px-6 py-2 rounded-full text-white font-bold text-lg mt-2 bg-red-500';
+            } else {
+                badge.textContent = 'Severe Impairment';
+                badge.className = 'inline-block px-6 py-2 rounded-full text-white font-bold text-lg mt-2 bg-red-700';
+            }
+
+            // Time to sober (BAC / elimination rate)
+            var hoursToSober = bac / eliminationRate;
+            var hrs = Math.floor(hoursToSober);
+            var mins = Math.round((hoursToSober - hrs) * 60);
+            var soberText = hrs > 0 ? hrs + ' hr ' + mins + ' min' : mins + ' min';
+            if (bac === 0) soberText = 'Already sober';
+            document.getElementById('bacTimeToSober').textContent = soberText;
+
+            document.getElementById('bacResults').classList.remove('hidden');
+            document.getElementById('bacResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            if (bac >= 0.08) {
+                showToast('BAC is above the legal limit. Do not drive.', 'error');
+            } else {
+                showToast('BAC calculated successfully.');
+            }
+        });
+    })();
+    </script>
+    <script>if(typeof trackRecentTool==='function')trackRecentTool('BAC Calculator','/tools/health/bac-calculator.html');</script>
+</body>
+</html>

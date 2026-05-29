@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concrete Calculator Free Online — Volume & Bags Needed | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Calculate concrete volume for slabs and cylinders in cubic feet, cubic yards, and number of bags (40lb, 60lb, 80lb). Free online concrete calculator, no sign-up.">
+    <meta name="keywords" content="concrete calculator, concrete volume calculator, concrete bags calculator, cubic yards concrete calculator, slab calculator, how much concrete do I need">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Concrete Calculator Free Online — Volume & Bags Needed | OptiDrop">
+    <meta property="og:description" content="Calculate concrete volume for slabs and cylinders in cubic feet, cubic yards, and number of bags. Free online calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/home/concrete-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Concrete Calculator Free Online — Volume & Bags Needed | OptiDrop">
+    <meta name="twitter:description" content="Calculate concrete volume for slabs and cylinders. Free online calculator.">
+    <link rel="canonical" href="https://optidrop.online/tools/home/concrete-calculator.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Concrete Calculator", "item": "https://optidrop.online/tools/home/concrete-calculator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Concrete Calculator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate concrete volume for slabs and cylinders in cubic feet, cubic yards, and number of bags needed (40lb, 60lb, 80lb)."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate how much concrete I need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Measure the length, width, and thickness of the area you want to pour. Multiply these three dimensions to get the volume in cubic feet. Divide by 27 to convert to cubic yards. This calculator handles both slab and cylinder shapes automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many bags of concrete do I need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 60 lb bag yields about 0.45 cubic feet of concrete, an 80 lb bag yields about 0.60 cubic feet, and a 40 lb bag yields about 0.30 cubic feet. Divide your total volume in cubic feet by the yield per bag to get the number of bags needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between cubic feet and cubic yards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One cubic yard equals 27 cubic feet. Concrete is often sold by the cubic yard for large projects (ordered as ready-mix delivery) and by the bag for small projects. This calculator shows both measurements so you can order accordingly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I order extra concrete?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, it is recommended to order 5-10% extra concrete to account for spillage, uneven ground, and measurement errors. Running short during a pour can cause cold joints and weaken the structure. This calculator does not include extra by default, so consider adding a buffer."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Concrete Calculator — Volume & Bags Needed</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Calculate concrete volume for slabs or cylinders in cubic feet, cubic yards, and the number of bags (40 lb, 60 lb, 80 lb). 100% free, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Shape Selector -->
+                    <div class="max-w-md mx-auto mb-8">
+                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-3">Shape</label>
+                        <div class="flex gap-4">
+                            <button id="btnSlab" class="flex-1 px-4 py-3 rounded-xl font-bold text-sm bg-blue-600 text-white shadow-md transition-all">
+                                <svg class="w-5 h-5 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                                Rectangular Slab
+                            </button>
+                            <button id="btnCylinder" class="flex-1 px-4 py-3 rounded-xl font-bold text-sm bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 shadow-md transition-all hover:bg-slate-300 dark:hover:bg-slate-600">
+                                <svg class="w-5 h-5 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                Circular/Cylinder
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Slab Inputs -->
+                    <div id="slabInputs">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+                            <div>
+                                <label for="slabLength" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Length (ft)</label>
+                                <input type="number" id="slabLength" min="0.1" step="0.1" placeholder="e.g. 10"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                            <div>
+                                <label for="slabWidth" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Width (ft)</label>
+                                <input type="number" id="slabWidth" min="0.1" step="0.1" placeholder="e.g. 10"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                            <div>
+                                <label for="slabThickness" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Thickness (inches)</label>
+                                <input type="number" id="slabThickness" min="0.5" step="0.5" placeholder="e.g. 4"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cylinder Inputs (hidden by default) -->
+                    <div id="cylinderInputs" class="hidden">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 max-w-lg mx-auto">
+                            <div>
+                                <label for="cylDiameter" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Diameter (ft)</label>
+                                <input type="number" id="cylDiameter" min="0.1" step="0.1" placeholder="e.g. 3"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                            <div>
+                                <label for="cylHeight" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Height (inches)</label>
+                                <input type="number" id="cylHeight" min="0.5" step="0.5" placeholder="e.g. 48"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="max-w-md mx-auto">
+                        <button id="btnCalculate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Calculate Concrete
+                        </button>
+                    </div>
+
+                    <!-- Results -->
+                    <div id="results" class="hidden mt-8">
+                        <!-- Volume Display -->
+                        <div class="text-center mb-8">
+                            <p class="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">Concrete Volume</p>
+                            <div class="flex flex-wrap justify-center gap-3">
+                                <div class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl px-6 py-5 min-w-[120px] shadow-lg">
+                                    <p id="volCubicFt" class="text-3xl sm:text-4xl font-extrabold">0</p>
+                                    <p class="text-sm font-medium opacity-80">Cubic Feet</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl px-6 py-5 min-w-[120px] shadow-lg">
+                                    <p id="volCubicYd" class="text-3xl sm:text-4xl font-extrabold">0</p>
+                                    <p class="text-sm font-medium opacity-80">Cubic Yards</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bags Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                            <div class="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 border border-slate-200 dark:border-slate-600 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-slate-600 dark:text-slate-400 mb-1">40 lb Bags</p>
+                                <p id="bags40" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">0</p>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">~0.30 cu ft each</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900 dark:to-indigo-800 border border-indigo-200 dark:border-indigo-700 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-indigo-700 dark:text-indigo-300 mb-1">60 lb Bags</p>
+                                <p id="bags60" class="text-2xl sm:text-3xl font-extrabold text-indigo-900 dark:text-indigo-100">0</p>
+                                <p class="text-xs text-indigo-500 dark:text-indigo-400">~0.45 cu ft each</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900 dark:to-purple-800 border border-purple-200 dark:border-purple-700 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-purple-700 dark:text-purple-300 mb-1">80 lb Bags</p>
+                                <p id="bags80" class="text-2xl sm:text-3xl font-extrabold text-purple-900 dark:text-purple-100">0</p>
+                                <p class="text-xs text-purple-500 dark:text-purple-400">~0.60 cu ft each</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- What do you want to do next? -->
+                    <div id="nextSteps" class="hidden mt-8 border-t border-slate-200 dark:border-slate-700 pt-8">
+                        <h3 class="text-lg font-bold text-slate-800 dark:text-white text-center mb-4">What do you want to do next?</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
+                            <a href="/tools/home/paint-calculator.html" class="tool-card" style="padding:1rem;">
+                                <span class="tool-card-title" style="font-size:0.95rem;">Paint Calculator</span>
+                                <span class="tool-card-desc" style="font-size:0.8rem;">Calculate gallons of paint needed for your room.</span>
+                            </a>
+                            <a href="/tools/home/wallpaper-calculator.html" class="tool-card" style="padding:1rem;">
+                                <span class="tool-card-title" style="font-size:0.95rem;">Wallpaper Calculator</span>
+                                <span class="tool-card-desc" style="font-size:0.8rem;">Calculate how many wallpaper rolls you need.</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Free Concrete Calculator Online — Volume and Bag Estimator</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">OptiDrop's Concrete Calculator helps you determine the exact volume of concrete you need for any project. Whether you are pouring a rectangular slab (like a patio, driveway, or foundation) or a circular column/footing, this tool calculates the volume in both cubic feet and cubic yards, plus the number of pre-mixed bags required.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3">How Does the Concrete Calculator Work?</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">For rectangular slabs, it multiplies length by width by thickness (converted to feet). For cylinders, it uses the formula pi times radius squared times height. The resulting volume is displayed in cubic feet and cubic yards (dividing by 27). It then calculates the number of 40 lb, 60 lb, and 80 lb bags needed based on their respective yields.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3">When to Use Bags vs. Ready-Mix Delivery</h3>
+                <p class="text-slate-600 dark:text-slate-400">For small projects (under 1 cubic yard), pre-mixed bags are usually more economical. For larger pours, ordering ready-mix concrete delivered by truck is more practical and cost-effective. As a rule of thumb, if you need more than about 40-50 bags of 80 lb concrete, consider ordering a ready-mix delivery instead.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        How do I calculate how much concrete I need?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Measure the length, width, and thickness of the area you want to pour. Multiply these three dimensions to get the volume in cubic feet. Divide by 27 to convert to cubic yards. This calculator handles both slab and cylinder shapes automatically.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        How many bags of concrete do I need?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        A 60 lb bag yields about 0.45 cubic feet of concrete, an 80 lb bag yields about 0.60 cubic feet, and a 40 lb bag yields about 0.30 cubic feet. Divide your total volume in cubic feet by the yield per bag to get the number of bags needed.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What is the difference between cubic feet and cubic yards?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        One cubic yard equals 27 cubic feet. Concrete is often sold by the cubic yard for large projects (ordered as ready-mix delivery) and by the bag for small projects. This calculator shows both measurements so you can order accordingly.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        Should I order extra concrete?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Yes, it is recommended to order 5-10% extra concrete to account for spillage, uneven ground, and measurement errors. Running short during a pour can cause cold joints and weaken the structure. This calculator does not include extra by default, so consider adding a buffer.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/home/paint-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Paint Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate gallons of paint needed for your room.</span>
+                </a>
+                <a href="/tools/home/wallpaper-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Wallpaper Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate how many wallpaper rolls you need.</span>
+                </a>
+                <a href="/tools/percentage-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Percentage Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate percentages, percentage change, and more.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 80+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        if(typeof trackRecentTool==='function')trackRecentTool('Concrete Calculator','/tools/home/concrete-calculator.html');
+
+        var shapeMode = 'slab';
+        var btnSlab = document.getElementById('btnSlab');
+        var btnCylinder = document.getElementById('btnCylinder');
+        var slabInputs = document.getElementById('slabInputs');
+        var cylinderInputs = document.getElementById('cylinderInputs');
+        var btnCalculate = document.getElementById('btnCalculate');
+
+        btnSlab.addEventListener('click', function() {
+            shapeMode = 'slab';
+            btnSlab.className = 'flex-1 px-4 py-3 rounded-xl font-bold text-sm bg-blue-600 text-white shadow-md transition-all';
+            btnCylinder.className = 'flex-1 px-4 py-3 rounded-xl font-bold text-sm bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 shadow-md transition-all hover:bg-slate-300 dark:hover:bg-slate-600';
+            slabInputs.classList.remove('hidden');
+            cylinderInputs.classList.add('hidden');
+        });
+
+        btnCylinder.addEventListener('click', function() {
+            shapeMode = 'cylinder';
+            btnCylinder.className = 'flex-1 px-4 py-3 rounded-xl font-bold text-sm bg-blue-600 text-white shadow-md transition-all';
+            btnSlab.className = 'flex-1 px-4 py-3 rounded-xl font-bold text-sm bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 shadow-md transition-all hover:bg-slate-300 dark:hover:bg-slate-600';
+            cylinderInputs.classList.remove('hidden');
+            slabInputs.classList.add('hidden');
+        });
+
+        btnCalculate.addEventListener('click', function() {
+            var volumeCuFt = 0;
+
+            if (shapeMode === 'slab') {
+                var length = parseFloat(document.getElementById('slabLength').value);
+                var width = parseFloat(document.getElementById('slabWidth').value);
+                var thickness = parseFloat(document.getElementById('slabThickness').value);
+
+                if (!length || length <= 0) { showToast('Please enter a valid length.', 'error'); return; }
+                if (!width || width <= 0) { showToast('Please enter a valid width.', 'error'); return; }
+                if (!thickness || thickness <= 0) { showToast('Please enter a valid thickness.', 'error'); return; }
+
+                // Convert thickness from inches to feet
+                var thicknessFt = thickness / 12;
+                volumeCuFt = length * width * thicknessFt;
+            } else {
+                var diameter = parseFloat(document.getElementById('cylDiameter').value);
+                var height = parseFloat(document.getElementById('cylHeight').value);
+
+                if (!diameter || diameter <= 0) { showToast('Please enter a valid diameter.', 'error'); return; }
+                if (!height || height <= 0) { showToast('Please enter a valid height.', 'error'); return; }
+
+                var radius = diameter / 2;
+                var heightFt = height / 12;
+                volumeCuFt = Math.PI * radius * radius * heightFt;
+            }
+
+            var volumeCuYd = volumeCuFt / 27;
+
+            // Bags: 40lb ~ 0.30 cu ft, 60lb ~ 0.45 cu ft, 80lb ~ 0.60 cu ft
+            var bags40 = Math.ceil(volumeCuFt / 0.30);
+            var bags60 = Math.ceil(volumeCuFt / 0.45);
+            var bags80 = Math.ceil(volumeCuFt / 0.60);
+
+            document.getElementById('volCubicFt').textContent = volumeCuFt.toFixed(2);
+            document.getElementById('volCubicYd').textContent = volumeCuYd.toFixed(2);
+            document.getElementById('bags40').textContent = bags40;
+            document.getElementById('bags60').textContent = bags60;
+            document.getElementById('bags80').textContent = bags80;
+
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('nextSteps').classList.remove('hidden');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Calculate on Enter
+        document.querySelectorAll('#slabLength, #slabWidth, #slabThickness, #cylDiameter, #cylHeight').forEach(function(input) {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') btnCalculate.click();
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

@@ -34,7 +34,7 @@
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -46,20 +46,15 @@
         <div class="header-inner">
             <a href="/" class="logo-text">Opti<span>Drop</span></a>
             <nav class="header-nav">
-                <a href="/" class="back-link">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-                    All Tools
-                </a>
+                <a href="/tools.html" class="hide-mobile">Tools</a>
+                <a href="/#categories" class="hide-mobile">Categories</a>
+                <a href="/blog/" class="hide-mobile">Blog</a>
+                <a href="/about.html" class="hide-mobile">About</a>
                 <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
-                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
-                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
             </nav>
         </div>
-        <nav class="mobile-nav">
-            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
-            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
-        </nav>
+        <nav class="mobile-nav"><a href="/tools.html" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/#categories" onclick="this.parentElement.classList.remove('open')">Categories</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a><a href="/about.html" onclick="this.parentElement.classList.remove('open')">About</a></nav>
     </header>
 
     <main class="flex-grow">
@@ -107,6 +102,48 @@
                     <span class="tool-card-desc">Generate SHA-256 and SHA-512 hashes using native crypto API.</span>
                     <span class="tool-card-tag teal">Developer</span>
                 </a>
+                <a href="/tools/developer/css-gradient-generator.html" class="tool-card">
+                    <div class="tool-card-icon bg-violet-100 text-violet-600"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg></div>
+                    <span class="tool-card-title">CSS Gradient Generator</span>
+                    <span class="tool-card-desc">Create linear and radial CSS gradients with live preview.</span>
+                    <span class="tool-card-tag violet">Developer</span>
+                </a>
+                <a href="/tools/developer/html-entities.html" class="tool-card">
+                    <div class="tool-card-icon bg-cyan-100 text-cyan-600"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div>
+                    <span class="tool-card-title">HTML Entities Encoder</span>
+                    <span class="tool-card-desc">Encode and decode HTML special characters instantly.</span>
+                    <span class="tool-card-tag cyan">Developer</span>
+                </a>
+                <a href="/tools/developer/regex-tester.html" class="tool-card">
+                    <div class="tool-card-icon bg-indigo-100 text-indigo-600"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                    <span class="tool-card-title">Regex Tester</span>
+                    <span class="tool-card-desc">Test regular expressions with live match highlighting.</span>
+                    <span class="tool-card-tag indigo">Developer</span>
+                </a>
+                <a href="/tools/developer/uuid-generator.html" class="tool-card">
+                    <div class="tool-card-icon bg-emerald-100 text-emerald-600"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg></div>
+                    <span class="tool-card-title">UUID Generator</span>
+                    <span class="tool-card-desc">Generate v4 UUIDs using crypto.getRandomValues.</span>
+                    <span class="tool-card-tag emerald">Developer</span>
+                </a>
+                <a href="/tools/developer/timestamp-converter.html" class="tool-card">
+                    <div class="tool-card-icon bg-amber-100 text-amber-600"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <span class="tool-card-title">Timestamp Converter</span>
+                    <span class="tool-card-desc">Convert between Unix timestamps and human-readable dates.</span>
+                    <span class="tool-card-tag amber">Developer</span>
+                </a>
+                <a href="/tools/developer/json-to-csv.html" class="tool-card">
+                    <div class="tool-card-icon bg-lime-100 text-lime-600"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <span class="tool-card-title">JSON to CSV Converter</span>
+                    <span class="tool-card-desc">Convert JSON arrays to CSV format instantly.</span>
+                    <span class="tool-card-tag lime">Developer</span>
+                </a>
+                <a href="/tools/developer/css-box-shadow-generator.html" class="tool-card">
+                    <div class="tool-card-icon bg-rose-100 text-rose-600"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg></div>
+                    <span class="tool-card-title">CSS Box Shadow Generator</span>
+                    <span class="tool-card-desc">Design CSS box shadows with live preview and copy.</span>
+                    <span class="tool-card-tag rose">Developer</span>
+                </a>
             </div>
         </section>
 
@@ -137,7 +174,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <a href="/category/text-tools.html" class="tool-card" style="padding:1rem;"><span class="tool-card-title" style="font-size:0.95rem;">Text Tools</span><span class="tool-card-desc" style="font-size:0.8rem;">Word counter, case converter, and more.</span></a>
                 <a href="/category/calculator-tools.html" class="tool-card" style="padding:1rem;"><span class="tool-card-title" style="font-size:0.95rem;">Calculator Tools</span><span class="tool-card-desc" style="font-size:0.8rem;">EMI, SIP, tax, and more.</span></a>
-                <a href="/category/health-tools.html" class="tool-card" style="padding:1rem;"><span class="tool-card-title" style="font-size:0.95rem;">Health Tools</span><span class="tool-card-desc" style="font-size:0.8rem;">BMI, calorie, sleep, and more.</span></a>
+                <a href="/category/home-tools.html" class="tool-card" style="padding:1rem;"><span class="tool-card-title" style="font-size:0.95rem;">Home &amp; DIY Tools</span><span class="tool-card-desc" style="font-size:0.8rem;">Paint, wallpaper, concrete calculators.</span></a>
             </div>
         </section>
     </main>

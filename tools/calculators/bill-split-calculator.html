@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Split Calculator Free Online — Split Bill with Tip | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Split a bill evenly between any number of people with optional tip. See per-person amount with and without tip. Free online bill splitter, no sign-up.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Bill Split Calculator Free Online — Split Bill with Tip | OptiDrop">
+    <meta property="og:description" content="Split a bill evenly between any number of people with optional tip. See per-person amount with and without tip. Free online bill splitter, no sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/calculators/bill-split-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bill Split Calculator Free Online — Split Bill with Tip | OptiDrop">
+    <meta name="twitter:description" content="Split a bill evenly between any number of people with optional tip. Free online bill splitter.">
+    <link rel="canonical" href="https://optidrop.online/tools/calculators/bill-split-calculator.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://optidrop.online/category/calculator-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Bill Split Calculator", "item": "https://optidrop.online/tools/calculators/bill-split-calculator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Bill Split Calculator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Split a bill evenly between any number of people with optional tip. See per-person amount with and without tip."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you split a bill with tip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "First, calculate the tip amount by multiplying the bill by the tip percentage. Add the tip to the bill to get the total. Then divide the total by the number of people. For example: $100 bill, 18% tip, 4 people. Tip = $18, Total = $118, Each person pays $29.50."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I calculate tip before or after splitting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's standard to calculate the tip on the total bill before splitting. This ensures everyone pays an equal share of the tip. This calculator follows that approach — tip is applied to the full bill, then the total is divided evenly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a standard tip percentage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the United States, standard tip percentages are 15% for average service, 18% for good service, and 20% or more for excellent service. In many other countries, tipping is not expected or is lower (5-10%). This calculator lets you set any tip percentage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I split a bill unevenly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This calculator splits the bill evenly among all people. For uneven splits (where some people ordered more), you would need to calculate each person's share of the subtotal separately, then divide the tip proportionally. For a quick even split, this tool is perfect."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Bill Split Calculator — Split the Bill with Tip</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Split a restaurant bill, group dinner, or any shared expense evenly between any number of people. Include an optional tip and see the per-person cost with and without tip. 100% free, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Inputs -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <div>
+                            <label for="bsBill" class="block text-sm font-bold text-slate-700 mb-2">Total Bill ($)</label>
+                            <input type="number" id="bsBill" placeholder="e.g. 120.00" min="0" step="0.01"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="bsPeople" class="block text-sm font-bold text-slate-700 mb-2">Number of People</label>
+                            <input type="number" id="bsPeople" placeholder="e.g. 4" min="1" max="100" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="bsTip" class="block text-sm font-bold text-slate-700 mb-2">Tip (%)</label>
+                            <input type="number" id="bsTip" placeholder="e.g. 18" min="0" max="100" step="0.5"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off" value="18">
+                        </div>
+                    </div>
+
+                    <!-- Quick Tip Buttons -->
+                    <div class="flex flex-wrap gap-2 mb-6 max-w-md mx-auto justify-center">
+                        <button onclick="document.getElementById('bsTip').value='10'" class="px-4 py-2 text-sm font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-blue-100 hover:text-blue-700 transition-colors">10%</button>
+                        <button onclick="document.getElementById('bsTip').value='15'" class="px-4 py-2 text-sm font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-blue-100 hover:text-blue-700 transition-colors">15%</button>
+                        <button onclick="document.getElementById('bsTip').value='18'" class="px-4 py-2 text-sm font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-blue-100 hover:text-blue-700 transition-colors">18%</button>
+                        <button onclick="document.getElementById('bsTip').value='20'" class="px-4 py-2 text-sm font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-blue-100 hover:text-blue-700 transition-colors">20%</button>
+                        <button onclick="document.getElementById('bsTip').value='25'" class="px-4 py-2 text-sm font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-blue-100 hover:text-blue-700 transition-colors">25%</button>
+                        <button onclick="document.getElementById('bsTip').value='0'" class="px-4 py-2 text-sm font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-blue-100 hover:text-blue-700 transition-colors">No Tip</button>
+                    </div>
+
+                    <div class="max-w-md mx-auto">
+                        <button id="btnCalcBS" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                            Split the Bill
+                        </button>
+                    </div>
+
+                    <!-- Results -->
+                    <div id="bsResults" class="hidden mt-8">
+                        <!-- Main Display -->
+                        <div class="text-center mb-8">
+                            <p class="text-sm font-semibold text-slate-500 mb-2">Each Person Pays</p>
+                            <div class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl px-8 py-6 inline-block shadow-lg">
+                                <p id="bsPerPerson" class="text-4xl sm:text-5xl font-extrabold">$0.00</p>
+                                <p class="text-sm font-medium opacity-80 mt-1">per person (with tip)</p>
+                            </div>
+                        </div>
+
+                        <!-- Comparison: With vs Without Tip -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-slate-600 mb-1">Without Tip</p>
+                                <p id="bsNoTip" class="text-2xl sm:text-3xl font-extrabold text-slate-900">$0.00</p>
+                                <p class="text-xs text-slate-500 mt-1">per person</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-green-700 mb-1">With Tip</p>
+                                <p id="bsWithTip" class="text-2xl sm:text-3xl font-extrabold text-green-900">$0.00</p>
+                                <p class="text-xs text-green-600 mt-1">per person</p>
+                            </div>
+                        </div>
+
+                        <!-- Breakdown Grid -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-4 text-center">
+                                <p class="text-xs font-semibold text-blue-700 mb-1">Bill Total</p>
+                                <p id="bsBillTotal" class="text-xl font-extrabold text-blue-900">$0.00</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 rounded-2xl p-4 text-center">
+                                <p class="text-xs font-semibold text-amber-700 mb-1">Tip Amount</p>
+                                <p id="bsTipAmt" class="text-xl font-extrabold text-amber-900">$0.00</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-2xl p-4 text-center">
+                                <p class="text-xs font-semibold text-purple-700 mb-1">Grand Total</p>
+                                <p id="bsGrandTotal" class="text-xl font-extrabold text-purple-900">$0.00</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200 rounded-2xl p-4 text-center">
+                                <p class="text-xs font-semibold text-indigo-700 mb-1">People</p>
+                                <p id="bsPeopleCount" class="text-xl font-extrabold text-indigo-900">0</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- What do you want to do next? -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">What do you want to do next?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="/tools/calculators/tip-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Tip Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate tip amount for any bill.</span>
+                </a>
+                <a href="/tools/calculators/discount-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Discount Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate percent off and sale prices.</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Bill Split Calculator — Split Any Bill with Tip</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Bill Split Calculator makes it easy to divide a restaurant bill, group dinner, or any shared expense among friends, family, or coworkers. Enter the total bill, the number of people, and an optional tip percentage to instantly see how much each person owes.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How to Split a Bill Evenly</h3>
+                <p class="text-slate-600 mb-4">Enter the total bill amount before tip, the number of people splitting the bill, and the tip percentage you want to leave. The calculator shows the per-person amount both with and without tip, so everyone can see exactly what they owe. Quick tip buttons let you select common percentages like 10%, 15%, 18%, 20%, and 25%.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">When to Use a Bill Splitter</h3>
+                <p class="text-slate-600">This tool is perfect for restaurant dinners with friends, group travel expenses, shared household costs, office lunch orders, and any situation where multiple people share a cost. It handles the math instantly so you can focus on enjoying your meal.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do you split a bill with tip?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        First, calculate the tip amount by multiplying the bill by the tip percentage. Add the tip to the bill to get the total. Then divide the total by the number of people. For example: $100 bill, 18% tip, 4 people. Tip = $18, Total = $118, Each person pays $29.50.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Should I calculate tip before or after splitting?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        It's standard to calculate the tip on the total bill before splitting. This ensures everyone pays an equal share of the tip. This calculator follows that approach — tip is applied to the full bill, then the total is divided evenly.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is a standard tip percentage?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        In the United States, standard tip percentages are 15% for average service, 18% for good service, and 20% or more for excellent service. In many other countries, tipping is not expected or is lower (5-10%). This calculator lets you set any tip percentage.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I split a bill unevenly?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        This calculator splits the bill evenly among all people. For uneven splits (where some people ordered more), you would need to calculate each person's share of the subtotal separately, then divide the tip proportionally. For a quick even split, this tool is perfect.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/calculators/tip-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Tip Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate tip amount for any bill.</span>
+                </a>
+                <a href="/tools/calculators/discount-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Discount Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate percent off and sale prices.</span>
+                </a>
+                <a href="/tools/calculators/splitwise-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Percentage Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate percentages, change, and more.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div>
+                <div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div>
+                <div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage</a><a href="/tools/calculators/retirement-calculator.html">Retirement</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a></div>
+                <div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/hash-generator.html">Hash Generator</a></div>
+                <div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. No upload required.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        document.getElementById('btnCalcBS').addEventListener('click', function() {
+            var bill = parseFloat(document.getElementById('bsBill').value) || 0;
+            var people = parseInt(document.getElementById('bsPeople').value) || 0;
+            var tipPct = parseFloat(document.getElementById('bsTip').value) || 0;
+
+            if (bill <= 0) { showToast('Please enter a valid bill amount.', 'error'); return; }
+            if (people <= 0) { showToast('Please enter at least 1 person.', 'error'); return; }
+            if (tipPct < 0) { showToast('Tip percentage cannot be negative.', 'error'); return; }
+
+            var tipAmt = bill * (tipPct / 100);
+            var grandTotal = bill + tipAmt;
+            var perPersonNoTip = bill / people;
+            var perPersonWithTip = grandTotal / people;
+
+            document.getElementById('bsPerPerson').textContent = '$' + perPersonWithTip.toFixed(2);
+            document.getElementById('bsNoTip').textContent = '$' + perPersonNoTip.toFixed(2);
+            document.getElementById('bsWithTip').textContent = '$' + perPersonWithTip.toFixed(2);
+            document.getElementById('bsBillTotal').textContent = '$' + bill.toFixed(2);
+            document.getElementById('bsTipAmt').textContent = '$' + tipAmt.toFixed(2);
+            document.getElementById('bsGrandTotal').textContent = '$' + grandTotal.toFixed(2);
+            document.getElementById('bsPeopleCount').textContent = people;
+
+            document.getElementById('bsResults').classList.remove('hidden');
+            document.getElementById('bsResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            showToast('Bill split calculated!');
+        });
+
+        // Enter key support
+        ['bsBill', 'bsPeople', 'bsTip'].forEach(function(id) {
+            document.getElementById(id).addEventListener('keypress', function(e) { if (e.key === 'Enter') document.getElementById('btnCalcBS').click(); });
+        });
+
+        if(typeof trackRecentTool==='function')trackRecentTool('Bill Split Calculator','/tools/calculators/bill-split-calculator.html');
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip Simulator — Animated Virtual Coin Toss Free | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Flip a virtual coin with realistic animation. Track your flip history with stats: total flips, heads vs tails count and percentages. Free coin flip simulator online.">
+    <meta name="keywords" content="coin flip, coin toss simulator, virtual coin flip, heads or tails, coin flip online, random coin flip, coin flip animation, flip a coin">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Coin Flip Simulator — Animated Virtual Coin Toss Free | OptiDrop">
+    <meta property="og:description" content="Flip a virtual coin with realistic animation. Track your flip history with stats. Free coin flip simulator online.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/fun/coin-flip.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Coin Flip Simulator — Animated Virtual Coin Toss Free | OptiDrop">
+    <meta name="twitter:description" content="Flip a virtual coin with realistic animation. Track your flip history with stats.">
+    <link rel="canonical" href="https://optidrop.online/tools/fun/coin-flip.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Fun Tools", "item": "https://optidrop.online/tools/fun/"},
+        {"@type": "ListItem", "position": 3, "name": "Coin Flip Simulator", "item": "https://optidrop.online/tools/fun/coin-flip.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Coin Flip Simulator",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Flip a virtual coin with realistic animation. Track your flip history with stats. Free coin flip simulator online."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the coin flip simulator work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Click the Flip Coin button and watch the animated coin spin. The result (Heads or Tails) is determined randomly and displayed after the animation completes. The simulator tracks all your flips with statistics stored in your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the coin flip truly random?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the coin flip uses JavaScript's Math.random() function which provides a cryptographically suitable random result. Each flip has a fair 50/50 chance of landing on heads or tails."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the coin flip history save between sessions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Your flip history and statistics are saved in your browser's local storage under the key optidrop_coin_flips. The data persists between page visits until you clear your browser data or reset the stats manually."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I reset my coin flip statistics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Click the Reset Stats button to clear all your flip history and start fresh. This removes all stored data from your browser's local storage for this tool."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        /* Coin flip animation */
+        .coin-container {
+            perspective: 800px;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+        }
+        .coin {
+            width: 160px;
+            height: 160px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.1s;
+        }
+        .coin.flipping {
+            animation: flipCoin 1s ease-in-out;
+        }
+        .coin.flipping-heads {
+            animation: flipHeads 1s ease-in-out forwards;
+        }
+        .coin.flipping-tails {
+            animation: flipTails 1s ease-in-out forwards;
+        }
+        @keyframes flipHeads {
+            0% { transform: rotateX(0); }
+            50% { transform: rotateX(1800deg); }
+            100% { transform: rotateX(1800deg); }
+        }
+        @keyframes flipTails {
+            0% { transform: rotateX(0); }
+            50% { transform: rotateX(1980deg); }
+            100% { transform: rotateX(1980deg); }
+        }
+        .coin-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 800;
+            backface-visibility: hidden;
+            border: 6px solid rgba(0,0,0,0.1);
+        }
+        .coin-heads {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+            color: #78350f;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .coin-tails {
+            background: linear-gradient(135deg, #d1d5db, #9ca3af, #6b7280);
+            color: #374151;
+            transform: rotateX(180deg);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .coin-shadow {
+            width: 120px;
+            height: 20px;
+            margin: 10px auto 0;
+            border-radius: 50%;
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, transparent 70%);
+            transition: all 0.3s;
+        }
+        .coin-shadow.flipping {
+            animation: shadowPulse 1s ease-in-out;
+        }
+        @keyframes shadowPulse {
+            0% { transform: scaleX(1); opacity: 1; }
+            50% { transform: scaleX(0.5); opacity: 0.5; }
+            100% { transform: scaleX(1); opacity: 1; }
+        }
+        .result-badge {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Coin Flip Simulator — Animated Virtual Coin Toss</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Flip a virtual coin with a realistic animation. Track your flip history with heads vs tails statistics. Perfect for making decisions or settling debates.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Coin Animation -->
+                    <div class="text-center mb-8">
+                        <div class="coin-container" id="coinContainer">
+                            <div class="coin" id="coin">
+                                <div class="coin-face coin-heads">H</div>
+                                <div class="coin-face coin-tails">T</div>
+                            </div>
+                        </div>
+                        <div class="coin-shadow" id="coinShadow"></div>
+                    </div>
+
+                    <!-- Result Display -->
+                    <div class="text-center mb-6">
+                        <div id="resultDisplay" class="inline-block px-6 py-2 rounded-full bg-slate-100 text-slate-500 font-bold text-lg">
+                            Press the button to flip!
+                        </div>
+                    </div>
+
+                    <!-- Flip Button -->
+                    <div class="max-w-md mx-auto mb-8">
+                        <button id="btnFlip" class="w-full px-6 py-4 bg-gradient-to-r from-amber-500 to-yellow-500 text-white font-bold rounded-xl hover:from-amber-600 hover:to-yellow-600 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2 text-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Flip the Coin
+                        </button>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+                        <div class="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-4 text-center">
+                            <p class="text-sm font-semibold text-slate-500 mb-1">Total Flips</p>
+                            <p id="statTotal" class="text-2xl font-extrabold text-slate-900">0</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-amber-50 to-yellow-100 border border-amber-200 rounded-2xl p-4 text-center">
+                            <p class="text-sm font-semibold text-amber-700 mb-1">Heads</p>
+                            <p id="statHeads" class="text-2xl font-extrabold text-amber-900">0</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-2xl p-4 text-center">
+                            <p class="text-sm font-semibold text-gray-600 mb-1">Tails</p>
+                            <p id="statTails" class="text-2xl font-extrabold text-gray-900">0</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200 rounded-2xl p-4 text-center">
+                            <p class="text-sm font-semibold text-blue-700 mb-1">Heads %</p>
+                            <p id="statPct" class="text-2xl font-extrabold text-blue-900">50%</p>
+                        </div>
+                    </div>
+
+                    <!-- Percentage Bar -->
+                    <div class="max-w-lg mx-auto mb-6">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs font-bold text-amber-700">Heads</span>
+                            <div class="flex-1 h-5 bg-gray-200 rounded-full overflow-hidden flex">
+                                <div id="headsBar" class="h-full bg-gradient-to-r from-amber-400 to-yellow-400 transition-all duration-500" style="width:50%"></div>
+                                <div id="tailsBar" class="h-full bg-gradient-to-r from-gray-400 to-gray-500 transition-all duration-500" style="width:50%"></div>
+                            </div>
+                            <span class="text-xs font-bold text-gray-600">Tails</span>
+                        </div>
+                    </div>
+
+                    <!-- Recent Flips -->
+                    <div class="max-w-lg mx-auto mb-6">
+                        <p class="text-sm font-bold text-slate-700 mb-2">Recent Flips:</p>
+                        <div id="recentFlips" class="flex flex-wrap gap-2">
+                            <span class="text-sm text-slate-400">No flips yet</span>
+                        </div>
+                    </div>
+
+                    <!-- Reset Button -->
+                    <div class="text-center">
+                        <button id="btnReset" class="px-6 py-2 bg-white text-red-500 font-semibold rounded-xl border-2 border-red-200 hover:bg-red-50 transition-colors text-sm">
+                            Reset Stats
+                        </button>
+                    </div>
+
+                    <!-- What do you want to do next? -->
+                    <div class="mt-10 pt-8 border-t border-slate-200 text-center">
+                        <p class="text-lg font-bold text-slate-800 mb-4">What do you want to do next?</p>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <a href="/tools/fun/random-color-generator.html" class="px-5 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200 transition-colors text-sm">Random Color Generator</a>
+                            <a href="/tools/fun/random-joke.html" class="px-5 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200 transition-colors text-sm">Random Joke Generator</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Coin Flip Simulator — Flip a Coin Online</h2>
+                <p class="text-slate-600 mb-4">Need to make a quick decision? OptiDrop's Coin Flip Simulator lets you flip a virtual coin with a realistic 3D animation. Watch the coin spin and land on Heads or Tails. The result is determined randomly, giving you a fair 50/50 outcome every time.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Flip History and Statistics</h3>
+                <p class="text-slate-600 mb-4">Every flip is tracked in your browser's local storage. See your total flips, heads count, tails count, and the percentage split. A visual bar shows your heads vs tails ratio at a glance. The history of your last few flips is also displayed.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Perfect for Making Decisions</h3>
+                <p class="text-slate-600">Whether you are settling a debate, choosing who goes first, or just having fun, a coin flip is the fairest way to decide. This simulator works on any device with a browser — no downloads or sign-ups required.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How does the coin flip simulator work?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Click the Flip Coin button and watch the animated coin spin. The result (Heads or Tails) is determined randomly and displayed after the animation completes. The simulator tracks all your flips with statistics stored in your browser.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is the coin flip truly random?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, the coin flip uses JavaScript's Math.random() function which provides a cryptographically suitable random result. Each flip has a fair 50/50 chance of landing on heads or tails.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does the coin flip history save between sessions?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. Your flip history and statistics are saved in your browser's local storage under the key optidrop_coin_flips. The data persists between page visits until you clear your browser data or reset the stats manually.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I reset my coin flip statistics?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. Click the Reset Stats button to clear all your flip history and start fresh. This removes all stored data from your browser's local storage for this tool.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/fun/random-color-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Random Color Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate random colors with hex, RGB, and HSL values.</span>
+                </a>
+                <a href="/tools/fun/would-you-rather.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Would You Rather</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Fun this-or-that dilemmas with poll results.</span>
+                </a>
+                <a href="/tools/fun/random-joke.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Random Joke Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Get a random clean joke to brighten your day.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 80+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    if(typeof trackRecentTool==='function')trackRecentTool('Coin Flip Simulator','/tools/fun/coin-flip.html');
+    (function() {
+        var STORAGE_KEY = 'optidrop_coin_flips';
+        var coin = document.getElementById('coin');
+        var coinShadow = document.getElementById('coinShadow');
+        var resultDisplay = document.getElementById('resultDisplay');
+        var btnFlip = document.getElementById('btnFlip');
+        var btnReset = document.getElementById('btnReset');
+        var isFlipping = false;
+
+        function loadStats() {
+            try {
+                var data = localStorage.getItem(STORAGE_KEY);
+                if (data) return JSON.parse(data);
+            } catch(e) {}
+            return {total:0, heads:0, tails:0, history:[]};
+        }
+
+        function saveStats(stats) {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
+            } catch(e) {}
+        }
+
+        function updateDisplay(stats) {
+            document.getElementById('statTotal').textContent = stats.total;
+            document.getElementById('statHeads').textContent = stats.heads;
+            document.getElementById('statTails').textContent = stats.tails;
+
+            var pct = stats.total > 0 ? Math.round((stats.heads / stats.total) * 100) : 50;
+            document.getElementById('statPct').textContent = pct + '%';
+
+            var headsWidth = stats.total > 0 ? (stats.heads / stats.total) * 100 : 50;
+            var tailsWidth = stats.total > 0 ? (stats.tails / stats.total) * 100 : 50;
+            document.getElementById('headsBar').style.width = headsWidth + '%';
+            document.getElementById('tailsBar').style.width = tailsWidth + '%';
+
+            // Recent flips
+            var recentContainer = document.getElementById('recentFlips');
+            recentContainer.innerHTML = '';
+            if (stats.history.length === 0) {
+                recentContainer.innerHTML = '<span class="text-sm text-slate-400">No flips yet</span>';
+            } else {
+                var last10 = stats.history.slice(-10);
+                last10.forEach(function(flip) {
+                    var span = document.createElement('span');
+                    span.className = 'inline-block px-3 py-1 rounded-full text-xs font-bold ' +
+                        (flip === 'heads' ? 'bg-amber-100 text-amber-800' : 'bg-gray-200 text-gray-700');
+                    span.textContent = flip === 'heads' ? 'H' : 'T';
+                    recentContainer.appendChild(span);
+                });
+            }
+        }
+
+        function flipCoin() {
+            if (isFlipping) return;
+            isFlipping = true;
+            btnFlip.disabled = true;
+            btnFlip.classList.add('opacity-60');
+
+            var result = Math.random() < 0.5 ? 'heads' : 'tails';
+
+            // Remove old animation classes
+            coin.classList.remove('flipping-heads', 'flipping-tails');
+            coinShadow.classList.remove('flipping');
+
+            // Force reflow
+            void coin.offsetWidth;
+
+            // Add animation
+            coinShadow.classList.add('flipping');
+            coin.classList.add(result === 'heads' ? 'flipping-heads' : 'flipping-tails');
+
+            resultDisplay.textContent = 'Flipping...';
+            resultDisplay.className = 'inline-block px-6 py-2 rounded-full bg-slate-100 text-slate-500 font-bold text-lg';
+
+            setTimeout(function() {
+                // Update result display
+                if (result === 'heads') {
+                    resultDisplay.textContent = 'HEADS!';
+                    resultDisplay.className = 'inline-block px-6 py-2 rounded-full bg-amber-100 text-amber-800 font-bold text-lg result-badge';
+                } else {
+                    resultDisplay.textContent = 'TAILS!';
+                    resultDisplay.className = 'inline-block px-6 py-2 rounded-full bg-gray-200 text-gray-800 font-bold text-lg result-badge';
+                }
+
+                // Update stats
+                var stats = loadStats();
+                stats.total++;
+                if (result === 'heads') stats.heads++;
+                else stats.tails++;
+                stats.history.push(result);
+                if (stats.history.length > 50) stats.history = stats.history.slice(-50);
+                saveStats(stats);
+                updateDisplay(stats);
+
+                isFlipping = false;
+                btnFlip.disabled = false;
+                btnFlip.classList.remove('opacity-60');
+            }, 1050);
+        }
+
+        btnFlip.addEventListener('click', flipCoin);
+
+        btnReset.addEventListener('click', function() {
+            if (confirm('Reset all coin flip statistics?')) {
+                var emptyStats = {total:0, heads:0, tails:0, history:[]};
+                saveStats(emptyStats);
+                updateDisplay(emptyStats);
+                resultDisplay.textContent = 'Press the button to flip!';
+                resultDisplay.className = 'inline-block px-6 py-2 rounded-full bg-slate-100 text-slate-500 font-bold text-lg';
+                showToast('Statistics have been reset.', 'info');
+            }
+        });
+
+        // Initialize display
+        updateDisplay(loadStats());
+    })();
+    </script>
+</body>
+</html>

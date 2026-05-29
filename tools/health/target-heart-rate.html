@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Heart Rate Calculator Free Online — Karvonen Formula | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Calculate your target heart rate zones free online using the Karvonen formula. Find fat burn, cardio, and peak zones with min/max BPM based on age and resting heart rate. No sign-up.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Target Heart Rate Calculator Free Online | OptiDrop">
+    <meta property="og:description" content="Calculate target heart rate zones using the Karvonen formula. Fat burn, cardio, and peak zones. No sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/health/target-heart-rate.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Target Heart Rate Calculator Free Online | OptiDrop">
+    <meta name="twitter:description" content="Calculate target heart rate zones. Fat burn, cardio, and peak zones. No sign-up.">
+    <link rel="canonical" href="https://optidrop.online/tools/health/target-heart-rate.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Health Tools", "item": "https://optidrop.online/category/health-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Target Heart Rate Calculator", "item": "https://optidrop.online/tools/health/target-heart-rate.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Target Heart Rate Calculator",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate target heart rate zones using the Karvonen formula. Fat burn, cardio, and peak zones with min/max BPM."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Karvonen formula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Karvonen formula calculates target heart rate zones using your age and resting heart rate. Formula: Target HR = ((Max HR - Resting HR) x Intensity%) + Resting HR. Max HR is estimated as 220 minus your age. This method is more personalized than age-only formulas because it accounts for your fitness level through resting heart rate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the heart rate training zones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There are typically 5 heart rate zones: Zone 1 (50-60%) is very light activity for warm-up. Zone 2 (60-70%) is the fat burn zone for endurance. Zone 3 (70-80%) is the aerobic/cardio zone for cardiovascular fitness. Zone 4 (80-90%) is the anaerobic zone for performance. Zone 5 (90-100%) is the maximum effort zone for short bursts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the fat burn heart rate zone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The fat burn zone is typically 60-70% of your maximum heart rate (or 50-70% using Karvonen). At this intensity, your body uses a higher percentage of fat as fuel compared to carbohydrates. However, higher intensity zones burn more total calories and may result in greater overall fat loss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I measure my resting heart rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Measure your resting heart rate first thing in the morning before getting out of bed. Place two fingers on the inside of your wrist or on the side of your neck. Count the number of beats in 60 seconds (or 30 seconds and multiply by 2). For most accurate results, measure for 3 consecutive mornings and take the average."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-3">Target Heart Rate Calculator — Karvonen Formula</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Calculate your personalized heart rate training zones using the Karvonen formula. Find fat burn, cardio, and peak zones with min/max BPM based on your age and resting heart rate. 100% private, no sign-up.</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500 mt-2"><span class="privacy-badge" style="display:inline-flex;align-items:center;gap:4px;"><span class="dot"></span> 100% Private – your data never leaves this device.</span></p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="thrAge" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Age (years)</label>
+                            <input type="number" id="thrAge" placeholder="e.g. 30" min="10" max="100" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium" autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="thrResting" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Resting Heart Rate (BPM)</label>
+                            <input type="number" id="thrResting" placeholder="e.g. 65" min="30" max="120" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium" autocomplete="off">
+                            <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Measure first thing in the morning before getting out of bed. If unsure, use 65-72 BPM as a typical resting rate.</p>
+                        </div>
+                    </div>
+
+                    <button id="btnCalcTHR" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                        Calculate Heart Rate Zones
+                    </button>
+
+                    <div id="thrResults" class="hidden mt-8">
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+                            <div class="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 border border-slate-200 dark:border-slate-600 rounded-2xl p-4 text-center">
+                                <p class="text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Max Heart Rate</p>
+                                <p id="thrMaxHR" class="text-2xl font-extrabold text-slate-900 dark:text-slate-100">0</p>
+                                <p class="text-xs text-slate-400 dark:text-slate-500">BPM</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 border border-slate-200 dark:border-slate-600 rounded-2xl p-4 text-center">
+                                <p class="text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Resting HR</p>
+                                <p id="thrRestingDisplay" class="text-2xl font-extrabold text-slate-900 dark:text-slate-100">0</p>
+                                <p class="text-xs text-slate-400 dark:text-slate-500">BPM</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 border border-slate-200 dark:border-slate-600 rounded-2xl p-4 text-center">
+                                <p class="text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Heart Rate Reserve</p>
+                                <p id="thrReserve" class="text-2xl font-extrabold text-slate-900 dark:text-slate-100">0</p>
+                                <p class="text-xs text-slate-400 dark:text-slate-500">BPM</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 border border-slate-200 dark:border-slate-600 rounded-2xl p-4 text-center">
+                                <p class="text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Age</p>
+                                <p id="thrAgeDisplay" class="text-2xl font-extrabold text-slate-900 dark:text-slate-100">0</p>
+                                <p class="text-xs text-slate-400 dark:text-slate-500">years</p>
+                            </div>
+                        </div>
+
+                        <!-- Zone Cards -->
+                        <div class="space-y-4">
+                            <!-- Zone 1: Very Light -->
+                            <div class="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 border border-blue-200 dark:border-blue-700 rounded-2xl p-5">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div>
+                                        <h3 class="font-bold text-blue-800 dark:text-blue-300">Zone 1: Very Light (50-60%)</h3>
+                                        <p class="text-sm text-blue-600 dark:text-blue-400">Warm-up, recovery, easy walking</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p id="zone1Range" class="text-xl font-extrabold text-blue-900 dark:text-blue-200">0 - 0 BPM</p>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-blue-200 dark:bg-blue-800 rounded-full h-3">
+                                    <div class="bg-blue-500 h-3 rounded-full" style="width:12.5%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Zone 2: Light (Fat Burn) -->
+                            <div class="bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 border border-green-200 dark:border-green-700 rounded-2xl p-5">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div>
+                                        <h3 class="font-bold text-green-800 dark:text-green-300">Zone 2: Light / Fat Burn (60-70%)</h3>
+                                        <p class="text-sm text-green-600 dark:text-green-400">Fat burning, endurance building, brisk walking</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p id="zone2Range" class="text-xl font-extrabold text-green-900 dark:text-green-200">0 - 0 BPM</p>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-green-200 dark:bg-green-800 rounded-full h-3">
+                                    <div class="bg-green-500 h-3 rounded-full" style="width:25%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Zone 3: Moderate (Cardio) -->
+                            <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 dark:from-yellow-900/30 dark:to-yellow-800/30 border border-yellow-200 dark:border-yellow-700 rounded-2xl p-5">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div>
+                                        <h3 class="font-bold text-yellow-800 dark:text-yellow-300">Zone 3: Moderate / Cardio (70-80%)</h3>
+                                        <p class="text-sm text-yellow-600 dark:text-yellow-400">Aerobic fitness, improved circulation, running</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p id="zone3Range" class="text-xl font-extrabold text-yellow-900 dark:text-yellow-200">0 - 0 BPM</p>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-yellow-200 dark:bg-yellow-800 rounded-full h-3">
+                                    <div class="bg-yellow-500 h-3 rounded-full" style="width:37.5%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Zone 4: Hard (Anaerobic) -->
+                            <div class="bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/30 dark:to-orange-800/30 border border-orange-200 dark:border-orange-700 rounded-2xl p-5">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div>
+                                        <h3 class="font-bold text-orange-800 dark:text-orange-300">Zone 4: Hard / Anaerobic (80-90%)</h3>
+                                        <p class="text-sm text-orange-600 dark:text-orange-400">Performance training, speed work, interval training</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p id="zone4Range" class="text-xl font-extrabold text-orange-900 dark:text-orange-200">0 - 0 BPM</p>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-orange-200 dark:bg-orange-800 rounded-full h-3">
+                                    <div class="bg-orange-500 h-3 rounded-full" style="width:50%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Zone 5: Maximum -->
+                            <div class="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/30 dark:to-red-800/30 border border-red-200 dark:border-red-700 rounded-2xl p-5">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div>
+                                        <h3 class="font-bold text-red-800 dark:text-red-300">Zone 5: Maximum (90-100%)</h3>
+                                        <p class="text-sm text-red-600 dark:text-red-400">Maximum effort, sprints, high-intensity intervals</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p id="zone5Range" class="text-xl font-extrabold text-red-900 dark:text-red-200">0 - 0 BPM</p>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-red-200 dark:bg-red-800 rounded-full h-3">
+                                    <div class="bg-red-500 h-3 rounded-full" style="width:62.5%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-xl p-4 mt-6">
+                            <p class="text-sm text-blue-700 dark:text-blue-400 font-medium text-center">These zones use the Karvonen formula which accounts for your resting heart rate, making them more personalized than simple age-based estimates.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- What do you want to do next? -->
+        <section class="max-w-4xl mx-auto px-4 py-6 text-center">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">What do you want to do next?</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/tools/health/blood-pressure-tracker.html" class="tool-card" style="padding:1rem;min-width:200px;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Blood Pressure Tracker</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Track and classify BP readings.</span>
+                </a>
+                <a href="/tools/health/bmr-calculator.html" class="tool-card" style="padding:1rem;min-width:200px;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">BMR Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your basal metabolic rate.</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">What is the Karvonen formula?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">The Karvonen formula calculates target heart rate zones using your age and resting heart rate: Target HR = ((Max HR - Resting HR) x Intensity%) + Resting HR. Max HR = 220 - age. It is more personalized than age-only formulas.</div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">What are the heart rate training zones?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">Zone 1 (50-60%) is warm-up. Zone 2 (60-70%) is fat burn/endurance. Zone 3 (70-80%) is cardio/aerobic. Zone 4 (80-90%) is anaerobic/performance. Zone 5 (90-100%) is maximum effort/sprints.</div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">What is the fat burn heart rate zone?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">The fat burn zone is 60-70% of max heart rate. At this intensity, your body uses more fat as fuel. However, higher intensity zones burn more total calories and may result in greater overall fat loss.</div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">How do I measure my resting heart rate?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">Measure first thing in the morning before getting out of bed. Place two fingers on your wrist or neck. Count beats in 60 seconds. For accuracy, measure for 3 mornings and average the results.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/health/blood-pressure-tracker.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Blood Pressure Tracker</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Track and classify BP readings.</span>
+                </a>
+                <a href="/tools/health/bmr-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">BMR Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate basal metabolic rate.</span>
+                </a>
+                <a href="/tools/bmi-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">BMI Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate Body Mass Index.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div>
+                <div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div>
+                <div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage</a><a href="/tools/calculators/retirement-calculator.html">Retirement</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a></div>
+                <div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/hash-generator.html">Hash Generator</a></div>
+                <div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. No upload required.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        document.getElementById('btnCalcTHR').addEventListener('click', function() {
+            var age = parseInt(document.getElementById('thrAge').value);
+            var restingHR = parseInt(document.getElementById('thrResting').value);
+
+            if (!age || !restingHR) { showToast('Please enter both age and resting heart rate.', 'error'); return; }
+            if (age < 10 || age > 100) { showToast('Please enter a valid age (10-100).', 'error'); return; }
+            if (restingHR < 30 || restingHR > 120) { showToast('Please enter a valid resting heart rate (30-120 BPM).', 'error'); return; }
+
+            // Max HR = 220 - age
+            var maxHR = 220 - age;
+            // Heart Rate Reserve = Max HR - Resting HR
+            var hrr = maxHR - restingHR;
+
+            // Karvonen formula: Target HR = (HRR x Intensity%) + Resting HR
+            function zoneTarget(intensity) {
+                return Math.round((hrr * intensity) + restingHR);
+            }
+
+            // Display stats
+            document.getElementById('thrMaxHR').textContent = maxHR;
+            document.getElementById('thrRestingDisplay').textContent = restingHR;
+            document.getElementById('thrReserve').textContent = hrr;
+            document.getElementById('thrAgeDisplay').textContent = age;
+
+            // Zone 1: 50-60%
+            document.getElementById('zone1Range').textContent = zoneTarget(0.50) + ' - ' + zoneTarget(0.60) + ' BPM';
+            // Zone 2: 60-70%
+            document.getElementById('zone2Range').textContent = zoneTarget(0.60) + ' - ' + zoneTarget(0.70) + ' BPM';
+            // Zone 3: 70-80%
+            document.getElementById('zone3Range').textContent = zoneTarget(0.70) + ' - ' + zoneTarget(0.80) + ' BPM';
+            // Zone 4: 80-90%
+            document.getElementById('zone4Range').textContent = zoneTarget(0.80) + ' - ' + zoneTarget(0.90) + ' BPM';
+            // Zone 5: 90-100%
+            document.getElementById('zone5Range').textContent = zoneTarget(0.90) + ' - ' + zoneTarget(1.00) + ' BPM';
+
+            document.getElementById('thrResults').classList.remove('hidden');
+            document.getElementById('thrResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            showToast('Heart rate zones calculated! Your max HR is ' + maxHR + ' BPM.');
+        });
+    })();
+    </script>
+    <script>if(typeof trackRecentTool==='function')trackRecentTool('Target Heart Rate','/tools/health/target-heart-rate.html');</script>
+</body>
+</html>

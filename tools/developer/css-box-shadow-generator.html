@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Shadow Generator — Free Online Tool | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Generate CSS box-shadow online free. Adjust X offset, Y offset, blur, spread, color, and inset with live preview. Copy CSS code instantly. No sign-up required.">
+    <meta name="keywords" content="CSS box shadow generator, box shadow generator, CSS shadow maker, box shadow CSS, create box shadow online, CSS shadow tool">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="CSS Box Shadow Generator — Free Online Tool | OptiDrop">
+    <meta property="og:description" content="Generate CSS box-shadow online free. Adjust offsets, blur, spread, color, and inset with live preview. Copy CSS code instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/css-box-shadow-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CSS Box Shadow Generator — Free Online Tool | OptiDrop">
+    <meta name="twitter:description" content="Generate CSS box-shadow online free with live preview. Copy CSS code instantly.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/css-box-shadow-generator.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "CSS Box Shadow Generator", "item": "https://optidrop.online/tools/developer/css-box-shadow-generator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop CSS Box Shadow Generator",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Generate CSS box-shadow online free. Adjust X offset, Y offset, blur, spread, color, and inset with live preview."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is CSS box-shadow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The CSS box-shadow property adds shadow effects around an element's frame. It accepts values for horizontal offset, vertical offset, blur radius, spread radius, color, and an optional 'inset' keyword. Multiple shadows can be applied by separating them with commas. Box shadows are widely used in modern web design for depth and elevation effects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between blur and spread?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Blur radius controls how soft or sharp the shadow edge is. A blur of 0 creates a sharp shadow, while higher values create a softer, more diffused shadow. Spread radius controls the size of the shadow — positive values expand it beyond the element size, and negative values shrink it. Both work together to create the final shadow appearance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does inset do in box-shadow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 'inset' keyword changes the shadow from an outer shadow to an inner shadow. Instead of the shadow appearing outside the element's border, it appears inside the element. Inner shadows are commonly used for input fields, pressed buttons, and card inset effects in modern UI design."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I create multiple box shadows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, CSS supports multiple box shadows on a single element. You separate each shadow definition with a comma in the box-shadow property value. This allows you to create complex shadow effects like layered shadows, colored glows, or realistic material design elevation effects. Each shadow can have its own offset, blur, spread, and color."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col dark:bg-slate-900 dark:text-slate-200">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3 dark:text-white">CSS Box Shadow Generator — Create Box Shadows Online</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto dark:text-slate-400">Design CSS box shadows with live preview. Adjust X offset, Y offset, blur, spread, color, and inset. Copy the CSS code instantly. 100% free, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden dark:bg-slate-800 dark:border-slate-700">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                        <!-- Controls -->
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-800 mb-4 dark:text-white">Shadow Controls</h2>
+
+                            <!-- X Offset -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-slate-700 mb-1 dark:text-slate-300">X Offset: <span id="xOffsetVal">0</span>px</label>
+                                <input type="range" id="xOffset" min="-50" max="50" value="0"
+                                    class="block w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 dark:bg-slate-600">
+                            </div>
+
+                            <!-- Y Offset -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-slate-700 mb-1 dark:text-slate-300">Y Offset: <span id="yOffsetVal">4</span>px</label>
+                                <input type="range" id="yOffset" min="-50" max="50" value="4"
+                                    class="block w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 dark:bg-slate-600">
+                            </div>
+
+                            <!-- Blur -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-slate-700 mb-1 dark:text-slate-300">Blur Radius: <span id="blurVal">10</span>px</label>
+                                <input type="range" id="blur" min="0" max="100" value="10"
+                                    class="block w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 dark:bg-slate-600">
+                            </div>
+
+                            <!-- Spread -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-slate-700 mb-1 dark:text-slate-300">Spread Radius: <span id="spreadVal">0</span>px</label>
+                                <input type="range" id="spread" min="-50" max="50" value="0"
+                                    class="block w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 dark:bg-slate-600">
+                            </div>
+
+                            <!-- Color -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-slate-700 mb-1 dark:text-slate-300">Shadow Color</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="color" id="shadowColor" value="#000000"
+                                        class="w-12 h-10 rounded-lg cursor-pointer border-2 border-slate-200 dark:border-slate-600">
+                                    <input type="text" id="shadowColorText" value="#000000"
+                                        class="flex-1 px-3 py-2 text-sm border-2 border-slate-200 rounded-lg font-mono text-slate-900 dark:bg-slate-700 dark:border-slate-600 dark:text-white">
+                                </div>
+                            </div>
+
+                            <!-- Opacity -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-slate-700 mb-1 dark:text-slate-300">Opacity: <span id="opacityVal">25</span>%</label>
+                                <input type="range" id="opacity" min="0" max="100" value="25"
+                                    class="block w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 dark:bg-slate-600">
+                            </div>
+
+                            <!-- Inset Toggle -->
+                            <div class="mb-4">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="checkbox" id="insetToggle" class="w-5 h-5 rounded accent-blue-600">
+                                    <span class="text-sm font-bold text-slate-700 dark:text-slate-300">Inset Shadow</span>
+                                </label>
+                            </div>
+
+                            <!-- Box Background Color -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-slate-700 mb-1 dark:text-slate-300">Box Background</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="color" id="boxBgColor" value="#ffffff"
+                                        class="w-12 h-10 rounded-lg cursor-pointer border-2 border-slate-200 dark:border-slate-600">
+                                    <input type="text" id="boxBgColorText" value="#ffffff"
+                                        class="flex-1 px-3 py-2 text-sm border-2 border-slate-200 rounded-lg font-mono text-slate-900 dark:bg-slate-700 dark:border-slate-600 dark:text-white">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Preview & Output -->
+                        <div>
+                            <!-- Preview -->
+                            <h2 class="text-lg font-bold text-slate-800 mb-4 dark:text-white">Live Preview</h2>
+                            <div class="flex items-center justify-center bg-slate-200 rounded-2xl p-8 mb-6 min-h-[200px] dark:bg-slate-700">
+                                <div id="previewBox" class="w-40 h-40 rounded-xl bg-white" style="box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.25);"></div>
+                            </div>
+
+                            <!-- CSS Output -->
+                            <label class="block text-sm font-bold text-slate-700 mb-2 dark:text-slate-300">CSS Code</label>
+                            <div class="relative mb-4">
+                                <pre id="cssOutput" class="bg-slate-900 text-green-400 rounded-xl p-4 text-sm font-mono overflow-x-auto dark:bg-slate-950">box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.25);</pre>
+                                <button id="btnCopyCSS" class="absolute top-3 right-3 px-3 py-1.5 text-xs font-bold bg-slate-700 text-white rounded-lg hover:bg-slate-600 transition-colors">
+                                    Copy
+                                </button>
+                            </div>
+
+                            <!-- Presets -->
+                            <h3 class="text-sm font-bold text-slate-700 mb-2 dark:text-slate-300">Quick Presets</h3>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button class="preset-btn px-3 py-2 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600" data-x="0" data-y="4" data-blur="6" data-spread="0" data-opacity="10">Subtle</button>
+                                <button class="preset-btn px-3 py-2 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600" data-x="0" data-y="10" data-blur="30" data-spread="0" data-opacity="20">Medium</button>
+                                <button class="preset-btn px-3 py-2 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600" data-x="0" data-y="25" data-blur="50" data-spread="0" data-opacity="25">Large</button>
+                                <button class="preset-btn px-3 py-2 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600" data-x="0" data-y="0" data-blur="15" data-spread="5" data-opacity="30">Glow</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- What to do next -->
+                    <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-700">
+                        <h3 class="text-lg font-bold text-slate-800 mb-4 dark:text-white">What do you want to do next?</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="/tools/developer/css-gradient-generator.html" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-semibold hover:bg-blue-100 transition-colors dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-900/50">
+                                CSS Gradient Generator
+                            </a>
+                            <a href="/tools/developer/css-minifier.html" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-semibold hover:bg-blue-100 transition-colors dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-900/50">
+                                CSS Minifier
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 dark:text-white">Free CSS Box Shadow Generator Online</h2>
+                <p class="text-slate-600 mb-4 dark:text-slate-400">OptiDrop's CSS Box Shadow Generator lets you design perfect box shadows with an intuitive interface and live preview. Adjust horizontal and vertical offsets, blur radius, spread radius, shadow color with opacity, and toggle inset mode. The generated CSS code is ready to paste into your stylesheet.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 dark:text-slate-200">How to Use the Box Shadow Generator</h3>
+                <p class="text-slate-600 mb-4 dark:text-slate-400">Use the sliders to adjust shadow offset, blur, and spread. Pick a shadow color and set its opacity. Toggle inset to create inner shadows. The preview updates in real time so you can see exactly how the shadow will look. When satisfied, click the "Copy" button to copy the CSS code to your clipboard.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 dark:text-slate-200">Understanding Box Shadow Values</h3>
+                <p class="text-slate-600 dark:text-slate-400">The CSS box-shadow property takes up to six values: horizontal offset, vertical offset, blur radius, spread radius, color, and the inset keyword. Positive X offsets push the shadow right, positive Y offsets push it down. Blur controls softness (higher = softer). Spread controls size (positive = larger, negative = smaller). Use the presets to quickly explore common shadow styles.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center dark:text-white">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        What is CSS box-shadow?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        The CSS box-shadow property adds shadow effects around an element's frame. It accepts values for horizontal offset, vertical offset, blur radius, spread radius, color, and an optional 'inset' keyword. Multiple shadows can be applied by separating them with commas. Box shadows are widely used in modern web design for depth and elevation effects.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        What is the difference between blur and spread?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        Blur radius controls how soft or sharp the shadow edge is. A blur of 0 creates a sharp shadow, while higher values create a softer, more diffused shadow. Spread radius controls the size of the shadow — positive values expand it beyond the element size, and negative values shrink it. Both work together to create the final shadow appearance.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        What does inset do in box-shadow?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        The 'inset' keyword changes the shadow from an outer shadow to an inner shadow. Instead of the shadow appearing outside the element's border, it appears inside the element. Inner shadows are commonly used for input fields, pressed buttons, and card inset effects in modern UI design.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        Can I create multiple box shadows?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        Yes, CSS supports multiple box shadows on a single element. You separate each shadow definition with a comma in the box-shadow property value. This allows you to create complex shadow effects like layered shadows, colored glows, or realistic material design elevation effects. Each shadow can have its own offset, blur, spread, and color.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/developer/css-gradient-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">CSS Gradient Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Create linear and radial CSS gradients.</span>
+                </a>
+                <a href="/tools/developer/css-minifier.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">CSS Minifier</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Minify your CSS code to reduce file size.</span>
+                </a>
+                <a href="/tools/developer/color-converter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Color Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert between HEX, RGB, HSL color formats.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 80+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var xOffset = document.getElementById('xOffset');
+        var yOffset = document.getElementById('yOffset');
+        var blur = document.getElementById('blur');
+        var spread = document.getElementById('spread');
+        var shadowColor = document.getElementById('shadowColor');
+        var shadowColorText = document.getElementById('shadowColorText');
+        var opacity = document.getElementById('opacity');
+        var insetToggle = document.getElementById('insetToggle');
+        var boxBgColor = document.getElementById('boxBgColor');
+        var boxBgColorText = document.getElementById('boxBgColorText');
+        var previewBox = document.getElementById('previewBox');
+        var cssOutput = document.getElementById('cssOutput');
+        var btnCopyCSS = document.getElementById('btnCopyCSS');
+
+        var xOffsetVal = document.getElementById('xOffsetVal');
+        var yOffsetVal = document.getElementById('yOffsetVal');
+        var blurVal = document.getElementById('blurVal');
+        var spreadVal = document.getElementById('spreadVal');
+        var opacityVal = document.getElementById('opacityVal');
+
+        function hexToRgba(hex, alpha) {
+            var r = parseInt(hex.slice(1, 3), 16);
+            var g = parseInt(hex.slice(3, 5), 16);
+            var b = parseInt(hex.slice(5, 7), 16);
+            return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+        }
+
+        function updateShadow() {
+            var x = xOffset.value;
+            var y = yOffset.value;
+            var b = blur.value;
+            var s = spread.value;
+            var color = shadowColor.value;
+            var alpha = (opacity.value / 100).toFixed(2);
+            var inset = insetToggle.checked ? 'inset ' : '';
+
+            xOffsetVal.textContent = x;
+            yOffsetVal.textContent = y;
+            blurVal.textContent = b;
+            spreadVal.textContent = s;
+            opacityVal.textContent = opacity.value;
+
+            var rgbaColor = hexToRgba(color, alpha);
+            var shadowValue = inset + x + 'px ' + y + 'px ' + b + 'px ' + s + 'px ' + rgbaColor;
+
+            previewBox.style.boxShadow = shadowValue;
+            previewBox.style.backgroundColor = boxBgColor.value;
+            cssOutput.textContent = 'box-shadow: ' + shadowValue + ';';
+        }
+
+        xOffset.addEventListener('input', updateShadow);
+        yOffset.addEventListener('input', updateShadow);
+        blur.addEventListener('input', updateShadow);
+        spread.addEventListener('input', updateShadow);
+        opacity.addEventListener('input', updateShadow);
+        insetToggle.addEventListener('change', updateShadow);
+
+        shadowColor.addEventListener('input', function() {
+            shadowColorText.value = this.value;
+            updateShadow();
+        });
+
+        shadowColorText.addEventListener('input', function() {
+            if (/^#[0-9a-fA-F]{6}$/.test(this.value)) {
+                shadowColor.value = this.value;
+                updateShadow();
+            }
+        });
+
+        boxBgColor.addEventListener('input', function() {
+            boxBgColorText.value = this.value;
+            updateShadow();
+        });
+
+        boxBgColorText.addEventListener('input', function() {
+            if (/^#[0-9a-fA-F]{6}$/.test(this.value)) {
+                boxBgColor.value = this.value;
+                updateShadow();
+            }
+        });
+
+        // Presets
+        document.querySelectorAll('.preset-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                xOffset.value = this.getAttribute('data-x');
+                yOffset.value = this.getAttribute('data-y');
+                blur.value = this.getAttribute('data-blur');
+                spread.value = this.getAttribute('data-spread');
+                opacity.value = this.getAttribute('data-opacity');
+                updateShadow();
+                showToast('Preset applied!', 'success');
+            });
+        });
+
+        btnCopyCSS.addEventListener('click', function() {
+            var css = cssOutput.textContent;
+            navigator.clipboard.writeText(css).then(function() {
+                showToast('CSS code copied to clipboard!', 'success');
+            }).catch(function() {
+                showToast('Failed to copy. Please select and copy manually.', 'error');
+            });
+        });
+
+        // Initial render
+        updateShadow();
+    })();
+    </script>
+    <script>if(typeof trackRecentTool==='function')trackRecentTool('CSS Box Shadow Generator','/tools/developer/css-box-shadow-generator.html');</script>
+</body>
+</html>

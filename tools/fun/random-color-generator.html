@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Generator — Hex, RGB, HSL Color Picker Free | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Generate random colors instantly with hex code, RGB, and HSL values. Copy color codes with one click. History of last 10 colors. Free random color generator online.">
+    <meta name="keywords" content="random color generator, color picker, hex color generator, random hex code, RGB generator, HSL generator, color palette, random color">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Random Color Generator — Hex, RGB, HSL Color Picker Free | OptiDrop">
+    <meta property="og:description" content="Generate random colors instantly with hex code, RGB, and HSL values. Copy color codes with one click. Free random color generator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/fun/random-color-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Random Color Generator — Hex, RGB, HSL Color Picker Free | OptiDrop">
+    <meta name="twitter:description" content="Generate random colors instantly with hex code, RGB, and HSL values. Free random color generator.">
+    <link rel="canonical" href="https://optidrop.online/tools/fun/random-color-generator.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Fun Tools", "item": "https://optidrop.online/tools/fun/"},
+        {"@type": "ListItem", "position": 3, "name": "Random Color Generator", "item": "https://optidrop.online/tools/fun/random-color-generator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Random Color Generator",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Generate random colors instantly with hex code, RGB, and HSL values. Copy color codes with one click. Free random color generator."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the random color generator work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Click the Generate button (or press the spacebar) to create a random color. The tool displays a large color swatch along with the hex code, RGB values, and HSL values. You can copy the hex code with a single click."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What color formats are shown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each generated color is displayed in three formats: Hex (e.g., #FF5733), RGB (e.g., rgb(255, 87, 51)), and HSL (e.g., hsl(14, 100%, 60%)). These cover the most commonly used color formats in web design and graphic design."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a keyboard shortcut?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Press the spacebar to generate a new random color without clicking the button. This makes it quick and easy to cycle through colors rapidly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the color history save?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The last 10 generated colors are displayed in a history bar below the main color swatch. The history updates in real-time as you generate new colors. Note that the history resets when you close or refresh the page."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .color-swatch {
+            transition: background-color 0.3s ease;
+        }
+        .color-value-card {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .color-value-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .color-value-card:active {
+            transform: translateY(0);
+        }
+        .history-swatch {
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .history-swatch:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Random Color Generator — Hex, RGB, HSL Values</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate beautiful random colors instantly. Get hex codes, RGB values, and HSL values. Copy any color code with one click. Press spacebar to generate!</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Color Swatch -->
+                    <div class="max-w-md mx-auto mb-8">
+                        <div id="colorSwatch" class="color-swatch w-full h-48 sm:h-64 rounded-2xl shadow-lg border-2 border-slate-200 flex items-center justify-center" style="background-color: #6366f1;">
+                            <span id="swatchHex" class="text-white text-3xl sm:text-4xl font-extrabold drop-shadow-lg">#6366F1</span>
+                        </div>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <div class="max-w-md mx-auto mb-8">
+                        <button id="btnGenerate" class="w-full px-6 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold rounded-xl hover:from-violet-700 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2 text-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                            Generate Color
+                        </button>
+                        <p class="text-center text-sm text-slate-400 mt-2">Tip: Press <kbd class="px-2 py-0.5 bg-slate-200 text-slate-600 rounded text-xs font-mono">Spacebar</kbd> to generate</p>
+                    </div>
+
+                    <!-- Color Values -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-lg mx-auto mb-8">
+                        <div class="color-value-card bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-5 text-center" id="hexCard" onclick="copyColor('hex')">
+                            <p class="text-sm font-bold text-slate-500 mb-1">HEX</p>
+                            <p id="hexValue" class="text-xl font-extrabold text-slate-900 font-mono">#6366F1</p>
+                            <p class="text-xs text-slate-400 mt-1">Click to copy</p>
+                        </div>
+                        <div class="color-value-card bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-5 text-center" id="rgbCard" onclick="copyColor('rgb')">
+                            <p class="text-sm font-bold text-slate-500 mb-1">RGB</p>
+                            <p id="rgbValue" class="text-xl font-extrabold text-slate-900 font-mono">99, 102, 241</p>
+                            <p class="text-xs text-slate-400 mt-1">Click to copy</p>
+                        </div>
+                        <div class="color-value-card bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-5 text-center" id="hslCard" onclick="copyColor('hsl')">
+                            <p class="text-sm font-bold text-slate-500 mb-1">HSL</p>
+                            <p id="hslValue" class="text-xl font-extrabold text-slate-900 font-mono">239, 84%, 67%</p>
+                            <p class="text-xs text-slate-400 mt-1">Click to copy</p>
+                        </div>
+                    </div>
+
+                    <!-- Color History -->
+                    <div class="max-w-lg mx-auto mb-6">
+                        <p class="text-sm font-bold text-slate-700 mb-3">Recent Colors:</p>
+                        <div id="colorHistory" class="flex flex-wrap gap-2 justify-center">
+                            <span class="text-sm text-slate-400">No colors generated yet</span>
+                        </div>
+                    </div>
+
+                    <!-- What do you want to do next? -->
+                    <div class="mt-10 pt-8 border-t border-slate-200 text-center">
+                        <p class="text-lg font-bold text-slate-800 mb-4">What do you want to do next?</p>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <a href="/tools/developer/color-converter.html" class="px-5 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200 transition-colors text-sm">Color Converter</a>
+                            <a href="/tools/fun/coin-flip.html" class="px-5 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200 transition-colors text-sm">Coin Flip Simulator</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Random Color Generator — Instant Color Inspiration</h2>
+                <p class="text-slate-600 mb-4">Looking for color inspiration? OptiDrop's Random Color Generator creates beautiful random colors with one click. Each color is displayed in hex, RGB, and HSL formats, making it easy to use in any design project. Simply click the Generate button or press the spacebar to discover a new color.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Three Color Formats</h3>
+                <p class="text-slate-600 mb-4">Every generated color is shown in three formats: Hex (e.g., #FF5733) for CSS and web design, RGB (e.g., rgb(255, 87, 51)) for digital displays, and HSL (e.g., hsl(14, 100%, 60%)) for intuitive color manipulation. Click any value card to copy it to your clipboard instantly.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Color History</h3>
+                <p class="text-slate-600">The tool keeps track of your last 10 generated colors in a visual history bar. Click on any color in the history to revisit it. This is perfect for comparing colors or building a palette from your favorite random picks.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How does the random color generator work?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Click the Generate button (or press the spacebar) to create a random color. The tool displays a large color swatch along with the hex code, RGB values, and HSL values. You can copy the hex code with a single click.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What color formats are shown?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Each generated color is displayed in three formats: Hex (e.g., #FF5733), RGB (e.g., rgb(255, 87, 51)), and HSL (e.g., hsl(14, 100%, 60%)). These cover the most commonly used color formats in web design and graphic design.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is there a keyboard shortcut?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes! Press the spacebar to generate a new random color without clicking the button. This makes it quick and easy to cycle through colors rapidly.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does the color history save?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The last 10 generated colors are displayed in a history bar below the main color swatch. The history updates in real-time as you generate new colors. Note that the history resets when you close or refresh the page.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/developer/color-converter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Color Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert colors between HEX, RGB, HSL, and CMYK formats.</span>
+                </a>
+                <a href="/tools/fun/coin-flip.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Coin Flip Simulator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Flip a virtual coin with animation and history.</span>
+                </a>
+                <a href="/tools/fun/random-joke.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Random Joke Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Get a random clean joke to brighten your day.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 80+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    if(typeof trackRecentTool==='function')trackRecentTool('Random Color Generator','/tools/fun/random-color-generator.html');
+    (function() {
+        var colorHistory = [];
+        var currentColor = {r:99, g:102, b:241};
+
+        function randomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function rgbToHex(r, g, b) {
+            return '#' + [r, g, b].map(function(x) {
+                var hex = x.toString(16);
+                return hex.length === 1 ? '0' + hex : hex;
+            }).join('').toUpperCase();
+        }
+
+        function rgbToHsl(r, g, b) {
+            r /= 255; g /= 255; b /= 255;
+            var max = Math.max(r, g, b), min = Math.min(r, g, b);
+            var h, s, l = (max + min) / 2;
+
+            if (max === min) {
+                h = s = 0;
+            } else {
+                var d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                switch (max) {
+                    case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+                    case g: h = ((b - r) / d + 2) / 6; break;
+                    case b: h = ((r - g) / d + 4) / 6; break;
+                }
+            }
+
+            return {
+                h: Math.round(h * 360),
+                s: Math.round(s * 100),
+                l: Math.round(l * 100)
+            };
+        }
+
+        function getLuminance(r, g, b) {
+            return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+        }
+
+        function generateColor() {
+            var r = randomInt(0, 255);
+            var g = randomInt(0, 255);
+            var b = randomInt(0, 255);
+            currentColor = {r: r, g: g, b: b};
+
+            var hex = rgbToHex(r, g, b);
+            var hsl = rgbToHsl(r, g, b);
+            var lum = getLuminance(r, g, b);
+
+            // Update swatch
+            var swatch = document.getElementById('colorSwatch');
+            swatch.style.backgroundColor = hex;
+
+            var swatchText = document.getElementById('swatchHex');
+            swatchText.textContent = hex;
+            swatchText.style.color = lum > 0.5 ? '#1e293b' : '#ffffff';
+
+            // Update values
+            document.getElementById('hexValue').textContent = hex;
+            document.getElementById('rgbValue').textContent = r + ', ' + g + ', ' + b;
+            document.getElementById('hslValue').textContent = hsl.h + ', ' + hsl.s + '%, ' + hsl.l + '%';
+
+            // Add to history
+            colorHistory.push(hex);
+            if (colorHistory.length > 10) colorHistory.shift();
+            updateHistory();
+        }
+
+        function updateHistory() {
+            var container = document.getElementById('colorHistory');
+            container.innerHTML = '';
+            colorHistory.forEach(function(color, index) {
+                var swatch = document.createElement('div');
+                swatch.className = 'history-swatch w-10 h-10 rounded-xl shadow-sm border border-slate-200';
+                swatch.style.backgroundColor = color;
+                swatch.title = color;
+                swatch.addEventListener('click', function() {
+                    copyToClipboard(color);
+                    showToast('Copied ' + color, 'success');
+                });
+                container.appendChild(swatch);
+            });
+        }
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text);
+            } else {
+                var textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+            }
+        }
+
+        // Expose copyColor globally for onclick handlers
+        window.copyColor = function(type) {
+            var text = '';
+            if (type === 'hex') text = document.getElementById('hexValue').textContent;
+            else if (type === 'rgb') text = 'rgb(' + document.getElementById('rgbValue').textContent + ')';
+            else if (type === 'hsl') text = 'hsl(' + document.getElementById('hslValue').textContent + ')';
+
+            copyToClipboard(text);
+            showToast('Copied ' + text, 'success');
+        };
+
+        document.getElementById('btnGenerate').addEventListener('click', generateColor);
+
+        // Keyboard shortcut: spacebar
+        document.addEventListener('keydown', function(e) {
+            // Don't trigger if user is typing in an input/textarea/select
+            var tag = e.target.tagName.toLowerCase();
+            if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+
+            if (e.code === 'Space' || e.key === ' ') {
+                e.preventDefault();
+                generateColor();
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

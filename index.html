@@ -73,6 +73,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+    darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
@@ -199,6 +200,46 @@
                 </div>
             </div>
             <div id="recentToolsSection" class="grid grid-cols-1 sm:grid-cols-3 gap-4"></div>
+        </section>
+
+        <!-- NEW TOOLS -->
+        <section class="w-full max-w-6xl mx-auto px-4 sm:px-6 pb-10">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-bold text-slate-900">🆕 New Tools</h2>
+                <a href="/tools.html" class="text-sm font-bold text-brand-600 hover:text-brand-700 whitespace-nowrap">View All &rarr;</a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="/tools/developer/regex-tester.html" class="tool-card group" style="padding:1.25rem;min-height:auto;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Regex Tester</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Test regular expressions with live match highlighting.</span>
+                    <span class="tool-card-tag indigo" style="font-size:0.65rem;">Developer</span>
+                </a>
+                <a href="/tools/health/blood-pressure-tracker.html" class="tool-card group" style="padding:1.25rem;min-height:auto;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Blood Pressure Tracker</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Log and classify BP readings with history tracking.</span>
+                    <span class="tool-card-tag red" style="font-size:0.65rem;">Health</span>
+                </a>
+                <a href="/tools/home/paint-calculator.html" class="tool-card group" style="padding:1.25rem;min-height:auto;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Paint Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Estimate gallons of paint needed for any room.</span>
+                    <span class="tool-card-tag blue" style="font-size:0.65rem;">Home &amp; DIY</span>
+                </a>
+                <a href="/tools/calculators/bill-split-calculator.html" class="tool-card group" style="padding:1.25rem;min-height:auto;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Bill Split Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Split bills evenly with custom tip percentage.</span>
+                    <span class="tool-card-tag emerald" style="font-size:0.65rem;">Calculator</span>
+                </a>
+                <a href="/tools/fun/would-you-rather.html" class="tool-card group" style="padding:1.25rem;min-height:auto;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Would You Rather</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Fun dilemma game with community stats.</span>
+                    <span class="tool-card-tag amber" style="font-size:0.65rem;">Fun</span>
+                </a>
+                <a href="/tools/developer/uuid-generator.html" class="tool-card group" style="padding:1.25rem;min-height:auto;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">UUID Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate v4 UUIDs using crypto.getRandomValues.</span>
+                    <span class="tool-card-tag emerald" style="font-size:0.65rem;">Developer</span>
+                </a>
+            </div>
         </section>
 
         <!-- CATEGORIZED TOOL SECTIONS -->
@@ -389,7 +430,7 @@
                         <p class="tool-card-desc">Write a professional resignation letter in minutes.</p>
                         <span class="tool-card-tag rose">Career</span>
                     </a>
-                    <a href="/tools/career/sop-generator.html" class="tool-card group">
+                    <a href="/tools/professional/sop-generator.html" class="tool-card group">
                         <div class="tool-card-icon bg-purple-50 text-purple-600 group-hover:bg-purple-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
                         <h3 class="tool-card-title">SOP Generator</h3>
                         <p class="tool-card-desc">Write a compelling Statement of Purpose for university.</p>
@@ -568,7 +609,7 @@
                         <p class="tool-card-desc">Find your ideal weight using 4 medical formulas.</p>
                         <span class="tool-card-tag emerald">Health</span>
                     </a>
-                    <a href="/tools/health/calorie-calculator.html" class="tool-card group">
+                    <a href="/tools/calculators/calorie-calculator.html" class="tool-card group">
                         <div class="tool-card-icon bg-orange-50 text-orange-600 group-hover:bg-orange-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg></div>
                         <h3 class="tool-card-title">Calorie Calculator</h3>
                         <p class="tool-card-desc">Calculate daily calorie needs with BMR and TDEE.</p>

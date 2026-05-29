@@ -200,7 +200,6 @@
     <url><loc>https://optidrop.online/tools/health/sleep-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://optidrop.online/tools/health/pregnancy-due-date.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://optidrop.online/tools/health/ovulation-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://optidrop.online/tools/health/calorie-calculator.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
     <!-- Blog -->
     <url><loc>https://optidrop.online/blog/</loc><lastmod>2026-05-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -216,7 +215,10 @@
     <url><loc>https://optidrop.online/blog/paycheck-calculator-us-taxes.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>https://optidrop.online/blog/css-minification-guide.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>https://optidrop.online/blog/macro-calculator-diet-planning.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
+    <url><loc>https://optidrop.online/blog/blood-pressure-tracking-without-apps.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://optidrop.online/blog/css-gradient-generator-guide.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://optidrop.online/blog/fun-tools-to-break-boredom.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://optidrop.online/blog/wall-paint-estimate-diy-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
     <!-- New Calculator Tools -->
     <url><loc>https://optidrop.online/tools/calculators/401k-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -249,5 +251,39 @@
     <url><loc>https://optidrop.online/pdf-to-jpg-free.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://optidrop.online/free-invoice-generator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://optidrop.online/free-resume-builder.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+    <!-- New Tools Phase 5 (30 tools) -->
+    <url><loc>https://optidrop.online/tools/developer/css-gradient-generator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/developer/html-entities.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/developer/regex-tester.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/developer/uuid-generator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/developer/timestamp-converter.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/developer/json-to-csv.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/developer/css-box-shadow-generator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/health/blood-pressure-tracker.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/health/bac-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/health/dosage-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/health/menstrual-cycle-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/health/bsa-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/health/target-heart-rate.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/reverse-sales-tax-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/bill-split-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/simple-interest-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/future-value-annuity.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/mileage-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/hourly-to-salary.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/calculators/percent-error-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/home/wallpaper-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/home/paint-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/home/concrete-calculator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/home/shoe-size-converter.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/home/cooking-converter.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/fun/random-recipe.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/fun/would-you-rather.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/fun/random-joke.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/fun/coin-flip.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/tools/fun/random-color-generator.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://optidrop.online/category/home-tools.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://optidrop.online/category/fun-tools.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 </urlset>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON to CSV Converter — Free Online Tool | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Convert JSON arrays to CSV online free. Paste JSON data, get CSV output with dot notation for nested objects. Copy or download CSV. No sign-up required.">
+    <meta name="keywords" content="JSON to CSV, JSON to CSV converter, convert JSON to CSV, JSON CSV converter online, JSON array to CSV, nested JSON to CSV">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="JSON to CSV Converter — Free Online Tool | OptiDrop">
+    <meta property="og:description" content="Convert JSON arrays to CSV online free. Paste JSON data, get CSV output. Copy or download CSV. No sign-up required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/json-to-csv.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JSON to CSV Converter — Free Online Tool | OptiDrop">
+    <meta name="twitter:description" content="Convert JSON arrays to CSV online free. Copy or download CSV instantly.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/json-to-csv.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "JSON to CSV Converter", "item": "https://optidrop.online/tools/developer/json-to-csv.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop JSON to CSV Converter",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Convert JSON arrays to CSV online free. Paste JSON data, get CSV output with dot notation for nested objects."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert JSON to CSV?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Paste a JSON array of objects into the input field and click 'Convert'. The tool extracts all keys as column headers and flattens each object into a CSV row. Nested objects are flattened using dot notation (e.g., address.city becomes a column). You can then copy or download the resulting CSV."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool handle nested JSON objects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, nested objects are flattened using dot notation. For example, an object like {name: 'John', address: {city: 'NYC'}} becomes columns 'name' and 'address.city' in the CSV. Arrays within objects are converted to JSON strings. This makes complex JSON structures easy to export to spreadsheet applications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What JSON format does this tool accept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool accepts a JSON array of objects, like [{key1: value1}, {key1: value2}]. Each object becomes a row in the CSV. The tool automatically collects all unique keys across all objects to create the header row. If a key is missing in some objects, the cell is left empty in the CSV."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I download the CSV file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, after converting JSON to CSV, you can click the 'Download CSV' button to save the CSV file to your device. The file is named 'data.csv' by default. You can also copy the CSV text to your clipboard using the 'Copy CSV' button."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col dark:bg-slate-900 dark:text-slate-200">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3 dark:text-white">JSON to CSV Converter — Convert JSON to CSV Online Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto dark:text-slate-400">Paste a JSON array of objects and instantly get CSV output. Handles nested objects with dot notation. Copy or download the CSV. 100% free, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden dark:bg-slate-800 dark:border-slate-700">
+                <div class="p-6 sm:p-10">
+
+                    <!-- JSON Input -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <label for="jsonInput" class="block text-sm font-bold text-slate-700 dark:text-slate-300">JSON Input (Array of Objects)</label>
+                            <button id="btnSample" class="px-3 py-1 text-xs font-bold bg-slate-200 text-slate-600 rounded-lg hover:bg-slate-300 transition-colors dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600">
+                                Load Sample
+                            </button>
+                        </div>
+                        <textarea id="jsonInput" rows="8" placeholder='Paste JSON array here, e.g. [{"name":"John","age":30},{"name":"Jane","age":25}]'
+                            class="block w-full px-4 py-3 text-sm border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-mono resize-y dark:bg-slate-700 dark:border-slate-600 dark:text-white dark:placeholder-slate-400"></textarea>
+                    </div>
+
+                    <!-- Convert Button -->
+                    <div class="mb-6">
+                        <button id="btnConvert" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/></svg>
+                            Convert to CSV
+                        </button>
+                    </div>
+
+                    <!-- CSV Output -->
+                    <div id="csvOutputSection" class="hidden">
+                        <div class="flex items-center justify-between mb-2">
+                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">CSV Output</label>
+                            <div class="flex gap-2">
+                                <button id="btnCopyCSV" class="px-3 py-1.5 text-xs font-bold bg-slate-200 text-slate-700 rounded-lg hover:bg-slate-300 transition-colors dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600">
+                                    Copy CSV
+                                </button>
+                                <button id="btnDownloadCSV" class="px-3 py-1.5 text-xs font-bold bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                                    Download CSV
+                                </button>
+                            </div>
+                        </div>
+                        <textarea id="csvOutput" rows="8" readonly
+                            class="block w-full px-4 py-3 text-sm border-2 border-slate-200 rounded-xl bg-slate-50 text-slate-900 font-mono resize-y dark:bg-slate-700 dark:border-slate-600 dark:text-green-400"></textarea>
+                        <p id="csvStats" class="text-xs text-slate-500 mt-2 dark:text-slate-400"></p>
+                    </div>
+
+                    <!-- What to do next -->
+                    <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-700">
+                        <h3 class="text-lg font-bold text-slate-800 mb-4 dark:text-white">What do you want to do next?</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="/tools/developer/json-formatter.html" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-semibold hover:bg-blue-100 transition-colors dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-900/50">
+                                JSON Formatter
+                            </a>
+                            <a href="/tools/developer/base64.html" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-semibold hover:bg-blue-100 transition-colors dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-900/50">
+                                Base64 Encoder
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 dark:text-white">Free JSON to CSV Converter Online</h2>
+                <p class="text-slate-600 mb-4 dark:text-slate-400">OptiDrop's JSON to CSV Converter transforms JSON arrays of objects into CSV format instantly. This is invaluable for developers and data analysts who need to convert API responses, database exports, or structured JSON data into spreadsheet-friendly CSV format. The tool handles nested objects by flattening them with dot notation.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 dark:text-slate-200">How to Convert JSON to CSV</h3>
+                <p class="text-slate-600 mb-4 dark:text-slate-400">Paste your JSON array of objects into the input field and click "Convert to CSV." The tool automatically extracts all unique keys as column headers and creates a row for each object. You can then copy the CSV to your clipboard or download it as a .csv file. The tool validates your JSON and shows helpful error messages if the format is incorrect.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 dark:text-slate-200">Handling Nested Objects</h3>
+                <p class="text-slate-600 dark:text-slate-400">When your JSON contains nested objects, the tool flattens them using dot notation. For example, {"address": {"city": "NYC", "zip": "10001"}} becomes two columns: "address.city" and "address.zip". Array values within objects are converted to JSON string representation. This approach ensures all data is preserved in the CSV output.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center dark:text-white">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        How do I convert JSON to CSV?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        Paste a JSON array of objects into the input field and click "Convert." The tool extracts all keys as column headers and flattens each object into a CSV row. Nested objects are flattened using dot notation (e.g., address.city becomes a column). You can then copy or download the resulting CSV.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        Does this tool handle nested JSON objects?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        Yes, nested objects are flattened using dot notation. For example, an object like {name: 'John', address: {city: 'NYC'}} becomes columns 'name' and 'address.city' in the CSV. Arrays within objects are converted to JSON strings. This makes complex JSON structures easy to export to spreadsheet applications.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        What JSON format does this tool accept?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        The tool accepts a JSON array of objects, like [{key1: value1}, {key1: value2}]. Each object becomes a row in the CSV. The tool automatically collects all unique keys across all objects to create the header row. If a key is missing in some objects, the cell is left empty in the CSV.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden dark:border-slate-700">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                        Can I download the CSV file?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 dark:text-slate-400 dark:border-slate-700">
+                        Yes, after converting JSON to CSV, you can click the "Download CSV" button to save the CSV file to your device. The file is named "data.csv" by default. You can also copy the CSV text to your clipboard using the "Copy CSV" button.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Format, validate, and minify JSON data.</span>
+                </a>
+                <a href="/tools/developer/base64.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Base64 Encoder</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode Base64 strings online.</span>
+                </a>
+                <a href="/tools/developer/html-entities.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">HTML Entity Encoder</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode HTML special characters.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 80+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var jsonInput = document.getElementById('jsonInput');
+        var csvOutput = document.getElementById('csvOutput');
+        var csvOutputSection = document.getElementById('csvOutputSection');
+        var csvStats = document.getElementById('csvStats');
+        var btnConvert = document.getElementById('btnConvert');
+        var btnCopyCSV = document.getElementById('btnCopyCSV');
+        var btnDownloadCSV = document.getElementById('btnDownloadCSV');
+        var btnSample = document.getElementById('btnSample');
+
+        var sampleJSON = [
+            { "name": "Alice Johnson", "age": 28, "email": "alice@example.com", "address": { "city": "New York", "state": "NY" }, "skills": ["JavaScript", "Python"] },
+            { "name": "Bob Smith", "age": 34, "email": "bob@example.com", "address": { "city": "San Francisco", "state": "CA" }, "skills": ["Java", "C++"] },
+            { "name": "Charlie Brown", "age": 22, "email": "charlie@example.com", "address": { "city": "Chicago", "state": "IL" }, "skills": ["HTML", "CSS"] }
+        ];
+
+        btnSample.addEventListener('click', function() {
+            jsonInput.value = JSON.stringify(sampleJSON, null, 2);
+            showToast('Sample JSON loaded. Click Convert to CSV.', 'success');
+        });
+
+        function flattenObject(obj, prefix) {
+            var result = {};
+            prefix = prefix || '';
+            for (var key in obj) {
+                if (!obj.hasOwnProperty(key)) continue;
+                var fullKey = prefix ? prefix + '.' + key : key;
+                var val = obj[key];
+                if (val !== null && typeof val === 'object' && !Array.isArray(val)) {
+                    var nested = flattenObject(val, fullKey);
+                    for (var nk in nested) {
+                        if (nested.hasOwnProperty(nk)) result[nk] = nested[nk];
+                    }
+                } else if (Array.isArray(val)) {
+                    result[fullKey] = JSON.stringify(val);
+                } else {
+                    result[fullKey] = val;
+                }
+            }
+            return result;
+        }
+
+        function escapeCSV(val) {
+            if (val === null || val === undefined) return '';
+            var str = String(val);
+            if (str.indexOf(',') !== -1 || str.indexOf('"') !== -1 || str.indexOf('\n') !== -1) {
+                return '"' + str.replace(/"/g, '""') + '"';
+            }
+            return str;
+        }
+
+        btnConvert.addEventListener('click', function() {
+            var input = jsonInput.value.trim();
+            if (!input) {
+                showToast('Please paste JSON data.', 'error');
+                return;
+            }
+
+            var data;
+            try {
+                data = JSON.parse(input);
+            } catch (e) {
+                showToast('Invalid JSON: ' + e.message, 'error');
+                return;
+            }
+
+            if (!Array.isArray(data)) {
+                showToast('JSON must be an array of objects.', 'error');
+                return;
+            }
+
+            if (data.length === 0) {
+                showToast('JSON array is empty.', 'error');
+                return;
+            }
+
+            // Flatten all objects
+            var flatData = data.map(function(item) {
+                return flattenObject(item);
+            });
+
+            // Collect all unique keys
+            var allKeys = [];
+            var keySet = {};
+            flatData.forEach(function(item) {
+                for (var key in item) {
+                    if (item.hasOwnProperty(key) && !keySet[key]) {
+                        keySet[key] = true;
+                        allKeys.push(key);
+                    }
+                }
+            });
+
+            // Build CSV
+            var csv = allKeys.map(escapeCSV).join(',') + '\n';
+            flatData.forEach(function(item) {
+                var row = allKeys.map(function(key) {
+                    return escapeCSV(item[key]);
+                });
+                csv += row.join(',') + '\n';
+            });
+
+            csvOutput.value = csv;
+            csvOutputSection.classList.remove('hidden');
+            csvStats.textContent = data.length + ' rows, ' + allKeys.length + ' columns';
+            showToast('Converted ' + data.length + ' rows to CSV!', 'success');
+        });
+
+        btnCopyCSV.addEventListener('click', function() {
+            if (!csvOutput.value) {
+                showToast('Nothing to copy.', 'error');
+                return;
+            }
+            navigator.clipboard.writeText(csvOutput.value).then(function() {
+                showToast('CSV copied to clipboard!', 'success');
+            }).catch(function() {
+                showToast('Failed to copy.', 'error');
+            });
+        });
+
+        btnDownloadCSV.addEventListener('click', function() {
+            if (!csvOutput.value) {
+                showToast('Nothing to download.', 'error');
+                return;
+            }
+            var blob = new Blob([csvOutput.value], { type: 'text/csv;charset=utf-8;' });
+            var url = URL.createObjectURL(blob);
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = 'data.csv';
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            showToast('CSV file downloaded!', 'success');
+        });
+    })();
+    </script>
+    <script>if(typeof trackRecentTool==='function')trackRecentTool('JSON to CSV','/tools/developer/json-to-csv.html');</script>
+</body>
+</html>
