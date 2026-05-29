@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Minification Guide — Why and How to Minify Your Stylesheets | OptiDrop Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+
+    <meta name="description" content="Minifying CSS reduces file size by 30-50%, improving page load speed. Learn what gets removed, how to minify safely, and when to use tools vs build scripts.">
+    <meta name="keywords" content="css minifier, css minification, minify css online, css optimization, css file size reduction, page speed optimization, cssnano, clean-css">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+
+    <meta property="og:title" content="CSS Minification Guide — Why and How to Minify Your Stylesheets | OptiDrop Blog">
+    <meta property="og:description" content="Minifying CSS reduces file size by 30-50%, improving page load speed. Learn what gets removed, how to minify safely, and when to use tools vs build scripts.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://optidrop.online/blog/css-minification-guide.html">
+    <meta property="og:image" content="https://optidrop.online/favicon.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CSS Minification Guide — Why and How to Minify Your Stylesheets | OptiDrop Blog">
+    <meta name="twitter:description" content="Minifying CSS reduces file size by 30-50%, improving page load speed. Learn what gets removed, how to minify safely, and when to use tools vs build scripts.">
+
+    <link rel="canonical" href="https://optidrop.online/blog/css-minification-guide.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},
+      {"@type":"ListItem","position":2,"name":"Blog","item":"https://optidrop.online/blog/"},
+      {"@type":"ListItem","position":3,"name":"CSS Minification Guide","item":"https://optidrop.online/blog/css-minification-guide.html"}
+    ]}
+    </script>
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "CSS Minification Guide — Why and How to Minify Your Stylesheets",
+      "description": "Minifying CSS reduces file size by 30-50%, improving page load speed. Learn what gets removed, how to minify safely, and when to use tools vs build scripts.",
+      "author": {"@type": "Organization", "name": "OptiDrop"},
+      "publisher": {"@type": "Organization", "name": "OptiDrop", "url": "https://optidrop.online"},
+      "datePublished": "2026-05-29",
+      "dateModified": "2026-05-29",
+      "url": "https://optidrop.online/blog/css-minification-guide.html",
+      "mainEntityOfPage": "https://optidrop.online/blog/css-minification-guide.html"
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does CSS minification actually remove?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CSS minification removes whitespace, newlines, comments, and unnecessary characters without changing how the CSS works. It shortens color values (e.g., #ffffff to #fff), removes redundant units (e.g., 0px to 0), merges duplicate selectors, and eliminates empty rules. A typical CSS file shrinks by 30-50% after minification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will minifying CSS break my website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, CSS minification only removes characters that the browser ignores anyway — whitespace, comments, and redundant syntax. The actual rules, selectors, and property values remain identical. However, if your CSS has bugs that are masked by comments or ordering, minification might surface them. Always test your site after minifying, especially if you use hacks or conditional comments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I use an online CSS minifier or a build tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For one-off tasks, quick prototyping, or when you do not have a build pipeline, an online CSS minifier is the fastest option. For production workflows, build tools like cssnano (PostCSS plugin), clean-css (Node.js), or Terser (for JS + CSS) are better because they integrate into your CI/CD pipeline and can minify automatically on every deploy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does CSS minification affect SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CSS minification positively affects SEO indirectly. Smaller CSS files load faster, and page speed is a confirmed Google ranking factor. Minified CSS reduces render-blocking time, improves Core Web Vitals scores (especially Largest Contentful Paint and First Contentful Paint), and contributes to better user experience — all of which search engines consider when ranking pages."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2TXPNV88YM');
+    </script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                    colors: {
+                        brand: { 50:'#eff6ff', 100:'#dbeafe', 500:'#3b82f6', 600:'#2563eb', 700:'#1d4ed8', 900:'#1e3a8a' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Global Styles -->
+    <link rel="preload" href="../styles.css" as="style">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">All Tools</a>
+                <a href="/blog/" class="back-link">Blog</a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <article class="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-12">
+            <div class="blog-content">
+
+                <!-- Article Header -->
+                <div class="mb-8">
+                    <span class="inline-block bg-teal-100 text-teal-700 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Developer</span>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight mb-3">CSS Minification Guide — Why and How to Minify Your Stylesheets</h1>
+                    <p class="text-slate-500 text-sm">Published May 2026 &middot; 7 min read</p>
+                </div>
+
+                <p>Every kilobyte of CSS your website loads affects how fast your page appears to visitors. A typical unminified stylesheet contains hundreds of whitespace characters, developer comments, and redundant syntax that browsers do not need to render the page. CSS minification strips all of that out, reducing file size by 30% to 50% with zero impact on how your site looks or functions. This guide explains what minification does, why it matters for performance, and how to minify CSS using both online tools and build scripts.</p>
+
+                <h2>What CSS Minification Removes</h2>
+
+                <p>CSS minification is a lossless process — it removes characters that the browser ignores during rendering. Here is exactly what gets stripped or optimized:</p>
+
+                <ul>
+                    <li><strong>Whitespace and newlines</strong> — All spaces, tabs, and line breaks outside of string values are removed. The minified version puts everything on a single line.</li>
+                    <li><strong>Comments</strong> — Both single-line (<code>/* comment */</code>) and multi-line comments are completely removed. If you need to preserve license comments, most minifiers have an option for that.</li>
+                    <li><strong>Redundant units</strong> — Values like <code>0px</code>, <code>0em</code>, or <code>0%</code> are simplified to just <code>0</code>, since zero is zero regardless of the unit.</li>
+                    <li><strong>Shortened color values</strong> — <code>#ffffff</code> becomes <code>#fff</code>, <code>#000000</code> becomes <code>#000</code>, and named colors may be converted to shorter hex equivalents.</li>
+                    <li><strong>Redundant selectors</strong> — Duplicate selectors within the same rule are merged. Empty rules (selectors with no properties) are removed entirely.</li>
+                    <li><strong>Shorthand consolidation</strong> — Some minifiers convert separate margin or padding declarations (e.g., <code>margin-top: 10px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px;</code>) into shorthand (<code>margin: 10px 20px</code>).</li>
+                </ul>
+
+                <p>A real-world example: a 45 KB unminified CSS file typically compresses to around 25-30 KB after minification. When further compressed with gzip or Brotli on the server, the transfer size can drop to 5-8 KB.</p>
+
+                <h2>Why CSS Minification Matters for Performance</h2>
+
+                <p>CSS is render-blocking by default. The browser will not paint any content to the screen until it has downloaded and parsed all CSS files referenced in the document head. This means every millisecond spent downloading CSS delays the moment your visitor sees content.</p>
+
+                <p>Google uses Core Web Vitals as ranking signals, and two of the three metrics — Largest Contentful Paint (LCP) and First Contentful Paint (FCP) — are directly affected by CSS load time. Minified CSS loads faster, which improves these scores and can positively impact your search rankings.</p>
+
+                <p>The performance benefit compounds with traffic. If your site receives 100,000 page views per month and minification saves 15 KB per page load, you save 1.5 GB of bandwidth per month. For users on mobile networks or slow connections, the difference between a 50 KB CSS file and a 30 KB CSS file can be a full second of load time.</p>
+
+                <h2>How to Minify CSS with an Online Tool</h2>
+
+                <p>For quick, one-time minification, an online tool is the fastest option. Our <a href="/tools/developer/css-minifier.html">free CSS Minifier</a> works entirely in your browser — your CSS is never sent to a server, which means your code stays private. Here is the process:</p>
+
+                <ol>
+                    <li>Open the <a href="/tools/developer/css-minifier.html">CSS Minifier</a> tool</li>
+                    <li>Paste your unminified CSS into the input area</li>
+                    <li>Click the minify button</li>
+                    <li>Copy the minified output or download it as a file</li>
+                </ol>
+
+                <p>The tool shows you the original file size, minified file size, and the percentage reduction so you can see exactly how much was saved. This is useful for understanding how much unnecessary bulk your CSS carries.</p>
+
+                <p>Online minifiers are ideal when you do not have a build pipeline, when you are working on a static HTML site, when you need to quickly minify a third-party stylesheet, or when you are prototyping and want fast results without configuring build tools.</p>
+
+                <h2>Build Tool Alternatives for Automated Minification</h2>
+
+                <p>If your project uses a build system, integrating CSS minification into the pipeline ensures every deploy uses optimized CSS without manual steps. The most popular options are:</p>
+
+                <p><strong>cssnano</strong> — A PostCSS plugin that is the most widely used CSS minifier in the JavaScript ecosystem. It is highly configurable, supports source maps, and integrates with webpack, Vite, Parcel, and other bundlers. Install it with <code>npm install cssnano</code> and add it to your PostCSS config.</p>
+
+                <p><strong>clean-css</strong> — A standalone Node.js library for CSS optimization. It offers multiple optimization levels (level 1 for basic minification, level 2 for advanced merging and restructuring). It can be used as a CLI tool or integrated into gulp/grunt workflows.</p>
+
+                <p><strong>Lightning CSS</strong> — A newer, extremely fast CSS parser and minifier written in Rust. It handles minification, bundling, vendor prefixing, and syntax transformations. It is the default in Parcel and can be used standalone or as a PostCSS replacement.</p>
+
+                <p><strong>Terser</strong> — Primarily a JavaScript minifier, but many bundler configurations use Terser alongside CSS minification plugins to optimize all assets in a single build step.</p>
+
+                <h2>When to Minify CSS</h2>
+
+                <p>You should minify CSS for every production deployment. There is no reason to serve unminified CSS to end users — it provides no benefit to them and only increases load time. The general best practices are:</p>
+
+                <ul>
+                    <li><strong>Development:</strong> Use unminified CSS so you can read source maps and debug styles easily in browser DevTools.</li>
+                    <li><strong>Staging/Testing:</strong> Test with minified CSS to catch any issues before production. Some minification edge cases (like aggressive shorthand merging) can occasionally cause unexpected styling.</li>
+                    <li><strong>Production:</strong> Always serve minified CSS with gzip or Brotli compression enabled on your server. The combination of minification + compression produces the smallest possible transfer size.</li>
+                </ul>
+
+                <p>If you are building a static site with plain HTML and CSS (no build system), use the <a href="/tools/developer/css-minifier.html">CSS Minifier</a> before deploying. If you use a framework like React, Vue, or Next.js, your bundler likely already minifies CSS in production builds — check your build configuration to confirm.</p>
+
+                <h2>CSS Minification vs. CSS Compression</h2>
+
+                <p>These are two different things that work together. Minification reduces the file itself by removing unnecessary characters. Compression (gzip, Brotli, or deflate) reduces the transfer size by encoding the file more efficiently during HTTP transmission. You should do both. Minification happens once (at build time), while compression happens on every request (at the server level).</p>
+
+                <p>A 45 KB CSS file might become 28 KB after minification and then 6 KB after gzip compression. That is an 87% reduction from the original file size, dramatically improving load times for your visitors.</p>
+
+                <p>Use the <a href="/tools/developer/css-minifier.html">CSS Minifier</a> to handle the minification step, and make sure your web server or CDN has gzip or Brotli compression enabled for the compression step. Together, they ensure your stylesheets are as small as possible.</p>
+
+                <a href="/tools/developer/css-minifier.html" class="cta-btn">Minify Your CSS Now</a>
+
+                <p class="mt-6 text-sm text-slate-500">Working with other data formats? Try our <a href="/tools/developer/json-formatter.html">JSON Formatter</a> to beautify or minify JSON data with syntax highlighting and error detection.</p>
+            </div>
+
+            <!-- FAQ Section -->
+            <section class="max-w-3xl mx-auto px-4 py-8">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+                <div class="space-y-3">
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            What does CSS minification actually remove?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            CSS minification removes whitespace, newlines, comments, and unnecessary characters without changing how the CSS works. It shortens color values (e.g., #ffffff to #fff), removes redundant units (e.g., 0px to 0), merges duplicate selectors, and eliminates empty rules. A typical CSS file shrinks by 30-50% after minification.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            Will minifying CSS break my website?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            No, CSS minification only removes characters that the browser ignores anyway — whitespace, comments, and redundant syntax. The actual rules, selectors, and property values remain identical. However, if your CSS has bugs that are masked by comments or ordering, minification might surface them. Always test your site after minifying, especially if you use hacks or conditional comments.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            Should I use an online CSS minifier or a build tool?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            For one-off tasks, quick prototyping, or when you do not have a build pipeline, an online CSS minifier is the fastest option. For production workflows, build tools like cssnano (PostCSS plugin), clean-css (Node.js), or Lightning CSS are better because they integrate into your CI/CD pipeline and can minify automatically on every deploy.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                            Does CSS minification affect SEO?
+                            <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            CSS minification positively affects SEO indirectly. Smaller CSS files load faster, and page speed is a confirmed Google ranking factor. Minified CSS reduces render-blocking time, improves Core Web Vitals scores (especially Largest Contentful Paint and First Contentful Paint), and contributes to better user experience — all of which search engines consider when ranking pages.
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </article>
+
+        <!-- Ad Slot: After article -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:0 auto 2rem;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+        <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 80+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+
+    <script src="../common.js"></script>
+</body>
+</html>

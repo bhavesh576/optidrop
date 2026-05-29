@@ -352,7 +352,11 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   ├── how-to-compress-pdf-for-email.html  # Compress PDF for email guide
 │   ├── gst-calculator-india-how-to-use.html # GST calculator guide
 │   ├── emi-vs-sip-calculator-difference.html # EMI vs SIP guide
-│   └── resume-tips-ats-friendly.html       # ATS resume tips guide
+│   ├── resume-tips-ats-friendly.html       # ATS resume tips guide
+│   ├── 401k-calculator-guide.html          # 401(k) retirement guide
+│   ├── paycheck-calculator-us-taxes.html   # US paycheck taxes guide
+│   ├── css-minification-guide.html         # CSS minification guide
+│   └── macro-calculator-diet-planning.html # Macro calculator diet guide
 ├── styles.css                              # All CSS (single file)
 ├── common.js                               # Shared JavaScript utilities
 ├── script.js                               # Dashboard + image/PDF tool implementations
@@ -361,7 +365,7 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 ├── background-worker.js                    # Web Worker: AI background removal
 ├── favicon.png                             # Favicon
 ├── Generated_image-removebg-preview.png    # Logo
-├── sitemap.xml                             # XML sitemap (119 URLs)
+├── sitemap.xml                             # XML sitemap (123 URLs)
 ├── robots.txt                              # Robots file
 └── ads.txt                                 # Google AdSense
 ```
@@ -407,7 +411,7 @@ All 12 file upload tool pages display a "100% Local — your file never leaves t
 ## SEO Features
 
 - Semantic HTML with proper H1-H3 hierarchy
-- Unique meta titles and descriptions per page (120 pages)
+- Unique meta titles and descriptions per page (124 pages)
 - Canonical tags on every page
 - Open Graph and Twitter Card meta tags on every page
 - JSON-LD structured data:
@@ -420,7 +424,7 @@ All 12 file upload tool pages display a "100% Local — your file never leaves t
   - WebPage schema (privacy, terms pages)
 - XML sitemap with 119 URLs
 - Internal linking: Workflow next-step sections, category pages, footer links
-- Blog with 8 SEO-optimized articles targeting long-tail keywords
+- Blog with 12 SEO-optimized articles targeting long-tail keywords
 - CSS text logo (no image dependency for logo)
 - Mobile-first responsive design
 - Category filter chips on tools directory page (11 categories)
