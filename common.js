@@ -664,7 +664,16 @@ function showDraftBar(key, onContinue, onStartFresh) {
         '/tools/text/reverse-text.html': 'Reverse Text',
         '/tools/text/text-to-slug.html': 'Text to Slug',
         '/tools/text/word-frequency.html': 'Word Frequency',
-        '/tools/text/sentence-reorder.html': 'Sentence Shuffler'
+        '/tools/text/sentence-reorder.html': 'Sentence Shuffler',
+        '/tools/text/random-picker.html': 'Random Picker',
+        '/tools/calculators/loan-amortization.html': 'Loan Amortization',
+        '/tools/calculators/roi-calculator.html': 'ROI Calculator',
+        '/tools/calculators/freelance-rate.html': 'Freelance Rate',
+        '/tools/calculators/discount-tax-calculator.html': 'Discount & Tax',
+        '/tools/developer/exif-stripper.html': 'EXIF Stripper',
+        '/tools/pomodoro-timer.html': 'Pomodoro Timer',
+        '/tools/aspect-ratio-calculator.html': 'Aspect Ratio',
+        '/tools/health/bmr-calculator.html': 'BMR Calculator'
     };
 
     var toolName = toolMeta[path];
@@ -745,6 +754,10 @@ function showDraftBar(key, onContinue, onStartFresh) {
         { name: 'Sales Tax Calculator', href: '/tools/calculators/invoice-tax-calculator.html', cat: 'Calculator' },
         { name: 'VAT Calculator', href: '/tools/calculators/vat-calculator.html', cat: 'Calculator' },
         { name: 'Overtime Calculator', href: '/tools/calculators/overtime-calculator.html', cat: 'Calculator' },
+        { name: 'Loan Amortization', href: '/tools/calculators/loan-amortization.html', cat: 'Calculator' },
+        { name: 'ROI Calculator', href: '/tools/calculators/roi-calculator.html', cat: 'Calculator' },
+        { name: 'Freelance Rate', href: '/tools/calculators/freelance-rate.html', cat: 'Calculator' },
+        { name: 'Discount & Tax', href: '/tools/calculators/discount-tax-calculator.html', cat: 'Calculator' },
         { name: 'Resume Builder', href: '/tools/career/resume-builder.html', cat: 'Career' },
         { name: 'Cover Letter', href: '/tools/career/cover-letter.html', cat: 'Career' },
         { name: 'Resignation Letter', href: '/tools/career/resignation-letter.html', cat: 'Career' },
@@ -773,6 +786,7 @@ function showDraftBar(key, onContinue, onStartFresh) {
         { name: 'Hash Generator', href: '/tools/developer/hash-generator.html', cat: 'Developer' },
         { name: 'CSS Minifier', href: '/tools/developer/css-minifier.html', cat: 'Developer' },
         { name: 'JWT Decoder', href: '/tools/developer/jwt-decoder.html', cat: 'Developer' },
+        { name: 'EXIF Stripper', href: '/tools/developer/exif-stripper.html', cat: 'Developer' },
         { name: 'Word Counter', href: '/tools/word-counter.html', cat: 'Text' },
         { name: 'Text Case Converter', href: '/tools/text-case-converter.html', cat: 'Text' },
         { name: 'Lorem Ipsum', href: '/tools/text/lorem-ipsum-generator.html', cat: 'Text' },
@@ -787,6 +801,7 @@ function showDraftBar(key, onContinue, onStartFresh) {
         { name: 'Text to Slug', href: '/tools/text/text-to-slug.html', cat: 'Text' },
         { name: 'Word Frequency', href: '/tools/text/word-frequency.html', cat: 'Text' },
         { name: 'Sentence Shuffler', href: '/tools/text/sentence-reorder.html', cat: 'Text' },
+        { name: 'Random Picker', href: '/tools/text/random-picker.html', cat: 'Text' },
         { name: 'BMI Calculator', href: '/tools/bmi-calculator.html', cat: 'Health' },
         { name: 'Ideal Weight', href: '/tools/health/ideal-weight.html', cat: 'Health' },
         { name: 'Calorie Calculator', href: '/tools/health/calorie-calculator.html', cat: 'Health' },
@@ -796,8 +811,11 @@ function showDraftBar(key, onContinue, onStartFresh) {
         { name: 'Ovulation Calculator', href: '/tools/health/ovulation-calculator.html', cat: 'Health' },
         { name: 'Macro Calculator', href: '/tools/health/macro-calculator.html', cat: 'Health' },
         { name: 'Body Fat Calculator', href: '/tools/health/body-fat-calculator.html', cat: 'Health' },
+        { name: 'BMR Calculator', href: '/tools/health/bmr-calculator.html', cat: 'Health' },
         { name: 'Password Generator', href: '/tools/password-generator.html', cat: 'Utility' },
-        { name: 'Unit Converter', href: '/tools/unit-converter.html', cat: 'Utility' }
+        { name: 'Unit Converter', href: '/tools/unit-converter.html', cat: 'Utility' },
+        { name: 'Pomodoro Timer', href: '/tools/pomodoro-timer.html', cat: 'Utility' },
+        { name: 'Aspect Ratio', href: '/tools/aspect-ratio-calculator.html', cat: 'Utility' }
     ];
 
     // Create overlay
@@ -806,7 +824,7 @@ function showDraftBar(key, onContinue, onStartFresh) {
     overlay.className = 'cmd-palette-overlay';
     overlay.style.display = 'none';
     overlay.innerHTML = '<div class="cmd-palette-box">' +
-        '<input type="text" id="cmdInput" class="cmd-palette-input" placeholder="Search 85+ tools..." autocomplete="off">' +
+        '<input type="text" id="cmdInput" class="cmd-palette-input" placeholder="Search 90+ tools..." autocomplete="off">' +
         '<div id="cmdResults" class="cmd-palette-results"></div>' +
         '<div class="cmd-palette-footer"><span>Press <kbd>Esc</kbd> to close</span><span><kbd>Enter</kbd> to open</span></div>' +
         '</div>';

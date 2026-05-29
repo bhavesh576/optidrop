@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number & Name Picker Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Generate random numbers within a range or pick a random name from a list. Uses crypto.getRandomValues() for true randomness. No sign-up required.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Random Number & Name Picker Free Online | OptiDrop">
+    <meta property="og:description" content="Generate random numbers or pick random names. Uses crypto.getRandomValues() for true randomness. No sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/text/random-picker.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Random Number & Name Picker Free Online | OptiDrop">
+    <meta name="twitter:description" content="Generate random numbers or pick random names. True randomness. No sign-up.">
+    <link rel="canonical" href="https://optidrop.online/tools/text/random-picker.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Text Tools", "item": "https://optidrop.online/category/text-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Random Picker", "item": "https://optidrop.online/tools/text/random-picker.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How does the random number generator work?", "acceptedAnswer": {"@type": "Answer", "text": "This tool uses the Web Crypto API (crypto.getRandomValues()) which generates cryptographically secure random numbers. This is much more random than Math.random() and suitable for security-sensitive applications. The numbers are generated entirely in your browser."}},
+        {"@type": "Question", "name": "Can I pick multiple random names at once?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Enter names separated by commas or new lines, then set how many names to pick. The tool will randomly select that many unique names from your list without repeats. This is perfect for raffles, team assignments, or drawing winners."}},
+        {"@type": "Question", "name": "Is this truly random?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. This tool uses crypto.getRandomValues() which provides cryptographically secure randomness. Unlike Math.random() which uses a pseudorandom algorithm, crypto.getRandomValues() uses your operating system's entropy source (hardware noise, timing jitter) for true randomness."}},
+        {"@type": "Question", "name": "What can I use a random picker for?", "acceptedAnswer": {"@type": "Answer", "text": "Common uses include: picking raffle winners, assigning teams randomly, choosing who goes first in a game, selecting a random item from a list, lottery number generation, classroom activities, and decision making when you can't choose."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Random Number & Name Picker</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate random numbers within a range or pick a random name from a list. Uses cryptographically secure randomness. 100% free, no sign-up.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <!-- Tab Switcher -->
+                    <div class="flex gap-2 mb-6">
+                        <button id="tabNumber" class="tab-btn active flex-1 py-3 px-4 rounded-xl font-bold text-sm transition-all">Random Number</button>
+                        <button id="tabName" class="tab-btn flex-1 py-3 px-4 rounded-xl font-bold text-sm transition-all">Random Name</button>
+                    </div>
+
+                    <!-- Number Picker -->
+                    <div id="panelNumber">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                            <div>
+                                <label for="numMin" class="block text-sm font-bold text-slate-700 mb-2">Minimum</label>
+                                <input type="number" id="numMin" value="1" step="1"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium" autocomplete="off">
+                            </div>
+                            <div>
+                                <label for="numMax" class="block text-sm font-bold text-slate-700 mb-2">Maximum</label>
+                                <input type="number" id="numMax" value="100" step="1"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium" autocomplete="off">
+                            </div>
+                            <div>
+                                <label for="numCount" class="block text-sm font-bold text-slate-700 mb-2">How Many</label>
+                                <input type="number" id="numCount" value="1" min="1" max="100" step="1"
+                                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="numUnique" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="text-sm font-bold text-slate-700">No duplicates</span>
+                        </div>
+                        <button id="btnGenNum" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            Generate Random Number
+                        </button>
+                        <div id="numResults" class="hidden mt-6">
+                            <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 text-center">
+                                <p class="text-sm font-semibold text-blue-700 mb-3">Your Random Number(s)</p>
+                                <div id="numOutput" class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-4 break-all"></div>
+                                <button onclick="copyToClipboard(document.getElementById('numOutput').textContent)" class="text-sm font-bold text-blue-600 hover:text-blue-700">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Name Picker -->
+                    <div id="panelName" class="hidden">
+                        <div class="mb-6">
+                            <label for="nameInput" class="block text-sm font-bold text-slate-700 mb-2">Enter names (comma or line separated)</label>
+                            <textarea id="nameInput" rows="5" placeholder="Alice, Bob, Charlie, David, Eve&#10;Or one name per line..."
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y" autocomplete="off"></textarea>
+                        </div>
+                        <div class="mb-6">
+                            <label for="nameCount" class="block text-sm font-bold text-slate-700 mb-2">How many to pick</label>
+                            <input type="number" id="nameCount" value="1" min="1" max="100" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium" autocomplete="off">
+                        </div>
+                        <button id="btnPickName" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            Pick Random Name
+                        </button>
+                        <div id="nameResults" class="hidden mt-6">
+                            <div class="bg-green-50 border border-green-200 rounded-2xl p-6 text-center">
+                                <p class="text-sm font-semibold text-green-700 mb-3">Randomly Selected</p>
+                                <div id="nameOutput" class="text-2xl sm:text-3xl font-extrabold text-green-900 mb-4"></div>
+                                <button onclick="copyToClipboard(document.getElementById('nameOutput').textContent)" class="text-sm font-bold text-green-600 hover:text-green-700">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;min-height:250px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">How does the random number generator work?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">This tool uses crypto.getRandomValues() which generates cryptographically secure random numbers using your OS's entropy source.</div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">Can I pick multiple random names at once?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Yes. Enter names separated by commas or new lines, then set how many to pick. The tool selects unique names without repeats.</div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">Is this truly random?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Yes. crypto.getRandomValues() uses your OS's entropy source (hardware noise, timing jitter) for cryptographically secure randomness.</div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">What can I use a random picker for?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Raffle winners, team assignments, choosing who goes first, lottery numbers, classroom activities, and decision making.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/text/random-name-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Random Name Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate random names by country and gender.</span>
+                </a>
+                <a href="/tools/password-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Password Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate strong random passwords.</span>
+                </a>
+                <a href="/tools/text/lorem-ipsum-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Lorem Ipsum Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate placeholder text.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div>
+                <div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div>
+                <div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage</a><a href="/tools/calculators/retirement-calculator.html">Retirement</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a></div>
+                <div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/hash-generator.html">Hash Generator</a></div>
+                <div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. No upload required.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var tabNumber = document.getElementById('tabNumber');
+        var tabName = document.getElementById('tabName');
+        var panelNumber = document.getElementById('panelNumber');
+        var panelName = document.getElementById('panelName');
+
+        tabNumber.addEventListener('click', function() {
+            tabNumber.classList.add('active'); tabName.classList.remove('active');
+            panelNumber.classList.remove('hidden'); panelName.classList.add('hidden');
+        });
+        tabName.addEventListener('click', function() {
+            tabName.classList.add('active'); tabNumber.classList.remove('active');
+            panelName.classList.remove('hidden'); panelNumber.classList.add('hidden');
+        });
+
+        // Secure random integer
+        function secureRandomInt(min, max) {
+            var range = max - min + 1;
+            var array = new Uint32Array(1);
+            crypto.getRandomValues(array);
+            return min + (array[0] % range);
+        }
+
+        // Number picker
+        document.getElementById('btnGenNum').addEventListener('click', function() {
+            var min = parseInt(document.getElementById('numMin').value);
+            var max = parseInt(document.getElementById('numMax').value);
+            var count = parseInt(document.getElementById('numCount').value) || 1;
+            var unique = document.getElementById('numUnique').checked;
+            if (isNaN(min) || isNaN(max) || min > max) { showToast('Please enter a valid range.', 'error'); return; }
+            if (unique && count > (max - min + 1)) { showToast('Range too small for that many unique numbers.', 'error'); return; }
+            if (count < 1 || count > 100) { showToast('Count must be between 1 and 100.', 'error'); return; }
+            var results = [];
+            if (unique) {
+                var pool = [];
+                for (var i = min; i <= max; i++) pool.push(i);
+                for (var j = pool.length - 1; j > 0; j--) {
+                    var k = secureRandomInt(0, j);
+                    var temp = pool[j]; pool[j] = pool[k]; pool[k] = temp;
+                }
+                results = pool.slice(0, count);
+            } else {
+                for (var n = 0; n < count; n++) {
+                    results.push(secureRandomInt(min, max));
+                }
+            }
+            document.getElementById('numOutput').textContent = results.join(', ');
+            document.getElementById('numResults').classList.remove('hidden');
+            showToast('Random number(s) generated!');
+        });
+
+        // Name picker
+        document.getElementById('btnPickName').addEventListener('click', function() {
+            var text = document.getElementById('nameInput').value.trim();
+            var count = parseInt(document.getElementById('nameCount').value) || 1;
+            if (!text) { showToast('Please enter some names.', 'error'); return; }
+            var names = text.split(/[,\n]+/).map(function(s) { return s.trim(); }).filter(function(s) { return s.length > 0; });
+            if (names.length === 0) { showToast('No valid names found.', 'error'); return; }
+            if (count > names.length) { showToast('You asked for more names than available.', 'error'); return; }
+            // Fisher-Yates shuffle
+            for (var i = names.length - 1; i > 0; i--) {
+                var j = secureRandomInt(0, i);
+                var temp = names[i]; names[i] = names[j]; names[j] = temp;
+            }
+            var picked = names.slice(0, count);
+            document.getElementById('nameOutput').textContent = picked.join(', ');
+            document.getElementById('nameResults').classList.remove('hidden');
+            showToast('Random name(s) picked!');
+        });
+    })();
+    </script>
+</body>
+</html>

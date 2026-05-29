@@ -2,7 +2,7 @@
 
 **Free Online Tools — No Upload, No Sign-Up, No Cost**
 
-OptiDrop is a fully browser-based toolkit with **85+ free tools** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
+OptiDrop is a fully browser-based toolkit with **90+ free tools** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
 
 **Live at:** [https://optidrop.online](https://optidrop.online)
 
@@ -66,7 +66,7 @@ OptiDrop is a fully browser-based toolkit with **85+ free tools** for images, PD
 | Professional Bio Generator | Generate bios for LinkedIn, websites, and profiles | [/tools/professional/bio-generator.html](https://optidrop.online/tools/professional/bio-generator.html) |
 | SOP Generator | Write Statement of Purpose for university applications | [/tools/professional/sop-generator.html](https://optidrop.online/tools/professional/sop-generator.html) |
 
-### Calculator Tools (24)
+### Calculator Tools (28)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -94,8 +94,12 @@ OptiDrop is a fully browser-based toolkit with **85+ free tools** for images, PD
 | US Sales Tax Calculator | Calculate sales tax for all 50 US states | [/tools/calculators/invoice-tax-calculator.html](https://optidrop.online/tools/calculators/invoice-tax-calculator.html) |
 | VAT Calculator | Add or remove VAT for UK, EU, and global rates | [/tools/calculators/vat-calculator.html](https://optidrop.online/tools/calculators/vat-calculator.html) |
 | Overtime Calculator | Calculate overtime pay with custom rate and multiplier | [/tools/calculators/overtime-calculator.html](https://optidrop.online/tools/calculators/overtime-calculator.html) |
+| Loan Amortization Calculator | Monthly payment schedule with principal vs interest breakdown | [/tools/calculators/loan-amortization.html](https://optidrop.online/tools/calculators/loan-amortization.html) |
+| ROI Calculator | Return on investment percentage and net profit | [/tools/calculators/roi-calculator.html](https://optidrop.online/tools/calculators/roi-calculator.html) |
+| Freelance Rate Calculator | Required hourly and daily rates for freelancers | [/tools/calculators/freelance-rate.html](https://optidrop.online/tools/calculators/freelance-rate.html) |
+| Discount & Tax Calculator | Final price after discount and sales tax combined | [/tools/calculators/discount-tax-calculator.html](https://optidrop.online/tools/calculators/discount-tax-calculator.html) |
 
-### Text Tools (14)
+### Text Tools (15)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -113,8 +117,9 @@ OptiDrop is a fully browser-based toolkit with **85+ free tools** for images, PD
 | Text to Slug | Convert text to URL-friendly slug format | [/tools/text/text-to-slug.html](https://optidrop.online/tools/text/text-to-slug.html) |
 | Word Frequency Counter | Analyze word frequency with stop word filtering | [/tools/text/word-frequency.html](https://optidrop.online/tools/text/word-frequency.html) |
 | Sentence Shuffler | Randomly shuffle or reverse sentence order | [/tools/text/sentence-reorder.html](https://optidrop.online/tools/text/sentence-reorder.html) |
+| Random Number & Name Picker | Generate random numbers or pick names from a list | [/tools/text/random-picker.html](https://optidrop.online/tools/text/random-picker.html) |
 
-### Developer Tools (8)
+### Developer Tools (9)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -126,8 +131,9 @@ OptiDrop is a fully browser-based toolkit with **85+ free tools** for images, PD
 | Hash Generator | Generate SHA-256 and SHA-512 hashes using native crypto API | [/tools/developer/hash-generator.html](https://optidrop.online/tools/developer/hash-generator.html) |
 | CSS Minifier | Minify CSS code to reduce file size with comparison | [/tools/developer/css-minifier.html](https://optidrop.online/tools/developer/css-minifier.html) |
 | JWT Decoder | Decode JSON Web Tokens to view header, payload, and expiry | [/tools/developer/jwt-decoder.html](https://optidrop.online/tools/developer/jwt-decoder.html) |
+| EXIF Metadata Stripper | Remove hidden GPS location and camera data from photos | [/tools/developer/exif-stripper.html](https://optidrop.online/tools/developer/exif-stripper.html) |
 
-### Health Tools (8)
+### Health Tools (9)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -139,8 +145,9 @@ OptiDrop is a fully browser-based toolkit with **85+ free tools** for images, PD
 | Pregnancy Due Date | Calculate estimated due date and current pregnancy week | [/tools/health/pregnancy-due-date.html](https://optidrop.online/tools/health/pregnancy-due-date.html) |
 | Macro Calculator | Calculate daily protein, carbs, and fat targets | [/tools/health/macro-calculator.html](https://optidrop.online/tools/health/macro-calculator.html) |
 | Body Fat Calculator | Estimate body fat percentage using US Navy method | [/tools/health/body-fat-calculator.html](https://optidrop.online/tools/health/body-fat-calculator.html) |
+| BMR Calculator | Basal Metabolic Rate and TDEE calorie needs | [/tools/health/bmr-calculator.html](https://optidrop.online/tools/health/bmr-calculator.html) |
 
-### Utility Tools (4)
+### Utility Tools (6)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -148,6 +155,8 @@ OptiDrop is a fully browser-based toolkit with **85+ free tools** for images, PD
 | Unit Converter | Convert length, weight, temperature, and speed units | [/tools/unit-converter.html](https://optidrop.online/tools/unit-converter.html) |
 | Password Generator | Generate strong random passwords with crypto.getRandomValues | [/tools/password-generator.html](https://optidrop.online/tools/password-generator.html) |
 | Ovulation Calculator | Calculate fertile window and ovulation date | [/tools/health/ovulation-calculator.html](https://optidrop.online/tools/health/ovulation-calculator.html) |
+| Pomodoro Timer | 25-minute focus timer with background-tab accuracy | [/tools/pomodoro-timer.html](https://optidrop.online/tools/pomodoro-timer.html) |
+| Aspect Ratio Calculator | Calculate missing width/height for any aspect ratio | [/tools/aspect-ratio-calculator.html](https://optidrop.online/tools/aspect-ratio-calculator.html) |
 
 ---
 
@@ -251,6 +260,8 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   ├── password-generator.html             # Password generator
 │   ├── bmi-calculator.html                 # BMI calculator
 │   ├── unit-converter.html                 # Unit converter
+│   ├── pomodoro-timer.html                 # Pomodoro focus timer
+│   ├── aspect-ratio-calculator.html        # Aspect ratio calculator
 │   ├── calculators/
 │   │   ├── sip-calculator.html             # SIP calculator
 │   │   ├── income-tax-calculator.html      # Income tax (old vs new regime)
@@ -271,7 +282,11 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   │   ├── savings-goal.html               # Savings goal planner
 │   │   ├── invoice-tax-calculator.html     # US sales tax (all 50 states)
 │   │   ├── vat-calculator.html             # VAT calculator (UK/EU/global)
-│   │   └── overtime-calculator.html        # Overtime pay calculator
+│   │   ├── overtime-calculator.html        # Overtime pay calculator
+│   │   ├── loan-amortization.html          # Loan amortization schedule
+│   │   ├── roi-calculator.html             # Return on investment calculator
+│   │   ├── freelance-rate.html             # Freelance hourly rate calculator
+│   │   └── discount-tax-calculator.html    # Discount & tax combined calculator
 │   ├── text/
 │   │   ├── lorem-ipsum-generator.html      # Lorem ipsum generator
 │   │   ├── random-name-generator.html      # Random name generator
@@ -284,7 +299,8 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   │   ├── reverse-text.html               # Reverse text generator
 │   │   ├── text-to-slug.html               # Text to URL slug generator
 │   │   ├── word-frequency.html             # Word frequency counter
-│   │   └── sentence-reorder.html           # Sentence shuffler
+│   │   ├── sentence-reorder.html           # Sentence shuffler
+│   │   └── random-picker.html              # Random number & name picker
 │   ├── career/
 │   │   ├── resume-builder.html             # Resume builder (4 templates, PDF)
 │   │   ├── cover-letter.html               # Cover letter generator
@@ -316,7 +332,8 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   │   ├── markdown-preview.html           # Markdown live preview editor
 │   │   ├── hash-generator.html             # SHA-256/SHA-512 hash generator
 │   │   ├── css-minifier.html               # CSS minifier with size comparison
-│   │   └── jwt-decoder.html                # JWT token decoder
+│   │   ├── jwt-decoder.html                # JWT token decoder
+│   │   └── exif-stripper.html              # EXIF metadata stripper
 │   └── health/
 │       ├── ideal-weight.html               # Ideal weight calculator (4 formulas)
 │       ├── calorie-calculator.html         # Calorie / TDEE calculator
@@ -325,7 +342,8 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │       ├── pregnancy-due-date.html         # Pregnancy due date calculator
 │       ├── ovulation-calculator.html       # Ovulation & fertile window calculator
 │       ├── macro-calculator.html           # Macronutrient calculator (protein/carbs/fat)
-│       └── body-fat-calculator.html        # Body fat percentage (US Navy method)
+│       ├── body-fat-calculator.html        # Body fat percentage (US Navy method)
+│       └── bmr-calculator.html             # BMR and TDEE calorie calculator
 ├── category/
 │   ├── image-tools.html                    # Image tools category
 │   ├── pdf-tools.html                      # PDF tools category
@@ -431,7 +449,7 @@ All 12 file upload tool pages display a "100% Local — your file never leaves t
 ## SEO Features
 
 - Semantic HTML with proper H1-H3 hierarchy
-- Unique meta titles and descriptions per page (124 pages)
+- Unique meta titles and descriptions per page (133 pages)
 - Canonical tags on every page
 - Open Graph and Twitter Card meta tags on every page
 - JSON-LD structured data:
@@ -442,7 +460,7 @@ All 12 file upload tool pages display a "100% Local — your file never leaves t
   - Article schema (all blog posts)
   - Organization schema (about page)
   - WebPage schema (privacy, terms pages)
-- XML sitemap with 123 URLs
+- XML sitemap with 132 URLs
 - Internal linking: Workflow next-step sections, category pages, footer links
 - Blog with 12 SEO-optimized articles targeting long-tail keywords
 - CSS text logo (no image dependency for logo)

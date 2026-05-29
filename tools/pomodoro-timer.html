@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer Free Online — 25 Min Focus Timer | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online Pomodoro timer. 25-minute work sessions with 5-minute breaks. Uses performance.now() for background-tab accuracy. No sign-up required.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Pomodoro Timer Free Online — 25 Min Focus Timer | OptiDrop">
+    <meta property="og:description" content="Free online Pomodoro timer with 25-minute work sessions and 5-minute breaks. No sign-up required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/pomodoro-timer.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pomodoro Timer Free Online | OptiDrop">
+    <meta name="twitter:description" content="Free online Pomodoro timer. 25-minute focus sessions with 5-minute breaks. No sign-up.">
+    <link rel="canonical" href="https://optidrop.online/tools/pomodoro-timer.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://optidrop.online/tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Pomodoro Timer", "item": "https://optidrop.online/tools/pomodoro-timer.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is the Pomodoro Technique?", "acceptedAnswer": {"@type": "Answer", "text": "The Pomodoro Technique is a time management method developed by Francesco Cirillo. It uses a timer to break work into 25-minute focused intervals (called pomodoros) separated by 5-minute breaks. After every 4 pomodoros, you take a longer 15-30 minute break. This technique helps maintain focus and prevent burnout."}},
+        {"@type": "Question", "name": "Why does the timer use performance.now()?", "acceptedAnswer": {"@type": "Answer", "text": "Regular JavaScript timers (setTimeout/setInterval) slow down or pause when the browser tab is in the background. This Pomodoro timer uses performance.now() to track elapsed time accurately, so the countdown stays correct even when you switch to another tab to work."}},
+        {"@type": "Question", "name": "How many pomodoros should I do per day?", "acceptedAnswer": {"@type": "Answer", "text": "Most people aim for 8-12 pomodoros per day (4-6 hours of focused work). The key is quality over quantity — each pomodoro should be uninterrupted deep work. Track your daily count and gradually increase it. This timer shows your session count so you can monitor your productivity."}},
+        {"@type": "Question", "name": "Can I customize the timer durations?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. This timer lets you adjust work duration (15-60 minutes), short break (5-15 minutes), and long break (15-45 minutes) durations. The classic Pomodoro uses 25/5/20, but many people prefer 50/10/30 for longer deep work sessions. Experiment to find what works best for you."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .timer-ring { transition: stroke-dashoffset 1s linear; }
+        .pomodoro-dot { width: 12px; height: 12px; border-radius: 50%; transition: all 0.3s ease; }
+        .pomodoro-dot.done { background: #22c55e; }
+        .pomodoro-dot.active { background: #3b82f6; transform: scale(1.3); }
+        .pomodoro-dot.pending { background: #e2e8f0; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Pomodoro Timer — 25 Min Focus Timer</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Boost productivity with the Pomodoro Technique. 25-minute focused work sessions with short breaks. Stays accurate even when you switch tabs. 100% free.</p>
+        </section>
+
+        <section class="max-w-lg mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-8 text-center">
+                    <!-- Mode Indicator -->
+                    <div id="modeLabel" class="inline-block px-4 py-1.5 rounded-full text-sm font-bold mb-6 bg-blue-100 text-blue-700">Focus Time</div>
+
+                    <!-- Timer Display -->
+                    <div class="relative inline-block mb-6">
+                        <svg width="220" height="220" viewBox="0 0 220 220" class="transform -rotate-90 timer-svg">
+                            <circle cx="110" cy="110" r="100" fill="none" stroke="#e2e8f0" stroke-width="8"/>
+                            <circle id="timerRing" cx="110" cy="110" r="100" fill="none" stroke="#3b82f6" stroke-width="8"
+                                stroke-dasharray="628.32" stroke-dashoffset="0" stroke-linecap="round" class="timer-ring"/>
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <span id="timerDisplay" class="text-5xl font-extrabold text-slate-900 tabular-nums">25:00</span>
+                            <span id="timerSubtext" class="text-sm text-slate-500 mt-1">Session 1 of 4</span>
+                        </div>
+                    </div>
+
+                    <!-- Pomodoro Dots -->
+                    <div class="flex justify-center gap-3 mb-8">
+                        <div class="pomodoro-dot active" id="dot0"></div>
+                        <div class="pomodoro-dot pending" id="dot1"></div>
+                        <div class="pomodoro-dot pending" id="dot2"></div>
+                        <div class="pomodoro-dot pending" id="dot3"></div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="flex justify-center gap-4 mb-8">
+                        <button id="btnStart" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all">
+                            Start Focus
+                        </button>
+                        <button id="btnPause" class="px-6 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors hidden">
+                            Pause
+                        </button>
+                        <button id="btnReset" class="px-6 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors">
+                            Reset
+                        </button>
+                    </div>
+
+                    <!-- Settings -->
+                    <div class="border-t border-slate-200 pt-6">
+                        <h3 class="text-sm font-bold text-slate-700 mb-4">Timer Settings</h3>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div>
+                                <label class="text-xs font-medium text-slate-500 mb-1 block">Work (min)</label>
+                                <input type="number" id="workMin" value="25" min="15" max="60" step="5"
+                                    class="block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg text-center font-bold text-slate-900">
+                            </div>
+                            <div>
+                                <label class="text-xs font-medium text-slate-500 mb-1 block">Break (min)</label>
+                                <input type="number" id="breakMin" value="5" min="1" max="15" step="1"
+                                    class="block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg text-center font-bold text-slate-900">
+                            </div>
+                            <div>
+                                <label class="text-xs font-medium text-slate-500 mb-1 block">Long Break (min)</label>
+                                <input type="number" id="longBreakMin" value="20" min="10" max="45" step="5"
+                                    class="block w-full px-3 py-2 text-sm border-2 border-slate-200 rounded-lg text-center font-bold text-slate-900">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="border-t border-slate-200 pt-6 mt-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <span class="text-2xl font-extrabold text-blue-600" id="totalPomodoros">0</span>
+                                <span class="block text-xs text-slate-500 mt-1">Pomodoros Today</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-2xl font-extrabold text-green-600" id="totalMinutes">0</span>
+                                <span class="block text-xs text-slate-500 mt-1">Focus Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;min-height:250px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="blog-content">
+                <h2>What is the Pomodoro Technique?</h2>
+                <p>The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It uses a timer to break work into focused 25-minute intervals (called "pomodoros") separated by short breaks. After completing four pomodoros, you take a longer break of 15-30 minutes.</p>
+                <h3>How to Use This Timer</h3>
+                <ol>
+                    <li><strong>Start a focus session:</strong> Click "Start Focus" to begin a 25-minute work session</li>
+                    <li><strong>Work without interruption:</strong> Focus on a single task until the timer rings</li>
+                    <li><strong>Take a break:</strong> When the timer ends, take a 5-minute break</li>
+                    <li><strong>Repeat:</strong> After 4 pomodoros, take a longer 20-minute break</li>
+                </ol>
+                <h3>Why This Timer is Different</h3>
+                <p>Most online timers stop counting when you switch browser tabs. This Pomodoro timer uses <code>performance.now()</code> to track elapsed time accurately, so the countdown stays correct even when you switch to another tab to work. The tab title also updates with the remaining time, so you can see it at a glance.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">What is the Pomodoro Technique?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">The Pomodoro Technique is a time management method that uses 25-minute focused work intervals separated by 5-minute breaks. After every 4 pomodoros, take a longer break. It helps maintain focus and prevent burnout.</div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">Why does the timer use performance.now()?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Regular JavaScript timers slow down when the browser tab is in the background. This timer uses performance.now() to track elapsed time accurately, so the countdown stays correct even when you switch tabs.</div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">How many pomodoros should I do per day?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Most people aim for 8-12 pomodoros per day (4-6 hours of focused work). Quality matters more than quantity — each pomodoro should be uninterrupted deep work.</div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">Can I customize the timer durations?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Yes. Adjust work duration (15-60 min), short break (1-15 min), and long break (10-45 min) in the settings below the timer. The classic Pomodoro is 25/5/20, but many prefer 50/10/30 for deep work.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div>
+                <div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div>
+                <div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage</a><a href="/tools/calculators/retirement-calculator.html">Retirement</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a></div>
+                <div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/hash-generator.html">Hash Generator</a></div>
+                <div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. No upload required.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../common.js"></script>
+    <script>
+    (function() {
+        var timerDisplay = document.getElementById('timerDisplay');
+        var timerRing = document.getElementById('timerRing');
+        var timerSubtext = document.getElementById('timerSubtext');
+        var modeLabel = document.getElementById('modeLabel');
+        var btnStart = document.getElementById('btnStart');
+        var btnPause = document.getElementById('btnPause');
+        var btnReset = document.getElementById('btnReset');
+        var workMinInput = document.getElementById('workMin');
+        var breakMinInput = document.getElementById('breakMin');
+        var longBreakMinInput = document.getElementById('longBreakMin');
+        var totalPomodorosEl = document.getElementById('totalPomodoros');
+        var totalMinutesEl = document.getElementById('totalMinutes');
+
+        var circumference = 2 * Math.PI * 100; // 628.32
+        var originalTitle = document.title;
+        var state = 'idle'; // idle, work, break, longbreak
+        var currentPomodoro = 0;
+        var totalPomodoros = 0;
+        var totalMinutes = 0;
+        var targetTime = 0;
+        var remainingMs = 0;
+        var intervalId = null;
+        var paused = false;
+
+        function getWorkMs() { return parseInt(workMinInput.value) * 60 * 1000; }
+        function getBreakMs() { return parseInt(breakMinInput.value) * 60 * 1000; }
+        function getLongBreakMs() { return parseInt(longBreakMinInput.value) * 60 * 1000; }
+
+        function formatTime(ms) {
+            var totalSec = Math.ceil(ms / 1000);
+            var min = Math.floor(totalSec / 60);
+            var sec = totalSec % 60;
+            return String(min).padStart(2, '0') + ':' + String(sec).padStart(2, '0');
+        }
+
+        function updateDisplay(ms, totalMs) {
+            timerDisplay.textContent = formatTime(ms);
+            var progress = 1 - (ms / totalMs);
+            timerRing.style.strokeDashoffset = circumference * (1 - progress);
+            document.title = formatTime(ms) + ' — ' + (state === 'work' ? 'Focus' : 'Break') + ' | ' + originalTitle;
+        }
+
+        function updateDots() {
+            for (var i = 0; i < 4; i++) {
+                var dot = document.getElementById('dot' + i);
+                dot.className = 'pomodoro-dot';
+                if (i < currentPomodoro) dot.classList.add('done');
+                else if (i === currentPomodoro && state === 'work') dot.classList.add('active');
+                else dot.classList.add('pending');
+            }
+        }
+
+        function startTimer(durationMs, mode) {
+            state = mode;
+            targetTime = performance.now() + durationMs;
+            remainingMs = durationMs;
+            paused = false;
+
+            if (mode === 'work') {
+                modeLabel.textContent = 'Focus Time';
+                modeLabel.className = 'inline-block px-4 py-1.5 rounded-full text-sm font-bold mb-6 bg-blue-100 text-blue-700';
+                timerRing.style.stroke = '#3b82f6';
+                btnStart.textContent = 'Working...';
+            } else {
+                modeLabel.textContent = mode === 'longbreak' ? 'Long Break' : 'Short Break';
+                modeLabel.className = 'inline-block px-4 py-1.5 rounded-full text-sm font-bold mb-6 bg-green-100 text-green-700';
+                timerRing.style.stroke = '#22c55e';
+                btnStart.textContent = 'On Break';
+            }
+
+            btnStart.disabled = true;
+            btnPause.classList.remove('hidden');
+            btnPause.textContent = 'Pause';
+            updateDots();
+
+            clearInterval(intervalId);
+            intervalId = setInterval(function() {
+                if (paused) return;
+                var now = performance.now();
+                remainingMs = targetTime - now;
+                if (remainingMs <= 0) {
+                    remainingMs = 0;
+                    clearInterval(intervalId);
+                    timerComplete();
+                }
+                updateDisplay(remainingMs, durationMs);
+            }, 100);
+        }
+
+        function timerComplete() {
+            // Play notification sound
+            try {
+                var ctx = new (window.AudioContext || window.webkitAudioContext)();
+                var osc = ctx.createOscillator();
+                var gain = ctx.createGain();
+                osc.connect(gain); gain.connect(ctx.destination);
+                osc.frequency.value = 800;
+                gain.gain.value = 0.3;
+                osc.start(); osc.stop(ctx.currentTime + 0.3);
+                setTimeout(function() { osc.frequency.value = 1000; var o2 = ctx.createOscillator(); o2.connect(gain); o2.start(); o2.stop(ctx.currentTime + 0.3); }, 300);
+            } catch (e) {}
+
+            if (state === 'work') {
+                currentPomodoro++;
+                totalPomodoros++;
+                totalMinutes += parseInt(workMinInput.value);
+                totalPomodorosEl.textContent = totalPomodoros;
+                totalMinutesEl.textContent = totalMinutes;
+                updateDots();
+
+                if (currentPomodoro >= 4) {
+                    currentPomodoro = 0;
+                    showToast('Great work! Take a long break.', 'info');
+                    startTimer(getLongBreakMs(), 'longbreak');
+                } else {
+                    showToast('Pomodoro complete! Take a short break.', 'info');
+                    startTimer(getBreakMs(), 'break');
+                }
+            } else {
+                showToast('Break over! Time to focus.', 'info');
+                startTimer(getWorkMs(), 'work');
+            }
+        }
+
+        btnStart.addEventListener('click', function() {
+            if (state === 'idle' || btnStart.disabled === false) {
+                startTimer(getWorkMs(), 'work');
+            }
+        });
+
+        btnPause.addEventListener('click', function() {
+            if (paused) {
+                // Resume
+                targetTime = performance.now() + remainingMs;
+                paused = false;
+                btnPause.textContent = 'Pause';
+            } else {
+                // Pause
+                paused = true;
+                btnPause.textContent = 'Resume';
+            }
+        });
+
+        btnReset.addEventListener('click', function() {
+            clearInterval(intervalId);
+            state = 'idle';
+            currentPomodoro = 0;
+            paused = false;
+            remainingMs = getWorkMs();
+            updateDisplay(remainingMs, getWorkMs());
+            timerRing.style.strokeDashoffset = 0;
+            timerRing.style.stroke = '#3b82f6';
+            modeLabel.textContent = 'Focus Time';
+            modeLabel.className = 'inline-block px-4 py-1.5 rounded-full text-sm font-bold mb-6 bg-blue-100 text-blue-700';
+            btnStart.textContent = 'Start Focus';
+            btnStart.disabled = false;
+            btnPause.classList.add('hidden');
+            document.title = originalTitle;
+            updateDots();
+        });
+
+        // Initial display
+        updateDisplay(getWorkMs(), getWorkMs());
+    })();
+    </script>
+</body>
+</html>

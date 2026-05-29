@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXIF Metadata Stripper Free Online — Remove Photo Location Data | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Strip EXIF metadata from photos free online. Remove hidden GPS location, camera info, and personal data from images. 100% private, no upload required.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="EXIF Metadata Stripper Free Online — Remove Photo Location Data | OptiDrop">
+    <meta property="og:description" content="Strip EXIF metadata from photos free online. Remove hidden GPS location, camera info, and personal data. No upload required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/exif-stripper.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EXIF Metadata Stripper Free Online | OptiDrop">
+    <meta name="twitter:description" content="Strip EXIF metadata from photos free online. Remove hidden GPS location and camera info. No upload.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/exif-stripper.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/category/developer-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "EXIF Metadata Stripper", "item": "https://optidrop.online/tools/developer/exif-stripper.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop EXIF Metadata Stripper",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Strip EXIF metadata from photos free online. Remove hidden GPS location, camera info, and personal data."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is EXIF metadata?", "acceptedAnswer": {"@type": "Answer", "text": "EXIF (Exchangeable Image File Format) metadata is hidden data embedded in photos by cameras and smartphones. It can include GPS coordinates (exact location), camera model, date/time, lens settings, and even the photographer's name. When you share photos online, this data can reveal where and when the photo was taken."}},
+        {"@type": "Question", "name": "Why should I remove EXIF data from photos?", "acceptedAnswer": {"@type": "Answer", "text": "Removing EXIF data protects your privacy. GPS coordinates can reveal your home, workplace, or daily routine. Camera serial numbers can be used to track your photos. Date/time stamps can expose your schedule. Before posting photos on social media, dating apps, or marketplaces, stripping EXIF data prevents strangers from extracting this information."}},
+        {"@type": "Question", "name": "How does this EXIF stripper work?", "acceptedAnswer": {"@type": "Answer", "text": "This tool reads your image using the browser's FileReader API, draws it onto an HTML5 canvas element, and exports it as a fresh JPEG or PNG. The canvas re-encoding process strips all metadata including EXIF, IPTC, and XMP data. Your image never leaves your device — the entire process happens in your browser."}},
+        {"@type": "Question", "name": "Does stripping EXIF reduce image quality?", "acceptedAnswer": {"@type": "Answer", "text": "There is minimal quality loss when re-encoding as JPEG. The canvas exports at 92% quality by default, which is visually identical to the original. PNG re-encoding is lossless. You can adjust the quality slider to balance file size vs quality. For most purposes, the difference is imperceptible."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">EXIF Metadata Stripper — Remove Photo Location Data</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Strip hidden EXIF metadata from your photos. Remove GPS location, camera info, and personal data before sharing online. 100% private — nothing is uploaded.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <!-- Dropzone -->
+                    <div id="dropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 text-center cursor-pointer hover:border-blue-400 hover:bg-blue-50/30 transition-all mb-6">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        <p class="text-lg font-bold text-slate-700 mb-2">Drop your photo here or click to browse</p>
+                        <p class="text-sm text-slate-500">Supports JPG, PNG, WebP — max 50MB</p>
+                        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" class="hidden">
+                    </div>
+
+                    <!-- Preview + EXIF Info -->
+                    <div id="previewSection" class="hidden mb-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-700 mb-2">Original Photo</h3>
+                                <img id="previewImg" class="w-full rounded-xl border border-slate-200" alt="Preview">
+                                <div id="fileInfo" class="mt-3 text-sm text-slate-600 space-y-1"></div>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-700 mb-2">EXIF Data Found</h3>
+                                <div id="exifData" class="bg-slate-50 rounded-xl p-4 text-sm text-slate-600 max-h-[300px] overflow-y-auto"></div>
+                            </div>
+                        </div>
+
+                        <!-- Quality Slider -->
+                        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="quality" class="block text-sm font-bold text-slate-700 mb-2">Export Quality: <span id="qualityLabel">92%</span></label>
+                                <input type="range" id="quality" min="50" max="100" value="92" step="1"
+                                    class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                            </div>
+                            <div>
+                                <label for="format" class="block text-sm font-bold text-slate-700 mb-2">Export Format</label>
+                                <select id="format" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                    <option value="image/jpeg">JPEG (smaller file)</option>
+                                    <option value="image/png">PNG (lossless)</option>
+                                    <option value="image/webp">WebP (modern)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex flex-col sm:flex-row gap-4">
+                            <button id="btnStrip" class="flex-1 px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                Strip EXIF &amp; Download
+                            </button>
+                            <button id="btnNew" class="px-6 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors">
+                                New Photo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Result -->
+                    <div id="resultSection" class="hidden">
+                        <div class="bg-green-50 border border-green-200 rounded-2xl p-6 text-center">
+                            <svg class="w-12 h-12 mx-auto mb-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            <h3 class="text-lg font-bold text-green-800 mb-2">EXIF Data Stripped Successfully!</h3>
+                            <p class="text-sm text-green-700 mb-4">Your photo has been cleaned and downloaded. All metadata has been removed.</p>
+                            <div id="sizeComparison" class="text-sm text-green-600 mb-4"></div>
+                            <button id="btnDownloadAgain" class="px-6 py-3 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-colors">
+                                Download Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;min-height:250px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="blog-content">
+                <h2>Why Strip EXIF Data from Photos?</h2>
+                <p>Every photo you take with a smartphone or digital camera contains hidden EXIF metadata. This data includes GPS coordinates (your exact location), camera model, date and time, lens settings, and sometimes even your name. When you share photos on social media, dating apps, or online marketplaces, this hidden data can be extracted by anyone.</p>
+                <h3>What Data Does EXIF Contain?</h3>
+                <ul>
+                    <li><strong>GPS Coordinates:</strong> Exact latitude and longitude where the photo was taken</li>
+                    <li><strong>Date & Time:</strong> When the photo was captured</li>
+                    <li><strong>Camera Info:</strong> Make, model, serial number</li>
+                    <li><strong>Lens Settings:</strong> Focal length, aperture, ISO, shutter speed</li>
+                    <li><strong>Software:</strong> Which app edited the photo</li>
+                    <li><strong>Thumbnail:</strong> A small preview image embedded in the file</li>
+                </ul>
+                <h3>How OptiDrop Protects Your Privacy</h3>
+                <p>This EXIF stripper works entirely in your browser. Your photo is never uploaded to any server. The tool reads your image using the FileReader API, draws it onto an HTML5 canvas element, and exports it as a fresh file. This re-encoding process strips all metadata including EXIF, IPTC, and XMP data. The result is a clean photo safe for sharing anywhere.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is EXIF metadata?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        EXIF (Exchangeable Image File Format) metadata is hidden data embedded in photos by cameras and smartphones. It can include GPS coordinates (exact location), camera model, date/time, lens settings, and even the photographer's name. When you share photos online, this data can reveal where and when the photo was taken.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Why should I remove EXIF data from photos?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Removing EXIF data protects your privacy. GPS coordinates can reveal your home, workplace, or daily routine. Camera serial numbers can be used to track your photos. Date/time stamps can expose your schedule. Before posting photos on social media, dating apps, or marketplaces, stripping EXIF data prevents strangers from extracting this information.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How does this EXIF stripper work?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        This tool reads your image using the browser's FileReader API, draws it onto an HTML5 canvas element, and exports it as a fresh JPEG or PNG. The canvas re-encoding process strips all metadata including EXIF, IPTC, and XMP data. Your image never leaves your device — the entire process happens in your browser.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does stripping EXIF reduce image quality?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        There is minimal quality loss when re-encoding as JPEG. The canvas exports at 92% quality by default, which is visually identical to the original. PNG re-encoding is lossless. You can adjust the quality slider to balance file size vs quality. For most purposes, the difference is imperceptible.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/compress-image.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Image Compressor</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Compress images to exact KB limits.</span>
+                </a>
+                <a href="/image-format-converter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Format Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert between JPG, PNG, WebP, BMP.</span>
+                </a>
+                <a href="/tools/developer/hash-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Hash Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate SHA-256 and SHA-512 hashes.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div>
+                <div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div>
+                <div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage</a><a href="/tools/calculators/retirement-calculator.html">Retirement</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a></div>
+                <div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/hash-generator.html">Hash Generator</a></div>
+                <div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. No upload required.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var dropzone = document.getElementById('dropzone');
+        var fileInput = document.getElementById('fileInput');
+        var previewSection = document.getElementById('previewSection');
+        var resultSection = document.getElementById('resultSection');
+        var previewImg = document.getElementById('previewImg');
+        var fileInfo = document.getElementById('fileInfo');
+        var exifData = document.getElementById('exifData');
+        var qualitySlider = document.getElementById('quality');
+        var qualityLabel = document.getElementById('qualityLabel');
+        var formatSelect = document.getElementById('format');
+        var cleanBlob = null;
+        var originalFile = null;
+
+        function formatSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / 1048576).toFixed(1) + ' MB';
+        }
+
+        // Parse basic EXIF data
+        function parseExif(arrayBuffer) {
+            var view = new DataView(arrayBuffer);
+            var data = {};
+            if (view.getUint16(0, false) !== 0xFFD8) return null; // Not JPEG
+            var offset = 2;
+            while (offset < view.byteLength - 2) {
+                if (view.getUint8(offset) !== 0xFF) break;
+                var marker = view.getUint8(offset + 1);
+                var length = view.getUint16(offset + 2, false);
+                if (marker === 0xE1) { // APP1 = EXIF
+                    var exifStr = '';
+                    for (var i = offset + 4; i < offset + 2 + length && i < view.byteLength; i++) {
+                        exifStr += String.fromCharCode(view.getUint8(i));
+                    }
+                    // Extract common tags as strings
+                    var tags = {
+                        'Make': 'Camera Make',
+                        'Model': 'Camera Model',
+                        'DateTime': 'Date Taken',
+                        'DateTimeOriginal': 'Original Date',
+                        'GPSLatitude': 'GPS Latitude',
+                        'GPSLongitude': 'GPS Longitude',
+                        'GPSLatitudeRef': 'Lat Direction',
+                        'GPSLongitudeRef': 'Lon Direction',
+                        'Software': 'Software',
+                        'ImageWidth': 'Image Width',
+                        'ImageLength': 'Image Height',
+                        'Orientation': 'Orientation',
+                        'ExposureTime': 'Shutter Speed',
+                        'FNumber': 'Aperture',
+                        'ISOSpeedRatings': 'ISO',
+                        'FocalLength': 'Focal Length'
+                    };
+                    Object.keys(tags).forEach(function(key) {
+                        var idx = exifStr.indexOf(key);
+                        if (idx !== -1) {
+                            var valStart = idx + key.length;
+                            var val = exifStr.substring(valStart, Math.min(valStart + 50, exifStr.length)).replace(/[^\x20-\x7E]/g, '').trim();
+                            if (val.length > 1) data[tags[key]] = val;
+                        }
+                    });
+                    break;
+                }
+                offset += 2 + length;
+            }
+            return Object.keys(data).length > 0 ? data : null;
+        }
+
+        function handleFile(file) {
+            if (!file || !file.type.match(/^image\/(jpeg|png|webp)$/)) {
+                showToast('Please select a JPG, PNG, or WebP image.', 'error');
+                return;
+            }
+            if (file.size > 50 * 1024 * 1024) {
+                showToast('File is too large. Max 50MB.', 'error');
+                return;
+            }
+            originalFile = file;
+            resultSection.classList.add('hidden');
+            previewSection.classList.remove('hidden');
+
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                previewImg.src = e.target.result;
+                var sizeStr = formatSize(file.size);
+                var dimensions = '';
+                var img = new Image();
+                img.onload = function() {
+                    dimensions = img.width + ' × ' + img.height + ' px';
+                    var html = '';
+                    html += '<div><strong>File name:</strong> ' + file.name + '</div>';
+                    html += '<div><strong>File size:</strong> ' + sizeStr + '</div>';
+                    html += '<div><strong>Dimensions:</strong> ' + dimensions + '</div>';
+                    html += '<div><strong>Type:</strong> ' + file.type + '</div>';
+                    fileInfo.innerHTML = html;
+                };
+                img.src = e.target.result;
+
+                // Parse EXIF for JPEG
+                if (file.type === 'image/jpeg') {
+                    var bufReader = new FileReader();
+                    bufReader.onload = function(ev) {
+                        var exif = parseExif(ev.target.result);
+                        if (exif) {
+                            var html = '<div class="mb-3 p-3 bg-amber-50 border border-amber-200 rounded-lg"><strong class="text-amber-800">⚠ EXIF data found — your privacy may be at risk</strong></div>';
+                            Object.keys(exif).forEach(function(key) {
+                                html += '<div class="flex justify-between py-1 border-b border-slate-100"><span class="font-medium text-slate-700">' + key + '</span><span class="text-slate-600">' + exif[key] + '</span></div>';
+                            });
+                            exifData.innerHTML = html;
+                        } else {
+                            exifData.innerHTML = '<div class="text-center py-4"><svg class="w-8 h-8 mx-auto mb-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><p class="text-green-700 font-medium">No EXIF data detected</p><p class="text-sm text-slate-500 mt-1">This image may already be clean.</p></div>';
+                        }
+                    };
+                    bufReader.readAsArrayBuffer(file);
+                } else {
+                    exifData.innerHTML = '<div class="text-center py-4"><p class="text-slate-600">EXIF parsing is only available for JPEG files.</p><p class="text-sm text-slate-500 mt-1">PNG and WebP files will still be re-encoded to strip any embedded metadata.</p></div>';
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Dropzone events
+        dropzone.addEventListener('click', function() { fileInput.click(); });
+        fileInput.addEventListener('change', function() { if (this.files[0]) handleFile(this.files[0]); });
+        ['dragenter', 'dragover'].forEach(function(ev) {
+            dropzone.addEventListener(ev, function(e) { e.preventDefault(); dropzone.classList.add('dropzone-active'); });
+        });
+        ['dragleave', 'drop'].forEach(function(ev) {
+            dropzone.addEventListener(ev, function(e) { e.preventDefault(); dropzone.classList.remove('dropzone-active'); });
+        });
+        dropzone.addEventListener('drop', function(e) {
+            var files = e.dataTransfer.files;
+            if (files[0]) handleFile(files[0]);
+        });
+
+        qualitySlider.addEventListener('input', function() {
+            qualityLabel.textContent = this.value + '%';
+        });
+
+        // Strip EXIF and download
+        document.getElementById('btnStrip').addEventListener('click', function() {
+            if (!originalFile) return;
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+            var img = new Image();
+            img.onload = function() {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                var quality = parseInt(qualitySlider.value) / 100;
+                var format = formatSelect.value;
+                canvas.toBlob(function(blob) {
+                    cleanBlob = blob;
+                    var url = URL.createObjectURL(blob);
+                    var a = document.createElement('a');
+                    var ext = format === 'image/png' ? '.png' : format === 'image/webp' ? '.webp' : '.jpg';
+                    var name = originalFile.name.replace(/\.[^.]+$/, '') + '_clean' + ext;
+                    a.href = url; a.download = name;
+                    document.body.appendChild(a); a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+
+                    var origSize = formatSize(originalFile.size);
+                    var cleanSize = formatSize(blob.size);
+                    var diff = ((1 - blob.size / originalFile.size) * 100).toFixed(1);
+                    document.getElementById('sizeComparison').textContent = 'Original: ' + origSize + ' → Clean: ' + cleanSize + ' (' + diff + '% smaller)';
+                    resultSection.classList.remove('hidden');
+                    resultSection.scrollIntoView({ behavior: 'smooth' });
+                    showToast('EXIF data stripped and downloaded!');
+                }, format, quality);
+            };
+            img.src = previewImg.src;
+        });
+
+        // Download again
+        document.getElementById('btnDownloadAgain').addEventListener('click', function() {
+            if (!cleanBlob || !originalFile) return;
+            var url = URL.createObjectURL(cleanBlob);
+            var a = document.createElement('a');
+            var format = formatSelect.value;
+            var ext = format === 'image/png' ? '.png' : format === 'image/webp' ? '.webp' : '.jpg';
+            var name = originalFile.name.replace(/\.[^.]+$/, '') + '_clean' + ext;
+            a.href = url; a.download = name;
+            document.body.appendChild(a); a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+        // New photo
+        document.getElementById('btnNew').addEventListener('click', function() {
+            previewSection.classList.add('hidden');
+            resultSection.classList.add('hidden');
+            fileInput.value = '';
+            originalFile = null;
+            cleanBlob = null;
+        });
+    })();
+    </script>
+</body>
+</html>
