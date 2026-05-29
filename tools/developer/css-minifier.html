@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Minifier Free Online — Compress CSS Code | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Minify CSS code free online. Remove whitespace and comments to reduce file size. Instant CSS compression with size comparison. No sign-up.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="CSS Minifier Free Online — Compress CSS Code | OptiDrop">
+    <meta property="og:description" content="Minify CSS code free online. Remove whitespace and comments to reduce file size. Instant CSS compression with size comparison. No sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/css-minifier.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CSS Minifier Free Online — Compress CSS Code | OptiDrop">
+    <meta name="twitter:description" content="Minify CSS code free online. Remove whitespace and comments to reduce file size. Instant CSS compression with size comparison. No sign-up.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/css-minifier.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/category/developer-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "CSS Minifier", "item": "https://optidrop.online/tools/developer/css-minifier.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop CSS Minifier",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Minify CSS code free online. Remove whitespace and comments to reduce file size. Instant CSS compression with size comparison. No sign-up."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is CSS minification?", "acceptedAnswer": {"@type": "Answer", "text": "CSS minification removes all unnecessary characters from CSS code without changing its functionality. This includes whitespace, newlines, comments, and redundant semicolons. Minified CSS loads faster because browsers download fewer bytes. A typical CSS file shrinks by 30-50% after minification."}},
+        {"@type": "Question", "name": "How much does minifying CSS save?", "acceptedAnswer": {"@type": "Answer", "text": "Minification typically reduces CSS file size by 30-50%. For a 100KB CSS file, minification might bring it down to 50-70KB. When combined with gzip compression (which most servers use), the total savings can reach 80-90%. This tool shows the exact size savings for your specific CSS."}},
+        {"@type": "Question", "name": "Should I minify CSS for production?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, always minify CSS for production websites. It reduces page load time, bandwidth usage, and improves Core Web Vitals scores. Keep your original unminified CSS for development. Most build tools (Webpack, Vite, etc.) have built-in CSS minification. This tool is useful when you need to manually minify CSS."}},
+        {"@type": "Question", "name": "How to minify CSS without tools?", "acceptedAnswer": {"@type": "Answer", "text": "While you could manually remove comments and whitespace, it is tedious and error-prone. This free online tool does it instantly with one click. For automated minification, use build tools like cssnano (npm package), or online tools like this one. Always keep a copy of your original unminified CSS."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">CSS Minifier — Compress CSS Code Instantly</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Paste your CSS code to minify it instantly. Removes whitespace, comments, and redundant characters. Shows original vs minified size with percentage reduction. 100% free.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="mb-6">
+                        <label for="cssInput" class="block text-sm font-bold text-slate-700 mb-2">Paste your CSS code</label>
+                        <textarea id="cssInput" rows="10" placeholder="body { color: #333; margin: 0; } /* comment */ ..."
+                            class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-mono resize-y"
+                            autocomplete="off" spellcheck="false"></textarea>
+                    </div>
+
+                    <button id="btnMinifyCSS" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        Minify CSS
+                    </button>
+
+                    <div id="resultsCSS" class="hidden mt-8">
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-blue-700 mb-1">Original</p>
+                                <p id="rCSSOrig" class="text-lg font-extrabold text-blue-900">0 B</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-green-700 mb-1">Minified</p>
+                                <p id="rCSSMin" class="text-lg font-extrabold text-green-900">0 B</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-amber-700 mb-1">Reduction</p>
+                                <p id="rCSSPct" class="text-lg font-extrabold text-amber-900">0%</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="block text-sm font-bold text-slate-700">Minified CSS</label>
+                            <div class="flex gap-2">
+                                <button onclick="copyToClipboard(document.getElementById('cssOutput').value)" class="text-sm font-bold text-blue-600 hover:text-blue-700">Copy</button>
+                                <button onclick="var b=new Blob([document.getElementById('cssOutput').value],{type:'text/css'});var u=URL.createObjectURL(b);var a=document.createElement('a');a.href=u;a.download='style.min.css';a.click();URL.revokeObjectURL(u)" class="text-sm font-bold text-green-600 hover:text-green-700">Download .css</button>
+                            </div>
+                        </div>
+                        <textarea id="cssOutput" rows="8" readonly
+                            class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl bg-slate-50 text-slate-900 font-mono resize-y"></textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is CSS minification?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        CSS minification removes all unnecessary characters from CSS code without changing its functionality. This includes whitespace, newlines, comments, and redundant semicolons. Minified CSS loads faster because browsers download fewer bytes. A typical CSS file shrinks by 30-50% after minification.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How much does minifying CSS save?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Minification typically reduces CSS file size by 30-50%. For a 100KB CSS file, minification might bring it down to 50-70KB. When combined with gzip compression (which most servers use), the total savings can reach 80-90%. This tool shows the exact size savings for your specific CSS.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Should I minify CSS for production?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, always minify CSS for production websites. It reduces page load time, bandwidth usage, and improves Core Web Vitals scores. Keep your original unminified CSS for development. Most build tools (Webpack, Vite, etc.) have built-in CSS minification. This tool is useful when you need to manually minify CSS.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to minify CSS without tools?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        While you could manually remove comments and whitespace, it is tedious and error-prone. This free online tool does it instantly with one click. For automated minification, use build tools like cssnano (npm package), or online tools like this one. Always keep a copy of your original unminified CSS.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Format, minify, and validate JSON.</span>
+                </a>
+                <a href="/tools/developer/markdown-preview.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Markdown Preview</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Write Markdown and see live HTML preview.</span>
+                </a>
+                <a href="/tools/developer/hash-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Hash Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate SHA-256 and SHA-512 hashes.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 80+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+
+    document.getElementById('btnMinifyCSS').addEventListener('click', function() {
+        var css = document.getElementById('cssInput').value.trim();
+        if (!css) { showToast('Please paste some CSS code.', 'error'); return; }
+        var originalSize = new Blob([css]).size;
+        // Remove comments
+        var min = css.replace(/\/\*[\s\S]*?\*\//g, '');
+        // Remove whitespace
+        min = min.replace(/\s+/g, ' ');
+        // Remove spaces around special chars
+        min = min.replace(/\s*([{}:;,>~+])\s*/g, '$1');
+        // Remove trailing semicolons before }
+        min = min.replace(/;}/g, '}');
+        // Remove leading whitespace
+        min = min.trim();
+        var minSize = new Blob([min]).size;
+        var pct = originalSize > 0 ? ((1 - minSize / originalSize) * 100).toFixed(1) : 0;
+        document.getElementById('rCSSOrig').textContent = formatBytes(originalSize);
+        document.getElementById('rCSSMin').textContent = formatBytes(minSize);
+        document.getElementById('rCSSPct').textContent = pct + '%';
+        document.getElementById('cssOutput').value = min;
+        document.getElementById('resultsCSS').classList.remove('hidden');
+        showToast('CSS minified!');
+    });
+    </script>
+</body>
+</html>

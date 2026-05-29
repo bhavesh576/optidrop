@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Tax Calculator Free Online — US Invoice Tax Calculator | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Calculate US sales tax for any state free online. Enter amount and select state for instant tax calculation. Perfect for freelancers and small businesses.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Sales Tax Calculator Free Online — US Invoice Tax Calculator | OptiDrop">
+    <meta property="og:description" content="Calculate US sales tax for any state free online. Enter amount and select state for instant tax calculation. Perfect for freelancers and small businesses.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/calculators/invoice-tax-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sales Tax Calculator Free Online — US Invoice Tax Calculator | OptiDrop">
+    <meta name="twitter:description" content="Calculate US sales tax for any state free online. Enter amount and select state for instant tax calculation. Perfect for freelancers and small businesses.">
+    <link rel="canonical" href="https://optidrop.online/tools/calculators/invoice-tax-calculator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://optidrop.online/category/calculator-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Sales Tax Calculator", "item": "https://optidrop.online/tools/calculators/invoice-tax-calculator.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Sales Tax Calculator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate US sales tax for any state free online. Enter amount and select state for instant tax calculation. Perfect for freelancers and small businesses."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What states have no sales tax?", "acceptedAnswer": {"@type": "Answer", "text": "Five US states have no state sales tax: Alaska, Delaware, Montana, New Hampshire, and Oregon. However, some Alaska localities do levy local sales tax. If you select one of these states, the calculator will show $0 state sales tax."}},
+        {"@type": "Question", "name": "How to calculate sales tax on an invoice?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply the subtotal by the sales tax rate (as a decimal). For example, a $500 invoice with 8% sales tax: $500 x 0.08 = $40 tax. Total = $500 + $40 = $540. This calculator does it automatically for all 50 states with their current rates."}},
+        {"@type": "Question", "name": "What is the average US sales tax rate?", "acceptedAnswer": {"@type": "Answer", "text": "The average combined state and local sales tax rate in the US is approximately 6.6% as of 2025. State rates range from 0% (Oregon, Montana) to 7.25% (California). When local taxes are included, some areas exceed 10%. This calculator uses state-level rates for simplicity."}},
+        {"@type": "Question", "name": "Do I charge sales tax as a freelancer?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your state and what services you provide. Some states tax certain services (like consulting, digital products), while others only tax physical goods. Generally, if you sell tangible products, you must collect sales tax. Check your state Department of Revenue for specific rules. This calculator helps you compute the tax amount once you know your applicable rate."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">US Sales Tax Calculator for Invoices</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Calculate sales tax for any US state instantly. Select your state and enter the invoice amount to get the exact tax and total. 100% free, no sign-up.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="md:col-span-2">
+                                                        <label for="invoiceSubtotal" class="block text-sm font-bold text-slate-700 mb-2">Invoice Subtotal ($)</label>
+                            <input type="number" id="invoiceSubtotal" placeholder="e.g. 500" min="0" step="0.01"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="stateSelect" class="block text-sm font-bold text-slate-700 mb-2">State</label>
+                            <select id="stateSelect" class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                <option value="0">No Sales Tax (OR, MT, NH, DE, AK)</option>
+                            </select>
+                        </div>
+                        <div>
+                                                        <label for="localTax" class="block text-sm font-bold text-slate-700 mb-2">Additional Local Tax (%)</label>
+                            <input type="number" id="localTax" placeholder="e.g. 2.5 (optional)" min="0" max="10" step="0.1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                    </div>
+
+                    <button id="btnCalcTax" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        Calculate Sales Tax
+                    </button>
+
+                    <div id="resultsTax" class="hidden mt-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-blue-700 mb-1">Subtotal</p>
+                                <p id="rTaxSub" class="text-xl sm:text-2xl font-extrabold text-blue-900">$0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-amber-700 mb-1">Tax Amount</p>
+                                <p id="rTaxAmt" class="text-xl sm:text-2xl font-extrabold text-amber-900">$0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-green-700 mb-1">Total</p>
+                                <p id="rTaxTotal" class="text-xl sm:text-2xl font-extrabold text-green-900">$0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What states have no sales tax?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Five US states have no state sales tax: Alaska, Delaware, Montana, New Hampshire, and Oregon. However, some Alaska localities do levy local sales tax. If you select one of these states, the calculator will show $0 state sales tax.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How to calculate sales tax on an invoice?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Multiply the subtotal by the sales tax rate (as a decimal). For example, a $500 invoice with 8% sales tax: $500 x 0.08 = $40 tax. Total = $500 + $40 = $540. This calculator does it automatically for all 50 states with their current rates.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the average US sales tax rate?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The average combined state and local sales tax rate in the US is approximately 6.6% as of 2025. State rates range from 0% (Oregon, Montana) to 7.25% (California). When local taxes are included, some areas exceed 10%. This calculator uses state-level rates for simplicity.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Do I charge sales tax as a freelancer?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        It depends on your state and what services you provide. Some states tax certain services (like consulting, digital products), while others only tax physical goods. Generally, if you sell tangible products, you must collect sales tax. Check your state Department of Revenue for specific rules. This calculator helps you compute the tax amount once you know your applicable rate.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/business/invoice-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Invoice Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Create professional invoices with tax and multi-currency support.</span>
+                </a>
+                <a href="/tools/business/profit-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Profit Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate profit margin, markup, and break-even point.</span>
+                </a>
+                <a href="/tools/calculators/discount-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Discount Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate sale price, savings, and percent off.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 80+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+
+    var states = {"Alabama":4,"Arizona":5.6,"Arkansas":6.5,"California":7.25,"Colorado":2.9,"Connecticut":6.35,"Florida":6,"Georgia":4,"Hawaii":4,"Idaho":6,"Illinois":6.25,"Indiana":7,"Iowa":6,"Kansas":6.5,"Kentucky":6,"Louisiana":4.45,"Maine":5.5,"Maryland":6,"Massachusetts":6.25,"Michigan":6,"Minnesota":6.875,"Mississippi":7,"Missouri":4.225,"Nebraska":5.5,"Nevada":6.85,"New Jersey":6.625,"New Mexico":5.125,"New York":4,"North Carolina":4.75,"North Dakota":5,"Ohio":5.75,"Oklahoma":4.5,"Pennsylvania":6,"Rhode Island":7,"South Carolina":6,"South Dakota":4.5,"Tennessee":7,"Texas":6.25,"Utah":6.1,"Vermont":6,"Virginia":5.3,"Washington":6.5,"West Virginia":6,"Wisconsin":5,"Wyoming":4,"District of Columbia":6};
+    var sel = document.getElementById('stateSelect');
+    Object.keys(states).sort().forEach(function(s) {
+        var opt = document.createElement('option');
+        opt.value = states[s]; opt.textContent = s + ' (' + states[s] + '%)';
+        sel.appendChild(opt);
+    });
+
+    document.getElementById('btnCalcTax').addEventListener('click', function() {
+        var sub = parseFloat(document.getElementById('invoiceSubtotal').value) || 0;
+        var stateRate = parseFloat(document.getElementById('stateSelect').value) || 0;
+        var localRate = parseFloat(document.getElementById('localTax').value) || 0;
+        var totalRate = (stateRate + localRate) / 100;
+        var tax = sub * totalRate;
+        var total = sub + tax;
+        document.getElementById('rTaxSub').textContent = '$' + sub.toFixed(2);
+        document.getElementById('rTaxAmt').textContent = '$' + tax.toFixed(2);
+        document.getElementById('rTaxTotal').textContent = '$' + total.toFixed(2);
+        document.getElementById('resultsTax').classList.remove('hidden');
+        showToast('Sales tax calculated!');
+    });
+    </script>
+</body>
+</html>

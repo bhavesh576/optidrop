@@ -2,7 +2,7 @@
 
 **Free Online Tools — No Upload, No Sign-Up, No Cost**
 
-OptiDrop is a fully browser-based toolkit with **70+ free tools** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
+OptiDrop is a fully browser-based toolkit with **85+ free tools** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
 
 **Live at:** [https://optidrop.online](https://optidrop.online)
 
@@ -66,7 +66,7 @@ OptiDrop is a fully browser-based toolkit with **70+ free tools** for images, PD
 | Professional Bio Generator | Generate bios for LinkedIn, websites, and profiles | [/tools/professional/bio-generator.html](https://optidrop.online/tools/professional/bio-generator.html) |
 | SOP Generator | Write Statement of Purpose for university applications | [/tools/professional/sop-generator.html](https://optidrop.online/tools/professional/sop-generator.html) |
 
-### Calculator Tools (18)
+### Calculator Tools (24)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -88,8 +88,14 @@ OptiDrop is a fully browser-based toolkit with **70+ free tools** for images, PD
 | GST Calculator | Calculate GST at 5%, 12%, 18%, or 28% | [/tools/gst-calculator.html](https://optidrop.online/tools/gst-calculator.html) |
 | Age Calculator | Exact age in years, months, and days | [/tools/age-calculator.html](https://optidrop.online/tools/age-calculator.html) |
 | Percentage Calculator | X% of Y, what percent, and percentage change | [/tools/percentage-calculator.html](https://optidrop.online/tools/percentage-calculator.html) |
+| 401(k) Calculator | Estimate 401(k) retirement savings with employer match | [/tools/calculators/401k-calculator.html](https://optidrop.online/tools/calculators/401k-calculator.html) |
+| Paycheck Calculator | Calculate US take-home pay after federal and state taxes | [/tools/calculators/paycheck-calculator.html](https://optidrop.online/tools/calculators/paycheck-calculator.html) |
+| Savings Goal Calculator | Plan monthly savings to reach financial goals with interest | [/tools/calculators/savings-goal.html](https://optidrop.online/tools/calculators/savings-goal.html) |
+| US Sales Tax Calculator | Calculate sales tax for all 50 US states | [/tools/calculators/invoice-tax-calculator.html](https://optidrop.online/tools/calculators/invoice-tax-calculator.html) |
+| VAT Calculator | Add or remove VAT for UK, EU, and global rates | [/tools/calculators/vat-calculator.html](https://optidrop.online/tools/calculators/vat-calculator.html) |
+| Overtime Calculator | Calculate overtime pay with custom rate and multiplier | [/tools/calculators/overtime-calculator.html](https://optidrop.online/tools/calculators/overtime-calculator.html) |
 
-### Text Tools (12)
+### Text Tools (14)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -105,8 +111,10 @@ OptiDrop is a fully browser-based toolkit with **70+ free tools** for images, PD
 | Number to Words | Convert numbers to words in International and Indian formats | [/tools/text/number-to-words.html](https://optidrop.online/tools/text/number-to-words.html) |
 | Reverse Text | Reverse characters, words, or word order | [/tools/text/reverse-text.html](https://optidrop.online/tools/text/reverse-text.html) |
 | Text to Slug | Convert text to URL-friendly slug format | [/tools/text/text-to-slug.html](https://optidrop.online/tools/text/text-to-slug.html) |
+| Word Frequency Counter | Analyze word frequency with stop word filtering | [/tools/text/word-frequency.html](https://optidrop.online/tools/text/word-frequency.html) |
+| Sentence Shuffler | Randomly shuffle or reverse sentence order | [/tools/text/sentence-reorder.html](https://optidrop.online/tools/text/sentence-reorder.html) |
 
-### Developer Tools (6)
+### Developer Tools (8)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -116,8 +124,10 @@ OptiDrop is a fully browser-based toolkit with **70+ free tools** for images, PD
 | Color Converter | Convert HEX to RGB, HSL, RGBA with live preview | [/tools/developer/color-converter.html](https://optidrop.online/tools/developer/color-converter.html) |
 | Markdown Preview | Write Markdown and see live HTML preview | [/tools/developer/markdown-preview.html](https://optidrop.online/tools/developer/markdown-preview.html) |
 | Hash Generator | Generate SHA-256 and SHA-512 hashes using native crypto API | [/tools/developer/hash-generator.html](https://optidrop.online/tools/developer/hash-generator.html) |
+| CSS Minifier | Minify CSS code to reduce file size with comparison | [/tools/developer/css-minifier.html](https://optidrop.online/tools/developer/css-minifier.html) |
+| JWT Decoder | Decode JSON Web Tokens to view header, payload, and expiry | [/tools/developer/jwt-decoder.html](https://optidrop.online/tools/developer/jwt-decoder.html) |
 
-### Health Tools (6)
+### Health Tools (8)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -127,8 +137,10 @@ OptiDrop is a fully browser-based toolkit with **70+ free tools** for images, PD
 | Water Intake Calculator | Calculate daily water needs with hydration tracker | [/tools/health/water-intake.html](https://optidrop.online/tools/health/water-intake.html) |
 | Sleep Calculator | Find the best bedtime and wake-up time based on sleep cycles | [/tools/health/sleep-calculator.html](https://optidrop.online/tools/health/sleep-calculator.html) |
 | Pregnancy Due Date | Calculate estimated due date and current pregnancy week | [/tools/health/pregnancy-due-date.html](https://optidrop.online/tools/health/pregnancy-due-date.html) |
+| Macro Calculator | Calculate daily protein, carbs, and fat targets | [/tools/health/macro-calculator.html](https://optidrop.online/tools/health/macro-calculator.html) |
+| Body Fat Calculator | Estimate body fat percentage using US Navy method | [/tools/health/body-fat-calculator.html](https://optidrop.online/tools/health/body-fat-calculator.html) |
 
-### Utility Tools (5)
+### Utility Tools (4)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -184,7 +196,8 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 - **CSS3** — Custom styles + Tailwind CSS via CDN
 - **Vanilla JavaScript** — No frameworks, no build process, no npm
 - **Canvas API** — Image processing, compression, resizing, business card rendering
-- **Web APIs** — File API, Blob API, crypto.getRandomValues, SubtleCrypto (SHA-256/512), localStorage
+- **Web Workers** — OffscreenCanvas compression, Tesseract.js OCR, background removal (off main thread)
+- **Web APIs** — File API, Blob API, crypto.getRandomValues, SubtleCrypto (SHA-256/512), localStorage, sessionStorage, URL parameters
 - **jsPDF** — PDF generation for resumes, invoices, contracts, letters, receipts
 - **marked.js** — Markdown to HTML rendering (developer tools)
 
@@ -199,8 +212,8 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 | heic2any | HEIC to JPG conversion |
 | PDF.js | PDF page extraction |
 | qrcode-generator | QR code generation |
-| @imgly/background-removal | AI background removal |
-| Tesseract.js | OCR text extraction |
+| @imgly/background-removal | AI background removal (with Web Worker fallback) |
+| Tesseract.js | OCR text extraction (with Web Worker fallback) |
 | marked.js | Markdown preview (developer tools) |
 
 ---
@@ -317,38 +330,84 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   ├── compress-image-for-visa-application.html
 │   ├── how-to-convert-heic-to-jpg.html
 │   ├── how-to-resize-passport-photo-online.html
-│   └── passport-photo-size-guide-all-countries.html
+│   ├── passport-photo-size-guide-all-countries.html
+│   ├── how-to-compress-pdf-for-email.html  # Compress PDF for email guide
+│   ├── gst-calculator-india-how-to-use.html # GST calculator guide
+│   ├── emi-vs-sip-calculator-difference.html # EMI vs SIP guide
+│   └── resume-tips-ats-friendly.html       # ATS resume tips guide
 ├── styles.css                              # All CSS (single file)
 ├── common.js                               # Shared JavaScript utilities
 ├── script.js                               # Dashboard + image/PDF tool implementations
+├── compress-worker.js                      # Web Worker: image compression (OffscreenCanvas)
+├── ocr-worker.js                           # Web Worker: Tesseract.js OCR processing
+├── background-worker.js                    # Web Worker: AI background removal
 ├── favicon.png                             # Favicon
 ├── Generated_image-removebg-preview.png    # Logo
-├── sitemap.xml                             # XML sitemap (98 URLs)
+├── sitemap.xml                             # XML sitemap (103 URLs)
 ├── robots.txt                              # Robots file
 └── ads.txt                                 # Google AdSense
 ```
 
 ---
 
+## Key Features
+
+### Workflow Next Steps
+Every tool page shows contextual "What to do next →" suggestions based on logical user workflows (e.g., after compressing an image, the next step is resizing it to passport dimensions). This replaces generic "Related Tools" with actionable next actions that increase dwell time and internal linking.
+
+### Interactive FAQ Accordions
+All FAQ sections use smooth CSS max-height transitions. Questions are collapsed by default, only one open at a time, and all text remains in the DOM for search engine crawlers. Every tool page has matching FAQPage JSON-LD schema for Google featured snippets.
+
+### URL Parameter State Sharing
+All 8 calculator pages (EMI, SIP, compound interest, mortgage, tip, GST, discount, retirement) support URL parameters. Users can share a calculation link that pre-fills all inputs, enabling backend-free virality.
+
+### Global Drag-and-Drop File Router
+The homepage detects any dragged file and routes it to the correct tool based on file type: images go to the compressor, HEIC files go to the converter, PDFs go to the PDF compressor. Files are passed via sessionStorage so the destination tool loads them instantly.
+
+### Web Workers for Heavy Processing
+Three tools use Web Workers to keep the UI responsive on low-end devices:
+- `compress-worker.js` — OffscreenCanvas image compression
+- `ocr-worker.js` — Tesseract.js OCR in a dedicated worker
+- `background-worker.js` — AI background removal with fallback
+
+All workers fall back to main-thread processing if Web Workers or OffscreenCanvas are unavailable.
+
+### Auto-Save for Form Tools
+Resume builder, cover letter generator, invoice generator, salary slip generator, and SOP generator auto-save form data to localStorage. On return visits, a draft recovery bar offers to restore the previous session.
+
+### Bookmark Prompt
+After using the same tool twice, a one-time toast suggests bookmarking the page (Ctrl+D). Tracked per tool via localStorage.
+
+### Enhanced Search
+The homepage search bar searches tool names, descriptions, and categories. Results appear in a dropdown with tool name, category label, and one-line description. Supports keyboard navigation (arrow keys + Enter) and Ctrl+K / Cmd+K shortcut to focus.
+
+### Upload Trust Badges
+All 12 file upload tool pages display a "100% Local — your file never leaves this device" badge with a lock icon below the upload zone.
+
+---
+
 ## SEO Features
 
 - Semantic HTML with proper H1-H3 hierarchy
-- Unique meta titles and descriptions per page (98 pages)
+- Unique meta titles and descriptions per page (103 pages)
 - Canonical tags on every page
-- Open Graph and Twitter Card meta tags
+- Open Graph and Twitter Card meta tags on every page
 - JSON-LD structured data:
   - WebSite schema (homepage)
   - SoftwareApplication schema (all tool pages)
   - BreadcrumbList schema (all pages)
   - FAQPage schema (all tool pages, 4 questions each)
+  - Article schema (all blog posts)
   - Organization schema (about page)
   - WebPage schema (privacy, terms pages)
-- XML sitemap with 98 URLs
-- Internal linking: Related Tools sections, category pages, footer links
+- XML sitemap with 103 URLs
+- Internal linking: Workflow next-step sections, category pages, footer links
+- Blog with 8 SEO-optimized articles targeting long-tail keywords
 - CSS text logo (no image dependency for logo)
 - Mobile-first responsive design
 - Category filter chips on tools directory page (11 categories)
-- Live search filtering on homepage and tools directory
+- Live search with dropdown results on homepage
+- Core Web Vitals optimized with Web Workers for heavy processing
 
 ---
 
@@ -359,8 +418,10 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 - All processing happens inside your browser
 - No files are uploaded to any server
 - No user data is collected or stored
-- localStorage used only for auto-save features (stays on device)
+- localStorage used only for auto-save drafts and tool usage counters (stays on device)
+- sessionStorage used only for drag-and-drop file routing between pages (cleared on use)
 - No cookies for tracking purposes
+- URL parameters for calculator sharing contain only the values the user entered
 - Optional analytics only (Google Analytics)
 
 ---

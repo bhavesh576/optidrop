@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>401(k) Calculator Free Online — Retirement Savings Estimator | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Calculate your 401k retirement savings free. Enter balance, contributions, and employer match to see your projected retirement wealth. Instant, no sign-up.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="401(k) Calculator Free Online — Retirement Savings Estimator | OptiDrop">
+    <meta property="og:description" content="Calculate your 401k retirement savings free. Enter balance, contributions, and employer match to see your projected retirement wealth. Instant, no sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/calculators/401k-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="401(k) Calculator Free Online — Retirement Savings Estimator | OptiDrop">
+    <meta name="twitter:description" content="Calculate your 401k retirement savings free. Enter balance, contributions, and employer match to see your projected retirement wealth. Instant, no sign-up.">
+    <link rel="canonical" href="https://optidrop.online/tools/calculators/401k-calculator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://optidrop.online/category/calculator-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "401(k) Calculator", "item": "https://optidrop.online/tools/calculators/401k-calculator.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop 401(k) Calculator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate your 401k retirement savings free. Enter balance, contributions, and employer match to see your projected retirement wealth. Instant, no sign-up."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is a 401(k)?", "acceptedAnswer": {"@type": "Answer", "text": "A 401(k) is a tax-advantaged retirement savings plan offered by employers in the United States. Employees contribute a portion of their salary before taxes, and the money grows tax-deferred until withdrawal in retirement. Many employers also match a percentage of contributions, effectively giving you free money toward retirement."}},
+        {"@type": "Question", "name": "How does employer match work?", "acceptedAnswer": {"@type": "Answer", "text": "Employer match means your company contributes money to your 401(k) based on how much you contribute. A common formula is 50% match up to 6% of your salary. For example, if you earn $60,000 and contribute 6% ($3,600), your employer adds $1,800. Always contribute at least enough to get the full match — it is a 50-100% instant return on your money."}},
+        {"@type": "Question", "name": "How much should I contribute to my 401(k)?", "acceptedAnswer": {"@type": "Answer", "text": "Financial experts recommend saving at least 15% of your gross income for retirement, including employer match. Start with enough to get the full employer match, then increase by 1% each year until you reach 15-20%. The 2025 employee contribution limit is $23,500 (under age 50) or $31,000 (age 50+)."}},
+        {"@type": "Question", "name": "What is the 401(k) contribution limit for 2025?", "acceptedAnswer": {"@type": "Answer", "text": "For 2025, the IRS limit for employee 401(k) contributions is $23,500 if you are under age 50. If you are 50 or older, you can make an additional catch-up contribution of $7,500, bringing the total to $31,000. The total contribution limit including employer match is $70,000 (or $77,500 for those 50+)."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">401(k) Retirement Savings Calculator</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Estimate your 401(k) balance at retirement. Enter your current balance, annual contributions, employer match, and expected returns. 100% free, no sign-up required.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                                                        <label for="currentAge" class="block text-sm font-bold text-slate-700 mb-2">Current Age</label>
+                            <input type="number" id="currentAge" placeholder="e.g. 30" min="18" max="80" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                                                        <label for="retireAge" class="block text-sm font-bold text-slate-700 mb-2">Retirement Age</label>
+                            <input type="number" id="retireAge" placeholder="e.g. 65" min="30" max="80" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                                                        <label for="currentBalance" class="block text-sm font-bold text-slate-700 mb-2">Current 401(k) Balance ($)</label>
+                            <input type="number" id="currentBalance" placeholder="e.g. 50000" min="0" step="1000"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                                                        <label for="annualContribution" class="block text-sm font-bold text-slate-700 mb-2">Annual Contribution ($)</label>
+                            <input type="number" id="annualContribution" placeholder="e.g. 10000" min="0" step="500"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                                                        <label for="matchPercent" class="block text-sm font-bold text-slate-700 mb-2">Employer Match (%)</label>
+                            <input type="number" id="matchPercent" placeholder="e.g. 50" min="0" max="200" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                                                        <label for="matchLimit" class="block text-sm font-bold text-slate-700 mb-2">Match Limit (% of salary)</label>
+                            <input type="number" id="matchLimit" placeholder="e.g. 6" min="0" max="100" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div class="md:col-span-2">
+                                                        <label for="expectedReturn" class="block text-sm font-bold text-slate-700 mb-2">Expected Annual Return (%)</label>
+                            <input type="number" id="expectedReturn" placeholder="e.g. 7" min="1" max="30" step="0.5"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                    </div>
+
+                    <button id="btnCalc401k" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        Calculate 401(k) Projection
+                    </button>
+
+                    <div id="results401k" class="hidden mt-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-blue-700 mb-1">Projected Balance</p>
+                                <p id="r401kBalance" class="text-xl sm:text-2xl font-extrabold text-blue-900">$0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-green-700 mb-1">Total Contributions</p>
+                                <p id="r401kContrib" class="text-xl sm:text-2xl font-extrabold text-green-900">$0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-indigo-700 mb-1">Employer Match Total</p>
+                                <p id="r401kMatch" class="text-xl sm:text-2xl font-extrabold text-indigo-900">$0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-amber-700 mb-1">Monthly Retirement Income</p>
+                                <p id="r401kIncome" class="text-xl sm:text-2xl font-extrabold text-amber-900">$0</p>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="table401k" class="w-full text-sm">
+                                <thead><tr class="bg-slate-50"><th class="px-4 py-3 text-left font-bold text-slate-600">Year</th><th class="px-4 py-3 text-right font-bold text-slate-600">Balance</th><th class="px-4 py-3 text-right font-bold text-slate-600">Contribution</th><th class="px-4 py-3 text-right font-bold text-slate-600">Employer Match</th><th class="px-4 py-3 text-right font-bold text-slate-600">Interest</th></tr></thead>
+                                <tbody id="tbody401k"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is a 401(k)?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A 401(k) is a tax-advantaged retirement savings plan offered by employers in the United States. Employees contribute a portion of their salary before taxes, and the money grows tax-deferred until withdrawal in retirement. Many employers also match a percentage of contributions, effectively giving you free money toward retirement.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How does employer match work?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Employer match means your company contributes money to your 401(k) based on how much you contribute. A common formula is 50% match up to 6% of your salary. For example, if you earn $60,000 and contribute 6% ($3,600), your employer adds $1,800. Always contribute at least enough to get the full match — it is a 50-100% instant return on your money.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How much should I contribute to my 401(k)?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Financial experts recommend saving at least 15% of your gross income for retirement, including employer match. Start with enough to get the full employer match, then increase by 1% each year until you reach 15-20%. The 2025 employee contribution limit is $23,500 (under age 50) or $31,000 (age 50+).
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the 401(k) contribution limit for 2025?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        For 2025, the IRS limit for employee 401(k) contributions is $23,500 if you are under age 50. If you are 50 or older, you can make an additional catch-up contribution of $7,500, bringing the total to $31,000. The total contribution limit including employer match is $70,000 (or $77,500 for those 50+).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/calculators/retirement-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Retirement Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Plan retirement savings and estimate monthly income.</span>
+                </a>
+                <a href="/tools/calculators/compound-interest.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Compound Interest</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate how your investment grows with compound interest.</span>
+                </a>
+                <a href="/tools/calculators/mortgage-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Mortgage Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate monthly mortgage payments and total interest.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 80+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+
+    document.getElementById('btnCalc401k').addEventListener('click', function() {
+        var age = parseFloat(document.getElementById('currentAge').value) || 30;
+        var retAge = parseFloat(document.getElementById('retireAge').value) || 65;
+        var balance = parseFloat(document.getElementById('currentBalance').value) || 0;
+        var annual = parseFloat(document.getElementById('annualContribution').value) || 0;
+        var matchPct = parseFloat(document.getElementById('matchPercent').value) || 0;
+        var matchLimit = parseFloat(document.getElementById('matchLimit').value) || 0;
+        var retRate = (parseFloat(document.getElementById('expectedReturn').value) || 7) / 100;
+
+        var years = retAge - age;
+        if (years <= 0) { showToast('Retirement age must be greater than current age.', 'error'); return; }
+
+        var matchPerYear = Math.min(annual, matchLimit > 0 ? annual : annual) * (matchPct / 100);
+        var tbody = '';
+        var totalContrib = 0, totalMatch = 0;
+
+        for (var y = 1; y <= years; y++) {
+            var interest = balance * retRate;
+            balance = balance + interest + annual + matchPerYear;
+            totalContrib += annual;
+            totalMatch += matchPerYear;
+            tbody += '<tr class="border-t border-slate-100"><td class="px-4 py-2 text-left">Year ' + y + ' (age ' + (age + y) + ')</td><td class="px-4 py-2 text-right font-medium">$' + Math.round(balance).toLocaleString() + '</td><td class="px-4 py-2 text-right">$' + Math.round(annual).toLocaleString() + '</td><td class="px-4 py-2 text-right">$' + Math.round(matchPerYear).toLocaleString() + '</td><td class="px-4 py-2 text-right text-green-600">$' + Math.round(interest).toLocaleString() + '</td></tr>';
+        }
+
+        document.getElementById('r401kBalance').textContent = '$' + Math.round(balance).toLocaleString();
+        document.getElementById('r401kContrib').textContent = '$' + Math.round(totalContrib).toLocaleString();
+        document.getElementById('r401kMatch').textContent = '$' + Math.round(totalMatch).toLocaleString();
+        document.getElementById('r401kIncome').textContent = '$' + Math.round(balance * 0.04 / 12).toLocaleString();
+        document.getElementById('tbody401k').innerHTML = tbody;
+        document.getElementById('results401k').classList.remove('hidden');
+        showToast('401(k) projection calculated!');
+    });
+
+    initCalculatorUrlParams({age:'currentAge',retAge:'retireAge',bal:'currentBalance',contrib:'annualContribution',match:'matchPercent',limit:'matchLimit',return:'expectedReturn'});
+    </script>
+</body>
+</html>

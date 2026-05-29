@@ -425,8 +425,63 @@ window.removeFile = function (id) {
     }
 };
 
-// Compression Engine
-async function processCompression(targetBytes, imageUrl, outputFormat, forcedWidth, forcedHeight) {
+// Compression Engine — uses Web Worker (OffscreenCanvas) when available,
+// falls back to main-thread canvas loop otherwise.
+var _compressWorker = null;
+var _compressWorkerSupported = (typeof OffscreenCanvas !== 'undefined');
+
+function _getCompressWorker() {
+    if (!_compressWorker && _compressWorkerSupported) {
+        try {
+            _compressWorker = new Worker('compress-worker.js');
+        } catch (e) {
+            _compressWorkerSupported = false;
+        }
+    }
+    return _compressWorker;
+}
+
+function _compressViaWorker(file, targetBytes, outputFormat, forcedWidth, forcedHeight) {
+    return new Promise(function (resolve, reject) {
+        var worker = _getCompressWorker();
+        if (!worker) return reject(new Error('Worker not available'));
+
+        var onMsg = function (e) {
+            worker.removeEventListener('message', onMsg);
+            worker.removeEventListener('error', onErr);
+            if (e.data && e.data.error) reject(new Error(e.data.error));
+            else resolve(e.data.blob);
+        };
+        var onErr = function (e) {
+            worker.removeEventListener('message', onMsg);
+            worker.removeEventListener('error', onErr);
+            _compressWorkerSupported = false;
+            reject(new Error('Worker error'));
+        };
+
+        worker.addEventListener('message', onMsg);
+        worker.addEventListener('error', onErr);
+        worker.postMessage({
+            file: file,
+            targetBytes: targetBytes,
+            format: outputFormat,
+            forcedWidth: forcedWidth,
+            forcedHeight: forcedHeight
+        });
+    });
+}
+
+async function processCompression(targetBytes, imageUrl, outputFormat, forcedWidth, forcedHeight, sourceFile) {
+    /* ---- try Web Worker first ---- */
+    if (_compressWorkerSupported && sourceFile) {
+        try {
+            return await _compressViaWorker(sourceFile, targetBytes, outputFormat, forcedWidth, forcedHeight);
+        } catch (e) {
+            console.warn('Compress worker failed, falling back to main thread:', e);
+        }
+    }
+
+    /* ---- main-thread fallback ---- */
     return new Promise(async (resolve, reject) => {
         try {
             const img = await loadImage(imageUrl);
@@ -563,7 +618,7 @@ if (btnCompress) {
                 item.status = 'processing';
                 await new Promise(resolve => setTimeout(resolve, 15));
                 try {
-                    const blob = await processCompression(targetBytes, item.originalUrl, outputFormat, forcedWidth, forcedHeight);
+                    const blob = await processCompression(targetBytes, item.originalUrl, outputFormat, forcedWidth, forcedHeight, item.file);
                     item.compressedBlob = blob;
                     item.compressedUrl  = URL.createObjectURL(blob);
                     item.newSize        = blob.size;
@@ -1912,25 +1967,19 @@ if (btnStamperDownload) {
 
 
 /* ═══════════════════════════════════════════════════════════
-   FAQ ACCORDION
+   FAQ ACCORDION (Smooth max-height transition)
    ═══════════════════════════════════════════════════════════ */
 document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', (e) => {
         const targetButton = e.target.closest('.faq-question');
         if (!targetButton) return;
         const item = targetButton.parentElement;
-        const answer = item.querySelector('.faq-answer');
         const isOpen = item.classList.contains('open');
-
         document.querySelectorAll('.faq-item').forEach(i => {
             i.classList.remove('open');
-            const ans = i.querySelector('.faq-answer');
-            if (ans) ans.classList.add('hidden');
         });
-
         if (!isOpen) {
             item.classList.add('open');
-            if (answer) answer.classList.remove('hidden');
         }
     });
 });
@@ -2146,6 +2195,60 @@ const btnOcrStartOver  = document.getElementById('btnOcrStartOver');
 
 setupDropzone(ocrDropzone, ocrFileInput, handleOcrFile);
 
+/* OCR Web Worker support — offloads Tesseract.js to keep UI responsive */
+var _ocrWorker = null;
+var _ocrWorkerSupported = (typeof Worker !== 'undefined');
+
+function _getOcrWorker() {
+    if (!_ocrWorker && _ocrWorkerSupported) {
+        try {
+            _ocrWorker = new Worker('ocr-worker.js');
+            _ocrWorker.addEventListener('error', function () {
+                _ocrWorkerSupported = false;
+                _ocrWorker = null;
+            });
+        } catch (e) {
+            _ocrWorkerSupported = false;
+        }
+    }
+    return _ocrWorker;
+}
+
+function _ocrViaWorker(file) {
+    return new Promise(function (resolve, reject) {
+        var worker = _getOcrWorker();
+        if (!worker) return reject(new Error('Worker not available'));
+
+        var onMsg = function (e) {
+            var d = e.data;
+            if (d.progress !== undefined) {
+                ocrProgressText.textContent = d.status || 'Processing...';
+            }
+            if (d.error) {
+                worker.removeEventListener('message', onMsg);
+                worker.removeEventListener('error', onErr);
+                _ocrWorkerSupported = false;
+                _ocrWorker = null;
+                reject(new Error(d.error));
+            } else if (d.success) {
+                worker.removeEventListener('message', onMsg);
+                worker.removeEventListener('error', onErr);
+                resolve({ text: d.text, confidence: d.confidence });
+            }
+        };
+        var onErr = function () {
+            worker.removeEventListener('message', onMsg);
+            worker.removeEventListener('error', onErr);
+            _ocrWorkerSupported = false;
+            _ocrWorker = null;
+            reject(new Error('Worker error'));
+        };
+        worker.addEventListener('message', onMsg);
+        worker.addEventListener('error', onErr);
+        worker.postMessage({ file: file, lang: 'eng' });
+    });
+}
+
 function handleOcrFile(files) {
     if (!files || files.length === 0) return;
     const file = files[0];
@@ -2156,9 +2259,35 @@ function handleOcrFile(files) {
     ocrStateProcessing.classList.remove('hidden');
     ocrProgressText.textContent = 'Initializing OCR engine...';
 
+    /* ---- try Web Worker first ---- */
+    if (_ocrWorkerSupported) {
+        _ocrViaWorker(file).then(function (result) {
+            ocrPreviewImage.src = URL.createObjectURL(ocrFile);
+            ocrTextOutput.value = result.text;
+            ocrConfidence.textContent = result.confidence + '%';
+
+            ocrStateProcessing.classList.add('hidden');
+            ocrStateResult.classList.remove('hidden');
+
+            if (result.text.length > 0) {
+                showToast('Text extracted successfully!');
+            } else {
+                showToast('No text found in the image. Try a clearer image.', 'info');
+            }
+        }).catch(function (err) {
+            console.warn('OCR worker failed, falling back to main thread:', err);
+            _ocrMainFallback(file);
+        });
+        return;
+    }
+
+    /* ---- main-thread fallback ---- */
+    _ocrMainFallback(file);
+}
+
+function _ocrMainFallback(file) {
     const imageUrl = URL.createObjectURL(file);
 
-    // Use Tesseract.js
     if (typeof Tesseract === 'undefined') {
         showToast('OCR library is still loading. Please try again.', 'error');
         ocrStateProcessing.classList.add('hidden');
