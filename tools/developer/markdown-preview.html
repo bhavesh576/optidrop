@@ -114,6 +114,9 @@
     <!-- Marked.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
 
+    <!-- DOMPurify (XSS sanitization for Markdown HTML output) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+
     <style>
         .md-split {
             display: grid;
@@ -495,7 +498,8 @@ console.log('Hello!');
         function renderPreview() {
             var text = mdInput.value;
             if (typeof marked !== 'undefined') {
-                mdPreview.innerHTML = marked.parse(text);
+                var rawHtml = marked.parse(text);
+                mdPreview.innerHTML = (typeof DOMPurify !== 'undefined') ? DOMPurify.sanitize(rawHtml) : rawHtml;
             } else {
                 // Fallback: basic rendering
                 mdPreview.innerHTML = '<p style="color:#94a3b8;">Loading Markdown parser...</p>';
