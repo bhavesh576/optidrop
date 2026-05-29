@@ -308,6 +308,23 @@
             </div>
         </section>
 
+        <!-- Post-Completion Suggestions (Feature 4) -->
+        <div id="nextActionBlock" class="next-action-section">
+            <div class="next-action-box">
+                <h3>What do you want to do next?</h3>
+                <div class="next-action-links">
+                    <a href="/tools/career/cover-letter.html" class="next-action-link">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Cover Letter Generator
+                    </a>
+                    <a href="/tools/professional/email-signature.html" class="next-action-link">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                        Email Signature Generator
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Ad Slot: After article -->
         <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:0 auto 2rem;">
             <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
@@ -373,5 +390,15 @@
     <div id="toast-container"></div>
 
     <script src="./common.js"></script>
+    <script>
+    // Show suggestions after visiting resume builder tool
+    (function() {
+        var block = document.getElementById('nextActionBlock');
+        if (block) {
+            // Show after visiting the actual resume builder (check referrer or just show)
+            setTimeout(function() { block.classList.add('visible'); }, 3000);
+        }
+    })();
+    </script>
 </body>
 </html>

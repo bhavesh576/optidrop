@@ -327,6 +327,23 @@
             </div>
         </section>
 
+        <!-- Post-Completion Suggestions (Feature 4) -->
+        <div id="nextActionBlock" class="next-action-section">
+            <div class="next-action-box">
+                <h3>What do you want to do next?</h3>
+                <div class="next-action-links">
+                    <a href="/passport-photo-resizer.html" class="next-action-link">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                        Passport Photo Resizer
+                    </a>
+                    <a href="/remove-background.html" class="next-action-link">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L4.939 4.939m7.061 7.061l-2.879-2.879M12 12l2.879-2.879"/></svg>
+                        Background Remover
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Ad Slot: After tool -->
         <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
             <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
@@ -508,10 +525,16 @@
     <script src="./common.js"></script>
     <script src="./script.js"></script>
     <script>
-    // Standalone init for Compress Image tool
-    // The script.js already initializes the compress tool DOM elements and event listeners.
-    // No additional initialization needed since the compress tool is the first tool defined
-    // and its DOM elements exist on this page with matching IDs.
+    // Post-Completion Suggestions (Feature 4)
+    (function() {
+        var btn = document.getElementById('btnDownloadZip');
+        var block = document.getElementById('nextActionBlock');
+        if (btn && block) {
+            btn.addEventListener('click', function() {
+                setTimeout(function() { block.classList.add('visible'); }, 1000);
+            });
+        }
+    })();
     </script>
 </body>
 </html>

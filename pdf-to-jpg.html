@@ -298,6 +298,23 @@
             </div>
         </section>
 
+        <!-- Post-Completion Suggestions (Feature 4) -->
+        <div id="nextActionBlock" class="next-action-section">
+            <div class="next-action-box">
+                <h3>What do you want to do next?</h3>
+                <div class="next-action-links">
+                    <a href="/compress-image.html" class="next-action-link">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                        Image Compressor
+                    </a>
+                    <a href="/jpg-to-pdf.html" class="next-action-link">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        JPG to PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Ad Slot: After tool -->
         <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
             <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
@@ -478,5 +495,17 @@
     <!-- Scripts -->
     <script src="./common.js"></script>
     <script src="./script.js"></script>
+    <script>
+    // Post-Completion Suggestions (Feature 4)
+    (function() {
+        var btn = document.getElementById('btnPdf2jpgExtract');
+        var block = document.getElementById('nextActionBlock');
+        if (btn && block) {
+            btn.addEventListener('click', function() {
+                setTimeout(function() { block.classList.add('visible'); }, 2000);
+            });
+        }
+    })();
+    </script>
 </body>
 </html>

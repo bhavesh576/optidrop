@@ -2,6 +2,16 @@
    OptiDrop — common.js (Shared across all pages)
    ========================================================= */
 
+// ── Dark Mode (Feature 6) ───────────────────────────────────
+(function () {
+    try {
+        if (localStorage.getItem('optidrop_dark_mode') === '1') {
+            document.documentElement.classList.add('dark-mode');
+            document.body.classList.add('dark-mode');
+        }
+    } catch (e) {}
+})();
+
 // ── Footer Year ──────────────────────────────────────────────
 (function () {
     var el = document.getElementById('year');
@@ -378,18 +388,40 @@ document.querySelectorAll('.faq-question').forEach(function (btn) {
     }
 })();
 
-// ── Calculator URL Parameter State Sharing (Block 3) ────────
+// ── Calculator URL Parameter State Sharing (Feature 5) ────
 function initCalculatorUrlParams(paramMap) {
     if (!paramMap) return;
-    var params = new URLSearchParams(window.location.search);
 
-    // Pre-fill from URL
+    // Read from hash parameters
+    var hash = window.location.hash.replace(/^#/, '');
+    var hashParams = new URLSearchParams(hash);
+
+    // Also check query params for backwards compatibility
+    var queryParams = new URLSearchParams(window.location.search);
+
+    // Pre-fill from URL (hash first, then query)
     Object.keys(paramMap).forEach(function (key) {
         var el = document.getElementById(paramMap[key]);
-        if (el && params.has(key)) {
-            el.value = params.get(key);
+        if (!el) return;
+        var val = hashParams.get(key) || queryParams.get(key);
+        if (val) {
+            el.value = val;
         }
     });
+
+    // Auto-calculate if hash params exist
+    if (hash.length > 0) {
+        var hasAny = false;
+        Object.keys(paramMap).forEach(function (key) {
+            if (hashParams.has(key)) hasAny = true;
+        });
+        if (hasAny) {
+            setTimeout(function () {
+                var calcBtns = document.querySelectorAll('[id^="btnCalc"], [id^="btnCalculate"], [id^="btnCompute"], #btnCheckBmi, #btnGetResults, #btnFindWeight, #btnCalcWater, #btnCalcSleep, #btnCalcAge, #btnCalcPercent, #btnCalcDate, #btnCalcTime, #btnCalcFuel, #btnConvertCurrency, #btnCalcCalorie, #btnCalcGrade, #btnCompareLoans, #btnCalcTax, #btnCalcGST, #btnCalcDiscount, #btnCalcTip, #btnCalcMortgage');
+                if (calcBtns.length > 0) calcBtns[0].click();
+            }, 300);
+        }
+    }
 
     // Add share button after calculate button
     var calcBtns = document.querySelectorAll('[id^="btnCalc"], [id^="btnCalculate"], [id^="btnCompute"], #btnCheckBmi, #btnGetResults, #btnFindWeight, #btnCalcWater, #btnCalcSleep, #btnCalcAge, #btnCalcPercent, #btnCalcDate, #btnCalcTime, #btnCalcFuel, #btnConvertCurrency, #btnCalcCalorie, #btnCalcGrade, #btnCompareLoans, #btnCalcTax, #btnCalcGST, #btnCalcDiscount, #btnCalcTip, #btnCalcMortgage');
@@ -403,14 +435,16 @@ function initCalculatorUrlParams(paramMap) {
             btn.parentElement.appendChild(shareBtn);
 
             shareBtn.addEventListener('click', function () {
-                var url = new URL(window.location.href.split('?')[0]);
+                var baseUrl = window.location.href.split('?')[0].split('#')[0];
+                var parts = [];
                 Object.keys(paramMap).forEach(function (key) {
                     var el = document.getElementById(paramMap[key]);
                     if (el && el.value) {
-                        url.searchParams.set(key, el.value);
+                        parts.push(key + '=' + encodeURIComponent(el.value));
                     }
                 });
-                copyToClipboard(url.toString(), 'Link copied — share it with anyone.');
+                var shareUrl = baseUrl + '#' + parts.join('&');
+                copyToClipboard(shareUrl, 'Link copied — share it with anyone.');
             });
 
             // Show share button after first calculation
@@ -534,3 +568,417 @@ function showDraftBar(key, onContinue, onStartFresh) {
         showToast('Draft cleared. Starting fresh.');
     });
 }
+
+// ════════════════════════════════════════════════════════════
+// FEATURE 1 — Recently Used Tools
+// ════════════════════════════════════════════════════════════
+(function () {
+    var path = window.location.pathname;
+    // Only track visits to actual tool pages
+    var toolMeta = {
+        '/compress-image.html': 'Image Compressor',
+        '/heic-to-jpg.html': 'HEIC to JPG',
+        '/image-format-converter.html': 'Format Converter',
+        '/remove-background.html': 'Background Remover',
+        '/passport-photo-resizer.html': 'Photo Resizer',
+        '/name-date-stamp.html': 'Name & Date Stamper',
+        '/signature-scanner.html': 'Signature Scanner',
+        '/image-to-text-ocr.html': 'OCR Text Extractor',
+        '/compress-pdf.html': 'PDF Compressor',
+        '/jpg-to-pdf.html': 'JPG to PDF',
+        '/pdf-to-jpg.html': 'PDF to JPG',
+        '/qr-code-generator.html': 'QR Code Generator',
+        '/tools/emi-calculator.html': 'EMI Calculator',
+        '/tools/gst-calculator.html': 'GST Calculator',
+        '/tools/age-calculator.html': 'Age Calculator',
+        '/tools/percentage-calculator.html': 'Percentage Calculator',
+        '/tools/word-counter.html': 'Word Counter',
+        '/tools/text-case-converter.html': 'Text Case Converter',
+        '/tools/password-generator.html': 'Password Generator',
+        '/tools/bmi-calculator.html': 'BMI Calculator',
+        '/tools/unit-converter.html': 'Unit Converter',
+        '/tools/calculators/sip-calculator.html': 'SIP Calculator',
+        '/tools/calculators/income-tax-calculator.html': 'Income Tax Calculator',
+        '/tools/calculators/mortgage-calculator.html': 'Mortgage Calculator',
+        '/tools/calculators/tip-calculator.html': 'Tip Calculator',
+        '/tools/calculators/grade-calculator.html': 'Grade Calculator',
+        '/tools/calculators/loan-comparison.html': 'Loan Comparison',
+        '/tools/calculators/compound-interest.html': 'Compound Interest',
+        '/tools/calculators/retirement-calculator.html': 'Retirement Calculator',
+        '/tools/calculators/discount-calculator.html': 'Discount Calculator',
+        '/tools/calculators/date-difference.html': 'Date Difference',
+        '/tools/calculators/time-calculator.html': 'Time Calculator',
+        '/tools/calculators/fuel-cost.html': 'Fuel Cost',
+        '/tools/calculators/currency-converter.html': 'Currency Converter',
+        '/tools/calculators/calorie-calculator.html': 'Calorie Calculator',
+        '/tools/calculators/401k-calculator.html': '401(k) Calculator',
+        '/tools/calculators/paycheck-calculator.html': 'Paycheck Calculator',
+        '/tools/calculators/savings-goal.html': 'Savings Goal',
+        '/tools/calculators/invoice-tax-calculator.html': 'Sales Tax Calculator',
+        '/tools/calculators/vat-calculator.html': 'VAT Calculator',
+        '/tools/calculators/overtime-calculator.html': 'Overtime Calculator',
+        '/tools/career/resume-builder.html': 'Resume Builder',
+        '/tools/career/cover-letter.html': 'Cover Letter',
+        '/tools/career/resignation-letter.html': 'Resignation Letter',
+        '/tools/career/thank-you-letter.html': 'Thank You Letter',
+        '/tools/career/linkedin-generator.html': 'LinkedIn Generator',
+        '/tools/career/internship-letter.html': 'Internship Letter',
+        '/tools/career/job-tracker.html': 'Job Tracker',
+        '/tools/business/invoice-generator.html': 'Invoice Generator',
+        '/tools/business/freelance-contract.html': 'Freelance Contract',
+        '/tools/business/salary-slip.html': 'Salary Slip',
+        '/tools/business/business-proposal.html': 'Business Proposal',
+        '/tools/business/offer-letter.html': 'Offer Letter',
+        '/tools/business/noc-generator.html': 'NOC Generator',
+        '/tools/business/experience-letter.html': 'Experience Letter',
+        '/tools/business/profit-calculator.html': 'Profit Calculator',
+        '/tools/business/receipt-generator.html': 'Receipt Generator',
+        '/tools/professional/email-signature.html': 'Email Signature',
+        '/tools/professional/business-card.html': 'Business Card',
+        '/tools/professional/bio-generator.html': 'Bio Generator',
+        '/tools/professional/sop-generator.html': 'SOP Generator',
+        '/tools/developer/json-formatter.html': 'JSON Formatter',
+        '/tools/developer/base64.html': 'Base64 Encoder',
+        '/tools/developer/url-encoder.html': 'URL Encoder',
+        '/tools/developer/color-converter.html': 'Color Converter',
+        '/tools/developer/markdown-preview.html': 'Markdown Preview',
+        '/tools/developer/hash-generator.html': 'Hash Generator',
+        '/tools/developer/css-minifier.html': 'CSS Minifier',
+        '/tools/developer/jwt-decoder.html': 'JWT Decoder',
+        '/tools/health/ideal-weight.html': 'Ideal Weight',
+        '/tools/health/calorie-calculator.html': 'Calorie Calculator',
+        '/tools/health/water-intake.html': 'Water Intake',
+        '/tools/health/sleep-calculator.html': 'Sleep Calculator',
+        '/tools/health/pregnancy-due-date.html': 'Pregnancy Due Date',
+        '/tools/health/ovulation-calculator.html': 'Ovulation Calculator',
+        '/tools/health/macro-calculator.html': 'Macro Calculator',
+        '/tools/health/body-fat-calculator.html': 'Body Fat Calculator',
+        '/tools/text/lorem-ipsum-generator.html': 'Lorem Ipsum',
+        '/tools/text/random-name-generator.html': 'Random Name',
+        '/tools/text/text-repeater.html': 'Text Repeater',
+        '/tools/text/binary-to-text.html': 'Binary Converter',
+        '/tools/text/character-counter.html': 'Character Counter',
+        '/tools/text/remove-duplicate-lines.html': 'Remove Duplicates',
+        '/tools/text/find-and-replace.html': 'Find & Replace',
+        '/tools/text/number-to-words.html': 'Number to Words',
+        '/tools/text/reverse-text.html': 'Reverse Text',
+        '/tools/text/text-to-slug.html': 'Text to Slug',
+        '/tools/text/word-frequency.html': 'Word Frequency',
+        '/tools/text/sentence-reorder.html': 'Sentence Shuffler'
+    };
+
+    var toolName = toolMeta[path];
+    if (!toolName) return;
+
+    // Save visit
+    try {
+        var recent = JSON.parse(localStorage.getItem('optidrop_recent_tools') || '[]');
+        // Remove if already exists
+        recent = recent.filter(function (r) { return r.path !== path; });
+        // Add to front
+        recent.unshift({ name: toolName, path: path, time: Date.now() });
+        // Keep last 5
+        if (recent.length > 5) recent = recent.slice(0, 5);
+        localStorage.setItem('optidrop_recent_tools', JSON.stringify(recent));
+    } catch (e) {}
+})();
+
+// ── Render Recently Used on Homepage ────────────────────────
+(function () {
+    var container = document.getElementById('recentToolsSection');
+    if (!container) return;
+    try {
+        var recent = JSON.parse(localStorage.getItem('optidrop_recent_tools') || '[]');
+        if (recent.length === 0) return;
+        // Show last 3
+        var items = recent.slice(0, 3);
+        var html = '';
+        items.forEach(function (r) {
+            html += '<a href="' + r.path + '" class="tool-card" style="padding:1rem;min-height:auto;">' +
+                '<span class="tool-card-title" style="font-size:0.95rem;">' + r.name + '</span>' +
+                '<span class="tool-card-desc" style="font-size:0.8rem;">Continue where you left off</span>' +
+                '</a>';
+        });
+        container.innerHTML = html;
+        container.parentElement.style.display = '';
+    } catch (e) {}
+})();
+
+// ════════════════════════════════════════════════════════════
+// FEATURE 3 — Keyboard Command Palette
+// ════════════════════════════════════════════════════════════
+(function () {
+    var allTools = [
+        { name: 'Image Compressor', href: '/compress-image.html', cat: 'Image' },
+        { name: 'HEIC to JPG', href: '/heic-to-jpg.html', cat: 'Image' },
+        { name: 'Format Converter', href: '/image-format-converter.html', cat: 'Image' },
+        { name: 'Background Remover', href: '/remove-background.html', cat: 'Image' },
+        { name: 'Photo Resizer', href: '/passport-photo-resizer.html', cat: 'Image' },
+        { name: 'Name & Date Stamper', href: '/name-date-stamp.html', cat: 'Image' },
+        { name: 'Signature Scanner', href: '/signature-scanner.html', cat: 'Image' },
+        { name: 'OCR Text Extractor', href: '/image-to-text-ocr.html', cat: 'Image' },
+        { name: 'PDF Compressor', href: '/compress-pdf.html', cat: 'PDF' },
+        { name: 'JPG to PDF', href: '/jpg-to-pdf.html', cat: 'PDF' },
+        { name: 'PDF to JPG', href: '/pdf-to-jpg.html', cat: 'PDF' },
+        { name: 'QR Code Generator', href: '/qr-code-generator.html', cat: 'Utility' },
+        { name: 'EMI Calculator', href: '/tools/emi-calculator.html', cat: 'Calculator' },
+        { name: 'GST Calculator', href: '/tools/gst-calculator.html', cat: 'Calculator' },
+        { name: 'Age Calculator', href: '/tools/age-calculator.html', cat: 'Calculator' },
+        { name: 'Percentage Calculator', href: '/tools/percentage-calculator.html', cat: 'Calculator' },
+        { name: 'SIP Calculator', href: '/tools/calculators/sip-calculator.html', cat: 'Calculator' },
+        { name: 'Income Tax Calculator', href: '/tools/calculators/income-tax-calculator.html', cat: 'Calculator' },
+        { name: 'Mortgage Calculator', href: '/tools/calculators/mortgage-calculator.html', cat: 'Calculator' },
+        { name: 'Tip Calculator', href: '/tools/calculators/tip-calculator.html', cat: 'Calculator' },
+        { name: 'Grade Calculator', href: '/tools/calculators/grade-calculator.html', cat: 'Calculator' },
+        { name: 'Loan Comparison', href: '/tools/calculators/loan-comparison.html', cat: 'Calculator' },
+        { name: 'Compound Interest', href: '/tools/calculators/compound-interest.html', cat: 'Calculator' },
+        { name: 'Retirement Calculator', href: '/tools/calculators/retirement-calculator.html', cat: 'Calculator' },
+        { name: 'Discount Calculator', href: '/tools/calculators/discount-calculator.html', cat: 'Calculator' },
+        { name: 'Date Difference', href: '/tools/calculators/date-difference.html', cat: 'Calculator' },
+        { name: 'Time Calculator', href: '/tools/calculators/time-calculator.html', cat: 'Calculator' },
+        { name: 'Fuel Cost', href: '/tools/calculators/fuel-cost.html', cat: 'Calculator' },
+        { name: 'Currency Converter', href: '/tools/calculators/currency-converter.html', cat: 'Calculator' },
+        { name: 'Calorie Calculator', href: '/tools/calculators/calorie-calculator.html', cat: 'Calculator' },
+        { name: '401(k) Calculator', href: '/tools/calculators/401k-calculator.html', cat: 'Calculator' },
+        { name: 'Paycheck Calculator', href: '/tools/calculators/paycheck-calculator.html', cat: 'Calculator' },
+        { name: 'Savings Goal', href: '/tools/calculators/savings-goal.html', cat: 'Calculator' },
+        { name: 'Sales Tax Calculator', href: '/tools/calculators/invoice-tax-calculator.html', cat: 'Calculator' },
+        { name: 'VAT Calculator', href: '/tools/calculators/vat-calculator.html', cat: 'Calculator' },
+        { name: 'Overtime Calculator', href: '/tools/calculators/overtime-calculator.html', cat: 'Calculator' },
+        { name: 'Resume Builder', href: '/tools/career/resume-builder.html', cat: 'Career' },
+        { name: 'Cover Letter', href: '/tools/career/cover-letter.html', cat: 'Career' },
+        { name: 'Resignation Letter', href: '/tools/career/resignation-letter.html', cat: 'Career' },
+        { name: 'Thank You Letter', href: '/tools/career/thank-you-letter.html', cat: 'Career' },
+        { name: 'LinkedIn Generator', href: '/tools/career/linkedin-generator.html', cat: 'Career' },
+        { name: 'Internship Letter', href: '/tools/career/internship-letter.html', cat: 'Career' },
+        { name: 'Job Tracker', href: '/tools/career/job-tracker.html', cat: 'Career' },
+        { name: 'Invoice Generator', href: '/tools/business/invoice-generator.html', cat: 'Business' },
+        { name: 'Freelance Contract', href: '/tools/business/freelance-contract.html', cat: 'Business' },
+        { name: 'Salary Slip', href: '/tools/business/salary-slip.html', cat: 'Business' },
+        { name: 'Business Proposal', href: '/tools/business/business-proposal.html', cat: 'Business' },
+        { name: 'Offer Letter', href: '/tools/business/offer-letter.html', cat: 'Business' },
+        { name: 'NOC Generator', href: '/tools/business/noc-generator.html', cat: 'Business' },
+        { name: 'Experience Letter', href: '/tools/business/experience-letter.html', cat: 'Business' },
+        { name: 'Profit Calculator', href: '/tools/business/profit-calculator.html', cat: 'Business' },
+        { name: 'Receipt Generator', href: '/tools/business/receipt-generator.html', cat: 'Business' },
+        { name: 'Email Signature', href: '/tools/professional/email-signature.html', cat: 'Professional' },
+        { name: 'Business Card', href: '/tools/professional/business-card.html', cat: 'Professional' },
+        { name: 'Bio Generator', href: '/tools/professional/bio-generator.html', cat: 'Professional' },
+        { name: 'SOP Generator', href: '/tools/professional/sop-generator.html', cat: 'Professional' },
+        { name: 'JSON Formatter', href: '/tools/developer/json-formatter.html', cat: 'Developer' },
+        { name: 'Base64 Encoder', href: '/tools/developer/base64.html', cat: 'Developer' },
+        { name: 'URL Encoder', href: '/tools/developer/url-encoder.html', cat: 'Developer' },
+        { name: 'Color Converter', href: '/tools/developer/color-converter.html', cat: 'Developer' },
+        { name: 'Markdown Preview', href: '/tools/developer/markdown-preview.html', cat: 'Developer' },
+        { name: 'Hash Generator', href: '/tools/developer/hash-generator.html', cat: 'Developer' },
+        { name: 'CSS Minifier', href: '/tools/developer/css-minifier.html', cat: 'Developer' },
+        { name: 'JWT Decoder', href: '/tools/developer/jwt-decoder.html', cat: 'Developer' },
+        { name: 'Word Counter', href: '/tools/word-counter.html', cat: 'Text' },
+        { name: 'Text Case Converter', href: '/tools/text-case-converter.html', cat: 'Text' },
+        { name: 'Lorem Ipsum', href: '/tools/text/lorem-ipsum-generator.html', cat: 'Text' },
+        { name: 'Random Name Generator', href: '/tools/text/random-name-generator.html', cat: 'Text' },
+        { name: 'Text Repeater', href: '/tools/text/text-repeater.html', cat: 'Text' },
+        { name: 'Binary Converter', href: '/tools/text/binary-to-text.html', cat: 'Text' },
+        { name: 'Character Counter', href: '/tools/text/character-counter.html', cat: 'Text' },
+        { name: 'Remove Duplicates', href: '/tools/text/remove-duplicate-lines.html', cat: 'Text' },
+        { name: 'Find & Replace', href: '/tools/text/find-and-replace.html', cat: 'Text' },
+        { name: 'Number to Words', href: '/tools/text/number-to-words.html', cat: 'Text' },
+        { name: 'Reverse Text', href: '/tools/text/reverse-text.html', cat: 'Text' },
+        { name: 'Text to Slug', href: '/tools/text/text-to-slug.html', cat: 'Text' },
+        { name: 'Word Frequency', href: '/tools/text/word-frequency.html', cat: 'Text' },
+        { name: 'Sentence Shuffler', href: '/tools/text/sentence-reorder.html', cat: 'Text' },
+        { name: 'BMI Calculator', href: '/tools/bmi-calculator.html', cat: 'Health' },
+        { name: 'Ideal Weight', href: '/tools/health/ideal-weight.html', cat: 'Health' },
+        { name: 'Calorie Calculator', href: '/tools/health/calorie-calculator.html', cat: 'Health' },
+        { name: 'Water Intake', href: '/tools/health/water-intake.html', cat: 'Health' },
+        { name: 'Sleep Calculator', href: '/tools/health/sleep-calculator.html', cat: 'Health' },
+        { name: 'Pregnancy Due Date', href: '/tools/health/pregnancy-due-date.html', cat: 'Health' },
+        { name: 'Ovulation Calculator', href: '/tools/health/ovulation-calculator.html', cat: 'Health' },
+        { name: 'Macro Calculator', href: '/tools/health/macro-calculator.html', cat: 'Health' },
+        { name: 'Body Fat Calculator', href: '/tools/health/body-fat-calculator.html', cat: 'Health' },
+        { name: 'Password Generator', href: '/tools/password-generator.html', cat: 'Utility' },
+        { name: 'Unit Converter', href: '/tools/unit-converter.html', cat: 'Utility' }
+    ];
+
+    // Create overlay
+    var overlay = document.createElement('div');
+    overlay.id = 'cmdPalette';
+    overlay.className = 'cmd-palette-overlay';
+    overlay.style.display = 'none';
+    overlay.innerHTML = '<div class="cmd-palette-box">' +
+        '<input type="text" id="cmdInput" class="cmd-palette-input" placeholder="Search 85+ tools..." autocomplete="off">' +
+        '<div id="cmdResults" class="cmd-palette-results"></div>' +
+        '<div class="cmd-palette-footer"><span>Press <kbd>Esc</kbd> to close</span><span><kbd>Enter</kbd> to open</span></div>' +
+        '</div>';
+    document.body.appendChild(overlay);
+
+    var cmdInput = document.getElementById('cmdInput');
+    var cmdResults = document.getElementById('cmdResults');
+    var selectedIdx = -1;
+
+    function renderResults(query) {
+        var q = (query || '').toLowerCase().trim();
+        var filtered = q ? allTools.filter(function (t) {
+            return t.name.toLowerCase().indexOf(q) !== -1 || t.cat.toLowerCase().indexOf(q) !== -1;
+        }) : allTools;
+        filtered = filtered.slice(0, 12);
+        selectedIdx = -1;
+        cmdResults.innerHTML = '';
+        filtered.forEach(function (t, i) {
+            var div = document.createElement('a');
+            div.href = t.href;
+            div.className = 'cmd-palette-item';
+            div.dataset.index = i;
+            div.innerHTML = '<span class="cmd-item-name">' + t.name + '</span><span class="cmd-item-cat">' + t.cat + '</span>';
+            cmdResults.appendChild(div);
+        });
+    }
+
+    function openPalette() {
+        overlay.style.display = 'flex';
+        cmdInput.value = '';
+        renderResults('');
+        setTimeout(function () { cmdInput.focus(); }, 50);
+    }
+
+    function closePalette() {
+        overlay.style.display = 'none';
+        cmdInput.value = '';
+    }
+
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closePalette();
+    });
+
+    cmdInput.addEventListener('input', function () {
+        renderResults(this.value);
+    });
+
+    cmdInput.addEventListener('keydown', function (e) {
+        var items = cmdResults.querySelectorAll('.cmd-palette-item');
+        if (e.key === 'Escape') {
+            closePalette();
+        } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            selectedIdx = Math.min(selectedIdx + 1, items.length - 1);
+            items.forEach(function (it, i) { it.classList.toggle('highlighted', i === selectedIdx); });
+            if (items[selectedIdx]) items[selectedIdx].scrollIntoView({ block: 'nearest' });
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            selectedIdx = Math.max(selectedIdx - 1, 0);
+            items.forEach(function (it, i) { it.classList.toggle('highlighted', i === selectedIdx); });
+            if (items[selectedIdx]) items[selectedIdx].scrollIntoView({ block: 'nearest' });
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            if (selectedIdx >= 0 && items[selectedIdx]) {
+                window.location.href = items[selectedIdx].href;
+            } else if (items[0]) {
+                window.location.href = items[0].href;
+            }
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+            var tag = (document.activeElement || {}).tagName;
+            if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+            e.preventDefault();
+            openPalette();
+        }
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            openPalette();
+        }
+    });
+})();
+
+// ════════════════════════════════════════════════════════════
+// FEATURE 6 — Dark Mode Toggle
+// ════════════════════════════════════════════════════════════
+(function () {
+    var header = document.querySelector('.header-nav');
+    if (!header) return;
+
+    var btn = document.createElement('button');
+    btn.className = 'dark-mode-toggle';
+    btn.setAttribute('aria-label', 'Toggle dark mode');
+    btn.innerHTML = '<svg class="dm-icon-sun" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>' +
+        '<svg class="dm-icon-moon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>';
+
+    var privacyBadge = header.querySelector('.privacy-badge');
+    if (privacyBadge) {
+        header.insertBefore(btn, privacyBadge);
+    } else {
+        header.appendChild(btn);
+    }
+
+    // Add keyboard shortcut hint (Feature 3)
+    if (!header.querySelector('.kbd-hint')) {
+        var hint = document.createElement('span');
+        hint.className = 'kbd-hint hide-mobile';
+        hint.innerHTML = '<kbd>/</kbd> Tools';
+        hint.addEventListener('click', function () {
+            document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }));
+        });
+        header.insertBefore(hint, btn);
+    }
+
+    function apply(mode) {
+        if (mode === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+            document.body.classList.add('dark-mode');
+        } else {
+            document.documentElement.classList.remove('dark-mode');
+            document.body.classList.remove('dark-mode');
+        }
+    }
+
+    btn.addEventListener('click', function () {
+        var isDark = document.body.classList.contains('dark-mode');
+        apply(isDark ? 'light' : 'dark');
+        try { localStorage.setItem('optidrop_dark_mode', isDark ? '0' : '1'); } catch (e) {}
+    });
+})();
+
+// ════════════════════════════════════════════════════════════
+// FEATURE 8 — Mobile Floating Action Button
+// ════════════════════════════════════════════════════════════
+(function () {
+    var popularTools = [
+        { name: 'Image Compressor', href: '/compress-image.html' },
+        { name: 'HEIC to JPG', href: '/heic-to-jpg.html' },
+        { name: 'Resume Builder', href: '/tools/career/resume-builder.html' },
+        { name: 'EMI Calculator', href: '/tools/emi-calculator.html' },
+        { name: 'Invoice Generator', href: '/tools/business/invoice-generator.html' },
+        { name: 'PDF Compressor', href: '/compress-pdf.html' },
+        { name: 'QR Code Generator', href: '/qr-code-generator.html' },
+        { name: 'Word Counter', href: '/tools/word-counter.html' }
+    ];
+
+    var fab = document.createElement('button');
+    fab.className = 'fab-button';
+    fab.setAttribute('aria-label', 'Quick tools');
+    fab.innerHTML = '<svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+
+    var overlay = document.createElement('div');
+    overlay.className = 'fab-overlay';
+    overlay.style.display = 'none';
+    var grid = '<div class="fab-panel"><div class="fab-panel-header"><span>Quick Access</span><button class="fab-close" aria-label="Close"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></div><div class="fab-grid">';
+    popularTools.forEach(function (t) {
+        grid += '<a href="' + t.href + '" class="fab-tool-btn">' + t.name + '</a>';
+    });
+    grid += '</div></div>';
+    overlay.innerHTML = grid;
+
+    document.body.appendChild(fab);
+    document.body.appendChild(overlay);
+
+    fab.addEventListener('click', function () {
+        overlay.style.display = 'flex';
+    });
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay || e.target.closest('.fab-close')) {
+            overlay.style.display = 'none';
+        }
+    });
+})();

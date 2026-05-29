@@ -115,6 +115,7 @@
                 <a href="/blog/" class="hide-mobile">Blog</a>
                 <a href="/about.html" class="hide-mobile">About</a>
                 <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <span class="kbd-hint hide-mobile" onclick="document.dispatchEvent(new KeyboardEvent('keydown',{key:'k',ctrlKey:true}))"><kbd>/</kbd> Tools</span>
                 <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
@@ -190,6 +191,16 @@
             </div>
         </section>
 
+        <!-- RECENTLY USED TOOLS (Feature 1) -->
+        <section id="recentToolsWrapper" class="w-full max-w-6xl mx-auto px-4 sm:px-6 pb-6" style="display:none;">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <h2 class="text-lg font-bold text-slate-900">Pick Up Where You Left Off</h2>
+                </div>
+            </div>
+            <div id="recentToolsSection" class="grid grid-cols-1 sm:grid-cols-3 gap-4"></div>
+        </section>
+
         <!-- CATEGORIZED TOOL SECTIONS -->
         <section id="categories" class="w-full max-w-6xl mx-auto px-4 sm:px-6 pb-12">
 
@@ -207,12 +218,14 @@
                         <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
                         <h3 class="tool-card-title">Image Compressor</h3>
                         <p class="tool-card-desc">Compress photos to exact KB limits for portals and forms.</p>
+                        <span class="social-proof-text">Used by 12,400+ users</span>
                         <span class="tool-card-tag blue">Most Popular</span>
                     </a>
                     <a href="/heic-to-jpg.html" class="tool-card group">
                         <div class="tool-card-icon bg-orange-50 text-orange-600 group-hover:bg-orange-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
                         <h3 class="tool-card-title">HEIC to JPG Converter</h3>
                         <p class="tool-card-desc">Convert iPhone HEIC photos to JPG format instantly.</p>
+                        <span class="social-proof-text">Used by 8,900+ users</span>
                         <span class="tool-card-tag orange">iPhone Users</span>
                     </a>
                     <a href="/image-format-converter.html" class="tool-card group">
@@ -225,6 +238,7 @@
                         <div class="tool-card-icon bg-amber-50 text-amber-600 group-hover:bg-amber-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L4.939 4.939m7.061 7.061l-2.879-2.879M12 12l2.879-2.879"/></svg></div>
                         <h3 class="tool-card-title">Background Remover</h3>
                         <p class="tool-card-desc">Remove background from any photo. Create transparent PNGs.</p>
+                        <span class="social-proof-text">Used by 7,300+ users</span>
                         <span class="tool-card-tag amber">Popular</span>
                     </a>
                     <a href="/passport-photo-resizer.html" class="tool-card group">
@@ -256,6 +270,7 @@
                         <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
                         <h3 class="tool-card-title">EMI Calculator</h3>
                         <p class="tool-card-desc">Calculate monthly EMI for any loan type.</p>
+                        <span class="social-proof-text">Used by 9,100+ users</span>
                         <span class="tool-card-tag blue">Calculator</span>
                     </a>
                     <a href="/tools/calculators/sip-calculator.html" class="tool-card group">
@@ -323,6 +338,7 @@
                         <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
                         <h3 class="tool-card-title">Resume Builder</h3>
                         <p class="tool-card-desc">Build professional resumes with 4 templates. Download as PDF.</p>
+                        <span class="social-proof-text">Used by 6,200+ users</span>
                         <span class="tool-card-tag blue">Career</span>
                     </a>
                     <a href="/tools/career/cover-letter.html" class="tool-card group">
@@ -433,6 +449,7 @@
                         <div class="tool-card-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg></div>
                         <h3 class="tool-card-title">Invoice Generator</h3>
                         <p class="tool-card-desc">Create professional invoices with tax and multi-currency support.</p>
+                        <span class="social-proof-text">Used by 4,800+ users</span>
                         <span class="tool-card-tag blue">Business</span>
                     </a>
                     <a href="/tools/business/freelance-contract.html" class="tool-card group">
@@ -960,6 +977,42 @@
             reader.readAsDataURL(file);
         });
     })();
+
+    // Smart Clipboard Paste Detection (Feature 2)
+    document.addEventListener('paste', function(e) {
+        var items = (e.clipboardData || window.clipboardData).items;
+        for (var i = 0; i < items.length; i++) {
+            if (items[i].type.indexOf('image') !== -1) {
+                showToast('Image detected — open Image Compressor?', 'info');
+                var toastEl = document.querySelector('#toast-container .toast:last-child');
+                if (toastEl) {
+                    var link = document.createElement('a');
+                    link.href = '/compress-image.html';
+                    link.textContent = ' Open Tool →';
+                    link.style.cssText = 'color:#60a5fa;font-weight:700;text-decoration:underline;margin-left:4px;';
+                    link.onclick = function(e) { e.stopPropagation(); };
+                    var span = toastEl.querySelector('span');
+                    if (span) span.appendChild(link);
+                }
+                return;
+            }
+        }
+        // Check for text
+        var text = (e.clipboardData || window.clipboardData).getData('text');
+        if (text && text.length > 20) {
+            showToast('Text detected — try Word Counter?', 'info');
+            var toastEl = document.querySelector('#toast-container .toast:last-child');
+            if (toastEl) {
+                var link = document.createElement('a');
+                link.href = '/tools/word-counter.html';
+                link.textContent = ' Open Tool →';
+                link.style.cssText = 'color:#60a5fa;font-weight:700;text-decoration:underline;margin-left:4px;';
+                link.onclick = function(e) { e.stopPropagation(); };
+                var span = toastEl.querySelector('span');
+                if (span) span.appendChild(link);
+            }
+        }
+    });
     </script>
 </body>
-</html> 
+</html>

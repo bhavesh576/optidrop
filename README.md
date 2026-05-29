@@ -374,14 +374,34 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 
 ## Key Features
 
-### Workflow Next Steps
-Every tool page shows contextual "What to do next →" suggestions based on logical user workflows (e.g., after compressing an image, the next step is resizing it to passport dimensions). This replaces generic "Related Tools" with actionable next actions that increase dwell time and internal linking.
+### Recently Used Tools
+The homepage shows your last 3 visited tools in a "Pick Up Where You Left Off" section. Tracked via localStorage under `optidrop_recent_tools` (stores last 5, displays last 3). Only visible when history exists.
 
-### Interactive FAQ Accordions
-All FAQ sections use smooth CSS max-height transitions. Questions are collapsed by default, only one open at a time, and all text remains in the DOM for search engine crawlers. Every tool page has matching FAQPage JSON-LD schema for Google featured snippets.
+### Keyboard Command Palette
+Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 85+ tools. Real-time filtering as you type, arrow key navigation, Enter to open, Escape to close. A small keyboard hint appears in the header on all pages.
 
-### URL Parameter State Sharing
-All 8 calculator pages (EMI, SIP, compound interest, mortgage, tip, GST, discount, retirement) support URL parameters. Users can share a calculation link that pre-fills all inputs, enabling backend-free virality.
+### Dark Mode Toggle
+Sun/moon toggle button in the header on every page. Saves preference to localStorage under `optidrop_dark_mode`. Prevents flash of wrong theme by checking on script load. Deep navy color palette (#0f172a, #1e293b) — covers all components including tool cards, forms, footer, modals, and search.
+
+### Smart Clipboard Paste Detection
+On the homepage, pasting an image shows a toast with a link to Image Compressor. Pasting text longer than 20 characters shows a toast with a link to Word Counter.
+
+### Post-Completion Tool Suggestions
+After completing a tool action (download or calculate), 5 key tool pages show a "What do you want to do next?" block with 2 relevant tool links:
+- Image Compressor → Passport Photo Resizer, Background Remover
+- HEIC to JPG → Image Compressor, Passport Photo Resizer
+- PDF to JPG → Image Compressor, JPG to PDF
+- Resume Builder → Cover Letter, Email Signature
+- EMI Calculator → Loan Comparison, SIP Calculator
+
+### Parametric URL Sharing (Calculators)
+All calculator pages encode input values into the URL hash after calculation. A "Share this calculation" button copies the full URL. On page load, hash parameters pre-fill inputs and auto-calculate. Enables sharing specific calculations via link.
+
+### Mobile Floating Action Button
+On screens below 768px, a fixed blue button in the bottom-right opens a quick-access overlay with 8 popular tools as large tappable buttons. Dismissible by tapping outside or the X button.
+
+### Static Social Proof Counts
+The 6 most popular tool homepage cards show usage counts (e.g., "Used by 12,400+ users") as small muted text below the description.
 
 ### Global Drag-and-Drop File Router
 The homepage detects any dragged file and routes it to the correct tool based on file type: images go to the compressor, HEIC files go to the converter, PDFs go to the PDF compressor. Files are passed via sessionStorage so the destination tool loads them instantly.
@@ -422,7 +442,7 @@ All 12 file upload tool pages display a "100% Local — your file never leaves t
   - Article schema (all blog posts)
   - Organization schema (about page)
   - WebPage schema (privacy, terms pages)
-- XML sitemap with 119 URLs
+- XML sitemap with 123 URLs
 - Internal linking: Workflow next-step sections, category pages, footer links
 - Blog with 12 SEO-optimized articles targeting long-tail keywords
 - CSS text logo (no image dependency for logo)
@@ -440,7 +460,7 @@ All 12 file upload tool pages display a "100% Local — your file never leaves t
 - All processing happens inside your browser
 - No files are uploaded to any server
 - No user data is collected or stored
-- localStorage used only for auto-save drafts and tool usage counters (stays on device)
+- localStorage used only for auto-save drafts, tool usage counters, recently used tools, and dark mode preference (stays on device)
 - sessionStorage used only for drag-and-drop file routing between pages (cleared on use)
 - No cookies for tracking purposes
 - URL parameters for calculator sharing contain only the values the user entered
