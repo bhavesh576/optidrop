@@ -1000,3 +1000,195 @@ function showDraftBar(key, onContinue, onStartFresh) {
         }
     });
 })();
+
+// ── Share Bar Injection (appears in result cards after task completion) ──
+(function () {
+    var SHARE_URL = 'https://optidrop.online';
+    var SHARE_TEXT = 'Found this useful? Share with a friend.';
+    var SHARE_BTN = 'Copy Share Link';
+    var SHARE_DONE = '✓ Link copied!';
+
+    function createShareBar() {
+        var wrapper = document.createElement('div');
+        wrapper.className = 'optidrop-share-bar mt-4 pt-3 border-t border-slate-200 dark:border-slate-600';
+        wrapper.innerHTML =
+            '<div class="flex flex-col sm:flex-row items-center justify-between gap-2">' +
+                '<span class="text-xs text-slate-500 dark:text-slate-400 text-center sm:text-left">' + SHARE_TEXT + '</span>' +
+                '<button type="button" class="optidrop-share-btn inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg ' +
+                    'bg-slate-100 hover:bg-slate-200 text-slate-700 ' +
+                    'dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-200 ' +
+                    'border border-slate-200 dark:border-slate-600 ' +
+                    'transition-all duration-200 cursor-pointer flex-shrink-0">' +
+                    '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" ' +
+                        'd="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>' +
+                    '</svg>' +
+                    '<span class="optidrop-share-btn-text">' + SHARE_BTN + '</span>' +
+                '</button>' +
+            '</div>';
+        return wrapper;
+    }
+
+    function handleShareClick(btn) {
+        var btnText = btn.querySelector('.optidrop-share-btn-text');
+        if (!btnText) return;
+        var originalText = btnText.textContent;
+        if (btnText.textContent === SHARE_DONE) return;
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(SHARE_URL).then(function () {
+                flashSuccess(btn, btnText);
+            }).catch(function () {
+                fallbackCopyShare(btn, btnText);
+            });
+        } else {
+            fallbackCopyShare(btn, btnText);
+        }
+    }
+
+    function fallbackCopyShare(btn, btnText) {
+        var ta = document.createElement('textarea');
+        ta.value = SHARE_URL;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+            document.execCommand('copy');
+            flashSuccess(btn, btnText);
+        } catch (e) {
+            // silent fail
+        }
+        document.body.removeChild(ta);
+    }
+
+    function flashSuccess(btn, btnText) {
+        btnText.textContent = SHARE_DONE;
+        btn.classList.remove('bg-slate-100', 'hover:bg-slate-200', 'text-slate-700',
+            'dark:bg-slate-700', 'dark:hover:bg-slate-600', 'dark:text-slate-200',
+            'border-slate-200', 'dark:border-slate-600');
+        btn.classList.add('bg-green-100', 'text-green-700', 'border-green-300',
+            'dark:bg-green-900', 'dark:text-green-300', 'dark:border-green-700');
+        setTimeout(function () {
+            btnText.textContent = SHARE_BTN;
+            btn.classList.remove('bg-green-100', 'text-green-700', 'border-green-300',
+                'dark:bg-green-900', 'dark:text-green-300', 'dark:border-green-700');
+            btn.classList.add('bg-slate-100', 'hover:bg-slate-200', 'text-slate-700',
+                'dark:bg-slate-700', 'dark:hover:bg-slate-600', 'dark:text-slate-200',
+                'border-slate-200', 'dark:border-slate-600');
+        }, 2500);
+    }
+
+    // Target result containers — IDs that end with "result" or "Result"
+    var RESULT_ID_PATTERNS = [
+        'state-result', 'state-result', 'merge-state-result', 'heic-state-result',
+        'pdf2jpg-state-result', 'resizer-state-result', 'stamper-state-result',
+        'signature-state-result', 'ocr-state-result', 'stateResult'
+    ];
+
+    // Also target common result section classes/IDs on standalone tool pages
+    var RESULT_SELECTORS = [
+        '[id$="-result"]:not([id*="upload"]):not([id*="settings"])',
+        '[id$="Result"]:not([id*="upload"]):not([id*="settings"])',
+        '[id$="Results"]:not([id*="upload"]):not([id*="settings"])',
+        '[id$="results"]:not([id*="upload"]):not([id*="settings"])',
+        '[id="resultSection"]',
+        '[id="results"]',
+        '[id="resultArea"]',
+        '#resultSection',
+        '#results',
+        '#resultArea',
+        '[id*="ResultSection"]',
+        '[id*="resultSection"]'
+    ];
+
+    function injectShareBars() {
+        // Inject into known result state containers
+        var selector = RESULT_SELECTORS.join(', ');
+        document.querySelectorAll(selector).forEach(function (el) {
+            if (el.querySelector('.optidrop-share-bar')) return;
+            // Only inject if the element is currently visible
+            if (el.classList.contains('hidden')) return;
+            if (el.style.display === 'none') return;
+            var bar = createShareBar();
+            el.appendChild(bar);
+            // Attach click handler
+            var btn = bar.querySelector('.optidrop-share-btn');
+            if (btn) {
+                btn.addEventListener('click', function () { handleShareClick(btn); });
+            }
+        });
+    }
+
+    // Use MutationObserver to detect when result containers become visible
+    var observer = null;
+
+    function startObserving() {
+        if (observer) return;
+        if (typeof MutationObserver === 'undefined') return;
+
+        observer = new MutationObserver(function (mutations) {
+            var shouldInject = false;
+            for (var i = 0; i < mutations.length; i++) {
+                var m = mutations[i];
+                if (m.type === 'attributes' && (m.attributeName === 'class' || m.attributeName === 'style')) {
+                    var el = m.target;
+                    // Check if a result-container-like element just became visible
+                    var id = el.id || '';
+                    var hasResultId = id.toLowerCase().indexOf('result') !== -1;
+                    var isVisible = !el.classList.contains('hidden') && el.style.display !== 'none';
+                    if (hasResultId && isVisible) {
+                        shouldInject = true;
+                        break;
+                    }
+                }
+                if (m.type === 'childList' && m.addedNodes.length > 0) {
+                    for (var j = 0; j < m.addedNodes.length; j++) {
+                        var node = m.addedNodes[j];
+                        if (node.nodeType !== 1) continue;
+                        var nid = node.id || '';
+                        if (nid.indexOf('result') !== -1 || nid.indexOf('Result') !== -1) {
+                            shouldInject = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldInject) break;
+            }
+            if (shouldInject) {
+                // Small delay to let DOM settle
+                setTimeout(injectShareBars, 100);
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['class', 'style']
+        });
+    }
+
+    // Initial injection on page load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+            injectShareBars();
+            startObserving();
+        });
+    } else {
+        injectShareBars();
+        startObserving();
+    }
+
+    // Also expose globally so tool scripts can call it after dynamic result rendering
+    window.injectShareBar = function (container) {
+        if (!container) return;
+        if (container.querySelector('.optidrop-share-bar')) return;
+        var bar = createShareBar();
+        container.appendChild(bar);
+        var btn = bar.querySelector('.optidrop-share-btn');
+        if (btn) {
+            btn.addEventListener('click', function () { handleShareClick(btn); });
+        }
+    };
+})();
