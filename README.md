@@ -2,7 +2,7 @@
 
 **Free Online Tools — No Upload, No Sign-Up, No Cost**
 
-OptiDrop is a fully browser-based toolkit with **90+ free tools** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, fun, home improvement, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
+OptiDrop is a fully browser-based toolkit with **140+ free tools** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, education, fitness, fun, home improvement, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
 
 **Live at:** [https://optidrop.online](https://optidrop.online)
 
@@ -66,7 +66,7 @@ OptiDrop is a fully browser-based toolkit with **90+ free tools** for images, PD
 | Professional Bio Generator | Generate bios for LinkedIn, websites, and profiles | [/tools/professional/bio-generator.html](https://optidrop.online/tools/professional/bio-generator.html) |
 | SOP Generator | Write Statement of Purpose for university applications | [/tools/professional/sop-generator.html](https://optidrop.online/tools/professional/sop-generator.html) |
 
-### Calculator Tools (28)
+### Calculator Tools (36)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -98,8 +98,16 @@ OptiDrop is a fully browser-based toolkit with **90+ free tools** for images, PD
 | ROI Calculator | Return on investment percentage and net profit | [/tools/calculators/roi-calculator.html](https://optidrop.online/tools/calculators/roi-calculator.html) |
 | Freelance Rate Calculator | Required hourly and daily rates for freelancers | [/tools/calculators/freelance-rate.html](https://optidrop.online/tools/calculators/freelance-rate.html) |
 | Discount & Tax Calculator | Final price after discount and sales tax combined | [/tools/calculators/discount-tax-calculator.html](https://optidrop.online/tools/calculators/discount-tax-calculator.html) |
+| Savings Goal Tracker | Track savings with monthly contributions and interest projection | [/tools/calculators/savings-goal-tracker.html](https://optidrop.online/tools/calculators/savings-goal-tracker.html) |
+| Budget Planner | Plan monthly budget with category allocation and tracking | [/tools/calculators/budget-planner.html](https://optidrop.online/tools/calculators/budget-planner.html) |
+| Inflation Calculator | Calculate inflation impact on purchasing power over years | [/tools/calculators/inflation-calculator.html](https://optidrop.online/tools/calculators/inflation-calculator.html) |
+| Credit Card Payoff | Calculate months and interest to pay off credit card debt | [/tools/calculators/credit-card-payoff.html](https://optidrop.online/tools/calculators/credit-card-payoff.html) |
+| Car Loan Calculator | Calculate car loan EMI, total interest, and total cost | [/tools/calculators/car-loan-calculator.html](https://optidrop.online/tools/calculators/car-loan-calculator.html) |
+| Rule of 72 | Calculate how long it takes for an investment to double | [/tools/calculators/rule-of-72.html](https://optidrop.online/tools/calculators/rule-of-72.html) |
+| Tax Deduction Calculator | Estimate tax deductions and potential savings | [/tools/calculators/tax-deduction-calculator.html](https://optidrop.online/tools/calculators/tax-deduction-calculator.html) |
+| Advanced Retirement Calculator | Plan retirement with inflation-adjusted projections | [/tools/calculators/advanced-retirement-calculator.html](https://optidrop.online/tools/calculators/advanced-retirement-calculator.html) |
 
-### Text Tools (15)
+### Text Tools (23)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -118,8 +126,19 @@ OptiDrop is a fully browser-based toolkit with **90+ free tools** for images, PD
 | Word Frequency Counter | Analyze word frequency with stop word filtering | [/tools/text/word-frequency.html](https://optidrop.online/tools/text/word-frequency.html) |
 | Sentence Shuffler | Randomly shuffle or reverse sentence order | [/tools/text/sentence-reorder.html](https://optidrop.online/tools/text/sentence-reorder.html) |
 | Random Number & Name Picker | Generate random numbers or pick names from a list | [/tools/text/random-picker.html](https://optidrop.online/tools/text/random-picker.html) |
+| Reading Time Calculator | Estimate reading and speaking time for any text | [/tools/text/reading-time-calculator.html](https://optidrop.online/tools/text/reading-time-calculator.html) |
+| Text Diff Checker | Compare two texts and highlight differences | [/tools/text/text-diff-checker.html](https://optidrop.online/tools/text/text-diff-checker.html) |
+| Typing Speed Test | Test typing speed with WPM and accuracy measurement | [/tools/text/typing-speed-test.html](https://optidrop.online/tools/text/typing-speed-test.html) |
+| Acronym Generator | Generate acronyms from phrases with reverse lookup | [/tools/text/acronym-generator.html](https://optidrop.online/tools/text/acronym-generator.html) |
+| Anagram Solver | Find valid anagrams from any word | [/tools/text/anagram-solver.html](https://optidrop.online/tools/text/anagram-solver.html) |
+| Password Phrase Generator | Generate secure diceware-style passphrases | [/tools/text/password-phrase-generator.html](https://optidrop.online/tools/text/password-phrase-generator.html) |
+| Text to Speech Preview | Preview browser text-to-speech with voice controls | [/tools/text/text-to-speech-preview.html](https://optidrop.online/tools/text/text-to-speech-preview.html) |
+| Bulk Text Replacer | Apply multiple find-replace rules at once | [/tools/text/bulk-text-replacer.html](https://optidrop.online/tools/text/bulk-text-replacer.html) |
+| Keyword Density Checker | Analyze keyword density for SEO optimization | [/tools/text/keyword-density-checker.html](https://optidrop.online/tools/text/keyword-density-checker.html) |
+| Word Scramble Game | Unscramble words in this fun vocabulary game | [/tools/text/word-scramble.html](https://optidrop.online/tools/text/word-scramble.html) |
+| Number Trivia | Fun facts and mathematical properties about any number | [/tools/text/number-trivia.html](https://optidrop.online/tools/text/number-trivia.html) |
 
-### Developer Tools (16)
+### Developer Tools (24)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -139,6 +158,16 @@ OptiDrop is a fully browser-based toolkit with **90+ free tools** for images, PD
 | Regex Tester | Test regular expressions with live match highlighting | [/tools/developer/regex-tester.html](https://optidrop.online/tools/developer/regex-tester.html) |
 | Timestamp Converter | Convert between Unix timestamps and human-readable dates | [/tools/developer/timestamp-converter.html](https://optidrop.online/tools/developer/timestamp-converter.html) |
 | UUID Generator | Generate v4 UUIDs with crypto.getRandomValues | [/tools/developer/uuid-generator.html](https://optidrop.online/tools/developer/uuid-generator.html) |
+| JS Minifier | Minify JavaScript code to reduce file size instantly | [/tools/developer/js-minifier.html](https://optidrop.online/tools/developer/js-minifier.html) |
+| Lorem Ipsum Generator | Generate placeholder text by paragraphs, sentences, or words | [/tools/developer/lorem-ipsum.html](https://optidrop.online/tools/developer/lorem-ipsum.html) |
+| Morse Code Translator | Convert text to Morse code and back with audio playback | [/tools/developer/morse-code-translator.html](https://optidrop.online/tools/developer/morse-code-translator.html) |
+| Caesar Cipher | Encode and decode text with Caesar cipher and brute force | [/tools/developer/caesar-cipher.html](https://optidrop.online/tools/developer/caesar-cipher.html) |
+| HTML to Markdown | Convert HTML code to Markdown format instantly | [/tools/developer/html-to-markdown.html](https://optidrop.online/tools/developer/html-to-markdown.html) |
+| YouTube Timestamp Linker | Generate timestamped YouTube links and embed codes | [/tools/developer/youtube-timestamp-linker.html](https://optidrop.online/tools/developer/youtube-timestamp-linker.html) |
+| Meta Tag Generator | Generate HTML meta tags for SEO and social sharing | [/tools/developer/meta-tag-generator.html](https://optidrop.online/tools/developer/meta-tag-generator.html) |
+| Color Palette Generator | Generate harmonious color palettes from a base color | [/tools/developer/color-palette-generator.html](https://optidrop.online/tools/developer/color-palette-generator.html) |
+| ASCII Art Converter | Convert text to ASCII block art | [/tools/developer/ascii-art-converter.html](https://optidrop.online/tools/developer/ascii-art-converter.html) |
+| Markdown Table Generator | Create Markdown tables with a visual editor | [/tools/developer/markdown-table-generator.html](https://optidrop.online/tools/developer/markdown-table-generator.html) |
 
 ### Health Tools (9)
 
@@ -154,7 +183,29 @@ OptiDrop is a fully browser-based toolkit with **90+ free tools** for images, PD
 | Body Fat Calculator | Estimate body fat percentage using US Navy method | [/tools/health/body-fat-calculator.html](https://optidrop.online/tools/health/body-fat-calculator.html) |
 | BMR Calculator | Basal Metabolic Rate and TDEE calorie needs | [/tools/health/bmr-calculator.html](https://optidrop.online/tools/health/bmr-calculator.html) |
 
-### Utility Tools (6)
+### Education Tools (7) — NEW
+
+| Tool | Description | URL |
+|------|-------------|-----|
+| GPA Calculator | Calculate GPA/CGPA with multiple subjects and weighted credits | [/tools/education/gpa-calculator.html](https://optidrop.online/tools/education/gpa-calculator.html) |
+| Final Grade Calculator | Find what score you need on your final exam | [/tools/education/final-grade-calculator.html](https://optidrop.online/tools/education/final-grade-calculator.html) |
+| Quiz Generator | Create and take multiple choice quizzes locally | [/tools/education/quiz-generator.html](https://optidrop.online/tools/education/quiz-generator.html) |
+| Essay Word Counter | Advanced essay stats with readability analysis | [/tools/education/essay-word-counter.html](https://optidrop.online/tools/education/essay-word-counter.html) |
+| Citation Generator | Generate APA and MLA style citations instantly | [/tools/education/citation-generator.html](https://optidrop.online/tools/education/citation-generator.html) |
+| Study Timer | Custom study sessions with break intervals and audio alerts | [/tools/education/study-timer.html](https://optidrop.online/tools/education/study-timer.html) |
+| Flashcard Generator | Create and study flashcards with progress tracking | [/tools/education/flashcard-generator.html](https://optidrop.online/tools/education/flashcard-generator.html) |
+
+### Fitness Tools (5) — NEW
+
+| Tool | Description | URL |
+|------|-------------|-----|
+| BMR & TDEE Calculator | Advanced BMR with activity multipliers for calorie planning | [/tools/fitness/bmr-tdee-advanced.html](https://optidrop.online/tools/fitness/bmr-tdee-advanced.html) |
+| One Rep Max Calculator | Estimate your 1RM for strength training programs | [/tools/fitness/one-rep-max-calculator.html](https://optidrop.online/tools/fitness/one-rep-max-calculator.html) |
+| Walking Calorie Burn | Calculate calories burned walking or running by distance | [/tools/fitness/walking-calorie-burn.html](https://optidrop.online/tools/fitness/walking-calorie-burn.html) |
+| Body Measurement Tracker | Log and track body measurements with trend analysis | [/tools/fitness/body-measurement-tracker.html](https://optidrop.online/tools/fitness/body-measurement-tracker.html) |
+| Heart Rate Zone Calculator | Find fat burn, cardio, and peak heart rate training zones | [/tools/fitness/heart-rate-zone-calculator.html](https://optidrop.online/tools/fitness/heart-rate-zone-calculator.html) |
+
+### Utility Tools (13)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -164,6 +215,40 @@ OptiDrop is a fully browser-based toolkit with **90+ free tools** for images, PD
 | Ovulation Calculator | Calculate fertile window and ovulation date | [/tools/health/ovulation-calculator.html](https://optidrop.online/tools/health/ovulation-calculator.html) |
 | Pomodoro Timer | 25-minute focus timer with background-tab accuracy | [/tools/pomodoro-timer.html](https://optidrop.online/tools/pomodoro-timer.html) |
 | Aspect Ratio Calculator | Calculate missing width/height for any aspect ratio | [/tools/aspect-ratio-calculator.html](https://optidrop.online/tools/aspect-ratio-calculator.html) |
+| BMI with Body Fat | Combined BMI calculator and body fat percentage estimator | [/tools/utility/bmi-with-body-fat.html](https://optidrop.online/tools/utility/bmi-with-body-fat.html) |
+| Pack Weight Calculator | Estimate travel packing weight with airline limits | [/tools/utility/pack-weight-calculator.html](https://optidrop.online/tools/utility/pack-weight-calculator.html) |
+| Random Decision Maker | Spin the wheel to make random decisions | [/tools/utility/random-decision-maker.html](https://optidrop.online/tools/utility/random-decision-maker.html) |
+| Habit Tracker | Track daily habits with streak counting | [/tools/utility/habit-tracker-simple.html](https://optidrop.online/tools/utility/habit-tracker-simple.html) |
+| Screen Ruler | Measure pixels on screen with a draggable ruler | [/tools/utility/screen-ruler.html](https://optidrop.online/tools/utility/screen-ruler.html) |
+| World Clock | View live clocks for multiple cities worldwide | [/tools/utility/world-clock.html](https://optidrop.online/tools/utility/world-clock.html) |
+| File Size Converter | Convert between bytes, KB, MB, GB, and TB | [/tools/utility/file-size-converter.html](https://optidrop.online/tools/utility/file-size-converter.html) |
+
+### Fun & Games Tools (10)
+
+| Tool | Description | URL |
+|------|-------------|-----|
+| Coin Flip Simulator | Animated virtual coin toss with flip history | [/tools/fun/coin-flip.html](https://optidrop.online/tools/fun/coin-flip.html) |
+| Random Recipe Generator | Get random recipes with ingredients and instructions | [/tools/fun/random-recipe.html](https://optidrop.online/tools/fun/random-recipe.html) |
+| Would You Rather | Fun this-or-that dilemmas with poll results | [/tools/fun/would-you-rather.html](https://optidrop.online/tools/fun/would-you-rather.html) |
+| Random Joke Generator | Clean, family-friendly jokes with punchline reveal | [/tools/fun/random-joke.html](https://optidrop.online/tools/fun/random-joke.html) |
+| Random Color Generator | Generate random hex colors with RGB and HSL values | [/tools/fun/random-color-generator.html](https://optidrop.online/tools/fun/random-color-generator.html) |
+| Dice Roller | Roll multiple dice with animated results | [/tools/fun/dice-roller.html](https://optidrop.online/tools/fun/dice-roller.html) |
+| Yes or No Decider | Magic 8-ball style yes or no answers | [/tools/fun/yes-no-decider.html](https://optidrop.online/tools/fun/yes-no-decider.html) |
+| Password Game | Fun password strength challenge game | [/tools/fun/password-game.html](https://optidrop.online/tools/fun/password-game.html) |
+| Birthday Fortune | Get zodiac sign, birthstone, and fun birthday facts | [/tools/fun/birthday-fortune.html](https://optidrop.online/tools/fun/birthday-fortune.html) |
+| Rock Paper Scissors | Play against the computer with score tracking | [/tools/fun/rock-paper-scissors.html](https://optidrop.online/tools/fun/rock-paper-scissors.html) |
+
+### Home & DIY Tools (7)
+
+| Tool | Description | URL |
+|------|-------------|-----|
+| Paint Calculator | Estimate gallons of paint needed for any room | [/tools/home/paint-calculator.html](https://optidrop.online/tools/home/paint-calculator.html) |
+| Wallpaper Calculator | Calculate wallpaper rolls needed for any room | [/tools/home/wallpaper-calculator.html](https://optidrop.online/tools/home/wallpaper-calculator.html) |
+| Concrete Calculator | Calculate concrete volume and bags needed | [/tools/home/concrete-calculator.html](https://optidrop.online/tools/home/concrete-calculator.html) |
+| Shoe Size Converter | Convert between US, UK, EU, and CM shoe sizes | [/tools/home/shoe-size-converter.html](https://optidrop.online/tools/home/shoe-size-converter.html) |
+| Cooking Converter | Convert between cups, tablespoons, grams, and ml | [/tools/home/cooking-converter.html](https://optidrop.online/tools/home/cooking-converter.html) |
+| Tile Calculator | Calculate floor tile quantity with waste buffer | [/tools/home/tile-calculator.html](https://optidrop.online/tools/home/tile-calculator.html) |
+| Plant Watering Reminder | Track plant care schedules with watering reminders | [/tools/home/plant-watering-reminder.html](https://optidrop.online/tools/home/plant-watering-reminder.html) |
 
 ---
 
@@ -181,6 +266,8 @@ Browse tools by category:
 - [Utility Tools](https://optidrop.online/category/utility-tools.html) — QR code, BMI, unit converter, password generator
 - [Developer Tools](https://optidrop.online/category/developer-tools.html) — JSON formatter, Base64, URL encoder, color converter
 - [Health Tools](https://optidrop.online/category/health-tools.html) — BMI, calorie, sleep, water intake, pregnancy
+- [Education Tools](https://optidrop.online/category/education-tools.html) — GPA calculator, quiz generator, citations, flashcards
+- [Fitness Tools](https://optidrop.online/category/fitness-tools.html) — BMR, TDEE, one rep max, heart rate zones
 - [Fun & Random Tools](https://optidrop.online/category/fun-tools.html) — Jokes, recipes, coin flip, random generators
 - [Home & DIY Tools](https://optidrop.online/category/home-tools.html) — Paint, wallpaper, concrete calculators, cooking converter
 
@@ -188,7 +275,7 @@ Browse tools by category:
 
 ## Site Pages
 
-- [Tools Directory](https://optidrop.online/tools.html) — Browse all 90+ tools with search and category filters
+- [Tools Directory](https://optidrop.online/tools.html) — Browse all 140+ tools with search and category filters
 - [About](https://optidrop.online/about.html) — What OptiDrop is and why it is free
 - [Privacy Policy](https://optidrop.online/privacy-policy.html) — No data collection, 100% browser-side processing
 - [Terms of Service](https://optidrop.online/terms.html) — Free to use, no warranties
@@ -215,7 +302,7 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 - **Vanilla JavaScript** — No frameworks, no build process, no npm
 - **Canvas API** — Image processing, compression, resizing, business card rendering
 - **Web Workers** — OffscreenCanvas compression, Tesseract.js OCR, background removal (off main thread)
-- **Web APIs** — File API, Blob API, crypto.getRandomValues, SubtleCrypto (SHA-256/512), localStorage, sessionStorage, URL parameters
+- **Web APIs** — File API, Blob API, crypto.getRandomValues, SubtleCrypto (SHA-256/512), localStorage, sessionStorage, URL parameters, Web Speech API, Intl API
 - **jsPDF** — PDF generation for resumes, invoices, contracts, letters, receipts
 - **marked.js** — Markdown to HTML rendering (developer tools)
 
@@ -271,137 +358,93 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   ├── unit-converter.html                 # Unit converter
 │   ├── pomodoro-timer.html                 # Pomodoro focus timer
 │   ├── aspect-ratio-calculator.html        # Aspect ratio calculator
-│   ├── calculators/
-│   │   ├── sip-calculator.html             # SIP calculator
-│   │   ├── income-tax-calculator.html      # Income tax (old vs new regime)
-│   │   ├── mortgage-calculator.html        # Mortgage calculator
-│   │   ├── tip-calculator.html             # Tip calculator
-│   │   ├── grade-calculator.html           # Grade & GPA calculator
-│   │   ├── loan-comparison.html            # Loan comparison
-│   │   ├── compound-interest.html          # Compound interest calculator
-│   │   ├── retirement-calculator.html      # Retirement savings calculator
-│   │   ├── discount-calculator.html        # Discount / percent off calculator
-│   │   ├── date-difference.html            # Date difference calculator
-│   │   ├── time-calculator.html            # Time add/subtract calculator
-│   │   ├── fuel-cost.html                  # Fuel cost estimator
-│   │   ├── currency-converter.html         # Currency converter (25 currencies)
-│   │   ├── calorie-calculator.html         # Calorie / TDEE calculator
-│   │   ├── 401k-calculator.html            # 401(k) retirement savings (USA)
-│   │   ├── paycheck-calculator.html        # US take-home pay calculator
-│   │   ├── savings-goal.html               # Savings goal planner
-│   │   ├── invoice-tax-calculator.html     # US sales tax (all 50 states)
-│   │   ├── vat-calculator.html             # VAT calculator (UK/EU/global)
-│   │   ├── overtime-calculator.html        # Overtime pay calculator
-│   │   ├── loan-amortization.html          # Loan amortization schedule
-│   │   ├── roi-calculator.html             # Return on investment calculator
-│   │   ├── freelance-rate.html             # Freelance hourly rate calculator
-│   │   └── discount-tax-calculator.html    # Discount & tax combined calculator
-│   ├── text/
-│   │   ├── lorem-ipsum-generator.html      # Lorem ipsum generator
-│   │   ├── random-name-generator.html      # Random name generator
-│   │   ├── text-repeater.html              # Text repeater
-│   │   ├── binary-to-text.html             # Binary/hex/decimal converter
-│   │   ├── character-counter.html          # Character counter with platform limits
-│   │   ├── remove-duplicate-lines.html     # Remove duplicate lines
-│   │   ├── find-and-replace.html           # Find and replace text
-│   │   ├── number-to-words.html            # Number to words converter
-│   │   ├── reverse-text.html               # Reverse text generator
-│   │   ├── text-to-slug.html               # Text to URL slug generator
-│   │   ├── word-frequency.html             # Word frequency counter
-│   │   ├── sentence-reorder.html           # Sentence shuffler
-│   │   └── random-picker.html              # Random number & name picker
-│   ├── career/
-│   │   ├── resume-builder.html             # Resume builder (4 templates, PDF)
-│   │   ├── cover-letter.html               # Cover letter generator
-│   │   ├── resignation-letter.html         # Resignation letter generator
-│   │   ├── thank-you-letter.html           # Thank you letter generator
-│   │   ├── linkedin-generator.html         # LinkedIn headline & bio
-│   │   ├── internship-letter.html          # Internship application letter
-│   │   └── job-tracker.html                # Job application tracker (localStorage)
-│   ├── business/
-│   │   ├── invoice-generator.html          # Invoice generator (multi-currency)
-│   │   ├── freelance-contract.html         # Freelance contract generator
-│   │   ├── salary-slip.html                # Salary slip generator
-│   │   ├── business-proposal.html          # Business proposal generator
-│   │   ├── offer-letter.html               # Offer letter generator
-│   │   ├── noc-generator.html              # NOC generator (5 types)
-│   │   ├── experience-letter.html          # Experience & relieving letter
-│   │   ├── profit-calculator.html          # Profit margin & break-even calculator
-│   │   └── receipt-generator.html          # Receipt generator (PDF)
-│   ├── professional/
-│   │   ├── email-signature.html            # Email signature (Gmail/Outlook/Apple)
-│   │   ├── business-card.html              # Business card maker (PNG download)
-│   │   ├── bio-generator.html              # Professional bio generator
-│   │   └── sop-generator.html              # Statement of purpose generator
-│   ├── developer/
-│   │   ├── json-formatter.html             # JSON formatter & validator
-│   │   ├── base64.html                     # Base64 encoder/decoder
-│   │   ├── url-encoder.html                # URL encoder/decoder
-│   │   ├── color-converter.html            # HEX/RGB/HSL color converter
-│   │   ├── markdown-preview.html           # Markdown live preview editor
-│   │   ├── hash-generator.html             # SHA-256/SHA-512 hash generator
-│   │   ├── css-minifier.html               # CSS minifier with size comparison
-│   │   ├── jwt-decoder.html                # JWT token decoder
-│   │   ├── exif-stripper.html              # EXIF metadata stripper
-│   │   ├── css-box-shadow-generator.html   # CSS box shadow generator
-│   │   ├── css-gradient-generator.html     # CSS gradient generator
-│   │   ├── html-entities.html              # HTML entities encoder/decoder
-│   │   ├── json-to-csv.html                # JSON to CSV converter
-│   │   ├── regex-tester.html               # Regex tester with live matching
-│   │   ├── timestamp-converter.html        # Unix timestamp converter
-│   │   └── uuid-generator.html             # UUID v4 generator
-│   └── health/
-│       ├── ideal-weight.html               # Ideal weight calculator (4 formulas)
-│       ├── calorie-calculator.html         # Calorie / TDEE calculator
-│       ├── water-intake.html               # Water intake calculator with tracker
-│       ├── sleep-calculator.html           # Sleep cycle calculator
-│       ├── pregnancy-due-date.html         # Pregnancy due date calculator
-│       ├── ovulation-calculator.html       # Ovulation & fertile window calculator
-│       ├── macro-calculator.html           # Macronutrient calculator (protein/carbs/fat)
-│       ├── body-fat-calculator.html        # Body fat percentage (US Navy method)
-│       └── bmr-calculator.html             # BMR and TDEE calorie calculator
-├── category/
-│   ├── image-tools.html                    # Image tools category
-│   ├── pdf-tools.html                      # PDF tools category
-│   ├── calculator-tools.html               # Calculators category
-│   ├── text-tools.html                     # Text tools category
-│   ├── career-tools.html                   # Career tools category
-│   ├── business-tools.html                 # Business tools category
-│   ├── professional-tools.html             # Professional tools category
-│   ├── utility-tools.html                  # Utility tools category
-│   ├── developer-tools.html                # Developer tools category
-│   ├── health-tools.html                   # Health tools category
-│   ├── fun-tools.html                      # Fun & random tools category
-│   └── home-tools.html                     # Home & DIY tools category
-├── compress-image-for-instagram.html       # SEO: compress images for Instagram
-├── jpg-to-pdf-iphone.html                  # SEO: iPhone photos to PDF
-├── pdf-to-jpg-free.html                    # SEO: PDF to JPG free
-├── free-invoice-generator.html             # SEO: free invoice generator
-├── free-resume-builder.html                # SEO: free resume builder
-├── reindex-checklist.html                  # Internal: Google Search Console checklist (noindex)
-├── blog/
-│   ├── index.html                          # Blog index
-│   ├── compress-image-for-visa-application.html
-│   ├── how-to-convert-heic-to-jpg.html
-│   ├── how-to-resize-passport-photo-online.html
-│   ├── passport-photo-size-guide-all-countries.html
-│   ├── how-to-compress-pdf-for-email.html  # Compress PDF for email guide
-│   ├── gst-calculator-india-how-to-use.html # GST calculator guide
-│   ├── emi-vs-sip-calculator-difference.html # EMI vs SIP guide
-│   ├── resume-tips-ats-friendly.html       # ATS resume tips guide
-│   ├── 401k-calculator-guide.html          # 401(k) retirement guide
-│   ├── paycheck-calculator-us-taxes.html   # US paycheck taxes guide
-│   ├── css-minification-guide.html         # CSS minification guide
-│   ├── macro-calculator-diet-planning.html # Macro calculator diet guide
-│   ├── css-gradient-generator-guide.html   # CSS gradient generator guide
-│   ├── fun-tools-to-break-boredom.html     # Fun tools for boredom guide
-│   ├── wall-paint-estimate-diy-calculator.html # Wall paint calculator guide
-│   └── blood-pressure-tracking-without-apps.html # Blood pressure tracking guide
+│   ├── calculators/                        # 36 calculator tools
+│   │   ├── sip-calculator.html
+│   │   ├── income-tax-calculator.html
+│   │   ├── savings-goal-tracker.html       # NEW
+│   │   ├── budget-planner.html             # NEW
+│   │   ├── inflation-calculator.html       # NEW
+│   │   ├── credit-card-payoff.html         # NEW
+│   │   ├── car-loan-calculator.html        # NEW
+│   │   ├── rule-of-72.html                 # NEW
+│   │   ├── tax-deduction-calculator.html   # NEW
+│   │   ├── advanced-retirement-calculator.html # NEW
+│   │   └── ... (28 more)
+│   ├── text/                               # 23 text tools
+│   │   ├── lorem-ipsum-generator.html
+│   │   ├── word-frequency.html
+│   │   ├── reading-time-calculator.html    # NEW
+│   │   ├── text-diff-checker.html          # NEW
+│   │   ├── typing-speed-test.html          # NEW
+│   │   ├── acronym-generator.html          # NEW
+│   │   ├── anagram-solver.html             # NEW
+│   │   ├── password-phrase-generator.html  # NEW
+│   │   ├── text-to-speech-preview.html     # NEW
+│   │   ├── bulk-text-replacer.html         # NEW
+│   │   ├── keyword-density-checker.html    # NEW
+│   │   ├── word-scramble.html              # NEW
+│   │   ├── number-trivia.html              # NEW
+│   │   └── ... (10 more)
+│   ├── developer/                          # 24 developer tools
+│   │   ├── json-formatter.html
+│   │   ├── base64.html
+│   │   ├── morse-code-translator.html      # NEW
+│   │   ├── caesar-cipher.html              # NEW
+│   │   ├── html-to-markdown.html           # NEW
+│   │   ├── youtube-timestamp-linker.html   # NEW
+│   │   ├── meta-tag-generator.html         # NEW
+│   │   ├── color-palette-generator.html    # NEW
+│   │   ├── ascii-art-converter.html        # NEW
+│   │   ├── markdown-table-generator.html   # NEW
+│   │   └── ... (14 more)
+│   ├── education/                          # 7 education tools (NEW CATEGORY)
+│   │   ├── gpa-calculator.html
+│   │   ├── final-grade-calculator.html
+│   │   ├── quiz-generator.html
+│   │   ├── essay-word-counter.html
+│   │   ├── citation-generator.html
+│   │   ├── study-timer.html
+│   │   └── flashcard-generator.html
+│   ├── fitness/                            # 5 fitness tools (NEW CATEGORY)
+│   │   ├── bmr-tdee-advanced.html
+│   │   ├── one-rep-max-calculator.html
+│   │   ├── walking-calorie-burn.html
+│   │   ├── body-measurement-tracker.html
+│   │   └── heart-rate-zone-calculator.html
+│   ├── health/                             # 9 health tools
+│   ├── utility/                            # 13 utility tools
+│   │   ├── bmi-with-body-fat.html          # NEW
+│   │   ├── pack-weight-calculator.html     # NEW
+│   │   ├── random-decision-maker.html      # NEW
+│   │   ├── habit-tracker-simple.html       # NEW
+│   │   ├── screen-ruler.html               # NEW
+│   │   ├── world-clock.html                # NEW
+│   │   ├── file-size-converter.html        # NEW
+│   │   └── ... (6 more)
+│   ├── fun/                                # 10 fun & games tools
+│   │   ├── dice-roller.html                # NEW
+│   │   ├── yes-no-decider.html             # NEW
+│   │   ├── password-game.html              # NEW
+│   │   ├── birthday-fortune.html           # NEW
+│   │   ├── rock-paper-scissors.html        # NEW
+│   │   └── ... (5 more)
+│   ├── home/                               # 7 home & DIY tools
+│   │   ├── tile-calculator.html            # NEW
+│   │   ├── plant-watering-reminder.html    # NEW
+│   │   └── ... (5 more)
+│   ├── career/                             # 7 career tools
+│   ├── business/                           # 9 business tools
+│   └── professional/                       # 4 professional tools
+├── category/                               # 14 category pages
+│   ├── education-tools.html                # NEW
+│   ├── fitness-tools.html                  # NEW
+│   └── ... (12 more)
+├── blog/                                   # 16 blog articles
 ├── styles.css                              # All CSS (single file)
 ├── common.js                               # Shared JavaScript utilities
 ├── script.js                               # Dashboard + image/PDF tool implementations
-├── compress-worker.js                      # Web Worker: image compression (OffscreenCanvas)
-├── ocr-worker.js                           # Web Worker: Tesseract.js OCR processing
+├── compress-worker.js                      # Web Worker: image compression
+├── ocr-worker.js                           # Web Worker: Tesseract.js OCR
 ├── background-worker.js                    # Web Worker: AI background removal
 ├── favicon.png                             # Favicon
 ├── Generated_image-removebg-preview.png    # Logo
@@ -418,24 +461,19 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 The homepage shows your last 3 visited tools in a "Pick Up Where You Left Off" section. Tracked via localStorage under `optidrop_recent_tools` (stores last 5, displays last 3). Only visible when history exists.
 
 ### Keyboard Command Palette
-Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 90+ tools. Real-time filtering as you type, arrow key navigation, Enter to open, Escape to close. A small keyboard hint appears in the header on all pages.
+Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 140+ tools. Real-time filtering as you type, arrow key navigation, Enter to open, Escape to close. A small keyboard hint appears in the header on all pages.
 
 ### Dark Mode Toggle
 Sun/moon toggle button in the header on every page. Saves preference to localStorage under `optidrop_dark_mode`. Prevents flash of wrong theme by checking on script load. Deep navy color palette (#0f172a, #1e293b) — covers all components including tool cards, forms, footer, modals, and search.
 
 ### Unified Navigation Header
-Every page on the site uses the same standardized navbar structure — logo, 4 desktop nav links (Tools, Categories, Blog, About), privacy badge, mobile hamburger menu with 4-link mobile nav, and responsive behavior. This ensures a consistent, professional experience across all 100+ pages. The navbar supports both light and dark themes with proper color transitions.
+Every page on the site uses the same standardized navbar structure — logo, 4 desktop nav links (Tools, Categories, Blog, About), privacy badge, mobile hamburger menu with 4-link mobile nav, and responsive behavior. This ensures a consistent, professional experience across all 180+ pages. The navbar supports both light and dark themes with proper color transitions.
 
 ### Smart Clipboard Paste Detection
 On the homepage, pasting an image shows a toast with a link to Image Compressor. Pasting text longer than 20 characters shows a toast with a link to Word Counter.
 
 ### Post-Completion Tool Suggestions
-After completing a tool action (download or calculate), 5 key tool pages show a "What do you want to do next?" block with 2 relevant tool links:
-- Image Compressor → Passport Photo Resizer, Background Remover
-- HEIC to JPG → Image Compressor, Passport Photo Resizer
-- PDF to JPG → Image Compressor, JPG to PDF
-- Resume Builder → Cover Letter, Email Signature
-- EMI Calculator → Loan Comparison, SIP Calculator
+After completing a tool action (download or calculate), relevant tool pages show a "What do you want to do next?" block with related tool links.
 
 ### Parametric URL Sharing (Calculators)
 All calculator pages encode input values into the URL hash after calculation. A "Share this calculation" button copies the full URL. On page load, hash parameters pre-fill inputs and auto-calculate. Enables sharing specific calculations via link.
@@ -458,7 +496,7 @@ Three tools use Web Workers to keep the UI responsive on low-end devices:
 All workers fall back to main-thread processing if Web Workers or OffscreenCanvas are unavailable.
 
 ### Auto-Save for Form Tools
-Resume builder, cover letter generator, invoice generator, salary slip generator, and SOP generator auto-save form data to localStorage. On return visits, a draft recovery bar offers to restore the previous session.
+Resume builder, cover letter generator, invoice generator, salary slip generator, SOP generator, budget planner, habit tracker, body measurement tracker, plant watering reminder, quiz generator, and flashcard generator auto-save form data to localStorage. On return visits, a draft recovery bar offers to restore the previous session.
 
 ### Bookmark Prompt
 After using the same tool twice, a one-time toast suggests bookmarking the page (Ctrl+D). Tracked per tool via localStorage.
@@ -467,7 +505,7 @@ After using the same tool twice, a one-time toast suggests bookmarking the page 
 The homepage search bar searches tool names, descriptions, and categories. Results appear in a dropdown with tool name, category label, and one-line description. Supports keyboard navigation (arrow keys + Enter) and Ctrl+K / Cmd+K shortcut to focus.
 
 ### Upload Trust Badges
-All 12 file upload tool pages display a "100% Local — your file never leaves this device" badge with a lock icon below the upload zone.
+All file upload tool pages display a "100% Local — your file never leaves this device" badge with a lock icon below the upload zone.
 
 ---
 
@@ -480,7 +518,7 @@ All 12 file upload tool pages display a "100% Local — your file never leaves t
 - JSON-LD structured data:
   - WebSite schema (homepage)
   - SoftwareApplication schema (all tool pages)
-  - BreadcrumbList schema (all pages)
+  - BreadcrumbList schema with 3 levels (Home > Category > Tool)
   - FAQPage schema (all tool pages, 4 questions each)
   - Article schema (all blog posts)
   - Organization schema (about page)
@@ -490,7 +528,7 @@ All 12 file upload tool pages display a "100% Local — your file never leaves t
 - Blog with 16 SEO-optimized articles targeting long-tail keywords
 - CSS text logo (no image dependency for logo)
 - Mobile-first responsive design
-- Category filter chips on tools directory page (11 categories)
+- Category filter chips on tools directory page (15 categories)
 - Live search with dropdown results on homepage
 - Core Web Vitals optimized with Web Workers for heavy processing
 
@@ -503,7 +541,7 @@ All 12 file upload tool pages display a "100% Local — your file never leaves t
 - All processing happens inside your browser
 - No files are uploaded to any server
 - No user data is collected or stored
-- localStorage used only for auto-save drafts, tool usage counters, recently used tools, and dark mode preference (stays on device)
+- localStorage used only for auto-save drafts, tool usage counters, recently used tools, dark mode preference, and tool-specific data (habit tracker, budget planner, body measurements, plant care, flashcards, quizzes, coin flip history) — all stays on device
 - sessionStorage used only for drag-and-drop file routing between pages (cleared on use)
 - No cookies for tracking purposes
 - URL parameters for calculator sharing contain only the values the user entered
@@ -540,6 +578,8 @@ Then open `http://localhost:8000` in your browser.
 - No forms with external `action` URLs
 - localStorage data is isolated under `optidrop_*` namespace keys
 - All processing is client-side — no data is sent to any server
+- EXIF data output is HTML-escaped to prevent XSS from malicious image metadata
+- Markdown preview uses DOMPurify for HTML sanitization
 
 ---
 
