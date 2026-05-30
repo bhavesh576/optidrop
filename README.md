@@ -2,7 +2,7 @@
 
 **Free Online Tools — No Upload, No Sign-Up, No Cost**
 
-OptiDrop is a fully browser-based toolkit with **258 free tools** across **18 categories** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, education, fitness, productivity, travel, design, parenting, fun, home improvement, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
+OptiDrop is a fully browser-based toolkit with **245 free tools** across **18 categories** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, education, fitness, productivity, travel, design, parenting, fun, home improvement, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
 
 **Live at:** [https://optidrop.online](https://optidrop.online)
 
@@ -415,12 +415,12 @@ Browse tools by category:
 
 ## Site Pages
 
-- [Tools Directory](https://optidrop.online/tools.html) — Browse all 258 tools with search and category filters
+- [Tools Directory](https://optidrop.online/tools.html) — Browse all 245 tools with search and category filters
 - [About](https://optidrop.online/about.html) — What OptiDrop is and why it is free
 - [Privacy Policy](https://optidrop.online/privacy-policy.html) — No data collection, 100% browser-side processing
 - [Terms of Service](https://optidrop.online/terms.html) — Free to use, no warranties
 - [Contact](https://optidrop.online/contact.html) — contact@optidrop.online
-- [Blog](https://optidrop.online/blog/) — 16 guides and tutorials
+- [Blog](https://optidrop.online/blog/) — 17 guides and tutorials
 
 ---
 
@@ -518,7 +518,7 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   ├── parenting/                          # 5 parenting tools
 │   └── professional/                       # 4 professional tools
 ├── category/                               # 18 category pages
-├── blog/                                   # 16 blog articles + index
+├── blog/                                   # 17 blog articles + index
 └── compress-image-for-instagram.html       # Instagram image compressor
 ```
 
@@ -526,11 +526,21 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 
 ## Key Features
 
+### Premium Visual Design
+OptiDrop uses a refined, modern visual language with GPU-accelerated CSS animations:
+- **Smooth card hover effects** — All tool cards, category cards, featured cards, and blog cards lift with `translateY(-4px)` and deeper shadows on hover using buttery `cubic-bezier(0.4, 0, 0.2, 1)` easing
+- **Premium icon enclosures** — Category emojis are contained in rounded square backgrounds with soft tints; tool icons scale elegantly on hover
+- **Gradient text hero headline** — The main "No Upload, No Sign-Up, No Cost" headline uses a blue → indigo → violet gradient
+- **Stylish badges** — "Most Used", "Popular", and "New" badges use gradient backgrounds with refined typography
+- **Enhanced sidebar navigation** — Active category items feature a clean left border with a subtle gradient background tint and soft glow shadow
+- **Consistent dark mode** — All premium styles have full dark mode counterparts with appropriate color adjustments
+- **Zero performance impact** — All effects use `will-change`, `transform`, and `opacity` for GPU-accelerated rendering; no JavaScript animations, no heavy images, no new libraries
+
 ### Recently Used Tools
 The homepage shows your last 3 visited tools in a "Pick Up Where You Left Off" section. Tracked via localStorage under `optidrop_recent_tools` (stores last 5, displays last 3). Only visible when history exists.
 
 ### Keyboard Command Palette
-Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 258 tools. Real-time filtering as you type, arrow key navigation, Enter to open, Escape to close. A small keyboard hint appears in the header on all pages.
+Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 245 tools. Real-time filtering as you type, arrow key navigation, Enter to open, Escape to close. A small keyboard hint appears in the header on all pages.
 
 ### Dark Mode Toggle
 Sun/moon toggle button in the header on every page. Saves preference to localStorage under `optidrop_dark_mode`. Prevents flash of wrong theme by checking on script load. Deep navy color palette (#0f172a, #1e293b) — covers all components including tool cards, forms, footer, modals, and search.
@@ -607,7 +617,7 @@ All file upload tool pages display a "100% Local — your file never leaves this
   - WebPage schema (privacy, terms pages)
 - XML sitemap with 480+ URLs
 - Internal linking: Workflow next-step sections, category pages, footer links
-- Blog with 16 SEO-optimized articles targeting long-tail keywords
+- Blog with 17 SEO-optimized articles targeting long-tail keywords
 - CSS text logo (no image dependency for logo)
 - Mobile-first responsive design
 - Category filter chips on tools directory page (18 categories)
