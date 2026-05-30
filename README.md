@@ -2,7 +2,7 @@
 
 **Free Online Tools — No Upload, No Sign-Up, No Cost**
 
-OptiDrop is a fully browser-based toolkit with **306 free tools** across **18 categories** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, education, fitness, productivity, travel, design, parenting, fun, home improvement, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
+OptiDrop is a fully browser-based toolkit with **300+ free tools** across **18 categories** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, education, fitness, productivity, travel, design, parenting, fun, home improvement, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
 
 **Live at:** [https://optidrop.online](https://optidrop.online)
 
@@ -471,7 +471,7 @@ Browse tools by category:
 
 ## Site Pages
 
-- [Tools Directory](https://optidrop.online/tools.html) — Browse all 306 tools with search and category filters
+- [Tools Directory](https://optidrop.online/tools.html) — Browse all 300+ tools with search and category filters
 - [About](https://optidrop.online/about.html) — What OptiDrop is and why it is free
 - [Privacy Policy](https://optidrop.online/privacy-policy.html) — No data collection, 100% browser-side processing
 - [Terms of Service](https://optidrop.online/terms.html) — Free to use, no warranties
@@ -590,7 +590,7 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 ## Key Features
 
 ### Recent Improvements (May 2026)
-- **306 tools** across 18 categories — expanded from 197 with 56 new PDF, education, business, and design tools
+- **300+ tools** across 18 categories — expanded from 197 with 56 new PDF, education, business, and design tools
 - **PDF tools suite** — 18 PDF tools: merger, splitter, compressor, watermark, page numbering, text extraction, grayscale, HTML-to-PDF, Markdown-to-PDF, margin adjuster, password protector, unlock, image-to-PDF advanced, advanced compressor, multi-PDF combiner, page rotator, JPG-to-PDF, PDF-to-JPG
 - **Education tools suite** — 15 new tools: bonafide certificate, character certificate, gap certificate, internship certificate, marksheet generator, study leave letter, sick leave application, principal application, scholarship application, recommendation letter, SOP builder, student bio data, project certificate, training certificate, academic declaration
 - **Business tools suite** — 10 new tools: relieving letter, payslip pro, fee receipt, quotation, purchase order, delivery challan, cash voucher, proforma invoice, NDA generator, experience letter pro
@@ -615,7 +615,7 @@ OptiDrop uses a refined, modern visual language with GPU-accelerated CSS animati
 The homepage shows your last 3 visited tools in a "Pick Up Where You Left Off" section. Tracked via localStorage under `optidrop_recent_tools` (stores last 5, displays last 3). Only visible when history exists.
 
 ### Keyboard Command Palette
-Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 306 tools. Real-time filtering as you type, arrow key navigation, Enter to open, Escape to close. Dynamically synced with the tools data registry — always up to date.
+Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 300+ tools. Real-time filtering as you type, arrow key navigation, Enter to open, Escape to close. Dynamically synced with the tools data registry — always up to date.
 
 ### Dark Mode Toggle
 Sun/moon toggle button in the header on every page. Saves preference to localStorage under `optidrop_dark_mode`. Inline script in `<head>` prevents flash of wrong theme. Deep navy color palette (#0f172a, #1e293b) — covers all components including tool cards, forms, footer, modals, and search.

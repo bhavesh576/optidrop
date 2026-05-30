@@ -1,4 +1,4 @@
-/* =========================================================
+﻿/* =========================================================
    OptiDrop — common.js (Shared across all pages)
    Performance: Non-critical features deferred via
    requestIdleCallback. Heavy DOM (command palette, FAB,
@@ -14,6 +14,20 @@ var _ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1
         if (localStorage.getItem('optidrop_dark_mode') === '1') {
             document.documentElement.classList.add('dark-mode');
             document.body.classList.add('dark-mode');
+        }
+    } catch (e) {}
+})();
+
+// ── Canonical Tag Cleanup ────────────────────────────────────
+// Ensure canonical URL points to clean base path (no query params or hash)
+(function () {
+    try {
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) {
+            var cleanUrl = canonical.href.split('?')[0].split('#')[0];
+            if (canonical.href !== cleanUrl) {
+                canonical.href = cleanUrl;
+            }
         }
     } catch (e) {}
 })();
@@ -64,7 +78,7 @@ var _ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1
                                 '<a href="/category/parenting-tools.html" class="mega-menu-item"><span class="mm-emoji">👶</span><span class="mm-info"><span class="mm-name">Parenting</span><span class="mm-count">5 tools</span></span></a>' +
                             '</div>' +
                         '</div>' +
-                        '<div class="mega-menu-footer"><a href="/tools.html">Browse All 306+ Tools →</a></div>' +
+                        '<div class="mega-menu-footer"><a href="/tools.html">Browse All 300+ tools →</a></div>' +
                     '</div>' +
                 '</div>' +
                 '<a href="/blog/" class="hide-mobile">Blog</a>' +
@@ -143,10 +157,10 @@ var _ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1
 (function () {
     var FOOTER_HTML = '<footer class="site-footer">' +
         '<div class="footer-inner">' +
-            '<div class="footer-grid" style="grid-template-columns:1.5fr 1fr 1fr 1.5fr 1fr;">' +
+            '<div class="footer-grid">' +
                 '<div class="footer-col footer-about">' +
                     '<h4>OptiDrop</h4>' +
-                    '<p>Free, fast, and 100% private browser-based tools. 306+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>' +
+                    '<p>Free, fast, and 100% private browser-based tools. 300+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>' +
                     '<p style="margin-top:0.75rem;font-size:0.75rem;color:#94a3b8;">© <span id="year"></span> OptiDrop. All rights reserved.</p>' +
                 '</div>' +
                 '<div class="footer-col">' +
@@ -657,7 +671,7 @@ var allToolsData = [
 ];
 
 var SIDEBAR_CATEGORIES = [
-    {id:'all',name:'All Tools',count:306},
+    {id:'all',name:'All Tools',count:300},
     {id:'image',name:'Image Tools',count:9},
     {id:'pdf',name:'PDF Tools',count:18},
     {id:'text',name:'Text Tools',count:32},
@@ -1551,7 +1565,7 @@ _ric(function () {
     overlay.className = 'cmd-palette-overlay';
     overlay.style.display = 'none';
     overlay.innerHTML = '<div class="cmd-palette-box">' +
-        '<input type="text" id="cmdInput" class="cmd-palette-input" placeholder="Search 306+ tools..." autocomplete="off">' +
+        '<input type="text" id="cmdInput" class="cmd-palette-input" placeholder="Search 300+ tools..." autocomplete="off">' +
         '<div id="cmdResults" class="cmd-palette-results"></div>' +
         '<div class="cmd-palette-footer"><span>Press <kbd>Esc</kbd> to close</span><span><kbd>Enter</kbd> to open</span></div>' +
         '</div>';
