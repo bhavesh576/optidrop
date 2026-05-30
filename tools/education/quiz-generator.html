@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Generator | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online quiz generator and test maker. Create multiple choice quizzes with 4 options, save to localStorage, and test yourself. Perfect for students and teachers.">
+    <meta name="keywords" content="quiz generator, test maker, multiple choice quiz, online quiz maker, study quiz, exam prep, create quiz free">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Quiz Generator - Create &amp; Take Quizzes Online | OptiDrop">
+    <meta property="og:description" content="Create multiple choice quizzes for free. Save quizzes locally, test yourself, and track your score.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/education/quiz-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quiz Generator - Create &amp; Take Quizzes Online | OptiDrop">
+    <meta name="twitter:description" content="Create multiple choice quizzes for free. Save quizzes locally, test yourself, and track your score.">
+    <link rel="canonical" href="https://optidrop.online/tools/education/quiz-generator.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Education Tools","item":"https://optidrop.online/category/education-tools.html"},{"@type":"ListItem","position":3,"name":"Quiz Generator","item":"https://optidrop.online/tools/education/quiz-generator.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Quiz Generator","applicationCategory":"EducationalApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online quiz generator for creating and taking multiple choice quizzes with localStorage saving."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I create a quiz?","acceptedAnswer":{"@type":"Answer","text":"Switch to Create mode, enter your quiz title, then add questions one by one. Each question needs 4 answer options, and you select the correct one. Click Save Quiz when done."}},{"@type":"Question","name":"Where are my quizzes saved?","acceptedAnswer":{"@type":"Answer","text":"Quizzes are saved in your browser's localStorage. They remain available until you clear your browser data. No account or sign-in required."}},{"@type":"Question","name":"Can I edit a saved quiz?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can load any saved quiz, make changes in Create mode, and save it again. The updated version will replace the previous one."}},{"@type":"Question","name":"How does scoring work?","acceptedAnswer":{"@type":"Answer","text":"When you take a quiz, you answer all questions and submit. The tool shows your score as a percentage and highlights correct and incorrect answers for learning."}}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header"><div class="header-inner"><a href="/" class="logo-text">Opti<span>Drop</span></a><nav class="header-nav"><a href="/" class="back-link"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>All Tools</a><span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span><button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav></div><nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a></nav></header>
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Quiz Generator</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Create custom multiple choice quizzes, save them to your browser, and test your knowledge. Perfect for exam preparation and self-study.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <!-- Mode Tabs -->
+                    <div class="flex gap-2 mb-6 bg-slate-100 dark:bg-slate-800 rounded-xl p-1">
+                        <button onclick="switchMode('create')" id="tab-create" class="flex-1 py-2.5 rounded-lg text-sm font-semibold transition bg-brand-600 text-white shadow">Create Quiz</button>
+                        <button onclick="switchMode('take')" id="tab-take" class="flex-1 py-2.5 rounded-lg text-sm font-semibold transition text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700">Take Quiz</button>
+                    </div>
+
+                    <!-- Create Mode -->
+                    <div id="create-mode">
+                        <div class="mb-5">
+                            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Quiz Title</label>
+                            <input type="text" id="quizTitle" placeholder="e.g. Biology Chapter 5 Quiz" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none">
+                        </div>
+                        <div id="questions-container"></div>
+                        <div class="flex flex-wrap gap-3 mt-4">
+                            <button onclick="addQuestion()" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg text-sm font-medium transition">+ Add Question</button>
+                            <button onclick="saveQuiz()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-medium transition">Save Quiz</button>
+                            <button onclick="clearCreateForm()" class="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium transition">Clear Form</button>
+                        </div>
+                        <!-- Saved Quizzes List -->
+                        <div class="mt-6">
+                            <h3 class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">Saved Quizzes</h3>
+                            <div id="saved-quizzes-list" class="space-y-2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Take Mode -->
+                    <div id="take-mode" class="hidden">
+                        <div id="quiz-select-area">
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Select a saved quiz to take:</p>
+                            <div id="take-quiz-list" class="space-y-2"></div>
+                        </div>
+                        <div id="quiz-taking-area" class="hidden">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2" id="active-quiz-title"></h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" id="quiz-progress"></p>
+                            <div id="quiz-questions-area" class="space-y-5"></div>
+                            <div class="mt-6 flex gap-3">
+                                <button onclick="submitQuiz()" id="submit-quiz-btn" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition">Submit Answers</button>
+                                <button onclick="backToQuizList()" class="px-4 py-3 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-xl font-medium transition">Back</button>
+                            </div>
+                        </div>
+                        <div id="quiz-result-area" class="hidden">
+                            <div class="text-center p-6 rounded-2xl bg-gradient-to-br from-brand-50 to-emerald-50 dark:from-brand-900/30 dark:to-emerald-900/30 border border-brand-200 dark:border-brand-800">
+                                <p class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">Your Score</p>
+                                <p class="text-5xl font-extrabold text-brand-600 dark:text-brand-400" id="quiz-score"></p>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-2" id="quiz-score-detail"></p>
+                            </div>
+                            <div id="quiz-review-area" class="mt-6 space-y-4"></div>
+                            <div class="mt-6 flex gap-3">
+                                <button onclick="retakeQuiz()" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-semibold transition">Retake Quiz</button>
+                                <button onclick="backToQuizList()" class="px-4 py-3 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-xl font-medium transition">Back to List</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>Free Online Quiz Generator and Test Maker</h2>
+                <p>Our quiz generator lets you create custom multiple choice quizzes in seconds. Whether you are a student preparing for exams or a teacher creating practice tests, this tool makes quiz creation simple and fast.</p>
+                <h3>How to Create a Quiz</h3>
+                <p>Switch to Create mode, give your quiz a title, and start adding questions. Each question needs a question text and four answer options. Select the correct answer by clicking the radio button next to it. You can add as many questions as you need and remove any question with the delete button.</p>
+                <h3>Taking a Quiz</h3>
+                <p>Switch to Take mode and select any quiz you have previously saved. Answer all questions by clicking your chosen option, then submit to see your score. The results show which answers were correct and incorrect, helping you learn from your mistakes.</p>
+                <h3>Save and Load Quizzes</h3>
+                <p>All quizzes are saved in your browser's localStorage, so they persist between sessions without needing an account. You can save, load, edit, and delete quizzes at any time. Data stays entirely on your device for complete privacy.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">How do I create a quiz?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">Switch to Create mode, enter your quiz title, then add questions one by one. Each question needs 4 answer options, and you select the correct one. Click Save Quiz when done.</div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">Where are my quizzes saved?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">Quizzes are saved in your browser's localStorage. They remain available until you clear your browser data. No account or sign-in required.</div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">Can I edit a saved quiz?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">Yes, you can load any saved quiz, make changes in Create mode, and save it again. The updated version will replace the previous one.</div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">How does scoring work?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">When you take a quiz, you answer all questions and submit. The tool shows your score as a percentage and highlights correct and incorrect answers for learning.</div>
+                </details>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="/tools/education/flashcard-generator.html" class="glass-panel rounded-xl p-5 hover:shadow-lg transition group">
+                    <h3 class="font-semibold text-slate-800 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition">Flashcard Generator</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Create digital flashcards with front/back text for active recall study sessions.</p>
+                </a>
+                <a href="/tools/education/study-timer.html" class="glass-panel rounded-xl p-5 hover:shadow-lg transition group">
+                    <h3 class="font-semibold text-slate-800 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition">Study Timer</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Custom study session timer with break intervals and audio alerts.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+        let questions = [];
+        let currentQuiz = null;
+        let userAnswers = [];
+
+        function switchMode(mode) {
+            document.getElementById('create-mode').classList.toggle('hidden', mode !== 'create');
+            document.getElementById('take-mode').classList.toggle('hidden', mode !== 'take');
+            document.getElementById('tab-create').className = mode === 'create' ? 'flex-1 py-2.5 rounded-lg text-sm font-semibold transition bg-brand-600 text-white shadow' : 'flex-1 py-2.5 rounded-lg text-sm font-semibold transition text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700';
+            document.getElementById('tab-take').className = mode === 'take' ? 'flex-1 py-2.5 rounded-lg text-sm font-semibold transition bg-brand-600 text-white shadow' : 'flex-1 py-2.5 rounded-lg text-sm font-semibold transition text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700';
+            if (mode === 'take') refreshTakeList();
+            if (mode === 'create') refreshSavedList();
+        }
+
+        function addQuestion() {
+            const idx = questions.length;
+            questions.push({ question: '', options: ['', '', '', ''], correct: 0 });
+            renderQuestions();
+        }
+
+        function removeQuestion(idx) {
+            questions.splice(idx, 1);
+            renderQuestions();
+        }
+
+        function renderQuestions() {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = questions.map((q, i) => `
+                <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 mb-3">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-sm font-bold text-slate-700 dark:text-slate-300">Question ${i + 1}</span>
+                        <button onclick="removeQuestion(${i})" class="text-red-500 hover:text-red-700 text-sm font-medium">Remove</button>
+                    </div>
+                    <input type="text" value="${q.question}" onchange="questions[${i}].question=this.value" placeholder="Enter your question" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm mb-3 focus:ring-2 focus:ring-brand-500 outline-none">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        ${[0,1,2,3].map(j => `
+                            <label class="flex items-center gap-2 p-2 rounded-lg border ${q.correct === j ? 'border-emerald-400 bg-emerald-50 dark:bg-emerald-900/20' : 'border-slate-200 dark:border-slate-700'} cursor-pointer transition">
+                                <input type="radio" name="correct-${i}" ${q.correct === j ? 'checked' : ''} onchange="questions[${i}].correct=${j};renderQuestions()" class="accent-emerald-600">
+                                <input type="text" value="${q.options[j]}" onchange="questions[${i}].options[${j}]=this.value" placeholder="Option ${j+1}" class="flex-1 px-2 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm outline-none focus:ring-1 focus:ring-brand-500">
+                            </label>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getSavedQuizzes() {
+            try { return JSON.parse(localStorage.getItem('optidrop_quizzes') || '[]'); } catch { return []; }
+        }
+
+        function saveQuizzes(quizzes) {
+            localStorage.setItem('optidrop_quizzes', JSON.stringify(quizzes));
+        }
+
+        function saveQuiz() {
+            const title = document.getElementById('quizTitle').value.trim();
+            if (!title) { if (typeof showToast === 'function') showToast('Please enter a quiz title.', 'error'); return; }
+            if (questions.length === 0) { if (typeof showToast === 'function') showToast('Please add at least one question.', 'error'); return; }
+            for (let i = 0; i < questions.length; i++) {
+                if (!questions[i].question.trim()) { if (typeof showToast === 'function') showToast(`Please enter text for question ${i+1}.`, 'error'); return; }
+                for (let j = 0; j < 4; j++) {
+                    if (!questions[i].options[j].trim()) { if (typeof showToast === 'function') showToast(`Please fill all options for question ${i+1}.`, 'error'); return; }
+                }
+            }
+            const quizzes = getSavedQuizzes();
+            const existing = quizzes.findIndex(q => q.title === title);
+            const quiz = { title, questions: JSON.parse(JSON.stringify(questions)), created: new Date().toISOString() };
+            if (existing >= 0) quizzes[existing] = quiz; else quizzes.push(quiz);
+            saveQuizzes(quizzes);
+            if (typeof showToast === 'function') showToast('Quiz saved successfully!', 'success');
+            refreshSavedList();
+        }
+
+        function refreshSavedList() {
+            const quizzes = getSavedQuizzes();
+            const list = document.getElementById('saved-quizzes-list');
+            if (quizzes.length === 0) { list.innerHTML = '<p class="text-sm text-slate-500 dark:text-slate-400">No saved quizzes yet.</p>'; return; }
+            list.innerHTML = quizzes.map((q, i) => `
+                <div class="flex items-center justify-between p-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                    <div>
+                        <p class="font-medium text-slate-800 dark:text-white text-sm">${q.title}</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">${q.questions.length} questions</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="loadQuiz(${i})" class="px-3 py-1.5 bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300 rounded-lg text-xs font-medium hover:bg-brand-200 dark:hover:bg-brand-900/50 transition">Edit</button>
+                        <button onclick="deleteQuiz(${i})" class="px-3 py-1.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-lg text-xs font-medium hover:bg-red-200 dark:hover:bg-red-900/50 transition">Delete</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function refreshTakeList() {
+            const quizzes = getSavedQuizzes();
+            const list = document.getElementById('take-quiz-list');
+            if (quizzes.length === 0) { list.innerHTML = '<p class="text-sm text-slate-500 dark:text-slate-400">No saved quizzes. Create one first!</p>'; return; }
+            list.innerHTML = quizzes.map((q, i) => `
+                <button onclick="startQuiz(${i})" class="w-full text-left p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-brand-400 dark:hover:border-brand-600 transition">
+                    <p class="font-semibold text-slate-800 dark:text-white">${q.title}</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">${q.questions.length} questions</p>
+                </button>
+            `).join('');
+        }
+
+        function loadQuiz(idx) {
+            const quizzes = getSavedQuizzes();
+            const quiz = quizzes[idx];
+            document.getElementById('quizTitle').value = quiz.title;
+            questions = JSON.parse(JSON.stringify(quiz.questions));
+            renderQuestions();
+        }
+
+        function deleteQuiz(idx) {
+            const quizzes = getSavedQuizzes();
+            quizzes.splice(idx, 1);
+            saveQuizzes(quizzes);
+            refreshSavedList();
+            if (typeof showToast === 'function') showToast('Quiz deleted.', 'success');
+        }
+
+        function clearCreateForm() {
+            document.getElementById('quizTitle').value = '';
+            questions = [];
+            renderQuestions();
+        }
+
+        function startQuiz(idx) {
+            const quizzes = getSavedQuizzes();
+            currentQuiz = quizzes[idx];
+            userAnswers = new Array(currentQuiz.questions.length).fill(-1);
+            document.getElementById('quiz-select-area').classList.add('hidden');
+            document.getElementById('quiz-taking-area').classList.remove('hidden');
+            document.getElementById('quiz-result-area').classList.add('hidden');
+            document.getElementById('active-quiz-title').textContent = currentQuiz.title;
+            document.getElementById('quiz-progress').textContent = `${currentQuiz.questions.length} questions`;
+            renderQuizQuestions();
+        }
+
+        function renderQuizQuestions() {
+            const area = document.getElementById('quiz-questions-area');
+            area.innerHTML = currentQuiz.questions.map((q, i) => `
+                <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                    <p class="font-semibold text-slate-800 dark:text-white mb-3">${i+1}. ${q.question}</p>
+                    <div class="space-y-2">
+                        ${q.options.map((opt, j) => `
+                            <label class="flex items-center gap-3 p-3 rounded-lg border ${userAnswers[i] === j ? 'border-brand-400 bg-brand-50 dark:bg-brand-900/20' : 'border-slate-200 dark:border-slate-700'} cursor-pointer hover:border-brand-300 dark:hover:border-brand-700 transition">
+                                <input type="radio" name="q-${i}" ${userAnswers[i] === j ? 'checked' : ''} onchange="userAnswers[${i}]=${j}" class="accent-brand-600">
+                                <span class="text-sm text-slate-700 dark:text-slate-300">${opt}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function submitQuiz() {
+            for (let i = 0; i < userAnswers.length; i++) {
+                if (userAnswers[i] === -1) { if (typeof showToast === 'function') showToast(`Please answer question ${i+1}.`, 'error'); return; }
+            }
+            let correct = 0;
+            currentQuiz.questions.forEach((q, i) => { if (userAnswers[i] === q.correct) correct++; });
+            const pct = Math.round((correct / currentQuiz.questions.length) * 100);
+            document.getElementById('quiz-taking-area').classList.add('hidden');
+            document.getElementById('quiz-result-area').classList.remove('hidden');
+            document.getElementById('quiz-score').textContent = pct + '%';
+            document.getElementById('quiz-score-detail').textContent = `${correct} out of ${currentQuiz.questions.length} correct`;
+            const review = document.getElementById('quiz-review-area');
+            review.innerHTML = currentQuiz.questions.map((q, i) => {
+                const isCorrect = userAnswers[i] === q.correct;
+                return `
+                    <div class="p-4 rounded-xl border ${isCorrect ? 'border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/10' : 'border-red-300 dark:border-red-700 bg-red-50 dark:bg-red-900/10'}">
+                        <p class="font-semibold text-slate-800 dark:text-white text-sm mb-2">${i+1}. ${q.question}</p>
+                        <p class="text-sm ${isCorrect ? 'text-emerald-700 dark:text-emerald-300' : 'text-red-700 dark:text-red-300'}">Your answer: ${q.options[userAnswers[i]]} ${isCorrect ? '(Correct)' : '(Incorrect)'}</p>
+                        ${!isCorrect ? `<p class="text-sm text-emerald-700 dark:text-emerald-300 mt-1">Correct answer: ${q.options[q.correct]}</p>` : ''}
+                    </div>`;
+            }).join('');
+        }
+
+        function retakeQuiz() {
+            const idx = getSavedQuizzes().findIndex(q => q.title === currentQuiz.title);
+            if (idx >= 0) startQuiz(idx);
+        }
+
+        function backToQuizList() {
+            document.getElementById('quiz-select-area').classList.remove('hidden');
+            document.getElementById('quiz-taking-area').classList.add('hidden');
+            document.getElementById('quiz-result-area').classList.add('hidden');
+            currentQuiz = null;
+            refreshTakeList();
+        }
+
+        renderQuestions();
+        refreshSavedList();
+    </script>
+</body>
+</html>

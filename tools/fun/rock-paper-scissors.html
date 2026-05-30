@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors — Play Against Computer Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Play Rock Paper Scissors against the computer with animated choice reveal. Track wins, losses, and draws. Best of 5, 10, or 20 modes. Free online rock paper scissors game.">
+    <meta name="keywords" content="rock paper scissors, rock paper scissors online, play rock paper scissors, RPS game, rock paper scissors against computer, best of 5, RPS simulator">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Rock Paper Scissors — Play Against Computer Free Online | OptiDrop">
+    <meta property="og:description" content="Play Rock Paper Scissors against the computer with animated choice reveal. Track wins, losses, and draws. Best of 5, 10, or 20 modes. Free online.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/fun/rock-paper-scissors.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rock Paper Scissors — Play Against Computer Free Online | OptiDrop">
+    <meta name="twitter:description" content="Play Rock Paper Scissors against the computer. Track wins, losses, draws. Free online.">
+    <link rel="canonical" href="https://optidrop.online/tools/fun/rock-paper-scissors.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Fun Tools", "item": "https://optidrop.online/tools/fun/"},
+        {"@type": "ListItem", "position": 3, "name": "Rock Paper Scissors", "item": "https://optidrop.online/tools/fun/rock-paper-scissors.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Rock Paper Scissors",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Play Rock Paper Scissors against the computer with animated choice reveal. Track wins, losses, and draws. Best of 5, 10, or 20 modes. Free online."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does Rock Paper Scissors work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choose rock, paper, or scissors by clicking the corresponding button. The computer makes its choice simultaneously. After a brief animated reveal, the winner is determined: rock beats scissors, scissors beats paper, and paper beats rock. Your score is tracked across rounds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the computer's choice truly random?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the computer's choice is generated randomly using JavaScript's Math.random() function. Each option (rock, paper, scissors) has an equal 1 in 3 chance of being selected. The computer does not predict or counter your moves."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the best-of modes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can play in Free Play mode (unlimited rounds) or choose Best of 5, Best of 10, or Best of 20. In best-of modes, the game tracks the first player to reach the majority of wins and declares a match winner when the threshold is met."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I reset my score?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, click the Reset Score button to clear all wins, losses, draws, and round history. This starts the game fresh with a clean slate."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .choice-btn {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            font-size: 2.5rem;
+            border: 3px solid #e2e8f0;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .dark .choice-btn {
+            border-color: #334155;
+            background: #1e293b;
+        }
+        .choice-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            border-color: #3b82f6;
+        }
+        .choice-btn:active {
+            transform: translateY(0);
+        }
+        .choice-btn.selected {
+            border-color: #3b82f6;
+            background: #eff6ff;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.3);
+        }
+        .dark .choice-btn.selected {
+            background: #1e3a5f;
+        }
+        .choice-btn span {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #64748b;
+        }
+        .dark .choice-btn span {
+            color: #94a3b8;
+        }
+        .battle-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            min-height: 120px;
+        }
+        .battle-emoji {
+            font-size: 4rem;
+            transition: all 0.3s ease;
+        }
+        .battle-emoji.shake {
+            animation: rpsShake 0.5s ease-in-out;
+        }
+        @keyframes rpsShake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(-15deg); }
+            50% { transform: rotate(15deg); }
+            75% { transform: rotate(-10deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .vs-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #94a3b8;
+        }
+        .result-burst {
+            animation: burstIn 0.4s ease-out;
+        }
+        @keyframes burstIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            70% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Rock Paper Scissors — Play Against the Computer Online</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Play Rock Paper Scissors against the computer with animated choice reveal. Track your wins, losses, and draws. Choose Free Play or Best of 5, 10, or 20 match modes.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Mode Selector -->
+                    <div class="max-w-md mx-auto mb-6">
+                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Game Mode:</label>
+                        <div class="grid grid-cols-4 gap-2">
+                            <button class="mode-btn px-3 py-2 rounded-lg text-sm font-bold bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 border-2 border-blue-300 dark:border-blue-700" data-mode="free">Free Play</button>
+                            <button class="mode-btn px-3 py-2 rounded-lg text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-2 border-slate-200 dark:border-slate-700" data-mode="5">Best of 5</button>
+                            <button class="mode-btn px-3 py-2 rounded-lg text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-2 border-slate-200 dark:border-slate-700" data-mode="10">Best of 10</button>
+                            <button class="mode-btn px-3 py-2 rounded-lg text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-2 border-slate-200 dark:border-slate-700" data-mode="20">Best of 20</button>
+                        </div>
+                    </div>
+
+                    <!-- Scoreboard -->
+                    <div class="grid grid-cols-3 gap-4 mb-6">
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900 dark:to-emerald-800 border border-green-200 dark:border-green-700 rounded-2xl p-4 text-center">
+                            <p class="text-sm font-semibold text-green-700 dark:text-green-300 mb-1">Wins</p>
+                            <p id="scoreWins" class="text-3xl font-extrabold text-green-900 dark:text-green-100">0</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 border border-slate-200 dark:border-slate-600 rounded-2xl p-4 text-center">
+                            <p class="text-sm font-semibold text-slate-600 dark:text-slate-400 mb-1">Draws</p>
+                            <p id="scoreDraws" class="text-3xl font-extrabold text-slate-900 dark:text-white">0</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-red-50 to-rose-100 dark:from-red-900 dark:to-rose-800 border border-red-200 dark:border-red-700 rounded-2xl p-4 text-center">
+                            <p class="text-sm font-semibold text-red-700 dark:text-red-300 mb-1">Losses</p>
+                            <p id="scoreLosses" class="text-3xl font-extrabold text-red-900 dark:text-red-100">0</p>
+                        </div>
+                    </div>
+
+                    <!-- Match Progress (for best-of modes) -->
+                    <div id="matchProgress" class="hidden max-w-md mx-auto mb-6">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="text-xs font-bold text-slate-500 dark:text-slate-400">Match Progress</span>
+                            <span id="matchLabel" class="text-xs font-bold text-slate-500 dark:text-slate-400"></span>
+                        </div>
+                        <div class="h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden flex">
+                            <div id="matchWinsBar" class="h-full bg-green-500 transition-all" style="width:0%"></div>
+                            <div id="matchDrawsBar" class="h-full bg-slate-400 transition-all" style="width:0%"></div>
+                            <div id="matchLossesBar" class="h-full bg-red-500 transition-all" style="width:0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Battle Area -->
+                    <div class="battle-area mb-6">
+                        <div class="text-center">
+                            <div id="playerChoice" class="battle-emoji">❓</div>
+                            <p class="text-xs font-bold text-slate-500 dark:text-slate-400 mt-1">You</p>
+                        </div>
+                        <span class="vs-text">VS</span>
+                        <div class="text-center">
+                            <div id="computerChoice" class="battle-emoji">❓</div>
+                            <p class="text-xs font-bold text-slate-500 dark:text-slate-400 mt-1">Computer</p>
+                        </div>
+                    </div>
+
+                    <!-- Round Result -->
+                    <div id="roundResult" class="text-center mb-6 hidden">
+                        <div id="resultBadge" class="inline-block px-8 py-3 rounded-2xl text-xl font-extrabold result-burst"></div>
+                    </div>
+
+                    <!-- Match Winner -->
+                    <div id="matchWinner" class="hidden max-w-md mx-auto mb-6 text-center">
+                        <div class="bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-900 dark:to-yellow-900 border-2 border-amber-300 dark:border-amber-700 rounded-2xl p-6">
+                            <p id="matchWinnerText" class="text-2xl font-extrabold text-amber-800 dark:text-amber-200"></p>
+                            <p id="matchWinnerSub" class="text-sm text-amber-600 dark:text-amber-400 mt-1"></p>
+                        </div>
+                    </div>
+
+                    <!-- Choice Buttons -->
+                    <div class="flex justify-center gap-4 sm:gap-6 mb-8">
+                        <button class="choice-btn" id="btnRock" data-choice="rock">
+                            🪨
+                            <span>Rock</span>
+                        </button>
+                        <button class="choice-btn" id="btnPaper" data-choice="paper">
+                            📄
+                            <span>Paper</span>
+                        </button>
+                        <button class="choice-btn" id="btnScissors" data-choice="scissors">
+                            ✂️
+                            <span>Scissors</span>
+                        </button>
+                    </div>
+
+                    <!-- Round History -->
+                    <div class="mb-6">
+                        <p class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Round History (last 10):</p>
+                        <div id="roundHistory" class="flex flex-col gap-2">
+                            <span class="text-sm text-slate-400 dark:text-slate-500">No rounds played yet</span>
+                        </div>
+                    </div>
+
+                    <!-- Reset Button -->
+                    <div class="text-center">
+                        <button id="btnReset" class="px-6 py-2 bg-white dark:bg-slate-800 text-red-500 font-semibold rounded-xl border-2 border-red-200 dark:border-red-800 hover:bg-red-50 dark:hover:bg-red-900 transition-colors text-sm">
+                            Reset Score
+                        </button>
+                    </div>
+
+                    <!-- What do you want to do next? -->
+                    <div class="mt-10 pt-8 border-t border-slate-200 dark:border-slate-700 text-center">
+                        <p class="text-lg font-bold text-slate-800 dark:text-white mb-4">What do you want to do next?</p>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <a href="/tools/fun/coin-flip.html" class="px-5 py-3 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold rounded-xl hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors text-sm">Coin Flip</a>
+                            <a href="/tools/fun/dice-roller.html" class="px-5 py-3 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold rounded-xl hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors text-sm">Dice Roller</a>
+                            <a href="/tools/fun/would-you-rather.html" class="px-5 py-3 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold rounded-xl hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors text-sm">Would You Rather</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Free Rock Paper Scissors Game Online — Play Against the Computer</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">OptiDrop's Rock Paper Scissors game lets you play the classic hand game against the computer. Choose rock, paper, or scissors and watch the animated reveal. The computer makes its choice simultaneously, and the winner is determined by the classic rules: rock beats scissors, scissors beats paper, and paper beats rock.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3">Multiple Game Modes</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Play in Free Play mode for unlimited rounds, or challenge yourself with Best of 5, Best of 10, or Best of 20 modes. In best-of modes, the game tracks progress and declares a match winner when one side reaches the majority. A progress bar shows the match status at a glance.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3">Score Tracking and History</h3>
+                <p class="text-slate-600 dark:text-slate-400">Your wins, losses, and draws are tracked across all rounds. The round history shows your last 10 games with each player's choice and the result. Reset your score at any time to start fresh. The computer's choices are truly random, so each game is fair and unpredictable.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        How does Rock Paper Scissors work?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Choose rock, paper, or scissors by clicking the corresponding button. The computer makes its choice simultaneously. After a brief animated reveal, the winner is determined: rock beats scissors, scissors beats paper, and paper beats rock. Your score is tracked across rounds.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        Is the computer's choice truly random?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Yes, the computer's choice is generated randomly using JavaScript's Math.random() function. Each option (rock, paper, scissors) has an equal 1 in 3 chance of being selected. The computer does not predict or counter your moves.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What are the best-of modes?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        You can play in Free Play mode (unlimited rounds) or choose Best of 5, Best of 10, or Best of 20. In best-of modes, the game tracks the first player to reach the majority of wins and declares a match winner when the threshold is met.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        Can I reset my score?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Yes, click the Reset Score button to clear all wins, losses, draws, and round history. This starts the game fresh with a clean slate.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/fun/coin-flip.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Coin Flip</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Flip a virtual coin with animation.</span>
+                </a>
+                <a href="/tools/fun/dice-roller.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Dice Roller</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Roll multiple dice with animation.</span>
+                </a>
+                <a href="/tools/fun/would-you-rather.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Would You Rather</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Fun this-or-that dilemmas with poll results.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    if(typeof trackRecentTool==='function')trackRecentTool('Rock Paper Scissors','/tools/fun/rock-paper-scissors.html');
+    (function() {
+        var choices = ['rock', 'paper', 'scissors'];
+        var emojis = { rock: '🪨', paper: '📄', scissors: '✂️' };
+        var wins = 0, draws = 0, losses = 0;
+        var history = [];
+        var mode = 'free';
+        var matchOver = false;
+        var isPlaying = false;
+
+        var playerChoiceEl = document.getElementById('playerChoice');
+        var computerChoiceEl = document.getElementById('computerChoice');
+        var roundResult = document.getElementById('roundResult');
+        var resultBadge = document.getElementById('resultBadge');
+        var matchProgress = document.getElementById('matchProgress');
+        var matchWinner = document.getElementById('matchWinner');
+        var roundHistoryEl = document.getElementById('roundHistory');
+
+        function updateScore() {
+            document.getElementById('scoreWins').textContent = wins;
+            document.getElementById('scoreDraws').textContent = draws;
+            document.getElementById('scoreLosses').textContent = losses;
+        }
+
+        function updateMatchProgress() {
+            if (mode === 'free') {
+                matchProgress.classList.add('hidden');
+                return;
+            }
+            matchProgress.classList.remove('hidden');
+            var total = parseInt(mode);
+            var needed = Math.ceil(total / 2);
+            var wPct = (wins / total) * 100;
+            var dPct = (draws / total) * 100;
+            var lPct = (losses / total) * 100;
+            document.getElementById('matchWinsBar').style.width = wPct + '%';
+            document.getElementById('matchDrawsBar').style.width = dPct + '%';
+            document.getElementById('matchLossesBar').style.width = lPct + '%';
+            document.getElementById('matchLabel').textContent = wins + ' - ' + losses + ' (first to ' + needed + ')';
+        }
+
+        function checkMatchWinner() {
+            if (mode === 'free') return false;
+            var needed = Math.ceil(parseInt(mode) / 2);
+            if (wins >= needed) {
+                showMatchWinner('You Win the Match!', 'Congratulations! You won ' + wins + '-' + losses + '.');
+                return true;
+            }
+            if (losses >= needed) {
+                showMatchWinner('Computer Wins the Match!', 'Better luck next time. Final score: ' + wins + '-' + losses + '.');
+                return true;
+            }
+            return false;
+        }
+
+        function showMatchWinner(title, sub) {
+            matchOver = true;
+            document.getElementById('matchWinnerText').textContent = title;
+            document.getElementById('matchWinnerSub').textContent = sub;
+            matchWinner.classList.remove('hidden');
+        }
+
+        function determineWinner(player, computer) {
+            if (player === computer) return 'draw';
+            if (player === 'rock' && computer === 'scissors') return 'win';
+            if (player === 'paper' && computer === 'rock') return 'win';
+            if (player === 'scissors' && computer === 'paper') return 'win';
+            return 'loss';
+        }
+
+        function playRound(player) {
+            if (isPlaying) return;
+            if (matchOver) {
+                showToast('Match is over! Reset to play again.', 'info');
+                return;
+            }
+
+            isPlaying = true;
+
+            // Disable buttons temporarily
+            document.querySelectorAll('.choice-btn').forEach(function(b) { b.disabled = true; });
+
+            // Highlight selected
+            document.querySelectorAll('.choice-btn').forEach(function(b) { b.classList.remove('selected'); });
+            document.getElementById('btn' + player.charAt(0).toUpperCase() + player.slice(1)).classList.add('selected');
+
+            // Show shake animation
+            playerChoiceEl.textContent = '✊';
+            computerChoiceEl.textContent = '✊';
+            playerChoiceEl.classList.add('shake');
+            computerChoiceEl.classList.add('shake');
+
+            roundResult.classList.add('hidden');
+
+            // Reveal after animation
+            setTimeout(function() {
+                playerChoiceEl.classList.remove('shake');
+                computerChoiceEl.classList.remove('shake');
+
+                var computer = choices[Math.floor(Math.random() * 3)];
+                var result = determineWinner(player, computer);
+
+                playerChoiceEl.textContent = emojis[player];
+                computerChoiceEl.textContent = emojis[computer];
+
+                // Update result
+                if (result === 'win') {
+                    wins++;
+                    resultBadge.textContent = 'You Win!';
+                    resultBadge.className = 'inline-block px-8 py-3 rounded-2xl text-xl font-extrabold result-burst bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300';
+                } else if (result === 'draw') {
+                    draws++;
+                    resultBadge.textContent = "It's a Draw!";
+                    resultBadge.className = 'inline-block px-8 py-3 rounded-2xl text-xl font-extrabold result-burst bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300';
+                } else {
+                    losses++;
+                    resultBadge.textContent = 'You Lose!';
+                    resultBadge.className = 'inline-block px-8 py-3 rounded-2xl text-xl font-extrabold result-burst bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300';
+                }
+                roundResult.classList.remove('hidden');
+
+                // Add to history
+                history.unshift({
+                    player: player,
+                    computer: computer,
+                    result: result,
+                    time: new Date().toLocaleTimeString()
+                });
+                if (history.length > 10) history = history.slice(0, 10);
+                renderHistory();
+
+                updateScore();
+                updateMatchProgress();
+                checkMatchWinner();
+
+                isPlaying = false;
+                document.querySelectorAll('.choice-btn').forEach(function(b) { b.disabled = false; });
+            }, 500);
+        }
+
+        function renderHistory() {
+            if (history.length === 0) {
+                roundHistoryEl.innerHTML = '<span class="text-sm text-slate-400 dark:text-slate-500">No rounds played yet</span>';
+                return;
+            }
+            roundHistoryEl.innerHTML = '';
+            history.forEach(function(entry) {
+                var colorClass = entry.result === 'win' ? 'text-green-600 dark:text-green-400' :
+                                 entry.result === 'loss' ? 'text-red-600 dark:text-red-400' :
+                                 'text-slate-600 dark:text-slate-400';
+                var bgClass = entry.result === 'win' ? 'bg-green-50 dark:bg-green-900 border-green-200 dark:border-green-800' :
+                              entry.result === 'loss' ? 'bg-red-50 dark:bg-red-900 border-red-200 dark:border-red-800' :
+                              'bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700';
+                var resultText = entry.result === 'win' ? 'Win' : entry.result === 'loss' ? 'Loss' : 'Draw';
+                var div = document.createElement('div');
+                div.className = 'flex items-center justify-between px-4 py-3 rounded-xl border ' + bgClass;
+                div.innerHTML =
+                    '<div class="flex items-center gap-3">' +
+                        '<span class="text-lg">' + emojis[entry.player] + '</span>' +
+                        '<span class="text-xs font-bold text-slate-400">vs</span>' +
+                        '<span class="text-lg">' + emojis[entry.computer] + '</span>' +
+                    '</div>' +
+                    '<div class="flex items-center gap-3">' +
+                        '<span class="text-sm font-bold ' + colorClass + '">' + resultText + '</span>' +
+                        '<span class="text-xs text-slate-400">' + entry.time + '</span>' +
+                    '</div>';
+                roundHistoryEl.appendChild(div);
+            });
+        }
+
+        // Choice buttons
+        document.querySelectorAll('.choice-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                playRound(this.dataset.choice);
+            });
+        });
+
+        // Mode buttons
+        document.querySelectorAll('.mode-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.mode-btn').forEach(function(b) {
+                    b.className = 'mode-btn px-3 py-2 rounded-lg text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-2 border-slate-200 dark:border-slate-700';
+                });
+                this.className = 'mode-btn px-3 py-2 rounded-lg text-sm font-bold bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 border-2 border-blue-300 dark:border-blue-700';
+                mode = this.dataset.mode;
+                wins = 0; draws = 0; losses = 0;
+                matchOver = false;
+                matchWinner.classList.add('hidden');
+                updateScore();
+                updateMatchProgress();
+            });
+        });
+
+        // Reset
+        document.getElementById('btnReset').addEventListener('click', function() {
+            wins = 0; draws = 0; losses = 0;
+            history = [];
+            matchOver = false;
+            matchWinner.classList.add('hidden');
+            roundResult.classList.add('hidden');
+            playerChoiceEl.textContent = '❓';
+            computerChoiceEl.textContent = '❓';
+            document.querySelectorAll('.choice-btn').forEach(function(b) { b.classList.remove('selected'); });
+            updateScore();
+            updateMatchProgress();
+            renderHistory();
+            showToast('Score reset.', 'info');
+        });
+    })();
+    </script>
+</body>
+</html>

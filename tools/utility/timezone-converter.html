@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timezone Converter Free Online — No Upload Required | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Convert time between world timezones instantly. Supports all global timezones using Intl API. No upload, no sign-up required.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#0891b2">
+    <meta property="og:title" content="Timezone Converter Free Online — No Upload Required | OptiDrop">
+    <meta property="og:description" content="Convert time between world timezones instantly. Supports all global timezones using Intl API. No upload, no sign-up required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/utility/timezone-converter.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Timezone Converter Free Online — No Upload Required | OptiDrop">
+    <meta name="twitter:description" content="Convert time between world timezones instantly. Supports all global timezones using Intl API. No upload, no sign-up required.">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/timezone-converter.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Utility Tools", "item": "https://optidrop.online/category/utility-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Timezone Converter", "item": "https://optidrop.online/tools/utility/timezone-converter.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Timezone Converter",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Convert time between world timezones instantly. Supports all global timezones using Intl API. No upload, no sign-up required."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How do I convert time between timezones?", "acceptedAnswer": {"@type": "Answer", "text": "To convert time between timezones, select the date and time you want to convert, choose the source timezone (where the time is currently), and the target timezone (where you want to know the time). Our converter uses the browser's built-in Intl.DateTimeFormat API to calculate the exact difference, accounting for daylight saving time automatically."}},
+        {"@type": "Question", "name": "Does the timezone converter account for daylight saving time?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, our timezone converter automatically accounts for daylight saving time (DST). The Intl.DateTimeFormat API used by our tool handles all DST transitions for every timezone, so the converted time is always accurate regardless of whether DST is in effect in either the source or target timezone."}},
+        {"@type": "Question", "name": "What is the UTC offset for different timezones?", "acceptedAnswer": {"@type": "Answer", "text": "UTC offsets vary by timezone and season. For example, New York is UTC-5 (EST) or UTC-4 (EDT), London is UTC+0 (GMT) or UTC+1 (BST), Tokyo is UTC+9 (JST), and India is UTC+5:30 (IST). Our converter shows the current UTC offset for both the source and target timezones so you can see the exact hour difference."}},
+        {"@type": "Question", "name": "How many timezones are there in the world?", "acceptedAnswer": {"@type": "Answer", "text": "There are 38 standard timezone offsets in use worldwide, ranging from UTC-12 to UTC+14. However, there are over 400 named timezones in the IANA Time Zone Database used by most operating systems and our converter. This includes historical changes and regional variations like America/New_York, Europe/London, Asia/Tokyo, and Australia/Sydney."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Timezone Converter — Convert World Time Zones Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Convert time between any two world timezones instantly. Pick a date and time, select your source and target zones, and get the exact converted time with full date formatting. Uses the browser's built-in Intl API — 100% private, no data leaves your device.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="sourceDateTime" class="block text-sm font-bold text-slate-700 mb-2">Date &amp; Time</label>
+                            <input type="datetime-local" id="sourceDateTime"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-cyan-500 transition-colors text-slate-900 font-medium bg-white"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="sourceTimezone" class="block text-sm font-bold text-slate-700 mb-2">Source Timezone</label>
+                            <select id="sourceTimezone"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-cyan-500 transition-colors text-slate-900 font-medium bg-white">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center mb-6">
+                        <button id="btnSwap" class="px-4 py-3 text-sm font-bold text-cyan-600 bg-cyan-50 border border-cyan-200 rounded-xl hover:bg-cyan-100 transition-colors flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/></svg>
+                            Swap Timezones
+                        </button>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="targetTimezone" class="block text-sm font-bold text-slate-700 mb-2">Target Timezone</label>
+                        <select id="targetTimezone"
+                            class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-cyan-500 transition-colors text-slate-900 font-medium bg-white">
+                        </select>
+                    </div>
+
+                    <button id="btnConvert" class="w-full px-6 py-4 bg-cyan-600 text-white font-bold rounded-xl hover:bg-cyan-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Convert Timezone
+                    </button>
+
+                    <div id="resultArea" class="hidden mt-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-cyan-700 mb-1" id="sourceLabel">Source Time</p>
+                                <p id="resultSourceTime" class="text-2xl sm:text-3xl font-extrabold text-cyan-900">--</p>
+                                <p id="resultSourceDate" class="text-sm text-cyan-600 mt-1"></p>
+                                <p id="resultSourceOffset" class="text-xs text-cyan-500 mt-1 font-mono"></p>
+                            </div>
+                            <div class="bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-blue-700 mb-1" id="targetLabel">Target Time</p>
+                                <p id="resultTargetTime" class="text-2xl sm:text-3xl font-extrabold text-blue-900">--</p>
+                                <p id="resultTargetDate" class="text-sm text-blue-600 mt-1"></p>
+                                <p id="resultTargetOffset" class="text-xs text-blue-500 mt-1 font-mono"></p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded-xl p-4 text-center">
+                            <p id="resultDiff" class="text-sm text-slate-600 font-medium"></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4 text-center">About the Timezone Converter</h2>
+            <div class="prose prose-slate max-w-none text-slate-600 text-sm leading-relaxed space-y-4">
+                <p>Timezone conversion is essential for anyone working across borders, scheduling international meetings, or traveling abroad. Different regions of the world observe different standard times, and many also change clocks seasonally for daylight saving time (DST). This can make coordinating across timezones confusing without the right tool.</p>
+                <p>Our Timezone Converter lets you instantly convert any date and time from one timezone to another. Simply pick the date and time, choose your source timezone (where the original time is), and the target timezone (where you want to know the equivalent time). The converter handles everything automatically, including DST adjustments and UTC offset calculations.</p>
+                <p>The tool uses the browser's built-in <strong>Intl.DateTimeFormat</strong> API, which means all calculations happen locally on your device. No data is sent to any server, making this converter completely private and secure. It supports every timezone in the IANA Time Zone Database, including all major cities and regions worldwide.</p>
+                <p>Common use cases include: scheduling meetings with international colleagues, planning travel across timezones, converting event times for global audiences, coordinating with remote teams, and understanding time differences for stock markets, sports events, and live broadcasts.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I convert time between timezones?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To convert time between timezones, select the date and time you want to convert, choose the source timezone (where the time is currently), and the target timezone (where you want to know the time). Our converter uses the browser's built-in Intl.DateTimeFormat API to calculate the exact difference, accounting for daylight saving time automatically.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does the timezone converter account for daylight saving time?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, our timezone converter automatically accounts for daylight saving time (DST). The Intl.DateTimeFormat API used by our tool handles all DST transitions for every timezone, so the converted time is always accurate regardless of whether DST is in effect in either the source or target timezone.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the UTC offset for different timezones?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        UTC offsets vary by timezone and season. For example, New York is UTC-5 (EST) or UTC-4 (EDT), London is UTC+0 (GMT) or UTC+1 (BST), Tokyo is UTC+9 (JST), and India is UTC+5:30 (IST). Our converter shows the current UTC offset for both the source and target timezones so you can see the exact hour difference.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How many timezones are there in the world?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        There are 38 standard timezone offsets in use worldwide, ranging from UTC-12 to UTC+14. However, there are over 400 named timezones in the IANA Time Zone Database used by most operating systems and our converter. This includes historical changes and regional variations like America/New_York, Europe/London, Asia/Tokyo, and Australia/Sydney.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/calculators/date-difference.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Date Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate the difference between two dates in days, weeks, and months.</span>
+                </a>
+                <a href="/tools/age-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Age Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your exact age in years, months, and days.</span>
+                </a>
+                <a href="/tools/unit-converter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Unit Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert between various units of measurement instantly.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <ul>
+                        <li><a href="/compress-image.html">Image Compressor</a></li>
+                        <li><a href="/heic-to-jpg.html">HEIC to JPG</a></li>
+                        <li><a href="/remove-background.html">Background Remover</a></li>
+                        <li><a href="/passport-photo-resizer.html">Passport Photo</a></li>
+                        <li><a href="/compress-pdf.html">PDF Compressor</a></li>
+                        <li><a href="/jpg-to-pdf.html">JPG to PDF</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <ul>
+                        <li><a href="/tools/career/resume-builder.html">Resume Builder</a></li>
+                        <li><a href="/tools/career/cover-letter.html">Cover Letter</a></li>
+                        <li><a href="/tools/career/resignation-letter.html">Resignation Letter</a></li>
+                        <li><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <ul>
+                        <li><a href="/tools/business/invoice-generator.html">Invoice Generator</a></li>
+                        <li><a href="/tools/business/freelance-contract.html">Freelance Contract</a></li>
+                        <li><a href="/tools/business/salary-slip.html">Salary Slip</a></li>
+                        <li><a href="/tools/business/receipt-generator.html">Receipt Generator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <ul>
+                        <li><a href="/tools/emi-calculator.html">EMI Calculator</a></li>
+                        <li><a href="/tools/gst-calculator.html">GST Calculator</a></li>
+                        <li><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a></li>
+                        <li><a href="/tools/calculators/income-tax-calculator.html">Income Tax</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <ul>
+                        <li><a href="/tools/developer/json-formatter.html">JSON Formatter</a></li>
+                        <li><a href="/tools/developer/base64.html">Base64 Encoder</a></li>
+                        <li><a href="/tools/developer/url-encoder.html">URL Encoder</a></li>
+                        <li><a href="/tools/developer/css-minifier.html">CSS Minifier</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="/about.html">About OptiDrop</a></li>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All tools run in your browser — no uploads, no sign-up.</p>
+            </div>
+        </div>
+    </footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        // Major timezone list with friendly labels
+        var TIMEZONES = [
+            { value: 'America/New_York', label: 'New York (ET)' },
+            { value: 'America/Chicago', label: 'Chicago (CT)' },
+            { value: 'America/Denver', label: 'Denver (MT)' },
+            { value: 'America/Los_Angeles', label: 'Los Angeles (PT)' },
+            { value: 'America/Anchorage', label: 'Anchorage (AKT)' },
+            { value: 'Pacific/Honolulu', label: 'Honolulu (HST)' },
+            { value: 'America/Toronto', label: 'Toronto (ET)' },
+            { value: 'America/Vancouver', label: 'Vancouver (PT)' },
+            { value: 'America/Mexico_City', label: 'Mexico City (CST)' },
+            { value: 'America/Sao_Paulo', label: 'Sao Paulo (BRT)' },
+            { value: 'America/Argentina/Buenos_Aires', label: 'Buenos Aires (ART)' },
+            { value: 'America/Bogota', label: 'Bogota (COT)' },
+            { value: 'America/Lima', label: 'Lima (PET)' },
+            { value: 'America/Santiago', label: 'Santiago (CLT)' },
+            { value: 'Europe/London', label: 'London (GMT/BST)' },
+            { value: 'Europe/Paris', label: 'Paris (CET)' },
+            { value: 'Europe/Berlin', label: 'Berlin (CET)' },
+            { value: 'Europe/Madrid', label: 'Madrid (CET)' },
+            { value: 'Europe/Rome', label: 'Rome (CET)' },
+            { value: 'Europe/Amsterdam', label: 'Amsterdam (CET)' },
+            { value: 'Europe/Moscow', label: 'Moscow (MSK)' },
+            { value: 'Europe/Istanbul', label: 'Istanbul (TRT)' },
+            { value: 'Africa/Cairo', label: 'Cairo (EET)' },
+            { value: 'Africa/Johannesburg', label: 'Johannesburg (SAST)' },
+            { value: 'Africa/Nairobi', label: 'Nairobi (EAT)' },
+            { value: 'Asia/Dubai', label: 'Dubai (GST)' },
+            { value: 'Asia/Kolkata', label: 'Kolkata (IST)' },
+            { value: 'Asia/Dhaka', label: 'Dhaka (BST)' },
+            { value: 'Asia/Bangkok', label: 'Bangkok (ICT)' },
+            { value: 'Asia/Singapore', label: 'Singapore (SGT)' },
+            { value: 'Asia/Shanghai', label: 'Shanghai (CST)' },
+            { value: 'Asia/Hong_Kong', label: 'Hong Kong (HKT)' },
+            { value: 'Asia/Tokyo', label: 'Tokyo (JST)' },
+            { value: 'Asia/Seoul', label: 'Seoul (KST)' },
+            { value: 'Australia/Sydney', label: 'Sydney (AEST)' },
+            { value: 'Australia/Melbourne', label: 'Melbourne (AEST)' },
+            { value: 'Australia/Perth', label: 'Perth (AWST)' },
+            { value: 'Pacific/Auckland', label: 'Auckland (NZST)' },
+            { value: 'Pacific/Fiji', label: 'Fiji (FJT)' },
+            { value: 'UTC', label: 'UTC (Coordinated Universal Time)' }
+        ];
+
+        var sourceSelect = document.getElementById('sourceTimezone');
+        var targetSelect = document.getElementById('targetTimezone');
+        var sourceDT = document.getElementById('sourceDateTime');
+        var btnConvert = document.getElementById('btnConvert');
+        var btnSwap = document.getElementById('btnSwap');
+        var resultArea = document.getElementById('resultArea');
+
+        // Populate timezone selects
+        TIMEZONES.forEach(function(tz) {
+            var opt1 = document.createElement('option');
+            opt1.value = tz.value;
+            opt1.textContent = tz.label;
+            sourceSelect.appendChild(opt1);
+
+            var opt2 = document.createElement('option');
+            opt2.value = tz.value;
+            opt2.textContent = tz.label;
+            targetSelect.appendChild(opt2);
+        });
+
+        // Detect user's timezone and pre-fill
+        var userTz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        var matched = TIMEZONES.some(function(tz) { return tz.value === userTz; });
+
+        if (matched) {
+            sourceSelect.value = userTz;
+        } else {
+            sourceSelect.value = 'UTC';
+        }
+
+        // Pre-fill with current date/time
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = String(now.getMonth() + 1).padStart(2, '0');
+        var day = String(now.getDate()).padStart(2, '0');
+        var hours = String(now.getHours()).padStart(2, '0');
+        var minutes = String(now.getMinutes()).padStart(2, '0');
+        sourceDT.value = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+
+        // Set default target to a different timezone
+        if (sourceSelect.value === 'America/New_York') {
+            targetSelect.value = 'Europe/London';
+        } else {
+            targetSelect.value = 'America/New_York';
+        }
+
+        // Swap button
+        btnSwap.addEventListener('click', function() {
+            var temp = sourceSelect.value;
+            sourceSelect.value = targetSelect.value;
+            targetSelect.value = temp;
+        });
+
+        // Get UTC offset string for a timezone at a given date
+        function getUtcOffset(tz, date) {
+            var str = new Intl.DateTimeFormat('en-US', {
+                timeZone: tz,
+                timeZoneName: 'shortOffset'
+            }).formatToParts(date);
+            var tzPart = str.find(function(p) { return p.type === 'timeZoneName'; });
+            return tzPart ? tzPart.value : '';
+        }
+
+        // Format time in a timezone
+        function formatTime(tz, date) {
+            return new Intl.DateTimeFormat('en-US', {
+                timeZone: tz,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            }).format(date);
+        }
+
+        // Format date in a timezone
+        function formatDate(tz, date) {
+            return new Intl.DateTimeFormat('en-US', {
+                timeZone: tz,
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            }).format(date);
+        }
+
+        // Convert button
+        btnConvert.addEventListener('click', function() {
+            var dtVal = sourceDT.value;
+            if (!dtVal) {
+                showToast('Please select a date and time.', 'error');
+                return;
+            }
+
+            var srcTz = sourceSelect.value;
+            var tgtTz = targetSelect.value;
+
+            if (srcTz === tgtTz) {
+                showToast('Source and target timezones are the same.', 'error');
+                return;
+            }
+
+            // Parse the datetime-local value as the source timezone time.
+            // We create a Date from the local input, then adjust to represent
+            // that wall-clock time in the source timezone.
+            var parts = dtVal.split('T');
+            var dateParts = parts[0].split('-');
+            var timeParts = parts[1].split(':');
+
+            var year = parseInt(dateParts[0]);
+            var month = parseInt(dateParts[1]) - 1;
+            var day = parseInt(dateParts[2]);
+            var hour = parseInt(timeParts[0]);
+            var minute = parseInt(timeParts[1]);
+
+            // Create a date in UTC that represents the wall-clock time
+            // We need to figure out what UTC time corresponds to the given
+            // wall-clock time in the source timezone.
+            // Strategy: create a guess, then adjust using the offset.
+            var guessUtc = Date.UTC(year, month, day, hour, minute, 0);
+
+            // Get the offset at that UTC time for the source timezone
+            var offsetStr = getUtcOffset(srcTz, new Date(guessUtc));
+
+            // Parse offset like "GMT-5" or "GMT+5:30" or "GMT"
+            var offsetMinutes = 0;
+            var offsetMatch = offsetStr.match(/GMT([+-])(\d{1,2})(?::(\d{2}))?/);
+            if (offsetMatch) {
+                var sign = offsetMatch[1] === '+' ? 1 : -1;
+                var oh = parseInt(offsetMatch[2]);
+                var om = offsetMatch[3] ? parseInt(offsetMatch[3]) : 0;
+                offsetMinutes = sign * (oh * 60 + om);
+            }
+
+            // The UTC time that corresponds to the wall-clock time in source tz
+            var utcMs = guessUtc - offsetMinutes * 60 * 1000;
+            var utcDate = new Date(utcMs);
+
+            // Format source time display
+            var srcTime = formatTime(srcTz, utcDate);
+            var srcDate = formatDate(srcTz, utcDate);
+            var srcOffset = getUtcOffset(srcTz, utcDate);
+
+            // Format target time display
+            var tgtTime = formatTime(tgtTz, utcDate);
+            var tgtDate = formatDate(tgtTz, utcDate);
+            var tgtOffset = getUtcOffset(tgtTz, utcDate);
+
+            // Calculate offset difference
+            var srcOffStr = getUtcOffset(srcTz, utcDate);
+            var tgtOffStr = getUtcOffset(tgtTz, utcDate);
+
+            var srcOffMatch = srcOffStr.match(/GMT([+-])(\d{1,2})(?::(\d{2}))?/);
+            var tgtOffMatch = tgtOffStr.match(/GMT([+-])(\d{1,2})(?::(\d{2}))?/);
+
+            var srcOffMin = 0;
+            if (srcOffMatch) {
+                var s = srcOffMatch[1] === '+' ? 1 : -1;
+                srcOffMin = s * (parseInt(srcOffMatch[2]) * 60 + (srcOffMatch[3] ? parseInt(srcOffMatch[3]) : 0));
+            }
+
+            var tgtOffMin = 0;
+            if (tgtOffMatch) {
+                var s2 = tgtOffMatch[1] === '+' ? 1 : -1;
+                tgtOffMin = s2 * (parseInt(tgtOffMatch[2]) * 60 + (tgtOffMatch[3] ? parseInt(tgtOffMatch[3]) : 0));
+            }
+
+            var diffMin = tgtOffMin - srcOffMin;
+            var diffHours = diffMin / 60;
+            var diffSign = diffHours >= 0 ? '+' : '';
+            var diffLabel = diffSign + diffHours + ' hour' + (Math.abs(diffHours) !== 1 ? 's' : '');
+
+            // Populate results
+            var srcTzLabel = TIMEZONES.find(function(t) { return t.value === srcTz; });
+            var tgtTzLabel = TIMEZONES.find(function(t) { return t.value === tgtTz; });
+
+            document.getElementById('sourceLabel').textContent = srcTzLabel ? srcTzLabel.label : srcTz;
+            document.getElementById('targetLabel').textContent = tgtTzLabel ? tgtTzLabel.label : tgtTz;
+
+            document.getElementById('resultSourceTime').textContent = srcTime;
+            document.getElementById('resultSourceDate').textContent = srcDate;
+            document.getElementById('resultSourceOffset').textContent = srcOffset;
+
+            document.getElementById('resultTargetTime').textContent = tgtTime;
+            document.getElementById('resultTargetDate').textContent = tgtDate;
+            document.getElementById('resultTargetOffset').textContent = tgtOffset;
+
+            document.getElementById('resultDiff').textContent =
+                'The target timezone is ' + diffLabel + ' ' + (diffMin >= 0 ? 'ahead of' : 'behind') + ' the source timezone.';
+
+            resultArea.classList.remove('hidden');
+            resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Enter key support
+        sourceDT.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') btnConvert.click();
+        });
+    })();
+    </script>
+</body>
+</html>

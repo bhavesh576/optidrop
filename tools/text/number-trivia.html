@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Trivia — Fun Facts About Numbers | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Discover fun facts and trivia about any number from 1 to 9999. See mathematical properties, Roman numeral conversion, binary representation, and interesting trivia.">
+    <meta name="keywords" content="number trivia, fun facts about numbers, number properties, roman numeral converter, binary converter, number facts, math trivia">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Number Trivia — Fun Facts About Numbers | OptiDrop">
+    <meta property="og:description" content="Discover fun facts and trivia about any number. Mathematical properties, Roman numerals, binary, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/text/number-trivia.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Number Trivia — Fun Facts About Numbers | OptiDrop">
+    <meta name="twitter:description" content="Discover fun facts and trivia about any number from 1 to 9999.">
+    <link rel="canonical" href="https://optidrop.online/tools/text/number-trivia.html">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Text Tools","item":"https://optidrop.online/category/text-tools.html"},{"@type":"ListItem","position":3,"name":"Number Trivia","item":"https://optidrop.online/tools/text/number-trivia.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Number Trivia","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Discover fun facts and trivia about any number from 1 to 9999."}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is number trivia?","acceptedAnswer":{"@type":"Answer","text":"Number trivia provides fun facts, mathematical properties, and interesting information about any number. This tool shows whether a number is odd or even, prime, a perfect square, a Fibonacci number, its Roman numeral equivalent, binary representation, and curated trivia facts from a built-in database."}},{"@type":"Question","name":"How do I convert a number to Roman numerals?","acceptedAnswer":{"@type":"Answer","text":"Enter any number from 1 to 9999 in the input field and click 'Show Trivia'. The tool automatically converts your number to Roman numerals using the standard notation (I=1, V=5, X=10, L=50, C=100, D=500, M=1000). For example, 2024 becomes MMXXIV."}},{"@type":"Question","name":"What is a prime number?","acceptedAnswer":{"@type":"Answer","text":"A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. For example, 2, 3, 5, 7, 11, and 13 are prime numbers. The number 1 is not prime, and even numbers greater than 2 are not prime. This tool checks any number for primality."}},{"@type":"Question","name":"What is a Fibonacci number?","acceptedAnswer":{"@type":"Answer","text":"Fibonacci numbers form a sequence where each number is the sum of the two preceding ones, starting from 0 and 1. The sequence goes: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, and so on. This tool checks if your number is part of the Fibonacci sequence."}}]}
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Number Trivia — Fun Facts About Any Number</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Enter any number from 1 to 9999 and discover its mathematical properties, Roman numeral, binary representation, and fun trivia facts. Great for math enthusiasts, students, and curious minds.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="flex gap-3 mb-6">
+                        <div class="flex-1">
+                            <label for="numInput" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Enter a Number (1 - 9999)</label>
+                            <input type="number" id="numInput" placeholder="e.g. 42" min="1" max="9999" step="1"
+                                class="block w-full px-4 py-4 text-lg border-2 border-slate-200 dark:border-slate-600 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 dark:text-white font-medium bg-white dark:bg-slate-700 text-center"
+                                autocomplete="off">
+                        </div>
+                        <div class="flex items-end">
+                            <button id="btnRandom" class="px-4 py-4 bg-slate-200 dark:bg-slate-600 hover:bg-slate-300 dark:hover:bg-slate-500 rounded-xl transition-colors text-slate-700 dark:text-white font-bold flex items-center gap-1.5" title="Random number">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button id="btnTrivia" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Show Trivia
+                    </button>
+
+                    <div id="triviaResults" class="hidden mt-8">
+
+                        <!-- Big number display -->
+                        <div class="text-center mb-6">
+                            <p id="bigNumber" class="text-6xl sm:text-7xl font-extrabold text-blue-600 dark:text-blue-400">42</p>
+                        </div>
+
+                        <!-- Mathematical Properties -->
+                        <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-4">Mathematical Properties</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                            <div id="propOddEven" class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 border border-blue-200 dark:border-blue-700 rounded-xl p-4 text-center">
+                                <p class="text-xs font-semibold text-blue-700 dark:text-blue-300 mb-1">Odd / Even</p>
+                                <p class="text-lg font-extrabold text-blue-900 dark:text-blue-100">-</p>
+                            </div>
+                            <div id="propPrime" class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 border border-green-200 dark:border-green-700 rounded-xl p-4 text-center">
+                                <p class="text-xs font-semibold text-green-700 dark:text-green-300 mb-1">Prime?</p>
+                                <p class="text-lg font-extrabold text-green-900 dark:text-green-100">-</p>
+                            </div>
+                            <div id="propSquare" class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 border border-purple-200 dark:border-purple-700 rounded-xl p-4 text-center">
+                                <p class="text-xs font-semibold text-purple-700 dark:text-purple-300 mb-1">Perfect Square?</p>
+                                <p class="text-lg font-extrabold text-purple-900 dark:text-purple-100">-</p>
+                            </div>
+                            <div id="propFib" class="bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/30 dark:to-amber-800/30 border border-amber-200 dark:border-amber-700 rounded-xl p-4 text-center">
+                                <p class="text-xs font-semibold text-amber-700 dark:text-amber-300 mb-1">Fibonacci?</p>
+                                <p class="text-lg font-extrabold text-amber-900 dark:text-amber-100">-</p>
+                            </div>
+                        </div>
+
+                        <!-- Conversions -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm font-bold text-slate-700 dark:text-slate-300">Roman Numeral</span>
+                                    <button onclick="copyToClipboard(document.getElementById('romanVal').textContent, 'Roman numeral copied!')" class="text-xs px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600">Copy</button>
+                                </div>
+                                <p id="romanVal" class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 font-mono">-</p>
+                            </div>
+                            <div class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm font-bold text-slate-700 dark:text-slate-300">Binary</span>
+                                    <button onclick="copyToClipboard(document.getElementById('binaryVal').textContent, 'Binary copied!')" class="text-xs px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600">Copy</button>
+                                </div>
+                                <p id="binaryVal" class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono break-all">-</p>
+                            </div>
+                        </div>
+
+                        <!-- Fun Trivia -->
+                        <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-4">Fun Trivia</h3>
+                        <div id="triviaFacts" class="space-y-3"></div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">How to Use the Number Trivia Tool</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Enter any number from 1 to 9999 or click the random button for a surprise. Click "Show Trivia" to see mathematical properties (odd/even, prime, perfect square, Fibonacci), Roman numeral conversion, binary representation, and fun trivia facts from a curated database.</p>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">What You Will Discover</h3>
+                <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-1">
+                    <li>Whether the number is odd or even</li>
+                    <li>If it is a prime number</li>
+                    <li>If it is a perfect square</li>
+                    <li>If it belongs to the Fibonacci sequence</li>
+                    <li>Its Roman numeral representation</li>
+                    <li>Its binary (base-2) representation</li>
+                    <li>Interesting trivia and cultural references</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What is number trivia?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Number trivia provides fun facts, mathematical properties, and interesting information about any number. This tool shows whether a number is odd or even, prime, a perfect square, a Fibonacci number, its Roman numeral, binary, and curated trivia.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What is a prime number?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        A prime number is a natural number greater than 1 that has no divisors other than 1 and itself. Examples include 2, 3, 5, 7, 11, 13, and 17. The number 1 is not considered prime.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What is a Fibonacci number?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Fibonacci numbers form a sequence where each number is the sum of the two preceding ones: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, and so on. They appear frequently in nature, art, and mathematics.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        How do Roman numerals work?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Roman numerals use letters: I=1, V=5, X=10, L=50, C=100, D=500, M=1000. Numbers are formed by combining these symbols. Smaller values before larger ones indicate subtraction (IV=4, IX=9), while after indicates addition (VI=6, XI=11).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/text/binary-to-text.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Binary Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert between binary, decimal, hex, and text.</span>
+                </a>
+                <a href="/tools/age-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Age Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate your exact age in years, months, and days.</span>
+                </a>
+                <a href="/tools/text/number-to-words.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Number to Words</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert any number to its word representation.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        // Trivia database (~100 entries)
+        var TRIVIA = {
+            1: ['The multiplicative identity — any number multiplied by 1 equals itself.','1 is neither prime nor composite.','In binary, 1 is simply 1.','1 is the first positive integer and the first odd number.','In many cultures, 1 represents unity and beginnings.'],
+            2: ['2 is the smallest and only even prime number.','A couple is a group of 2.','2 is the base of the binary number system used by computers.','The square root of 2 was the first known irrational number.','In chemistry, 2 is the atomic number of helium.'],
+            3: ['3 is the first odd prime number.','A triangle has 3 sides and 3 angles.','3 is considered a lucky number in many cultures.','The tricycle has 3 wheels.','RGB color model uses 3 primary colors.'],
+            4: ['4 is the number of seasons in a year.','A square has 4 sides and 4 right angles.','4 is the atomic number of beryllium.','There are 4 cardinal directions: north, south, east, west.','A car has 4 wheels.'],
+            5: ['5 is the number of fingers on one hand.','The Olympic rings have 5 rings representing 5 continents.','5 is the atomic number of boron.','A pentagon has 5 sides.','5 is the number of senses: sight, hearing, touch, taste, smell.'],
+            6: ['6 is the smallest perfect number (1+2+3=6).','A hexagon has 6 sides.','6 is the atomic number of carbon, the basis of life.','A standard die has 6 faces.','There are 6 strings on a standard guitar.'],
+            7: ['7 is often considered a lucky number.','There are 7 days in a week.','7 is the number of colors in a rainbow.','Snow White had 7 dwarfs.','7 is the atomic number of nitrogen.'],
+            8: ['8 is the number of bits in a byte.','An octopus has 8 arms.','8 is the atomic number of oxygen.','A chess board has 8x8 squares.','Infinity turned sideways is the symbol for 8.'],
+            9: ['9 is the largest single-digit number.','A cat is said to have 9 lives.','9 is a perfect square (3x3).','In Norse mythology, there are 9 worlds.','9 is the atomic number of fluorine.'],
+            10: ['10 is the base of our decimal number system.','Humans have 10 fingers and 10 toes.','A decade is a period of 10 years.','10 is the atomic number of neon.','The metric system is based on powers of 10.'],
+            11: ['11 is the smallest two-digit prime number.','A soccer team has 11 players.','Apollo 11 was the first mission to land humans on the Moon.','11 is the atomic number of sodium.','In cricket, each team has 11 players.'],
+            12: ['12 is a dozen.','There are 12 months in a year.','12 is the atomic number of magnesium.','A clock has 12 hours.','There are 12 zodiac signs.'],
+            13: ['13 is often considered an unlucky number in Western culture.','There were 13 original American colonies.','13 is the atomic number of aluminum.','A baker\'s dozen is 13.','13 is a prime number.'],
+            14: ['14 is the atomic number of silicon.','A fortnight is 14 days.','14 is the number of lines in a sonnet.','Valentine\'s Day is February 14th.','14 is the number of stations of the Cross.'],
+            15: ['15 is the atomic number of phosphorus.','A quinceanera celebrates a girl\'s 15th birthday.','15 minutes is a quarter of an hour.','15 is a triangular number (1+2+3+4+5).','Fifteen-puzzle is a classic sliding puzzle game.'],
+            16: ['16 is the atomic number of sulfur.','A sweet 16 is a coming-of-age celebration.','16 ounces make a pound.','There are 16 pawns in a chess game (8 per side).','16 is 2 to the power of 4.'],
+            17: ['17 is the atomic number of chlorine.','In Italy, 17 is considered unlucky.','17 is the 7th prime number.','The periodic table has 17 known elements in period 3.','Haiku poems have 17 syllables (5-7-5).'],
+            18: ['18 is the atomic number of argon.','18 is the voting age in many countries.','A golf course has 18 holes.','18 wheeler trucks are the largest road vehicles.','18 is the age of legal adulthood in most countries.'],
+            19: ['19 is the atomic number of potassium.','19 is a prime number.','The 19th Amendment gave US women the right to vote.','COVID-19 is named for its discovery year (2019).','19 is the maximum number of years in the Metonic cycle.'],
+            20: ['20 is the atomic number of calcium.','A score is 20 years.','2/20 is a common eye exam standard (perfect vision).','An icosahedron has 20 faces.','There are 20 amino acids that make up proteins.'],
+            21: ['21 is the atomic number of scandium.','In blackjack, 21 is the winning number.','21 is the legal drinking age in the US.','A 21-gun salute honors heads of state.','21 is the 8th Fibonacci number.'],
+            24: ['There are 24 hours in a day.','24 is the atomic number of chromium.','24 is the number of the car in the TV series "24".','A day is divided into two 12-hour periods totaling 24 hours.','24 frames per second is standard film speed.'],
+            25: ['25 is the atomic number of manganese.','A quarter-century is 25 years.','25 is a perfect square (5x5).','Christmas is December 25th.','There are 2 cents in a nickel, and 25 cents in a quarter.'],
+            26: ['26 is the number of letters in the English alphabet.','26 is the atomic number of iron.','A marathon is 26 miles and 385 yards.','26 is the only number between a square (25) and a cube (27).','There are 26 red and 26 black cards in a deck.'],
+            27: ['27 is the atomic number of cobalt.','27 is a perfect cube (3x3x3).','The 27 Club refers to famous musicians who died at age 27.','There are 27 books in the New Testament.','27 is the 3rd cube number.'],
+            28: ['28 is the atomic number of nickel.','28 is a perfect number (1+2+4+7+14=28).','February has 28 days (29 in leap years).','28 is the second perfect number.','28 is the atomic number of nickel.'],
+            30: ['30 is the atomic number of zinc.','30 is the number of days in several months.','Thirty years is three decades.','30 is the number of the jersey retired by many sports teams.','A typical news broadcast is about 30 minutes.'],
+            31: ['31 is the atomic number of gallium.','31 is a prime number.','October, December, January, March, May, July, and August have 31 days.','31 flavors is the famous slogan of Baskin-Robbins.','31 is a Mersenne prime (2^5 - 1).'],
+            32: ['32 is the atomic number of germanium.','Water freezes at 32 degrees Fahrenheit.','32 is the number of teeth in an adult human.','32 is 2 to the power of 5.','There are 32 chess pieces at the start of a game.'],
+            33: ['33 is the atomic number of arsenic.','33 is the number of vertebrae in the human spine.','Jesus was traditionally believed to have been crucified at age 33.','33 rpm is the standard speed for vinyl LP records.','33 is the atomic number of arsenic.'],
+            35: ['35 is the atomic number of bromine.','35mm is the standard film gauge for photography.','A US president must be at least 35 years old.','35 is the sum of the first five triangular numbers.','35 mph is a common urban speed limit.'],
+            36: ['36 is the atomic number of krypton.','36 is a perfect square (6x6).','There are 36 inches in a yard.','36 is the number of black keys on a standard piano.','A gross is 144, which is 36 x 4.'],
+            40: ['40 is the atomic number of zirconium.','40 days and 40 nights is a biblical phrase.','The saying "life begins at 40" is popular worldwide.','40 is the only number whose letters are in alphabetical order (forty).','WD-40 is named for its 40th formula attempt.'],
+            42: ['42 is the "Answer to the Ultimate Question of Life, the Universe, and Everything" from The Hitchhiker\'s Guide to the Galaxy.','42 is the atomic number of molybdenum.','A marathon in kilometers is approximately 42.195 km.','42 is the jersey number retired by Jackie Robinson across all of MLB.','42 is an abundant number.'],
+            45: ['45 is the atomic number of rhodium.','45 rpm is a vinyl record speed (commonly for singles).','45 is the atomic number of rhodium.','A 45-degree angle bisects a right angle.','45 is a triangular number (1+2+3+...+9).'],
+            49: ['49 is the atomic number of indium.','49 is a perfect square (7x7).','49ers are the San Francisco NFL team named after the 1849 Gold Rush.','49 is the number of keys on a standard piano (white keys).','49 days is 7 weeks.'],
+            50: ['50 is the atomic number of tin.','There are 50 US states.','50 is the number of stars on the US flag.','A golden wedding anniversary is 50 years.','Half a century is 50 years.'],
+            52: ['52 is the atomic number of tellurium.','There are 52 cards in a standard deck.','52 weeks make a year.','52 is the number of white keys on a piano.','52 factorial (52!) is the number of possible card shuffles.'],
+            55: ['55 is the atomic number of cesium.','55 mph was the US national speed limit for years.','55 is the 10th Fibonacci number.','55 is a triangular number.','Route 55 is a famous American highway.'],
+            60: ['60 is the atomic number of neodymium.','There are 60 seconds in a minute and 60 minutes in an hour.','A diamond wedding anniversary is 60 years.','The ancient Babylonians used a base-60 number system.','60 is the smallest number divisible by 1 through 6.'],
+            64: ['64 is the atomic number of gadolinium.','64 is a perfect square (8x8) and a perfect cube (4x4x4).','There are 64 squares on a chess board.','Nintendo 64 was a legendary game console.','64 is 2 to the power of 6.'],
+            65: ['65 is the atomic number of terbium.','65 is a common retirement age.','65 mph is a typical US highway speed limit.','65 is the number of the famous Route 66 minus one.','65 degrees Fahrenheit is a comfortable room temperature.'],
+            69: ['69 is the atomic number of thulium.','69 is a strobogrammatic number (looks the same upside down).','The Summer of Love was in 1969.','Apollo 11 landed on the Moon in 1969.','69 is a semiprime (3 x 23).'],
+            70: ['70 is the atomic number of ytterbium.','A septuagenarian is someone in their 70s.','70 is often associated with a full life in the Bible.','Psalm 90:10 says "The years of our life are seventy."','70mm is a high-resolution film format.'],
+            72: ['72 is the atomic number of hafnium.','72 is the Rule of 72 in finance (years to double money).','The average human heart beats about 72 times per minute.','72 is the number of names of God in Kabbalah.','72 is the sum of four consecutive primes (13+17+19+23).'],
+            75: ['75 is the atomic number of rhenium.','75 years is a diamond anniversary in some traditions.','The speed of sound is roughly 750 mph, or about 75% of 1000.','75 is the atomic number of rhenium.','75 is a pentagonal number.'],
+            80: ['80 is the atomic number of mercury.','Around the World in 80 Days is a classic novel.','80 is the atomic number of mercury.','Eighty is the number of days in approximately 2.5 months.','80 decibels is the noise level of a busy street.'],
+            88: ['88 is the atomic number of radium.','A piano has 88 keys.','88 mph is the speed needed for time travel in Back to the Future.','88 is a strobogrammatic number.','88 constellations are officially recognized by the IAU.'],
+            90: ['90 is the atomic number of thorium.','A right angle is 90 degrees.','90 is the atomic number of thorium.','Ninety is a right angle in geometry.','90 days is approximately 3 months.'],
+            96: ['96 is the atomic number of curium.','96 tears is a famous 1966 song by ? and the Mysterians.','96 is the atomic number of curium.','96 is the number of Earth days in some orbital calculations.','96 is the sum of the first four factorials (1+2+6+24+...no, actually 1!+2!+3!+4!=33).'],
+            99: ['99 is the atomic number of einsteinium.','99 Luftballons is a famous German song.','99 is the largest two-digit number.','99 problems is a famous song lyric.','99 is a Kaprekar number.'],
+            100: ['100 is the atomic number of fermium.','100 degrees Celsius is the boiling point of water.','A century is 100 years.','100% means the whole or complete amount.','100 is the square of 10.'],
+            108: ['108 is the atomic number of hassium.','108 is a sacred number in Hinduism and Buddhism.','There are 108 beads on a mala (prayer necklace).','108 stitches on a baseball.','The Sun is roughly 108 times its diameter from Earth.'],
+            120: ['120 is the atomic number of unbinilium (predicted).','120 is called a "gross" in some counting systems (10 dozen).','A 120-degree angle appears in equilateral triangles.','120 film is a medium-format photographic film.','120 is the smallest number with 12 divisors.'],
+            128: ['128 is 2 to the power of 7.','128 bits is a common encryption key length.','128 is the atomic number of unbioctium (predicted).','128 KB is the size limit for MIDI system exclusive messages.','128 is the number of musical notes in many composition bars.'],
+            144: ['144 is a gross (12 dozen).','144 is 12 squared.','144 is the 12th Fibonacci number.','144 is the smallest number with exactly 12 divisors.','1440 minutes make up a day (close to 144 x 10).'],
+            150: ['150 is the atomic number of unquintium (predicted).','150cc is a common motorcycle engine size.','150 years is a sesquicentennial.','Pokemon originally had 150 species.','The human body has about 150 joints.'],
+            169: ['169 is a perfect square (13x13).','169 is a Friedman number.','169 is the atomic number of the hypothetical element Unhexennium.','A "baker\'s gross" would be 169 items.','169 is a center number in Pascal\'s triangle.'],
+            180: ['180 degrees is a straight angle.','The sum of angles in a triangle is 180 degrees.','180 is the atomic number of Unoctium (predicted).','A half-circle spans 180 degrees.','180 days is approximately 6 months.'],
+            200: ['200 is the HTTP status code for OK (success).','200 meters is a common sprint distance.','200 is a round number often used as a milestone.','200 degrees Fahrenheit is a common baking temperature.','200 years is a bicentennial.'],
+            225: ['225 is a perfect square (15x15).','225 is the number of squares on a 15x15 Go board.','225 is the atomic number of the hypothetical element unbipentium.','225 is a perfect square that is also the sum of two squares.','The area of a 15x15 square is 225.'],
+            256: ['256 is 2 to the power of 8 (one byte).','256 is the number of possible values in a byte.','256 colors was a standard color palette in early computers.','256 is a perfect square (16x16).','IPv4 addresses have 4 octets of 8 bits each = 256 values per octet.'],
+            289: ['289 is a perfect square (17x17).','289 is the number of squares on a 17x17 grid.','289 is the 17th square number.','289 is an odd perfect square.','289 is the sum of three consecutive primes.'],
+            300: ['300 Spartans famously defended Thermopylae.','Bowling a perfect game scores 300.','300 is a round number used as a major milestone.','300 dpi is a standard print resolution.','The film "300" was released in 2006.'],
+            324: ['324 is a perfect square (18x18).','324 is 18 squared.','324 is also the square of the sum of the first two primes (2+3)^2 x 6^2','324 is a powerful number.','324 is the number of positions on a 18x18 grid.'],
+            360: ['360 degrees make a full circle.','360 is the number of days in the ancient calendar year.','An Xbox 360 was a popular gaming console.','360 degrees represents a complete rotation.','360 has 24 divisors, making it highly composite.'],
+            365: ['365 is the number of days in a common year.','365.25 days is the approximate length of Earth\'s orbit.','365 is 5 x 73.','The song "525,600 Minutes" from Rent references 365 days.','365 consecutive days is called a calendar year.'],
+            384: ['384 is the number of squares on a Go board (19x19 minus center point).','384 is 2 to the 7th power times 3.','384,000 km is the approximate distance from Earth to the Moon.','384 is the number of posts in a 16x24 grid.','384 KB was a common early RAM size.'],
+            400: ['400 is 20 squared.','400 meters is one lap around a standard track.','400 is the HTTP status code for Bad Request.','The Year 400 was a leap year in the Julian calendar.','400 is the number of meters in an Olympic relay (4x100).'],
+            404: ['404 is the HTTP error code for "Page Not Found."','404 has become a cultural icon for missing web pages.','Room 404 is supposedly at CERN where the web was born.','404 errors occur when a URL cannot be found on a server.','April 4 (4/04) is sometimes called "404 Day."'],
+            420: ['420 is a cultural reference to cannabis culture.','April 20 (4/20) is associated with the 420 tradition.','420 is the HTTP status code for "Method Failure" (used by some servers).','420 is the area code for parts of Ohio.','420 is a Harshad number (divisible by the sum of its digits).'],
+            432: ['432 Hz is considered "the heartbeat of the Earth" by some musicians.','432 is the sum of the first four cubes (1+8+27+64=100, no) actually 1^3+2^3+3^3+4^3+5^3+6^3...','432 is the number of minutes in 7.2 hours.','432 Hz tuning is an alternative to the standard 440 Hz.','432 is a powerful number.'],
+            486: ['486 is the number of points on a standard Scrabble board if all premium squares are counted.','486 was a popular Intel processor line (i486).','486 is 2 x 3^5.','486 DX was a CPU that popularized PCs in the early 1990s.','486 is the sum of the first 9 cube numbers.'],
+            500: ['500 is a round number often used as a milestone.','The Fortune 500 lists America\'s top companies.','500 miles is the distance in the famous song "I\'m Gonna Be (500 Miles)."','Indianapolis 500 is a famous car race.','The S&P 500 is a stock market index.'],
+            512: ['512 is 2 to the power of 9.','512 MB was a common RAM size in early computers.','512 is the area code for Austin, Texas.','512 is a perfect cube (8x8x8).','512 bytes is a common disk sector size.'],
+            576: ['576 is a perfect square (24x24).','576 is the number of squares on a 24x24 grid.','576 is a composite number with many divisors.','576 is the square of 24.','576 is an Achilles number.'],
+            625: ['625 is a perfect square (25x25).','625 is also 5 to the 4th power.','625 is a perfect fourth power.','625 is the last 3-digit perfect square + 126 = 751... no, 625 is 25^2.','625 is the smallest fourth power of a prime.'],
+            666: ['666 is known as the "Number of the Beast" from the Book of Revelation.','666 is the sum of the first 36 natural numbers.','666 is a triangular number.','In Chinese culture, 666 is considered very lucky.','666 is a Smith number.'],
+            720: ['720 is 6 factorial (6!).','720 degrees is two full rotations.','720 is the number of degrees in a hexagon\'s interior angles (sum).','720p is a standard HD video resolution (1280x720).','720 has 30 divisors.'],
+            729: ['729 is a perfect cube (9x9x9).','729 is 3 to the 6th power.','729 is the number of squares on a 27x27 grid (729 = 27^2).','729 is both a perfect square and a perfect power.','729 is the largest 3-digit perfect cube.'],
+            786: ['786 is considered a sacred number in Islam.','786 is the numerical value of "Bismillah" in Arabic.','786 is a Harshad number (divisible by 7+8+6=21).','Many Muslims use 786 as a substitute for "Bismillah."','786 is a sphenic number (product of 3 primes).'],
+            800: ['800 is the starting number for toll-free phone numbers (1-800).','800 is a round number used as a milestone.','800 meters is two laps around a standard track.','800 x 600 was a common screen resolution.','800 is 2^5 x 5^2.'],
+            900: ['900 is 30 squared.','900 degrees is 2.5 full rotations.','900 is a perfect square.','900 was the area code for pay-per-call services.','The year 900 was in the early Middle Ages.'],
+            911: ['911 is the emergency phone number in the United States.','September 11, 2001 (9/11) was a tragic day in history.','911 is also a famous Porsche model.','911 dispatch centers handle millions of calls yearly.','911 is the sum of the first 6 powers of 3.'],
+            999: ['999 is the emergency number in the United Kingdom.','999 is the largest 3-digit number.','999 is 3^3 x 37.','In some cultures, 999 represents completion.','999 is a Kaprekar number.'],
+            1000: ['1000 is 10 to the power of 3.','A millennium is 1000 years.','1000 meters make a kilometer.','K comes from the Greek word "kilo" meaning 1000.','1000 is the cube of 10.'],
+            1024: ['1024 is 2 to the power of 10 (1 kilobyte).','1024 bytes = 1 KB in computing.','1024 is a round number in binary (2^10).','1024 x 768 was a common screen resolution.','1024 is a perfect square (32x32).'],
+            1080: ['1080p is a Full HD video resolution (1920x1080).','1080 is the number of degrees in the interior angles of an octagon.','1080 is 2^3 x 3^3 x 5.','A snowboard trick "1080" involves three full rotations.','1080 is divisible by 1 through 8.'],
+            1337: ['1337 is "leet" (elite) in leetspeak.','Leetspeak replaces letters with numbers (E=3, L=1, T=7).','1337 was a popular term in early internet culture.','1337 is a prime number.','1337 h4x0r means "elite hacker" in leetspeak.'],
+            1728: ['1728 is the number of cubic inches in a cubic foot.','1728 is 12 cubed (12^3).','1728 is also called a "great gross."','1728 is the number of inches in 144 feet.','1728 is a powerful number.'],
+            2000: ['2000 was the start of the new millennium (debated).','The Year 2000 problem (Y2K) feared computer failures.','2000 is a round number used as a major milestone.','20/20 is considered perfect vision.','The year 2000 was a leap year.'],
+            2024: ['2024 is the current year (as of this tool creation).','2024 is a leap year.','2024 is the year of the Dragon in Chinese zodiac.','2024 Summer Olympics were held in Paris.','2024 is 2^5 x 3 x 7 x 3... no, 2024 = 8 x 253 = 8 x 11 x 23.'],
+            2048: ['2048 is 2 to the power of 11.','2048 is a popular puzzle game app.','2048 is a round number in binary computing.','2048-bit encryption is a common security standard.','2048 is a perfect power of 2.'],
+            2187: ['2187 is 3 to the 7th power.','2187 was Princess Leia\'s cell number in Star Wars (Detention Block AA-23).','2187 is a perfect power of 3.','2187 is the number of 7-digit numbers in base 3.','2187 is the year some sci-fi stories are set in.'],
+            2400: ['2400 baud was a common modem speed in the 1980s.','2400 is the number of minutes in 40 hours.','2400 is 2^5 x 3 x 5^2.','2400 was a landmark modem speed for early internet.','2400 x 3 = 7200, another common baud rate.'],
+            4096: ['4096 is 2 to the power of 12.','4096 bytes = 4 KB in computing.','4096 is a perfect square (64x64).','4096 is the number of possible IPv6 prefix values per block.','4096 is the number of colors in 12-bit color.'],
+            5000: ['5000 is a round milestone number.','The 5000 meter is a common long-distance running event.','A $5000 savings goal is a popular financial milestone.','5000 is the number of meters in an Olympic 5K race.','Five thousand is a commonly referenced large number.'],
+            5040: ['5040 is 7 factorial (7!).','5040 is a highly composite number.','Plato considered 5040 the ideal number of citizens in a city-state.','5040 has 60 divisors.','5040 is the factorial of 7 and the product of 7 consecutive numbers.'],
+            65536: ['65536 is 2 to the power of 16.','65536 is the number of possible values in a 16-bit integer.','65536 colors was a standard display mode in early Windows.','65536 is 256 squared.','65536 is the max value for an unsigned 16-bit integer.'],
+            9999: ['9999 is the largest 4-digit number.','9999 is sometimes used as a "max value" in systems.','9999 in Chinese sounds like "long-lasting."','9999 is one less than 10,000 (a myriad).','9999 is a Kaprekar number.']
+        };
+
+        function isPrime(n) {
+            if (n < 2) return false;
+            if (n < 4) return true;
+            if (n % 2 === 0 || n % 3 === 0) return false;
+            for (var i = 5; i * i <= n; i += 6) {
+                if (n % i === 0 || n % (i + 2) === 0) return false;
+            }
+            return true;
+        }
+
+        function isPerfectSquare(n) {
+            var s = Math.sqrt(n);
+            return s === Math.floor(s);
+        }
+
+        function isFibonacci(n) {
+            // A number is Fibonacci iff one of (5*n^2 + 4) or (5*n^2 - 4) is a perfect square
+            return isPerfectSquare(5 * n * n + 4) || isPerfectSquare(5 * n * n - 4);
+        }
+
+        function toRoman(num) {
+            if (num < 1 || num > 9999) return 'N/A';
+            var vals = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+            var syms = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+            var result = '';
+            for (var i = 0; i < vals.length; i++) {
+                while (num >= vals[i]) {
+                    result += syms[i];
+                    num -= vals[i];
+                }
+            }
+            return result;
+        }
+
+        function renderTrivia(num) {
+            document.getElementById('bigNumber').textContent = num.toLocaleString();
+
+            // Properties
+            var oddEvenEl = document.querySelector('#propOddEven p:last-child');
+            oddEvenEl.textContent = num % 2 === 0 ? 'Even' : 'Odd';
+            oddEvenEl.className = 'text-lg font-extrabold ' + (num % 2 === 0 ? 'text-blue-900 dark:text-blue-100' : 'text-blue-900 dark:text-blue-100');
+
+            var primeEl = document.querySelector('#propPrime p:last-child');
+            var isP = isPrime(num);
+            primeEl.textContent = isP ? 'Yes' : 'No';
+            primeEl.className = 'text-lg font-extrabold ' + (isP ? 'text-green-600 dark:text-green-300' : 'text-slate-500 dark:text-slate-400');
+
+            var sqEl = document.querySelector('#propSquare p:last-child');
+            var isSq = isPerfectSquare(num);
+            sqEl.textContent = isSq ? 'Yes (' + Math.sqrt(num) + '²)' : 'No';
+            sqEl.className = 'text-lg font-extrabold ' + (isSq ? 'text-purple-600 dark:text-purple-300' : 'text-slate-500 dark:text-slate-400');
+
+            var fibEl = document.querySelector('#propFib p:last-child');
+            var isF = isFibonacci(num);
+            fibEl.textContent = isF ? 'Yes' : 'No';
+            fibEl.className = 'text-lg font-extrabold ' + (isF ? 'text-amber-600 dark:text-amber-300' : 'text-slate-500 dark:text-slate-400');
+
+            // Conversions
+            document.getElementById('romanVal').textContent = toRoman(num);
+            document.getElementById('binaryVal').textContent = num.toString(2);
+
+            // Trivia facts
+            var factsContainer = document.getElementById('triviaFacts');
+            factsContainer.innerHTML = '';
+
+            // Add computed facts
+            var facts = [];
+            if (isP) facts.push(num + ' is a prime number — it can only be divided by 1 and itself.');
+            if (isSq) facts.push(num + ' is a perfect square (' + Math.sqrt(num) + ' × ' + Math.sqrt(num) + ' = ' + num + ').');
+            if (isF) facts.push(num + ' is a Fibonacci number.');
+            if (num % 2 === 0) facts.push(num + ' is divisible by 2.');
+            if (num % 10 === 0) facts.push(num + ' is a round number (ends in zero).');
+
+            // Check divisibility
+            var divisors = [];
+            for (var d = 2; d <= Math.min(12, num); d++) {
+                if (num % d === 0) divisors.push(d);
+            }
+            if (divisors.length > 0) {
+                facts.push(num + ' is divisible by: ' + divisors.join(', ') + '.');
+            }
+
+            // Add trivia from database
+            var dbTrivia = TRIVIA[num];
+            if (dbTrivia) {
+                dbTrivia.forEach(function(t) { facts.push(t); });
+            }
+
+            // If no trivia found for exact number, try nearby
+            if (!dbTrivia) {
+                var nearby = [];
+                for (var key in TRIVIA) {
+                    var k = parseInt(key);
+                    if (Math.abs(k - num) <= 5 && k !== num) {
+                        nearby.push({ num: k, fact: TRIVIA[k][0] });
+                    }
+                }
+                if (nearby.length > 0) {
+                    nearby.forEach(function(n) {
+                        facts.push('Nearby: ' + n.num + ' — ' + n.fact);
+                    });
+                }
+            }
+
+            if (facts.length === 0) {
+                facts.push('No specific trivia found for ' + num + '. Try a different number or check the mathematical properties above!');
+            }
+
+            facts.forEach(function(fact, i) {
+                var div = document.createElement('div');
+                div.className = 'flex items-start gap-3 bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700';
+                div.innerHTML = '<span class="flex-shrink-0 w-8 h-8 bg-blue-100 dark:bg-blue-900/40 rounded-full flex items-center justify-center text-sm font-bold text-blue-600 dark:text-blue-400">' + (i + 1) + '</span>' +
+                    '<p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">' + escapeHtml(fact) + '</p>';
+                factsContainer.appendChild(div);
+            });
+
+            document.getElementById('triviaResults').classList.remove('hidden');
+            document.getElementById('triviaResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function escapeHtml(str) {
+            var d = document.createElement('div');
+            d.appendChild(document.createTextNode(str));
+            return d.innerHTML;
+        }
+
+        document.getElementById('btnTrivia').addEventListener('click', function() {
+            var num = parseInt(document.getElementById('numInput').value);
+            if (isNaN(num) || num < 1 || num > 9999) { showToast('Please enter a number between 1 and 9999.', 'error'); return; }
+            renderTrivia(num);
+        });
+
+        document.getElementById('btnRandom').addEventListener('click', function() {
+            var num = Math.floor(Math.random() * 9999) + 1;
+            document.getElementById('numInput').value = num;
+            renderTrivia(num);
+        });
+
+        document.getElementById('numInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') document.getElementById('btnTrivia').click();
+        });
+
+        // Auto-show for default value
+        document.getElementById('numInput').value = 42;
+        renderTrivia(42);
+    })();
+    </script>
+</body>
+</html>

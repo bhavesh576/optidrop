@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test Free Online — No Upload Required | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Test your typing speed with a 60-second typing test. Measures WPM, accuracy, and characters per minute. No upload, no sign-up required.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Typing Speed Test Free Online — No Upload Required | OptiDrop">
+    <meta property="og:description" content="Test your typing speed with a 60-second typing test. Measures WPM, accuracy, and characters per minute. No upload, no sign-up required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/text/typing-speed-test.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Typing Speed Test Free Online — No Upload Required | OptiDrop">
+    <meta name="twitter:description" content="Test your typing speed with a 60-second typing test. Measures WPM, accuracy, and characters per minute. No upload, no sign-up required.">
+    <link rel="canonical" href="https://optidrop.online/tools/text/typing-speed-test.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Text Tools", "item": "https://optidrop.online/category/text-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Typing Speed Test", "item": "https://optidrop.online/tools/text/typing-speed-test.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Typing Speed Test",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Test your typing speed with a 60-second typing test. Measures WPM, accuracy, and characters per minute. No upload, no sign-up required."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is a good typing speed?", "acceptedAnswer": {"@type": "Answer", "text": "The average typing speed is around 40 words per minute (WPM). A good typing speed is considered 50-60 WPM, while professional typists and data entry workers often reach 65-75 WPM. Expert typists can exceed 100 WPM. Most office jobs require a minimum of 40 WPM. Regular practice with typing tests can help you improve over time."}},
+        {"@type": "Question", "name": "How is WPM calculated in this typing test?", "acceptedAnswer": {"@type": "Answer", "text": "WPM (Words Per Minute) is calculated by counting the number of correctly typed words and dividing by the elapsed time in minutes. A word is standardized as 5 characters including spaces. This tool counts only correctly typed words toward your WPM score. Accuracy is calculated as the percentage of correctly typed characters out of total characters typed."}},
+        {"@type": "Question", "name": "How can I improve my typing speed?", "acceptedAnswer": {"@type": "Answer", "text": "To improve typing speed: practice regularly with timed typing tests, learn proper finger placement on the home row, avoid looking at the keyboard, focus on accuracy first and speed will follow, maintain good posture, and take breaks to avoid fatigue. Consistent daily practice of 15-30 minutes can significantly improve your speed within a few weeks."}},
+        {"@type": "Question", "name": "Is this typing test free and private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, this typing speed test is completely free and runs entirely in your browser. No text you type is uploaded to any server, and no account or sign-up is required. Your typing data stays on your device. You can use this test as many times as you want to track your progress."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        #passageDisplay { font-family: 'Courier New', Courier, monospace; font-size: 1.125rem; line-height: 1.8; letter-spacing: 0.02em; white-space: pre-wrap; word-break: break-word; }
+        #passageDisplay .char-correct { color: #16a34a; background: #dcfce7; border-radius: 2px; }
+        #passageDisplay .char-incorrect { color: #dc2626; background: #fee2e2; border-radius: 2px; text-decoration: underline; }
+        #passageDisplay .char-cursor { background: #bfdbfe; border-bottom: 2px solid #2563eb; }
+        #passageDisplay .char-pending { color: #94a3b8; }
+        #typingArea { font-family: 'Courier New', Courier, monospace; font-size: 1.125rem; line-height: 1.8; resize: none; }
+        #typingArea:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.15); }
+        #typingArea:disabled { background: #f8fafc; cursor: not-allowed; }
+        .stat-card { transition: transform 0.2s; }
+        .stat-card:hover { transform: translateY(-2px); }
+        .timer-circle { transition: stroke-dashoffset 1s linear; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Typing Speed Test — Measure Your WPM Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Test your typing speed and accuracy with a 60-second timed test. Measures WPM, accuracy, and characters per minute. Runs entirely in your browser — no upload, no sign-up.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
+                        <div class="flex items-center gap-4">
+                            <button id="btnStart" class="px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                Start Test
+                            </button>
+                            <span id="statusLabel" class="text-sm font-medium text-slate-500">Click to begin the 60-second test</span>
+                        </div>
+                        <div class="relative flex items-center justify-center w-20 h-20">
+                            <svg class="w-20 h-20 transform -rotate-90" viewBox="0 0 80 80">
+                                <circle cx="40" cy="40" r="36" fill="none" stroke="#e2e8f0" stroke-width="5"/>
+                                <circle id="timerRing" cx="40" cy="40" r="36" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-dasharray="226.19" stroke-dashoffset="0" class="timer-circle"/>
+                            </svg>
+                            <span id="timerText" class="absolute text-xl font-extrabold text-slate-900">60</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Passage to type:</label>
+                        <div id="passageDisplay" class="p-4 bg-white border-2 border-slate-200 rounded-xl text-slate-400 min-h-[80px]">
+                            Press "Start Test" to load a passage...
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="typingArea" class="block text-sm font-bold text-slate-700 mb-2">Your typing:</label>
+                        <textarea id="typingArea" rows="4" disabled placeholder="Click Start Test first..." class="block w-full px-4 py-3 border-2 border-slate-200 rounded-xl text-slate-900 font-medium" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+                    </div>
+
+                    <div id="liveStats" class="hidden grid grid-cols-3 gap-3 mb-4">
+                        <div class="stat-card bg-blue-50 border border-blue-200 rounded-xl p-3 text-center">
+                            <p class="text-xs font-semibold text-blue-600 uppercase tracking-wide">WPM</p>
+                            <p id="liveWPM" class="text-2xl font-extrabold text-blue-900">0</p>
+                        </div>
+                        <div class="stat-card bg-green-50 border border-green-200 rounded-xl p-3 text-center">
+                            <p class="text-xs font-semibold text-green-600 uppercase tracking-wide">Accuracy</p>
+                            <p id="liveAcc" class="text-2xl font-extrabold text-green-900">100%</p>
+                        </div>
+                        <div class="stat-card bg-amber-50 border border-amber-200 rounded-xl p-3 text-center">
+                            <p class="text-xs font-semibold text-amber-600 uppercase tracking-wide">Chars</p>
+                            <p id="liveChars" class="text-2xl font-extrabold text-amber-900">0</p>
+                        </div>
+                    </div>
+
+                    <div id="resultsSection" class="hidden">
+                        <div class="bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-slate-200 rounded-2xl p-6 mb-4">
+                            <h3 class="text-lg font-bold text-slate-800 mb-4 text-center">Results</h3>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                <div class="stat-card bg-white border border-blue-200 rounded-xl p-4 text-center shadow-sm">
+                                    <p class="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-1">WPM</p>
+                                    <p id="resWPM" class="text-3xl font-extrabold text-blue-700">0</p>
+                                </div>
+                                <div class="stat-card bg-white border border-green-200 rounded-xl p-4 text-center shadow-sm">
+                                    <p class="text-xs font-semibold text-green-600 uppercase tracking-wide mb-1">Accuracy</p>
+                                    <p id="resAcc" class="text-3xl font-extrabold text-green-700">0%</p>
+                                </div>
+                                <div class="stat-card bg-white border border-purple-200 rounded-xl p-4 text-center shadow-sm">
+                                    <p class="text-xs font-semibold text-purple-600 uppercase tracking-wide mb-1">Characters</p>
+                                    <p id="resChars" class="text-3xl font-extrabold text-purple-700">0</p>
+                                </div>
+                                <div class="stat-card bg-white border border-emerald-200 rounded-xl p-4 text-center shadow-sm">
+                                    <p class="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-1">Correct Words</p>
+                                    <p id="resCorrect" class="text-3xl font-extrabold text-emerald-700">0</p>
+                                </div>
+                                <div class="stat-card bg-white border border-red-200 rounded-xl p-4 text-center shadow-sm">
+                                    <p class="text-xs font-semibold text-red-600 uppercase tracking-wide mb-1">Incorrect Words</p>
+                                    <p id="resIncorrect" class="text-3xl font-extrabold text-red-700">0</p>
+                                </div>
+                                <div class="stat-card bg-white border border-indigo-200 rounded-xl p-4 text-center shadow-sm">
+                                    <p class="text-xs font-semibold text-indigo-600 uppercase tracking-wide mb-1">CPM</p>
+                                    <p id="resCPM" class="text-3xl font-extrabold text-indigo-700">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="btnRetry" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            Try Again
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4 text-center">About Typing Speed Tests</h2>
+            <div class="prose prose-slate max-w-none text-slate-600 text-sm leading-relaxed space-y-4">
+                <p>A typing speed test measures how quickly and accurately you can type a given passage of text. The standard unit of measurement is <strong>WPM (Words Per Minute)</strong>, where one "word" is defined as five characters including spaces. This standardized measurement allows fair comparison across different texts and typing sessions.</p>
+                <p>The average person types at around <strong>40 WPM</strong>, which is sufficient for everyday tasks. Professional typists and administrative assistants typically achieve <strong>60 to 75 WPM</strong>, while competitive typists can exceed <strong>100 WPM</strong>. Improving your typing speed can significantly boost productivity in any job that involves computer work, from writing emails to coding software.</p>
+                <p><strong>Accuracy matters as much as speed.</strong> Typing quickly but making frequent errors often slows you down overall, since you spend time correcting mistakes. This tool measures both WPM and accuracy so you can focus on balanced improvement. A good approach is to first aim for 98% accuracy, then gradually increase your speed while maintaining that accuracy level.</p>
+                <p>This typing speed test runs entirely in your browser. Nothing you type is sent to any server, making it 100% private. You get five different passages that rotate randomly, keeping each session fresh and challenging. Use it daily to track your progress and watch your WPM climb over time.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is a good typing speed?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The average typing speed is around 40 words per minute (WPM). A good typing speed is considered 50-60 WPM, while professional typists and data entry workers often reach 65-75 WPM. Expert typists can exceed 100 WPM. Most office jobs require a minimum of 40 WPM. Regular practice with typing tests can help you improve over time.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How is WPM calculated in this typing test?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        WPM (Words Per Minute) is calculated by counting the number of correctly typed words and dividing by the elapsed time in minutes. A word is standardized as 5 characters including spaces. This tool counts only correctly typed words toward your WPM score. Accuracy is calculated as the percentage of correctly typed characters out of total characters typed.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How can I improve my typing speed?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        To improve typing speed: practice regularly with timed typing tests, learn proper finger placement on the home row, avoid looking at the keyboard, focus on accuracy first and speed will follow, maintain good posture, and take breaks to avoid fatigue. Consistent daily practice of 15-30 minutes can significantly improve your speed within a few weeks.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is this typing test free and private?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, this typing speed test is completely free and runs entirely in your browser. No text you type is uploaded to any server, and no account or sign-up is required. Your typing data stays on your device. You can use this test as many times as you want to track your progress.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/text/word-frequency.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Word Counter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Count words, characters, sentences, and reading time.</span>
+                </a>
+                <a href="/tools/text/reverse-text.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Text Case Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert text between uppercase, lowercase, title case, and more.</span>
+                </a>
+                <a href="/tools/text/reading-time-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Reading Time Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Estimate reading time for any text based on average reading speed.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 80+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        /* ===== 5 Sample Typing Passages (~100 words each) ===== */
+        var passages = [
+            "The quick brown fox jumps over the lazy dog near the riverbank on a warm summer afternoon. Birds sing in the tall oak trees while gentle breezes carry the scent of wildflowers across the meadow. Children play happily in the distance, their laughter echoing through the valley. A small wooden bridge crosses the stream where fish swim gracefully beneath the clear water. Nature has a way of bringing peace to even the busiest of minds, reminding us to slow down and appreciate the beauty around us every single day.",
+            "Technology continues to reshape the world at an incredible pace. From artificial intelligence to renewable energy, innovations are transforming how we live and work. Smartphones connect billions of people across the globe, enabling instant communication and access to information. Cloud computing allows businesses to scale operations without massive infrastructure investments. As we move further into the digital age, the importance of cybersecurity grows every day. Understanding these technologies is no longer optional but essential for anyone who wants to thrive in the modern economy and stay competitive in their field.",
+            "Learning a new language opens doors to different cultures and ways of thinking. Studies show that bilingual individuals often demonstrate better problem-solving skills and enhanced creativity. The process of mastering grammar, vocabulary, and pronunciation challenges the brain in unique ways. Immersion through travel or conversation with native speakers accelerates progress significantly. Even dedicating just thirty minutes daily to practice can yield remarkable results over time. Whether for career advancement or personal enrichment, the effort invested in learning another language always pays rich dividends that last a lifetime and broaden your perspective.",
+            "Regular physical exercise is one of the most important habits for maintaining good health. Activities like running, swimming, and cycling strengthen the heart and improve cardiovascular fitness. Strength training builds muscle mass and increases bone density, which becomes increasingly important as we age. Exercise also releases endorphins that reduce stress and improve mood naturally. Experts recommend at least one hundred fifty minutes of moderate activity each week for optimal benefits. Finding an exercise routine you enjoy makes it easier to stay consistent and turn physical fitness into a sustainable lifelong practice that benefits body and mind.",
+            "The art of cooking brings people together in ways few other activities can. A well-prepared meal nourishes both the body and the soul. Fresh ingredients combined with simple techniques often produce the most satisfying results. Learning to cook at home saves money and gives you complete control over nutrition and portion sizes. Exploring recipes from different cuisines introduces new flavors and cooking methods that expand your culinary skills. Whether you are preparing a quick weeknight dinner or hosting a festive gathering, the joy of sharing food with family and friends creates memories that last forever."
+        ];
+
+        /* ===== State Variables ===== */
+        var currentPassage = "";
+        var timerInterval = null;
+        var timeRemaining = 60;
+        var testRunning = false;
+        var testComplete = false;
+        var startTimeMs = 0;
+        var TIMER_DURATION = 60;
+        var CIRCUMFERENCE = 2 * Math.PI * 36; /* matches r=36 in SVG */
+
+        /* ===== DOM References ===== */
+        var btnStart = document.getElementById('btnStart');
+        var btnRetry = document.getElementById('btnRetry');
+        var statusLabel = document.getElementById('statusLabel');
+        var timerText = document.getElementById('timerText');
+        var timerRing = document.getElementById('timerRing');
+        var passageDisplay = document.getElementById('passageDisplay');
+        var typingArea = document.getElementById('typingArea');
+        var liveStats = document.getElementById('liveStats');
+        var liveWPM = document.getElementById('liveWPM');
+        var liveAcc = document.getElementById('liveAcc');
+        var liveChars = document.getElementById('liveChars');
+        var resultsSection = document.getElementById('resultsSection');
+        var resWPM = document.getElementById('resWPM');
+        var resAcc = document.getElementById('resAcc');
+        var resChars = document.getElementById('resChars');
+        var resCorrect = document.getElementById('resCorrect');
+        var resIncorrect = document.getElementById('resIncorrect');
+        var resCPM = document.getElementById('resCPM');
+
+        /* ===== Passage Rendering ===== */
+        function renderPassage(typed) {
+            var html = '';
+            for (var i = 0; i < currentPassage.length; i++) {
+                var ch = currentPassage[i];
+                var escaped = ch === ' ' ? ' ' : ch.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+                if (i < typed.length) {
+                    if (typed[i] === ch) {
+                        html += '<span class="char-correct">' + escaped + '</span>';
+                    } else {
+                        html += '<span class="char-incorrect">' + escaped + '</span>';
+                    }
+                } else if (i === typed.length) {
+                    html += '<span class="char-cursor">' + escaped + '</span>';
+                } else {
+                    html += '<span class="char-pending">' + escaped + '</span>';
+                }
+            }
+            passageDisplay.innerHTML = html;
+        }
+
+        /* ===== Timer Display ===== */
+        function updateTimer() {
+            timerText.textContent = timeRemaining;
+            var offset = CIRCUMFERENCE * (1 - timeRemaining / TIMER_DURATION);
+            timerRing.setAttribute('stroke-dashoffset', offset);
+            if (timeRemaining <= 10) {
+                timerRing.setAttribute('stroke', '#dc2626');
+                timerText.style.color = '#dc2626';
+            } else {
+                timerRing.setAttribute('stroke', '#2563eb');
+                timerText.style.color = '#1e293b';
+            }
+        }
+
+        /* ===== Live Stats ===== */
+        function updateLiveStats() {
+            var typed = typingArea.value;
+            var elapsedSec = (Date.now() - startTimeMs) / 1000;
+            if (elapsedSec < 1) return;
+            var elapsedMin = elapsedSec / 60;
+            var correctChars = 0;
+            for (var i = 0; i < typed.length && i < currentPassage.length; i++) {
+                if (typed[i] === currentPassage[i]) correctChars++;
+            }
+            var wpm = Math.round((correctChars / 5) / elapsedMin);
+            var acc = typed.length > 0 ? Math.round((correctChars / typed.length) * 100) : 100;
+            liveWPM.textContent = Math.max(0, wpm);
+            liveAcc.textContent = acc + '%';
+            liveChars.textContent = typed.length;
+        }
+
+        /* ===== Calculate Final Results ===== */
+        function calculateResults() {
+            var typed = typingArea.value;
+            var totalTypedChars = typed.length;
+            var correctChars = 0;
+            for (var i = 0; i < typed.length && i < currentPassage.length; i++) {
+                if (typed[i] === currentPassage[i]) correctChars++;
+            }
+            var elapsedMin = TIMER_DURATION / 60;
+            var typedWords = typed.split(/\s+/).filter(function(w) { return w.length > 0; });
+            var passageWords = currentPassage.split(/\s+/);
+            var correctWords = 0;
+            var incorrectWords = 0;
+            for (var j = 0; j < typedWords.length; j++) {
+                if (j < passageWords.length && typedWords[j] === passageWords[j]) {
+                    correctWords++;
+                } else {
+                    incorrectWords++;
+                }
+            }
+            var wpm = Math.round(correctWords / elapsedMin);
+            var accuracy = totalTypedChars > 0 ? Math.round((correctChars / totalTypedChars) * 100) : 100;
+            var cpm = Math.round(totalTypedChars / elapsedMin);
+            return {
+                wpm: Math.max(0, wpm),
+                accuracy: accuracy,
+                chars: totalTypedChars,
+                correctWords: correctWords,
+                incorrectWords: incorrectWords,
+                cpm: cpm
+            };
+        }
+
+        /* ===== End Test ===== */
+        function endTest() {
+            testComplete = true;
+            testRunning = false;
+            clearInterval(timerInterval);
+            typingArea.disabled = true;
+            statusLabel.textContent = 'Test complete!';
+            btnStart.disabled = false;
+            btnStart.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> New Test';
+
+            var r = calculateResults();
+            resWPM.textContent = r.wpm;
+            resAcc.textContent = r.accuracy + '%';
+            resChars.textContent = r.chars;
+            resCorrect.textContent = r.correctWords;
+            resIncorrect.textContent = r.incorrectWords;
+            resCPM.textContent = r.cpm;
+            resultsSection.classList.remove('hidden');
+            liveStats.classList.add('hidden');
+        }
+
+        /* ===== Start Test ===== */
+        function startTest() {
+            currentPassage = passages[Math.floor(Math.random() * passages.length)];
+            timeRemaining = TIMER_DURATION;
+            testRunning = true;
+            testComplete = false;
+            startTimeMs = Date.now();
+
+            typingArea.value = '';
+            typingArea.disabled = false;
+            typingArea.placeholder = 'Start typing the passage above...';
+            typingArea.focus();
+
+            resultsSection.classList.add('hidden');
+            liveStats.classList.remove('hidden');
+            liveWPM.textContent = '0';
+            liveAcc.textContent = '100%';
+            liveChars.textContent = '0';
+
+            btnStart.disabled = true;
+            btnStart.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Testing...';
+            statusLabel.textContent = 'Type the passage above as fast as you can!';
+
+            timerRing.setAttribute('stroke-dasharray', CIRCUMFERENCE);
+            timerRing.setAttribute('stroke-dashoffset', '0');
+            timerRing.setAttribute('stroke', '#2563eb');
+            timerText.style.color = '#1e293b';
+            updateTimer();
+            renderPassage('');
+
+            timerInterval = setInterval(function() {
+                timeRemaining--;
+                updateTimer();
+                updateLiveStats();
+                if (timeRemaining <= 0) {
+                    endTest();
+                }
+            }, 1000);
+        }
+
+        /* ===== Reset ===== */
+        function resetState() {
+            clearInterval(timerInterval);
+            testRunning = false;
+            testComplete = false;
+            timeRemaining = TIMER_DURATION;
+            typingArea.value = '';
+            typingArea.disabled = true;
+            typingArea.placeholder = 'Click Start Test first...';
+            resultsSection.classList.add('hidden');
+            liveStats.classList.add('hidden');
+            timerRing.setAttribute('stroke-dashoffset', '0');
+            timerRing.setAttribute('stroke', '#2563eb');
+            timerText.textContent = '60';
+            timerText.style.color = '#1e293b';
+            statusLabel.textContent = 'Click to begin the 60-second test';
+            btnStart.disabled = false;
+            btnStart.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Start Test';
+            passageDisplay.innerHTML = '<span class="char-pending">Press "Start Test" to load a passage...</span>';
+        }
+
+        /* ===== Event Listeners ===== */
+        typingArea.addEventListener('input', function() {
+            if (!testRunning) return;
+            var typed = typingArea.value;
+            renderPassage(typed);
+            updateLiveStats();
+            if (typed.length >= currentPassage.length) {
+                endTest();
+            }
+        });
+
+        typingArea.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') e.preventDefault();
+        });
+
+        btnStart.addEventListener('click', function() {
+            resetState();
+            startTest();
+        });
+
+        btnRetry.addEventListener('click', function() {
+            resetState();
+            startTest();
+        });
+
+        /* ===== Init ===== */
+        timerRing.setAttribute('stroke-dasharray', CIRCUMFERENCE);
+        timerRing.setAttribute('stroke-dashoffset', '0');
+    })();
+    </script>
+</body>
+</html>

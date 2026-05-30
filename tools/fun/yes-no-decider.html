@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes or No Decider — Magic 8-Ball Answer Generator Free | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Ask any yes or no question and get a fun Magic 8-Ball style answer. 20 possible responses with shake animation. Track your question history. Free online yes-no decider.">
+    <meta name="keywords" content="yes or no, magic 8 ball, yes no decider, should I, ask a question, magic eight ball online, yes or no generator, random answer">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Yes or No Decider — Magic 8-Ball Answer Generator Free | OptiDrop">
+    <meta property="og:description" content="Ask any yes or no question and get a fun Magic 8-Ball style answer. 20 possible responses with shake animation. Free online yes-no decider.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/fun/yes-no-decider.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yes or No Decider — Magic 8-Ball Answer Generator Free | OptiDrop">
+    <meta name="twitter:description" content="Ask any yes or no question and get a fun Magic 8-Ball style answer. Free online yes-no decider.">
+    <link rel="canonical" href="https://optidrop.online/tools/fun/yes-no-decider.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Fun Tools", "item": "https://optidrop.online/tools/fun/"},
+        {"@type": "ListItem", "position": 3, "name": "Yes or No Decider", "item": "https://optidrop.online/tools/fun/yes-no-decider.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Yes or No Decider",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Ask any yes or no question and get a fun Magic 8-Ball style answer. 20 possible responses with shake animation. Free online yes-no decider."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the Yes or No Decider work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Type your yes or no question in the input field and click the Shake button. The Magic 8-Ball will animate and reveal one of 20 possible answers, including positive responses like Yes and Definitely, negative responses like No and Don't count on it, and neutral responses like Ask again later."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What answers can the Magic 8-Ball give?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Magic 8-Ball has 20 classic responses: 10 positive (Yes, Definitely, Without a doubt, etc.), 5 negative (No, Don't count on it, My sources say no, etc.), and 5 neutral (Ask again later, Cannot predict now, Reply hazy try again, etc.). Each answer is randomly selected."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Magic 8-Ball answer truly random?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, each answer is selected randomly using JavaScript's Math.random() function. The 20 possible answers are equally weighted, giving each response a 5% chance of appearing. The result is determined the moment you click Shake."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the Yes or No Decider save my question history?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, your questions and their answers are saved in the session history displayed below the Magic 8-Ball. You can see your last 10 questions and clear the history at any time using the Clear History button."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .ball-container {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto;
+            position: relative;
+            cursor: pointer;
+        }
+        .magic-ball {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #4a5568, #1a202c 60%, #000 100%);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 -4px 12px rgba(0,0,0,0.6), inset 0 4px 8px rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: transform 0.1s;
+        }
+        .magic-ball.shaking {
+            animation: ballShake 0.8s ease-in-out;
+        }
+        @keyframes ballShake {
+            0% { transform: rotate(0deg) scale(1); }
+            10% { transform: rotate(-12deg) scale(1.04); }
+            20% { transform: rotate(12deg) scale(1.04); }
+            30% { transform: rotate(-10deg) scale(1.02); }
+            40% { transform: rotate(10deg) scale(1.02); }
+            50% { transform: rotate(-6deg) scale(1); }
+            60% { transform: rotate(6deg) scale(1); }
+            70% { transform: rotate(-3deg) scale(1); }
+            80% { transform: rotate(3deg) scale(1); }
+            90% { transform: rotate(-1deg) scale(1); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+        .ball-window {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 40% 40%, #1e3a5f, #0a1628);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #2d3748;
+            overflow: hidden;
+        }
+        .ball-answer {
+            color: #63b3ed;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-align: center;
+            padding: 8px;
+            line-height: 1.3;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .ball-answer.visible {
+            opacity: 1;
+        }
+        .ball-answer.positive { color: #68d391; }
+        .ball-answer.negative { color: #fc8181; }
+        .ball-answer.neutral { color: #63b3ed; }
+        .ball-shine {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            width: 40px;
+            height: 20px;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.25), transparent);
+            border-radius: 50%;
+            transform: rotate(-30deg);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Yes or No Decider — Magic 8-Ball Answer Generator</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Ask any yes or no question and get a fun Magic 8-Ball style answer. 20 possible responses with a shake animation. Track your question history for fun.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Question Input -->
+                    <div class="max-w-lg mx-auto mb-6">
+                        <label for="questionInput" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Type your yes or no question:</label>
+                        <input type="text" id="questionInput" placeholder="e.g. Should I go on vacation this weekend?"
+                            class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-purple-500 transition-colors text-slate-900 font-medium">
+                    </div>
+
+                    <!-- Magic 8-Ball -->
+                    <div class="text-center mb-6">
+                        <div class="ball-container" id="ballContainer">
+                            <div class="magic-ball" id="magicBall">
+                                <div class="ball-shine"></div>
+                                <div class="ball-window">
+                                    <div class="ball-answer" id="ballAnswer">8</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shake Button -->
+                    <div class="max-w-md mx-auto mb-8">
+                        <button id="btnShake" class="w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-xl hover:from-purple-700 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2 text-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Shake the 8-Ball
+                        </button>
+                    </div>
+
+                    <!-- Question History -->
+                    <div class="mb-6">
+                        <p class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Question History (last 10):</p>
+                        <div id="questionHistory" class="flex flex-col gap-2">
+                            <span class="text-sm text-slate-400 dark:text-slate-500">No questions asked yet</span>
+                        </div>
+                    </div>
+
+                    <!-- Reset Button -->
+                    <div class="text-center">
+                        <button id="btnClear" class="px-6 py-2 bg-white dark:bg-slate-800 text-red-500 font-semibold rounded-xl border-2 border-red-200 dark:border-red-800 hover:bg-red-50 dark:hover:bg-red-900 transition-colors text-sm">
+                            Clear History
+                        </button>
+                    </div>
+
+                    <!-- What do you want to do next? -->
+                    <div class="mt-10 pt-8 border-t border-slate-200 dark:border-slate-700 text-center">
+                        <p class="text-lg font-bold text-slate-800 dark:text-white mb-4">What do you want to do next?</p>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <a href="/tools/fun/coin-flip.html" class="px-5 py-3 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold rounded-xl hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors text-sm">Coin Flip</a>
+                            <a href="/tools/fun/would-you-rather.html" class="px-5 py-3 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold rounded-xl hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors text-sm">Would You Rather</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Free Magic 8-Ball Online — Ask Yes or No Questions</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">OptiDrop's Yes or No Decider is a fun online Magic 8-Ball simulator. Type any yes or no question, click Shake, and watch the 8-Ball animate before revealing your answer. With 20 classic responses including positive, negative, and neutral answers, every shake brings a new surprise.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3">20 Classic Magic 8-Ball Responses</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">The answers include 10 positive responses like "Yes - Definitely" and "Without a doubt," 5 negative responses like "No" and "Don't count on it," and 5 neutral responses like "Ask again later" and "Cannot predict now." Each response is randomly selected with equal probability.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3">Track Your Question History</h3>
+                <p class="text-slate-600 dark:text-slate-400">Every question you ask and its answer is saved in the session history. Review your last 10 questions and their answers. This is a fun way to keep track of the decisions the Magic 8-Ball has made for you during your session.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        How does the Yes or No Decider work?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Type your yes or no question in the input field and click the Shake button. The Magic 8-Ball will animate and reveal one of 20 possible answers, including positive responses like Yes and Definitely, negative responses like No and Don't count on it, and neutral responses like Ask again later.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What answers can the Magic 8-Ball give?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        The Magic 8-Ball has 20 classic responses: 10 positive (Yes, Definitely, Without a doubt, etc.), 5 negative (No, Don't count on it, My sources say no, etc.), and 5 neutral (Ask again later, Cannot predict now, Reply hazy try again, etc.). Each answer is randomly selected.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        Is the Magic 8-Ball answer truly random?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Yes, each answer is selected randomly using JavaScript's Math.random() function. The 20 possible answers are equally weighted, giving each response a 5% chance of appearing. The result is determined the moment you click Shake.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        Does the Yes or No Decider save my question history?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Yes, your questions and their answers are saved in the session history displayed below the Magic 8-Ball. You can see your last 10 questions and clear the history at any time using the Clear History button.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/fun/coin-flip.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Coin Flip</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Flip a virtual coin with animation.</span>
+                </a>
+                <a href="/tools/fun/would-you-rather.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Would You Rather</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Fun this-or-that dilemmas with poll results.</span>
+                </a>
+                <a href="/tools/fun/random-joke.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Random Joke Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Get a random clean joke to brighten your day.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    if(typeof trackRecentTool==='function')trackRecentTool('Yes or No Decider','/tools/fun/yes-no-decider.html');
+    (function() {
+        var answers = {
+            positive: [
+                'It is certain',
+                'It is decidedly so',
+                'Without a doubt',
+                'Yes definitely',
+                'You may rely on it',
+                'As I see it, yes',
+                'Most likely',
+                'Outlook good',
+                'Yes',
+                'Signs point to yes'
+            ],
+            negative: [
+                "Don't count on it",
+                'My reply is no',
+                'My sources say no',
+                'Outlook not so good',
+                'Very doubtful'
+            ],
+            neutral: [
+                'Reply hazy try again',
+                'Ask again later',
+                'Better not tell you now',
+                'Cannot predict now',
+                'Concentrate and ask again'
+            ]
+        };
+
+        var allAnswers = [];
+        answers.positive.forEach(function(a) { allAnswers.push({ text: a, type: 'positive' }); });
+        answers.negative.forEach(function(a) { allAnswers.push({ text: a, type: 'negative' }); });
+        answers.neutral.forEach(function(a) { allAnswers.push({ text: a, type: 'neutral' }); });
+
+        var magicBall = document.getElementById('magicBall');
+        var ballAnswer = document.getElementById('ballAnswer');
+        var btnShake = document.getElementById('btnShake');
+        var btnClear = document.getElementById('btnClear');
+        var questionHistory = document.getElementById('questionHistory');
+        var history = [];
+        var isShaking = false;
+
+        function shake() {
+            if (isShaking) return;
+            var question = document.getElementById('questionInput').value.trim();
+            if (!question) {
+                showToast('Please type a question first.', 'error');
+                return;
+            }
+
+            isShaking = true;
+            btnShake.disabled = true;
+            btnShake.classList.add('opacity-60');
+
+            // Hide current answer
+            ballAnswer.classList.remove('visible', 'positive', 'negative', 'neutral');
+
+            // Start shaking animation
+            magicBall.classList.add('shaking');
+
+            // Pick random answer
+            var result = allAnswers[Math.floor(Math.random() * allAnswers.length)];
+
+            // Show answer after animation
+            setTimeout(function() {
+                magicBall.classList.remove('shaking');
+                ballAnswer.textContent = result.text;
+                ballAnswer.classList.add('visible', result.type);
+
+                // Add to history
+                var entry = {
+                    question: question,
+                    answer: result.text,
+                    type: result.type,
+                    time: new Date().toLocaleTimeString()
+                };
+                history.unshift(entry);
+                if (history.length > 10) history = history.slice(0, 10);
+                renderHistory();
+
+                isShaking = false;
+                btnShake.disabled = false;
+                btnShake.classList.remove('opacity-60');
+            }, 850);
+        }
+
+        function renderHistory() {
+            if (history.length === 0) {
+                questionHistory.innerHTML = '<span class="text-sm text-slate-400 dark:text-slate-500">No questions asked yet</span>';
+                return;
+            }
+            questionHistory.innerHTML = '';
+            history.forEach(function(entry) {
+                var colorClass = entry.type === 'positive' ? 'text-green-600 dark:text-green-400' :
+                                 entry.type === 'negative' ? 'text-red-600 dark:text-red-400' :
+                                 'text-blue-600 dark:text-blue-400';
+                var bgClass = entry.type === 'positive' ? 'bg-green-50 dark:bg-green-900 border-green-200 dark:border-green-800' :
+                              entry.type === 'negative' ? 'bg-red-50 dark:bg-red-900 border-red-200 dark:border-red-800' :
+                              'bg-blue-50 dark:bg-blue-900 border-blue-200 dark:border-blue-800';
+                var div = document.createElement('div');
+                div.className = 'flex items-center justify-between px-4 py-3 rounded-xl border ' + bgClass;
+                div.innerHTML =
+                    '<div class="flex-1 min-w-0">' +
+                        '<p class="text-sm font-medium text-slate-700 dark:text-slate-300 truncate">' + escapeHtml(entry.question) + '</p>' +
+                        '<p class="text-xs text-slate-500 dark:text-slate-400">' + entry.time + '</p>' +
+                    '</div>' +
+                    '<span class="text-sm font-bold ' + colorClass + ' ml-4 flex-shrink-0">' + escapeHtml(entry.answer) + '</span>';
+                questionHistory.appendChild(div);
+            });
+        }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        btnShake.addEventListener('click', shake);
+
+        document.getElementById('questionInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') shake();
+        });
+
+        btnClear.addEventListener('click', function() {
+            history = [];
+            renderHistory();
+            showToast('History cleared.', 'info');
+        });
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack Weight Calculator | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2"><link rel="shortcut icon" href="/favicon.png?v=2"><link rel="apple-touch-icon" href="/favicon.png?v=2"><meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Calculate your luggage weight before you travel. Add items, track total weight against airline limits, and save packing lists. Free and private."><meta name="keywords" content="pack weight calculator, luggage weight, airline baggage limit, travel packing, weight tracker"><meta name="author" content="OptiDrop"><meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Pack Weight Calculator | OptiDrop"><meta property="og:description" content="Calculate luggage weight before you travel. Track items against airline limits."><meta property="og:type" content="website"><meta property="og:url" content="https://optidrop.online/tools/utility/pack-weight-calculator.html"><meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Pack Weight Calculator | OptiDrop"><meta name="twitter:description" content="Calculate luggage weight before you travel. Track items against airline limits.">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/pack-weight-calculator.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Utility Tools","item":"https://optidrop.online/category/utility-tools.html"},{"@type":"ListItem","position":3,"name":"Pack Weight Calculator","item":"https://optidrop.online/tools/utility/pack-weight-calculator.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Pack Weight Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate your luggage weight against airline baggage limits."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the standard airline baggage weight limit?","acceptedAnswer":{"@type":"Answer","name":"Most airlines allow 23 kg (50 lbs) for checked baggage on economy class. Some airlines allow up to 32 kg (70 lbs) for business or first class. Always check your specific airline's policy."}},{"@type":"Question","name":"Can I save my packing list?","acceptedAnswer":{"@type":"Answer","name":"Yes, this tool saves your packing list to your browser's local storage. You can save multiple lists and load them anytime. Your data never leaves your device."}},{"@type":"Question","name":"What weight units are supported?","acceptedAnswer":{"@type":"Answer","name":"You can enter item weights in grams, kilograms, or pounds. The tool automatically converts everything to show totals in both kg and lbs."}},{"@type":"Question","name":"How do I avoid overweight baggage fees?","acceptedAnswer":{"@type":"Answer","name":"Use this calculator to weigh items before packing. Set your airline's weight limit and monitor the remaining allowance. The tool warns you when you're approaching or exceeding the limit."}}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header"><div class="header-inner"><a href="/" class="logo-text">Opti<span>Drop</span></a><nav class="header-nav"><a href="/" class="back-link"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>All Tools</a><span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span><button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav></div><nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a></nav></header>
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Pack Weight Calculator</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Plan your luggage weight before you travel. Add items, track total weight against airline limits, and save packing lists for future trips.</p>
+        </section>
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-slate-700 dark:text-slate-300">Airline Weight Limit</label>
+                            <div class="flex gap-2">
+                                <input type="number" id="limit" min="1" step="0.1" value="23" class="flex-1 px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-brand-500 outline-none">
+                                <span class="flex items-center px-3 text-sm text-slate-500">kg</span>
+                            </div>
+                        </div>
+                        <div class="flex items-end">
+                            <div class="text-center w-full bg-slate-100 dark:bg-slate-800 rounded-xl p-4">
+                                <div class="text-sm text-slate-500 dark:text-slate-400">Total Weight</div>
+                                <div id="totalWeight" class="text-2xl font-extrabold text-slate-900 dark:text-white">0.0 kg</div>
+                            </div>
+                        </div>
+                        <div class="flex items-end">
+                            <div class="text-center w-full bg-slate-100 dark:bg-slate-800 rounded-xl p-4">
+                                <div class="text-sm text-slate-500 dark:text-slate-400">Remaining</div>
+                                <div id="remaining" class="text-2xl font-extrabold text-green-600 dark:text-green-400">23.0 kg</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Capacity Used</span>
+                            <span id="percentUsed" class="text-sm font-bold text-slate-900 dark:text-white">0%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-4">
+                            <div id="progressBar" class="h-4 rounded-full transition-all duration-300 bg-green-500" style="width:0%"></div>
+                        </div>
+                        <div id="warning" class="hidden mt-2 text-center text-sm font-semibold text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 rounded-lg py-2"></div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-6">
+                        <div class="sm:col-span-2">
+                            <input type="text" id="itemName" placeholder="Item name (e.g. Laptop)" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-brand-500 outline-none">
+                        </div>
+                        <div class="flex gap-2">
+                            <input type="number" id="itemWeight" min="0" step="0.01" placeholder="Weight" class="flex-1 px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-brand-500 outline-none">
+                            <select id="itemUnit" class="px-3 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-brand-500 outline-none">
+                                <option value="g">g</option>
+                                <option value="kg" selected>kg</option>
+                                <option value="lbs">lbs</option>
+                            </select>
+                        </div>
+                        <button onclick="addItem()" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition-colors">Add Item</button>
+                    </div>
+                    <div id="itemList" class="space-y-2 mb-6">
+                        <div id="emptyState" class="text-center py-8 text-slate-400 dark:text-slate-500">
+                            <svg class="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                            <p>No items added yet. Start adding your packed items above.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+                        <button onclick="saveList()" class="px-4 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-colors text-sm">Save List</button>
+                        <button onclick="showLoadModal()" class="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-colors text-sm">Load List</button>
+                        <button onclick="clearItems()" class="px-4 py-3 bg-slate-500 hover:bg-slate-600 text-white font-semibold rounded-xl transition-colors text-sm">Clear All</button>
+                        <button onclick="exportList()" class="px-4 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition-colors text-sm">Copy List</button>
+                    </div>
+                    <div id="loadModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+                        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-md w-full p-6 max-h-96 overflow-y-auto">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">Load Saved List</h3>
+                            <div id="savedLists" class="space-y-2 mb-4"></div>
+                            <button onclick="document.getElementById('loadModal').classList.add('hidden')" class="w-full py-3 bg-slate-200 dark:bg-slate-700 rounded-xl font-semibold text-slate-700 dark:text-slate-300">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">About Pack Weight Calculator</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Avoid overweight baggage fees by planning your luggage weight in advance. This tool lets you add each item you plan to pack, see the total weight, and compare it against your airline's baggage limit. The progress bar changes color as you approach the limit, and warnings appear when you exceed it.</p>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Most major airlines allow 23 kg (50 lbs) for checked baggage in economy class. Budget airlines may have lower limits or charge extra for checked bags. Business and first class often allow 32 kg (70 lbs). Always verify with your specific carrier before traveling.</p>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">You can save your packing lists to your browser for future trips. This is perfect for frequent travelers who pack similar items. All data is stored locally on your device and never sent to any server.</p>
+            </div>
+        </section>
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">What is the standard airline baggage weight limit?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">Most airlines allow 23 kg (50 lbs) for checked baggage on economy class. Some airlines allow up to 32 kg (70 lbs) for business or first class. Always check your specific airline's policy.</p></details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">Can I save my packing list?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">Yes, this tool saves your packing list to your browser's local storage. You can save multiple lists and load them anytime. Your data never leaves your device.</p></details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">What weight units are supported?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">You can enter item weights in grams, kilograms, or pounds. The tool automatically converts everything to show totals in both kg and lbs.</p></details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">How do I avoid overweight baggage fees?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">Use this calculator to weigh items before packing. Set your airline's weight limit and monitor the remaining allowance. The tool warns you when you're approaching or exceeding the limit.</p></details>
+            </div>
+        </section>
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/utility/unit-converter.html" class="block p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"><div class="font-semibold text-slate-900 dark:text-white">Unit Converter</div><div class="text-sm text-slate-500 dark:text-slate-400 mt-1">Convert any unit</div></a>
+                <a href="/tools/utility/file-size-converter.html" class="block p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"><div class="font-semibold text-slate-900 dark:text-white">File Size Converter</div><div class="text-sm text-slate-500 dark:text-slate-400 mt-1">Convert file sizes</div></a>
+                <a href="/tools/utility/date-calculator.html" class="block p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"><div class="font-semibold text-slate-900 dark:text-white">Date Calculator</div><div class="text-sm text-slate-500 dark:text-slate-400 mt-1">Calculate date differences</div></a>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    var items=[];
+
+    function toKg(val,unit){
+        if(unit==='g') return val/1000;
+        if(unit==='lbs') return val*0.453592;
+        return val;
+    }
+
+    function addItem(){
+        var name=document.getElementById('itemName').value.trim();
+        var weight=parseFloat(document.getElementById('itemWeight').value);
+        var unit=document.getElementById('itemUnit').value;
+        if(!name) return showToast('Please enter an item name','error');
+        if(!weight||weight<=0) return showToast('Please enter a valid weight','error');
+        items.push({name:name,weight:weight,unit:unit,kg:toKg(weight,unit)});
+        document.getElementById('itemName').value='';
+        document.getElementById('itemWeight').value='';
+        renderItems();
+    }
+
+    function removeItem(idx){
+        items.splice(idx,1);
+        renderItems();
+    }
+
+    function clearItems(){
+        if(items.length===0) return;
+        if(confirm('Clear all items?')){
+            items=[];
+            renderItems();
+        }
+    }
+
+    function renderItems(){
+        var list=document.getElementById('itemList');
+        var empty=document.getElementById('emptyState');
+        if(items.length===0){
+            empty.classList.remove('hidden');
+            list.innerHTML='';
+            list.appendChild(empty);
+            updateTotals();
+            return;
+        }
+        empty.classList.add('hidden');
+        var html='';
+        items.forEach(function(item,i){
+            html+='<div class="flex items-center justify-between bg-white dark:bg-slate-800 rounded-xl px-4 py-3 shadow-sm border border-slate-200 dark:border-slate-700">';
+            html+='<div class="flex-1"><span class="font-semibold text-slate-900 dark:text-white">'+item.name+'</span></div>';
+            html+='<div class="text-right mr-4"><span class="text-slate-600 dark:text-slate-400 font-mono">'+item.weight+' '+item.unit+'</span><span class="text-xs text-slate-400 ml-2">('+item.kg.toFixed(2)+' kg)</span></div>';
+            html+='<button onclick="removeItem('+i+')" class="text-red-500 hover:text-red-700 p-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>';
+            html+='</div>';
+        });
+        list.innerHTML=html;
+        updateTotals();
+    }
+
+    function updateTotals(){
+        var total=items.reduce(function(s,i){return s+i.kg;},0);
+        var limit=parseFloat(document.getElementById('limit').value)||23;
+        var remaining=limit-total;
+        var pct=Math.min(100,(total/limit)*100);
+
+        document.getElementById('totalWeight').textContent=total.toFixed(2)+' kg';
+        document.getElementById('remaining').textContent=remaining.toFixed(2)+' kg';
+        document.getElementById('percentUsed').textContent=pct.toFixed(1)+'%';
+
+        var bar=document.getElementById('progressBar');
+        bar.style.width=pct+'%';
+        bar.className='h-4 rounded-full transition-all duration-300';
+        if(pct<70) bar.classList.add('bg-green-500');
+        else if(pct<90) bar.classList.add('bg-yellow-500');
+        else bar.classList.add('bg-red-500');
+
+        document.getElementById('remaining').className='text-2xl font-extrabold '+(remaining>=0?'text-green-600 dark:text-green-400':'text-red-600 dark:text-red-400');
+
+        var warn=document.getElementById('warning');
+        if(remaining<0){
+            warn.classList.remove('hidden');
+            warn.textContent='Over limit by '+Math.abs(remaining).toFixed(2)+' kg! Remove items or increase allowance.';
+        } else if(remaining<2){
+            warn.classList.remove('hidden');
+            warn.className='mt-2 text-center text-sm font-semibold text-yellow-600 dark:text-yellow-400 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg py-2';
+            warn.textContent='Almost at limit! Only '+remaining.toFixed(2)+' kg remaining.';
+        } else {
+            warn.classList.add('hidden');
+        }
+    }
+
+    document.getElementById('limit').addEventListener('input',updateTotals);
+
+    function saveList(){
+        if(items.length===0) return showToast('No items to save','error');
+        var name=prompt('Enter a name for this packing list:','My Trip');
+        if(!name) return;
+        var saved=JSON.parse(localStorage.getItem('packLists')||'{}');
+        saved[name]={items:items,limit:parseFloat(document.getElementById('limit').value)||23,date:new Date().toISOString()};
+        localStorage.setItem('packLists',JSON.stringify(saved));
+        showToast('List saved as "'+name+'"','success');
+    }
+
+    function showLoadModal(){
+        var saved=JSON.parse(localStorage.getItem('packLists')||'{}');
+        var keys=Object.keys(saved);
+        var container=document.getElementById('savedLists');
+        if(keys.length===0){
+            container.innerHTML='<p class="text-center text-slate-500 py-4">No saved lists found.</p>';
+        } else {
+            var html='';
+            keys.forEach(function(key){
+                var s=saved[key];
+                html+='<div class="flex items-center justify-between bg-slate-100 dark:bg-slate-700 rounded-xl px-4 py-3">';
+                html+='<div><div class="font-semibold text-slate-900 dark:text-white">'+key+'</div><div class="text-xs text-slate-500">'+s.items.length+' items, '+s.limit+' kg limit</div></div>';
+                html+='<div class="flex gap-2"><button onclick="loadList(\''+key.replace(/'/g,"\\'")+'\')" class="px-3 py-1 bg-brand-600 text-white text-sm rounded-lg">Load</button>';
+                html+='<button onclick="deleteList(\''+key.replace(/'/g,"\\'")+'\')" class="px-3 py-1 bg-red-500 text-white text-sm rounded-lg">Delete</button></div>';
+                html+='</div>';
+            });
+            container.innerHTML=html;
+        }
+        document.getElementById('loadModal').classList.remove('hidden');
+    }
+
+    function loadList(name){
+        var saved=JSON.parse(localStorage.getItem('packLists')||'{}');
+        if(!saved[name]) return;
+        items=saved[name].items;
+        document.getElementById('limit').value=saved[name].limit;
+        renderItems();
+        document.getElementById('loadModal').classList.add('hidden');
+        showToast('Loaded "'+name+'"','success');
+    }
+
+    function deleteList(name){
+        if(!confirm('Delete "'+name+'"?')) return;
+        var saved=JSON.parse(localStorage.getItem('packLists')||'{}');
+        delete saved[name];
+        localStorage.setItem('packLists',JSON.stringify(saved));
+        showLoadModal();
+        showToast('List deleted','success');
+    }
+
+    function exportList(){
+        if(items.length===0) return showToast('No items to export','error');
+        var limit=parseFloat(document.getElementById('limit').value)||23;
+        var total=items.reduce(function(s,i){return s+i.kg;},0);
+        var text='Packing List\n============\n';
+        items.forEach(function(item,i){
+            text+=(i+1)+'. '+item.name+' - '+item.weight+' '+item.unit+' ('+item.kg.toFixed(2)+' kg)\n';
+        });
+        text+='\nTotal: '+total.toFixed(2)+' kg / '+limit+' kg ('+((total/limit)*100).toFixed(1)+'% used)\n';
+        text+='Remaining: '+(limit-total).toFixed(2)+' kg';
+        copyToClipboard(text);
+        showToast('Packing list copied to clipboard!','success');
+    }
+
+    document.getElementById('itemName').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('itemWeight').focus();});
+    document.getElementById('itemWeight').addEventListener('keydown',function(e){if(e.key==='Enter')addItem();});
+    </script>
+</body>
+</html>

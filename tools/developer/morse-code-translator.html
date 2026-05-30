@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morse Code Translator Free Online — Text to Morse | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online Morse code translator. Convert text to Morse code and Morse code to text instantly. Supports A-Z, 0-9. Play audio beep for Morse code. Copy results. 100% private, no upload required.">
+    <meta name="keywords" content="morse code translator, text to morse, morse to text, morse code converter, morse code decoder, morse code encoder, translate morse code online free">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Morse Code Translator Free Online — Text to Morse | OptiDrop">
+    <meta property="og:description" content="Free online Morse code translator. Convert text to Morse code and Morse code to text instantly. Play audio beep. 100% private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/morse-code-translator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Morse Code Translator Free Online — Text to Morse | OptiDrop">
+    <meta name="twitter:description" content="Free online Morse code translator. Convert text to Morse code and Morse code to text instantly. Play audio beep. 100% private.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/morse-code-translator.html">
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Developer Tools","item":"https://optidrop.online/category/developer-tools.html"},{"@type":"ListItem","position":3,"name":"Morse Code Translator","item":"https://optidrop.online/tools/developer/morse-code-translator.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Morse Code Translator","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online Morse code translator. Convert text to Morse code and back with audio playback support. All processing happens in your browser."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Morse code?","acceptedAnswer":{"@type":"Answer","text":"Morse code is a method of encoding text characters as standardized sequences of dots (.) and dashes (-). Developed in the 1830s by Samuel Morse for the electric telegraph, it was widely used for long-distance communication before the telephone. Each letter and number has a unique Morse code pattern."}},{"@type":"Question","name":"How do you use this Morse code translator?","acceptedAnswer":{"@type":"Answer","text":"Type regular text in the left textarea to instantly convert it to Morse code in the right textarea. Or type Morse code (using dots, dashes, spaces between letters, and / between words) in the right textarea to convert it back to text. You can also click the Play Audio button to hear the Morse code as beeps."}},{"@type":"Question","name":"What characters does Morse code support?","acceptedAnswer":{"@type":"Answer","text":"Standard International Morse code supports all 26 English letters (A-Z), digits 0-9, and common punctuation marks. This translator supports full A-Z, 0-9, and common punctuation including periods, commas, question marks, and more."}},{"@type":"Question","name":"How do you separate letters and words in Morse code?","acceptedAnswer":{"@type":"Answer","text":"In Morse code, individual letters within a word are separated by a space, and words are separated by a forward slash (/) or three spaces. For example, 'SOS' is '... --- ...' and 'SOS HELP' is '... --- ... / .... . .-.. .--.'."}}]}</script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Morse Code Translator Online Free</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Convert text to Morse code and Morse code to text instantly. Supports A-Z, 0-9, and punctuation. Play audio beep for Morse code. No upload, no sign-up, 100% private.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                        <!-- Text Input -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <label for="textInput" class="block text-sm font-bold text-slate-700 dark:text-slate-300">Text Input</label>
+                                <button onclick="copyToClipboard(document.getElementById('textInput').value)" class="text-xs font-semibold text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300 transition-colors">Copy</button>
+                            </div>
+                            <textarea id="textInput" placeholder="Type text here... e.g. HELLO WORLD" class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-mono resize-y" style="min-height:180px;line-height:1.7;"></textarea>
+                            <p class="text-xs text-slate-400 mt-1">Characters: <span id="textCharCount">0</span></p>
+                        </div>
+
+                        <!-- Morse Output -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <label for="morseOutput" class="block text-sm font-bold text-slate-700 dark:text-slate-300">Morse Code</label>
+                                <button onclick="copyToClipboard(document.getElementById('morseOutput').value)" class="text-xs font-semibold text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300 transition-colors">Copy</button>
+                            </div>
+                            <textarea id="morseOutput" placeholder="Type morse code here... (dots . and dashes - with / for spaces)" class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-mono resize-y" style="min-height:180px;line-height:1.7;"></textarea>
+                            <p class="text-xs text-slate-400 mt-1">Characters: <span id="morseCharCount">0</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <button id="btnPlayAudio" class="px-5 py-3 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+                            Play Morse Audio
+                        </button>
+                        <button id="btnStopAudio" class="px-5 py-3 bg-red-500 text-white font-bold rounded-xl hover:bg-red-600 shadow-md hover:shadow-lg transition-all flex items-center gap-2" style="display:none;">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/></svg>
+                            Stop Audio
+                        </button>
+                        <button onclick="copyToClipboard(document.getElementById('morseOutput').value)" class="px-5 py-3 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold rounded-xl hover:bg-slate-300 dark:hover:bg-slate-600 transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            Copy Morse Code
+                        </button>
+                        <button onclick="clearAll()" class="px-5 py-3 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold rounded-xl hover:bg-slate-300 dark:hover:bg-slate-600 transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                            Clear All
+                        </button>
+                    </div>
+
+                    <!-- Reference Table (collapsible) -->
+                    <details class="mb-4">
+                        <summary class="cursor-pointer text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors select-none">View Morse Code Reference Chart</summary>
+                        <div class="mt-3 grid grid-cols-5 sm:grid-cols-7 md:grid-cols-9 gap-2 text-center">
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">A</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">.-</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">B</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">-...</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">C</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">-.-.</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">D</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">-..</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">E</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">.</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">F</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">..-.</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">G</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">--.</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">H</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">....</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">I</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">..</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">J</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">.---</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">K</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">-.-</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">L</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">.-..</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">M</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">--</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">N</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">-.</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">O</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">---</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">P</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">.--.</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">Q</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">--.-</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">R</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">.-.</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">S</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">...</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">T</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">-</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">U</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">..-</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">V</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">...-</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">W</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">.--</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">X</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">-..-</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">Y</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">-.--</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">Z</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">--..</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">0</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">-----</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">1</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">.----</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">2</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">..---</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">3</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">...--</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">4</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">....-</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">5</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">.....</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">6</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">-....</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">7</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">--...</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">8</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">---..</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">9</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">----.</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">.</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">.-.-.-</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">,</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">--..--</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">?</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">..--..</div></div>
+                            <div class="bg-slate-100 dark:bg-slate-700 rounded-lg p-2"><div class="font-bold text-sm">!</div><div class="text-xs font-mono text-slate-500 dark:text-slate-400">-.-.--</div></div>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Free Online Morse Code Translator</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">OptiDrop's Morse Code Translator is a free, browser-based tool that converts text to Morse code and Morse code back to text in real time. All processing happens locally in your browser — no data is sent to any server, making it 100% private and secure.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">How Morse Code Works</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Morse code represents each character as a unique combination of short signals called "dots" (.) and longer signals called "dashes" (-). Letters within a word are separated by a single space, and words are separated by a forward slash (/) or multiple spaces. For example, the letter A is ".-" and the letter B is "-..."</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">Audio Playback</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Click the "Play Morse Audio" button to hear your Morse code as audio beeps using the Web Audio API. Dots produce short beeps and dashes produce longer beeps, with appropriate pauses between characters and words. This is perfect for learning Morse code by ear or verifying your encoding.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">History of Morse Code</h3>
+                <p class="text-slate-600 dark:text-slate-400">Invented in the 1830s by Samuel Morse and Alfred Vail, Morse code revolutionized long-distance communication through the electric telegraph. It remained the standard for maritime distress signals until 1999 and is still used today by amateur radio operators, aviation, and military communications worldwide.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What is Morse code?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Morse code is a method of encoding text characters as standardized sequences of dots (.) and dashes (-). Developed in the 1830s by Samuel Morse for the electric telegraph, it was widely used for long-distance communication before the telephone. Each letter and number has a unique Morse code pattern.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        How do you use this Morse code translator?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Type regular text in the left textarea to instantly convert it to Morse code in the right textarea. Or type Morse code (using dots, dashes, spaces between letters, and / between words) in the right textarea to convert it back to text. You can also click the Play Audio button to hear the Morse code as beeps.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What characters does Morse code support?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Standard International Morse code supports all 26 English letters (A-Z), digits 0-9, and common punctuation marks. This translator supports full A-Z, 0-9, and common punctuation including periods, commas, question marks, and more.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        How do you separate letters and words in Morse code?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        In Morse code, individual letters within a word are separated by a space, and words are separated by a forward slash (/) or three spaces. For example, 'SOS' is '... --- ...' and 'SOS HELP' is '... --- ... / .... . .-.. .--.'.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/developer/caesar-cipher.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Caesar Cipher</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode text using the classic Caesar cipher shift.</span>
+                </a>
+                <a href="/tools/developer/base64.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Base64 Encoder</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode Base64 text and files instantly.</span>
+                </a>
+                <a href="/tools/developer/url-encoder.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">URL Encoder</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode URLs for safe transmission.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var textInput = document.getElementById('textInput');
+        var morseOutput = document.getElementById('morseOutput');
+        var textCharCount = document.getElementById('textCharCount');
+        var morseCharCount = document.getElementById('morseCharCount');
+        var btnPlayAudio = document.getElementById('btnPlayAudio');
+        var btnStopAudio = document.getElementById('btnStopAudio');
+        var audioCtx = null;
+        var isPlaying = false;
+        var audioTimeouts = [];
+
+        var textToMorseMap = {
+            'A':'.-','B':'-...','C':'-.-.','D':'-..','E':'.','F':'..-.','G':'--.','H':'....','I':'..',
+            'J':'.---','K':'-.-','L':'.-..','M':'--','N':'-.','O':'---','P':'.--.','Q':'--.-','R':'.-.',
+            'S':'...','T':'-','U':'..-','V':'...-','W':'.--','X':'-..-','Y':'-.--','Z':'--..',
+            '0':'-----','1':'.----','2':'..---','3':'...--','4':'....-','5':'.....',
+            '6':'-....','7':'--...','8':'---..','9':'----.',
+            '.':'.-.-.-',',':'--..--','?':'..--..','!':'-.-.--','/':'-..-.','(':'-.--.',')':'-.--.-',
+            '&':'.-...',':':'---...',';':'-.-.-.','=':'-...-','+':'.-.-.','_':'..--.-',
+            '"':'.-..-.','$':'...-..-','@':'.--.-.','\'':'.----.'
+        };
+
+        var morseToTextMap = {};
+        for (var key in textToMorseMap) {
+            if (textToMorseMap.hasOwnProperty(key)) {
+                morseToTextMap[textToMorseMap[key]] = key;
+            }
+        }
+
+        function textToMorse(text) {
+            var words = text.toUpperCase().split(/\s+/);
+            var result = [];
+            for (var w = 0; w < words.length; w++) {
+                var word = words[w];
+                var letters = [];
+                for (var i = 0; i < word.length; i++) {
+                    var ch = word[i];
+                    if (textToMorseMap[ch]) {
+                        letters.push(textToMorseMap[ch]);
+                    }
+                }
+                if (letters.length > 0) {
+                    result.push(letters.join(' '));
+                }
+            }
+            return result.join(' / ');
+        }
+
+        function morseToText(morse) {
+            var words = morse.trim().split(/\s*\/\s*/);
+            var result = [];
+            for (var w = 0; w < words.length; w++) {
+                var chars = words[w].trim().split(/\s+/);
+                var word = '';
+                for (var i = 0; i < chars.length; i++) {
+                    var code = chars[i].trim();
+                    if (code && morseToTextMap[code]) {
+                        word += morseToTextMap[code];
+                    } else if (code) {
+                        word += '?';
+                    }
+                }
+                if (word) {
+                    result.push(word);
+                }
+            }
+            return result.join(' ');
+        }
+
+        var isUpdatingFromText = false;
+        var isUpdatingFromMorse = false;
+
+        textInput.addEventListener('input', function() {
+            if (isUpdatingFromText) return;
+            isUpdatingFromMorse = true;
+            var val = textInput.value;
+            textCharCount.textContent = val.length;
+            morseOutput.value = textToMorse(val);
+            morseCharCount.textContent = morseOutput.value.length;
+            isUpdatingFromMorse = false;
+        });
+
+        morseOutput.addEventListener('input', function() {
+            if (isUpdatingFromMorse) return;
+            isUpdatingFromText = true;
+            var val = morseOutput.value;
+            morseCharCount.textContent = val.length;
+            textInput.value = morseToText(val);
+            textCharCount.textContent = textInput.value.length;
+            isUpdatingFromText = false;
+        });
+
+        function clearAll() {
+            textInput.value = '';
+            morseOutput.value = '';
+            textCharCount.textContent = '0';
+            morseCharCount.textContent = '0';
+            stopAudio();
+        }
+        window.clearAll = clearAll;
+
+        function getAudioContext() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            return audioCtx;
+        }
+
+        function playBeep(ctx, startTime, duration, frequency) {
+            var osc = ctx.createOscillator();
+            var gain = ctx.createGain();
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.frequency.value = frequency || 700;
+            osc.type = 'sine';
+            gain.gain.setValueAtTime(0, startTime);
+            gain.gain.linearRampToValueAtTime(0.5, startTime + 0.01);
+            gain.gain.setValueAtTime(0.5, startTime + duration - 0.01);
+            gain.gain.linearRampToValueAtTime(0, startTime + duration);
+            osc.start(startTime);
+            osc.stop(startTime + duration);
+        }
+
+        function playMorseAudio() {
+            var morse = morseOutput.value.trim();
+            if (!morse) {
+                showToast('Please enter text or Morse code first.', 'error');
+                return;
+            }
+
+            stopAudio();
+            isPlaying = true;
+            btnPlayAudio.style.display = 'none';
+            btnStopAudio.style.display = 'inline-flex';
+
+            var ctx = getAudioContext();
+            var dotDuration = 0.08;
+            var dashDuration = dotDuration * 3;
+            var symbolGap = dotDuration;
+            var letterGap = dotDuration * 3;
+            var wordGap = dotDuration * 7;
+            var time = ctx.currentTime + 0.1;
+
+            for (var i = 0; i < morse.length; i++) {
+                var ch = morse[i];
+                if (ch === '.') {
+                    playBeep(ctx, time, dotDuration);
+                    time += dotDuration + symbolGap;
+                } else if (ch === '-') {
+                    playBeep(ctx, time, dashDuration);
+                    time += dashDuration + symbolGap;
+                } else if (ch === ' ') {
+                    if (i + 1 < morse.length && morse[i + 1] === '/') {
+                        time += wordGap - symbolGap;
+                    } else {
+                        time += letterGap - symbolGap;
+                    }
+                } else if (ch === '/') {
+                    time += wordGap;
+                    i++;
+                }
+            }
+
+            var totalDuration = (time - ctx.currentTime) * 1000;
+            var tid = setTimeout(function() {
+                isPlaying = false;
+                btnPlayAudio.style.display = 'inline-flex';
+                btnStopAudio.style.display = 'none';
+            }, totalDuration + 100);
+            audioTimeouts.push(tid);
+        }
+
+        function stopAudio() {
+            isPlaying = false;
+            btnPlayAudio.style.display = 'inline-flex';
+            btnStopAudio.style.display = 'none';
+            for (var i = 0; i < audioTimeouts.length; i++) {
+                clearTimeout(audioTimeouts[i]);
+            }
+            audioTimeouts = [];
+            if (audioCtx) {
+                audioCtx.close();
+                audioCtx = null;
+            }
+        }
+
+        btnPlayAudio.addEventListener('click', playMorseAudio);
+        btnStopAudio.addEventListener('click', stopAudio);
+    })();
+    </script>
+</body>
+</html>

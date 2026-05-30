@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner — Monthly Budget Allocator | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Plan your monthly budget with our free budget planner. Allocate income across categories like housing, food, transport, and savings. Visual breakdown with pie chart.">
+    <meta name="keywords" content="budget planner, monthly budget calculator, budget allocator, expense tracker, personal finance planner, budget breakdown tool">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Budget Planner — Monthly Budget Allocator | OptiDrop">
+    <meta property="og:description" content="Plan your monthly budget with our free budget planner. Allocate income across categories with visual breakdown.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/calculators/budget-planner.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Budget Planner — Monthly Budget Allocator | OptiDrop">
+    <meta name="twitter:description" content="Plan your monthly budget with our free budget planner. Allocate income across categories with visual breakdown.">
+    <link rel="canonical" href="https://optidrop.online/tools/calculators/budget-planner.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://optidrop.online/category/calculator-tools.html"},{"@type":"ListItem","position":3,"name":"Budget Planner","item":"https://optidrop.online/tools/calculators/budget-planner.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Budget Planner","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Plan your monthly budget with our free budget planner. Allocate income across categories with visual breakdown."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the 50/30/20 budget rule?","acceptedAnswer":{"@type":"Answer","text":"The 50/30/20 rule is a simple budgeting guideline: 50% of your income goes to needs (housing, food, transport, utilities), 30% to wants (entertainment, dining out), and 20% to savings and debt repayment. This calculator helps you set up and track against this or any custom allocation."}},{"@type":"Question","name":"How does the budget planner save my data?","acceptedAnswer":{"@type":"Answer","text":"The budget planner saves your budget data locally in your browser using localStorage. Your data never leaves your device. You can save multiple budget plans and load them anytime. Clearing your browser data will remove saved budgets."}},{"@type":"Question","name":"Can I customize the budget categories?","acceptedAnswer":{"@type":"Answer","text":"Yes, the budget planner includes common categories like housing, food, transport, utilities, entertainment, savings, and other. You can allocate any amount to each category and the tool will show your total allocation, remaining balance, and a visual breakdown."}},{"@type":"Question","name":"What should I do if my expenses exceed my income?","acceptedAnswer":{"@type":"Answer","text":"If your allocated expenses exceed your income, the planner will show a negative remaining balance in red. Consider reducing discretionary spending like entertainment, finding ways to lower fixed costs like housing or transport, or increasing your income through side projects or salary negotiations."}}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header"><div class="header-inner"><a href="/" class="logo-text">Opti<span>Drop</span></a><nav class="header-nav"><a href="/" class="back-link"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>All Tools</a><span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span><button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav></div><nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a></nav></header>
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Budget Planner — Monthly Budget Allocator</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Plan your monthly budget by allocating income to housing, food, transport, utilities, entertainment, savings, and more. See your breakdown instantly.</p>
+        </section>
+        <section class="max-w-4xl mx-auto px-4 pb-8"><div class="glass-panel rounded-3xl shadow-xl overflow-hidden"><div class="p-6 sm:p-10">
+            <div class="mb-6">
+                <label for="bpIncome" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Monthly Income (Rs.)</label>
+                <input type="number" id="bpIncome" placeholder="e.g. 50000" min="0" step="1000"
+                    class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 dark:text-slate-100 font-medium bg-white dark:bg-slate-800" autocomplete="off">
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-4">Allocate Your Expenses</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div><label for="bpHousing" class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1">Housing (Rent/EMI)</label><input type="number" id="bpHousing" placeholder="0" min="0" step="500" class="block w-full px-3 py-3 text-sm border-2 border-slate-200 dark:border-slate-600 rounded-lg focus:border-blue-500 text-slate-900 dark:text-slate-100 font-medium bg-white dark:bg-slate-800" autocomplete="off"></div>
+                <div><label for="bpFood" class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1">Food &amp; Groceries</label><input type="number" id="bpFood" placeholder="0" min="0" step="500" class="block w-full px-3 py-3 text-sm border-2 border-slate-200 dark:border-slate-600 rounded-lg focus:border-blue-500 text-slate-900 dark:text-slate-100 font-medium bg-white dark:bg-slate-800" autocomplete="off"></div>
+                <div><label for="bpTransport" class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1">Transport</label><input type="number" id="bpTransport" placeholder="0" min="0" step="500" class="block w-full px-3 py-3 text-sm border-2 border-slate-200 dark:border-slate-600 rounded-lg focus:border-blue-500 text-slate-900 dark:text-slate-100 font-medium bg-white dark:bg-slate-800" autocomplete="off"></div>
+                <div><label for="bpUtilities" class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1">Utilities (Electricity, Water, Internet)</label><input type="number" id="bpUtilities" placeholder="0" min="0" step="500" class="block w-full px-3 py-3 text-sm border-2 border-slate-200 dark:border-slate-600 rounded-lg focus:border-blue-500 text-slate-900 dark:text-slate-100 font-medium bg-white dark:bg-slate-800" autocomplete="off"></div>
+                <div><label for="bpEntertainment" class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1">Entertainment</label><input type="number" id="bpEntertainment" placeholder="0" min="0" step="500" class="block w-full px-3 py-3 text-sm border-2 border-slate-200 dark:border-slate-600 rounded-lg focus:border-blue-500 text-slate-900 dark:text-slate-100 font-medium bg-white dark:bg-slate-800" autocomplete="off"></div>
+                <div><label for="bpSavings" class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1">Savings &amp; Investments</label><input type="number" id="bpSavings" placeholder="0" min="0" step="500" class="block w-full px-3 py-3 text-sm border-2 border-slate-200 dark:border-slate-600 rounded-lg focus:border-blue-500 text-slate-900 dark:text-slate-100 font-medium bg-white dark:bg-slate-800" autocomplete="off"></div>
+                <div class="sm:col-span-2"><label for="bpOther" class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1">Other Expenses</label><input type="number" id="bpOther" placeholder="0" min="0" step="500" class="block w-full px-3 py-3 text-sm border-2 border-slate-200 dark:border-slate-600 rounded-lg focus:border-blue-500 text-slate-900 dark:text-slate-100 font-medium bg-white dark:bg-slate-800" autocomplete="off"></div>
+            </div>
+            <div class="flex gap-3 mb-6">
+                <button id="btnCalculate" class="flex-1 px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    Plan Budget
+                </button>
+            </div>
+            <div id="bpResults" class="hidden mt-6">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-5 text-center">
+                        <p class="text-sm font-semibold text-blue-700 mb-1">Total Allocated</p>
+                        <p id="bpTotalAllocated" class="text-2xl font-extrabold text-blue-900">Rs. 0</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-5 text-center">
+                        <p class="text-sm font-semibold text-green-700 mb-1">Remaining</p>
+                        <p id="bpRemaining" class="text-2xl font-extrabold text-green-900">Rs. 0</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-2xl p-5 text-center">
+                        <p class="text-sm font-semibold text-purple-700 mb-1">Savings Rate</p>
+                        <p id="bpSavingsRate" class="text-2xl font-extrabold text-purple-900">0%</p>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-4">Budget Breakdown</h3>
+                <div id="bpBars" class="bg-slate-100 dark:bg-slate-800 rounded-xl p-5"></div>
+            </div>
+        </div></div></section>
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+        <section class="max-w-4xl mx-auto px-4 py-8"><div class="prose max-w-none">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Free Monthly Budget Planner Online</h2>
+            <p class="text-slate-600 dark:text-slate-400 mb-4">OptiDrop's Budget Planner helps you take control of your finances by allocating your monthly income across essential and discretionary categories. See exactly where your money goes and find opportunities to save more.</p>
+            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3">How to Use the Budget Planner</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-4">Start by entering your total monthly income after taxes. Then allocate amounts to each spending category: housing, food, transport, utilities, entertainment, savings, and other expenses. The tool instantly shows your total allocation, remaining balance, savings rate, and a visual color-coded breakdown of your budget.</p>
+            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3">The 50/30/20 Budget Rule</h3>
+            <p class="text-slate-600 dark:text-slate-400">A popular budgeting guideline suggests allocating 50% of income to needs (housing, food, transport, utilities), 30% to wants (entertainment), and 20% to savings and investments. Use this planner to see how your budget compares. All data stays in your browser — nothing is uploaded.</p>
+        </div></section>
+        <section class="max-w-3xl mx-auto px-4 py-8"><h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2><div class="space-y-3">
+            <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">What is the 50/30/20 budget rule?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">The 50/30/20 rule is a simple budgeting guideline: 50% of your income goes to needs (housing, food, transport, utilities), 30% to wants (entertainment, dining out), and 20% to savings and debt repayment. This calculator helps you set up and track against this or any custom allocation.</div>
+            </div>
+            <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">How does the budget planner save my data?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">The budget planner saves your budget data locally in your browser using localStorage. Your data never leaves your device. You can save multiple budget plans and load them anytime. Clearing your browser data will remove saved budgets.</div>
+            </div>
+            <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">Can I customize the budget categories?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">Yes, the budget planner includes common categories like housing, food, transport, utilities, entertainment, savings, and other. You can allocate any amount to each category and the tool will show your total allocation, remaining balance, and a visual breakdown.</div>
+            </div>
+            <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">What should I do if my expenses exceed my income?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">If your allocated expenses exceed your income, the planner will show a negative remaining balance in red. Consider reducing discretionary spending like entertainment, finding ways to lower fixed costs like housing or transport, or increasing your income through side projects or salary negotiations.</div>
+            </div>
+        </div></section>
+        <section class="next-step-section"><h2>What to do next &rarr;</h2><div class="next-step-grid">
+            <a href="/tools/calculators/savings-goal-tracker.html" class="next-step-card"><div class="next-step-arrow"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div class="next-step-info"><h3>Savings Goal Tracker</h3><p>Track how long it takes to reach your savings goals.</p></div></a>
+            <a href="/tools/calculators/paycheck-calculator.html" class="next-step-card"><div class="next-step-arrow"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div><div class="next-step-info"><h3>Paycheck Calculator</h3><p>Calculate your take-home pay after deductions.</p></div></a>
+            <a href="/tools/calculators/freelance-rate.html" class="next-step-card"><div class="next-step-arrow"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div><div class="next-step-info"><h3>Freelance Rate Calculator</h3><p>Calculate your ideal hourly or project rate.</p></div></a>
+        </div></section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var categories = [
+            { id: 'bpHousing', label: 'Housing', color: 'bg-blue-500' },
+            { id: 'bpFood', label: 'Food & Groceries', color: 'bg-green-500' },
+            { id: 'bpTransport', label: 'Transport', color: 'bg-amber-500' },
+            { id: 'bpUtilities', label: 'Utilities', color: 'bg-purple-500' },
+            { id: 'bpEntertainment', label: 'Entertainment', color: 'bg-rose-500' },
+            { id: 'bpSavings', label: 'Savings', color: 'bg-emerald-500' },
+            { id: 'bpOther', label: 'Other', color: 'bg-slate-500' }
+        ];
+
+        // Auto-save and load
+        var saved = autoLoad('budget_planner');
+        if (saved) {
+            Object.keys(saved).forEach(function(k) {
+                var el = document.getElementById(k);
+                if (el) el.value = saved[k] || '';
+            });
+        }
+
+        function saveBudget() {
+            var data = { bpIncome: document.getElementById('bpIncome').value };
+            categories.forEach(function(c) { data[c.id] = document.getElementById(c.id).value; });
+            autoSave('budget_planner', data);
+        }
+
+        document.getElementById('btnCalculate').addEventListener('click', function() {
+            var income = parseFloat(document.getElementById('bpIncome').value);
+            if (!income || income <= 0) { showToast('Please enter a valid monthly income.', 'error'); return; }
+
+            var totalAllocated = 0;
+            var breakdown = [];
+            categories.forEach(function(c) {
+                var val = parseFloat(document.getElementById(c.id).value) || 0;
+                totalAllocated += val;
+                if (val > 0) breakdown.push({ label: c.label, amount: val, color: c.color });
+            });
+
+            var remaining = income - totalAllocated;
+            var savingsVal = parseFloat(document.getElementById('bpSavings').value) || 0;
+            var savingsRate = income > 0 ? (savingsVal / income * 100) : 0;
+
+            document.getElementById('bpTotalAllocated').textContent = formatCurrency(totalAllocated);
+            var remEl = document.getElementById('bpRemaining');
+            remEl.textContent = formatCurrency(Math.abs(remaining));
+            if (remaining < 0) {
+                remEl.parentElement.className = remEl.parentElement.className.replace('from-green-50 to-green-100 border-green-200', 'from-red-50 to-red-100 border-red-200');
+                remEl.className = remEl.className.replace('text-green-900', 'text-red-900');
+                remEl.textContent = '-' + formatCurrency(Math.abs(remaining));
+            } else {
+                remEl.parentElement.className = remEl.parentElement.className.replace('from-red-50 to-red-100 border-red-200', 'from-green-50 to-green-100 border-green-200');
+                remEl.className = remEl.className.replace('text-red-900', 'text-green-900');
+            }
+            document.getElementById('bpSavingsRate').textContent = savingsRate.toFixed(1) + '%';
+
+            // Breakdown bars
+            var barsDiv = document.getElementById('bpBars');
+            barsDiv.innerHTML = '';
+            breakdown.sort(function(a, b) { return b.amount - a.amount; });
+            breakdown.forEach(function(item) {
+                var pct = totalAllocated > 0 ? (item.amount / income * 100) : 0;
+                barsDiv.innerHTML += '<div class="mb-3"><div class="flex justify-between text-sm mb-1"><span class="font-semibold text-slate-700 dark:text-slate-300">' + item.label + '</span><span class="text-slate-600 dark:text-slate-400">' + formatCurrency(item.amount) + ' (' + pct.toFixed(1) + '%)</span></div><div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-4"><div class="' + item.color + ' h-4 rounded-full transition-all duration-500" style="width:' + Math.min(pct, 100) + '%"></div></div></div>';
+            });
+
+            if (remaining > 0) {
+                var remPct = (remaining / income * 100);
+                barsDiv.innerHTML += '<div class="mb-3"><div class="flex justify-between text-sm mb-1"><span class="font-semibold text-green-700 dark:text-green-400">Unallocated</span><span class="text-green-600 dark:text-green-400">' + formatCurrency(remaining) + ' (' + remPct.toFixed(1) + '%)</span></div><div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-4"><div class="bg-green-400 h-4 rounded-full transition-all duration-500" style="width:' + remPct + '%"></div></div></div>';
+            }
+
+            saveBudget();
+            document.getElementById('bpResults').classList.remove('hidden');
+            document.getElementById('bpResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Auto-calculate on input change
+        document.querySelectorAll('#bpIncome, #bpHousing, #bpFood, #bpTransport, #bpUtilities, #bpEntertainment, #bpSavings, #bpOther').forEach(function(el) {
+            el.addEventListener('keypress', function(e) { if (e.key === 'Enter') document.getElementById('btnCalculate').click(); });
+        });
+    })();
+    </script>
+</body>
+</html>

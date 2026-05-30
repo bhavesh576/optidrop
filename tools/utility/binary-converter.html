@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Converter Free Online — No Upload Required | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Convert between text, binary, decimal, and hexadecimal instantly. Free online converter. No upload, no sign-up required.">
+    <meta name="keywords" content="binary converter, text to binary, binary to text, hex converter, decimal to binary, binary to decimal, hex to decimal, ascii converter online free">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#0891b2">
+    <meta property="og:title" content="Binary Converter Free Online — No Upload Required | OptiDrop">
+    <meta property="og:description" content="Convert between text, binary, decimal, and hexadecimal instantly. Free online converter. No upload, no sign-up required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/utility/binary-converter.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Binary Converter Free Online — No Upload Required | OptiDrop">
+    <meta name="twitter:description" content="Convert between text, binary, decimal, and hexadecimal instantly. Free online converter. No upload, no sign-up required.">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/binary-converter.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Utility Tools", "item": "https://optidrop.online/tools/utility/"},
+        {"@type": "ListItem", "position": 3, "name": "Binary Converter", "item": "https://optidrop.online/tools/utility/binary-converter.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Binary Converter",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online binary, hex, decimal, and text converter. Convert between text, binary, decimal, and hexadecimal instantly in your browser."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is binary code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Binary code is a system of representing text, numbers, and computer instructions using only two digits: 0 and 1. Each digit is called a bit. Eight bits make a byte, which can represent 256 different values (0-255). Computers use binary internally because their circuits have two states: on (1) and off (0)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert text to binary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each character in text has an ASCII or Unicode code point. To convert text to binary, find the decimal code for each character, then convert that decimal number to an 8-bit binary string. For example, the letter 'A' has ASCII code 65, which is 01000001 in binary. This converter does it automatically — just paste your text and click Convert."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between binary, decimal, and hexadecimal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Binary (base-2) uses digits 0-1, decimal (base-10) uses digits 0-9, and hexadecimal (base-16) uses digits 0-9 and letters A-F. They are different ways of representing the same numbers. For example, the decimal number 255 is 11111111 in binary and FF in hexadecimal. Hexadecimal is often used in computing because it is more compact than binary and easier to read."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this binary converter private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, absolutely. All conversions happen entirely in your browser using JavaScript. No data is sent to any server, so your input and output remain completely private. You can safely convert sensitive text, passwords, or encoded data."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .converter-output-box {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.82rem;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            word-break: break-all;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            color: #1e293b;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            min-height: 60px;
+            max-height: 180px;
+            overflow-y: auto;
+        }
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.45rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 0.75rem;
+            border: 2px solid #e2e8f0;
+            background: #fff;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+        .radio-label:hover {
+            border-color: #93c5fd;
+            color: #2563eb;
+        }
+        .radio-label input[type="radio"] {
+            display: none;
+        }
+        .radio-label.active {
+            border-color: #0891b2;
+            background: #0891b2;
+            color: #fff;
+        }
+        .output-section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #475569;
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .copy-small-btn {
+            padding: 0.25rem 0.6rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #64748b;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .copy-small-btn:hover {
+            color: #2563eb;
+            border-color: #93c5fd;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-5xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Binary Converter &mdash; Text Binary Hex Decimal Converter Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Convert between text, binary, decimal, and hexadecimal instantly in your browser. See all four representations at once. No upload, no sign-up, 100% private.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-5xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Input Type Selection -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Input Type</label>
+                        <div class="flex flex-wrap gap-2" id="inputTypeGroup">
+                            <label class="radio-label active" data-type="text">
+                                <input type="radio" name="inputType" value="text" checked>
+                                Text
+                            </label>
+                            <label class="radio-label" data-type="binary">
+                                <input type="radio" name="inputType" value="binary">
+                                Binary
+                            </label>
+                            <label class="radio-label" data-type="decimal">
+                                <input type="radio" name="inputType" value="decimal">
+                                Decimal
+                            </label>
+                            <label class="radio-label" data-type="hex">
+                                <input type="radio" name="inputType" value="hex">
+                                Hex
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Input Textarea -->
+                    <div class="mb-4">
+                        <label for="converterInput" class="block text-sm font-bold text-slate-700 mb-2">Input</label>
+                        <textarea id="converterInput" placeholder="Type or paste your text here..." class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-cyan-500 transition-colors text-slate-900 font-medium resize-y" style="min-height:140px;font-family:'Courier New',Courier,monospace;font-size:0.875rem;line-height:1.6;"></textarea>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div id="errorBox" class="hidden mb-4 bg-red-50 border-2 border-red-200 text-red-600 px-4 py-3 rounded-xl text-sm font-semibold"></div>
+
+                    <!-- Convert Button -->
+                    <div class="mb-6">
+                        <button id="btnConvert" class="w-full sm:w-auto px-8 py-3 bg-cyan-600 text-white font-bold rounded-xl hover:bg-cyan-700 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/></svg>
+                            Convert
+                        </button>
+                    </div>
+
+                    <!-- Output Areas - 4 representations -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Text Output -->
+                        <div>
+                            <div class="output-section-label">
+                                <span>Text (ASCII)</span>
+                                <button class="copy-small-btn" data-target="outputText">Copy</button>
+                            </div>
+                            <div id="outputText" class="converter-output-box">Output will appear here...</div>
+                        </div>
+
+                        <!-- Binary Output -->
+                        <div>
+                            <div class="output-section-label">
+                                <span>Binary (Base 2)</span>
+                                <button class="copy-small-btn" data-target="outputBinary">Copy</button>
+                            </div>
+                            <div id="outputBinary" class="converter-output-box">Output will appear here...</div>
+                        </div>
+
+                        <!-- Decimal Output -->
+                        <div>
+                            <div class="output-section-label">
+                                <span>Decimal (Base 10)</span>
+                                <button class="copy-small-btn" data-target="outputDecimal">Copy</button>
+                            </div>
+                            <div id="outputDecimal" class="converter-output-box">Output will appear here...</div>
+                        </div>
+
+                        <!-- Hex Output -->
+                        <div>
+                            <div class="output-section-label">
+                                <span>Hexadecimal (Base 16)</span>
+                                <button class="copy-small-btn" data-target="outputHex">Copy</button>
+                            </div>
+                            <div id="outputHex" class="converter-output-box">Output will appear here...</div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online Binary, Hex, Decimal &amp; Text Converter</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Binary Converter is a free, browser-based tool that converts data between text (ASCII), binary (base 2), decimal (base 10), and hexadecimal (base 16) formats instantly. Whether you are a student learning number systems, a developer debugging low-level code, or anyone curious about how computers represent data, this tool makes conversions effortless.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Understanding the Binary Number System</h3>
+                <p class="text-slate-600 mb-4">The binary number system uses only two digits &mdash; 0 and 1. It is the fundamental language of computers. Every piece of data stored on a computer, from text documents to images, is ultimately represented as a sequence of binary digits (bits). Eight bits form a byte, which is the basic unit of digital storage. Each byte can represent a number from 0 to 255, which maps to a character in the ASCII table.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Binary, Decimal &amp; Hexadecimal Explained</h3>
+                <p class="text-slate-600 mb-4">Decimal is the base-10 system we use daily (digits 0-9). Hexadecimal is a base-16 system using digits 0-9 and letters A-F. Hex is popular in programming because it is more compact than binary and aligns neatly with byte boundaries &mdash; two hex digits always represent exactly one byte. For example, the decimal number 72 is 01001000 in binary and 48 in hex, representing the letter 'H' in ASCII.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How to Use This Converter</h3>
+                <p class="text-slate-600 mb-4">Select your input type (Text, Binary, Decimal, or Hex), paste or type your data into the input field, and click Convert. The tool instantly displays all four representations simultaneously. Use the copy buttons next to each output to copy the result to your clipboard. For binary input, separate bytes with spaces (e.g., 01001000 01100101 01101100 01101100 01101111). For decimal input, separate values with spaces (e.g., 72 101 108 108 111). For hex input, separate byte pairs with spaces (e.g., 48 65 6C 6C 6F).</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Private &mdash; Runs in Your Browser</h3>
+                <p class="text-slate-600">All conversions happen locally in your browser using JavaScript. No data is ever sent to a server, making this tool completely safe for sensitive information. There is no file upload, no sign-up, and no tracking of your input data.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is binary code?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Binary code is a system of representing text, numbers, and computer instructions using only two digits: 0 and 1. Each digit is called a bit. Eight bits make a byte, which can represent 256 different values (0-255). Computers use binary internally because their circuits have two states: on (1) and off (0).
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I convert text to binary?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Each character in text has an ASCII or Unicode code point. To convert text to binary, find the decimal code for each character, then convert that decimal number to an 8-bit binary string. For example, the letter 'A' has ASCII code 65, which is 01000001 in binary. This converter does it automatically &mdash; just paste your text and click Convert.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the difference between binary, decimal, and hexadecimal?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Binary (base-2) uses digits 0-1, decimal (base-10) uses digits 0-9, and hexadecimal (base-16) uses digits 0-9 and letters A-F. They are different ways of representing the same numbers. For example, the decimal number 255 is 11111111 in binary and FF in hexadecimal. Hexadecimal is often used in computing because it is more compact than binary and easier to read.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is this binary converter private?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, absolutely. All conversions happen entirely in your browser using JavaScript. No data is sent to any server, so your input and output remain completely private. You can safely convert sensitive text, passwords, or encoded data.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/utility/text-case-converter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Text Case Converter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Convert text between uppercase, lowercase, title case, and more.</span>
+            </a>
+            <a href="/tools/utility/lorem-ipsum-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Lorem Ipsum Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate placeholder Lorem Ipsum text for your designs and mockups.</span>
+            </a>
+            <a href="/tools/developer/hash-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Hash Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate SHA-256 and SHA-512 hashes using native SubtleCrypto API.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><ul><li><a href="/compress-image.html">Image Compressor</a></li><li><a href="/heic-to-jpg.html">HEIC to JPG</a></li><li><a href="/remove-background.html">Background Remover</a></li><li><a href="/passport-photo-resizer.html">Passport Photo</a></li><li><a href="/compress-pdf.html">PDF Compressor</a></li><li><a href="/jpg-to-pdf.html">JPG to PDF</a></li></ul></div>
+                <div class="footer-col"><h4>Career Tools</h4><ul><li><a href="/tools/career/resume-builder.html">Resume Builder</a></li><li><a href="/tools/career/cover-letter.html">Cover Letter</a></li><li><a href="/tools/career/resignation-letter.html">Resignation Letter</a></li><li><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a></li></ul></div>
+                <div class="footer-col"><h4>Business Tools</h4><ul><li><a href="/tools/business/invoice-generator.html">Invoice Generator</a></li><li><a href="/tools/business/freelance-contract.html">Freelance Contract</a></li><li><a href="/tools/business/salary-slip.html">Salary Slip</a></li><li><a href="/tools/business/receipt-generator.html">Receipt Generator</a></li></ul></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><ul><li><a href="/tools/emi-calculator.html">EMI Calculator</a></li><li><a href="/tools/gst-calculator.html">GST Calculator</a></li><li><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a></li><li><a href="/tools/calculators/income-tax-calculator.html">Income Tax</a></li></ul></div>
+                <div class="footer-col"><h4>Developer Tools</h4><ul><li><a href="/tools/developer/json-formatter.html">JSON Formatter</a></li><li><a href="/tools/developer/base64.html">Base64 Encoder</a></li><li><a href="/tools/developer/url-encoder.html">URL Encoder</a></li><li><a href="/tools/developer/css-minifier.html">CSS Minifier</a></li></ul></div>
+                <div class="footer-col"><h4>About</h4><ul><li><a href="/about.html">About OptiDrop</a></li><li><a href="/privacy-policy.html">Privacy Policy</a></li><li><a href="/terms.html">Terms of Service</a></li><li><a href="/contact.html">Contact</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All tools run in your browser &mdash; no uploads, no sign-up.</p></div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+
+    <script>
+    (function() {
+        var inputField = document.getElementById('converterInput');
+        var btnConvert = document.getElementById('btnConvert');
+        var errorBox = document.getElementById('errorBox');
+        var inputTypeGroup = document.getElementById('inputTypeGroup');
+        var outputText = document.getElementById('outputText');
+        var outputBinary = document.getElementById('outputBinary');
+        var outputDecimal = document.getElementById('outputDecimal');
+        var outputHex = document.getElementById('outputHex');
+
+        var placeholders = {
+            text: 'Type or paste your text here...',
+            binary: 'Enter binary values separated by spaces (e.g., 01001000 01100101 01101100 01101100 01101111)',
+            decimal: 'Enter decimal values separated by spaces (e.g., 72 101 108 108 111)',
+            hex: 'Enter hex values separated by spaces (e.g., 48 65 6C 6C 6F)'
+        };
+
+        var defaultPlaceholder = placeholders.text;
+
+        function getSelectedType() {
+            var active = inputTypeGroup.querySelector('.radio-label.active');
+            return active ? active.getAttribute('data-type') : 'text';
+        }
+
+        // Radio button click handling
+        inputTypeGroup.addEventListener('click', function(e) {
+            var label = e.target.closest('.radio-label');
+            if (!label) return;
+            inputTypeGroup.querySelectorAll('.radio-label').forEach(function(l) {
+                l.classList.remove('active');
+            });
+            label.classList.add('active');
+            var type = label.getAttribute('data-type');
+            inputField.placeholder = placeholders[type];
+            hideError();
+        });
+
+        function showError(msg) {
+            errorBox.textContent = msg;
+            errorBox.classList.remove('hidden');
+        }
+
+        function hideError() {
+            errorBox.classList.add('hidden');
+        }
+
+        function setOutputs(text, binary, decimal, hex) {
+            outputText.textContent = text;
+            outputBinary.textContent = binary;
+            outputDecimal.textContent = decimal;
+            outputHex.textContent = hex;
+        }
+
+        function clearOutputs() {
+            var defaultMsg = 'Output will appear here...';
+            outputText.textContent = defaultMsg;
+            outputBinary.textContent = defaultMsg;
+            outputDecimal.textContent = defaultMsg;
+            outputHex.textContent = defaultMsg;
+        }
+
+        // Text to byte array
+        function textToBytes(str) {
+            var bytes = [];
+            for (var i = 0; i < str.length; i++) {
+                var code = str.charCodeAt(i);
+                if (code > 255) {
+                    // Multi-byte UTF-8 encoding for non-ASCII
+                    var encoded = unescape(encodeURIComponent(str.charAt(i)));
+                    for (var j = 0; j < encoded.length; j++) {
+                        bytes.push(encoded.charCodeAt(j));
+                    }
+                } else {
+                    bytes.push(code);
+                }
+            }
+            return bytes;
+        }
+
+        // Byte array to text
+        function bytesToText(bytes) {
+            var result = '';
+            for (var i = 0; i < bytes.length; i++) {
+                result += String.fromCharCode(bytes[i]);
+            }
+            return result;
+        }
+
+        // Convert from Text input
+        function convertFromText(input) {
+            if (!input) {
+                showError('Please enter some text to convert.');
+                clearOutputs();
+                return;
+            }
+            var bytes = textToBytes(input);
+            var binaryParts = [];
+            var decimalParts = [];
+            var hexParts = [];
+            for (var i = 0; i < bytes.length; i++) {
+                binaryParts.push(bytes[i].toString(2).padStart(8, '0'));
+                decimalParts.push(bytes[i].toString());
+                hexParts.push(bytes[i].toString(16).toUpperCase().padStart(2, '0'));
+            }
+            setOutputs(
+                input,
+                binaryParts.join(' '),
+                decimalParts.join(' '),
+                hexParts.join(' ')
+            );
+            showToast('Converted successfully!');
+        }
+
+        // Convert from Binary input
+        function convertFromBinary(input) {
+            var cleaned = input.replace(/[^01\s]/g, '').trim();
+            if (!cleaned) {
+                showError('Please enter valid binary values (0s and 1s only). Separate bytes with spaces.');
+                clearOutputs();
+                return;
+            }
+            var parts = cleaned.split(/\s+/).filter(function(p) { return p.length > 0; });
+            var bytes = [];
+            for (var i = 0; i < parts.length; i++) {
+                var bin = parts[i];
+                if (bin.length > 8) {
+                    showError('Each binary byte should be at most 8 bits. Found "' + bin + '" with ' + bin.length + ' bits.');
+                    clearOutputs();
+                    return;
+                }
+                var val = parseInt(bin, 2);
+                if (isNaN(val)) {
+                    showError('Invalid binary value: "' + bin + '"');
+                    clearOutputs();
+                    return;
+                }
+                bytes.push(val);
+            }
+            var hexParts = [];
+            var decimalParts = [];
+            for (var j = 0; j < bytes.length; j++) {
+                hexParts.push(bytes[j].toString(16).toUpperCase().padStart(2, '0'));
+                decimalParts.push(bytes[j].toString());
+            }
+            setOutputs(
+                bytesToText(bytes),
+                parts.map(function(p) { return p.padStart(8, '0'); }).join(' '),
+                decimalParts.join(' '),
+                hexParts.join(' ')
+            );
+            showToast('Converted successfully!');
+        }
+
+        // Convert from Decimal input
+        function convertFromDecimal(input) {
+            var cleaned = input.replace(/[^0-9\s]/g, '').trim();
+            if (!cleaned) {
+                showError('Please enter valid decimal values (0-255). Separate values with spaces.');
+                clearOutputs();
+                return;
+            }
+            var parts = cleaned.split(/\s+/).filter(function(p) { return p.length > 0; });
+            var bytes = [];
+            for (var i = 0; i < parts.length; i++) {
+                var val = parseInt(parts[i], 10);
+                if (isNaN(val) || val < 0 || val > 255) {
+                    showError('Each decimal value must be between 0 and 255. Found "' + parts[i] + '".');
+                    clearOutputs();
+                    return;
+                }
+                bytes.push(val);
+            }
+            var binaryParts = [];
+            var hexParts = [];
+            for (var j = 0; j < bytes.length; j++) {
+                binaryParts.push(bytes[j].toString(2).padStart(8, '0'));
+                hexParts.push(bytes[j].toString(16).toUpperCase().padStart(2, '0'));
+            }
+            setOutputs(
+                bytesToText(bytes),
+                binaryParts.join(' '),
+                parts.join(' '),
+                hexParts.join(' ')
+            );
+            showToast('Converted successfully!');
+        }
+
+        // Convert from Hex input
+        function convertFromHex(input) {
+            var cleaned = input.replace(/[^0-9A-Fa-f\s]/g, '').trim();
+            if (!cleaned) {
+                showError('Please enter valid hexadecimal values (0-9, A-F). Separate byte pairs with spaces.');
+                clearOutputs();
+                return;
+            }
+            var parts = cleaned.split(/\s+/).filter(function(p) { return p.length > 0; });
+            var bytes = [];
+            for (var i = 0; i < parts.length; i++) {
+                var hex = parts[i];
+                if (hex.length > 2) {
+                    showError('Each hex byte should be at most 2 characters. Found "' + hex + '".');
+                    clearOutputs();
+                    return;
+                }
+                var val = parseInt(hex, 16);
+                if (isNaN(val) || val < 0 || val > 255) {
+                    showError('Invalid hex value: "' + hex + '"');
+                    clearOutputs();
+                    return;
+                }
+                bytes.push(val);
+            }
+            var binaryParts = [];
+            var decimalParts = [];
+            for (var j = 0; j < bytes.length; j++) {
+                binaryParts.push(bytes[j].toString(2).padStart(8, '0'));
+                decimalParts.push(bytes[j].toString());
+            }
+            setOutputs(
+                bytesToText(bytes),
+                binaryParts.join(' '),
+                decimalParts.join(' '),
+                parts.map(function(p) { return p.toUpperCase().padStart(2, '0'); }).join(' ')
+            );
+            showToast('Converted successfully!');
+        }
+
+        // Main convert handler
+        btnConvert.addEventListener('click', function() {
+            hideError();
+            var input = inputField.value;
+            var type = getSelectedType();
+            switch (type) {
+                case 'text':
+                    convertFromText(input);
+                    break;
+                case 'binary':
+                    convertFromBinary(input);
+                    break;
+                case 'decimal':
+                    convertFromDecimal(input);
+                    break;
+                case 'hex':
+                    convertFromHex(input);
+                    break;
+            }
+        });
+
+        // Allow Ctrl+Enter to convert
+        inputField.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                e.preventDefault();
+                btnConvert.click();
+            }
+        });
+
+        // Copy buttons for each output
+        document.querySelectorAll('.copy-small-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var targetId = this.getAttribute('data-target');
+                var target = document.getElementById(targetId);
+                var text = target.textContent;
+                if (!text || text === 'Output will appear here...') {
+                    showToast('Nothing to copy. Convert something first.', 'error');
+                    return;
+                }
+                copyToClipboard(text);
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

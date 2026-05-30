@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Clock | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2"><link rel="shortcut icon" href="/favicon.png?v=2"><link rel="apple-touch-icon" href="/favicon.png?v=2"><meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="View live clocks for multiple cities around the world. See current time, date, and time zone offsets. Add or remove cities. Free and auto-updating."><meta name="keywords" content="world clock, multiple time zones, city clocks, time zone converter, international time"><meta name="author" content="OptiDrop"><meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="World Clock | OptiDrop"><meta property="og:description" content="View live clocks for multiple cities. Auto-updating world clock with analog display."><meta property="og:type" content="website"><meta property="og:url" content="https://optidrop.online/tools/utility/world-clock.html"><meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="World Clock | OptiDrop"><meta name="twitter:description" content="View live clocks for multiple cities around the world.">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/world-clock.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Utility Tools","item":"https://optidrop.online/category/utility-tools.html"},{"@type":"ListItem","position":3,"name":"World Clock","item":"https://optidrop.online/tools/utility/world-clock.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop World Clock","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"View live clocks for multiple cities with analog and digital display."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the world clock work?","acceptedAnswer":{"@type":"Answer","name":"The world clock displays live time for multiple cities using their time zones. Each city shows an analog clock face and digital time that updates every second. You can add or remove cities from the list."}},{"@type":"Question","name":"Which cities are included by default?","acceptedAnswer":{"@type":"Answer","name":"The default cities are New York, London, Paris, Tokyo, Sydney, Dubai, Mumbai, and São Paulo. You can add any major city from the dropdown menu."}},{"@type":"Question","name":"Does it account for daylight saving time?","acceptedAnswer":{"@type":"Answer","name":"Yes, the world clock uses the browser's built-in Intl.DateTimeFormat with IANA time zone names, which automatically handles daylight saving time transitions for each location."}},{"@type":"Question","name":"Can I add custom cities?","acceptedAnswer":{"@type":"Answer","name":"Yes, you can select from a comprehensive list of major world cities. The dropdown includes cities from every continent with their UTC offsets."}}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+    .clock-face{position:relative;width:140px;height:140px;border-radius:50%;background:#fff;border:3px solid #e2e8f0;margin:0 auto}
+    .dark .clock-face{background:#1e293b;border-color:#475569}
+    .clock-face .hour{position:absolute;bottom:50%;left:50%;width:4px;height:35px;background:#1e293b;border-radius:2px;transform-origin:bottom center;margin-left:-2px}
+    .dark .clock-face .hour{background:#e2e8f0}
+    .clock-face .minute{position:absolute;bottom:50%;left:50%;width:3px;height:48px;background:#3b82f6;border-radius:2px;transform-origin:bottom center;margin-left:-1.5px}
+    .clock-face .second{position:absolute;bottom:50%;left:50%;width:1.5px;height:52px;background:#ef4444;border-radius:1px;transform-origin:bottom center;margin-left:-0.75px}
+    .clock-face .center-dot{position:absolute;top:50%;left:50%;width:10px;height:10px;background:#1e293b;border-radius:50%;transform:translate(-50%,-50%);z-index:5}
+    .dark .clock-face .center-dot{background:#e2e8f0}
+    .clock-face .marker{position:absolute;width:2px;height:8px;background:#94a3b8;left:50%;top:6px;transform-origin:50% 64px;margin-left:-1px}
+    .clock-face .marker.major{height:12px;width:3px;background:#475569;margin-left:-1.5px;top:4px}
+    .dark .clock-face .marker.major{background:#94a3b8}
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header"><div class="header-inner"><a href="/" class="logo-text">Opti<span>Drop</span></a><nav class="header-nav"><a href="/" class="back-link"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>All Tools</a><span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span><button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav></div><nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a></nav></header>
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+    <main class="flex-grow">
+        <section class="max-w-5xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">World Clock</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">View live analog and digital clocks for cities around the world. Auto-updates every second with accurate time zone data.</p>
+        </section>
+        <section class="max-w-5xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="flex flex-wrap gap-3 mb-8 items-center justify-center">
+                        <select id="citySelect" class="px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-brand-500 outline-none min-w-[200px]"></select>
+                        <button onclick="addCity()" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition-colors">Add City</button>
+                    </div>
+                    <div id="clocksGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+                </div>
+            </div>
+        </section>
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+        <section class="max-w-5xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">About World Clock</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Stay connected with people across time zones using this live world clock. View analog and digital time displays for major cities worldwide. The clocks update every second and automatically handle daylight saving time transitions.</p>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">The default set includes New York, London, Paris, Tokyo, Sydney, Dubai, Mumbai, and São Paulo. You can add any city from the dropdown to customize your view. Your selected cities are saved in your browser for the next visit.</p>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Each clock shows the city name, current time in both analog (clock face with hour, minute, and second hands) and digital format, the current date, and the UTC offset. This makes it easy to plan calls, meetings, or travel across time zones.</p>
+            </div>
+        </section>
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">How does the world clock work?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">The world clock displays live time for multiple cities using their time zones. Each city shows an analog clock face and digital time that updates every second. You can add or remove cities from the list.</p></details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">Which cities are included by default?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">The default cities are New York, London, Paris, Tokyo, Sydney, Dubai, Mumbai, and São Paulo. You can add any major city from the dropdown menu.</p></details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">Does it account for daylight saving time?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">Yes, the world clock uses the browser's built-in Intl.DateTimeFormat with IANA time zone names, which automatically handles daylight saving time transitions for each location.</p></details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">Can I add custom cities?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">Yes, you can select from a comprehensive list of major world cities. The dropdown includes cities from every continent with their UTC offsets.</p></details>
+            </div>
+        </section>
+        <section class="max-w-5xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/utility/timezone-converter.html" class="block p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"><div class="font-semibold text-slate-900 dark:text-white">Timezone Converter</div><div class="text-sm text-slate-500 dark:text-slate-400 mt-1">Convert between timezones</div></a>
+                <a href="/tools/utility/date-calculator.html" class="block p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"><div class="font-semibold text-slate-900 dark:text-white">Date Calculator</div><div class="text-sm text-slate-500 dark:text-slate-400 mt-1">Calculate date differences</div></a>
+                <a href="/tools/utility/pomodoro-timer.html" class="block p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"><div class="font-semibold text-slate-900 dark:text-white">Pomodoro Timer</div><div class="text-sm text-slate-500 dark:text-slate-400 mt-1">Focus with timed sessions</div></a>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    var STORAGE_KEY='worldClockCities';
+    var DEFAULT_CITIES=['America/New_York','Europe/London','Europe/Paris','Asia/Tokyo','Australia/Sydney','Asia/Dubai','Asia/Kolkata','America/Sao_Paulo'];
+    var ALL_CITIES=[
+        {tz:'America/New_York',name:'New York',flag:'US'},
+        {tz:'America/Chicago',name:'Chicago',flag:'US'},
+        {tz:'America/Denver',name:'Denver',flag:'US'},
+        {tz:'America/Los_Angeles',name:'Los Angeles',flag:'US'},
+        {tz:'America/Anchorage',name:'Anchorage',flag:'US'},
+        {tz:'Pacific/Honolulu',name:'Honolulu',flag:'US'},
+        {tz:'America/Toronto',name:'Toronto',flag:'CA'},
+        {tz:'America/Vancouver',name:'Vancouver',flag:'CA'},
+        {tz:'America/Mexico_City',name:'Mexico City',flag:'MX'},
+        {tz:'America/Sao_Paulo',name:'São Paulo',flag:'BR'},
+        {tz:'America/Buenos_Aires',name:'Buenos Aires',flag:'AR'},
+        {tz:'America/Bogota',name:'Bogotá',flag:'CO'},
+        {tz:'America/Lima',name:'Lima',flag:'PE'},
+        {tz:'America/Santiago',name:'Santiago',flag:'CL'},
+        {tz:'Europe/London',name:'London',flag:'GB'},
+        {tz:'Europe/Paris',name:'Paris',flag:'FR'},
+        {tz:'Europe/Berlin',name:'Berlin',flag:'DE'},
+        {tz:'Europe/Madrid',name:'Madrid',flag:'ES'},
+        {tz:'Europe/Rome',name:'Rome',flag:'IT'},
+        {tz:'Europe/Amsterdam',name:'Amsterdam',flag:'NL'},
+        {tz:'Europe/Moscow',name:'Moscow',flag:'RU'},
+        {tz:'Europe/Istanbul',name:'Istanbul',flag:'TR'},
+        {tz:'Africa/Cairo',name:'Cairo',flag:'EG'},
+        {tz:'Africa/Lagos',name:'Lagos',flag:'NG'},
+        {tz:'Africa/Nairobi',name:'Nairobi',flag:'KE'},
+        {tz:'Africa/Johannesburg',name:'Johannesburg',flag:'ZA'},
+        {tz:'Asia/Dubai',name:'Dubai',flag:'AE'},
+        {tz:'Asia/Kolkata',name:'Mumbai',flag:'IN'},
+        {tz:'Asia/Karachi',name:'Karachi',flag:'PK'},
+        {tz:'Asia/Dhaka',name:'Dhaka',flag:'BD'},
+        {tz:'Asia/Bangkok',name:'Bangkok',flag:'TH'},
+        {tz:'Asia/Singapore',name:'Singapore',flag:'SG'},
+        {tz:'Asia/Hong_Kong',name:'Hong Kong',flag:'HK'},
+        {tz:'Asia/Shanghai',name:'Shanghai',flag:'CN'},
+        {tz:'Asia/Seoul',name:'Seoul',flag:'KR'},
+        {tz:'Asia/Tokyo',name:'Tokyo',flag:'JP'},
+        {tz:'Australia/Sydney',name:'Sydney',flag:'AU'},
+        {tz:'Australia/Melbourne',name:'Melbourne',flag:'AU'},
+        {tz:'Australia/Perth',name:'Perth',flag:'AU'},
+        {tz:'Pacific/Auckland',name:'Auckland',flag:'NZ'}
+    ];
+    var activeCities=[];
+    var intervalId=null;
+
+    function loadCities(){
+        try{
+            var s=localStorage.getItem(STORAGE_KEY);
+            if(s) activeCities=JSON.parse(s);
+            else activeCities=DEFAULT_CITIES.slice();
+        }catch(e){ activeCities=DEFAULT_CITIES.slice(); }
+    }
+
+    function saveCities(){
+        localStorage.setItem(STORAGE_KEY,JSON.stringify(activeCities));
+    }
+
+    function populateSelect(){
+        var sel=document.getElementById('citySelect');
+        sel.innerHTML='';
+        ALL_CITIES.forEach(function(c){
+            if(activeCities.indexOf(c.tz)===-1){
+                var opt=document.createElement('option');
+                opt.value=c.tz;
+                opt.textContent=c.name+' (UTC'+getUTCOffset(c.tz)+')';
+                sel.appendChild(opt);
+            }
+        });
+    }
+
+    function getUTCOffset(tz){
+        try{
+            var now=new Date();
+            var str=now.toLocaleString('en-US',{timeZone:tz,timeZoneName:'shortOffset'});
+            var m=str.match(/GMT([+-]\d+:?\d*)/);
+            return m?m[1]:'';
+        }catch(e){return '';}
+    }
+
+    function getTimeInTZ(tz){
+        var now=new Date();
+        var opts={timeZone:tz,hour:'numeric',minute:'numeric',second:'numeric',hour12:false};
+        var parts=new Intl.DateTimeFormat('en-GB',opts).formatToParts(now);
+        var h=0,m=0,s=0;
+        parts.forEach(function(p){
+            if(p.type==='hour') h=parseInt(p.value);
+            if(p.type==='minute') m=parseInt(p.value);
+            if(p.type==='second') s=parseInt(p.value);
+        });
+        return{hours:h,minutes:m,seconds:s};
+    }
+
+    function getDateInTZ(tz){
+        var now=new Date();
+        return now.toLocaleDateString('en-US',{timeZone:tz,weekday:'short',month:'short',day:'numeric'});
+    }
+
+    function addCity(){
+        var tz=document.getElementById('citySelect').value;
+        if(!tz) return showToast('No more cities to add','error');
+        if(activeCities.indexOf(tz)!==-1) return showToast('City already added','error');
+        activeCities.push(tz);
+        saveCities();
+        renderClocks();
+        populateSelect();
+        showToast('City added','success');
+    }
+
+    function removeCity(tz){
+        activeCities=activeCities.filter(function(t){return t!==tz;});
+        saveCities();
+        renderClocks();
+        populateSelect();
+    }
+
+    function getCityName(tz){
+        var c=ALL_CITIES.find(function(x){return x.tz===tz;});
+        return c?c.name:tz.split('/').pop().replace(/_/g,' ');
+    }
+
+    function renderClocks(){
+        var grid=document.getElementById('clocksGrid');
+        if(activeCities.length===0){
+            grid.innerHTML='<p class="col-span-full text-center text-slate-400 py-8">No cities selected. Add a city above.</p>';
+            return;
+        }
+        var html='';
+        activeCities.forEach(function(tz){
+            var name=getCityName(tz);
+            html+='<div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 text-center" id="clock-'+tz.replace(/\//g,'_')+'">';
+            html+='<div class="flex justify-between items-start mb-3">';
+            html+='<div class="text-left"><div class="font-bold text-slate-900 dark:text-white text-lg">'+name+'</div><div class="text-xs text-slate-500 dark:text-slate-400">UTC'+getUTCOffset(tz)+'</div></div>';
+            html+='<button onclick="removeCity(\''+tz+'\')" class="text-slate-400 hover:text-red-500 p-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>';
+            html+='</div>';
+            html+='<div class="clock-face mb-3">';
+            for(var i=0;i<12;i++){
+                html+='<div class="marker'+(i%3===0?' major':'')+'" style="transform:rotate('+i*30+'deg)"></div>';
+            }
+            html+='<div class="hour" id="h-'+tz.replace(/\//g,'_')+'"></div>';
+            html+='<div class="minute" id="m-'+tz.replace(/\//g,'_')+'"></div>';
+            html+='<div class="second" id="s-'+tz.replace(/\//g,'_')+'"></div>';
+            html+='<div class="center-dot"></div>';
+            html+='</div>';
+            html+='<div class="font-mono text-2xl font-bold text-slate-900 dark:text-white mb-1" id="digital-'+tz.replace(/\//g,'_')+'"></div>';
+            html+='<div class="text-xs text-slate-500 dark:text-slate-400" id="date-'+tz.replace(/\//g,'_')+'"></div>';
+            html+='</div>';
+        });
+        grid.innerHTML=html;
+        updateAllClocks();
+    }
+
+    function updateAllClocks(){
+        activeCities.forEach(function(tz){
+            var id=tz.replace(/\//g,'_');
+            var t=getTimeInTZ(tz);
+            var h360=(t.hours%12)*30+t.minutes*0.5;
+            var m360=t.minutes*6+t.seconds*0.1;
+            var s360=t.seconds*6;
+
+            var hEl=document.getElementById('h-'+id);
+            var mEl=document.getElementById('m-'+id);
+            var sEl=document.getElementById('s-'+id);
+            if(hEl) hEl.style.transform='rotate('+h360+'deg)';
+            if(mEl) mEl.style.transform='rotate('+m360+'deg)';
+            if(sEl) sEl.style.transform='rotate('+s360+'deg)';
+
+            var digEl=document.getElementById('digital-'+id);
+            if(digEl) digEl.textContent=String(t.hours).padStart(2,'0')+':'+String(t.minutes).padStart(2,'0')+':'+String(t.seconds).padStart(2,'0');
+
+            var dateEl=document.getElementById('date-'+id);
+            if(dateEl) dateEl.textContent=getDateInTZ(tz);
+        });
+    }
+
+    loadCities();
+    populateSelect();
+    renderClocks();
+    intervalId=setInterval(updateAllClocks,1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Generator | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online flashcard generator with localStorage. Create digital flashcards with front/back text, study with flip animation, track known/unknown cards, and save sets.">
+    <meta name="keywords" content="flashcard generator, flashcard maker, study flashcards, digital flashcards, online flashcards, create flashcards free, spaced repetition">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Flashcard Generator - Create &amp; Study Flashcards | OptiDrop">
+    <meta property="og:description" content="Create digital flashcards, study with flip animation, and track your progress. Save and load flashcard sets from localStorage.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/education/flashcard-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Flashcard Generator - Create &amp; Study Flashcards | OptiDrop">
+    <meta name="twitter:description" content="Create digital flashcards, study with flip animation, and track your progress.">
+    <link rel="canonical" href="https://optidrop.online/tools/education/flashcard-generator.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Education Tools","item":"https://optidrop.online/category/education-tools.html"},{"@type":"ListItem","position":3,"name":"Flashcard Generator","item":"https://optidrop.online/tools/education/flashcard-generator.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Flashcard Generator","applicationCategory":"EducationalApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online flashcard generator with localStorage saving, flip animation, and progress tracking."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I create flashcards?","acceptedAnswer":{"@type":"Answer","text":"Switch to Create mode, give your set a name, and add cards by entering text for the front and back of each card. Click Save Set when done."}},{"@type":"Question","name":"How does the study mode work?","acceptedAnswer":{"@type":"Answer","text":"In Study mode, click a card to flip it and reveal the answer. Mark each card as 'Known' or 'Unknown' to track your progress. Cards marked unknown will be shown again."}},{"@type":"Question","name":"Where are my flashcard sets saved?","acceptedAnswer":{"@type":"Answer","text":"Flashcard sets are saved in your browser's localStorage. They persist between sessions without needing an account. Data stays entirely on your device."}},{"@type":"Question","name":"Can I study only the cards I don't know?","acceptedAnswer":{"@type":"Answer","text":"Yes, after an initial pass through all cards, you can choose to review only the cards you marked as unknown for focused practice."}}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .flashcard { perspective: 1000px; cursor: pointer; }
+        .flashcard-inner { position: relative; width: 100%; min-height: 200px; transition: transform 0.5s; transform-style: preserve-3d; }
+        .flashcard.flipped .flashcard-inner { transform: rotateX(180deg); }
+        .flashcard-front, .flashcard-back { position: absolute; inset: 0; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; padding: 2rem; border-radius: 1rem; text-align: center; }
+        .flashcard-back { transform: rotateX(180deg); }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header"><div class="header-inner"><a href="/" class="logo-text">Opti<span>Drop</span></a><nav class="header-nav"><a href="/" class="back-link"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>All Tools</a><span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span><button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav></div><nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a></nav></header>
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Flashcard Generator</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Create digital flashcards with front and back text, study with flip animation, track known and unknown cards, and save sets to your browser.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <!-- Mode Tabs -->
+                    <div class="flex gap-2 mb-6 bg-slate-100 dark:bg-slate-800 rounded-xl p-1">
+                        <button onclick="switchMode('create')" id="tab-create" class="flex-1 py-2.5 rounded-lg text-sm font-semibold transition bg-brand-600 text-white shadow">Create Cards</button>
+                        <button onclick="switchMode('study')" id="tab-study" class="flex-1 py-2.5 rounded-lg text-sm font-semibold transition text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700">Study Cards</button>
+                    </div>
+
+                    <!-- Create Mode -->
+                    <div id="create-mode">
+                        <div class="mb-5">
+                            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Set Name</label>
+                            <input type="text" id="setName" placeholder="e.g. Biology Chapter 3 Terms" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none">
+                        </div>
+                        <div id="cards-container" class="space-y-3"></div>
+                        <div class="flex flex-wrap gap-3 mt-4">
+                            <button onclick="addCard()" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg text-sm font-medium transition">+ Add Card</button>
+                            <button onclick="saveSet()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-medium transition">Save Set</button>
+                            <button onclick="clearCreateForm()" class="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium transition">Clear</button>
+                        </div>
+                        <!-- Saved Sets -->
+                        <div class="mt-6">
+                            <h3 class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">Saved Flashcard Sets</h3>
+                            <div id="saved-sets-list" class="space-y-2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Study Mode -->
+                    <div id="study-mode" class="hidden">
+                        <!-- Set Selection -->
+                        <div id="study-select">
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Select a flashcard set to study:</p>
+                            <div id="study-set-list" class="space-y-2"></div>
+                        </div>
+                        <!-- Active Study -->
+                        <div id="study-active" class="hidden">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white" id="study-set-name"></h3>
+                                <span class="text-sm text-slate-500 dark:text-slate-400" id="card-counter"></span>
+                            </div>
+                            <div class="mb-4 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                <div id="study-progress" class="h-full bg-gradient-to-r from-brand-500 to-emerald-500 rounded-full transition-all" style="width:0%"></div>
+                            </div>
+                            <!-- Flashcard -->
+                            <div class="flashcard mx-auto max-w-lg" id="flashcard" onclick="flipCard()" style="min-height:220px">
+                                <div class="flashcard-inner" id="flashcard-inner">
+                                    <div class="flashcard-front bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-900/40 dark:to-brand-800/40 border-2 border-brand-200 dark:border-brand-700">
+                                        <div>
+                                            <p class="text-xs font-medium text-brand-500 dark:text-brand-400 mb-2 uppercase tracking-wide">Front</p>
+                                            <p class="text-lg font-semibold text-slate-800 dark:text-white" id="card-front"></p>
+                                        </div>
+                                    </div>
+                                    <div class="flashcard-back bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/40 dark:to-emerald-800/40 border-2 border-emerald-200 dark:border-emerald-700">
+                                        <div>
+                                            <p class="text-xs font-medium text-emerald-500 dark:text-emerald-400 mb-2 uppercase tracking-wide">Back</p>
+                                            <p class="text-lg font-semibold text-slate-800 dark:text-white" id="card-back"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-center text-xs text-slate-400 dark:text-slate-500 mt-3 mb-5">Click card to flip</p>
+                            <div class="flex justify-center gap-3">
+                                <button onclick="markCard('unknown')" class="px-5 py-2.5 bg-red-100 dark:bg-red-900/30 hover:bg-red-200 dark:hover:bg-red-900/50 text-red-700 dark:text-red-300 rounded-xl font-semibold text-sm transition">Don't Know</button>
+                                <button onclick="markCard('known')" class="px-5 py-2.5 bg-emerald-100 dark:bg-emerald-900/30 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 rounded-xl font-semibold text-sm transition">Know It</button>
+                            </div>
+                            <div class="flex justify-center mt-4">
+                                <button onclick="backToStudySelect()" class="text-sm text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 underline">Back to set list</button>
+                            </div>
+                        </div>
+                        <!-- Study Results -->
+                        <div id="study-results" class="hidden text-center">
+                            <div class="p-6 rounded-2xl bg-gradient-to-br from-brand-50 to-emerald-50 dark:from-brand-900/30 dark:to-emerald-900/30 border border-brand-200 dark:border-brand-800 mb-6">
+                                <p class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">Session Complete</p>
+                                <div class="grid grid-cols-2 gap-4 mt-4">
+                                    <div>
+                                        <p class="text-3xl font-bold text-emerald-600 dark:text-emerald-400" id="known-count">0</p>
+                                        <p class="text-xs text-slate-500 dark:text-slate-400">Known</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-3xl font-bold text-red-600 dark:text-red-400" id="unknown-count">0</p>
+                                        <p class="text-xs text-slate-500 dark:text-slate-400">Need Review</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-center gap-3">
+                                <button onclick="reviewUnknown()" id="review-btn" class="hidden px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-semibold text-sm transition">Review Unknown Cards</button>
+                                <button onclick="restartStudy()" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-semibold text-sm transition">Study Again</button>
+                                <button onclick="backToStudySelect()" class="px-5 py-2.5 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-xl font-semibold text-sm transition">Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>Create and Study Flashcards Online</h2>
+                <p>Our flashcard generator lets you create digital flashcards for any subject. Flashcards are one of the most effective study tools because they leverage active recall, a learning technique where you actively stimulate your memory during the learning process.</p>
+                <h3>How to Create Flashcards</h3>
+                <p>Switch to Create Cards mode, name your flashcard set, and start adding cards. Each card has a front (the question or term) and a back (the answer or definition). Add as many cards as you need and save the set for later study sessions.</p>
+                <h3>Studying with Flashcards</h3>
+                <p>In Study mode, click any card to flip it and reveal the answer. After reviewing each card, mark it as "Know It" or "Don't Know". At the end of the session, you can review only the cards you marked as unknown for focused practice.</p>
+                <h3>The Science Behind Flashcards</h3>
+                <p>Flashcards work through two key learning principles: active recall (forcing your brain to retrieve information) and spaced repetition (reviewing material at increasing intervals). By marking cards as known or unknown, you naturally implement a form of spaced repetition.</p>
+                <h3>Tips for Effective Flashcards</h3>
+                <p>Keep each card focused on a single concept. Use simple, clear language. Include examples where helpful. Review your cards regularly rather than cramming all at once. Shuffle the order to avoid memorizing the sequence rather than the content.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">How do I create flashcards?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">Switch to Create mode, give your set a name, and add cards by entering text for the front and back of each card. Click Save Set when done.</div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">How does the study mode work?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">In Study mode, click a card to flip it and reveal the answer. Mark each card as 'Known' or 'Unknown' to track your progress. Cards marked unknown will be shown again.</div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">Where are my flashcard sets saved?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">Flashcard sets are saved in your browser's localStorage. They persist between sessions without needing an account. Data stays entirely on your device.</div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">Can I study only the cards I don't know?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">Yes, after an initial pass through all cards, you can choose to review only the cards you marked as unknown for focused practice.</div>
+                </details>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="/tools/education/quiz-generator.html" class="glass-panel rounded-xl p-5 hover:shadow-lg transition group">
+                    <h3 class="font-semibold text-slate-800 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition">Quiz Generator</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Create multiple choice quizzes and test your knowledge.</p>
+                </a>
+                <a href="/tools/education/study-timer.html" class="glass-panel rounded-xl p-5 hover:shadow-lg transition group">
+                    <h3 class="font-semibold text-slate-800 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition">Study Timer</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Custom study session timer with break intervals and audio alerts.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+        let cards = [];
+        let currentSet = null;
+        let studyCards = [];
+        let studyIndex = 0;
+        let knownCount = 0;
+        let unknownCount = 0;
+        let unknownCards = [];
+        let isFlipped = false;
+
+        function switchMode(mode) {
+            document.getElementById('create-mode').classList.toggle('hidden', mode !== 'create');
+            document.getElementById('study-mode').classList.toggle('hidden', mode !== 'study');
+            document.getElementById('tab-create').className = mode === 'create' ? 'flex-1 py-2.5 rounded-lg text-sm font-semibold transition bg-brand-600 text-white shadow' : 'flex-1 py-2.5 rounded-lg text-sm font-semibold transition text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700';
+            document.getElementById('tab-study').className = mode === 'study' ? 'flex-1 py-2.5 rounded-lg text-sm font-semibold transition bg-brand-600 text-white shadow' : 'flex-1 py-2.5 rounded-lg text-sm font-semibold transition text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700';
+            if (mode === 'study') refreshStudyList();
+            if (mode === 'create') refreshSavedList();
+        }
+
+        function addCard() {
+            cards.push({ front: '', back: '' });
+            renderCards();
+        }
+
+        function removeCard(idx) {
+            cards.splice(idx, 1);
+            renderCards();
+        }
+
+        function renderCards() {
+            const container = document.getElementById('cards-container');
+            container.innerHTML = cards.map((c, i) => `
+                <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-sm font-bold text-slate-700 dark:text-slate-300">Card ${i + 1}</span>
+                        <button onclick="removeCard(${i})" class="text-red-500 hover:text-red-700 text-sm font-medium">Remove</button>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">Front (Question/Term)</label>
+                            <textarea rows="2" onchange="cards[${i}].front=this.value" placeholder="Front of card" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 outline-none resize-none">${c.front}</textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">Back (Answer/Definition)</label>
+                            <textarea rows="2" onchange="cards[${i}].back=this.value" placeholder="Back of card" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 outline-none resize-none">${c.back}</textarea>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getSavedSets() {
+            try { return JSON.parse(localStorage.getItem('optidrop_flashcards') || '[]'); } catch { return []; }
+        }
+
+        function saveSets(sets) {
+            localStorage.setItem('optidrop_flashcards', JSON.stringify(sets));
+        }
+
+        function saveSet() {
+            const name = document.getElementById('setName').value.trim();
+            if (!name) { if (typeof showToast === 'function') showToast('Please enter a set name.', 'error'); return; }
+            if (cards.length === 0) { if (typeof showToast === 'function') showToast('Please add at least one card.', 'error'); return; }
+            for (let i = 0; i < cards.length; i++) {
+                if (!cards[i].front.trim() || !cards[i].back.trim()) { if (typeof showToast === 'function') showToast(`Please fill both sides of card ${i+1}.`, 'error'); return; }
+            }
+            const sets = getSavedSets();
+            const existing = sets.findIndex(s => s.name === name);
+            const set = { name, cards: JSON.parse(JSON.stringify(cards)), created: new Date().toISOString() };
+            if (existing >= 0) sets[existing] = set; else sets.push(set);
+            saveSets(sets);
+            if (typeof showToast === 'function') showToast('Flashcard set saved!', 'success');
+            refreshSavedList();
+        }
+
+        function refreshSavedList() {
+            const sets = getSavedSets();
+            const list = document.getElementById('saved-sets-list');
+            if (sets.length === 0) { list.innerHTML = '<p class="text-sm text-slate-500 dark:text-slate-400">No saved flashcard sets yet.</p>'; return; }
+            list.innerHTML = sets.map((s, i) => `
+                <div class="flex items-center justify-between p-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                    <div>
+                        <p class="font-medium text-slate-800 dark:text-white text-sm">${s.name}</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">${s.cards.length} cards</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="loadSet(${i})" class="px-3 py-1.5 bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300 rounded-lg text-xs font-medium hover:bg-brand-200 dark:hover:bg-brand-900/50 transition">Edit</button>
+                        <button onclick="deleteSet(${i})" class="px-3 py-1.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-lg text-xs font-medium hover:bg-red-200 dark:hover:bg-red-900/50 transition">Delete</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function refreshStudyList() {
+            const sets = getSavedSets();
+            const list = document.getElementById('study-set-list');
+            if (sets.length === 0) { list.innerHTML = '<p class="text-sm text-slate-500 dark:text-slate-400">No saved flashcard sets. Create one first!</p>'; return; }
+            list.innerHTML = sets.map((s, i) => `
+                <button onclick="startStudy(${i})" class="w-full text-left p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-brand-400 dark:hover:border-brand-600 transition">
+                    <p class="font-semibold text-slate-800 dark:text-white">${s.name}</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">${s.cards.length} cards</p>
+                </button>
+            `).join('');
+        }
+
+        function loadSet(idx) {
+            const sets = getSavedSets();
+            const set = sets[idx];
+            document.getElementById('setName').value = set.name;
+            cards = JSON.parse(JSON.stringify(set.cards));
+            renderCards();
+        }
+
+        function deleteSet(idx) {
+            const sets = getSavedSets();
+            sets.splice(idx, 1);
+            saveSets(sets);
+            refreshSavedList();
+            if (typeof showToast === 'function') showToast('Flashcard set deleted.', 'success');
+        }
+
+        function clearCreateForm() {
+            document.getElementById('setName').value = '';
+            cards = [];
+            renderCards();
+        }
+
+        function startStudy(idx) {
+            const sets = getSavedSets();
+            currentSet = sets[idx];
+            studyCards = [...currentSet.cards];
+            // Shuffle
+            for (let i = studyCards.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [studyCards[i], studyCards[j]] = [studyCards[j], studyCards[i]]; }
+            studyIndex = 0;
+            knownCount = 0;
+            unknownCount = 0;
+            unknownCards = [];
+            isFlipped = false;
+
+            document.getElementById('study-select').classList.add('hidden');
+            document.getElementById('study-active').classList.remove('hidden');
+            document.getElementById('study-results').classList.add('hidden');
+            document.getElementById('study-set-name').textContent = currentSet.name;
+
+            showCurrentCard();
+        }
+
+        function showCurrentCard() {
+            const card = studyCards[studyIndex];
+            document.getElementById('card-front').textContent = card.front;
+            document.getElementById('card-back').textContent = card.back;
+            document.getElementById('card-counter').textContent = `${studyIndex + 1} of ${studyCards.length}`;
+            document.getElementById('study-progress').style.width = ((studyIndex) / studyCards.length * 100) + '%';
+            // Reset flip
+            isFlipped = false;
+            document.getElementById('flashcard').classList.remove('flipped');
+        }
+
+        function flipCard() {
+            isFlipped = !isFlipped;
+            document.getElementById('flashcard').classList.toggle('flipped', isFlipped);
+        }
+
+        function markCard(status) {
+            if (status === 'known') knownCount++;
+            else { unknownCount++; unknownCards.push(studyCards[studyIndex]); }
+            studyIndex++;
+            if (studyIndex >= studyCards.length) {
+                showResults();
+            } else {
+                showCurrentCard();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('study-active').classList.add('hidden');
+            document.getElementById('study-results').classList.remove('hidden');
+            document.getElementById('known-count').textContent = knownCount;
+            document.getElementById('unknown-count').textContent = unknownCount;
+            document.getElementById('study-progress').style.width = '100%';
+            const reviewBtn = document.getElementById('review-btn');
+            if (unknownCards.length > 0) reviewBtn.classList.remove('hidden');
+            else reviewBtn.classList.add('hidden');
+        }
+
+        function reviewUnknown() {
+            studyCards = [...unknownCards];
+            studyIndex = 0;
+            knownCount = 0;
+            unknownCount = 0;
+            unknownCards = [];
+            isFlipped = false;
+            document.getElementById('study-results').classList.add('hidden');
+            document.getElementById('study-active').classList.remove('hidden');
+            showCurrentCard();
+        }
+
+        function restartStudy() {
+            startStudy(getSavedSets().findIndex(s => s.name === currentSet.name));
+        }
+
+        function backToStudySelect() {
+            document.getElementById('study-select').classList.remove('hidden');
+            document.getElementById('study-active').classList.add('hidden');
+            document.getElementById('study-results').classList.add('hidden');
+            currentSet = null;
+            refreshStudyList();
+        }
+
+        renderCards();
+        refreshSavedList();
+    </script>
+</body>
+</html>

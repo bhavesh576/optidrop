@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Habit Tracker | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2"><link rel="shortcut icon" href="/favicon.png?v=2"><link rel="apple-touch-icon" href="/favicon.png?v=2"><meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Track your daily habits with this simple habit tracker. Monitor streaks, see completion percentages, and build better routines. Data stored locally."><meta name="keywords" content="habit tracker, daily habits, streak tracker, routine tracker, habit builder"><meta name="author" content="OptiDrop"><meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Simple Habit Tracker | OptiDrop"><meta property="og:description" content="Track daily habits, monitor streaks, and build better routines. 100% private."><meta property="og:type" content="website"><meta property="og:url" content="https://optidrop.online/tools/utility/habit-tracker-simple.html"><meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Simple Habit Tracker | OptiDrop"><meta name="twitter:description" content="Track daily habits, monitor streaks, and build better routines.">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/habit-tracker-simple.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Utility Tools","item":"https://optidrop.online/category/utility-tools.html"},{"@type":"ListItem","position":3,"name":"Simple Habit Tracker","item":"https://optidrop.online/tools/utility/habit-tracker-simple.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Simple Habit Tracker","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Track daily habits with streaks and completion percentages."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the habit tracker work?","acceptedAnswer":{"@type":"Answer","name":"Add your habits, then check off each day as you complete them. The tracker shows your current week, streak count for each habit, and overall completion percentage. All data is saved in your browser."}},{"@type":"Question","name":"Is my data saved?","acceptedAnswer":{"@type":"Answer","name":"Yes, all habit data is saved to your browser's local storage. It persists between sessions but is tied to your specific browser. Clearing browser data will remove your habits."}},{"@type":"Question","name":"How is the streak calculated?","acceptedAnswer":{"@type":"Answer","name":"A streak counts consecutive days a habit was completed. If you miss a day, the streak resets. The tracker shows your current streak for each habit."}},{"@type":"Question","name":"Can I track multiple habits?","acceptedAnswer":{"@type":"Answer","name":"Yes, you can add as many habits as you like. Each habit gets its own row in the weekly grid with individual checkboxes for each day and its own streak counter."}}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header"><div class="header-inner"><a href="/" class="logo-text">Opti<span>Drop</span></a><nav class="header-nav"><a href="/" class="back-link"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>All Tools</a><span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span><button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav></div><nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a></nav></header>
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Simple Habit Tracker</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Track your daily habits, monitor streaks, and build better routines. All data is stored locally in your browser for complete privacy.</p>
+        </section>
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="flex gap-3 mb-6">
+                        <input type="text" id="habitInput" placeholder="Add a new habit (e.g. Exercise, Read, Meditate)" class="flex-1 px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-brand-500 outline-none">
+                        <button onclick="addHabit()" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition-colors">Add</button>
+                    </div>
+                    <div id="statsBar" class="hidden grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-xl p-4 text-center">
+                            <div class="text-sm text-blue-600 dark:text-blue-400 font-semibold">Total Habits</div>
+                            <div id="totalHabits" class="text-2xl font-extrabold text-slate-900 dark:text-white">0</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-xl p-4 text-center">
+                            <div class="text-sm text-green-600 dark:text-green-400 font-semibold">Today's Progress</div>
+                            <div id="todayProgress" class="text-2xl font-extrabold text-slate-900 dark:text-white">0%</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-xl p-4 text-center">
+                            <div class="text-sm text-purple-600 dark:text-purple-400 font-semibold">Week Progress</div>
+                            <div id="weekProgress" class="text-2xl font-extrabold text-slate-900 dark:text-white">0%</div>
+                        </div>
+                    </div>
+                    <div id="habitsContainer" class="overflow-x-auto">
+                        <div id="emptyState" class="text-center py-12 text-slate-400">
+                            <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <p class="text-lg mb-2">No habits added yet</p>
+                            <p class="text-sm">Add your first habit above to start tracking</p>
+                        </div>
+                        <table id="habitsTable" class="hidden w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-slate-200 dark:border-slate-700">
+                                    <th class="text-left py-3 px-2 font-semibold text-slate-700 dark:text-slate-300 min-w-[140px]">Habit</th>
+                                    <th class="text-center py-3 px-1 font-semibold text-slate-700 dark:text-slate-300" id="day0">Mon</th>
+                                    <th class="text-center py-3 px-1 font-semibold text-slate-700 dark:text-slate-300" id="day1">Tue</th>
+                                    <th class="text-center py-3 px-1 font-semibold text-slate-700 dark:text-slate-300" id="day2">Wed</th>
+                                    <th class="text-center py-3 px-1 font-semibold text-slate-700 dark:text-slate-300" id="day3">Thu</th>
+                                    <th class="text-center py-3 px-1 font-semibold text-slate-700 dark:text-slate-300" id="day4">Fri</th>
+                                    <th class="text-center py-3 px-1 font-semibold text-slate-700 dark:text-slate-300" id="day5">Sat</th>
+                                    <th class="text-center py-3 px-1 font-semibold text-slate-700 dark:text-slate-300" id="day6">Sun</th>
+                                    <th class="text-center py-3 px-2 font-semibold text-slate-700 dark:text-slate-300">Streak</th>
+                                    <th class="py-3 px-1"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="habitsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">About Habit Tracker</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Building good habits is one of the most powerful ways to improve your life. This simple habit tracker helps you stay accountable by showing your daily progress, weekly completion rate, and current streak for each habit.</p>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">The tracker displays the current week (Monday through Sunday) with checkboxes for each day. Check off habits as you complete them and watch your streaks grow. The stats bar shows your overall progress at a glance.</p>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">All your data is stored locally in your browser using localStorage. This means your habits and progress are private and persist between sessions. No account needed, no data sent to any server.</p>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 mt-6">Tips for Building Habits</h3>
+                <p class="text-slate-600 dark:text-slate-400">Start small with 1-3 habits. Be specific (e.g., "Read 10 pages" instead of "Read more"). Track consistently and celebrate streaks. If you miss a day, don't break the chain twice - get back on track immediately.</p>
+            </div>
+        </section>
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">How does the habit tracker work?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">Add your habits, then check off each day as you complete them. The tracker shows your current week, streak count for each habit, and overall completion percentage. All data is saved in your browser.</p></details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">Is my data saved?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">Yes, all habit data is saved to your browser's local storage. It persists between sessions but is tied to your specific browser. Clearing browser data will remove your habits.</p></details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">How is the streak calculated?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">A streak counts consecutive days a habit was completed. If you miss a day, the streak resets. The tracker shows your current streak for each habit.</p></details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">Can I track multiple habits?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">Yes, you can add as many habits as you like. Each habit gets its own row in the weekly grid with individual checkboxes for each day and its own streak counter.</p></details>
+            </div>
+        </section>
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/utility/pomodoro-timer.html" class="block p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"><div class="font-semibold text-slate-900 dark:text-white">Pomodoro Timer</div><div class="text-sm text-slate-500 dark:text-slate-400 mt-1">Focus with timed sessions</div></a>
+                <a href="/tools/utility/study-timer.html" class="block p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"><div class="font-semibold text-slate-900 dark:text-white">Study Timer</div><div class="text-sm text-slate-500 dark:text-slate-400 mt-1">Track study sessions</div></a>
+                <a href="/tools/utility/date-calculator.html" class="block p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"><div class="font-semibold text-slate-900 dark:text-white">Date Calculator</div><div class="text-sm text-slate-500 dark:text-slate-400 mt-1">Calculate date differences</div></a>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    var habits=[];
+    var STORAGE_KEY='habitTrackerData';
+    var DAY_NAMES=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+
+    function getWeekDates(){
+        var now=new Date();
+        var day=now.getDay();
+        var diff=day===0?6:day-1;
+        var monday=new Date(now);
+        monday.setDate(now.getDate()-diff);
+        monday.setHours(0,0,0,0);
+        var dates=[];
+        for(var i=0;i<7;i++){
+            var d=new Date(monday);
+            d.setDate(monday.getDate()+i);
+            dates.push(d);
+        }
+        return dates;
+    }
+
+    function dateKey(d){
+        return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    }
+
+    function loadData(){
+        try{
+            var data=localStorage.getItem(STORAGE_KEY);
+            if(data) habits=JSON.parse(data);
+        }catch(e){ habits=[]; }
+    }
+
+    function saveData(){
+        localStorage.setItem(STORAGE_KEY,JSON.stringify(habits));
+    }
+
+    function addHabit(){
+        var name=document.getElementById('habitInput').value.trim();
+        if(!name) return showToast('Please enter a habit name','error');
+        if(habits.some(function(h){return h.name===name;})) return showToast('This habit already exists','error');
+        habits.push({name:name,completed:{}});
+        document.getElementById('habitInput').value='';
+        saveData();
+        render();
+        showToast('Habit added!','success');
+    }
+
+    function removeHabit(idx){
+        if(!confirm('Remove "'+habits[idx].name+'" and all its data?')) return;
+        habits.splice(idx,1);
+        saveData();
+        render();
+        showToast('Habit removed','success');
+    }
+
+    function toggleDay(habitIdx,dayIdx){
+        var weekDates=getWeekDates();
+        var key=dateKey(weekDates[dayIdx]);
+        var habit=habits[habitIdx];
+        if(habit.completed[key]){
+            delete habit.completed[key];
+        } else {
+            habit.completed[key]=true;
+        }
+        saveData();
+        render();
+    }
+
+    function getStreak(habit){
+        var streak=0;
+        var d=new Date();
+        d.setHours(0,0,0,0);
+        while(true){
+            var key=dateKey(d);
+            if(habit.completed[key]){
+                streak++;
+                d.setDate(d.getDate()-1);
+            } else {
+                break;
+            }
+        }
+        return streak;
+    }
+
+    function render(){
+        var weekDates=getWeekDates();
+        var today=dateKey(new Date());
+        var todayDayIdx=new Date().getDay();
+        todayDayIdx=todayDayIdx===0?6:todayDayIdx-1;
+
+        for(var i=0;i<7;i++){
+            var el=document.getElementById('day'+i);
+            el.textContent=DAY_NAMES[i]+' '+weekDates[i].getDate();
+            if(dateKey(weekDates[i])===today){
+                el.classList.add('text-brand-600','dark:text-brand-400');
+            } else {
+                el.classList.remove('text-brand-600','dark:text-brand-400');
+            }
+        }
+
+        if(habits.length===0){
+            document.getElementById('emptyState').classList.remove('hidden');
+            document.getElementById('habitsTable').classList.add('hidden');
+            document.getElementById('statsBar').classList.add('hidden');
+            return;
+        }
+
+        document.getElementById('emptyState').classList.add('hidden');
+        document.getElementById('habitsTable').classList.remove('hidden');
+        document.getElementById('statsBar').classList.remove('hidden');
+
+        var body=document.getElementById('habitsBody');
+        var html='';
+        habits.forEach(function(habit,hi){
+            var streak=getStreak(habit);
+            html+='<tr class="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">';
+            html+='<td class="py-3 px-2 font-semibold text-slate-900 dark:text-white">'+habit.name+'</td>';
+            for(var d=0;d<7;d++){
+                var key=dateKey(weekDates[d]);
+                var checked=habit.completed[key]?true:false;
+                var isFuture=weekDates[d]>new Date()&&dateKey(weekDates[d])!==today;
+                html+='<td class="text-center py-3 px-1">';
+                if(isFuture){
+                    html+='<span class="inline-block w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800"></span>';
+                } else {
+                    html+='<button onclick="toggleDay('+hi+','+d+')" class="inline-flex items-center justify-center w-8 h-8 rounded-lg transition-colors '+(checked?'bg-green-500 text-white':'bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600')+'">';
+                    if(checked) html+='<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>';
+                    html+='</button>';
+                }
+                html+='</td>';
+            }
+            html+='<td class="text-center py-3 px-2">';
+            if(streak>0){
+                html+='<span class="inline-flex items-center gap-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 text-xs font-bold px-2 py-1 rounded-full">🔥 '+streak+'</span>';
+            } else {
+                html+='<span class="text-xs text-slate-400">0</span>';
+            }
+            html+='</td>';
+            html+='<td class="py-3 px-1"><button onclick="removeHabit('+hi+')" class="text-red-400 hover:text-red-600 p-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></td>';
+            html+='</tr>';
+        });
+        body.innerHTML=html;
+
+        document.getElementById('totalHabits').textContent=habits.length;
+
+        var todayDone=0;
+        habits.forEach(function(h){
+            if(h.completed[today]) todayDone++;
+        });
+        var todayPct=habits.length>0?Math.round((todayDone/habits.length)*100):0;
+        document.getElementById('todayProgress').textContent=todayDone+'/'+habits.length+' ('+todayPct+'%)';
+
+        var totalChecks=0;
+        var totalPossible=0;
+        habits.forEach(function(h){
+            weekDates.forEach(function(d){
+                var key=dateKey(d);
+                if(dateKey(d)<=today){
+                    totalPossible++;
+                    if(h.completed[key]) totalChecks++;
+                }
+            });
+        });
+        var weekPct=totalPossible>0?Math.round((totalChecks/totalPossible)*100):0;
+        document.getElementById('weekProgress').textContent=weekPct+'%';
+    }
+
+    document.getElementById('habitInput').addEventListener('keydown',function(e){if(e.key==='Enter')addHabit();});
+
+    loadData();
+    render();
+    </script>
+</body>
+</html>

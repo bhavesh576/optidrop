@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagram Solver | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2"><link rel="shortcut icon" href="/favicon.png?v=2"><link rel="apple-touch-icon" href="/favicon.png?v=2"><meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Find all valid anagrams of any word instantly. Free online anagram solver with a built-in dictionary of thousands of common English words."><meta name="keywords" content="anagram solver, anagram finder, word anagram, anagram generator, unscramble letters, word unscrambler"><meta name="author" content="OptiDrop"><meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Anagram Solver | OptiDrop"><meta property="og:description" content="Find all valid anagrams of any word instantly. Free online anagram solver."><meta property="og:type" content="website"><meta property="og:url" content="https://optidrop.online/tools/text/anagram-solver.html"><meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Anagram Solver | OptiDrop"><meta name="twitter:description" content="Find all valid anagrams of any word instantly. Free online anagram solver.">
+    <link rel="canonical" href="https://optidrop.online/tools/text/anagram-solver.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Text Tools","item":"https://optidrop.online/category/text-tools.html"},{"@type":"ListItem","position":3,"name":"Anagram Solver","item":"https://optidrop.online/tools/text/anagram-solver.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Anagram Solver","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online anagram solver that finds all valid anagrams from a built-in English dictionary."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an anagram?","acceptedAnswer":{"@type":"Answer","text":"An anagram is a word or phrase formed by rearranging the letters of another word or phrase. For example, 'listen' is an anagram of 'silent'."}},{"@type":"Question","name":"How many letters can I input?","acceptedAnswer":{"@type":"Answer","text":"The anagram solver accepts words with 2 to 8 letters. Longer inputs may take more time to process due to the large number of permutations."}},{"@type":"Question","name":"Where does the dictionary come from?","acceptedAnswer":{"@type":"Answer","text":"We use a built-in dictionary of over 2000 common English words to find valid anagrams. All processing happens in your browser for privacy."}},{"@type":"Question","name":"Is my text data stored or shared?","acceptedAnswer":{"@type":"Answer","text":"No. All text processing happens entirely in your browser. Your text is never sent to any server, never stored anywhere, and never leaves your device. This makes it safe for sensitive documents and personal content."}}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header"><div class="header-inner"><a href="/" class="logo-text">Opti<span>Drop</span></a><nav class="header-nav"><a href="/" class="back-link"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>All Tools</a><span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span><button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav></div><nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a></nav></header>
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center"><h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Anagram Solver</h1><p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Find all valid anagrams of any word. Enter a word (2-8 letters) and discover all the real words that can be formed by rearranging its letters.</p></section>
+        <section class="max-w-4xl mx-auto px-4 pb-8"><div class="glass-panel rounded-3xl shadow-xl overflow-hidden"><div class="p-6 sm:p-10">
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Enter a word (2-8 letters)</label>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <input id="inputWord" type="text" class="flex-1 px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none text-lg" placeholder="e.g., listen" maxlength="8" autocomplete="off">
+                <button onclick="findAnagrams()" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl transition-colors whitespace-nowrap">Find Anagrams</button>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Enter letters only, no spaces or special characters. Maximum 8 letters.</p>
+
+            <!-- Results -->
+            <div id="results" class="mt-6 hidden">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-lg font-semibold text-slate-800 dark:text-white">Anagrams Found</h3>
+                    <span id="count" class="text-sm text-slate-500 dark:text-slate-400"></span>
+                </div>
+                <div id="anagramList" class="flex flex-wrap gap-2"></div>
+                <div id="noResults" class="hidden text-center py-8">
+                    <svg class="w-12 h-12 mx-auto text-slate-300 dark:text-slate-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <p class="text-slate-500 dark:text-slate-400">No anagrams found for this word.</p>
+                    <p class="text-sm text-slate-400 dark:text-slate-500 mt-1">Try a different word or check your spelling.</p>
+                </div>
+            </div>
+        </div></div></section>
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+        <section class="max-w-4xl mx-auto px-4 py-8"><div class="prose max-w-none">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">About the Anagram Solver</h2>
+            <p class="text-slate-600 dark:text-slate-400 mb-4">Our anagram solver uses a built-in dictionary of over 2000 common English words to find all valid anagrams of your input word. Simply enter a word with 2-8 letters and click "Find Anagrams" to see all the words that can be formed by rearranging its letters.</p>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">What is an Anagram?</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-4">An anagram is a word or phrase formed by rearranging the letters of another word or phrase, using all the original letters exactly once. For example, "listen" and "silent" are anagrams of each other, as are "earth" and "heart".</p>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Famous Anagram Examples</h3>
+            <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2">
+                <li><strong>Astronomer</strong> = Moon starer</li>
+                <li><strong>Slot machines</strong> = Cash lost in me</li>
+                <li><strong>The eyes</strong> = They see</li>
+                <li><strong>Dormitory</strong> = Dirty room</li>
+                <li><strong>Eleven plus two</strong> = Twelve plus one</li>
+            </ul>
+        </div></section>
+        <section class="max-w-3xl mx-auto px-4 py-8"><h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2><div class="space-y-3">
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">What is an anagram?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">An anagram is a word or phrase formed by rearranging the letters of another word or phrase. For example, 'listen' is an anagram of 'silent'.</div></details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">How many letters can I input?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">The anagram solver accepts words with 2 to 8 letters. Longer inputs may take more time to process due to the large number of permutations.</div></details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">Where does the dictionary come from?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">We use a built-in dictionary of over 2000 common English words to find valid anagrams. All processing happens in your browser for 100% privacy.</div></details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">Is my text data stored or shared?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">No. All text processing happens entirely in your browser. Your text is never sent to any server, never stored anywhere, and never leaves your device. This makes it safe for sensitive documents and personal content.</div></details>
+        </div></section>
+        <section class="max-w-4xl mx-auto px-4 py-8"><h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 text-center">Related Tools</h2><div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <a href="/tools/text/word-frequency.html" class="block p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors bg-white dark:bg-slate-800"><h3 class="font-semibold text-slate-800 dark:text-white">Word Frequency</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Analyze word frequency in text</p></a>
+            <a href="/tools/text/text-repeater.html" class="block p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors bg-white dark:bg-slate-800"><h3 class="font-semibold text-slate-800 dark:text-white">Text Repeater</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Repeat text multiple times</p></a>
+            <a href="/tools/text/random-name-generator.html" class="block p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors bg-white dark:bg-slate-800"><h3 class="font-semibold text-slate-800 dark:text-white">Random Name Generator</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Generate random names instantly</p></a>
+        </div></section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+        // Built-in dictionary of ~2000 common English words
+        const DICTIONARY = new Set([
+            "a","ab","ace","act","add","age","ago","aid","aim","air","all","and","ant","any","ape","arc","are","ark","arm","art","ash","ask","ate","awe","axe",
+            "bad","bag","ban","bar","bat","bay","bed","bee","bet","big","bit","bow","box","boy","bud","bug","bun","bus","but","buy",
+            "cab","can","cap","car","cat","cop","cow","cry","cub","cup","cut",
+            "dad","dam","day","den","dew","did","dig","dim","dip","dog","dot","dry","dub","dud","due","dug","dun","duo","dye",
+            "ear","eat","eel","egg","ego","elm","emu","end","era","eve","ewe","eye",
+            "fad","fan","far","fat","fax","fed","fee","few","fig","fin","fir","fit","fix","fly","foe","fog","for","fox","fry","fun","fur",
+            "gag","gap","gas","gem","get","gin","gig","gnu","god","got","gum","gun","gut","guy","gym",
+            "had","ham","has","hat","hay","hen","her","hid","him","hip","his","hit","hob","hog","hop","hot","how","hub","hue","hug","hum","hut",
+            "ice","icy","ill","imp","ink","inn","ion","ire","irk","ivy",
+            "jab","jag","jam","jar","jaw","jay","jet","jig","job","jog","joy","jug","jut",
+            "keg","key","kid","kin","kit",
+            "lab","lad","lag","lap","law","lay","lea","led","leg","let","lid","lie","lip","lit","log","lot","low","lug",
+            "mad","man","map","mar","mat","maw","may","men","met","mid","mix","mob","mod","mom","mop","mow","mud","mug","mum","mus","mut",
+            "nab","nag","nap","net","new","nil","nip","nit","nod","nor","not","now","nub","nun","nut",
+            "oak","oar","oat","odd","ode","off","oft","ohm","oil","old","one","opt","orb","ore","our","out","owe","owl","own",
+            "pad","pal","pan","pap","par","pat","paw","pay","pea","peg","pen","pep","per","pet","pie","pig","pin","pit","ply","pod","pop","pot","pow","pro","pry","pub","pug","pun","pup","pus","put",
+            "rag","ram","ran","rap","rat","raw","ray","red","ref","rib","rid","rig","rim","rip","rob","rod","roe","rot","row","rub","rug","rum","run","rut","rye",
+            "sac","sad","sag","sap","sat","saw","say","sea","set","sew","she","shy","sin","sip","sir","sis","sit","six","ski","sky","sly","sob","sod","son","sop","sot","sow","soy","spa","spy","sty","sub","sue","sum","sun","sup",
+            "tab","tad","tag","tan","tap","tar","tat","tax","tea","ten","the","thy","tie","tin","tip","toe","ton","too","top","tot","tow","toy","try","tub","tug","two",
+            "ugh","urn","use",
+            "van","vat","vet","vex","via","vie","vim","vow",
+            "wad","wag","war","was","wax","way","web","wed","wet","who","why","wig","win","wit","woe","wok","won","woo","wow",
+            "yak","yam","yap","yaw","yea","yes","yet","yew","you","yow",
+            "zap","zed","zen","zig","zip","zoo",
+            "able","ache","acid","acre","aged","aide","ally","also","arch","area","army","aunt","auto","avid","away","axle",
+            "back","bait","bake","bald","ball","band","bane","bang","bank","bare","bark","barn","base","bash","bass","bath","bead","beak","beam","bean","bear","beat","been","beer","bell","belt","bend","best","bile","bill","bind","bird","bite","blow","blue","blur","boar","boat","body","bold","bolt","bomb","bond","bone","book","boom","boot","bore","born","boss","both","bout","bowl","bulk","bull","bump","bunk","burn","bury","bush","bust","busy","buzz",
+            "cafe","cage","cake","calf","call","calm","came","camp","cane","cape","card","care","carp","cart","case","cash","cast","cave","cell","chat","chef","chin","chip","chop","cite","city","clad","clam","clan","clap","claw","clay","clip","clod","clog","club","clue","coal","coat","code","coil","coin","cold","colt","comb","come","cone","cook","cool","cope","copy","cord","core","cork","corn","cost","cosy","coup","cove","cozy","crab","crib","crop","crow","cube","cuff","cult","curb","cure","curl","cute",
+            "dale","dame","damp","dare","dark","dart","dash","data","date","dawn","dead","deaf","deal","dear","deck","deed","deem","deep","deer","demo","dent","deny","desk","dial","dice","dime","dine","dire","dirt","disc","dish","dock","does","dome","done","doom","door","dose","down","drag","draw","drip","drop","drum","dual","duck","dude","duel","duke","dull","dumb","dump","dune","dung","dunk","dusk","dust","duty",
+            "each","earn","ease","east","easy","edge","edit","evil","exam","exit","eyed",
+            "face","fact","fade","fail","fair","fake","fall","fame","fang","fare","farm","fast","fate","fear","feat","feed","feel","feet","fell","felt","fern","file","fill","film","find","fine","fire","firm","fish","fist","five","flag","flap","flat","flaw","flea","fled","flew","flex","flip","flit","flog","flow","foam","foil","fold","folk","fond","font","food","fool","foot","ford","fore","fork","form","fort","foul","four","fowl","free","frog","from","fuel","full","fume","fund","furl","fury","fuse","fuss","fuzz",
+            "gait","gale","gall","game","gang","gape","garb","gate","gave","gaze","gear","gift","gild","gilt","glad","glee","glen","glib","glob","glow","glue","glum","gnat","gnaw","goat","goes","gold","golf","gone","good","gore","gory","grab","gram","gray","grew","grid","grim","grin","grip","grit","grow","gulf","gust","guts",
+            "hack","hail","hair","hale","half","hall","halt","hand","hang","hare","harm","harp","hash","haste","hate","haul","have","haze","hazy","head","heal","heap","hear","heat","heed","heel","held","helm","help","herb","herd","here","hero","hide","high","hike","hill","hilt","hind","hint","hire","hiss","hive","hoax","hold","hole","home","hone","hood","hook","hoop","hope","horn","hose","host","hour","howl","huge","hull","hump","hung","hunt","hurl","hurt","hush","hymn",
+            "icon","idea","idle","inch","into","iron","isle","itch",
+            "jack","jade","jail","jake","jamb","jape","java","jazz","jean","jeer","jerk","jest","jilt","jinx","jive","join","joke","jolt","jump","june","junk","jury","just","jute",
+            "keen","keep","kelp","kept","kick","kill","kind","king","kiss","kite","knack","knee","knew","knit","knob","knot","know",
+            "lace","lack","lacy","laid","lair","lake","lamb","lame","lamp","land","lane","lard","lark","lash","lass","last","late","lawn","lazy","lead","leaf","leak","lean","leap","left","lend","lens","lent","less","liar","lick","lied","lieu","life","lift","like","limb","lime","limp","line","link","lion","list","live","load","loaf","loam","loan","lock","loft","lone","long","look","loom","loop","lord","lore","lose","loss","lost","loud","love","luck","lull","lump","lure","lurk","lush","lust",
+            "mace","made","mage","maid","mail","main","make","male","mall","malt","mane","many","mare","mark","mars","mash","mask","mass","mast","mate","math","maze","mead","meal","mean","meat","meet","meld","melt","memo","mend","menu","mere","mesh","mess","mild","mile","milk","mill","mime","mind","mine","mint","mire","miss","mist","mite","mitt","moan","moat","mock","mode","mold","mole","molt","monk","mood","moon","moor","more","morn","moss","most","moth","move","much","muck","mule","mull","murk","muse","mush","musk","must","mute",
+            "nail","name","nape","navy","near","neat","neck","need","nest","news","next","nice","nick","nine","node","none","noon","norm","nose","note","noun","nude","numb",
+            "oath","obey","odds","odor","ogre","okay","omen","omit","once","only","onto","ooze","open","oral","orca","over","oven","owed","oxen",
+            "pace","pack","pact","page","paid","pail","pain","pair","pale","palm","pane","pang","pant","pare","park","part","pass","past","path","pave","pawn","peak","peal","pear","peat","peck","peel","peer","pelt","pend","pent","perk","pest","pick","pier","pike","pile","pill","pine","pink","pipe","pith","pity","plan","plat","play","plea","plod","plot","plow","ploy","plug","plum","plus","pock","poem","poet","poke","pole","poll","polo","pomp","pond","pool","poor","pope","pore","pork","port","pose","post","pour","pout","pray","prep","prey","prod","prop","prow","prry","puck","pull","pulp","pump","punk","pure","push","puke",
+            "quad","quay","quiz",
+            "race","rack","raft","rage","raid","rail","rain","rake","ramp","rang","rank","rant","rash","rasp","rate","rave","raze","read","real","ream","reap","rear","reed","reef","reel","rein","rely","rend","rent","rest","rich","ride","rift","rile","rill","rind","ring","riot","ripe","rise","risk","road","roam","roar","robe","rock","rode","role","roll","roof","room","root","rope","rose","rosy","rote","rout","rove","rude","ruin","rule","rump","rung","ruse","rush","rust",
+            "sack","safe","sage","said","sail","sake","sale","salt","same","sand","sane","sang","sank","sash","save","scar","seal","seam","sear","seat","sect","seed","seek","seem","seen","self","sell","send","sent","sept","sewn","shed","shim","shin","ship","shoe","shoo","shop","shot","show","shut","sick","side","sift","sigh","sign","silk","sill","silo","silt","sing","sink","sire","site","size","slab","slag","slam","slap","slat","slaw","slay","sled","slew","slid","slim","slip","slit","slob","slop","slot","slow","slug","slum","slur","smog","snap","snag","snip","snit","snob","snow","snub","snug","soak","soap","soar","sock","soda","sofa","soft","soil","sold","sole","some","song","soon","soot","sore","sort","soul","sour","span","spar","spat","spec","sped","spin","spit","spot","spry","spur","stab","stag","star","stay","stem","step","stew","stir","stop","stub","stud","stun","such","suck","suit","sulk","sure","surf","swan","swap","swim","swum",
+            "tack","tact","tail","take","tale","talk","tall","tame","tank","tape","tarn","tart","task","taxi","teak","teal","team","tear","tell","temp","tend","tent","term","test","text","than","that","them","then","they","thin","this","thud","tick","tide","tidy","tied","tier","tile","till","tilt","time","tine","tiny","tire","toad","toil","told","toll","tomb","tome","tone","took","tool","tops","tore","torn","toss","tour","town","trap","tray","tree","trek","trim","trio","trip","trod","trot","true","tube","tuck","tuff","tuft","tuna","tune","turf","turn","tusk","tutu","twig","twin","twit","type",
+            "ugly","undo","unit","unto","upon","urge","used","user",
+            "vain","vale","vane","vary","vase","vast","veil","vein","vent","verb","very","vest","veto","vial","vice","vied","view","vile","vine","visa","void","vole","volt","vote","vied",
+            "wade","wage","wail","wait","wake","walk","wall","wand","want","ward","warm","warn","warp","wart","wary","wash","wasp","wave","wavy","waxy","weak","wean","wear","weed","week","well","welt","went","were","west","what","when","whim","whip","whom","wick","wide","wife","wild","will","wilt","wily","wimp","wind","wine","wing","wink","wipe","wire","wise","wish","wisp","with","wits","woke","wolf","womb","wood","woof","wool","word","wore","work","worm","worn","wove","wrap","wren","writ",
+            "yank","yard","yarn","year","yell","yelp","yoga","yoke","yore","your",
+            "zeal","zero","zest","zinc","zone","zoom",
+            "abort","about","above","abuse","actor","acute","adapt","admit","adopt","adult","after","again","agent","agile","agree","alarm","album","alert","alien","align","alive","alley","allow","alone","along","alter","among","ample","angel","anger","angle","angry","anime","ankle","annex","antic","apart","apple","apply","arena","argue","arise","armor","array","arrow","aside","asset","attic","audio","audit","avoid","awake","aware","awful",
+            "badge","badly","baker","bases","basic","basin","basis","batch","beach","began","begin","being","below","bench","berry","bible","birth","black","blade","blame","bland","blank","blast","blaze","bleak","bleed","blend","bless","blind","block","blond","blood","bloom","blown","blues","bluff","board","boast","bonus","booth","bound","brace","brain","brand","brave","bread","break","breed","brick","bride","brief","bring","broad","broke","brook","brown","brush","buddy","build","built","bunch","burst","buyer",
+            "cabin","cable","candy","cards","carry","catch","cause","chain","chair","chalk","chaos","charm","chase","cheap","check","cheek","cheer","chess","chest","chief","child","chill","china","chord","chose","chunk","civil","claim","clash","class","clean","clear","clerk","click","cliff","climb","cling","clock","clone","close","cloth","cloud","coach","coast","color","comes","coral","count","couch","could","court","cover","crack","craft","crane","crash","crazy","cream","creek","crime","crisp","cross","crowd","crown","cruel","crush","curve","cycle",
+            "daily","dance","dealt","death","debug","debut","decay","decor","decoy","delay","delta","dense","depot","depth","derby","desks","detox","devil","diary","dirty","disco","dodge","doing","donor","doubt","dough","draft","drain","drama","drank","drape","drawn","dream","dress","dried","drift","drill","drink","drive","drops","drove","drugs","drums","drunk","dryer","dying",
+            "eager","eagle","early","earth","eight","elect","elite","email","ember","empty","enemy","enjoy","enter","entry","equal","equip","error","essay","event","every","exact","exert","exile","exist","extra",
+            "fable","facet","faith","false","fancy","fatal","fault","feast","fence","ferry","fetch","fever","fewer","fiber","field","fiery","fifth","fifty","fight","filed","final","first","fixed","flame","flash","fleet","flesh","flies","float","flock","flood","floor","flora","flour","fluid","flush","flute","focus","force","forge","forth","forum","found","frame","frank","fraud","fresh","front","frost","fruit","fully","funds","funny",
+            "gamma","gauge","given","glare","glass","gleam","glide","globe","gloom","glory","gloss","glove","goals","goose","gorge","grace","grade","grain","grand","grant","graph","grasp","grass","grave","great","greed","green","greet","grief","grind","groom","gross","group","grove","grown","guard","guess","guest","guide","guild","guilt","guise",
+            "happy","harsh","haste","haunt","haven","heart","heavy","hedge","heist","herbs","hobby","honor","hoped","horse","hotel","house","hover","human","humor","hurry",
+            "ideal","image","imply","inbox","index","indie","inner","input","issue","ivory",
+            "jewel","joint","joker","judge","juice","juicy",
+            "karma","kayak","knife","knock","knelt",
+            "label","lance","large","laser","latch","later","laugh","layer","learn","lease","leave","legal","lemon","level","light","limit","linen","liver","llama","local","lodge","logic","login","loose","lover","lower","loyal","lucky","lunar","lunch","lying",
+            "magic","major","maker","manor","maple","march","marry","match","maybe","mayor","media","mercy","merge","merit","metal","meter","might","minor","minus","model","money","month","moral","motif","motor","mount","mouse","mouth","movie","music","myths",
+            "naive","named","naval","nerve","never","newly","night","noble","noise","north","noted","novel","nurse","nylon",
+            "oasis","occur","ocean","offer","often","olive","onset","opera","orbit","order","organ","other","outer","owned","owner",
+            "paint","panel","panic","paper","patch","pause","peace","peach","pedal","penny","phase","photo","piano","piece","pilot","pinch","pitch","pixel","pizza","place","plaid","plain","plane","plank","plant","plate","plaza","plead","pluck","plumb","plume","plump","point","polar","pound","power","press","price","pride","prime","print","prior","prize","probe","prone","proof","prose","prove","psalm","pulse","punch","pupil","purse","puppy",
+            "queen","query","quest","queue","quick","quiet","quirk","quota","quote",
+            "radar","radio","raise","rally","range","rapid","ratio","reach","react","ready","realm","rebel","refer","reign","relax","relay","renal","renew","repay","reply","rider","ridge","rifle","right","rigid","risky","rival","river","robin","robot","rocky","rogue","roman","roots","rouge","rough","round","route","royal","rugby","ruler","rural",
+            "saint","salad","scale","scare","scene","scope","score","scout","scrap","serve","setup","seven","shade","shaft","shake","shall","shame","shape","share","shark","sharp","shave","shear","sheer","sheet","shelf","shell","shift","shine","shirt","shock","shoot","shore","short","shout","shove","sight","since","sixth","sixty","sized","skill","skull","slate","slave","sleep","slice","slide","slope","smart","smell","smile","smith","smoke","snack","snake","solar","solid","solve","sorry","sound","south","space","spare","spark","speak","speed","spend","spent","spice","spine","split","spoke","spoon","sport","spray","squad","stack","staff","stage","stain","stair","stake","stale","stall","stamp","stand","stare","start","state","stays","steal","steam","steel","steep","steer","stern","stick","stiff","still","stock","stole","stone","stood","store","storm","story","stout","stove","strap","straw","stray","strip","stuck","stuff","style","sugar","suite","sunny","super","surge","swamp","swear","sweat","sweep","sweet","swept","swift","swing","swiss","sword","swore","sworn","syrup",
+            "table","taste","teach","teens","tempo","tense","terms","thank","theft","theme","thick","thief","thing","think","third","thorn","those","three","threw","throw","thumb","tiger","tight","timer","tired","title","today","token","total","touch","tough","towel","tower","toxic","trace","track","trade","trail","train","trait","trash","treat","trend","trial","tribe","trick","tried","troop","trout","truck","truly","trump","trunk","trust","truth","tumor","tuner","twice","twist",
+            "ultra","uncle","under","union","unite","unity","until","upper","upset","urban","usage","usual","utter",
+            "vague","valid","value","valve","vapor","vault","video","vigor","vinyl","viola","viral","virus","visit","vista","vital","vivid","vocal","vodka","voice","voter","vowel",
+            "waist","waste","watch","water","weary","weave","wedge","weird","whale","wheat","wheel","where","which","while","white","whole","whose","wider","width","witch","woman","world","worry","worse","worst","worth","would","wound","wrath","write","wrong","wrote",
+            "yacht","yield","young","yours","youth",
+            "zebra","zones",
+            "absorb","accept","access","across","acting","action","active","actual","adhere","adjust","admire","affect","afford","agency","agenda","almost","amount","annual","answer","anyway","appeal","appear","around","arrive","artist","assume","attack","attend","august","autumn",
+            "barely","basket","battle","beauty","become","before","behalf","behave","behind","belong","beside","better","beyond","bitter","blanch","bonnet","bother","bottom","bounce","branch","breath","breeze","bridge","bright","broken","bronze","bruise","bubble","budget","buffer","bundle","burden","bureau","buried","butter",
+            "cancel","canvas","carbon","career","castle","casual","caught","center","chance","change","charge","cheese","chosen","church","circle","clever","client","clinic","closet","clover","coffee","colony","column","combat","comedy","commit","common","compel","comply","convey","cookie","copper","corner","cotton","couple","course","cousin","create","credit","crisis","cruise","custom",
+            "damage","danger","dealer","debate","decade","decide","defeat","defend","define","degree","demand","depart","deploy","deputy","desert","design","desire","detail","detect","device","devote","differ","dinner","direct","domain","donate","double","dozens","dragon","driven","driver","during",
+            "earned","editor","effect","effort","eighth","either","emerge","empire","enable","endure","energy","engage","engine","enough","ensure","entire","entity","equity","escape","estate","evolve","exceed","except","excess","excite","excuse","exempt","expand","expect","expert","export","extend","extent","fabric","facial","factor","fairly","fallen","family","famous","farmer","father","faucet","fellow","fierce","figure","filter","finger","fiscal","flavor","flight","flower","flying","follow","forbid","forced","forest","forever","forget","formal","format","former","fossil","foster","fourth","freeze","french","frenzy","friend","frozen","funded","funding","fusion","future","futile",
+            "galaxy","garden","gather","gender","gentle","gifted","global","golden","gospel","govern","growth",
+            "handle","happen","hardly","hatred","headed","health","height","helmet","hidden","holder","honest","hoping","horror","hosted","hunger","hunter","hustle",
+            "ignore","immune","impact","import","impose","income","indeed","indoor","infant","inform","inject","injury","inland","insect","insert","inside","insist","intact","intend","intent","invest","invite","island","itself",
+            "junior","justice","justly",
+            "kernel","kidney","knight","knives",
+            "ladder","lately","latest","launch","lawyer","layout","leader","league","legacy","lender","lesson","letter","lifted","likely","linear","linger","liquid","listen","little","lively","living","locate","lovely","lowest","luxury",
+            "mainly","making","manage","manner","marble","margin","marine","marker","market","master","matter","mature","medium","member","memoir","memory","mental","mentor","merely","method","middle","mighty","miller","mirror","mobile","modern","modest","moment","mostly","motion","mutual","myriad","myself",
+            "namely","narrow","nation","nature","nearby","nearly","needle","nicely","nobody","normal","notice","notion","novice","number",
+            "obtain","occupy","offend","office","online","option","orange","origin","outfit","outlet","output","outset","oxygen",
+            "packed","palace","parade","parent","parish","parrot","partly","patent","patrol","patron","paving","pencil","people","pepper","period","permit","person","phrase","pickup","pillar","pillow","planet","player","please","pledge","plenty","plunge","pocket","poetry","poison","police","policy","polite","poorly","poster","potato","powder","prayer","prefer","pretty","prince","prison","profit","prompt","propel","proper","public","purple","pursue","puzzle","python",
+            "rabbit","racial","random","rather","reader","really","reason","recall","record","reduce","reform","regard","regime","region","reject","relate","relief","remain","remedy","remote","remove","render","rental","repair","repeat","report","resist","resort","result","retail","retain","retire","return","reveal","review","reward","ribbon","riddle","ritual","rocket","roster","rotate","rugged","runner","ruling",
+            "sacred","safety","salary","sample","saving","scheme","school","screen","search","season","second","secret","sector","secure","select","senior","serial","series","server","settle","severe","shadow","shield","should","shower","shrink","signal","silver","simple","singer","single","sister","sketch","sleeve","slight","smooth","snatch","social","socket","soften","solely","solemn","sorrow","sought","source","speech","spirit","splash","spread","spring","sprint","square","stable","stance","staple","statue","status","steady","stereo","stitch","stored","strain","strand","streak","stream","street","stress","strict","stride","strike","string","stripe","stroke","strong","studio","submit","subtle","sudden","suffer","summit","supply","surely","survey","switch","symbol","system","syntax",
+            "tackle","tailor","talent","target","temple","tenant","tender","tenure","terror","throne","timber","tissue","tongue","toward","travel","treaty","tribal","trophy","tunnel","twelve","twenty",
+            "unfair","unique","unless","unlike","unlock","update","uphold","upward","urgent","useful","utility",
+            "vacant","valley","vanish","varied","vendor","verbal","verify","vessel","victim","viewer","violet","virtue","vision","visual","volume",
+            "wander","warmth","wealth","weapon","weekly","weight","wholly","wicked","widely","willed","window","winner","winter","wisdom","within","wonder","worker","worthy","writer","written",
+            "yearly","yellow",
+            "zealot","zenith","zodiac"
+        ]);
+
+        // Pre-sort each word's letters for faster comparison
+        const SORTED_DICT = {};
+        for (const word of DICTIONARY) {
+            const sorted = word.split('').sort().join('');
+            if (!SORTED_DICT[sorted]) SORTED_DICT[sorted] = [];
+            SORTED_DICT[sorted].push(word);
+        }
+
+        function findAnagrams() {
+            const input = document.getElementById('inputWord').value.trim().toLowerCase();
+            if (!input) {
+                showToast('Please enter a word');
+                return;
+            }
+            if (!/^[a-z]+$/.test(input)) {
+                showToast('Please enter letters only (no spaces or special characters)');
+                return;
+            }
+            if (input.length < 2 || input.length > 8) {
+                showToast('Word must be between 2 and 8 letters');
+                return;
+            }
+
+            const resultsDiv = document.getElementById('results');
+            const anagramList = document.getElementById('anagramList');
+            const noResults = document.getElementById('noResults');
+            const countSpan = document.getElementById('count');
+
+            anagramList.innerHTML = '';
+            noResults.classList.add('hidden');
+
+            // Sort letters of input
+            const sortedInput = input.split('').sort().join('');
+
+            // Find exact anagrams (same length, same letters)
+            const exactAnagrams = SORTED_DICT[sortedInput] || [];
+            // Remove the input word itself from results
+            const filtered = exactAnagrams.filter(w => w !== input);
+            // Remove duplicates
+            const unique = [...new Set(filtered)];
+
+            // Also find sub-anagrams (words formed from a subset of letters)
+            const subAnagrams = [];
+            for (const word of DICTIONARY) {
+                if (word === input || word.length < 3) continue;
+                if (word.length >= input.length) continue; // only shorter words
+                if (canFormFrom(word, input)) {
+                    subAnagrams.push(word);
+                }
+            }
+            subAnagrams.sort((a, b) => b.length - a.length || a.localeCompare(b));
+
+            // Display exact anagrams
+            if (unique.length > 0) {
+                const header = document.createElement('div');
+                header.className = 'w-full mb-2';
+                header.innerHTML = '<h4 class="text-sm font-semibold text-slate-600 dark:text-slate-400">Exact Anagrams (' + unique.length + ')</h4>';
+                anagramList.appendChild(header);
+                unique.forEach(word => {
+                    addWordTag(word, anagramList);
+                });
+            }
+
+            // Display sub-anagrams
+            if (subAnagrams.length > 0) {
+                const header = document.createElement('div');
+                header.className = 'w-full mt-4 mb-2';
+                header.innerHTML = '<h4 class="text-sm font-semibold text-slate-600 dark:text-slate-400">Words from Letters (' + subAnagrams.length + ')</h4>';
+                anagramList.appendChild(header);
+                subAnagrams.slice(0, 50).forEach(word => {
+                    addWordTag(word, anagramList);
+                });
+                if (subAnagrams.length > 50) {
+                    const more = document.createElement('span');
+                    more.className = 'text-sm text-slate-500 dark:text-slate-400';
+                    more.textContent = '... and ' + (subAnagrams.length - 50) + ' more';
+                    anagramList.appendChild(more);
+                }
+            }
+
+            const total = unique.length + subAnagrams.length;
+            countSpan.textContent = total + ' word' + (total !== 1 ? 's' : '') + ' found';
+
+            if (total === 0) {
+                noResults.classList.remove('hidden');
+            }
+
+            resultsDiv.classList.remove('hidden');
+        }
+
+        function canFormFrom(word, letters) {
+            const letterCount = {};
+            for (const l of letters) {
+                letterCount[l] = (letterCount[l] || 0) + 1;
+            }
+            for (const l of word) {
+                if (!letterCount[l]) return false;
+                letterCount[l]--;
+            }
+            return true;
+        }
+
+        function addWordTag(word, container) {
+            const span = document.createElement('span');
+            span.className = 'inline-flex items-center gap-1 px-3 py-1.5 bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300 rounded-lg text-sm font-medium cursor-pointer hover:bg-brand-100 dark:hover:bg-brand-900/50 transition-colors';
+            span.textContent = word;
+            span.title = 'Click to copy';
+            span.onclick = function() { copyToClipboard(word); };
+            container.appendChild(span);
+        }
+
+        document.getElementById('inputWord').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') findAnagrams();
+        });
+
+        // Auto-filter non-letter input
+        document.getElementById('inputWord').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^a-zA-Z]/g, '').toLowerCase();
+        });
+    </script>
+</body>
+</html>

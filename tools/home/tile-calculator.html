@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tile Calculator — Estimate Floor Tiles Needed Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Calculate how many floor tiles you need for any room. Enter room and tile dimensions, gap size. Shows tiles needed, tiles with 10% waste buffer, and total area. Free tile calculator.">
+    <meta name="keywords" content="tile calculator, floor tile calculator, how many tiles do I need, tile estimator, tile quantity calculator, floor tile estimator, room tile calculator">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Tile Calculator — Estimate Floor Tiles Needed Free Online | OptiDrop">
+    <meta property="og:description" content="Calculate how many floor tiles you need for any room. Enter room and tile dimensions, gap size. Shows tiles needed and waste buffer. Free tile calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/home/tile-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tile Calculator — Estimate Floor Tiles Needed Free Online | OptiDrop">
+    <meta name="twitter:description" content="Calculate how many floor tiles you need. Free tile calculator.">
+    <link rel="canonical" href="https://optidrop.online/tools/home/tile-calculator.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Home Tools", "item": "https://optidrop.online/tools/home/"},
+        {"@type": "ListItem", "position": 3, "name": "Tile Calculator", "item": "https://optidrop.online/tools/home/tile-calculator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Tile Calculator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate how many floor tiles you need for any room. Enter room and tile dimensions, gap size. Shows tiles needed, tiles with 10% waste buffer, and total area."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the tile calculator work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter your room length and width, tile length and width, and the gap size between tiles. The calculator divides the room area by the effective tile area (including gaps) to determine how many tiles you need. It also adds a 10% waste buffer for cuts and breakage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why add a 10% waste buffer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 10% waste buffer accounts for tiles that need to be cut to fit edges and corners, as well as potential breakage during installation. It is recommended to always buy 10-15% more tiles than the exact calculation to avoid running short mid-project."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the gap size between tiles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The gap (or grout joint) is the space between tiles filled with grout. Common gap sizes range from 1/16 inch (1.5mm) for rectified tiles to 1/8 inch (3mm) for standard tiles. The calculator adds this gap to each tile dimension for accurate coverage calculation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this for wall tiles too?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this calculator works for both floor and wall tiles. Simply enter the wall dimensions as the room dimensions. The calculation is the same regardless of whether you are tiling a floor, wall, or backsplash."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Tile Calculator — Estimate Floor Tiles Needed</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Calculate exactly how many floor tiles you need for any room. Enter room dimensions, tile size, and gap width. Get tiles needed, tiles with 10% waste buffer, and total area covered.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Unit Selector -->
+                    <div class="max-w-md mx-auto mb-6">
+                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Measurement Unit:</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button class="unit-btn px-4 py-2 rounded-lg text-sm font-bold bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 border-2 border-blue-300 dark:border-blue-700" data-unit="ft">Feet (ft)</button>
+                            <button class="unit-btn px-4 py-2 rounded-lg text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-2 border-slate-200 dark:border-slate-700" data-unit="m">Meters (m)</button>
+                        </div>
+                    </div>
+
+                    <!-- Input Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label for="roomLength" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Room Length</label>
+                            <input type="number" id="roomLength" min="0.1" step="0.1" placeholder="e.g. 15"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                        </div>
+                        <div>
+                            <label for="roomWidth" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Room Width</label>
+                            <input type="number" id="roomWidth" min="0.1" step="0.1" placeholder="e.g. 12"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                        </div>
+                        <div>
+                            <label for="tileLength" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Tile Length</label>
+                            <input type="number" id="tileLength" min="0.1" step="0.1" placeholder="e.g. 1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                        </div>
+                        <div>
+                            <label for="tileWidth" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Tile Width</label>
+                            <input type="number" id="tileWidth" min="0.1" step="0.1" placeholder="e.g. 1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="gapSize" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Gap Size (grout joint)</label>
+                            <input type="number" id="gapSize" min="0" step="0.01" value="0.125" placeholder="e.g. 0.125"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                        </div>
+                    </div>
+
+                    <div class="max-w-md mx-auto mb-8">
+                        <button id="btnCalculate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Calculate Tiles Needed
+                        </button>
+                    </div>
+
+                    <!-- Results -->
+                    <div id="results" class="hidden">
+                        <!-- Main Result -->
+                        <div class="text-center mb-8">
+                            <p class="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">Tiles Needed (exact)</p>
+                            <div class="inline-block bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl px-8 py-6 shadow-lg">
+                                <p id="tilesExact" class="text-4xl sm:text-5xl font-extrabold">0</p>
+                                <p class="text-sm font-medium opacity-80">Tiles</p>
+                            </div>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                            <div class="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900 dark:to-emerald-800 border border-green-200 dark:border-green-700 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-green-700 dark:text-green-300 mb-1">With 10% Buffer</p>
+                                <p id="tilesBuffer" class="text-2xl sm:text-3xl font-extrabold text-green-900 dark:text-green-100">0</p>
+                                <p class="text-xs text-green-500 dark:text-green-400">Tiles (recommended)</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900 dark:to-indigo-800 border border-blue-200 dark:border-blue-700 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-blue-700 dark:text-blue-300 mb-1">Room Area</p>
+                                <p id="roomArea" class="text-2xl sm:text-3xl font-extrabold text-blue-900 dark:text-blue-100">0</p>
+                                <p id="roomAreaUnit" class="text-xs text-blue-500 dark:text-blue-400">sq ft</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-purple-50 to-violet-100 dark:from-purple-900 dark:to-violet-800 border border-purple-200 dark:border-purple-700 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-purple-700 dark:text-purple-300 mb-1">Total Tile Area</p>
+                                <p id="tileArea" class="text-2xl sm:text-3xl font-extrabold text-purple-900 dark:text-purple-100">0</p>
+                                <p id="tileAreaUnit" class="text-xs text-purple-500 dark:text-purple-400">sq ft (with buffer)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Next Steps -->
+                    <div id="nextSteps" class="hidden mt-8 border-t border-slate-200 dark:border-slate-700 pt-8">
+                        <h3 class="text-lg font-bold text-slate-800 dark:text-white text-center mb-4">What do you want to do next?</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
+                            <a href="/tools/home/paint-calculator.html" class="tool-card" style="padding:1rem;">
+                                <span class="tool-card-title" style="font-size:0.95rem;">Paint Calculator</span>
+                                <span class="tool-card-desc" style="font-size:0.8rem;">Calculate how much paint you need.</span>
+                            </a>
+                            <a href="/tools/home/wallpaper-calculator.html" class="tool-card" style="padding:1rem;">
+                                <span class="tool-card-title" style="font-size:0.95rem;">Wallpaper Calculator</span>
+                                <span class="tool-card-desc" style="font-size:0.8rem;">Calculate how many wallpaper rolls you need.</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Free Tile Calculator Online — Estimate Floor Tiles Needed</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">OptiDrop's Tile Calculator helps you estimate exactly how many floor tiles you need for any room. Enter the room dimensions, tile size, and the gap (grout joint) width between tiles. The calculator computes the exact number of tiles needed and adds a 10% waste buffer for cuts and breakage.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3">How Does the Tile Calculator Work?</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">The calculator first determines the effective tile size by adding the gap width to both the tile length and tile width. It then divides the room area (length times width) by the effective tile area to get the exact number of tiles. A 10% buffer is added on top for waste from cuts, breakage, and future repairs.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3">Why Include a Waste Buffer?</h3>
+                <p class="text-slate-600 dark:text-slate-400">Professional tilers always recommend buying 10-15% more tiles than the exact calculation. This accounts for tiles that need to be cut to fit edges and corners, potential breakage during installation, and having a few extra tiles on hand for future repairs. The calculator uses 10% as a standard buffer.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        How does the tile calculator work?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Enter your room length and width, tile length and width, and the gap size between tiles. The calculator divides the room area by the effective tile area (including gaps) to determine how many tiles you need. It also adds a 10% waste buffer for cuts and breakage.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        Why add a 10% waste buffer?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        A 10% waste buffer accounts for tiles that need to be cut to fit edges and corners, as well as potential breakage during installation. It is recommended to always buy 10-15% more tiles than the exact calculation to avoid running short mid-project.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What is the gap size between tiles?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        The gap (or grout joint) is the space between tiles filled with grout. Common gap sizes range from 1/16 inch (1.5mm) for rectified tiles to 1/8 inch (3mm) for standard tiles. The calculator adds this gap to each tile dimension for accurate coverage calculation.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        Can I use this for wall tiles too?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Yes, this calculator works for both floor and wall tiles. Simply enter the wall dimensions as the room dimensions. The calculation is the same regardless of whether you are tiling a floor, wall, or backsplash.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/home/paint-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Paint Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate how much paint you need.</span>
+                </a>
+                <a href="/tools/home/wallpaper-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Wallpaper Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate how many wallpaper rolls you need.</span>
+                </a>
+                <a href="/tools/home/concrete-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Concrete Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate concrete volume and bags needed.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        if(typeof trackRecentTool==='function')trackRecentTool('Tile Calculator','/tools/home/tile-calculator.html');
+
+        var unit = 'ft';
+        var unitLabels = { ft: 'sq ft', m: 'sq m' };
+
+        // Unit toggle
+        document.querySelectorAll('.unit-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.unit-btn').forEach(function(b) {
+                    b.className = 'unit-btn px-4 py-2 rounded-lg text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-2 border-slate-200 dark:border-slate-700';
+                });
+                this.className = 'unit-btn px-4 py-2 rounded-lg text-sm font-bold bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 border-2 border-blue-300 dark:border-blue-700';
+                unit = this.dataset.unit;
+            });
+        });
+
+        document.getElementById('btnCalculate').addEventListener('click', function() {
+            var roomLength = parseFloat(document.getElementById('roomLength').value);
+            var roomWidth = parseFloat(document.getElementById('roomWidth').value);
+            var tileLength = parseFloat(document.getElementById('tileLength').value);
+            var tileWidth = parseFloat(document.getElementById('tileWidth').value);
+            var gapSize = parseFloat(document.getElementById('gapSize').value) || 0;
+
+            if (!roomLength || roomLength <= 0) { showToast('Please enter a valid room length.', 'error'); return; }
+            if (!roomWidth || roomWidth <= 0) { showToast('Please enter a valid room width.', 'error'); return; }
+            if (!tileLength || tileLength <= 0) { showToast('Please enter a valid tile length.', 'error'); return; }
+            if (!tileWidth || tileWidth <= 0) { showToast('Please enter a valid tile width.', 'error'); return; }
+            if (gapSize < 0) { showToast('Gap size cannot be negative.', 'error'); return; }
+
+            // Effective tile dimensions (including gap)
+            var effectiveTileLength = tileLength + gapSize;
+            var effectiveTileWidth = tileWidth + gapSize;
+            var effectiveTileArea = effectiveTileLength * effectiveTileWidth;
+
+            // Room area
+            var roomArea = roomLength * roomWidth;
+
+            // Exact tiles needed
+            var tilesExact = Math.ceil(roomArea / effectiveTileArea);
+
+            // With 10% buffer
+            var tilesBuffer = Math.ceil(tilesExact * 1.1);
+
+            // Total tile area with buffer
+            var totalTileArea = tilesBuffer * effectiveTileArea;
+
+            document.getElementById('tilesExact').textContent = tilesExact;
+            document.getElementById('tilesBuffer').textContent = tilesBuffer;
+            document.getElementById('roomArea').textContent = roomArea.toFixed(1);
+            document.getElementById('tileArea').textContent = totalTileArea.toFixed(1);
+
+            var uLabel = unitLabels[unit];
+            document.getElementById('roomAreaUnit').textContent = uLabel;
+            document.getElementById('tileAreaUnit').textContent = uLabel + ' (with buffer)';
+
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('nextSteps').classList.remove('hidden');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Calculate on Enter
+        document.querySelectorAll('#roomLength, #roomWidth, #tileLength, #tileWidth, #gapSize').forEach(function(input) {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') document.getElementById('btnCalculate').click();
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

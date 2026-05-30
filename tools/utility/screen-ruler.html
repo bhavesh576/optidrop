@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Ruler | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2"><link rel="shortcut icon" href="/favicon.png?v=2"><link rel="apple-touch-icon" href="/favicon.png?v=2"><meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="On-screen pixel ruler for measuring elements. Draggable measurement tool with px, cm, and inches support. Free browser-based screen ruler."><meta name="keywords" content="screen ruler, pixel ruler, on screen ruler, measure pixels, web design ruler, screen measurement tool"><meta name="author" content="OptiDrop"><meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Screen Ruler | OptiDrop"><meta property="og:description" content="On-screen pixel ruler for measuring elements. Supports px, cm, and inches."><meta property="og:type" content="website"><meta property="og:url" content="https://optidrop.online/tools/utility/screen-ruler.html"><meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Screen Ruler | OptiDrop"><meta name="twitter:description" content="On-screen pixel ruler for measuring elements.">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/screen-ruler.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Utility Tools","item":"https://optidrop.online/category/utility-tools.html"},{"@type":"ListItem","position":3,"name":"Screen Ruler","item":"https://optidrop.online/tools/utility/screen-ruler.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Screen Ruler","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"On-screen pixel ruler for measuring elements with drag selection."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I use the screen ruler?","acceptedAnswer":{"@type":"Answer","name":"The ruler displays horizontal and vertical pixel markings on screen. Click and drag on the measurement area to create a selection rectangle. The dimensions of your selection are shown in real-time in your chosen unit (px, cm, or inches)."}},{"@type":"Question","name":"What units are supported?","acceptedAnswer":{"@type":"Answer","name":"The screen ruler supports pixels (px), centimeters (cm), and inches (in). You can toggle between units using the unit selector. The conversion uses your screen's DPI for accurate measurements."}},{"@type":"Question","name":"How accurate are the cm and inch measurements?","acceptedAnswer":{"@type":"Answer","name":"Accuracy depends on your screen's reported DPI. Most screens report 96 DPI. For precise physical measurements, you may need to calibrate by measuring a known object and adjusting the DPI value."}},{"@type":"Question","name":"Can I measure elements on other pages?","acceptedAnswer":{"@type":"Answer","name":"This tool measures within its own page. To measure elements on other pages, you can use browser developer tools (F12) or resize this window to overlay the target page."}}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+    .ruler-area{position:relative;overflow:hidden;cursor:crosshair;user-select:none;-webkit-user-select:none}
+    .ruler-h,.ruler-v{position:absolute;background:#1e293b}
+    .ruler-h{top:0;left:0;right:0;height:30px;z-index:5}
+    .ruler-v{top:0;left:0;bottom:0;width:30px;z-index:5}
+    .ruler-h canvas,.ruler-v canvas{display:block}
+    .measure-box{position:absolute;border:2px dashed #3b82f6;background:rgba(59,130,246,0.1);pointer-events:none;z-index:10}
+    .measure-label{position:absolute;background:#3b82f6;color:#fff;font-size:11px;font-weight:700;padding:2px 6px;border-radius:4px;white-space:nowrap;z-index:11;pointer-events:none}
+    .cursor-crosshair{position:absolute;pointer-events:none;z-index:8}
+    .cursor-crosshair .ch-h{position:absolute;height:1px;background:rgba(239,68,68,0.6);left:0;right:0}
+    .cursor-crosshair .ch-v{position:absolute;width:1px;background:rgba(239,68,68,0.6);top:0;bottom:0}
+    .cursor-pos{position:fixed;bottom:10px;right:10px;background:#1e293b;color:#fff;padding:6px 12px;border-radius:8px;font-size:12px;font-family:monospace;z-index:50}
+    .dark .ruler-h,.dark .ruler-v{background:#334155}
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header"><div class="header-inner"><a href="/" class="logo-text">Opti<span>Drop</span></a><nav class="header-nav"><a href="/" class="back-link"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>All Tools</a><span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span><button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav></div><nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a></nav></header>
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+    <main class="flex-grow">
+        <section class="max-w-5xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Screen Ruler</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">On-screen pixel ruler for measuring elements. Click and drag to measure areas. Toggle between pixels, centimeters, and inches.</p>
+        </section>
+        <section class="max-w-5xl mx-auto px-4 pb-4">
+            <div class="flex flex-wrap gap-3 items-center justify-center mb-4">
+                <div class="flex items-center gap-2 bg-white dark:bg-slate-800 rounded-xl px-4 py-2 shadow-sm">
+                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Unit:</label>
+                    <select id="unitSelect" onchange="drawRulers()" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                        <option value="px">Pixels (px)</option>
+                        <option value="cm">Centimeters (cm)</option>
+                        <option value="in">Inches (in)</option>
+                    </select>
+                </div>
+                <div class="flex items-center gap-2 bg-white dark:bg-slate-800 rounded-xl px-4 py-2 shadow-sm">
+                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">DPI:</label>
+                    <input type="number" id="dpiInput" value="96" min="50" max="600" class="w-16 px-2 py-1.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm text-center focus:ring-2 focus:ring-brand-500 outline-none">
+                </div>
+                <button onclick="clearSelection()" class="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold rounded-xl text-sm transition-colors">Clear Selection</button>
+                <button onclick="copyMeasurement()" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl text-sm transition-colors">Copy Measurement</button>
+            </div>
+            <div id="measurementDisplay" class="text-center mb-4">
+                <span class="inline-block bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300 px-4 py-2 rounded-xl font-mono text-sm font-bold">
+                    Selection: <span id="measureText">Click and drag to measure</span>
+                </span>
+            </div>
+        </section>
+        <section class="max-w-5xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-2xl shadow-xl overflow-hidden">
+                <div id="rulerArea" class="ruler-area bg-white dark:bg-slate-800" style="height:500px">
+                    <div class="ruler-h"><canvas id="rulerH" height="30"></canvas></div>
+                    <div class="ruler-v"><canvas id="rulerV" width="30"></canvas></div>
+                    <div id="crosshair" class="cursor-crosshair" style="display:none">
+                        <div class="ch-h" id="chH"></div>
+                        <div class="ch-v" id="chV"></div>
+                    </div>
+                    <div id="measureBox" class="measure-box" style="display:none"></div>
+                    <div id="measureLabelW" class="measure-label" style="display:none"></div>
+                    <div id="measureLabelH" class="measure-label" style="display:none"></div>
+                </div>
+            </div>
+        </section>
+        <div class="cursor-pos" id="cursorPos">X: 0 Y: 0</div>
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+        <section class="max-w-5xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">About Screen Ruler</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">A screen ruler is an essential tool for web designers, UI developers, and anyone who needs to measure pixel dimensions on screen. This browser-based ruler provides horizontal and vertical scales with precise measurements.</p>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Click and drag anywhere on the measurement area to create a selection rectangle. The dimensions are displayed in real-time in your chosen unit. The crosshair cursor helps you align measurements precisely.</p>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">You can switch between pixels, centimeters, and inches. The DPI setting controls the conversion - most screens use 96 DPI by default. Adjust this value if your measurements don't match physical dimensions.</p>
+            </div>
+        </section>
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">How do I use the screen ruler?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">The ruler displays horizontal and vertical pixel markings on screen. Click and drag on the measurement area to create a selection rectangle. The dimensions of your selection are shown in real-time in your chosen unit (px, cm, or inches).</p></details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">What units are supported?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">The screen ruler supports pixels (px), centimeters (cm), and inches (in). You can toggle between units using the unit selector. The conversion uses your screen's DPI for accurate measurements.</p></details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">How accurate are the cm and inch measurements?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">Accuracy depends on your screen's reported DPI. Most screens report 96 DPI. For precise physical measurements, you may need to calibrate by measuring a known object and adjusting the DPI value.</p></details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm"><summary class="flex justify-between items-center cursor-pointer p-5 font-semibold text-slate-900 dark:text-white">Can I measure elements on other pages?<svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p class="px-5 pb-5 text-slate-600 dark:text-slate-400">This tool measures within its own page. To measure elements on other pages, you can use browser developer tools (F12) or resize this window to overlay the target page.</p></details>
+            </div>
+        </section>
+        <section class="max-w-5xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/utility/screen-resolution-checker.html" class="block p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"><div class="font-semibold text-slate-900 dark:text-white">Screen Resolution</div><div class="text-sm text-slate-500 dark:text-slate-400 mt-1">Check your screen resolution</div></a>
+                <a href="/tools/utility/aspect-ratio-calculator.html" class="block p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"><div class="font-semibold text-slate-900 dark:text-white">Aspect Ratio Calculator</div><div class="text-sm text-slate-500 dark:text-slate-400 mt-1">Calculate aspect ratios</div></a>
+                <a href="/tools/utility/unit-converter.html" class="block p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"><div class="font-semibold text-slate-900 dark:text-white">Unit Converter</div><div class="text-sm text-slate-500 dark:text-slate-400 mt-1">Convert any unit</div></a>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    var area=document.getElementById('rulerArea');
+    var isDragging=false,startX=0,startY=0;
+    var selW=0,selH=0;
+    var currentMeasurement='';
+
+    function getDPI(){return parseFloat(document.getElementById('dpiInput').value)||96;}
+    function getUnit(){return document.getElementById('unitSelect').value;}
+
+    function pxToUnit(px){
+        var unit=getUnit(),dpi=getDPI();
+        if(unit==='px') return px;
+        if(unit==='cm') return (px/dpi)*2.54;
+        return px/dpi;
+    }
+
+    function formatVal(v,unit){
+        if(unit==='px') return Math.round(v)+'px';
+        return v.toFixed(2)+unit;
+    }
+
+    function drawRulers(){
+        var rect=area.getBoundingClientRect();
+        var w=rect.width,h=rect.height;
+        var unit=getUnit(),dpi=getDPI();
+
+        var hCanvas=document.getElementById('rulerH');
+        hCanvas.width=w;
+        var hCtx=hCanvas.getContext('2d');
+        hCtx.clearRect(0,0,w,30);
+        hCtx.fillStyle=getComputedStyle(document.documentElement).classList.contains('dark')?'#334155':'#1e293b';
+        hCtx.fillRect(0,0,w,30);
+        hCtx.fillStyle='#94a3b8';
+        hCtx.strokeStyle='#64748b';
+        hCtx.font='10px Inter, sans-serif';
+        hCtx.textAlign='center';
+
+        var step=unit==='px'?50:10;
+        var pxStep=unit==='px'?step:(step*dpi)/(unit==='cm'?2.54:1);
+        for(var i=0;i<w;i+=pxStep){
+            var val=pxToUnit(i);
+            var isMajor=Math.round(val)%((unit==='px'?100:1))===0||unit!=='px';
+            hCtx.beginPath();
+            hCtx.moveTo(i,30);
+            hCtx.lineTo(i,isMajor?10:20);
+            hCtx.stroke();
+            if(isMajor) hCtx.fillText(Math.round(val*10)/10,i,9);
+        }
+
+        var vCanvas=document.getElementById('rulerV');
+        vCanvas.height=h;
+        var vCtx=vCanvas.getContext('2d');
+        vCtx.clearRect(0,0,30,h);
+        vCtx.fillStyle=getComputedStyle(document.documentElement).classList.contains('dark')?'#334155':'#1e293b';
+        vCtx.fillRect(0,0,30,h);
+        vCtx.fillStyle='#94a3b8';
+        vCtx.strokeStyle='#64748b';
+        vCtx.font='10px Inter, sans-serif';
+
+        for(var j=0;j<h;j+=pxStep){
+            var val2=pxToUnit(j);
+            var isMajor2=Math.round(val2)%((unit==='px'?100:1))===0||unit!=='px';
+            vCtx.beginPath();
+            vCtx.moveTo(30,j);
+            vCtx.lineTo(isMajor2?10:20,j);
+            vCtx.stroke();
+            if(isMajor2){
+                vCtx.save();
+                vCtx.translate(9,j);
+                vCtx.rotate(-Math.PI/2);
+                vCtx.textAlign='center';
+                vCtx.fillText(Math.round(val2*10)/10,0,0);
+                vCtx.restore();
+            }
+        }
+    }
+
+    area.addEventListener('mousedown',function(e){
+        var rect=area.getBoundingClientRect();
+        startX=e.clientX-rect.left;
+        startY=e.clientY-rect.top;
+        isDragging=true;
+        var box=document.getElementById('measureBox');
+        box.style.display='block';
+        box.style.left=startX+'px';
+        box.style.top=startY+'px';
+        box.style.width='0px';
+        box.style.height='0px';
+    });
+
+    area.addEventListener('mousemove',function(e){
+        var rect=area.getBoundingClientRect();
+        var mx=e.clientX-rect.left;
+        var my=e.clientY-rect.top;
+
+        document.getElementById('crosshair').style.display='block';
+        document.getElementById('chH').style.top=my+'px';
+        document.getElementById('chV').style.left=mx+'px';
+
+        var unit=getUnit();
+        document.getElementById('cursorPos').textContent='X: '+formatVal(pxToUnit(mx),unit)+' Y: '+formatVal(pxToUnit(my),unit);
+
+        if(!isDragging) return;
+        var w=Math.abs(mx-startX);
+        var h=Math.abs(my-startY);
+        var lx=Math.min(mx,startX);
+        var ly=Math.min(my,startY);
+
+        var box=document.getElementById('measureBox');
+        box.style.left=lx+'px';
+        box.style.top=ly+'px';
+        box.style.width=w+'px';
+        box.style.height=h+'px';
+
+        selW=w;selH=h;
+        var wU=pxToUnit(w),hU=pxToUnit(h);
+        currentMeasurement=formatVal(wU,unit)+' x '+formatVal(hU,unit);
+        document.getElementById('measureText').textContent=currentMeasurement;
+
+        var wl=document.getElementById('measureLabelW');
+        wl.style.display='block';
+        wl.style.left=(lx+w/2-30)+'px';
+        wl.style.top=(ly-22)+'px';
+        wl.textContent=formatVal(wU,unit);
+
+        var hl=document.getElementById('measureLabelH');
+        hl.style.display='block';
+        hl.style.left=(lx+w+5)+'px';
+        hl.style.top=(ly+h/2-8)+'px';
+        hl.textContent=formatVal(hU,unit);
+    });
+
+    document.addEventListener('mouseup',function(){isDragging=false;});
+
+    area.addEventListener('mouseleave',function(){
+        document.getElementById('crosshair').style.display='none';
+    });
+
+    function clearSelection(){
+        document.getElementById('measureBox').style.display='none';
+        document.getElementById('measureLabelW').style.display='none';
+        document.getElementById('measureLabelH').style.display='none';
+        document.getElementById('measureText').textContent='Click and drag to measure';
+        currentMeasurement='';
+    }
+
+    function copyMeasurement(){
+        if(!currentMeasurement) return showToast('No measurement to copy. Click and drag first.','error');
+        copyToClipboard(currentMeasurement);
+        showToast('Measurement copied: '+currentMeasurement,'success');
+    }
+
+    document.getElementById('dpiInput').addEventListener('change',drawRulers);
+    window.addEventListener('resize',drawRulers);
+    drawRulers();
+    </script>
+</body>
+</html>

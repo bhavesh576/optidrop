@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher Encoder Decoder Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online Caesar cipher encoder and decoder. Shift letters by any value from 1-25. Encode and decode text with the classic Caesar cipher. Brute force all 26 shifts. 100% private.">
+    <meta name="keywords" content="caesar cipher, caesar cipher encoder, caesar cipher decoder, shift cipher, caesar cipher online, caesar cipher brute force, cipher decoder free, classical cipher">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Caesar Cipher Encoder Decoder Free Online | OptiDrop">
+    <meta property="og:description" content="Free online Caesar cipher encoder and decoder. Shift letters by any value. Brute force all 26 shifts. 100% private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/caesar-cipher.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Caesar Cipher Encoder Decoder Free Online | OptiDrop">
+    <meta name="twitter:description" content="Free online Caesar cipher encoder and decoder. Brute force all 26 shifts. 100% private.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/caesar-cipher.html">
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Developer Tools","item":"https://optidrop.online/category/developer-tools.html"},{"@type":"ListItem","position":3,"name":"Caesar Cipher","item":"https://optidrop.online/tools/developer/caesar-cipher.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Caesar Cipher","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online Caesar cipher encoder and decoder. Shift letters by any value from 1-25 with brute force mode. All processing happens in your browser."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Caesar cipher?","acceptedAnswer":{"@type":"Answer","text":"A Caesar cipher is one of the simplest and oldest encryption techniques, named after Julius Caesar who used it in his private correspondence. It works by shifting each letter in the plaintext by a fixed number of positions down the alphabet. For example, with a shift of 3, A becomes D, B becomes E, and so on."}},{"@type":"Question","name":"How do you crack a Caesar cipher?","acceptedAnswer":{"@type":"Answer","text":"The easiest way to crack a Caesar cipher is brute force — trying all 26 possible shifts since there are only 26 letters in the English alphabet. This tool includes a brute force feature that shows all 26 possible decryptions at once, making it easy to find the correct plaintext by reading through the results."}},{"@type":"Question","name":"Does the Caesar cipher preserve capitalization?","acceptedAnswer":{"@type":"Answer","text":"Yes, this Caesar cipher tool preserves the original capitalization of letters. Uppercase letters remain uppercase and lowercase letters remain lowercase after shifting. Non-alphabetic characters like numbers, spaces, and punctuation are not affected and remain unchanged."}},{"@type":"Question","name":"What is the difference between encoding and decoding?","acceptedAnswer":{"@type":"Answer","text":"Encoding shifts letters forward by the shift value (A with shift 3 becomes D), while decoding shifts letters backward by the same value (D with shift 3 becomes A). If you encoded text with shift 5, you need to decode it with shift 5 to get the original text back."}}]}</script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Caesar Cipher Encoder &amp; Decoder Online</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Encode and decode text using the classic Caesar cipher. Shift letters by any value from 1 to 25. Includes brute force mode to try all 26 possible shifts instantly. No upload, no sign-up, 100% private.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Input Section -->
+                    <div class="mb-6">
+                        <label for="cipherInput" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Input Text</label>
+                        <textarea id="cipherInput" placeholder="Type or paste your text here... e.g. HELLO WORLD" class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y" style="min-height:120px;font-family:inherit;line-height:1.7;"></textarea>
+                    </div>
+
+                    <!-- Settings Row -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label for="shiftValue" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Shift Value (1-25)</label>
+                            <div class="flex items-center gap-3">
+                                <input type="range" id="shiftRange" min="1" max="25" value="3" class="flex-grow h-2 bg-slate-200 dark:bg-slate-600 rounded-lg appearance-none cursor-pointer accent-brand-600">
+                                <input type="number" id="shiftValue" min="1" max="25" value="3" class="w-16 px-3 py-2 text-center border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-lg focus:ring-0 focus:border-blue-500 font-bold text-slate-900">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Mode</label>
+                            <div class="flex gap-2">
+                                <button id="btnEncode" class="flex-1 px-4 py-2.5 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md transition-all text-sm">Encode</button>
+                                <button id="btnDecode" class="flex-1 px-4 py-2.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold rounded-xl hover:bg-slate-300 dark:hover:bg-slate-600 transition-all text-sm">Decode</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Convert Button -->
+                    <div class="mb-6">
+                        <button id="btnConvert" class="w-full px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                            Convert
+                        </button>
+                    </div>
+
+                    <!-- Output -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <label for="cipherOutput" class="block text-sm font-bold text-slate-700 dark:text-slate-300">Output</label>
+                            <button onclick="var el=document.getElementById('cipherOutput');if(el.value){copyToClipboard(el.value)}else{showToast('Nothing to copy. Convert text first.','error')}" class="text-xs font-semibold text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300 transition-colors">Copy Output</button>
+                        </div>
+                        <textarea id="cipherOutput" readonly placeholder="Result will appear here..." class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y bg-slate-50" style="min-height:120px;font-family:inherit;line-height:1.7;"></textarea>
+                    </div>
+
+                    <!-- Brute Force Section -->
+                    <div class="border-t-2 border-slate-100 dark:border-slate-700 pt-6">
+                        <button id="btnBruteForce" class="w-full px-6 py-4 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+                            Brute Force — Show All 26 Shifts
+                        </button>
+                        <div id="bruteForceResults" class="mt-4 hidden">
+                            <div id="bruteForceGrid" class="space-y-2"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Free Online Caesar Cipher Encoder &amp; Decoder</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">The Caesar cipher is one of the simplest and most widely known encryption techniques. Named after Julius Caesar, who used it in his private correspondence, this substitution cipher works by replacing each letter in the plaintext with a letter a fixed number of positions down the alphabet.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">How the Caesar Cipher Works</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">To encode a message, you shift each letter by a set number of positions. With a shift of 3: A becomes D, B becomes E, C becomes F, and so on. The alphabet wraps around, so X becomes A, Y becomes B, and Z becomes C. Non-letter characters (numbers, spaces, punctuation) remain unchanged.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">Brute Force Decryption</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Since there are only 26 possible shifts in the English alphabet, the Caesar cipher can be easily cracked by trying all 26 possibilities. The brute force feature in this tool generates all 26 possible decryptions at once, allowing you to quickly identify the correct plaintext by scanning the results for readable text.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">Historical Significance</h3>
+                <p class="text-slate-600 dark:text-slate-400">Julius Caesar used a shift of 3 for his military communications around 50 BC. While no longer secure for modern cryptography, the Caesar cipher remains an excellent educational tool for understanding the fundamental concepts of encryption, substitution ciphers, and code-breaking.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What is a Caesar cipher?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        A Caesar cipher is one of the simplest and oldest encryption techniques, named after Julius Caesar who used it in his private correspondence. It works by shifting each letter in the plaintext by a fixed number of positions down the alphabet. For example, with a shift of 3, A becomes D, B becomes E, and so on.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        How do you crack a Caesar cipher?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        The easiest way to crack a Caesar cipher is brute force — trying all 26 possible shifts since there are only 26 letters in the English alphabet. This tool includes a brute force feature that shows all 26 possible decryptions at once, making it easy to find the correct plaintext by reading through the results.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        Does the Caesar cipher preserve capitalization?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Yes, this Caesar cipher tool preserves the original capitalization of letters. Uppercase letters remain uppercase and lowercase letters remain lowercase after shifting. Non-alphabetic characters like numbers, spaces, and punctuation are not affected and remain unchanged.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What is the difference between encoding and decoding?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Encoding shifts letters forward by the shift value (A with shift 3 becomes D), while decoding shifts letters backward by the same value (D with shift 3 becomes A). If you encoded text with shift 5, you need to decode it with shift 5 to get the original text back.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/developer/morse-code-translator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Morse Code Translator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert text to Morse code and back with audio playback.</span>
+                </a>
+                <a href="/tools/developer/hash-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Hash Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate SHA-256 and SHA-512 hashes instantly.</span>
+                </a>
+                <a href="/tools/developer/base64.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Base64 Encoder</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode Base64 text and files instantly.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var cipherInput = document.getElementById('cipherInput');
+        var cipherOutput = document.getElementById('cipherOutput');
+        var shiftValue = document.getElementById('shiftValue');
+        var shiftRange = document.getElementById('shiftRange');
+        var btnEncode = document.getElementById('btnEncode');
+        var btnDecode = document.getElementById('btnDecode');
+        var btnConvert = document.getElementById('btnConvert');
+        var btnBruteForce = document.getElementById('btnBruteForce');
+        var bruteForceResults = document.getElementById('bruteForceResults');
+        var bruteForceGrid = document.getElementById('bruteForceGrid');
+
+        var mode = 'encode';
+
+        shiftRange.addEventListener('input', function() {
+            shiftValue.value = shiftRange.value;
+        });
+        shiftValue.addEventListener('input', function() {
+            var v = parseInt(shiftValue.value, 10);
+            if (v >= 1 && v <= 25) {
+                shiftRange.value = v;
+            }
+        });
+
+        btnEncode.addEventListener('click', function() {
+            mode = 'encode';
+            btnEncode.className = 'flex-1 px-4 py-2.5 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md transition-all text-sm';
+            btnDecode.className = 'flex-1 px-4 py-2.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold rounded-xl hover:bg-slate-300 dark:hover:bg-slate-600 transition-all text-sm';
+        });
+
+        btnDecode.addEventListener('click', function() {
+            mode = 'decode';
+            btnDecode.className = 'flex-1 px-4 py-2.5 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md transition-all text-sm';
+            btnEncode.className = 'flex-1 px-4 py-2.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold rounded-xl hover:bg-slate-300 dark:hover:bg-slate-600 transition-all text-sm';
+        });
+
+        function caesarShift(text, shift, decode) {
+            if (decode) shift = 26 - shift;
+            var result = '';
+            for (var i = 0; i < text.length; i++) {
+                var ch = text[i];
+                var code = ch.charCodeAt(0);
+                if (code >= 65 && code <= 90) {
+                    result += String.fromCharCode(((code - 65 + shift) % 26) + 65);
+                } else if (code >= 97 && code <= 122) {
+                    result += String.fromCharCode(((code - 97 + shift) % 26) + 97);
+                } else {
+                    result += ch;
+                }
+            }
+            return result;
+        }
+
+        btnConvert.addEventListener('click', function() {
+            var text = cipherInput.value;
+            if (!text) {
+                showToast('Please enter some text to convert.', 'error');
+                return;
+            }
+            var shift = parseInt(shiftValue.value, 10);
+            if (isNaN(shift) || shift < 1 || shift > 25) {
+                showToast('Shift value must be between 1 and 25.', 'error');
+                return;
+            }
+            cipherOutput.value = caesarShift(text, shift, mode === 'decode');
+            showToast((mode === 'encode' ? 'Encoded' : 'Decoded') + ' with shift ' + shift + '!');
+        });
+
+        btnBruteForce.addEventListener('click', function() {
+            var text = cipherInput.value;
+            if (!text) {
+                showToast('Please enter some text first.', 'error');
+                return;
+            }
+            bruteForceGrid.innerHTML = '';
+            bruteForceResults.classList.remove('hidden');
+            for (var s = 1; s <= 25; s++) {
+                var decoded = caesarShift(text, s, true);
+                var row = document.createElement('div');
+                row.className = 'flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-600';
+                row.innerHTML =
+                    '<span class="font-mono font-bold text-brand-600 dark:text-brand-400 text-sm min-w-[3rem]">Shift ' + s + ':</span>' +
+                    '<span class="text-sm text-slate-800 dark:text-slate-200 flex-1 break-all">' + escapeHtml(decoded) + '</span>' +
+                    '<button onclick="copyToClipboard(this.getAttribute(\'data-text\'))" data-text="' + escapeAttr(decoded) + '" class="text-xs font-semibold text-brand-600 hover:text-brand-700 dark:text-brand-400 flex-shrink-0">Copy</button>';
+                bruteForceGrid.appendChild(row);
+            }
+            showToast('Showing all 25 possible decodings.');
+        });
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        function escapeAttr(str) {
+            return str.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        }
+    })();
+    </script>
+</body>
+</html>

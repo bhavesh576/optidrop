@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator Free Online — Harmony Colors | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online color palette generator. Create beautiful 5-color palettes from any base color using complementary, analogous, triadic, or split-complementary harmony rules.">
+    <meta name="keywords" content="color palette generator, color harmony generator, complementary colors, analogous colors, triadic colors, color scheme generator, design color palette">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Color Palette Generator Free Online — Harmony Colors | OptiDrop">
+    <meta property="og:description" content="Create beautiful 5-color palettes from any base color using color harmony rules. Copy-ready hex values.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/color-palette-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Color Palette Generator Free Online | OptiDrop">
+    <meta name="twitter:description" content="Create beautiful 5-color palettes from any base color using color harmony rules.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/color-palette-generator.html">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Developer Tools","item":"https://optidrop.online/category/developer-tools.html"},{"@type":"ListItem","position":3,"name":"Color Palette Generator","item":"https://optidrop.online/tools/developer/color-palette-generator.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Color Palette Generator","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online color palette generator with harmony rules."}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is color harmony?","acceptedAnswer":{"@type":"Answer","text":"Color harmony is the theory of combining colors in a way that is aesthetically pleasing. It uses the color wheel to create balanced, visually appealing color combinations. Common harmony types include complementary (opposite colors), analogous (adjacent colors), triadic (three evenly spaced), and split-complementary (a base plus two colors adjacent to its complement)."}},{"@type":"Question","name":"How do I use the color palette generator?","acceptedAnswer":{"@type":"Answer","text":"Pick a base color using the color picker or type a hex value. Select a harmony type from the dropdown. The tool instantly generates a 5-color palette with hex values and preview blocks. Click any color to copy its hex value, or use the Copy All button to copy all colors at once."}},{"@type":"Question","name":"What is a complementary color palette?","acceptedAnswer":{"@type":"Answer","text":"A complementary color palette uses two colors that are directly opposite each other on the color wheel (e.g., blue and orange, red and green). This creates maximum contrast and visual tension. The generator creates a 5-color palette by adding lighter and darker variations of both colors."}},{"@type":"Question","name":"Can I use these colors for web design?","acceptedAnswer":{"@type":"Answer","text":"Yes! The hex values generated are standard web-compatible colors. Copy them directly into your CSS, design tools, or any application that accepts hex color codes. They work in all modern browsers and design software like Figma, Adobe XD, and Sketch."}}]}
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Color Palette Generator — Harmony Color Schemes</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Generate beautiful 5-color palettes from any base color. Choose from complementary, analogous, triadic, or split-complementary harmony rules. Copy individual colors or all at once. 100% free.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <div class="md:col-span-1">
+                            <label for="baseColor" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Base Color</label>
+                            <div class="flex items-center gap-3">
+                                <input type="color" id="baseColor" value="#3b82f6" class="w-16 h-16 rounded-xl border-2 border-slate-200 dark:border-slate-600 cursor-pointer">
+                                <input type="text" id="baseHex" value="#3b82f6" placeholder="#3b82f6"
+                                    class="flex-1 px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 dark:text-white font-mono font-medium bg-white dark:bg-slate-700"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="md:col-span-1">
+                            <label for="harmonyType" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Harmony Type</label>
+                            <select id="harmonyType"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 dark:text-white font-medium bg-white dark:bg-slate-700">
+                                <option value="complementary">Complementary</option>
+                                <option value="analogous">Analogous</option>
+                                <option value="triadic">Triadic</option>
+                                <option value="split-complementary">Split-Complementary</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-1 flex items-end">
+                            <button id="btnGenerate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                                Generate Palette
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="paletteResult" class="hidden">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-bold text-slate-800 dark:text-white">Your Color Palette</h3>
+                            <button id="btnCopyAll" class="px-4 py-2 text-sm font-semibold bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                Copy All Colors
+                            </button>
+                        </div>
+
+                        <div id="paletteBlocks" class="grid grid-cols-5 gap-3 mb-6"></div>
+
+                        <div id="paletteList" class="space-y-2"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">How to Use the Color Palette Generator</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Pick a base color using the color picker or type a hex code directly. Choose a harmony type — complementary for high contrast, analogous for harmonious blends, triadic for vibrant variety, or split-complementary for balanced contrast. Click "Generate Palette" to see 5 colors with their hex values. Click any color block to copy its hex code.</p>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Color Harmony Types Explained</h3>
+                <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-1">
+                    <li><strong>Complementary:</strong> Colors opposite on the color wheel. Creates bold, high-contrast designs.</li>
+                    <li><strong>Analogous:</strong> Colors next to each other on the wheel. Creates serene, harmonious designs.</li>
+                    <li><strong>Triadic:</strong> Three colors equally spaced on the wheel. Creates vibrant, balanced designs.</li>
+                    <li><strong>Split-Complementary:</strong> A base plus two colors adjacent to its complement. Offers contrast with less tension.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What is color harmony?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Color harmony is the theory of combining colors in a way that is aesthetically pleasing. It uses the color wheel to create balanced, visually appealing color combinations. Common types include complementary, analogous, triadic, and split-complementary.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What is a complementary color palette?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        A complementary palette uses two colors opposite each other on the color wheel (e.g., blue and orange). This creates maximum contrast. The generator adds lighter and darker variations to create a full 5-color palette.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        Can I use these colors for web design?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Yes! The hex values are standard web-compatible colors. Copy them into CSS, design tools, or any application that accepts hex color codes. They work in all modern browsers and design software.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        Can I use these developer tools offline?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Yes. Once the page is loaded, most tools work completely offline. All processing happens in your browser using JavaScript. No internet connection is required after the initial page load.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/developer/color-converter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Color Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert between HEX, RGB, HSL color formats.</span>
+                </a>
+                <a href="/tools/fun/random-color-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Random Color Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate random colors with hex values instantly.</span>
+                </a>
+                <a href="/tools/developer/css-minifier.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">CSS Minifier</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Minify CSS code to reduce file size.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var colorPicker = document.getElementById('baseColor');
+        var hexInput = document.getElementById('baseHex');
+        var lastColors = [];
+
+        colorPicker.addEventListener('input', function() { hexInput.value = this.value; });
+        hexInput.addEventListener('input', function() {
+            if (/^#[0-9a-fA-F]{6}$/.test(this.value)) colorPicker.value = this.value;
+        });
+
+        // HSL conversion helpers
+        function hexToHSL(hex) {
+            hex = hex.replace('#', '');
+            var r = parseInt(hex.substring(0, 2), 16) / 255;
+            var g = parseInt(hex.substring(2, 4), 16) / 255;
+            var b = parseInt(hex.substring(4, 6), 16) / 255;
+            var max = Math.max(r, g, b), min = Math.min(r, g, b);
+            var h, s, l = (max + min) / 2;
+            if (max === min) { h = s = 0; }
+            else {
+                var d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                switch (max) {
+                    case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+                    case g: h = ((b - r) / d + 2) / 6; break;
+                    case b: h = ((r - g) / d + 4) / 6; break;
+                }
+            }
+            return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+        }
+
+        function hslToHex(h, s, l) {
+            h = ((h % 360) + 360) % 360;
+            s = Math.max(0, Math.min(100, s)) / 100;
+            l = Math.max(0, Math.min(100, l)) / 100;
+            var c = (1 - Math.abs(2 * l - 1)) * s;
+            var x = c * (1 - Math.abs((h / 60) % 2 - 1));
+            var m = l - c / 2;
+            var r, g, b;
+            if (h < 60) { r = c; g = x; b = 0; }
+            else if (h < 120) { r = x; g = c; b = 0; }
+            else if (h < 180) { r = 0; g = c; b = x; }
+            else if (h < 240) { r = 0; g = x; b = c; }
+            else if (h < 300) { r = x; g = 0; b = c; }
+            else { r = c; g = 0; b = x; }
+            r = Math.round((r + m) * 255);
+            g = Math.round((g + m) * 255);
+            b = Math.round((b + m) * 255);
+            return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+        }
+
+        function getLuminance(hex) {
+            hex = hex.replace('#', '');
+            var r = parseInt(hex.substring(0, 2), 16) / 255;
+            var g = parseInt(hex.substring(2, 4), 16) / 255;
+            var b = parseInt(hex.substring(4, 6), 16) / 255;
+            return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+        }
+
+        function generatePalette(baseHex, type) {
+            var hsl = hexToHSL(baseHex);
+            var colors = [];
+            if (type === 'complementary') {
+                colors = [
+                    hslToHex(hsl.h, hsl.s, Math.min(hsl.l + 20, 95)),
+                    hslToHex(hsl.h, hsl.s, Math.min(hsl.l + 10, 90)),
+                    hslToHex(hsl.h, hsl.s, hsl.l),
+                    hslToHex((hsl.h + 180) % 360, hsl.s, Math.min(hsl.l + 10, 90)),
+                    hslToHex((hsl.h + 180) % 360, hsl.s, hsl.l)
+                ];
+            } else if (type === 'analogous') {
+                colors = [
+                    hslToHex(hsl.h - 30, hsl.s, hsl.l),
+                    hslToHex(hsl.h - 15, hsl.s, hsl.l),
+                    hslToHex(hsl.h, hsl.s, hsl.l),
+                    hslToHex(hsl.h + 15, hsl.s, hsl.l),
+                    hslToHex(hsl.h + 30, hsl.s, hsl.l)
+                ];
+            } else if (type === 'triadic') {
+                colors = [
+                    hslToHex(hsl.h, hsl.s, hsl.l),
+                    hslToHex((hsl.h + 120) % 360, hsl.s, hsl.l),
+                    hslToHex((hsl.h + 240) % 360, hsl.s, hsl.l),
+                    hslToHex(hsl.h, Math.max(hsl.s - 20, 10), Math.min(hsl.l + 20, 90)),
+                    hslToHex((hsl.h + 120) % 360, Math.max(hsl.s - 20, 10), Math.min(hsl.l + 20, 90))
+                ];
+            } else if (type === 'split-complementary') {
+                colors = [
+                    hslToHex(hsl.h, hsl.s, hsl.l),
+                    hslToHex((hsl.h + 150) % 360, hsl.s, hsl.l),
+                    hslToHex((hsl.h + 210) % 360, hsl.s, hsl.l),
+                    hslToHex(hsl.h, Math.max(hsl.s - 15, 10), Math.min(hsl.l + 25, 92)),
+                    hslToHex((hsl.h + 180) % 360, Math.max(hsl.s - 25, 10), Math.min(hsl.l + 15, 88))
+                ];
+            }
+            return colors;
+        }
+
+        document.getElementById('btnGenerate').addEventListener('click', function() {
+            var hex = hexInput.value.trim();
+            if (!/^#[0-9a-fA-F]{6}$/.test(hex)) { showToast('Please enter a valid hex color (e.g. #3b82f6).', 'error'); return; }
+
+            var type = document.getElementById('harmonyType').value;
+            var colors = generatePalette(hex, type);
+            lastColors = colors;
+
+            // Render blocks
+            var blocksHTML = '';
+            colors.forEach(function(c) {
+                var textColor = getLuminance(c) > 0.5 ? '#000000' : '#ffffff';
+                blocksHTML += '<div class="cursor-pointer rounded-xl h-28 sm:h-36 flex items-end justify-center pb-3 transition-transform hover:scale-105 shadow-md relative group" style="background:' + c + ';" onclick="copyToClipboard(\'' + c + '\', \'Copied ' + c + '\')">' +
+                    '<span class="text-xs font-bold px-2 py-1 rounded" style="color:' + textColor + ';background:rgba(255,255,255,0.2);">' + c.toUpperCase() + '</span>' +
+                    '<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">' +
+                        '<span class="text-xs font-bold px-3 py-1.5 rounded-lg" style="color:' + textColor + ';background:rgba(0,0,0,0.3);">Click to Copy</span>' +
+                    '</div>' +
+                '</div>';
+            });
+            document.getElementById('paletteBlocks').innerHTML = blocksHTML;
+
+            // Render list
+            var listHTML = '';
+            colors.forEach(function(c, i) {
+                listHTML += '<div class="flex items-center gap-3 bg-white dark:bg-slate-800 rounded-lg p-3 border border-slate-200 dark:border-slate-700">' +
+                    '<div class="w-8 h-8 rounded-lg flex-shrink-0" style="background:' + c + ';"></div>' +
+                    '<span class="font-mono font-bold text-slate-800 dark:text-white">' + c.toUpperCase() + '</span>' +
+                    '<span class="text-sm text-slate-500 dark:text-slate-400 ml-auto">Color ' + (i + 1) + '</span>' +
+                    '<button class="px-3 py-1 text-xs font-semibold bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded transition-colors text-slate-700 dark:text-slate-300" onclick="copyToClipboard(\'' + c + '\', \'Copied ' + c + '\')">Copy</button>' +
+                '</div>';
+            });
+            document.getElementById('paletteList').innerHTML = listHTML;
+
+            document.getElementById('paletteResult').classList.remove('hidden');
+        });
+
+        document.getElementById('btnCopyAll').addEventListener('click', function() {
+            if (lastColors.length === 0) { showToast('Generate a palette first.', 'error'); return; }
+            copyToClipboard(lastColors.join('\n'), 'All colors copied!');
+        });
+
+        // Auto-generate on page load
+        document.getElementById('btnGenerate').click();
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Timer | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free custom study session timer with break intervals, session tracking, progress bar, and audio alerts. Perfect for focused study sessions and exam prep.">
+    <meta name="keywords" content="study timer, study session timer, focus timer, break timer, study planner, exam timer, concentration timer, productivity timer">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Study Timer - Custom Study Sessions with Breaks | OptiDrop">
+    <meta property="og:description" content="Customizable study timer with break intervals, session tracking, and audio alerts. Stay focused and productive.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/education/study-timer.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Study Timer - Custom Study Sessions with Breaks | OptiDrop">
+    <meta name="twitter:description" content="Customizable study timer with break intervals, session tracking, and audio alerts.">
+    <link rel="canonical" href="https://optidrop.online/tools/education/study-timer.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Education Tools","item":"https://optidrop.online/category/education-tools.html"},{"@type":"ListItem","position":3,"name":"Study Timer","item":"https://optidrop.online/tools/education/study-timer.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Study Timer","applicationCategory":"EducationalApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Custom study session timer with break intervals, progress tracking, and audio alerts using Web Audio API."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the study timer work?","acceptedAnswer":{"@type":"Answer","text":"Set your desired study duration, break duration, and number of sessions. The timer alternates between study and break periods, with an audio alert when each session ends."}},{"@type":"Question","name":"Is there an audio alert?","acceptedAnswer":{"@type":"Answer","text":"Yes, the timer uses the Web Audio API to play a beep sound when each study session or break ends. No external audio files are needed."}},{"@type":"Question","name":"Can I pause and resume the timer?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can pause and resume the timer at any time using the Pause/Resume button. You can also fully reset the timer to start over."}},{"@type":"Question","name":"What is the recommended study-benefit ratio?","acceptedAnswer":{"@type":"Answer","text":"Research suggests a 5:1 ratio of study to break time works well. For example, 25 minutes of studying followed by a 5-minute break (the Pomodoro technique) or 50 minutes with a 10-minute break."}}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header"><div class="header-inner"><a href="/" class="logo-text">Opti<span>Drop</span></a><nav class="header-nav"><a href="/" class="back-link"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>All Tools</a><span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span><button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav></div><nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a></nav></header>
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Study Timer</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Custom study session timer with configurable study and break durations, session tracking, progress bar, and audio alerts. Stay focused and productive.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <!-- Settings -->
+                    <div id="settingsArea">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Study Duration (min)</label>
+                                <input type="number" id="studyDuration" min="1" max="180" value="25" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Break Duration (min)</label>
+                                <input type="number" id="breakDuration" min="1" max="60" value="5" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Number of Sessions</label>
+                                <input type="number" id="numSessions" min="1" max="20" value="4" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none">
+                            </div>
+                        </div>
+                        <button onclick="startTimer()" class="w-full sm:w-auto px-8 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-semibold transition">Start Study Session</button>
+                    </div>
+
+                    <!-- Timer Display -->
+                    <div id="timerArea" class="hidden text-center">
+                        <div class="mb-4">
+                            <span id="phaseLabel" class="inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">Study Time</span>
+                        </div>
+                        <div class="mb-6">
+                            <p class="text-7xl sm:text-8xl font-extrabold text-slate-900 dark:text-white tabular-nums" id="timerDisplay">25:00</p>
+                        </div>
+                        <div class="mb-4 max-w-md mx-auto">
+                            <div class="flex items-center justify-between text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">
+                                <span>Progress</span>
+                                <span id="sessionCounter">Session 1 of 4</span>
+                            </div>
+                            <div class="h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                <div id="progressBar" class="h-full bg-gradient-to-r from-brand-500 to-emerald-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center gap-3 mt-6">
+                            <button onclick="togglePause()" id="pauseBtn" class="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-semibold transition">Pause</button>
+                            <button onclick="resetTimer()" class="px-6 py-3 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-xl font-semibold transition">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>Custom Study Session Timer</h2>
+                <p>Our study timer helps you structure your study sessions with customizable study and break intervals. Set your preferred durations and number of sessions, then let the timer guide you through focused study periods followed by refreshing breaks.</p>
+                <h3>How to Use the Study Timer</h3>
+                <p>Configure your study duration (how long each study session lasts), break duration (how long each break lasts), and the number of sessions you want to complete. Click Start to begin. The timer alternates between study and break periods automatically, playing an audio alert each time a phase ends.</p>
+                <h3>The Pomodoro Technique</h3>
+                <p>The popular Pomodoro Technique uses 25-minute study sessions followed by 5-minute breaks, with a longer 15-30 minute break after every 4 sessions. Our timer defaults to this pattern but you can customize it to fit your personal study style.</p>
+                <h3>Why Timed Study Sessions Work</h3>
+                <p>Research shows that time-boxed study sessions improve focus and reduce mental fatigue. Knowing there is a break coming helps you maintain concentration. Regular breaks also give your brain time to consolidate information, improving long-term retention.</p>
+                <h3>Tips for Effective Study Sessions</h3>
+                <p>During study periods, eliminate distractions by silencing your phone and closing unrelated tabs. Use breaks to stand up, stretch, or get water. Avoid checking social media during breaks as it can break your focus. After completing all sessions, take a longer break of 20-30 minutes.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">How does the study timer work?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">Set your desired study duration, break duration, and number of sessions. The timer alternates between study and break periods, with an audio alert when each session ends.</div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">Is there an audio alert?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">Yes, the timer uses the Web Audio API to play a beep sound when each study session or break ends. No external audio files are needed.</div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">Can I pause and resume the timer?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">Yes, you can pause and resume the timer at any time using the Pause/Resume button. You can also fully reset the timer to start over.</div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">What is the recommended study-break ratio?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">Research suggests a 5:1 ratio of study to break time works well. For example, 25 minutes of studying followed by a 5-minute break (the Pomodoro technique) or 50 minutes with a 10-minute break.</div>
+                </details>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="/tools/education/pomodoro-timer.html" class="glass-panel rounded-xl p-5 hover:shadow-lg transition group">
+                    <h3 class="font-semibold text-slate-800 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition">Pomodoro Timer</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Classic Pomodoro technique timer for focused work sessions.</p>
+                </a>
+                <a href="/tools/education/gpa-calculator.html" class="glass-panel rounded-xl p-5 hover:shadow-lg transition group">
+                    <h3 class="font-semibold text-slate-800 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition">GPA Calculator</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Calculate your Grade Point Average with custom grade scales.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+        let timerInterval = null;
+        let isPaused = false;
+        let currentPhase = 'study'; // 'study' or 'break'
+        let currentSession = 1;
+        let totalSessions = 4;
+        let remainingSeconds = 0;
+        let studyDurationSec = 0;
+        let breakDurationSec = 0;
+        let audioCtx = null;
+
+        function playBeep() {
+            try {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.frequency.value = 800;
+                osc.type = 'sine';
+                gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+                osc.start(audioCtx.currentTime);
+                osc.stop(audioCtx.currentTime + 0.5);
+                // Second beep
+                setTimeout(() => {
+                    const osc2 = audioCtx.createOscillator();
+                    const gain2 = audioCtx.createGain();
+                    osc2.connect(gain2);
+                    gain2.connect(audioCtx.destination);
+                    osc2.frequency.value = 1000;
+                    osc2.type = 'sine';
+                    gain2.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                    gain2.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+                    osc2.start(audioCtx.currentTime);
+                    osc2.stop(audioCtx.currentTime + 0.5);
+                }, 300);
+            } catch(e) {}
+        }
+
+        function startTimer() {
+            const studyMin = parseInt(document.getElementById('studyDuration').value);
+            const breakMin = parseInt(document.getElementById('breakDuration').value);
+            totalSessions = parseInt(document.getElementById('numSessions').value);
+
+            if (isNaN(studyMin) || studyMin < 1) { if (typeof showToast === 'function') showToast('Please enter a valid study duration.', 'error'); return; }
+            if (isNaN(breakMin) || breakMin < 1) { if (typeof showToast === 'function') showToast('Please enter a valid break duration.', 'error'); return; }
+            if (isNaN(totalSessions) || totalSessions < 1) { if (typeof showToast === 'function') showToast('Please enter a valid number of sessions.', 'error'); return; }
+
+            studyDurationSec = studyMin * 60;
+            breakDurationSec = breakMin * 60;
+            currentSession = 1;
+            currentPhase = 'study';
+            remainingSeconds = studyDurationSec;
+            isPaused = false;
+
+            document.getElementById('settingsArea').classList.add('hidden');
+            document.getElementById('timerArea').classList.remove('hidden');
+            document.getElementById('pauseBtn').textContent = 'Pause';
+
+            updateDisplay();
+            runTimer();
+        }
+
+        function runTimer() {
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                if (isPaused) return;
+                remainingSeconds--;
+                if (remainingSeconds < 0) {
+                    playBeep();
+                    if (currentPhase === 'study') {
+                        currentPhase = 'break';
+                        remainingSeconds = breakDurationSec;
+                    } else {
+                        currentSession++;
+                        if (currentSession > totalSessions) {
+                            clearInterval(timerInterval);
+                            if (typeof showToast === 'function') showToast('All sessions complete! Great work!', 'success');
+                            resetTimer();
+                            return;
+                        }
+                        currentPhase = 'study';
+                        remainingSeconds = studyDurationSec;
+                    }
+                }
+                updateDisplay();
+            }, 1000);
+        }
+
+        function updateDisplay() {
+            const mins = Math.floor(remainingSeconds / 60);
+            const secs = remainingSeconds % 60;
+            document.getElementById('timerDisplay').textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+
+            const phaseLabel = document.getElementById('phaseLabel');
+            if (currentPhase === 'study') {
+                phaseLabel.textContent = 'Study Time';
+                phaseLabel.className = 'inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300';
+                document.title = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')} - Study | OptiDrop`;
+            } else {
+                phaseLabel.textContent = 'Break Time';
+                phaseLabel.className = 'inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300';
+                document.title = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')} - Break | OptiDrop`;
+            }
+
+            document.getElementById('sessionCounter').textContent = `Session ${currentSession} of ${totalSessions}`;
+
+            // Progress bar
+            let totalDuration = currentPhase === 'study' ? studyDurationSec : breakDurationSec;
+            let elapsed = totalDuration - remainingSeconds;
+            // Calculate overall progress
+            let completedSessionsTime = (currentSession - 1) * (studyDurationSec + breakDurationSec);
+            let currentPhaseElapsed = currentPhase === 'study' ? elapsed : studyDurationSec + elapsed;
+            let totalTime = totalSessions * (studyDurationSec + breakDurationSec);
+            let overallProgress = ((completedSessionsTime + currentPhaseElapsed) / totalTime) * 100;
+            document.getElementById('progressBar').style.width = Math.min(100, overallProgress) + '%';
+        }
+
+        function togglePause() {
+            isPaused = !isPaused;
+            document.getElementById('pauseBtn').textContent = isPaused ? 'Resume' : 'Pause';
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            isPaused = false;
+            document.getElementById('settingsArea').classList.remove('hidden');
+            document.getElementById('timerArea').classList.add('hidden');
+            document.title = 'Study Timer | OptiDrop';
+        }
+    </script>
+</body>
+</html>

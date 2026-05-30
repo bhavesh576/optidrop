@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller Online — Roll Multiple Dice with Animation Free | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Roll up to 10 dice at once with animated visuals. Choose from d4, d6, d8, d10, d12, and d20 dice types. See individual results, totals, and roll history. Free online dice roller.">
+    <meta name="keywords" content="dice roller, online dice, roll dice, virtual dice, D&amp;D dice roller, d20 roller, multi dice roller, dice simulator, random dice roll">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Dice Roller Online — Roll Multiple Dice with Animation Free | OptiDrop">
+    <meta property="og:description" content="Roll up to 10 dice at once with animated visuals. Choose from d4, d6, d8, d10, d12, and d20 dice types. Free online dice roller.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/fun/dice-roller.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dice Roller Online — Roll Multiple Dice with Animation Free | OptiDrop">
+    <meta name="twitter:description" content="Roll up to 10 dice at once with animated visuals. Choose from d4, d6, d8, d10, d12, and d20 dice types. Free online dice roller.">
+    <link rel="canonical" href="https://optidrop.online/tools/fun/dice-roller.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Fun Tools", "item": "https://optidrop.online/tools/fun/"},
+        {"@type": "ListItem", "position": 3, "name": "Dice Roller", "item": "https://optidrop.online/tools/fun/dice-roller.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Dice Roller",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Roll up to 10 dice at once with animated visuals. Choose from d4, d6, d8, d10, d12, and d20 dice types. Free online dice roller."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the online dice roller work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Select the number of dice (1-10) and the dice type (d4, d6, d8, d10, d12, or d20), then click Roll. Each die animates and lands on a random number. The individual results and total are displayed along with your roll history."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What dice types are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The dice roller supports six common dice types used in tabletop games: d4 (4-sided), d6 (6-sided), d8 (8-sided), d10 (10-sided), d12 (12-sided), and d20 (20-sided). You can roll up to 10 of any type at once."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the dice roll truly random?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, each die result is generated using JavaScript's Math.random() function, which provides pseudo-random numbers suitable for games and simulations. Each face of the die has an equal probability of being rolled."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this for Dungeons and Dragons (D&D)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! This dice roller supports all the standard D&D dice types including d4, d6, d8, d10, d12, and d20. You can roll multiple dice at once which is perfect for damage rolls, skill checks, and other D&D mechanics."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .dice-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            min-height: 80px;
+        }
+        .die {
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: 800;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(99,102,241,0.4);
+            transition: transform 0.15s ease;
+            user-select: none;
+        }
+        .die.rolling {
+            animation: diceShake 0.6s ease-in-out;
+        }
+        @keyframes diceShake {
+            0% { transform: rotate(0deg) scale(1); }
+            15% { transform: rotate(15deg) scale(1.1); }
+            30% { transform: rotate(-15deg) scale(1.1); }
+            45% { transform: rotate(10deg) scale(1.05); }
+            60% { transform: rotate(-10deg) scale(1.05); }
+            75% { transform: rotate(5deg) scale(1); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+        .die.d4 { border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 4px 12px rgba(245,158,11,0.4); }
+        .die.d6 { background: linear-gradient(135deg, #3b82f6, #6366f1); box-shadow: 0 4px 12px rgba(99,102,241,0.4); }
+        .die.d8 { border-radius: 50% 14px 50% 14px; background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 12px rgba(16,185,129,0.4); }
+        .die.d10 { border-radius: 14px 50% 14px 50%; background: linear-gradient(135deg, #ef4444, #b91c1c); box-shadow: 0 4px 12px rgba(239,68,68,0.4); }
+        .die.d12 { border-radius: 20px; background: linear-gradient(135deg, #8b5cf6, #6d28d9); box-shadow: 0 4px 12px rgba(139,92,246,0.4); }
+        .die.d20 { border-radius: 50%; background: linear-gradient(135deg, #ec4899, #be185d); box-shadow: 0 4px 12px rgba(236,72,153,0.4); }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Dice Roller — Roll Multiple Dice Online with Animation</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Roll up to 10 dice at once with fun animated visuals. Choose from d4, d6, d8, d10, d12, and d20. See individual results, totals, and your roll history. Perfect for board games and tabletop RPGs.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Settings -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label for="numDice" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Number of Dice (1-10)</label>
+                            <input type="number" id="numDice" min="1" max="10" value="2"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                        </div>
+                        <div>
+                            <label for="diceType" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Dice Type</label>
+                            <select id="diceType"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                                <option value="4">d4 (4-sided)</option>
+                                <option value="6" selected>d6 (6-sided)</option>
+                                <option value="8">d8 (8-sided)</option>
+                                <option value="10">d10 (10-sided)</option>
+                                <option value="12">d12 (12-sided)</option>
+                                <option value="20">d20 (20-sided)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Dice Display Area -->
+                    <div class="text-center mb-6">
+                        <div id="diceGrid" class="dice-grid mb-4">
+                            <span class="text-slate-400 dark:text-slate-500 text-sm py-6">Click Roll to start!</span>
+                        </div>
+                    </div>
+
+                    <!-- Result Display -->
+                    <div id="resultSection" class="hidden mb-6">
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-4">
+                            <div class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900 dark:to-indigo-800 border border-blue-200 dark:border-blue-700 rounded-2xl p-4 text-center">
+                                <p class="text-sm font-semibold text-blue-700 dark:text-blue-300 mb-1">Total</p>
+                                <p id="rollTotal" class="text-3xl font-extrabold text-blue-900 dark:text-blue-100">0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900 dark:to-emerald-800 border border-green-200 dark:border-green-700 rounded-2xl p-4 text-center">
+                                <p class="text-sm font-semibold text-green-700 dark:text-green-300 mb-1">Highest</p>
+                                <p id="rollMax" class="text-3xl font-extrabold text-green-900 dark:text-green-100">0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-amber-50 to-yellow-100 dark:from-amber-900 dark:to-yellow-800 border border-amber-200 dark:border-amber-700 rounded-2xl p-4 text-center">
+                                <p class="text-sm font-semibold text-amber-700 dark:text-amber-300 mb-1">Lowest</p>
+                                <p id="rollMin" class="text-3xl font-extrabold text-amber-900 dark:text-amber-100">0</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Roll Button -->
+                    <div class="max-w-md mx-auto mb-8">
+                        <button id="btnRoll" class="w-full px-6 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-xl hover:from-indigo-700 hover:to-purple-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2 text-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Roll the Dice
+                        </button>
+                    </div>
+
+                    <!-- Roll History -->
+                    <div class="mb-6">
+                        <p class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Roll History (last 10):</p>
+                        <div id="rollHistory" class="flex flex-col gap-2">
+                            <span class="text-sm text-slate-400 dark:text-slate-500">No rolls yet</span>
+                        </div>
+                    </div>
+
+                    <!-- Reset Button -->
+                    <div class="text-center">
+                        <button id="btnReset" class="px-6 py-2 bg-white dark:bg-slate-800 text-red-500 font-semibold rounded-xl border-2 border-red-200 dark:border-red-800 hover:bg-red-50 dark:hover:bg-red-900 transition-colors text-sm">
+                            Reset History
+                        </button>
+                    </div>
+
+                    <!-- What do you want to do next? -->
+                    <div class="mt-10 pt-8 border-t border-slate-200 dark:border-slate-700 text-center">
+                        <p class="text-lg font-bold text-slate-800 dark:text-white mb-4">What do you want to do next?</p>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <a href="/tools/fun/coin-flip.html" class="px-5 py-3 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold rounded-xl hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors text-sm">Coin Flip</a>
+                            <a href="/tools/fun/random-joke.html" class="px-5 py-3 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold rounded-xl hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors text-sm">Random Joke</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Free Online Dice Roller — Roll Virtual Dice Instantly</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">OptiDrop's Dice Roller lets you roll up to 10 dice at once with animated visuals. Choose from six common dice types: d4, d6, d8, d10, d12, and d20. Each die is color-coded by type and animates with a shaking effect before revealing the result. The tool shows individual die values, the total sum, highest, and lowest roll.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3">Perfect for Board Games and RPGs</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Whether you are playing Dungeons and Dragons, Yahtzee, or any tabletop game, this dice roller has you covered. Roll damage dice, skill checks, or initiative rolls with a single click. The d20 roller is especially popular for D&D players who need quick and fair random outcomes.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3">Roll History and Statistics</h3>
+                <p class="text-slate-600 dark:text-slate-400">Every roll is recorded in your session history so you can review past results. See the total, highest, and lowest values for each roll. The history stores your last 10 rolls and can be cleared at any time with the Reset button.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        How does the online dice roller work?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Select the number of dice (1-10) and the dice type (d4, d6, d8, d10, d12, or d20), then click Roll. Each die animates and lands on a random number. The individual results and total are displayed along with your roll history.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What dice types are supported?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        The dice roller supports six common dice types used in tabletop games: d4 (4-sided), d6 (6-sided), d8 (8-sided), d10 (10-sided), d12 (12-sided), and d20 (20-sided). You can roll up to 10 of any type at once.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        Is the dice roll truly random?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Yes, each die result is generated using JavaScript's Math.random() function, which provides pseudo-random numbers suitable for games and simulations. Each face of the die has an equal probability of being rolled.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        Can I use this for Dungeons and Dragons (D&amp;D)?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Absolutely! This dice roller supports all the standard D&amp;D dice types including d4, d6, d8, d10, d12, and d20. You can roll multiple dice at once which is perfect for damage rolls, skill checks, and other D&amp;D mechanics.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/fun/coin-flip.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Coin Flip</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Flip a virtual coin with animation.</span>
+                </a>
+                <a href="/tools/fun/random-joke.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Random Joke Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Get a random clean joke to brighten your day.</span>
+                </a>
+                <a href="/tools/fun/would-you-rather.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Would You Rather</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Fun this-or-that dilemmas with poll results.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    if(typeof trackRecentTool==='function')trackRecentTool('Dice Roller','/tools/fun/dice-roller.html');
+    (function() {
+        var diceGrid = document.getElementById('diceGrid');
+        var btnRoll = document.getElementById('btnRoll');
+        var btnReset = document.getElementById('btnReset');
+        var resultSection = document.getElementById('resultSection');
+        var rollHistory = document.getElementById('rollHistory');
+        var history = [];
+        var isRolling = false;
+
+        function rollDice() {
+            if (isRolling) return;
+            var numDice = parseInt(document.getElementById('numDice').value);
+            var diceType = parseInt(document.getElementById('diceType').value);
+
+            if (!numDice || numDice < 1 || numDice > 10) {
+                showToast('Please enter a number of dice between 1 and 10.', 'error');
+                return;
+            }
+
+            isRolling = true;
+            btnRoll.disabled = true;
+            btnRoll.classList.add('opacity-60');
+
+            // Generate results
+            var results = [];
+            for (var i = 0; i < numDice; i++) {
+                results.push(Math.floor(Math.random() * diceType) + 1);
+            }
+
+            // Render dice with animation
+            diceGrid.innerHTML = '';
+            results.forEach(function(val, idx) {
+                var die = document.createElement('div');
+                die.className = 'die d' + diceType + ' rolling';
+                die.textContent = '?';
+                diceGrid.appendChild(die);
+
+                // Reveal value after animation
+                setTimeout(function() {
+                    die.textContent = val;
+                    die.classList.remove('rolling');
+                }, 600 + idx * 80);
+            });
+
+            // Show results after animation completes
+            var totalDelay = 600 + results.length * 80 + 100;
+            setTimeout(function() {
+                var total = results.reduce(function(a, b) { return a + b; }, 0);
+                var max = Math.max.apply(null, results);
+                var min = Math.min.apply(null, results);
+
+                document.getElementById('rollTotal').textContent = total;
+                document.getElementById('rollMax').textContent = max;
+                document.getElementById('rollMin').textContent = min;
+                resultSection.classList.remove('hidden');
+
+                // Add to history
+                var entry = {
+                    dice: numDice + 'd' + diceType,
+                    results: results,
+                    total: total,
+                    time: new Date().toLocaleTimeString()
+                };
+                history.unshift(entry);
+                if (history.length > 10) history = history.slice(0, 10);
+                renderHistory();
+
+                isRolling = false;
+                btnRoll.disabled = false;
+                btnRoll.classList.remove('opacity-60');
+            }, totalDelay);
+        }
+
+        function renderHistory() {
+            if (history.length === 0) {
+                rollHistory.innerHTML = '<span class="text-sm text-slate-400 dark:text-slate-500">No rolls yet</span>';
+                return;
+            }
+            rollHistory.innerHTML = '';
+            history.forEach(function(entry) {
+                var div = document.createElement('div');
+                div.className = 'flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700';
+                div.innerHTML =
+                    '<div class="flex items-center gap-3">' +
+                        '<span class="text-xs font-bold text-slate-500 dark:text-slate-400 w-16">' + entry.dice + '</span>' +
+                        '<span class="text-sm text-slate-700 dark:text-slate-300">[' + entry.results.join(', ') + ']</span>' +
+                    '</div>' +
+                    '<div class="flex items-center gap-3">' +
+                        '<span class="text-lg font-extrabold text-indigo-600 dark:text-indigo-400">= ' + entry.total + '</span>' +
+                        '<span class="text-xs text-slate-400">' + entry.time + '</span>' +
+                    '</div>';
+                rollHistory.appendChild(div);
+            });
+        }
+
+        btnRoll.addEventListener('click', rollDice);
+
+        btnReset.addEventListener('click', function() {
+            history = [];
+            renderHistory();
+            diceGrid.innerHTML = '<span class="text-slate-400 dark:text-slate-500 text-sm py-6">Click Roll to start!</span>';
+            resultSection.classList.add('hidden');
+            showToast('History cleared.', 'info');
+        });
+
+        // Roll on Enter
+        document.getElementById('numDice').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') rollDice();
+        });
+    })();
+    </script>
+</body>
+</html>

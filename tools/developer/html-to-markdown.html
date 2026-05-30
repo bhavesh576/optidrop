@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to Markdown Converter Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online HTML to Markdown converter. Convert HTML code to clean Markdown instantly. Supports headings, bold, italic, links, images, lists, code, and blockquotes. Copy and download results. 100% private.">
+    <meta name="keywords" content="html to markdown, html to md converter, html markdown converter online, convert html to markdown free, html to markdown tool, markup converter">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="HTML to Markdown Converter Free Online | OptiDrop">
+    <meta property="og:description" content="Free online HTML to Markdown converter. Convert HTML to clean Markdown instantly. Supports headings, links, images, lists, code, and more. 100% private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/html-to-markdown.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HTML to Markdown Converter Free Online | OptiDrop">
+    <meta name="twitter:description" content="Free online HTML to Markdown converter. Convert HTML to clean Markdown instantly. 100% private.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/html-to-markdown.html">
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Developer Tools","item":"https://optidrop.online/category/developer-tools.html"},{"@type":"ListItem","position":3,"name":"HTML to Markdown","item":"https://optidrop.online/tools/developer/html-to-markdown.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop HTML to Markdown","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online HTML to Markdown converter. Convert HTML code to clean Markdown with support for headings, links, images, lists, code blocks, and more. All processing happens in your browser."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Markdown?","acceptedAnswer":{"@type":"Answer","text":"Markdown is a lightweight markup language created by John Gruber in 2004. It uses simple, readable syntax to format text — for example, using # for headings, ** for bold, and * for italic. Markdown is widely used for documentation, README files on GitHub, blog posts, and messaging platforms."}},{"@type":"Question","name":"How does this HTML to Markdown converter work?","acceptedAnswer":{"@type":"Answer","text":"This tool parses your HTML code using the browser's built-in DOM parser and converts each HTML element to its Markdown equivalent. For example, <h1> tags become # headings, <strong> becomes **bold**, <a> links become [text](url), and so on. All conversion happens locally in your browser."}},{"@type":"Question","name":"What HTML elements are supported?","acceptedAnswer":{"@type":"Answer","text":"The converter supports: headings (h1-h6 to # through ######), bold (<strong>/<b> to **), italic (<em>/<i> to *), links (<a> to [text](url)), images (<img> to ![alt](src)), unordered lists (<ul>/<li> to - ), ordered lists (<ol>/<li> to 1. ), inline code (<code> to `), code blocks (<pre> to ```), and blockquotes (<blockquote> to >)."}},{"@type":"Question","name":"Can I download the Markdown output?","acceptedAnswer":{"@type":"Answer","text":"Yes, after converting your HTML to Markdown, you can click the Download button to save the output as a .md file directly to your computer. You can also use the Copy button to copy the Markdown text to your clipboard."}}]}</script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">HTML to Markdown Converter Online</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Convert HTML code to clean, readable Markdown instantly. Supports headings, bold, italic, links, images, lists, code blocks, and blockquotes. Copy or download the result. No upload, no sign-up, 100% private.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- HTML Input -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <label for="htmlInput" class="block text-sm font-bold text-slate-700 dark:text-slate-300">HTML Input</label>
+                            <button onclick="document.getElementById('htmlInput').value='';document.getElementById('markdownOutput').value='';updateStats();" class="text-xs font-semibold text-red-500 hover:text-red-600 transition-colors">Clear</button>
+                        </div>
+                        <textarea id="htmlInput" placeholder='Paste your HTML here...&#10;&#10;Example:&#10;<h1>Hello World</h1>&#10;<p>This is a <strong>bold</strong> and <em>italic</em> text.</p>&#10;<ul>&#10;  <li>Item 1</li>&#10;  <li>Item 2</li>&#10;</ul>' class="block w-full px-4 py-4 text-sm border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-mono resize-y" style="min-height:200px;line-height:1.7;"></textarea>
+                    </div>
+
+                    <!-- Convert Button -->
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <button id="btnConvert" class="flex-1 min-w-[150px] px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                            Convert to Markdown
+                        </button>
+                        <button onclick="loadSample()" class="px-5 py-4 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold rounded-xl hover:bg-slate-300 dark:hover:bg-slate-600 transition-all text-sm">
+                            Load Sample HTML
+                        </button>
+                    </div>
+
+                    <!-- Markdown Output -->
+                    <div class="mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <label for="markdownOutput" class="block text-sm font-bold text-slate-700 dark:text-slate-300">Markdown Output</label>
+                            <div class="flex gap-2">
+                                <button onclick="var el=document.getElementById('markdownOutput');if(el.value){copyToClipboard(el.value)}else{showToast('Nothing to copy. Convert HTML first.','error')}" class="text-xs font-semibold text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300 transition-colors">Copy</button>
+                                <button onclick="var el=document.getElementById('markdownOutput');if(el.value){downloadTextFile(el.value,'converted.md')}else{showToast('Nothing to download. Convert HTML first.','error')}" class="text-xs font-semibold text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 transition-colors">Download .md</button>
+                            </div>
+                        </div>
+                        <textarea id="markdownOutput" readonly placeholder="Markdown output will appear here..." class="block w-full px-4 py-4 text-sm border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-mono resize-y bg-slate-50" style="min-height:200px;line-height:1.7;"></textarea>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-slate-400">
+                        <span>HTML characters: <strong id="htmlCharCount" class="text-slate-800 dark:text-slate-200">0</strong></span>
+                        <span>Markdown characters: <strong id="mdCharCount" class="text-slate-800 dark:text-slate-200">0</strong></span>
+                        <span>Markdown lines: <strong id="mdLineCount" class="text-slate-800 dark:text-slate-200">0</strong></span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Free Online HTML to Markdown Converter</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">OptiDrop's HTML to Markdown converter transforms your HTML code into clean, readable Markdown syntax instantly. The tool uses the browser's native DOM parser to accurately interpret HTML structure and convert it to equivalent Markdown formatting.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">Supported HTML Elements</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">The converter handles all common HTML elements: headings (h1-h6 become # through ######), text formatting (bold with **, italic with *), hyperlinks ([text](url)), images (![alt](src)), unordered lists (- item), ordered lists (1. item), inline code (`code`), code blocks (```), and blockquotes (> text).</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">Why Convert HTML to Markdown?</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Markdown is simpler, more readable, and easier to maintain than HTML. Converting HTML to Markdown is useful when migrating content to static site generators (Jekyll, Hugo, Gatsby), writing documentation for GitHub, creating README files, publishing on platforms like Medium or Dev.to, or simply wanting cleaner, more portable content.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">100% Private</h3>
+                <p class="text-slate-600 dark:text-slate-400">All conversion happens locally in your browser using JavaScript. Your HTML code is never sent to any server, ensuring complete privacy and security for your content.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What is Markdown?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Markdown is a lightweight markup language created by John Gruber in 2004. It uses simple, readable syntax to format text — for example, using # for headings, ** for bold, and * for italic. Markdown is widely used for documentation, README files on GitHub, blog posts, and messaging platforms.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        How does this HTML to Markdown converter work?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        This tool parses your HTML code using the browser's built-in DOM parser and converts each HTML element to its Markdown equivalent. For example, &lt;h1&gt; tags become # headings, &lt;strong&gt; becomes **bold**, &lt;a&gt; links become [text](url), and so on. All conversion happens locally in your browser.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What HTML elements are supported?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        The converter supports: headings (h1-h6 to # through ######), bold (&lt;strong&gt;/&lt;b&gt; to **), italic (&lt;em&gt;/&lt;i&gt; to *), links (&lt;a&gt; to [text](url)), images (&lt;img&gt; to ![alt](src)), unordered lists (&lt;ul&gt;/&lt;li&gt; to - ), ordered lists (&lt;ol&gt;/&lt;li&gt; to 1. ), inline code (&lt;code&gt; to `), code blocks (&lt;pre&gt; to ```), and blockquotes (&lt;blockquote&gt; to &gt;).
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        Can I download the Markdown output?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Yes, after converting your HTML to Markdown, you can click the Download button to save the output as a .md file directly to your computer. You can also use the Copy button to copy the Markdown text to your clipboard.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/developer/markdown-preview.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Markdown Preview</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Write Markdown and see a live HTML preview in real time.</span>
+                </a>
+                <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Format, minify, and validate JSON with syntax highlighting.</span>
+                </a>
+                <a href="/tools/developer/url-encoder.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">URL Encoder</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode URLs for safe transmission.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var htmlInput = document.getElementById('htmlInput');
+        var markdownOutput = document.getElementById('markdownOutput');
+        var btnConvert = document.getElementById('btnConvert');
+        var htmlCharCount = document.getElementById('htmlCharCount');
+        var mdCharCount = document.getElementById('mdCharCount');
+        var mdLineCount = document.getElementById('mdLineCount');
+
+        var sampleHtml = '<h1>Welcome to OptiDrop</h1>\n<p>OptiDrop provides <strong>free</strong> and <em>easy-to-use</em> online tools.</p>\n<h2>Our Features</h2>\n<ul>\n  <li>Image compression</li>\n  <li>PDF tools</li>\n  <li>Developer utilities</li>\n</ul>\n<p>Visit our <a href="https://optidrop.online">homepage</a> for more.</p>\n<h3>Code Example</h3>\n<p>Use <code>console.log()</code> to debug.</p>\n<blockquote>\n  <p>All tools are 100% private and run in your browser.</p>\n</blockquote>';
+
+        window.loadSample = function() {
+            htmlInput.value = sampleHtml;
+            updateStats();
+            convert();
+        };
+
+        function updateStats() {
+            htmlCharCount.textContent = htmlInput.value.length;
+            mdCharCount.textContent = markdownOutput.value.length;
+            mdLineCount.textContent = markdownOutput.value ? markdownOutput.value.split('\n').length : 0;
+        }
+
+        htmlInput.addEventListener('input', updateStats);
+
+        function htmlToMarkdown(html) {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(html, 'text/html');
+            var body = doc.body;
+            return processNode(body).trim();
+        }
+
+        function processNode(node) {
+            var result = '';
+            var children = node.childNodes;
+            for (var i = 0; i < children.length; i++) {
+                var child = children[i];
+                if (child.nodeType === 3) {
+                    // Text node
+                    result += child.textContent;
+                } else if (child.nodeType === 1) {
+                    // Element node
+                    result += processElement(child);
+                }
+            }
+            return result;
+        }
+
+        function processElement(el) {
+            var tag = el.tagName.toLowerCase();
+            var inner = processNode(el);
+            var innerTrimmed = inner.trim();
+
+            switch (tag) {
+                case 'h1':
+                    return '\n\n# ' + innerTrimmed + '\n\n';
+                case 'h2':
+                    return '\n\n## ' + innerTrimmed + '\n\n';
+                case 'h3':
+                    return '\n\n### ' + innerTrimmed + '\n\n';
+                case 'h4':
+                    return '\n\n#### ' + innerTrimmed + '\n\n';
+                case 'h5':
+                    return '\n\n##### ' + innerTrimmed + '\n\n';
+                case 'h6':
+                    return '\n\n###### ' + innerTrimmed + '\n\n';
+                case 'strong':
+                case 'b':
+                    return '**' + innerTrimmed + '**';
+                case 'em':
+                case 'i':
+                    return '*' + innerTrimmed + '*';
+                case 'del':
+                case 's':
+                case 'strike':
+                    return '~~' + innerTrimmed + '~~';
+                case 'code':
+                    // Check if inside a pre (code block)
+                    if (el.parentElement && el.parentElement.tagName.toLowerCase() === 'pre') {
+                        return innerTrimmed;
+                    }
+                    return '`' + innerTrimmed + '`';
+                case 'pre':
+                    var codeEl = el.querySelector('code');
+                    var codeText = codeEl ? codeEl.textContent : el.textContent;
+                    return '\n\n```\n' + codeText.trim() + '\n```\n\n';
+                case 'a':
+                    var href = el.getAttribute('href') || '';
+                    return '[' + innerTrimmed + '](' + href + ')';
+                case 'img':
+                    var alt = el.getAttribute('alt') || '';
+                    var src = el.getAttribute('src') || '';
+                    return '\n\n![' + alt + '](' + src + ')\n\n';
+                case 'ul':
+                    return processList(el, false) + '\n';
+                case 'ol':
+                    return processList(el, true) + '\n';
+                case 'li':
+                    // Handled by processList
+                    return inner;
+                case 'blockquote':
+                    var lines = innerTrimmed.split('\n');
+                    var quoted = lines.map(function(line) { return '> ' + line.trim(); }).join('\n');
+                    return '\n\n' + quoted + '\n\n';
+                case 'p':
+                    return '\n\n' + innerTrimmed + '\n\n';
+                case 'br':
+                    return '  \n';
+                case 'hr':
+                    return '\n\n---\n\n';
+                case 'table':
+                    return processTable(el) + '\n\n';
+                case 'div':
+                case 'section':
+                case 'article':
+                case 'main':
+                case 'aside':
+                case 'header':
+                case 'footer':
+                case 'nav':
+                    return '\n\n' + inner + '\n\n';
+                case 'span':
+                case 'mark':
+                case 'small':
+                case 'sub':
+                case 'sup':
+                case 'abbr':
+                case 'cite':
+                case 'dfn':
+                case 'kbd':
+                case 'var':
+                case 'samp':
+                case 'time':
+                case 'abbr':
+                case 'abbr':
+                    return inner;
+                case 'script':
+                case 'style':
+                case 'noscript':
+                    return '';
+                default:
+                    return inner;
+            }
+        }
+
+        function processList(listEl, ordered) {
+            var items = listEl.querySelectorAll(':scope > li');
+            var lines = [];
+            for (var i = 0; i < items.length; i++) {
+                var prefix = ordered ? (i + 1) + '. ' : '- ';
+                var text = processNode(items[i]).trim();
+                lines.push(prefix + text);
+            }
+            return '\n\n' + lines.join('\n') + '\n';
+        }
+
+        function processTable(tableEl) {
+            var rows = tableEl.querySelectorAll('tr');
+            if (rows.length === 0) return '';
+            var result = [];
+            for (var r = 0; r < rows.length; r++) {
+                var cells = rows[r].querySelectorAll('th, td');
+                var row = '| ';
+                for (var c = 0; c < cells.length; c++) {
+                    row += processNode(cells[c]).trim() + ' | ';
+                }
+                result.push(row);
+                if (r === 0) {
+                    var sep = '| ';
+                    for (var c2 = 0; c2 < cells.length; c2++) {
+                        sep += '--- | ';
+                    }
+                    result.push(sep);
+                }
+            }
+            return '\n\n' + result.join('\n');
+        }
+
+        function convert() {
+            var html = htmlInput.value.trim();
+            if (!html) {
+                showToast('Please enter some HTML code first.', 'error');
+                return;
+            }
+            var md = htmlToMarkdown(html);
+            // Clean up excessive newlines
+            md = md.replace(/\n{3,}/g, '\n\n').trim();
+            markdownOutput.value = md;
+            updateStats();
+            showToast('HTML converted to Markdown successfully!');
+        }
+
+        btnConvert.addEventListener('click', convert);
+
+        // Update stats on load
+        updateStats();
+    })();
+    </script>
+</body>
+</html>

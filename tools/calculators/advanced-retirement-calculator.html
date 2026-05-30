@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Retirement Calculator with Inflation | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Advanced retirement calculator with inflation adjustment. Plan your retirement corpus, year-by-year growth projection, and see if you have a shortfall or surplus. 100% free.">
+    <meta name="keywords" content="advanced retirement calculator, inflation adjusted retirement, retirement planning calculator, retirement corpus calculator, retirement shortfall surplus, year by year retirement projection">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Advanced Retirement Calculator with Inflation | OptiDrop">
+    <meta property="og:description" content="Advanced retirement calculator with inflation adjustment. Plan your retirement corpus, year-by-year growth projection, and see if you have a shortfall or surplus.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/calculators/advanced-retirement-calculator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Advanced Retirement Calculator with Inflation | OptiDrop">
+    <meta name="twitter:description" content="Advanced retirement calculator with inflation adjustment. Plan your retirement corpus with year-by-year projection.">
+    <link rel="canonical" href="https://optidrop.online/tools/calculators/advanced-retirement-calculator.html">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://optidrop.online/category/calculator-tools.html"},{"@type":"ListItem","position":3,"name":"Advanced Retirement Calculator","item":"https://optidrop.online/tools/calculators/advanced-retirement-calculator.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Advanced Retirement Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Advanced retirement calculator with inflation adjustment and year-by-year projection."}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does inflation affect retirement planning?","acceptedAnswer":{"@type":"Answer","text":"Inflation reduces the purchasing power of money over time. If inflation is 6% per year, something that costs Rs. 100 today will cost Rs. 106 next year. For retirement planning, this means you need a much larger corpus than you might think, because expenses will be significantly higher by the time you retire. This calculator accounts for inflation to give you a realistic projection."}},{"@type":"Question","name":"What is the 4% rule for retirement withdrawal?","acceptedAnswer":{"@type":"Answer","text":"The 4% rule suggests you can safely withdraw 4% of your retirement savings in the first year of retirement, then adjust for inflation each year. For example, if you have Rs. 1 crore saved, you can withdraw Rs. 4 lakhs in year one. This approach is designed to make your savings last at least 30 years."}},{"@type":"Question","name":"How much retirement corpus do I need?","acceptedAnswer":{"@type":"Answer","text":"A common formula is: Desired Annual Income / Safe Withdrawal Rate. If you need Rs. 10 lakhs per year and use a 4% withdrawal rate, you need Rs. 2.5 crore. However, you must factor in inflation — if you retire in 20 years with 6% inflation, Rs. 10 lakhs today equals roughly Rs. 32 lakhs then, requiring a corpus of about Rs. 8 crore."}},{"@type":"Question","name":"When should I start retirement planning?","acceptedAnswer":{"@type":"Answer","text":"The earlier you start, the better. Starting in your 20s gives your money 35-40 years to compound. Even small monthly contributions of Rs. 5,000-10,000 starting at age 25 can grow to over Rs. 1 crore by age 60 at 12% annual returns. Starting at 35 means you need to save significantly more each month to reach the same goal."}},{"@type":"Question","name":"What return rate should I expect for retirement investments?","acceptedAnswer":{"@type":"Answer","text":"Historically, equity mutual funds in India have delivered 12-15% annualized returns over 15+ year periods. A conservative estimate for a diversified portfolio is 10-12%. As you approach retirement, gradually shift to safer instruments like PPF, bonds, or debt funds which return 7-8%. This calculator lets you adjust the expected return rate to model different scenarios."}}]}
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Advanced Retirement Calculator with Inflation</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Plan your retirement with inflation adjustment. Enter your details to see year-by-year growth, projected corpus, and whether you will have a shortfall or surplus. 100% free and private.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="curAge" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Current Age</label>
+                            <input type="number" id="curAge" placeholder="e.g. 30" min="18" max="80" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 dark:text-white font-medium bg-white dark:bg-slate-700"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="retAge" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Retirement Age</label>
+                            <input type="number" id="retAge" placeholder="e.g. 60" min="30" max="85" step="1"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 dark:text-white font-medium bg-white dark:bg-slate-700"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="curSavings" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Current Savings ($)</label>
+                            <input type="number" id="curSavings" placeholder="e.g. 50000" min="0" step="1000"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 dark:text-white font-medium bg-white dark:bg-slate-700"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="monthlyContrib" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Monthly Contribution ($)</label>
+                            <input type="number" id="monthlyContrib" placeholder="e.g. 1000" min="0" step="100"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 dark:text-white font-medium bg-white dark:bg-slate-700"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="returnRate" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Expected Annual Return (%)</label>
+                            <input type="number" id="returnRate" placeholder="e.g. 10" min="1" max="30" step="0.5"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 dark:text-white font-medium bg-white dark:bg-slate-700"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="inflationRate" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Inflation Rate (%)</label>
+                            <input type="number" id="inflationRate" placeholder="e.g. 6" min="0" max="20" step="0.5"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 dark:text-white font-medium bg-white dark:bg-slate-700"
+                                autocomplete="off">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="annualIncome" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Desired Annual Retirement Income (today's $)</label>
+                            <input type="number" id="annualIncome" placeholder="e.g. 50000" min="0" step="1000"
+                                class="block w-full px-4 py-4 text-base border-2 border-slate-200 dark:border-slate-600 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 dark:text-white font-medium bg-white dark:bg-slate-700"
+                                autocomplete="off">
+                        </div>
+                    </div>
+
+                    <button id="btnCalculate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        Calculate Retirement Plan
+                    </button>
+
+                    <div id="retResults" class="hidden mt-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 border border-blue-200 dark:border-blue-700 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-blue-700 dark:text-blue-300 mb-1">Corpus Needed</p>
+                                <p id="resCorpusNeeded" class="text-xl sm:text-2xl font-extrabold text-blue-900 dark:text-blue-100">$0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 border border-green-200 dark:border-green-700 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-green-700 dark:text-green-300 mb-1">Projected Savings</p>
+                                <p id="resProjected" class="text-xl sm:text-2xl font-extrabold text-green-900 dark:text-green-100">$0</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/30 dark:to-indigo-800/30 border border-indigo-200 dark:border-indigo-700 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-indigo-700 dark:text-indigo-300 mb-1">Years to Retirement</p>
+                                <p id="resYears" class="text-2xl sm:text-3xl font-extrabold text-indigo-900 dark:text-indigo-100">0</p>
+                            </div>
+                            <div id="resStatusCard" class="bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/30 dark:to-emerald-800/30 border border-emerald-200 dark:border-emerald-700 rounded-2xl p-5 text-center">
+                                <p class="text-sm font-semibold text-emerald-700 dark:text-emerald-300 mb-1">Status</p>
+                                <p id="resStatus" class="text-xl sm:text-2xl font-extrabold text-emerald-900 dark:text-emerald-100">-</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-5 mb-6">
+                            <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-4">Summary</h3>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between"><span class="text-slate-600 dark:text-slate-400">Annual Income Needed (Inflation-Adjusted)</span><span id="labelAdjIncome" class="font-bold text-slate-800 dark:text-white">$0</span></div>
+                                <div class="flex justify-between"><span class="text-slate-600 dark:text-slate-400">Total Contributions</span><span id="labelContrib" class="font-bold text-slate-800 dark:text-white">$0</span></div>
+                                <div class="flex justify-between"><span class="text-slate-600 dark:text-slate-400">Total Growth / Interest</span><span id="labelGrowth" class="font-bold text-green-600 dark:text-green-400">$0</span></div>
+                                <div class="flex justify-between border-t border-slate-200 dark:border-slate-600 pt-3"><span class="text-slate-800 dark:text-white font-bold">Shortfall / Surplus</span><span id="labelDiff" class="font-bold">$0</span></div>
+                            </div>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-4">Year-by-Year Growth</h3>
+                            <table class="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100 dark:bg-slate-700">
+                                        <th class="px-3 py-2 text-left font-semibold text-slate-700 dark:text-slate-300 rounded-tl-lg">Year</th>
+                                        <th class="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-300">Age</th>
+                                        <th class="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-300">Contributions</th>
+                                        <th class="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-300">Growth</th>
+                                        <th class="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-300 rounded-tr-lg">Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="yearTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">How to Use the Advanced Retirement Calculator</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Enter your current age, desired retirement age, existing savings, monthly contribution amount, expected annual return rate, inflation rate, and desired annual income in today's dollars. The calculator will project your retirement corpus and show you year-by-year growth with inflation adjustments.</p>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Understanding the Results</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">The <strong>Corpus Needed</strong> is calculated based on your desired annual income adjusted for inflation over the years until retirement, using the 4% safe withdrawal rule. <strong>Projected Savings</strong> shows how much your current savings and monthly contributions will grow to. If your projected savings exceed the corpus needed, you have a surplus. Otherwise, there is a shortfall you need to plan for.</p>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Tips for Better Retirement Planning</h3>
+                <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-1">
+                    <li>Start investing early to benefit from compound interest.</li>
+                    <li>Increase your monthly contributions by at least 5-10% each year.</li>
+                    <li>Diversify across equity, debt, and other asset classes.</li>
+                    <li>Keep inflation rate realistic — typically 5-7% for most economies.</li>
+                    <li>Review and adjust your plan every 1-2 years.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        How does inflation affect retirement planning?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        Inflation reduces the purchasing power of money over time. If inflation is 6% per year, something that costs $100 today will cost $106 next year. For retirement planning, this means you need a much larger corpus than you might think, because expenses will be significantly higher by the time you retire.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What is the 4% rule for retirement withdrawal?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        The 4% rule suggests you can safely withdraw 4% of your retirement savings in the first year, then adjust for inflation each subsequent year. For example, if you have $1,000,000 saved, you can withdraw $40,000 in year one. This approach is designed to make your savings last at least 30 years.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        How much retirement corpus do I need?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        A common formula is: Desired Annual Income / Safe Withdrawal Rate. If you need $50,000 per year and use a 4% withdrawal rate, you need $1,250,000. However, you must factor in inflation — if you retire in 20 years with 6% inflation, $50,000 today equals roughly $160,000 then, requiring a larger corpus.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        When should I start retirement planning?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        The earlier you start, the better. Starting in your 20s gives your money 35-40 years to compound. Even small monthly contributions of $500 starting at age 25 can grow to over $1,000,000 by age 60 at 10% annual returns.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        What return rate should I expect?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                        A conservative estimate for a diversified portfolio is 8-10% annually. Equity-heavy portfolios may return 12%+ over long periods, while bond-heavy portfolios return 5-7%. As you approach retirement, gradually shift to safer investments.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/calculators/retirement-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Retirement Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Simple retirement savings projection calculator.</span>
+                </a>
+                <a href="/tools/calculators/sip-calculator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">SIP Calculator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate mutual fund SIP returns with monthly investments.</span>
+                </a>
+                <a href="/tools/calculators/compound-interest.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Compound Interest</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Calculate how your investment grows with compound interest.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 140+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var btn = document.getElementById('btnCalculate');
+
+        function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+
+        btn.addEventListener('click', function() {
+            var curAge = parseInt(document.getElementById('curAge').value);
+            var retAge = parseInt(document.getElementById('retAge').value);
+            var curSavings = parseFloat(document.getElementById('curSavings').value) || 0;
+            var monthly = parseFloat(document.getElementById('monthlyContrib').value) || 0;
+            var retRate = parseFloat(document.getElementById('returnRate').value);
+            var inflRate = parseFloat(document.getElementById('inflationRate').value);
+            var annualInc = parseFloat(document.getElementById('annualIncome').value);
+
+            if (!curAge || curAge < 18) { showToast('Please enter a valid current age (18+).', 'error'); return; }
+            if (!retAge || retAge <= curAge) { showToast('Retirement age must be greater than current age.', 'error'); return; }
+            if (!retRate || retRate <= 0) { showToast('Please enter a valid expected return rate.', 'error'); return; }
+            if (isNaN(inflRate) || inflRate < 0) { showToast('Please enter a valid inflation rate.', 'error'); return; }
+            if (!annualInc || annualInc <= 0) { showToast('Please enter desired annual retirement income.', 'error'); return; }
+
+            var years = retAge - curAge;
+            var r = retRate / 100;
+            var inf = inflRate / 100;
+            var monthlyRate = r / 12;
+
+            // Inflation-adjusted annual income at retirement
+            var adjAnnualIncome = annualInc * Math.pow(1 + inf, years);
+            // Corpus needed at retirement (4% rule)
+            var corpusNeeded = adjAnnualIncome / 0.04;
+
+            // Year-by-year projection
+            var balance = curSavings;
+            var totalContributed = curSavings;
+            var tableRows = [];
+            for (var y = 1; y <= years; y++) {
+                var yearStart = balance;
+                var yearlyContrib = monthly * 12;
+                // Add contributions first, then grow
+                balance = (balance + yearlyContrib) * (1 + r);
+                totalContributed += yearlyContrib;
+                var growth = balance - yearStart - yearlyContrib;
+                tableRows.push({ year: y, age: curAge + y, contrib: yearlyContrib, growth: yearStart * r + yearlyContrib * r, balance: balance });
+            }
+
+            var projected = balance;
+            var totalGrowth = projected - totalContributed;
+            var diff = projected - corpusNeeded;
+
+            // Display results
+            document.getElementById('resCorpusNeeded').textContent = fmt(corpusNeeded);
+            document.getElementById('resProjected').textContent = fmt(projected);
+            document.getElementById('resYears').textContent = years;
+
+            var statusEl = document.getElementById('resStatus');
+            var statusCard = document.getElementById('resStatusCard');
+            if (diff >= 0) {
+                statusEl.textContent = 'Surplus ' + fmt(diff);
+                statusCard.className = 'bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/30 dark:to-emerald-800/30 border border-emerald-200 dark:border-emerald-700 rounded-2xl p-5 text-center';
+                statusEl.className = 'text-xl sm:text-2xl font-extrabold text-emerald-900 dark:text-emerald-100';
+            } else {
+                statusEl.textContent = 'Shortfall ' + fmt(Math.abs(diff));
+                statusCard.className = 'bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/30 dark:to-red-800/30 border border-red-200 dark:border-red-700 rounded-2xl p-5 text-center';
+                statusEl.className = 'text-xl sm:text-2xl font-extrabold text-red-900 dark:text-red-100';
+            }
+
+            document.getElementById('labelAdjIncome').textContent = fmt(adjAnnualIncome);
+            document.getElementById('labelContrib').textContent = fmt(totalContributed);
+            document.getElementById('labelGrowth').textContent = fmt(totalGrowth);
+
+            var diffLabel = document.getElementById('labelDiff');
+            if (diff >= 0) {
+                diffLabel.textContent = '+' + fmt(diff);
+                diffLabel.className = 'font-bold text-green-600 dark:text-green-400';
+            } else {
+                diffLabel.textContent = '-' + fmt(Math.abs(diff));
+                diffLabel.className = 'font-bold text-red-600 dark:text-red-400';
+            }
+
+            // Year table
+            var tbody = document.getElementById('yearTableBody');
+            tbody.innerHTML = '';
+            tableRows.forEach(function(row, i) {
+                var tr = document.createElement('tr');
+                tr.className = (i % 2 === 0 ? 'bg-white dark:bg-slate-900' : 'bg-slate-50 dark:bg-slate-800');
+                tr.innerHTML = '<td class="px-3 py-2 text-left text-slate-700 dark:text-slate-300">' + row.year + '</td>' +
+                    '<td class="px-3 py-2 text-right text-slate-700 dark:text-slate-300">' + row.age + '</td>' +
+                    '<td class="px-3 py-2 text-right text-slate-700 dark:text-slate-300">' + fmt(row.contrib) + '</td>' +
+                    '<td class="px-3 py-2 text-right text-green-600 dark:text-green-400">' + fmt(row.growth) + '</td>' +
+                    '<td class="px-3 py-2 text-right font-bold text-slate-900 dark:text-white">' + fmt(row.balance) + '</td>';
+                tbody.appendChild(tr);
+            });
+
+            document.getElementById('retResults').classList.remove('hidden');
+            document.getElementById('retResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        ['curAge','retAge','curSavings','monthlyContrib','returnRate','inflationRate','annualIncome'].forEach(function(id) {
+            document.getElementById(id).addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') btn.click();
+            });
+        });
+    })();
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initCalculatorUrlParams({ age:'curAge', retire:'retAge', savings:'curSavings', monthly:'monthlyContrib', rate:'returnRate', inflation:'inflationRate', income:'annualIncome' });
+    });
+    </script>
+</body>
+</html>
