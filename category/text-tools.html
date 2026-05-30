@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
@@ -39,6 +39,10 @@
     <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
 
@@ -60,7 +64,8 @@
     <main class="flex-1">
         <section class="max-w-7xl mx-auto px-4 py-12">
             <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Free Online Text Tools</h1>
-            <p class="text-slate-600 text-lg max-w-2xl mb-8">Count words, convert text case, and generate secure passwords — all in your browser. No uploads, no sign-ups, 100% private.</p>
+            <p class="text-slate-600 text-lg max-w-2xl mb-2">Count words, convert text case, and generate secure passwords — all in your browser. No uploads, no sign-ups, 100% private.</p>
+            <span class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-3 py-1 rounded-full mb-8">32 Tools</span>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <a href="/tools/word-counter.html" class="tool-card">
@@ -81,68 +86,274 @@
                     <span class="tool-card-tag indigo">Formatting</span>
                 </a>
 
-                <a href="/tools/password-generator.html" class="tool-card">
+                <a href="/tools/text/lorem-ipsum-generator.html" class="tool-card">
                     <div class="tool-card-icon bg-emerald-100 text-emerald-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 10h16M4 14h10M4 18h7"/></svg>
                     </div>
-                    <span class="tool-card-title">Password Generator</span>
-                    <span class="tool-card-desc">Generate strong, random passwords with customizable length and character types.</span>
-                    <span class="tool-card-tag emerald">Security</span>
+                    <span class="tool-card-title">Lorem Ipsum Generator</span>
+                    <span class="tool-card-desc">Generate Lorem Ipsum placeholder text for designs.</span>
+                    <span class="tool-card-tag emerald">Writing</span>
+                </a>
+
+                <a href="/tools/text/random-name-generator.html" class="tool-card">
+                    <div class="tool-card-icon bg-violet-100 text-violet-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Random Name Generator</span>
+                    <span class="tool-card-desc">Generate random names for testing and creative projects.</span>
+                    <span class="tool-card-tag violet">Generator</span>
+                </a>
+
+                <a href="/tools/text/text-repeater.html" class="tool-card">
+                    <div class="tool-card-icon bg-pink-100 text-pink-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    </div>
+                    <span class="tool-card-title">Text Repeater</span>
+                    <span class="tool-card-desc">Repeat any text multiple times with custom separator.</span>
+                    <span class="tool-card-tag pink">Text</span>
+                </a>
+
+                <a href="/tools/text/binary-to-text.html" class="tool-card">
+                    <div class="tool-card-icon bg-slate-100 text-slate-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    </div>
+                    <span class="tool-card-title">Binary Converter</span>
+                    <span class="tool-card-desc">Convert between binary, text, decimal, and hex.</span>
+                    <span class="tool-card-tag slate">Converter</span>
                 </a>
 
                 <a href="/tools/text/character-counter.html" class="tool-card">
-                    <div class="tool-card-icon bg-cyan-100 text-cyan-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <div class="tool-card-icon bg-cyan-100 text-cyan-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
                     <span class="tool-card-title">Character Counter</span>
                     <span class="tool-card-desc">Count characters with platform limit bars for Twitter, Instagram, LinkedIn.</span>
                     <span class="tool-card-tag cyan">Text</span>
                 </a>
+
                 <a href="/tools/text/remove-duplicate-lines.html" class="tool-card">
-                    <div class="tool-card-icon bg-indigo-100 text-indigo-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+                    <div class="tool-card-icon bg-indigo-100 text-indigo-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                    </div>
                     <span class="tool-card-title">Remove Duplicate Lines</span>
                     <span class="tool-card-desc">Deduplicate and sort text lines instantly.</span>
                     <span class="tool-card-tag indigo">Text</span>
                 </a>
+
                 <a href="/tools/text/find-and-replace.html" class="tool-card">
-                    <div class="tool-card-icon bg-rose-100 text-rose-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+                    <div class="tool-card-icon bg-rose-100 text-rose-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </div>
                     <span class="tool-card-title">Find and Replace</span>
                     <span class="tool-card-desc">Bulk find and replace text with case-sensitive options.</span>
                     <span class="tool-card-tag rose">Text</span>
                 </a>
+
                 <a href="/tools/text/number-to-words.html" class="tool-card">
-                    <div class="tool-card-icon bg-amber-100 text-amber-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg></div>
+                    <div class="tool-card-icon bg-amber-100 text-amber-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg>
+                    </div>
                     <span class="tool-card-title">Number to Words</span>
                     <span class="tool-card-desc">Convert numbers to words in International and Indian formats.</span>
-                    <span class="tool-card-tag amber">Text</span>
+                    <span class="tool-card-tag amber">Converter</span>
                 </a>
+
                 <a href="/tools/text/reverse-text.html" class="tool-card">
-                    <div class="tool-card-icon bg-teal-100 text-teal-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div>
+                    <div class="tool-card-icon bg-teal-100 text-teal-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                    </div>
                     <span class="tool-card-title">Reverse Text</span>
                     <span class="tool-card-desc">Reverse characters, words, or word order instantly.</span>
                     <span class="tool-card-tag teal">Text</span>
                 </a>
+
                 <a href="/tools/text/text-to-slug.html" class="tool-card">
-                    <div class="tool-card-icon bg-purple-100 text-purple-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div>
+                    <div class="tool-card-icon bg-purple-100 text-purple-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                    </div>
                     <span class="tool-card-title">Text to Slug</span>
                     <span class="tool-card-desc">Convert text to URL-friendly slug format.</span>
-                    <span class="tool-card-tag purple">Text</span>
+                    <span class="tool-card-tag purple">SEO</span>
                 </a>
+
+                <a href="/tools/text/word-frequency.html" class="tool-card">
+                    <div class="tool-card-icon bg-blue-100 text-blue-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Word Frequency Counter</span>
+                    <span class="tool-card-desc">Count word frequency and find most common words.</span>
+                    <span class="tool-card-tag blue">Analysis</span>
+                </a>
+
+                <a href="/tools/text/sentence-reorder.html" class="tool-card">
+                    <div class="tool-card-icon bg-green-100 text-green-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    </div>
+                    <span class="tool-card-title">Sentence Shuffler</span>
+                    <span class="tool-card-desc">Randomly shuffle sentences in any text.</span>
+                    <span class="tool-card-tag green">Text</span>
+                </a>
+
+                <a href="/tools/text/random-picker.html" class="tool-card">
+                    <div class="tool-card-icon bg-lime-100 text-lime-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                    </div>
+                    <span class="tool-card-title">Random Picker</span>
+                    <span class="tool-card-desc">Pick a random item from a list of options.</span>
+                    <span class="tool-card-tag lime">Utility</span>
+                </a>
+
                 <a href="/tools/text/reading-time-calculator.html" class="tool-card">
-                    <div class="tool-card-icon bg-teal-100 text-teal-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <div class="tool-card-icon bg-teal-100 text-teal-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
                     <span class="tool-card-title">Reading Time Calculator</span>
                     <span class="tool-card-desc">Estimate reading and speaking time for any text.</span>
-                    <span class="tool-card-tag teal">Text</span>
+                    <span class="tool-card-tag teal">Writing</span>
                 </a>
+
                 <a href="/tools/text/text-diff-checker.html" class="tool-card">
-                    <div class="tool-card-icon bg-orange-100 text-orange-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+                    <div class="tool-card-icon bg-orange-100 text-orange-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                    </div>
                     <span class="tool-card-title">Text Diff Checker</span>
                     <span class="tool-card-desc">Compare two texts and highlight differences.</span>
-                    <span class="tool-card-tag orange">Text</span>
+                    <span class="tool-card-tag orange">Comparison</span>
                 </a>
+
                 <a href="/tools/text/typing-speed-test.html" class="tool-card">
-                    <div class="tool-card-icon bg-red-100 text-red-600"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg></div>
+                    <div class="tool-card-icon bg-red-100 text-red-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                    </div>
                     <span class="tool-card-title">Typing Speed Test</span>
                     <span class="tool-card-desc">Test your typing speed with WPM and accuracy.</span>
-                    <span class="tool-card-tag red">Text</span>
+                    <span class="tool-card-tag red">Test</span>
+                </a>
+
+                <a href="/tools/text/acronym-generator.html" class="tool-card">
+                    <div class="tool-card-icon bg-fuchsia-100 text-fuchsia-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg>
+                    </div>
+                    <span class="tool-card-title">Acronym Generator</span>
+                    <span class="tool-card-desc">Generate acronyms from phrases with reverse lookup.</span>
+                    <span class="tool-card-tag fuchsia">Generator</span>
+                </a>
+
+                <a href="/tools/text/anagram-solver.html" class="tool-card">
+                    <div class="tool-card-icon bg-sky-100 text-sky-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Anagram Solver</span>
+                    <span class="tool-card-desc">Find valid anagrams from any word.</span>
+                    <span class="tool-card-tag sky">Word Game</span>
+                </a>
+
+                <a href="/tools/text/password-phrase-generator.html" class="tool-card">
+                    <div class="tool-card-icon bg-emerald-100 text-emerald-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Password Phrase Generator</span>
+                    <span class="tool-card-desc">Generate secure diceware-style passphrases.</span>
+                    <span class="tool-card-tag emerald">Security</span>
+                </a>
+
+                <a href="/tools/text/text-to-speech-preview.html" class="tool-card">
+                    <div class="tool-card-icon bg-yellow-100 text-yellow-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Text to Speech Preview</span>
+                    <span class="tool-card-desc">Preview browser text-to-speech with voice controls.</span>
+                    <span class="tool-card-tag yellow">Audio</span>
+                </a>
+
+                <a href="/tools/text/bulk-text-replacer.html" class="tool-card">
+                    <div class="tool-card-icon bg-rose-100 text-rose-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    </div>
+                    <span class="tool-card-title">Bulk Text Replacer</span>
+                    <span class="tool-card-desc">Apply multiple find-replace rules at once.</span>
+                    <span class="tool-card-tag rose">Text</span>
+                </a>
+
+                <a href="/tools/text/keyword-density-checker.html" class="tool-card">
+                    <div class="tool-card-icon bg-indigo-100 text-indigo-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Keyword Density Checker</span>
+                    <span class="tool-card-desc">Analyze keyword density for SEO optimization.</span>
+                    <span class="tool-card-tag indigo">SEO</span>
+                </a>
+
+                <a href="/tools/text/word-scramble.html" class="tool-card">
+                    <div class="tool-card-icon bg-orange-100 text-orange-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Word Scramble Game</span>
+                    <span class="tool-card-desc">Unscramble words in this fun vocabulary game.</span>
+                    <span class="tool-card-tag orange">Game</span>
+                </a>
+
+                <a href="/tools/text/number-trivia.html" class="tool-card">
+                    <div class="tool-card-icon bg-cyan-100 text-cyan-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Number Trivia</span>
+                    <span class="tool-card-desc">Fun facts and mathematical properties about any number.</span>
+                    <span class="tool-card-tag cyan">Fun</span>
+                </a>
+
+                <a href="/tools/text/rhyming-words-finder.html" class="tool-card">
+                    <div class="tool-card-icon bg-violet-100 text-violet-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
+                    </div>
+                    <span class="tool-card-title">Rhyming Words Finder</span>
+                    <span class="tool-card-desc">Find rhyming words for poetry and songwriting.</span>
+                    <span class="tool-card-tag violet">Writing</span>
+                </a>
+
+                <a href="/tools/text/phonetic-spelling-converter.html" class="tool-card">
+                    <div class="tool-card-icon bg-teal-100 text-teal-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Phonetic Spelling Converter</span>
+                    <span class="tool-card-desc">Convert text to phonetic spelling.</span>
+                    <span class="tool-card-tag teal">Language</span>
+                </a>
+
+                <a href="/tools/text/letter-count-analyzer.html" class="tool-card">
+                    <div class="tool-card-icon bg-amber-100 text-amber-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Letter Count Analyzer</span>
+                    <span class="tool-card-desc">Analyze letter frequency and distribution.</span>
+                    <span class="tool-card-tag amber">Analysis</span>
+                </a>
+
+                <a href="/tools/text/story-prompt-generator.html" class="tool-card">
+                    <div class="tool-card-icon bg-pink-100 text-pink-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Story Prompt Generator</span>
+                    <span class="tool-card-desc">Generate creative writing prompts and story ideas.</span>
+                    <span class="tool-card-tag pink">Creative</span>
+                </a>
+
+                <a href="/tools/text/email-subject-line-generator.html" class="tool-card">
+                    <div class="tool-card-icon bg-blue-100 text-blue-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Email Subject Line Generator</span>
+                    <span class="tool-card-desc">Generate effective email subject lines.</span>
+                    <span class="tool-card-tag blue">Marketing</span>
+                </a>
+
+                <a href="/tools/text/case-converter-advanced.html" class="tool-card">
+                    <div class="tool-card-icon bg-purple-100 text-purple-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    </div>
+                    <span class="tool-card-title">Advanced Case Converter</span>
+                    <span class="tool-card-desc">Convert to camelCase, snake_case, kebab-case, and more.</span>
+                    <span class="tool-card-tag purple">Formatting</span>
                 </a>
             </div>
         </section>
@@ -222,7 +433,7 @@
                 </div>
                 <div class="footer-col footer-about">
                     <h4>OptiDrop</h4>
-                    <p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, productivity, travel, and more.</p>
+                    <p>Free, fast, and 100% private browser-based tools. 306+ tools for images, PDFs, resumes, invoices, calculators, developers, health, productivity, travel, and more.</p>
                     <a href="/about.html">About</a>
                     <a href="/privacy-policy.html">Privacy Policy</a>
                     <a href="/terms.html">Terms</a>

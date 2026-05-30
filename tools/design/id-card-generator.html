@@ -1,0 +1,454 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card Generator — Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online ID card generator. Create professional ID cards with photo, name, designation, department, and ID number. Download as PNG. 100% private.">
+    <meta name="keywords" content="id card generator, id card maker, identity card generator, id card template, photo id card, id card online, free id card generator, digital id card, printable id card">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="ID Card Generator — Free Online | OptiDrop">
+    <meta property="og:description" content="Create professional ID cards with photo, name, designation, department, and ID number. Download as PNG. Free and private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/design/id-card-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ID Card Generator — Free Online | OptiDrop">
+    <meta name="twitter:description" content="Create professional ID cards with photo, name, designation, department, and ID number. Download as PNG.">
+    <link rel="canonical" href="https://optidrop.online/tools/design/id-card-generator.html">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},
+      {"@type":"ListItem","position":2,"name":"Design Tools","item":"https://optidrop.online/tools/design/"},
+      {"@type":"ListItem","position":3,"name":"ID Card Generator","item":"https://optidrop.online/tools/design/id-card-generator.html"}
+    ]}
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop ID Card Generator","applicationCategory":"DesignApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online ID card generator. Create professional ID cards with photo, name, designation, department, and ID number."}
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"How do I create an ID card?","acceptedAnswer":{"@type":"Answer","text":"Fill in the form fields (name, ID number, designation, department), optionally upload a photo, choose a color theme, and click Generate. The ID card is rendered using the Canvas API and can be downloaded as a PNG image."}},
+      {"@type":"Question","name":"What information appears on the ID card?","acceptedAnswer":{"@type":"Answer","text":"The ID card displays: photo (optional), full name, ID number, designation/title, department, and organization name. The card includes a colored header bar and a clean, professional layout."}},
+      {"@type":"Question","name":"Can I use the ID card for printing?","acceptedAnswer":{"@type":"Answer","text":"Yes, the generated ID card is a high-resolution PNG image at 300 DPI equivalent resolution (1016x638 pixels, approximately 85.6mm x 54mm which is standard credit card size). You can print it on card stock or laminate it."}},
+      {"@type":"Question","name":"Is the ID card generator free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes, OptiDrop's ID Card Generator is completely free. All rendering happens in your browser using the Canvas API. No data or photos are uploaded to any server, ensuring 100% privacy."}}
+    ]}
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .opt-input{width:100%;padding:0.5rem 0.75rem;border:2px solid #e2e8f0;border-radius:0.75rem;font-size:0.85rem;font-weight:500;color:#1e293b;background:#fff;transition:border-color 0.2s}
+        .opt-input:focus{outline:none;border-color:#3b82f6}
+        .dark-mode .opt-input{background:#1e293b;color:#e2e8f0;border-color:#475569}
+        .opt-select{width:100%;padding:0.5rem 0.75rem;border:2px solid #e2e8f0;border-radius:0.75rem;font-size:0.85rem;font-weight:600;color:#1e293b;background:#fff;cursor:pointer}
+        .opt-select:focus{outline:none;border-color:#3b82f6}
+        .dark-mode .opt-select{background:#1e293b;color:#e2e8f0;border-color:#475569}
+        .btn-download{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;font-weight:700;font-size:0.875rem;border-radius:0.75rem;transition:all 0.2s ease;cursor:pointer;border:none}
+        .btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{background:#1d4ed8}
+        .btn-secondary{background:#f1f5f9;color:#334155;border:2px solid #e2e8f0}.btn-secondary:hover{background:#e2e8f0}
+        .dark-mode .btn-secondary{background:#334155;color:#e2e8f0;border-color:#475569}
+        .preview-card{background:repeating-conic-gradient(#f1f5f9 0% 25%,#fff 0% 50%) 50%/12px 12px;display:inline-block;border:2px solid #e2e8f0;border-radius:0.75rem;padding:1rem;overflow:auto;max-width:100%}
+        .photo-upload-mini{border:2px dashed #cbd5e1;border-radius:0.75rem;padding:1rem;text-align:center;cursor:pointer;transition:all 0.3s ease;background:#f8fafc;font-size:0.8rem}
+        .photo-upload-mini:hover{border-color:#3b82f6;background:#eff6ff}
+        .dark-mode .photo-upload-mini{background:#1e293b;border-color:#475569}
+        .dark-mode .photo-upload-mini:hover{background:#1e3a5f;border-color:#3b82f6}
+        .color-option{width:32px;height:32px;border-radius:50%;border:3px solid #e2e8f0;cursor:pointer;transition:all 0.2s}
+        .color-option.active{border-color:#2563eb;box-shadow:0 0 0 2px rgba(37,99,235,0.3)}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/tools/design/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    Design Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/tools/design/" onclick="this.parentElement.classList.remove('open')">Design Tools</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">ID Card Generator — Create Professional ID Cards</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate professional ID cards with photo, name, designation, department, and ID number. Download as print-ready PNG. 100% free and private.</p>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                        <!-- Left: Form -->
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-800 mb-4">Card Details</h2>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-1">Organization Name</label>
+                                    <input type="text" id="orgName" class="opt-input" placeholder="Company / Organization" value="ACME Corporation">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-1">Full Name</label>
+                                    <input type="text" id="fullName" class="opt-input" placeholder="John Doe" value="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-1">ID Number</label>
+                                    <input type="text" id="idNumber" class="opt-input" placeholder="EMP-001" value="EMP-001">
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-sm font-bold text-slate-700 mb-1">Designation</label>
+                                        <input type="text" id="designation" class="opt-input" placeholder="Software Engineer" value="Software Engineer">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold text-slate-700 mb-1">Department</label>
+                                        <input type="text" id="department" class="opt-input" placeholder="Engineering" value="Engineering">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-1">Photo (Optional)</label>
+                                    <div id="photoUploadMini" class="photo-upload-mini" onclick="document.getElementById('cardPhoto').click()">
+                                        <svg class="w-6 h-6 mx-auto text-slate-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                        <p class="text-slate-500">Click to upload photo</p>
+                                    </div>
+                                    <input type="file" id="cardPhoto" accept="image/*" class="hidden">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Header Color</label>
+                                    <div class="flex gap-2 flex-wrap">
+                                        <button class="color-option active" data-color="#1d4ed8" style="background:#1d4ed8;" onclick="setColor(this)"></button>
+                                        <button class="color-option" data-color="#0f766e" style="background:#0f766e;" onclick="setColor(this)"></button>
+                                        <button class="color-option" data-color="#7c2d12" style="background:#7c2d12;" onclick="setColor(this)"></button>
+                                        <button class="color-option" data-color="#581c87" style="background:#581c87;" onclick="setColor(this)"></button>
+                                        <button class="color-option" data-color="#1e293b" style="background:#1e293b;" onclick="setColor(this)"></button>
+                                        <button class="color-option" data-color="#b91c1c" style="background:#b91c1c;" onclick="setColor(this)"></button>
+                                        <button class="color-option" data-color="#0369a1" style="background:#0369a1;" onclick="setColor(this)"></button>
+                                        <button class="color-option" data-color="#15803d" style="background:#15803d;" onclick="setColor(this)"></button>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-2">
+                                    <button onclick="generateCard()" class="btn-download btn-primary flex-1 justify-center">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                        Generate &amp; Download
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Preview -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Live Preview</label>
+                            <div class="preview-card flex items-center justify-center">
+                                <canvas id="cardCanvas" width="1016" height="638" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 20px rgba(0,0,0,0.15);"></canvas>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-2 text-center">Standard credit card size (85.6mm x 54mm) at 300 DPI</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online ID Card Generator</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's ID Card Generator lets you create professional identification cards directly in your browser. Enter the cardholder's name, ID number, designation, and department, optionally upload a photo, choose a header color, and generate a print-ready ID card in standard credit card size (85.6mm x 54mm).</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Canvas-Based Rendering for High Quality</h3>
+                <p class="text-slate-600 mb-4">The ID card is rendered using HTML5 Canvas at 1016 x 638 pixels, which is equivalent to 300 DPI at standard credit card dimensions. The downloaded PNG is crisp and suitable for printing on card stock. All processing happens in your browser, so your data and photos remain completely private.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">How do I create an ID card?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Fill in the form fields (name, ID number, designation, department), optionally upload a photo, choose a color theme, and click Generate. The ID card is rendered using the Canvas API and can be downloaded as a PNG image.</div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">What information appears on the ID card?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">The ID card displays: photo (optional), full name, ID number, designation/title, department, and organization name. The card includes a colored header bar and a clean, professional layout.</div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">Can I use the ID card for printing?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Yes, the generated ID card is a high-resolution PNG image at 300 DPI equivalent resolution (1016x638 pixels, approximately 85.6mm x 54mm which is standard credit card size). You can print it on card stock or laminate it.</div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">Is the ID card generator free and private?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Yes, OptiDrop's ID Card Generator is completely free. All rendering happens in your browser using the Canvas API. No data or photos are uploaded to any server, ensuring 100% privacy.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/design/employee-id-card.html" class="tool-card" style="padding:1rem;"><span class="tool-card-title" style="font-size:0.95rem;">Employee ID Card</span><span class="tool-card-desc" style="font-size:0.8rem;">Generate employee ID cards with company logo.</span></a>
+                <a href="/tools/design/student-id-card.html" class="tool-card" style="padding:1rem;"><span class="tool-card-title" style="font-size:0.95rem;">Student ID Card</span><span class="tool-card-desc" style="font-size:0.8rem;">Generate student ID cards with institution details.</span></a>
+                <a href="/tools/design/avatar-generator.html" class="tool-card" style="padding:1rem;"><span class="tool-card-title" style="font-size:0.95rem;">Avatar Generator</span><span class="tool-card-desc" style="font-size:0.8rem;">Create custom avatars for profile pictures.</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 306+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <div id="toast-container"></div>
+
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var CW = 1016, CH = 638; // credit card at 300 DPI
+        var canvas = document.getElementById('cardCanvas');
+        var ctx = canvas.getContext('2d');
+        var headerColor = '#1d4ed8';
+        var userPhoto = null;
+
+        var orgNameEl = document.getElementById('orgName');
+        var fullNameEl = document.getElementById('fullName');
+        var idNumberEl = document.getElementById('idNumber');
+        var designationEl = document.getElementById('designation');
+        var departmentEl = document.getElementById('department');
+        var cardPhotoInput = document.getElementById('cardPhoto');
+
+        function setColor(el) {
+            headerColor = el.dataset.color;
+            document.querySelectorAll('.color-option').forEach(function(b){ b.classList.remove('active'); });
+            el.classList.add('active');
+            drawCard();
+        }
+        window.setColor = setColor;
+
+        cardPhotoInput.addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(ev) {
+                    userPhoto = new Image();
+                    userPhoto.onload = function() { drawCard(); };
+                    userPhoto.src = ev.target.result;
+                };
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+
+        // Auto-update on input
+        [orgNameEl, fullNameEl, idNumberEl, designationEl, departmentEl].forEach(function(el) {
+            el.addEventListener('input', drawCard);
+        });
+
+        function drawCard() {
+            var org = orgNameEl.value || 'Organization';
+            var name = fullNameEl.value || 'Full Name';
+            var idNum = idNumberEl.value || 'ID-000';
+            var desig = designationEl.value || 'Designation';
+            var dept = departmentEl.value || 'Department';
+
+            ctx.clearRect(0, 0, CW, CH);
+
+            // Card background (white with slight shadow effect)
+            ctx.fillStyle = '#ffffff';
+            roundRect(ctx, 0, 0, CW, CH, 20);
+            ctx.fill();
+
+            // Header bar
+            ctx.fillStyle = headerColor;
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.lineTo(CW, 0);
+            ctx.lineTo(CW, 120);
+            ctx.quadraticCurveTo(CW, 140, CW - 20, 140);
+            ctx.lineTo(20, 140);
+            ctx.quadraticCurveTo(0, 140, 0, 120);
+            ctx.closePath();
+            ctx.fill();
+
+            // Organization name in header
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 36px Inter, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(org, 30, 55);
+
+            // ID Card label
+            ctx.font = '500 18px Inter, sans-serif';
+            ctx.fillStyle = 'rgba(255,255,255,0.8)';
+            ctx.fillText('IDENTIFICATION CARD', 30, 95);
+
+            // ID number badge in header
+            ctx.fillStyle = 'rgba(255,255,255,0.2)';
+            roundRect(ctx, CW - 220, 30, 190, 40, 8);
+            ctx.fill();
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 20px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(idNum, CW - 125, 57);
+            ctx.textAlign = 'left';
+
+            // Photo area
+            var photoX = 40, photoY = 170, photoW = 180, photoH = 220;
+            if (userPhoto) {
+                // Draw photo with rounded corners
+                ctx.save();
+                roundRect(ctx, photoX, photoY, photoW, photoH, 12);
+                ctx.clip();
+                // Cover fit
+                var iA = userPhoto.width / userPhoto.height;
+                var pA = photoW / photoH;
+                var sx, sy, sw, sh;
+                if (iA > pA) {
+                    sh = userPhoto.height;
+                    sw = sh * pA;
+                    sx = (userPhoto.width - sw) / 2;
+                    sy = 0;
+                } else {
+                    sw = userPhoto.width;
+                    sh = sw / pA;
+                    sx = 0;
+                    sy = (userPhoto.height - sh) / 2;
+                }
+                ctx.drawImage(userPhoto, sx, sy, sw, sh, photoX, photoY, photoW, photoH);
+                ctx.restore();
+                // Photo border
+                ctx.strokeStyle = '#e2e8f0';
+                ctx.lineWidth = 3;
+                roundRect(ctx, photoX, photoY, photoW, photoH, 12);
+                ctx.stroke();
+            } else {
+                // Placeholder
+                ctx.fillStyle = '#f1f5f9';
+                roundRect(ctx, photoX, photoY, photoW, photoH, 12);
+                ctx.fill();
+                ctx.strokeStyle = '#e2e8f0';
+                ctx.lineWidth = 2;
+                roundRect(ctx, photoX, photoY, photoW, photoH, 12);
+                ctx.stroke();
+                // Photo icon
+                ctx.fillStyle = '#94a3b8';
+                ctx.font = '64px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('\u{1F464}', photoX + photoW/2, photoY + photoH/2 + 20);
+                ctx.font = '14px Inter, sans-serif';
+                ctx.fillText('PHOTO', photoX + photoW/2, photoY + photoH - 15);
+                ctx.textAlign = 'left';
+            }
+
+            // Text details
+            var textX = 250;
+            var textY = 190;
+
+            // Name
+            ctx.fillStyle = '#0f172a';
+            ctx.font = 'bold 42px Inter, sans-serif';
+            ctx.fillText(truncateText(ctx, name, CW - textX - 40), textX, textY + 30);
+
+            // Decorative line under name
+            ctx.fillStyle = headerColor;
+            ctx.fillRect(textX, textY + 45, 80, 4);
+
+            // Designation
+            ctx.fillStyle = '#475569';
+            ctx.font = '600 24px Inter, sans-serif';
+            ctx.fillText(desig, textX, textY + 85);
+
+            // Department
+            ctx.fillStyle = '#64748b';
+            ctx.font = '500 20px Inter, sans-serif';
+            ctx.fillText('Department: ' + dept, textX, textY + 120);
+
+            // ID Number (large, bottom area)
+            ctx.fillStyle = '#f1f5f9';
+            roundRect(ctx, textX, textY + 145, 280, 45, 8);
+            ctx.fill();
+            ctx.fillStyle = headerColor;
+            ctx.font = 'bold 22px Inter, sans-serif';
+            ctx.fillText('ID: ' + idNum, textX + 15, textY + 175);
+
+            // Bottom bar
+            ctx.fillStyle = headerColor;
+            ctx.fillRect(0, CH - 12, CW, 12);
+
+            // Subtle bottom text
+            ctx.fillStyle = '#94a3b8';
+            ctx.font = '14px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('This card is the property of ' + org, CW/2, CH - 25);
+            ctx.textAlign = 'left';
+        }
+
+        function roundRect(ctx, x, y, w, h, r) {
+            ctx.beginPath();
+            ctx.moveTo(x + r, y);
+            ctx.lineTo(x + w - r, y);
+            ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+            ctx.lineTo(x + w, y + h - r);
+            ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+            ctx.lineTo(x + r, y + h);
+            ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+            ctx.lineTo(x, y + r);
+            ctx.quadraticCurveTo(x, y, x + r, y);
+            ctx.closePath();
+        }
+
+        function truncateText(ctx, text, maxWidth) {
+            if (ctx.measureText(text).width <= maxWidth) return text;
+            var t = text;
+            while (t.length > 0 && ctx.measureText(t + '...').width > maxWidth) {
+                t = t.slice(0, -1);
+            }
+            return t + '...';
+        }
+
+        function generateCard() {
+            drawCard();
+            var link = document.createElement('a');
+            link.download = 'id-card-' + (idNumberEl.value || 'card') + '.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            showToast('ID card downloaded!');
+        }
+        window.generateCard = generateCard;
+
+        document.querySelectorAll('.faq-question').forEach(function(btn){btn.addEventListener('click',function(){var a=this.nextElementSibling,i=this.querySelector('.faq-icon'),o=a.style.display==='block';a.style.display=o?'none':'block';if(i)i.style.transform=o?'':'rotate(180deg)';});btn.nextElementSibling.style.display='none';});
+
+        // Initial draw
+        drawCard();
+    })();
+    </script>
+</body>
+</html>

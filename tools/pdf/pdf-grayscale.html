@@ -1,0 +1,707 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Grayscale Converter Free Online — Convert PDF to Black &amp; White | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Convert PDF pages to grayscale online free. Turn color PDFs into black &amp; white for printing. 100% private, no upload required. Works in your browser.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="PDF Grayscale Converter Free Online — Convert PDF to Black &amp; White | OptiDrop">
+    <meta property="og:description" content="Convert PDF pages to grayscale online free. Turn color PDFs into black &amp; white for printing. No upload required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/pdf/pdf-grayscale.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PDF Grayscale Converter Free Online | OptiDrop">
+    <meta name="twitter:description" content="Convert PDF pages to grayscale online free. Black &amp; white PDF for printing. No upload required.">
+    <link rel="canonical" href="https://optidrop.online/tools/pdf/pdf-grayscale.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://optidrop.online/category/pdf-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "PDF Grayscale Converter", "item": "https://optidrop.online/tools/pdf/pdf-grayscale.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop PDF Grayscale Converter",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Convert PDF pages to grayscale online free. Turn color PDFs into black & white for printing. 100% private, works in browser."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What does converting a PDF to grayscale do?", "acceptedAnswer": {"@type": "Answer", "text": "Converting a PDF to grayscale transforms all colors in every page into shades of gray, from white to black. This is useful for printing in black and white, reducing color ink usage, and creating documents that look consistent on monochrome printers. The tool renders each page to a canvas, applies a grayscale filter, and re-embeds the result as an image in a new PDF."}},
+        {"@type": "Question", "name": "Is my PDF uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. This tool works entirely in your browser. Your PDF is never uploaded to any server. The conversion happens locally using JavaScript libraries (pdf.js for rendering and pdf-lib for creating the output). Your files stay on your device at all times, ensuring complete privacy."}},
+        {"@type": "Question", "name": "Will the grayscale PDF look the same as the original?", "acceptedAnswer": {"@type": "Answer", "text": "The grayscale version preserves the layout, text, and images of the original PDF. Colors are converted to their luminance-equivalent gray values, so the visual structure remains intact. However, since pages are rendered as images, selectable text becomes part of the image. The output is ideal for printing but may not be suitable if you need editable text in the result."}},
+        {"@type": "Question", "name": "What is the maximum PDF size supported?", "acceptedAnswer": {"@type": "Answer", "text": "The tool supports PDFs up to 100 MB. Since all processing happens in your browser, performance depends on your device's memory and CPU. Large PDFs with many pages may take longer to process. For very large files, consider splitting the PDF first using our PDF Splitter tool, converting each part, then merging them back."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        /* Progress bar */
+        .progress-bar-track { background: #e2e8f0; border-radius: 9999px; overflow: hidden; height: 8px; }
+        .progress-bar-fill { height: 100%; border-radius: 9999px; background: linear-gradient(90deg, #3b82f6, #6366f1); transition: width 0.3s ease; width: 0%; }
+        .dark-mode .progress-bar-track { background: #334155; }
+
+        /* Preview thumbnails */
+        .preview-thumb { border: 2px solid #e2e8f0; border-radius: 0.75rem; overflow: hidden; transition: all 0.2s; }
+        .preview-thumb:hover { border-color: #3b82f6; box-shadow: 0 4px 12px rgba(59,130,246,0.2); }
+        .dark-mode .preview-thumb { border-color: #334155; }
+        .dark-mode .preview-thumb:hover { border-color: #3b82f6; }
+        .preview-thumb canvas { display: block; width: 100%; height: auto; }
+        .preview-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.25rem 0.5rem; text-align: center; }
+
+        /* Spinner */
+        .spinner { width: 20px; height: 20px; border: 3px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.6s linear infinite; display: inline-block; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Page count badge */
+        .page-badge { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #2563eb; border: 1px solid #dbeafe; }
+        .dark-mode .page-badge { background: #1e3a5f; color: #60a5fa; border-color: #2563eb; }
+
+        /* DPI select */
+        .dpi-select { padding: 0.5rem 1rem; border: 2px solid #e2e8f0; border-radius: 0.75rem; font-size: 0.875rem; font-weight: 600; color: #334155; background: #fff; cursor: pointer; }
+        .dpi-select:focus { outline: none; border-color: #3b82f6; }
+        .dark-mode .dpi-select { background: #1e293b; border-color: #334155; color: #e2e8f0; }
+
+        /* Before/After toggle */
+        .ba-toggle { display: inline-flex; border-radius: 0.5rem; overflow: hidden; border: 2px solid #e2e8f0; }
+        .dark-mode .ba-toggle { border-color: #334155; }
+        .ba-btn { padding: 0.375rem 1rem; font-size: 0.75rem; font-weight: 700; cursor: pointer; transition: all 0.2s; background: #fff; color: #64748b; border: none; }
+        .ba-btn.active { background: #3b82f6; color: #fff; }
+        .dark-mode .ba-btn { background: #1e293b; color: #94a3b8; }
+        .dark-mode .ba-btn.active { background: #3b82f6; color: #fff; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <div class="mb-4">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    PDF Tool
+                </span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">PDF Grayscale Converter — Convert PDF to Black &amp; White</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Convert any color PDF to grayscale for printing or archival. Works entirely in your browser — no upload, no sign-up, 100% private.</p>
+        </section>
+
+        <!-- Tool Widget -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Dropzone -->
+                    <div id="dropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 text-center cursor-pointer hover:border-blue-400 hover:bg-blue-50/30 transition-all mb-6">
+                        <svg class="w-14 h-14 mx-auto mb-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        <p class="text-lg font-bold text-slate-700 mb-2">Drop your PDF here or click to browse</p>
+                        <p class="text-sm text-slate-500">Supports PDF files up to 100 MB</p>
+                        <input type="file" id="fileInput" accept="application/pdf" class="hidden">
+                    </div>
+
+                    <!-- Processing Progress -->
+                    <div id="progressSection" class="hidden mb-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span id="progressLabel" class="text-sm font-bold text-slate-700">Loading libraries...</span>
+                            <span id="progressPercent" class="text-sm font-bold text-blue-600">0%</span>
+                        </div>
+                        <div class="progress-bar-track">
+                            <div id="progressBar" class="progress-bar-fill"></div>
+                        </div>
+                        <p id="progressDetail" class="text-xs text-slate-500 mt-2"></p>
+                    </div>
+
+                    <!-- Settings + Preview -->
+                    <div id="settingsSection" class="hidden mb-6">
+                        <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <span id="pageBadge" class="page-badge"></span>
+                                <span id="fileSizeBadge" class="page-badge" style="background:#ecfdf5;color:#059669;border-color:#a7f3d0;"></span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <label for="dpiSelect" class="text-sm font-bold text-slate-700">Render DPI:</label>
+                                <select id="dpiSelect" class="dpi-select">
+                                    <option value="1">Low (72 DPI) — Fast</option>
+                                    <option value="1.5">Medium (108 DPI)</option>
+                                    <option value="2" selected>High (150 DPI) — Best</option>
+                                    <option value="3">Ultra (216 DPI)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Before/After Preview -->
+                        <div id="previewArea" class="mb-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-sm font-bold text-slate-700">Preview — Page 1</h3>
+                                <div class="ba-toggle">
+                                    <button class="ba-btn active" data-view="original" id="btnOriginal">Original</button>
+                                    <button class="ba-btn" data-view="grayscale" id="btnGrayscale">Grayscale</button>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="previewGrid">
+                                <div class="preview-thumb" id="originalThumb">
+                                    <div class="preview-label bg-slate-100 text-slate-600">Original</div>
+                                    <canvas id="originalCanvas"></canvas>
+                                </div>
+                                <div class="preview-thumb" id="grayscaleThumb">
+                                    <div class="preview-label bg-slate-800 text-white">Grayscale</div>
+                                    <canvas id="grayscaleCanvas"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button id="btnConvert" class="flex-1 px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                Convert to Grayscale &amp; Download
+                            </button>
+                            <button id="btnNew" class="px-6 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors">
+                                New PDF
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Result -->
+                    <div id="resultSection" class="hidden">
+                        <div class="bg-green-50 border border-green-200 rounded-2xl p-6 text-center">
+                            <svg class="w-12 h-12 mx-auto mb-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <h3 class="text-lg font-bold text-green-800 mb-2">Grayscale PDF Ready!</h3>
+                            <p class="text-sm text-green-700 mb-4">All pages have been converted to grayscale and downloaded.</p>
+                            <div id="sizeComparison" class="text-sm text-green-600 mb-4"></div>
+                            <button id="btnDownloadAgain" class="px-6 py-3 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-colors">
+                                Download Again
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;min-height:250px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="blog-content">
+                <h2>Why Convert a PDF to Grayscale?</h2>
+                <p>Converting a PDF to grayscale is essential for anyone who prints documents in black and white. Color PDFs consume expensive color ink even when printed on monochrome printers, and the results often look washed out or inconsistent. By converting to grayscale first, you ensure clean, crisp output while saving on ink costs.</p>
+                <h3>Common Use Cases</h3>
+                <ul>
+                    <li><strong>Printing:</strong> Save color ink by converting documents to grayscale before printing on B&W printers</li>
+                    <li><strong>Archival:</strong> Create uniform black &amp; white archives that look consistent regardless of display</li>
+                    <li><strong>Accessibility:</strong> Improve readability for users with color vision deficiencies</li>
+                    <li><strong>File Size:</strong> Grayscale images can sometimes be smaller than their color counterparts</li>
+                    <li><strong>Professional Documents:</strong> Legal and academic documents often require grayscale submission</li>
+                </ul>
+                <h3>How OptiDrop Converts PDFs to Grayscale</h3>
+                <p>This tool uses pdf.js to render each page of your PDF onto an HTML5 canvas at your chosen DPI. A grayscale filter is applied to the canvas context, converting all colors to their luminance-equivalent gray values. The grayscale canvas is then exported as a high-quality JPEG image, and pdf-lib assembles all the grayscale page images into a new PDF. The entire process runs in your browser — your document never leaves your device.</p>
+                <h3>Tips for Best Results</h3>
+                <p>Use <strong>High (150 DPI)</strong> for most documents — it balances quality and speed. For documents with fine print or detailed images, try <strong>Ultra (216 DPI)</strong>. For quick previews or large files, <strong>Low (72 DPI)</strong> processes fastest. You can preview the first page before committing to the full conversion.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What does converting a PDF to grayscale do?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Converting a PDF to grayscale transforms all colors in every page into shades of gray, from white to black. This is useful for printing in black and white, reducing color ink usage, and creating documents that look consistent on monochrome printers. The tool renders each page to a canvas, applies a grayscale filter, and re-embeds the result as an image in a new PDF.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is my PDF uploaded to a server?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        No. This tool works entirely in your browser. Your PDF is never uploaded to any server. The conversion happens locally using JavaScript libraries (pdf.js for rendering and pdf-lib for creating the output). Your files stay on your device at all times, ensuring complete privacy.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Will the grayscale PDF look the same as the original?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The grayscale version preserves the layout, text, and images of the original PDF. Colors are converted to their luminance-equivalent gray values, so the visual structure remains intact. However, since pages are rendered as images, selectable text becomes part of the image. The output is ideal for printing but may not be suitable if you need editable text in the result.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the maximum PDF size supported?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The tool supports PDFs up to 100 MB. Since all processing happens in your browser, performance depends on your device's memory and CPU. Large PDFs with many pages may take longer to process. For very large files, consider splitting the PDF first, converting each part, then merging them back.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/pdf/pdf-merger.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">PDF Merger</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Combine multiple PDFs into one file.</span>
+                </a>
+                <a href="/compress-pdf.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">PDF Compressor</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Reduce PDF file size while keeping quality.</span>
+                </a>
+                <a href="/tools/pdf/pdf-watermark.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">PDF Watermark</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Add text or image watermarks to PDF pages.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div>
+                <div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div>
+                <div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage</a><a href="/tools/calculators/retirement-calculator.html">Retirement</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a></div>
+                <div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/hash-generator.html">Hash Generator</a></div>
+                <div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. No upload required.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+
+    <script>
+    (function() {
+        'use strict';
+
+        // ── DOM References ────────────────────────────────────────
+        var dropzone        = document.getElementById('dropzone');
+        var fileInput       = document.getElementById('fileInput');
+        var progressSection = document.getElementById('progressSection');
+        var progressLabel   = document.getElementById('progressLabel');
+        var progressPercent = document.getElementById('progressPercent');
+        var progressBar     = document.getElementById('progressBar');
+        var progressDetail  = document.getElementById('progressDetail');
+        var settingsSection = document.getElementById('settingsSection');
+        var pageBadge       = document.getElementById('pageBadge');
+        var fileSizeBadge   = document.getElementById('fileSizeBadge');
+        var dpiSelect       = document.getElementById('dpiSelect');
+        var previewArea     = document.getElementById('previewArea');
+        var previewGrid     = document.getElementById('previewGrid');
+        var originalCanvas  = document.getElementById('originalCanvas');
+        var grayscaleCanvas = document.getElementById('grayscaleCanvas');
+        var btnOriginal     = document.getElementById('btnOriginal');
+        var btnGrayscale    = document.getElementById('btnGrayscale');
+        var btnConvert      = document.getElementById('btnConvert');
+        var btnNew          = document.getElementById('btnNew');
+        var resultSection   = document.getElementById('resultSection');
+        var sizeComparison  = document.getElementById('sizeComparison');
+        var btnDownloadAgain = document.getElementById('btnDownloadAgain');
+
+        // ── State ─────────────────────────────────────────────────
+        var originalFile    = null;
+        var pdfBytes        = null;
+        var pdfDocProxy     = null; // pdf.js document
+        var totalPages      = 0;
+        var grayscaleBlob   = null;
+        var currentView     = 'both'; // 'original', 'grayscale', 'both'
+
+        // ── Utility ───────────────────────────────────────────────
+        function formatSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / 1048576).toFixed(1) + ' MB';
+        }
+
+        function setProgress(pct, label, detail) {
+            progressSection.classList.remove('hidden');
+            progressBar.style.width = pct + '%';
+            progressPercent.textContent = Math.round(pct) + '%';
+            if (label) progressLabel.textContent = label;
+            if (detail !== undefined) progressDetail.textContent = detail;
+        }
+
+        function hideProgress() {
+            progressSection.classList.add('hidden');
+            progressBar.style.width = '0%';
+        }
+
+        // ── Dynamic Library Loading ───────────────────────────────
+        var pdfjsLib = null;
+        var pdfLib   = null;
+
+        function loadScript(url) {
+            return new Promise(function(resolve, reject) {
+                var s = document.createElement('script');
+                s.src = url;
+                s.onload = resolve;
+                s.onerror = function() { reject(new Error('Failed to load ' + url)); };
+                document.head.appendChild(s);
+            });
+        }
+
+        function loadPdfJs() {
+            if (pdfjsLib) return Promise.resolve(pdfjsLib);
+            setProgress(5, 'Loading pdf.js...', 'Rendering engine');
+            return loadScript('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js')
+                .then(function() {
+                    pdfjsLib = window['pdfjs-dist/build/pdf'];
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+                    return pdfjsLib;
+                });
+        }
+
+        function loadPdfLib() {
+            if (pdfLib) return Promise.resolve(pdfLib);
+            setProgress(10, 'Loading pdf-lib...', 'PDF creation engine');
+            return loadScript('https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js')
+                .then(function() {
+                    pdfLib = window.PDFLib;
+                    return pdfLib;
+                });
+        }
+
+        function loadLibraries() {
+            return Promise.all([loadPdfJs(), loadPdfLib()]);
+        }
+
+        // ── Grayscale Canvas Helper ───────────────────────────────
+        function renderPageToCanvas(page, scale) {
+            var viewport = page.getViewport({ scale: scale });
+            var canvas = document.createElement('canvas');
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            var ctx = canvas.getContext('2d');
+            return page.render({ canvasContext: ctx, viewport: viewport }).promise.then(function() {
+                return canvas;
+            });
+        }
+
+        function applyGrayscale(sourceCanvas) {
+            var canvas = document.createElement('canvas');
+            canvas.width = sourceCanvas.width;
+            canvas.height = sourceCanvas.height;
+            var ctx = canvas.getContext('2d');
+            ctx.filter = 'grayscale(100%)';
+            ctx.drawImage(sourceCanvas, 0, 0);
+            return canvas;
+        }
+
+        function canvasToJpegBlob(canvas, quality) {
+            return new Promise(function(resolve) {
+                canvas.toBlob(resolve, 'image/jpeg', quality || 0.92);
+            });
+        }
+
+        // ── File Handling ─────────────────────────────────────────
+        function handleFile(file) {
+            if (!file || file.type !== 'application/pdf') {
+                showToast('Please select a PDF file.', 'error');
+                return;
+            }
+            if (file.size > 100 * 1024 * 1024) {
+                showToast('File is too large. Max 100 MB.', 'error');
+                return;
+            }
+
+            originalFile = file;
+            resultSection.classList.add('hidden');
+            settingsSection.classList.add('hidden');
+            grayscaleBlob = null;
+
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                pdfBytes = new Uint8Array(e.target.result);
+                loadLibraries().then(function() {
+                    setProgress(15, 'Reading PDF...', file.name);
+                    return pdfjsLib.getDocument({ data: pdfBytes.slice() }).promise;
+                }).then(function(doc) {
+                    pdfDocProxy = doc;
+                    totalPages = doc.numPages;
+                    pageBadge.textContent = totalPages + ' page' + (totalPages !== 1 ? 's' : '');
+                    fileSizeBadge.textContent = formatSize(file.size);
+
+                    setProgress(25, 'Rendering preview...', 'Page 1 of ' + totalPages);
+                    return renderPreviewPage(1);
+                }).then(function() {
+                    hideProgress();
+                    settingsSection.classList.remove('hidden');
+                    settingsSection.scrollIntoView({ behavior: 'smooth' });
+                    showToast('PDF loaded! ' + totalPages + ' page' + (totalPages !== 1 ? 's' : ' found.'));
+                }).catch(function(err) {
+                    hideProgress();
+                    console.error(err);
+                    showToast('Failed to read PDF: ' + err.message, 'error');
+                });
+            };
+            reader.readAsArrayBuffer(file);
+        }
+
+        // ── Preview Rendering ─────────────────────────────────────
+        function renderPreviewPage(pageNum) {
+            return pdfDocProxy.getPage(pageNum).then(function(page) {
+                var scale = parseFloat(dpiSelect.value);
+                // Fit preview to ~400px wide
+                var baseViewport = page.getViewport({ scale: 1 });
+                var previewScale = Math.min(scale, 400 / baseViewport.width);
+
+                // Render original
+                return renderPageToCanvas(page, previewScale).then(function(origCanvas) {
+                    // Draw to visible original canvas
+                    originalCanvas.width = origCanvas.width;
+                    originalCanvas.height = origCanvas.height;
+                    originalCanvas.getContext('2d').drawImage(origCanvas, 0, 0);
+
+                    // Render grayscale
+                    var grayCanvas = applyGrayscale(origCanvas);
+                    grayscaleCanvas.width = grayCanvas.width;
+                    grayscaleCanvas.height = grayCanvas.height;
+                    grayscaleCanvas.getContext('2d').drawImage(grayCanvas, 0, 0);
+                });
+            });
+        }
+
+        // Re-render preview when DPI changes
+        dpiSelect.addEventListener('change', function() {
+            if (pdfDocProxy) {
+                renderPreviewPage(1).catch(function(err) {
+                    console.error('Preview error:', err);
+                });
+            }
+        });
+
+        // ── Before/After Toggle ───────────────────────────────────
+        btnOriginal.addEventListener('click', function() {
+            currentView = 'original';
+            btnOriginal.classList.add('active');
+            btnGrayscale.classList.remove('active');
+            document.getElementById('originalThumb').style.display = '';
+            document.getElementById('grayscaleThumb').style.display = 'none';
+            previewGrid.classList.remove('sm:grid-cols-2');
+            previewGrid.classList.add('sm:grid-cols-1');
+        });
+
+        btnGrayscale.addEventListener('click', function() {
+            currentView = 'grayscale';
+            btnGrayscale.classList.add('active');
+            btnOriginal.classList.remove('active');
+            document.getElementById('originalThumb').style.display = 'none';
+            document.getElementById('grayscaleThumb').style.display = '';
+            previewGrid.classList.remove('sm:grid-cols-2');
+            previewGrid.classList.add('sm:grid-cols-1');
+        });
+
+        // Default: show both
+        btnOriginal.classList.remove('active');
+        btnGrayscale.classList.remove('active');
+        btnOriginal.classList.add('active');
+
+        // ── Full Conversion ───────────────────────────────────────
+        btnConvert.addEventListener('click', function() {
+            if (!pdfDocProxy || !originalFile) return;
+
+            btnConvert.disabled = true;
+            btnConvert.innerHTML = '<span class="spinner"></span> Converting...';
+            setProgress(20, 'Starting conversion...', '');
+
+            var scale = parseFloat(dpiSelect.value);
+
+            // We need to reload the raw bytes for pdf-lib since pdf.js may have consumed them
+            var rawBytes = pdfBytes.slice();
+
+            loadPdfLib().then(function() {
+                setProgress(25, 'Creating new PDF...', '');
+                var newPdfDoc = pdfLib.PDFDocument.create();
+                return newPdfDoc;
+            }).then(function(newDoc) {
+                return newDoc.then(function(pdfDoc) {
+                    var chain = Promise.resolve();
+
+                    for (var i = 1; i <= totalPages; i++) {
+                        (function(pageNum) {
+                            chain = chain.then(function() {
+                                var pct = 25 + ((pageNum / totalPages) * 70);
+                                setProgress(pct, 'Converting page ' + pageNum + ' of ' + totalPages + '...', 'Rendering + grayscale filter');
+
+                                return pdfDocProxy.getPage(pageNum).then(function(page) {
+                                    return renderPageToCanvas(page, scale);
+                                }).then(function(origCanvas) {
+                                    var grayCanvas = applyGrayscale(origCanvas);
+                                    return canvasToJpegBlob(grayCanvas, 0.92);
+                                }).then(function(jpegBlob) {
+                                    return jpegBlob.arrayBuffer();
+                                }).then(function(jpegBuffer) {
+                                    var jpgImage = pdfDoc.embedJpg(jpegBuffer);
+                                    return jpgImage.then(function(image) {
+                                        var dims = image.scale(1);
+                                        var page = pdfDoc.addPage([dims.width, dims.height]);
+                                        page.drawImage(image, { x: 0, y: 0, width: dims.width, height: dims.height });
+                                    });
+                                });
+                            });
+                        })(i);
+                    }
+
+                    chain = chain.then(function() {
+                        setProgress(96, 'Finalizing PDF...', 'Compressing and packaging');
+                        return pdfDoc.save();
+                    });
+
+                    return chain;
+                });
+            }).then(function(pdfBytesOut) {
+                grayscaleBlob = new Blob([pdfBytesOut], { type: 'application/pdf' });
+                var url = URL.createObjectURL(grayscaleBlob);
+                var a = document.createElement('a');
+                var name = originalFile.name.replace(/\.pdf$/i, '') + '_grayscale.pdf';
+                a.href = url;
+                a.download = name;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+
+                setProgress(100, 'Done!', '');
+                setTimeout(function() { hideProgress(); }, 800);
+
+                var origSize = formatSize(originalFile.size);
+                var graySize = formatSize(grayscaleBlob.size);
+                var diff = ((1 - grayscaleBlob.size / originalFile.size) * 100).toFixed(1);
+                sizeComparison.textContent = 'Original: ' + origSize + ' → Grayscale: ' + graySize + ' (' + (diff > 0 ? diff + '% smaller' : Math.abs(diff) + '% larger') + ')';
+                resultSection.classList.remove('hidden');
+                resultSection.scrollIntoView({ behavior: 'smooth' });
+                showToast('Grayscale PDF downloaded!');
+
+                btnConvert.disabled = false;
+                btnConvert.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg> Convert to Grayscale &amp; Download';
+            }).catch(function(err) {
+                console.error('Conversion error:', err);
+                hideProgress();
+                showToast('Conversion failed: ' + err.message, 'error');
+                btnConvert.disabled = false;
+                btnConvert.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg> Convert to Grayscale &amp; Download';
+            });
+        });
+
+        // ── Download Again ────────────────────────────────────────
+        btnDownloadAgain.addEventListener('click', function() {
+            if (!grayscaleBlob || !originalFile) return;
+            var url = URL.createObjectURL(grayscaleBlob);
+            var a = document.createElement('a');
+            var name = originalFile.name.replace(/\.pdf$/i, '') + '_grayscale.pdf';
+            a.href = url;
+            a.download = name;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+        // ── New PDF ───────────────────────────────────────────────
+        btnNew.addEventListener('click', function() {
+            settingsSection.classList.add('hidden');
+            resultSection.classList.add('hidden');
+            fileInput.value = '';
+            originalFile = null;
+            pdfBytes = null;
+            pdfDocProxy = null;
+            totalPages = 0;
+            grayscaleBlob = null;
+            originalCanvas.width = 0;
+            originalCanvas.height = 0;
+            grayscaleCanvas.width = 0;
+            grayscaleCanvas.height = 0;
+        });
+
+        // ── Dropzone Events ───────────────────────────────────────
+        dropzone.addEventListener('click', function() { fileInput.click(); });
+        fileInput.addEventListener('change', function() { if (this.files[0]) handleFile(this.files[0]); });
+        ['dragenter', 'dragover'].forEach(function(ev) {
+            dropzone.addEventListener(ev, function(e) { e.preventDefault(); dropzone.classList.add('dropzone-active'); });
+        });
+        ['dragleave', 'drop'].forEach(function(ev) {
+            dropzone.addEventListener(ev, function(e) { e.preventDefault(); dropzone.classList.remove('dropzone-active'); });
+        });
+        dropzone.addEventListener('drop', function(e) {
+            var files = e.dataTransfer.files;
+            if (files[0]) handleFile(files[0]);
+        });
+    })();
+    </script>
+</body>
+</html>

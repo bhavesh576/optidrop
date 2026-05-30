@@ -1,0 +1,504 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Passport Photo Maker — Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online US passport photo maker. Create 2x2 inch passport photos with white background at 300 DPI. Crop, adjust, and download single photo or 4x6 print sheet.">
+    <meta name="keywords" content="us passport photo maker, usa passport photo, 2x2 inch photo, passport photo generator, us passport photo online, free passport photo, passport photo print sheet, american passport photo">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="US Passport Photo Maker — Free Online | OptiDrop">
+    <meta property="og:description" content="Create 2x2 inch US passport photos with white background at 300 DPI. Download single or 4x6 print sheet. Free and private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/design/us-passport-photo.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="US Passport Photo Maker — Free Online | OptiDrop">
+    <meta name="twitter:description" content="Create 2x2 inch US passport photos with white background at 300 DPI. Download single or 4x6 print sheet.">
+    <link rel="canonical" href="https://optidrop.online/tools/design/us-passport-photo.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Design Tools", "item": "https://optidrop.online/tools/design/"},
+        {"@type": "ListItem", "position": 3, "name": "US Passport Photo Maker", "item": "https://optidrop.online/tools/design/us-passport-photo.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop US Passport Photo Maker",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online US passport photo maker. Create 2x2 inch passport photos with white background at 300 DPI. Download single photo or 4x6 print sheet."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the size of a US passport photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The standard US passport photo size is 2 x 2 inches (51 x 51mm). At 300 DPI, this is 600 x 600 pixels. The photo must have a plain white background and the head should be between 1 inch and 1 3/8 inches from the bottom of the chin to the top of the head."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I print multiple US passport photos on one sheet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this tool generates a 4x6 inch print sheet containing multiple copies of your 2x2 inch US passport photo. You can print this at home or at any photo shop. The sheet includes light cut guides for easy separation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the US passport photo requirements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "US passport photos must be 2x2 inches with a plain white background, taken within the last 6 months, show a neutral facial expression or natural smile, and be printed on matte or glossy photo quality paper. The head must be centered and between 1 and 1 3/8 inches from top of head to bottom of chin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the US passport photo maker free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, OptiDrop's US Passport Photo Maker is completely free. All image processing happens in your browser using the Canvas API. No photos are uploaded to any server, ensuring 100% privacy."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .photo-upload-zone{border:3px dashed #cbd5e1;border-radius:1rem;padding:2rem;text-align:center;cursor:pointer;transition:all 0.3s ease;background:#f8fafc}
+        .photo-upload-zone:hover,.photo-upload-zone.dragover{border-color:#3b82f6;background:#eff6ff}
+        .photo-upload-zone.has-image{border-style:solid;border-color:#10b981;padding:0.5rem}
+        .crop-container{position:relative;overflow:hidden;cursor:move;border:2px solid #e2e8f0;border-radius:0.75rem;background:#1e293b}
+        .crop-container img{display:block;max-width:none;user-select:none;-webkit-user-drag:none}
+        .btn-download{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;font-weight:700;font-size:0.875rem;border-radius:0.75rem;transition:all 0.2s ease;cursor:pointer;border:none}
+        .btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{background:#1d4ed8}
+        .btn-secondary{background:#f1f5f9;color:#334155;border:2px solid #e2e8f0}.btn-secondary:hover{background:#e2e8f0}
+        .preview-photo{background:repeating-conic-gradient(#f1f5f9 0% 25%,#fff 0% 50%) 50%/12px 12px;display:inline-block;border:2px solid #e2e8f0;border-radius:0.5rem}
+        .dark-mode .photo-upload-zone{background:#1e293b;border-color:#475569}
+        .dark-mode .photo-upload-zone:hover{background:#1e3a5f;border-color:#3b82f6}
+        .dark-mode .btn-secondary{background:#334155;color:#e2e8f0;border-color:#475569}
+        .dark-mode .btn-secondary:hover{background:#475569}
+        .slider-control{width:100%;accent-color:#2563eb}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/tools/design/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    Design Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/tools/design/" onclick="this.parentElement.classList.remove('open')">Design Tools</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">US Passport Photo Maker — 2x2 Inches at 300 DPI</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Create perfect 2x2 inch US passport photos with white background. Crop, adjust position, and download as single photo or 4x6 print sheet. 100% free and private.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-5xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Step 1: Upload -->
+                    <div id="uploadSection">
+                        <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">1</span>
+                            Upload Your Photo
+                        </h2>
+                        <div id="uploadZone" class="photo-upload-zone" onclick="document.getElementById('photoInput').click()">
+                            <svg class="w-12 h-12 mx-auto text-slate-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <p class="text-slate-600 font-semibold mb-1">Click to upload or drag &amp; drop</p>
+                            <p class="text-slate-400 text-sm">Supports JPG, PNG, WebP (max 20MB)</p>
+                        </div>
+                        <input type="file" id="photoInput" accept="image/*" class="hidden">
+                    </div>
+
+                    <!-- Step 2: Crop/Adjust -->
+                    <div id="cropSection" class="hidden">
+                        <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">2</span>
+                            Adjust Photo Position
+                        </h2>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div>
+                                <div id="cropContainer" class="crop-container" style="width:100%;aspect-ratio:1/1;max-height:400px;">
+                                    <img id="cropImage" src="" alt="Upload preview" style="position:absolute;top:0;left:0;">
+                                </div>
+                                <div class="mt-3 space-y-3">
+                                    <div>
+                                        <label class="text-sm font-semibold text-slate-700">Zoom</label>
+                                        <input type="range" id="zoomSlider" class="slider-control mt-1" min="1" max="5" step="0.01" value="1">
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <button onclick="rotatePhoto(-90)" class="btn-secondary flex-1 text-sm py-2">
+                                            <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
+                                            Rotate Left
+                                        </button>
+                                        <button onclick="rotatePhoto(90)" class="btn-secondary flex-1 text-sm py-2">
+                                            Rotate Right
+                                            <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10H11a8 8 0 00-8 8v2M21 10l-6 6m6-6l-6-6"/></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="resetUpload()" class="btn-secondary w-full text-sm py-2">
+                                        Upload Different Photo
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Preview (2x2 inches at 300 DPI)</label>
+                                <div class="preview-photo p-3 mb-4 flex items-center justify-center" style="min-height:200px;">
+                                    <canvas id="previewCanvas" width="600" height="600" style="max-width:250px;height:auto;border-radius:0.25rem;"></canvas>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <button onclick="downloadSingle()" class="btn-download btn-primary w-full justify-center">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                        Download Single Photo (600x600px)
+                                    </button>
+                                    <button onclick="downloadPrintSheet()" class="btn-download btn-secondary w-full justify-center">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                                        Download 4x6 Print Sheet
+                                    </button>
+                                </div>
+
+                                <div class="mt-4 p-3 bg-blue-50 rounded-xl text-sm text-blue-800">
+                                    <strong>Specifications:</strong> 2 x 2 inches | 600 x 600 pixels | 300 DPI | White background
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online US Passport Photo Maker</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's US Passport Photo Maker creates passport-ready photos that meet the official US Department of State requirements. The tool produces photos at the exact required dimensions of 2 x 2 inches (600 x 600 pixels at 300 DPI) with a clean white background. Simply upload your photo, adjust the crop position and zoom to center your face, and download a print-ready image.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">4x6 Print Sheet for Convenient Printing</h3>
+                <p class="text-slate-600 mb-4">This tool also generates a 4x6 inch print sheet containing multiple copies of your US passport photo. The sheet includes light cut guides for easy separation. Print at home or at any photo shop for just the cost of a single 4x6 print. All processing happens entirely in your browser, so your photos remain completely private and are never uploaded to any server.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the size of a US passport photo?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The standard US passport photo size is 2 x 2 inches (51 x 51mm). At 300 DPI, this is 600 x 600 pixels. The photo must have a plain white background and the head should be between 1 inch and 1 3/8 inches from the bottom of the chin to the top of the head.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I print multiple US passport photos on one sheet?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, this tool generates a 4x6 inch print sheet containing multiple copies of your 2x2 inch US passport photo. You can print this at home or at any photo shop. The sheet includes light cut guides for easy separation.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What are the US passport photo requirements?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        US passport photos must be 2x2 inches with a plain white background, taken within the last 6 months, show a neutral facial expression or natural smile, and be printed on matte or glossy photo quality paper. The head must be centered and between 1 and 1 3/8 inches from top of head to bottom of chin.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is the US passport photo maker free?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, OptiDrop's US Passport Photo Maker is completely free. All image processing happens in your browser using the Canvas API. No photos are uploaded to any server, ensuring 100% privacy.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/design/indian-passport-photo.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Indian Passport Photo</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Create 35x45mm Indian passport photos.</span>
+                </a>
+                <a href="/tools/design/uk-passport-photo.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">UK Passport Photo</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Create 35x45mm UK passport photos online.</span>
+                </a>
+                <a href="/tools/design/visa-photo-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Visa Photo Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Custom dimensions for any visa application.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 306+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var PHOTO_IN = 2; // 2 inches
+        var DPI = 300;
+        var PX_W = PHOTO_IN * DPI; // 600
+        var PX_H = PHOTO_IN * DPI; // 600
+
+        var uploadZone = document.getElementById('uploadZone');
+        var photoInput = document.getElementById('photoInput');
+        var uploadSection = document.getElementById('uploadSection');
+        var cropSection = document.getElementById('cropSection');
+        var cropContainer = document.getElementById('cropContainer');
+        var cropImage = document.getElementById('cropImage');
+        var previewCanvas = document.getElementById('previewCanvas');
+        var zoomSlider = document.getElementById('zoomSlider');
+
+        var ctx = previewCanvas.getContext('2d');
+        var img = null;
+        var posX = 0, posY = 0;
+        var scale = 1;
+        var isDragging = false;
+        var dragStartX = 0, dragStartY = 0;
+        var startPosX = 0, startPosY = 0;
+
+        function handleFile(file) {
+            if (!file || !file.type.startsWith('image/')) { showToast('Please upload a valid image file.'); return; }
+            if (file.size > 20 * 1024 * 1024) { showToast('File too large. Maximum size is 20MB.'); return; }
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                img = new Image();
+                img.onload = function() { scale = 1; zoomSlider.value = 1; posX = 0; posY = 0; showCropSection(); updateCropView(); };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function showCropSection() { uploadSection.classList.add('hidden'); cropSection.classList.remove('hidden'); }
+
+        function resetUpload() { cropSection.classList.add('hidden'); uploadSection.classList.remove('hidden'); photoInput.value = ''; img = null; }
+        window.resetUpload = resetUpload;
+
+        photoInput.addEventListener('change', function(e) { if (e.target.files && e.target.files[0]) handleFile(e.target.files[0]); });
+        uploadZone.addEventListener('dragover', function(e) { e.preventDefault(); uploadZone.classList.add('dragover'); });
+        uploadZone.addEventListener('dragleave', function() { uploadZone.classList.remove('dragover'); });
+        uploadZone.addEventListener('drop', function(e) { e.preventDefault(); uploadZone.classList.remove('dragover'); if (e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); });
+
+        zoomSlider.addEventListener('input', function() { scale = parseFloat(this.value); updateCropView(); });
+
+        function rotatePhoto(deg) {
+            if (!img) return;
+            var c = document.createElement('canvas');
+            var cx = c.getContext('2d');
+            var rad = deg * Math.PI / 180;
+            if (Math.abs(deg) === 90 || Math.abs(deg) === 270) { c.width = img.height; c.height = img.width; } else { c.width = img.width; c.height = img.height; }
+            cx.translate(c.width / 2, c.height / 2);
+            cx.rotate(rad);
+            cx.drawImage(img, -img.width / 2, -img.height / 2);
+            var newImg = new Image();
+            newImg.onload = function() { img = newImg; posX = 0; posY = 0; updateCropView(); };
+            newImg.src = c.toDataURL();
+        }
+        window.rotatePhoto = rotatePhoto;
+
+        cropContainer.addEventListener('mousedown', function(e) { if (!img) return; isDragging = true; dragStartX = e.clientX; dragStartY = e.clientY; startPosX = posX; startPosY = posY; e.preventDefault(); });
+        document.addEventListener('mousemove', function(e) { if (!isDragging) return; posX = startPosX + (e.clientX - dragStartX); posY = startPosY + (e.clientY - dragStartY); updateCropView(); });
+        document.addEventListener('mouseup', function() { isDragging = false; });
+
+        cropContainer.addEventListener('touchstart', function(e) { if (!img || e.touches.length !== 1) return; isDragging = true; dragStartX = e.touches[0].clientX; dragStartY = e.touches[0].clientY; startPosX = posX; startPosY = posY; }, {passive: true});
+        document.addEventListener('touchmove', function(e) { if (!isDragging) return; posX = startPosX + (e.touches[0].clientX - dragStartX); posY = startPosY + (e.touches[0].clientY - dragStartY); updateCropView(); }, {passive: true});
+        document.addEventListener('touchend', function() { isDragging = false; });
+
+        function updateCropView() {
+            if (!img) return;
+            var containerW = cropContainer.clientWidth;
+            var containerH = cropContainer.clientHeight;
+            var imgAspect = img.width / img.height;
+            var contAspect = containerW / containerH;
+            var drawW, drawH;
+            if (imgAspect > contAspect) { drawH = containerH * scale; drawW = drawH * imgAspect; }
+            else { drawW = containerW * scale; drawH = drawW / imgAspect; }
+            cropImage.style.width = drawW + 'px';
+            cropImage.style.height = drawH + 'px';
+            if (!isDragging && posX === 0 && posY === 0) { posX = (containerW - drawW) / 2; posY = (containerH - drawH) / 2; }
+            cropImage.style.transform = 'translate(' + posX + 'px,' + posY + 'px)';
+            updatePreview();
+        }
+
+        function updatePreview() {
+            if (!img) return;
+            var containerW = cropContainer.clientWidth;
+            var containerH = cropContainer.clientHeight;
+            var imgAspect = img.width / img.height;
+            var contAspect = containerW / containerH;
+            var drawW, drawH;
+            if (imgAspect > contAspect) { drawH = containerH * scale; drawW = drawH * imgAspect; }
+            else { drawW = containerW * scale; drawH = drawW / imgAspect; }
+            var visibleLeft = -posX / drawW;
+            var visibleTop = -posY / drawH;
+            var visibleRight = (containerW - posX) / drawW;
+            var visibleBottom = (containerH - posY) / drawH;
+            var srcX = Math.max(0, visibleLeft * img.width);
+            var srcY = Math.max(0, visibleTop * img.height);
+            var srcW = Math.min(img.width, visibleRight * img.width) - srcX;
+            var srcH = Math.min(img.height, visibleBottom * img.height) - srcY;
+            if (srcW <= 0 || srcH <= 0) return;
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, PX_W, PX_H);
+            try { ctx.drawImage(img, srcX, srcY, srcW, srcH, 0, 0, PX_W, PX_H); } catch(e) {}
+        }
+
+        window.addEventListener('resize', function() { if (img) updateCropView(); });
+
+        function downloadSingle() {
+            if (!img) return;
+            updatePreview();
+            var link = document.createElement('a');
+            link.download = 'us-passport-photo-2x2in.png';
+            link.href = previewCanvas.toDataURL('image/png');
+            link.click();
+            showToast('US passport photo downloaded!');
+        }
+        window.downloadSingle = downloadSingle;
+
+        function downloadPrintSheet() {
+            if (!img) return;
+            updatePreview();
+            var sheetW = 1200, sheetH = 1800;
+            var sheetCanvas = document.createElement('canvas');
+            sheetCanvas.width = sheetW;
+            sheetCanvas.height = sheetH;
+            var sctx = sheetCanvas.getContext('2d');
+            sctx.fillStyle = '#ffffff';
+            sctx.fillRect(0, 0, sheetW, sheetH);
+            var gap = 20;
+            var photoSize = 600;
+            var cols = Math.floor((sheetW + gap) / (photoSize + gap));
+            var rows = Math.floor((sheetH + gap) / (photoSize + gap));
+            var startX = Math.floor((sheetW - (cols * photoSize + (cols - 1) * gap)) / 2);
+            var startY = Math.floor((sheetH - (rows * photoSize + (rows - 1) * gap)) / 2);
+            for (var r = 0; r < rows; r++) {
+                for (var c = 0; c < cols; c++) {
+                    var x = startX + c * (photoSize + gap);
+                    var y = startY + r * (photoSize + gap);
+                    sctx.drawImage(previewCanvas, x, y, photoSize, photoSize);
+                }
+            }
+            sctx.strokeStyle = '#cccccc'; sctx.lineWidth = 0.5; sctx.setLineDash([4, 4]);
+            for (var r = 0; r < rows; r++) {
+                for (var c = 0; c < cols; c++) {
+                    var x = startX + c * (photoSize + gap);
+                    var y = startY + r * (photoSize + gap);
+                    sctx.strokeRect(x - gap / 2, y - gap / 2, photoSize + gap, photoSize + gap);
+                }
+            }
+            sctx.setLineDash([]);
+            var link = document.createElement('a');
+            link.download = 'us-passport-photos-4x6-print-sheet.png';
+            link.href = sheetCanvas.toDataURL('image/png');
+            link.click();
+            showToast('Print sheet downloaded! (' + cols + 'x' + rows + ' photos)');
+        }
+        window.downloadPrintSheet = downloadPrintSheet;
+
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var answer = this.nextElementSibling;
+                var icon = this.querySelector('.faq-icon');
+                var isOpen = answer.style.display === 'block';
+                answer.style.display = isOpen ? 'none' : 'block';
+                if (icon) icon.style.transform = isOpen ? '' : 'rotate(180deg)';
+            });
+            btn.nextElementSibling.style.display = 'none';
+        });
+    })();
+    </script>
+</body>
+</html>

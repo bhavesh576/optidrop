@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Passport Photo Maker — Free Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online UK passport photo maker. Create 35x45mm UK passport photos with light grey or white background at 300 DPI. Download single or 4x6 print sheet.">
+    <meta name="keywords" content="uk passport photo maker, british passport photo, 35x45mm photo, passport photo online, uk passport photo generator, free uk passport photo, hm passport office photo, passport photo print sheet">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="UK Passport Photo Maker — Free Online | OptiDrop">
+    <meta property="og:description" content="Create 35x45mm UK passport photos with light grey or white background at 300 DPI. Download single or 4x6 print sheet. Free and private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/design/uk-passport-photo.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UK Passport Photo Maker — Free Online | OptiDrop">
+    <meta name="twitter:description" content="Create 35x45mm UK passport photos with light grey or white background at 300 DPI. Download single or 4x6 print sheet.">
+    <link rel="canonical" href="https://optidrop.online/tools/design/uk-passport-photo.html">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},
+      {"@type":"ListItem","position":2,"name":"Design Tools","item":"https://optidrop.online/tools/design/"},
+      {"@type":"ListItem","position":3,"name":"UK Passport Photo Maker","item":"https://optidrop.online/tools/design/uk-passport-photo.html"}
+    ]}
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop UK Passport Photo Maker","applicationCategory":"DesignApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online UK passport photo maker. Create 35x45mm UK passport photos with light grey or white background at 300 DPI."}
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What is the UK passport photo size?","acceptedAnswer":{"@type":"Answer","text":"UK passport photos must be 35mm wide x 45mm tall. At 300 DPI this is 413 x 531 pixels. The background should be plain light grey or cream, as required by HM Passport Office."}},
+      {"@type":"Question","name":"Can I use a white background for a UK passport photo?","acceptedAnswer":{"@type":"Answer","text":"Yes, HM Passport Office accepts both plain light grey and plain white backgrounds. This tool defaults to white but also offers a light grey option. Avoid shadows on the background."}},
+      {"@type":"Question","name":"How many photos fit on a 4x6 print sheet?","acceptedAnswer":{"@type":"Answer","text":"A standard 4x6 inch (10x15cm) print sheet can fit multiple 35x45mm UK passport photos arranged in rows and columns with small cut guides between them. This tool generates the sheet automatically."}},
+      {"@type":"Question","name":"Is the UK passport photo maker free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes, OptiDrop's UK Passport Photo Maker is completely free. All processing happens in your browser using the Canvas API. No photos are uploaded to any server, ensuring 100% privacy."}}
+    ]}
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .photo-upload-zone{border:3px dashed #cbd5e1;border-radius:1rem;padding:2rem;text-align:center;cursor:pointer;transition:all 0.3s ease;background:#f8fafc}
+        .photo-upload-zone:hover,.photo-upload-zone.dragover{border-color:#3b82f6;background:#eff6ff}
+        .photo-upload-zone.has-image{border-style:solid;border-color:#10b981;padding:0.5rem}
+        .crop-container{position:relative;overflow:hidden;cursor:move;border:2px solid #e2e8f0;border-radius:0.75rem;background:#1e293b}
+        .crop-container img{display:block;max-width:none;user-select:none;-webkit-user-drag:none}
+        .btn-download{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;font-weight:700;font-size:0.875rem;border-radius:0.75rem;transition:all 0.2s ease;cursor:pointer;border:none}
+        .btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{background:#1d4ed8}
+        .btn-secondary{background:#f1f5f9;color:#334155;border:2px solid #e2e8f0}.btn-secondary:hover{background:#e2e8f0}
+        .preview-photo{background:repeating-conic-gradient(#f1f5f9 0% 25%,#fff 0% 50%) 50%/12px 12px;display:inline-block;border:2px solid #e2e8f0;border-radius:0.5rem}
+        .dark-mode .photo-upload-zone{background:#1e293b;border-color:#475569}
+        .dark-mode .photo-upload-zone:hover{background:#1e3a5f;border-color:#3b82f6}
+        .dark-mode .btn-secondary{background:#334155;color:#e2e8f0;border-color:#475569}
+        .dark-mode .btn-secondary:hover{background:#475569}
+        .slider-control{width:100%;accent-color:#2563eb}
+        .bg-option{width:36px;height:36px;border-radius:50%;border:3px solid #e2e8f0;cursor:pointer;transition:all 0.2s}
+        .bg-option.active{border-color:#2563eb;box-shadow:0 0 0 2px rgba(37,99,235,0.3)}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/tools/design/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    Design Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/tools/design/" onclick="this.parentElement.classList.remove('open')">Design Tools</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">UK Passport Photo Maker — 35x45mm at 300 DPI</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Create HM Passport Office compliant 35x45mm UK passport photos. Choose white or light grey background. Download single photo or 4x6 print sheet.</p>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div id="uploadSection">
+                        <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">1</span>
+                            Upload Your Photo
+                        </h2>
+                        <div id="uploadZone" class="photo-upload-zone" onclick="document.getElementById('photoInput').click()">
+                            <svg class="w-12 h-12 mx-auto text-slate-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <p class="text-slate-600 font-semibold mb-1">Click to upload or drag &amp; drop</p>
+                            <p class="text-slate-400 text-sm">Supports JPG, PNG, WebP (max 20MB)</p>
+                        </div>
+                        <input type="file" id="photoInput" accept="image/*" class="hidden">
+                    </div>
+
+                    <div id="cropSection" class="hidden">
+                        <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">2</span>
+                            Adjust Photo Position
+                        </h2>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div>
+                                <div id="cropContainer" class="crop-container" style="width:100%;aspect-ratio:35/45;max-height:420px;">
+                                    <img id="cropImage" src="" alt="Upload preview" style="position:absolute;top:0;left:0;">
+                                </div>
+                                <div class="mt-3 space-y-3">
+                                    <div>
+                                        <label class="text-sm font-semibold text-slate-700">Zoom</label>
+                                        <input type="range" id="zoomSlider" class="slider-control mt-1" min="1" max="5" step="0.01" value="1">
+                                    </div>
+                                    <div>
+                                        <label class="text-sm font-semibold text-slate-700 mb-2 block">Background Color</label>
+                                        <div class="flex gap-2">
+                                            <button class="bg-option active" data-bg="#ffffff" style="background:#ffffff;" onclick="setBg(this)"></button>
+                                            <button class="bg-option" data-bg="#f0f0f0" style="background:#f0f0f0;" onclick="setBg(this)"></button>
+                                            <button class="bg-option" data-bg="#e8e8e8" style="background:#e8e8e8;" onclick="setBg(this)"></button>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <button onclick="rotatePhoto(-90)" class="btn-secondary flex-1 text-sm py-2">Rotate Left</button>
+                                        <button onclick="rotatePhoto(90)" class="btn-secondary flex-1 text-sm py-2">Rotate Right</button>
+                                    </div>
+                                    <button onclick="resetUpload()" class="btn-secondary w-full text-sm py-2">Upload Different Photo</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Preview (35x45mm at 300 DPI)</label>
+                                <div class="preview-photo p-3 mb-4 flex items-center justify-center" style="min-height:200px;">
+                                    <canvas id="previewCanvas" width="413" height="531" style="max-width:100%;height:auto;border-radius:0.25rem;"></canvas>
+                                </div>
+                                <div class="space-y-2">
+                                    <button onclick="downloadSingle()" class="btn-download btn-primary w-full justify-center">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                        Download Single Photo (413x531px)
+                                    </button>
+                                    <button onclick="downloadPrintSheet()" class="btn-download btn-secondary w-full justify-center">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                                        Download 4x6 Print Sheet
+                                    </button>
+                                </div>
+                                <div class="mt-4 p-3 bg-blue-50 rounded-xl text-sm text-blue-800">
+                                    <strong>UK Passport Specs:</strong> 35mm x 45mm | 413 x 531 pixels | 300 DPI | White or light grey background
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online UK Passport Photo Maker</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's UK Passport Photo Maker creates passport-ready photos that meet HM Passport Office requirements. The tool produces photos at the exact required dimensions of 35mm x 45mm (413 x 531 pixels at 300 DPI). You can choose between a white or light grey background, both of which are accepted by the UK passport office. Simply upload your photo, adjust the crop, and download.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Print-Ready 4x6 Sheet with Cut Guides</h3>
+                <p class="text-slate-600 mb-4">Download a 4x6 inch print sheet with multiple passport photos arranged neatly with light cut guides. This is ideal for printing at home or at a photo shop. All image processing is done in your browser using the Canvas API, so your photos never leave your device.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">What is the UK passport photo size?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">UK passport photos must be 35mm wide x 45mm tall. At 300 DPI this is 413 x 531 pixels. The background should be plain light grey or cream, as required by HM Passport Office.</div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">Can I use a white background for a UK passport photo?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Yes, HM Passport Office accepts both plain light grey and plain white backgrounds. This tool defaults to white but also offers a light grey option. Avoid shadows on the background.</div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">How many photos fit on a 4x6 print sheet?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">A standard 4x6 inch (10x15cm) print sheet can fit multiple 35x45mm UK passport photos arranged in rows and columns with small cut guides between them. This tool generates the sheet automatically.</div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">Is the UK passport photo maker free and private?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Yes, OptiDrop's UK Passport Photo Maker is completely free. All processing happens in your browser using the Canvas API. No photos are uploaded to any server, ensuring 100% privacy.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/design/indian-passport-photo.html" class="tool-card" style="padding:1rem;"><span class="tool-card-title" style="font-size:0.95rem;">Indian Passport Photo</span><span class="tool-card-desc" style="font-size:0.8rem;">Create 35x45mm Indian passport photos.</span></a>
+                <a href="/tools/design/us-passport-photo.html" class="tool-card" style="padding:1rem;"><span class="tool-card-title" style="font-size:0.95rem;">US Passport Photo</span><span class="tool-card-desc" style="font-size:0.8rem;">Create 2x2 inch US passport photos.</span></a>
+                <a href="/tools/design/canada-passport-photo.html" class="tool-card" style="padding:1rem;"><span class="tool-card-title" style="font-size:0.95rem;">Canada Passport Photo</span><span class="tool-card-desc" style="font-size:0.8rem;">Create 50x70mm Canadian passport photos.</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 306+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <div id="toast-container"></div>
+
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var PX_W = 413, PX_H = 531;
+        var uploadZone = document.getElementById('uploadZone');
+        var photoInput = document.getElementById('photoInput');
+        var uploadSection = document.getElementById('uploadSection');
+        var cropSection = document.getElementById('cropSection');
+        var cropContainer = document.getElementById('cropContainer');
+        var cropImage = document.getElementById('cropImage');
+        var previewCanvas = document.getElementById('previewCanvas');
+        var zoomSlider = document.getElementById('zoomSlider');
+        var ctx = previewCanvas.getContext('2d');
+        var img = null, posX = 0, posY = 0, scale = 1;
+        var isDragging = false, dragStartX = 0, dragStartY = 0, startPosX = 0, startPosY = 0;
+        var bgColor = '#ffffff';
+
+        function handleFile(file) {
+            if (!file || !file.type.startsWith('image/')) { showToast('Please upload a valid image file.'); return; }
+            if (file.size > 20*1024*1024) { showToast('File too large. Max 20MB.'); return; }
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                img = new Image();
+                img.onload = function() { scale = 1; zoomSlider.value = 1; posX = 0; posY = 0; showCropSection(); updateCropView(); };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+        function showCropSection() { uploadSection.classList.add('hidden'); cropSection.classList.remove('hidden'); }
+        function resetUpload() { cropSection.classList.add('hidden'); uploadSection.classList.remove('hidden'); photoInput.value = ''; img = null; }
+        window.resetUpload = resetUpload;
+
+        function setBg(el) {
+            bgColor = el.dataset.bg;
+            document.querySelectorAll('.bg-option').forEach(function(b){ b.classList.remove('active'); });
+            el.classList.add('active');
+            updatePreview();
+        }
+        window.setBg = setBg;
+
+        photoInput.addEventListener('change', function(e) { if (e.target.files[0]) handleFile(e.target.files[0]); });
+        uploadZone.addEventListener('dragover', function(e) { e.preventDefault(); uploadZone.classList.add('dragover'); });
+        uploadZone.addEventListener('dragleave', function() { uploadZone.classList.remove('dragover'); });
+        uploadZone.addEventListener('drop', function(e) { e.preventDefault(); uploadZone.classList.remove('dragover'); if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); });
+        zoomSlider.addEventListener('input', function() { scale = parseFloat(this.value); updateCropView(); });
+
+        function rotatePhoto(deg) {
+            if (!img) return;
+            var c = document.createElement('canvas'), cx = c.getContext('2d');
+            var rad = deg * Math.PI / 180;
+            if (Math.abs(deg)===90||Math.abs(deg)===270) { c.width=img.height; c.height=img.width; } else { c.width=img.width; c.height=img.height; }
+            cx.translate(c.width/2,c.height/2); cx.rotate(rad); cx.drawImage(img,-img.width/2,-img.height/2);
+            var ni = new Image();
+            ni.onload = function() { img=ni; posX=0; posY=0; updateCropView(); };
+            ni.src = c.toDataURL();
+        }
+        window.rotatePhoto = rotatePhoto;
+
+        cropContainer.addEventListener('mousedown', function(e) { if(!img)return; isDragging=true; dragStartX=e.clientX; dragStartY=e.clientY; startPosX=posX; startPosY=posY; e.preventDefault(); });
+        document.addEventListener('mousemove', function(e) { if(!isDragging)return; posX=startPosX+(e.clientX-dragStartX); posY=startPosY+(e.clientY-dragStartY); updateCropView(); });
+        document.addEventListener('mouseup', function() { isDragging=false; });
+        cropContainer.addEventListener('touchstart', function(e) { if(!img||e.touches.length!==1)return; isDragging=true; dragStartX=e.touches[0].clientX; dragStartY=e.touches[0].clientY; startPosX=posX; startPosY=posY; }, {passive:true});
+        document.addEventListener('touchmove', function(e) { if(!isDragging)return; posX=startPosX+(e.touches[0].clientX-dragStartX); posY=startPosY+(e.touches[0].clientY-dragStartY); updateCropView(); }, {passive:true});
+        document.addEventListener('touchend', function() { isDragging=false; });
+
+        function updateCropView() {
+            if (!img) return;
+            var cW=cropContainer.clientWidth, cH=cropContainer.clientHeight;
+            var iA=img.width/img.height, cA=cW/cH;
+            var dW,dH;
+            if(iA>cA){dH=cH*scale;dW=dH*iA;} else {dW=cW*scale;dH=dW/iA;}
+            cropImage.style.width=dW+'px'; cropImage.style.height=dH+'px';
+            if(!isDragging&&posX===0&&posY===0){posX=(cW-dW)/2;posY=(cH-dH)/2;}
+            cropImage.style.transform='translate('+posX+'px,'+posY+'px)';
+            updatePreview();
+        }
+        function updatePreview() {
+            if(!img) return;
+            var cW=cropContainer.clientWidth, cH=cropContainer.clientHeight;
+            var iA=img.width/img.height, cA=cW/cH;
+            var dW,dH;
+            if(iA>cA){dH=cH*scale;dW=dH*iA;} else {dW=cW*scale;dH=dW/iA;}
+            var vL=-posX/dW, vT=-posY/dH, vR=(cW-posX)/dW, vB=(cH-posY)/dH;
+            var sX=Math.max(0,vL*img.width), sY=Math.max(0,vT*img.height);
+            var sW=Math.min(img.width,vR*img.width)-sX, sH=Math.min(img.height,vB*img.height)-sY;
+            if(sW<=0||sH<=0) return;
+            ctx.fillStyle=bgColor; ctx.fillRect(0,0,PX_W,PX_H);
+            try{ctx.drawImage(img,sX,sY,sW,sH,0,0,PX_W,PX_H);}catch(e){}
+        }
+        window.addEventListener('resize', function(){if(img)updateCropView();});
+
+        function downloadSingle(){if(!img)return;updatePreview();var l=document.createElement('a');l.download='uk-passport-photo-35x45mm.png';l.href=previewCanvas.toDataURL('image/png');l.click();showToast('UK passport photo downloaded!');}
+        window.downloadSingle=downloadSingle;
+        function downloadPrintSheet(){if(!img)return;updatePreview();var sW=1200,sH=1800,sc=document.createElement('canvas');sc.width=sW;sc.height=sH;var s=sc.getContext('2d');s.fillStyle='#ffffff';s.fillRect(0,0,sW,sH);var gap=20,cols=Math.floor((sW+gap)/(PX_W+gap)),rows=Math.floor((sH+gap)/(PX_H+gap));var sx=Math.floor((sW-(cols*PX_W+(cols-1)*gap))/2),sy=Math.floor((sH-(rows*PX_H+(rows-1)*gap))/2);for(var r=0;r<rows;r++){for(var c=0;c<cols;c++){s.drawImage(previewCanvas,sx+c*(PX_W+gap),sy+r*(PX_H+gap),PX_W,PX_H);}}s.strokeStyle='#ccc';s.lineWidth=0.5;s.setLineDash([4,4]);for(var r=0;r<rows;r++){for(var c=0;c<cols;c++){s.strokeRect(sx+c*(PX_W+gap)-gap/2,sy+r*(PX_H+gap)-gap/2,PX_W+gap,PX_H+gap);}}s.setLineDash([]);var l=document.createElement('a');l.download='uk-passport-photos-4x6-print-sheet.png';l.href=sc.toDataURL('image/png');l.click();showToast('Print sheet downloaded!');}
+        window.downloadPrintSheet=downloadPrintSheet;
+
+        document.querySelectorAll('.faq-question').forEach(function(btn){btn.addEventListener('click',function(){var a=this.nextElementSibling,i=this.querySelector('.faq-icon'),o=a.style.display==='block';a.style.display=o?'none':'block';if(i)i.style.transform=o?'':'rotate(180deg)';});btn.nextElementSibling.style.display='none';});
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,803 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to PDF Converter — Free Online Tool | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Convert Markdown to PDF instantly in your browser. Free online Markdown to PDF converter with live preview, page size options (A4, Letter), and one-click download. No upload required.">
+    <meta name="keywords" content="markdown to pdf, markdown to pdf converter, convert markdown to pdf, markdown pdf online, free markdown to pdf, markdown editor pdf, export markdown as pdf">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Markdown to PDF Converter — Free Online Tool | OptiDrop">
+    <meta property="og:description" content="Convert Markdown to PDF instantly in your browser. Live preview, page size options, one-click download. 100% private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/pdf/markdown-to-pdf.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Markdown to PDF Converter — Free Online Tool | OptiDrop">
+    <meta name="twitter:description" content="Convert Markdown to PDF instantly in your browser. Live preview, page size options, one-click download.">
+    <link rel="canonical" href="https://optidrop.online/tools/pdf/markdown-to-pdf.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://optidrop.online/category/pdf-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Markdown to PDF", "item": "https://optidrop.online/tools/pdf/markdown-to-pdf.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Markdown to PDF Converter",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online Markdown to PDF converter. Write or paste Markdown, see a live preview, choose page size (A4 or Letter), and download as PDF. Works entirely in the browser."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert Markdown to PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply type or paste your Markdown text into the left editor pane. The live preview updates on the right as you type. Choose your preferred page size (A4 or Letter) from the dropdown, then click the 'Download PDF' button to save the file to your device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my Markdown content uploaded to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This tool runs entirely in your browser using JavaScript libraries (marked.js and jsPDF). Your Markdown content never leaves your device. No data is uploaded, stored, or transmitted to any server. Your privacy is fully protected."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What page sizes are supported for the PDF output?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool supports two standard page sizes: A4 (210 x 297 mm, commonly used worldwide) and US Letter (8.5 x 11 inches, standard in the United States and Canada). Select your preferred size from the dropdown before downloading."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Markdown features are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The converter supports full GitHub Flavored Markdown (GFM) including headers (h1-h6), bold, italic, strikethrough, links, images, ordered and unordered lists, code blocks with syntax highlighting, tables, blockquotes, horizontal rules, and task lists. The live preview renders all these elements in real time."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .md-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 500px;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+        .md-editor-pane {
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #e2e8f0;
+        }
+        .md-preview-pane {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+        .md-pane-header {
+            padding: 0.6rem 1rem;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .md-textarea {
+            flex: 1;
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+            line-height: 1.7;
+            color: #1e293b;
+            resize: none;
+            background: #fff;
+        }
+        .md-preview-content {
+            flex: 1;
+            padding: 1.25rem;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+        .md-preview-content h1 { font-size: 1.5rem; font-weight: 800; margin: 1rem 0 0.5rem; color: #0f172a; }
+        .md-preview-content h2 { font-size: 1.25rem; font-weight: 800; margin: 1rem 0 0.5rem; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.25rem; }
+        .md-preview-content h3 { font-size: 1.1rem; font-weight: 700; margin: 0.75rem 0 0.5rem; color: #1e293b; }
+        .md-preview-content p { margin: 0 0 0.75rem; }
+        .md-preview-content ul, .md-preview-content ol { padding-left: 1.5rem; margin: 0 0 0.75rem; }
+        .md-preview-content li { margin-bottom: 0.25rem; }
+        .md-preview-content a { color: #2563eb; text-decoration: underline; }
+        .md-preview-content code {
+            background: #f1f5f9; padding: 0.15rem 0.4rem; border-radius: 0.25rem;
+            font-family: 'Courier New', Courier, monospace; font-size: 0.85em; color: #e11d48;
+        }
+        .md-preview-content pre {
+            background: #0f172a; color: #e2e8f0; padding: 1rem; border-radius: 0.5rem;
+            overflow-x: auto; margin: 0.75rem 0;
+        }
+        .md-preview-content pre code { background: transparent; color: inherit; padding: 0; }
+        .md-preview-content blockquote {
+            border-left: 4px solid #3b82f6; padding: 0.5rem 1rem; margin: 0.75rem 0;
+            background: #eff6ff; border-radius: 0 0.5rem 0.5rem 0; color: #1e3a8a;
+        }
+        .md-preview-content table { border-collapse: collapse; width: 100%; margin: 0.75rem 0; }
+        .md-preview-content th, .md-preview-content td {
+            border: 1px solid #e2e8f0; padding: 0.5rem 0.75rem; text-align: left;
+        }
+        .md-preview-content th { background: #f8fafc; font-weight: 700; }
+        .md-preview-content img { max-width: 100%; border-radius: 0.5rem; }
+        .md-preview-content hr { border: none; border-top: 1px solid #e2e8f0; margin: 1rem 0; }
+
+        /* Page size select */
+        .page-size-select {
+            padding: 0.35rem 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            background: #fff;
+            color: #475569;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .page-size-select:focus { border-color: #3b82f6; }
+
+        /* Generating overlay */
+        .generating-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            border-radius: 0.75rem;
+        }
+        .generating-overlay .spinner {
+            width: 36px; height: 36px;
+            border: 4px solid #e2e8f0;
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Dark mode overrides for this tool */
+        .dark-mode .md-split { border-color: #334155; }
+        .dark-mode .md-editor-pane { border-right-color: #334155; }
+        .dark-mode .md-pane-header { background: #1e293b; border-bottom-color: #334155; color: #94a3b8; }
+        .dark-mode .md-textarea { background: #0f172a; color: #e2e8f0; }
+        .dark-mode .md-preview-pane { background: #0f172a; }
+        .dark-mode .md-preview-content { color: #e2e8f0; }
+        .dark-mode .md-preview-content h1,
+        .dark-mode .md-preview-content h2,
+        .dark-mode .md-preview-content h3 { color: #f1f5f9; }
+        .dark-mode .md-preview-content h2 { border-bottom-color: #334155; }
+        .dark-mode .md-preview-content a { color: #60a5fa; }
+        .dark-mode .md-preview-content code { background: #1e293b; color: #fb7185; }
+        .dark-mode .md-preview-content pre { background: #1e293b; color: #e2e8f0; }
+        .dark-mode .md-preview-content blockquote { background: #1e3a5f; color: #93c5fd; border-left-color: #3b82f6; }
+        .dark-mode .md-preview-content th, .dark-mode .md-preview-content td { border-color: #334155; }
+        .dark-mode .md-preview-content th { background: #1e293b; }
+        .dark-mode .md-preview-content hr { border-top-color: #334155; }
+        .dark-mode .page-size-select { background: #1e293b; border-color: #334155; color: #e2e8f0; }
+        .dark-mode .generating-overlay { background: rgba(15,23,42,0.85); }
+
+        /* PDF generation area (hidden, used for html2canvas) */
+        #pdfRenderArea {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 680px;
+            padding: 40px;
+            background: #fff;
+            color: #1e293b;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+            z-index: -1;
+            opacity: 0;
+            pointer-events: none;
+            overflow: visible;
+        }
+        #pdfRenderArea h1 { font-size: 22pt; font-weight: 800; margin: 0.8em 0 0.4em; color: #0f172a; }
+        #pdfRenderArea h2 { font-size: 18pt; font-weight: 800; margin: 0.8em 0 0.4em; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.2em; }
+        #pdfRenderArea h3 { font-size: 14pt; font-weight: 700; margin: 0.6em 0 0.3em; color: #1e293b; }
+        #pdfRenderArea h4 { font-size: 12pt; font-weight: 700; margin: 0.5em 0 0.3em; color: #1e293b; }
+        #pdfRenderArea p { margin: 0 0 0.6em; }
+        #pdfRenderArea ul, #pdfRenderArea ol { padding-left: 1.5em; margin: 0 0 0.6em; }
+        #pdfRenderArea li { margin-bottom: 0.2em; }
+        #pdfRenderArea code { background: #f1f5f9; padding: 0.1em 0.3em; border-radius: 3px; font-size: 0.9em; font-family: 'Courier New', monospace; }
+        #pdfRenderArea pre { background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.8em; border-radius: 6px; overflow-x: auto; margin: 0.6em 0; }
+        #pdfRenderArea pre code { background: transparent; padding: 0; }
+        #pdfRenderArea blockquote { border-left: 4px solid #3b82f6; padding: 0.4em 0.8em; margin: 0.6em 0; background: #eff6ff; color: #1e3a8a; border-radius: 0 4px 4px 0; }
+        #pdfRenderArea table { border-collapse: collapse; width: 100%; margin: 0.6em 0; }
+        #pdfRenderArea th, #pdfRenderArea td { border: 1px solid #d1d5db; padding: 0.4em 0.6em; text-align: left; }
+        #pdfRenderArea th { background: #f8fafc; font-weight: 700; }
+        #pdfRenderArea img { max-width: 100%; }
+        #pdfRenderArea hr { border: none; border-top: 1px solid #e2e8f0; margin: 0.8em 0; }
+        #pdfRenderArea a { color: #2563eb; text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .md-split {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .md-editor-pane { border-right: none; border-bottom: 1px solid #e2e8f0; }
+            .md-textarea { min-height: 250px; }
+            .md-preview-content { min-height: 250px; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-6xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Markdown to PDF Converter — Free Online Tool</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Write or paste Markdown, see a live rendered preview, choose your page size, and download as a polished PDF. Everything runs in your browser — no uploads, no sign-up.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-6xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden relative">
+                <div class="p-4 sm:p-6">
+
+                    <!-- Action Buttons Row -->
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                        <button id="btnDownloadPdf" class="px-5 py-2.5 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md transition-all text-sm flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Download PDF
+                        </button>
+
+                        <div class="flex items-center gap-2">
+                            <label for="pageSizeSelect" class="text-xs font-bold text-slate-500 uppercase tracking-wide">Page:</label>
+                            <select id="pageSizeSelect" class="page-size-select">
+                                <option value="a4">A4</option>
+                                <option value="letter">Letter</option>
+                            </select>
+                        </div>
+
+                        <button id="btnCopyHtml" class="px-4 py-2.5 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all text-sm flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            Copy HTML
+                        </button>
+
+                        <button id="btnDownloadMd" class="px-4 py-2.5 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all text-sm flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Download .md
+                        </button>
+
+                        <button id="btnClear" class="px-4 py-2.5 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all text-sm flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                            Clear
+                        </button>
+                    </div>
+
+                    <!-- Split Pane -->
+                    <div class="md-split" id="mdSplitPane">
+                        <div class="md-editor-pane">
+                            <div class="md-pane-header">
+                                <span>Markdown</span>
+                                <span id="mdCharCount" class="text-slate-400 font-normal">0 chars</span>
+                            </div>
+                            <textarea id="mdInput" class="md-textarea" spellcheck="false" placeholder="# Hello World
+
+Start writing **Markdown** here...
+
+- Item 1
+- Item 2
+- Item 3
+
+> This is a blockquote
+
+```javascript
+console.log('Hello!');
+```"></textarea>
+                        </div>
+                        <div class="md-preview-pane">
+                            <div class="md-pane-header">
+                                <span>Preview</span>
+                                <span id="mdWordCount" class="text-slate-400 font-normal">0 words</span>
+                            </div>
+                            <div id="mdPreview" class="md-preview-content">
+                                <p style="color:#94a3b8;">Preview will appear here...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online Markdown to PDF Converter</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Markdown to PDF Converter lets you write or paste Markdown text and instantly convert it to a downloadable PDF file. The split-pane interface shows your Markdown source on the left and the formatted preview on the right. When you are ready, click "Download PDF" to generate a clean, professional PDF document.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How It Works</h3>
+                <p class="text-slate-600 mb-4">The converter uses two powerful JavaScript libraries that load on demand: <strong>marked.js</strong> for parsing Markdown into HTML, and <strong>jsPDF</strong> for generating the PDF file. Both libraries run entirely in your browser, so your content never leaves your device. Choose between A4 and US Letter page sizes to match your printing or sharing needs.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Full Markdown Support</h3>
+                <p class="text-slate-600 mb-4">Write headers with #, bold with **text**, italic with *text*, links with [text](url), code blocks with triple backticks, tables with pipes, blockquotes with >, and much more. The live preview updates instantly as you type, so you can see exactly how your PDF will look before downloading.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Private &amp; Browser-Side</h3>
+                <p class="text-slate-600">Everything runs in your browser. No data is sent to any server. Your Markdown content stays completely private. The tool works on desktop and mobile devices with a fully responsive layout.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I convert Markdown to PDF?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Simply type or paste your Markdown text into the left editor pane. The live preview updates on the right as you type. Choose your preferred page size (A4 or Letter) from the dropdown, then click the "Download PDF" button to save the file to your device.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is my Markdown content uploaded to a server?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        No. This tool runs entirely in your browser using JavaScript libraries (marked.js and jsPDF). Your Markdown content never leaves your device. No data is uploaded, stored, or transmitted to any server. Your privacy is fully protected.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What page sizes are supported for the PDF output?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The tool supports two standard page sizes: A4 (210 x 297 mm, commonly used worldwide) and US Letter (8.5 x 11 inches, standard in the United States and Canada). Select your preferred size from the dropdown before downloading.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What Markdown features are supported?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The converter supports full GitHub Flavored Markdown (GFM) including headers (h1-h6), bold, italic, strikethrough, links, images, ordered and unordered lists, code blocks with syntax highlighting, tables, blockquotes, horizontal rules, and task lists. The live preview renders all these elements in real time.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/pdf/html-to-pdf.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">HTML to PDF</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Convert HTML code or web pages to downloadable PDF files instantly.</span>
+            </a>
+            <a href="/tools/developer/markdown-preview.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Markdown Preview</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Write Markdown with a live HTML preview. Copy HTML or download .md files.</span>
+            </a>
+            <a href="/tools/pdf/pdf-merger.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">PDF Merger</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Combine multiple PDF files into a single document. Drag and drop reordering.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 306+ tools for images, PDFs, resumes, invoices, calculators, developers, health, productivity, travel, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Hidden PDF render area -->
+    <div id="pdfRenderArea"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var mdInput = document.getElementById('mdInput');
+        var mdPreview = document.getElementById('mdPreview');
+        var mdCharCount = document.getElementById('mdCharCount');
+        var mdWordCount = document.getElementById('mdWordCount');
+        var btnDownloadPdf = document.getElementById('btnDownloadPdf');
+        var btnCopyHtml = document.getElementById('btnCopyHtml');
+        var btnDownloadMd = document.getElementById('btnDownloadMd');
+        var btnClear = document.getElementById('btnClear');
+        var pageSizeSelect = document.getElementById('pageSizeSelect');
+        var mdSplitPane = document.getElementById('mdSplitPane');
+        var pdfRenderArea = document.getElementById('pdfRenderArea');
+
+        // ── Dynamic library loading ────────────────────────────
+        function loadMarked() {
+            if (typeof marked !== 'undefined') return Promise.resolve();
+            return new Promise(function(resolve) {
+                var s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js';
+                s.onload = resolve;
+                s.onerror = resolve;
+                document.head.appendChild(s);
+            });
+        }
+
+        function loadJsPDF() {
+            if (typeof window.jspdf !== 'undefined') return Promise.resolve();
+            return new Promise(function(resolve) {
+                var s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+                s.onload = resolve;
+                s.onerror = resolve;
+                document.head.appendChild(s);
+            });
+        }
+
+        function loadDOMPurify() {
+            if (typeof DOMPurify !== 'undefined') return Promise.resolve();
+            return new Promise(function(resolve) {
+                var s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js';
+                s.onload = resolve;
+                s.onerror = resolve;
+                document.head.appendChild(s);
+            });
+        }
+
+        function loadHtml2Canvas() {
+            if (typeof html2canvas !== 'undefined') return Promise.resolve();
+            return new Promise(function(resolve) {
+                var s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+                s.onload = resolve;
+                s.onerror = resolve;
+                document.head.appendChild(s);
+            });
+        }
+
+        // ── Default Markdown ───────────────────────────────────
+        var defaultMarkdown = '# Welcome to Markdown to PDF\n\nStart writing **Markdown** on the left and see the *rendered* preview on the right. When you are ready, click **Download PDF** to save your document.\n\n## Features\n\n- **Bold** and *italic* text\n- [Links](https://example.com)\n- Ordered and unordered lists\n- Code blocks\n- Tables\n- Blockquotes\n\n## Code Example\n\n```javascript\nfunction greet(name) {\n    return \'Hello, \' + name + \'!\';\n}\n\nconsole.log(greet(\'World\'));\n```\n\n## Table Example\n\n| Feature | Supported |\n|---------|----------|\n| Headers | Yes |\n| Bold & Italic | Yes |\n| Links | Yes |\n| Code Blocks | Yes |\n| Tables | Yes |\n| Blockquotes | Yes |\n\n> **Tip:** Choose A4 or Letter page size from the dropdown above, then click Download PDF.\n\n---\n\nHappy writing!';
+
+        // ── Render Preview ─────────────────────────────────────
+        function renderPreview() {
+            var text = mdInput.value;
+            if (typeof marked !== 'undefined') {
+                var rawHtml = marked.parse(text);
+                mdPreview.innerHTML = (typeof DOMPurify !== 'undefined') ? DOMPurify.sanitize(rawHtml) : rawHtml;
+            } else {
+                mdPreview.innerHTML = '<p style="color:#94a3b8;">Loading Markdown parser...</p>';
+                Promise.all([loadMarked(), loadDOMPurify()]).then(renderPreview);
+            }
+
+            // Update counts
+            mdCharCount.textContent = text.length.toLocaleString() + ' chars';
+            var words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+            mdWordCount.textContent = words.toLocaleString() + ' words';
+        }
+
+        mdInput.addEventListener('input', renderPreview);
+
+        // ── FAQ Toggle ─────────────────────────────────────────
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var answer = this.nextElementSibling;
+                var icon = this.querySelector('.faq-icon');
+                var isOpen = answer.style.display === 'block';
+
+                // Close all
+                document.querySelectorAll('.faq-answer').forEach(function(a) { a.style.display = 'none'; });
+                document.querySelectorAll('.faq-icon').forEach(function(i) { i.style.transform = ''; });
+
+                // Toggle current
+                if (!isOpen) {
+                    answer.style.display = 'block';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // ── Copy HTML ──────────────────────────────────────────
+        btnCopyHtml.addEventListener('click', function() {
+            var html = mdPreview.innerHTML;
+            if (!html || html.indexOf('Preview will appear') !== -1) {
+                showToast('Nothing to copy. Write some Markdown first.', 'error');
+                return;
+            }
+            copyToClipboard(html, 'HTML copied to clipboard!');
+        });
+
+        // ── Download .md ───────────────────────────────────────
+        btnDownloadMd.addEventListener('click', function() {
+            var text = mdInput.value;
+            if (!text.trim()) {
+                showToast('Nothing to download. Write some Markdown first.', 'error');
+                return;
+            }
+            downloadTextFile(text, 'document.md');
+            showToast('Markdown file downloaded!');
+        });
+
+        // ── Clear ──────────────────────────────────────────────
+        btnClear.addEventListener('click', function() {
+            mdInput.value = '';
+            renderPreview();
+            mdInput.focus();
+        });
+
+        // ── Download PDF ───────────────────────────────────────
+        btnDownloadPdf.addEventListener('click', function() {
+            var text = mdInput.value;
+            if (!text.trim()) {
+                showToast('Nothing to convert. Write some Markdown first.', 'error');
+                return;
+            }
+
+            // Show generating state
+            btnDownloadPdf.disabled = true;
+            btnDownloadPdf.innerHTML = '<span class="spinner" style="width:16px;height:16px;border-width:2px;display:inline-block;vertical-align:middle;margin-right:6px;border-style:solid;border-color:#fff;border-top-color:transparent;border-radius:50%;animation:spin 0.8s linear infinite;"></span> Generating...';
+
+            // Load all required libs then generate
+            Promise.all([loadMarked(), loadJsPDF(), loadDOMPurify(), loadHtml2Canvas()]).then(function() {
+                generatePDF(text);
+            }).catch(function() {
+                showToast('Failed to load required libraries. Please check your connection and try again.', 'error');
+                resetDownloadBtn();
+            });
+        });
+
+        function generatePDF(markdownText) {
+            try {
+                var pageSize = pageSizeSelect.value; // 'a4' or 'letter'
+                var jsPDF = window.jspdf.jsPDF;
+
+                // Parse markdown to HTML
+                var rawHtml = marked.parse(markdownText);
+                var safeHtml = (typeof DOMPurify !== 'undefined') ? DOMPurify.sanitize(rawHtml) : rawHtml;
+
+                // Populate the hidden render area
+                pdfRenderArea.innerHTML = safeHtml;
+
+                // Create PDF with chosen page size
+                var doc = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'mm',
+                    format: pageSize
+                });
+
+                // Page dimensions in mm
+                var margin = 15;
+                var contentWidthMM = (pageSize === 'a4' ? 210 : 215.9) - (margin * 2);
+
+                // Render area is 680px total, 40px padding each side = 600px content
+                var renderAreaContentPx = 600;
+
+                // Scale: how many mm each pixel represents
+                var pxToMM = contentWidthMM / renderAreaContentPx;
+
+                doc.html(pdfRenderArea, {
+                    callback: function(doc) {
+                        doc.save('markdown-document.pdf');
+                        showToast('PDF downloaded successfully!');
+                        resetDownloadBtn();
+                    },
+                    x: margin,
+                    y: margin,
+                    width: contentWidthMM,
+                    windowWidth: 680,
+                    autoPaging: 'slice',
+                    html2canvas: {
+                        scale: 1,
+                        useCORS: true,
+                        logging: false,
+                        letterRendering: true,
+                        width: 680,
+                        windowWidth: 680
+                    }
+                });
+            } catch (err) {
+                showToast('Error generating PDF: ' + err.message, 'error');
+                resetDownloadBtn();
+            }
+        }
+
+        function resetDownloadBtn() {
+            btnDownloadPdf.disabled = false;
+            btnDownloadPdf.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Download PDF';
+        }
+
+        // ── Initialize ─────────────────────────────────────────
+        mdInput.value = defaultMarkdown;
+        renderPreview();
+
+        // Preload marked.js for snappy first interaction
+        Promise.all([loadMarked(), loadDOMPurify()]).then(renderPreview);
+
+        // Preload jsPDF + html2canvas in background (non-blocking)
+        setTimeout(function() { loadJsPDF(); loadHtml2Canvas(); }, 3000);
+    })();
+    </script>
+</body>
+</html>

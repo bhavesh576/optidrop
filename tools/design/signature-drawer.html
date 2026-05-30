@@ -1,0 +1,561 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw Signature Online — Free Signature Pad | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Draw your signature online using mouse or touch. Choose pen color, size, and background. Download as PNG with transparent background. Free and private.">
+    <meta name="keywords" content="signature drawer, draw signature online, signature pad, electronic signature, signature maker, free signature tool, online signature pad">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Draw Signature Online — Free Signature Pad | OptiDrop">
+    <meta property="og:description" content="Draw your signature online using mouse or touch. Choose pen color, size, and background. Download as PNG with transparent background.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/design/signature-drawer.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Draw Signature Online — Free Signature Pad | OptiDrop">
+    <meta name="twitter:description" content="Draw your signature online using mouse or touch. Choose pen color, size, and background. Download as PNG.">
+    <link rel="canonical" href="https://optidrop.online/tools/design/signature-drawer.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Design Tools", "item": "https://optidrop.online/tools/design/"},
+        {"@type": "ListItem", "position": 3, "name": "Signature Drawer", "item": "https://optidrop.online/tools/design/signature-drawer.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Signature Drawer",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online signature pad to draw signatures using mouse or touch. Choose pen color, size, and background. Download as PNG with transparent background."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I draw my signature online?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use your mouse or finger (on touch devices) to draw your signature on the canvas. You can adjust pen color, pen size, and background type. When finished, click 'Download Signature' to save it as a PNG file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I download my signature with a transparent background?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Select the 'Transparent' background option before drawing. When you download, the PNG file will have a transparent background, perfect for placing on documents."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this work on mobile devices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the signature pad fully supports touch input. You can draw your signature using your finger on any smartphone or tablet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my signature stored on your servers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All processing happens entirely in your browser. Your signature is never uploaded or stored on any server. It is 100% private."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .sig-canvas-wrapper {
+            position: relative;
+            border: 2px solid #e2e8f0;
+            border-radius: 1rem;
+            overflow: hidden;
+            touch-action: none;
+            cursor: crosshair;
+        }
+        .dark-mode .sig-canvas-wrapper { border-color: #334155; }
+        .sig-canvas-wrapper canvas {
+            display: block;
+            width: 100%;
+            height: 250px;
+        }
+        .sig-placeholder {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: #94a3b8;
+            font-size: 0.9rem;
+            font-weight: 600;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+        .control-group { margin-bottom: 1rem; }
+        .control-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #475569;
+            margin-bottom: 0.35rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .dark-mode .control-group label { color: #94a3b8; }
+        .control-group input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #e2e8f0;
+            appearance: none;
+            cursor: pointer;
+            accent-color: #2563eb;
+        }
+        .control-group .range-value {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #2563eb;
+            float: right;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/tools/design/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    Design Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/tools/design/" onclick="this.parentElement.classList.remove('open')">Design Tools</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Draw Signature Online — Free Signature Pad</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Draw your signature using your mouse or touch screen. Choose pen color, size, and background. Download as PNG with transparent background. 100% free and private.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Left: Controls -->
+                        <div>
+                            <div class="control-group">
+                                <label for="penColor">Pen Color</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="color" id="penColor" value="#000000" class="w-12 h-10 border-2 border-slate-200 rounded-lg cursor-pointer">
+                                    <input type="text" id="penColorText" value="#000000" class="flex-1 px-3 py-2 text-sm border-2 border-slate-200 rounded-lg font-mono font-bold text-slate-900">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label>Pen Size <span class="range-value" id="penSizeVal">3px</span></label>
+                                <input type="range" id="penSize" min="1" max="10" value="3">
+                            </div>
+
+                            <div class="control-group">
+                                <label>Background</label>
+                                <div class="flex gap-2">
+                                    <button id="bgWhite" class="preset-btn active" onclick="setBg('white')">White</button>
+                                    <button id="bgTransparent" class="preset-btn" onclick="setBg('transparent')">Transparent</button>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-3 mt-6">
+                                <button onclick="undoSignature()" class="w-full px-6 py-3 bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a5 5 0 015 5v2M3 10l4 4M3 10l4-4"/></svg>
+                                    Undo
+                                </button>
+                                <button onclick="clearSignature()" class="w-full px-6 py-3 bg-red-100 hover:bg-red-200 text-red-700 font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                                    Clear
+                                </button>
+                                <button onclick="downloadSignature()" class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                    Download PNG
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Right: Canvas -->
+                        <div class="lg:col-span-2">
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Draw Your Signature</label>
+                            <div class="sig-canvas-wrapper" id="canvasWrapper">
+                                <canvas id="sigCanvas" width="800" height="300"></canvas>
+                                <div class="sig-placeholder" id="sigPlaceholder">Draw here with mouse or touch</div>
+                            </div>
+                            <div class="upload-trust-badge mt-3">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                Your signature never leaves your browser.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online Signature Pad</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Signature Drawer lets you draw your signature directly in the browser using your mouse or touchscreen. No account or software installation required. Choose from multiple pen colors and sizes, and select either a white or transparent background for your output.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How to Draw Your Signature</h3>
+                <p class="text-slate-600 mb-4">Simply click and drag (or use your finger on mobile) to draw your signature on the canvas. Use the Undo button to remove the last stroke, or Clear to start over. When satisfied, click Download to save your signature as a PNG file.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Transparent Background Support</h3>
+                <p class="text-slate-600 mb-4">Select the Transparent background option to export your signature with no background. This is ideal for placing your signature on PDF documents, Word files, or images without any white box around it.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Private and Secure</h3>
+                <p class="text-slate-600">Your signature is drawn and processed entirely in your browser. Nothing is uploaded to any server. Your data stays on your device at all times.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I draw my signature online?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Use your mouse or finger (on touch devices) to draw your signature on the canvas. You can adjust pen color, pen size, and background type. When finished, click Download to save it as a PNG file.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I download my signature with a transparent background?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. Select the Transparent background option before drawing. When you download, the PNG file will have a transparent background, perfect for placing on documents.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does this work on mobile devices?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, the signature pad fully supports touch input. You can draw your signature using your finger on any smartphone or tablet.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is my signature stored on your servers?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        No. All processing happens entirely in your browser. Your signature is never uploaded or stored on any server. It is 100% private.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/design/text-signature-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Text Signature Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate stylized text signatures with multiple fonts.</span>
+            </a>
+            <a href="/tools/design/watermark-creator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Watermark Creator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Add text watermarks to images with custom options.</span>
+            </a>
+            <a href="/tools/design/image-stamp-tool.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Image Stamp Tool</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Add date and time stamps to your images.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 306+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var canvas = document.getElementById('sigCanvas');
+        var ctx = canvas.getContext('2d');
+        var wrapper = document.getElementById('canvasWrapper');
+        var placeholder = document.getElementById('sigPlaceholder');
+        var penColorInput = document.getElementById('penColor');
+        var penColorText = document.getElementById('penColorText');
+        var penSizeInput = document.getElementById('penSize');
+
+        var drawing = false;
+        var strokes = [];
+        var currentStroke = [];
+        var bgMode = 'white';
+
+        function resizeCanvas() {
+            var rect = wrapper.getBoundingClientRect();
+            var dpr = window.devicePixelRatio || 1;
+            canvas.width = rect.width * dpr;
+            canvas.height = 250 * dpr;
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = '250px';
+            ctx.scale(dpr, dpr);
+            redrawAll();
+        }
+
+        function setBg(mode) {
+            bgMode = mode;
+            document.getElementById('bgWhite').classList.toggle('active', mode === 'white');
+            document.getElementById('bgTransparent').classList.toggle('active', mode === 'transparent');
+            redrawAll();
+        }
+        window.setBg = setBg;
+
+        function redrawAll() {
+            var dpr = window.devicePixelRatio || 1;
+            ctx.save();
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.restore();
+
+            if (bgMode === 'white') {
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width / dpr, canvas.height / dpr);
+            }
+
+            strokes.forEach(function(stroke) {
+                drawStroke(stroke);
+            });
+        }
+
+        function drawStroke(stroke) {
+            if (stroke.length < 2) return;
+            ctx.beginPath();
+            ctx.strokeStyle = penColorInput.value;
+            ctx.lineWidth = parseInt(penSizeInput.value);
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.moveTo(stroke[0].x, stroke[0].y);
+            for (var i = 1; i < stroke.length; i++) {
+                ctx.lineTo(stroke[i].x, stroke[i].y);
+            }
+            ctx.stroke();
+        }
+
+        function getPos(e) {
+            var rect = canvas.getBoundingClientRect();
+            var clientX, clientY;
+            if (e.touches && e.touches.length > 0) {
+                clientX = e.touches[0].clientX;
+                clientY = e.touches[0].clientY;
+            } else {
+                clientX = e.clientX;
+                clientY = e.clientY;
+            }
+            return {
+                x: clientX - rect.left,
+                y: clientY - rect.top
+            };
+        }
+
+        function startDraw(e) {
+            e.preventDefault();
+            drawing = true;
+            currentStroke = [getPos(e)];
+            placeholder.style.opacity = '0';
+        }
+
+        function doDraw(e) {
+            if (!drawing) return;
+            e.preventDefault();
+            var pos = getPos(e);
+            currentStroke.push(pos);
+
+            if (currentStroke.length >= 2) {
+                var prev = currentStroke[currentStroke.length - 2];
+                ctx.beginPath();
+                ctx.strokeStyle = penColorInput.value;
+                ctx.lineWidth = parseInt(penSizeInput.value);
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+                ctx.moveTo(prev.x, prev.y);
+                ctx.lineTo(pos.x, pos.y);
+                ctx.stroke();
+            }
+        }
+
+        function endDraw(e) {
+            if (!drawing) return;
+            e.preventDefault();
+            drawing = false;
+            if (currentStroke.length > 1) {
+                strokes.push(currentStroke.slice());
+            }
+            currentStroke = [];
+        }
+
+        // Mouse events
+        canvas.addEventListener('mousedown', startDraw);
+        canvas.addEventListener('mousemove', doDraw);
+        canvas.addEventListener('mouseup', endDraw);
+        canvas.addEventListener('mouseleave', endDraw);
+
+        // Touch events
+        canvas.addEventListener('touchstart', startDraw, {passive: false});
+        canvas.addEventListener('touchmove', doDraw, {passive: false});
+        canvas.addEventListener('touchend', endDraw, {passive: false});
+        canvas.addEventListener('touchcancel', endDraw, {passive: false});
+
+        // Undo
+        function undoSignature() {
+            if (strokes.length > 0) {
+                strokes.pop();
+                redrawAll();
+                if (strokes.length === 0) placeholder.style.opacity = '1';
+                showToast('Last stroke removed');
+            }
+        }
+        window.undoSignature = undoSignature;
+
+        // Clear
+        function clearSignature() {
+            strokes = [];
+            redrawAll();
+            placeholder.style.opacity = '1';
+            showToast('Canvas cleared');
+        }
+        window.clearSignature = clearSignature;
+
+        // Download
+        function downloadSignature() {
+            if (strokes.length === 0) {
+                showToast('Please draw a signature first', 'error');
+                return;
+            }
+
+            var exportCanvas = document.createElement('canvas');
+            exportCanvas.width = 800;
+            exportCanvas.height = 300;
+            var exportCtx = exportCanvas.getContext('2d');
+
+            if (bgMode === 'white') {
+                exportCtx.fillStyle = '#ffffff';
+                exportCtx.fillRect(0, 0, 800, 300);
+            }
+
+            strokes.forEach(function(stroke) {
+                if (stroke.length < 2) return;
+                exportCtx.beginPath();
+                exportCtx.strokeStyle = penColorInput.value;
+                exportCtx.lineWidth = parseInt(penSizeInput.value);
+                exportCtx.lineCap = 'round';
+                exportCtx.lineJoin = 'round';
+                exportCtx.moveTo(stroke[0].x, stroke[0].y);
+                for (var i = 1; i < stroke.length; i++) {
+                    exportCtx.lineTo(stroke[i].x, stroke[i].y);
+                }
+                exportCtx.stroke();
+            });
+
+            var link = document.createElement('a');
+            link.download = 'signature.png';
+            link.href = exportCanvas.toDataURL('image/png');
+            link.click();
+            showToast('Signature downloaded!');
+        }
+        window.downloadSignature = downloadSignature;
+
+        // Color sync
+        penColorInput.addEventListener('input', function() {
+            penColorText.value = this.value;
+        });
+        penColorText.addEventListener('input', function() {
+            if (/^#[0-9a-fA-F]{6}$/.test(this.value)) {
+                penColorInput.value = this.value;
+            }
+        });
+
+        // Pen size
+        penSizeInput.addEventListener('input', function() {
+            document.getElementById('penSizeVal').textContent = this.value + 'px';
+        });
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+    })();
+    </script>
+</body>
+</html>

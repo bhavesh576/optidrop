@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
@@ -49,7 +49,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
 
     <header class="site-header">
         <div class="header-inner">
@@ -68,7 +68,7 @@
 
     <main class="flex-1">
         <section class="max-w-7xl mx-auto px-4 py-12">
-            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Fitness &amp; Health Calculators</h1>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Fitness &amp; Health Calculators <span class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-3 py-1 rounded-full ml-2 align-middle">6 Tools</span></h1>
             <p class="text-slate-600 text-lg max-w-2xl mb-8">Free online fitness and health calculators for athletes, gym-goers, and health-conscious individuals. Calculate your BMR, TDEE, one rep max, walking calorie burn, heart rate training zones, and track body measurements — all in your browser.</p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -77,7 +77,7 @@
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg>
                     </div>
                     <span class="tool-card-title">BMR &amp; TDEE Calculator</span>
-                    <span class="tool-card-desc">Advanced BMR with activity multipliers to estimate total daily energy expenditure.</span>
+                    <span class="tool-card-desc">Advanced BMR and TDEE with multiple formula options.</span>
                     <span class="tool-card-tag red">Metabolism</span>
                 </a>
 
@@ -86,7 +86,7 @@
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     </div>
                     <span class="tool-card-title">One Rep Max Calculator</span>
-                    <span class="tool-card-desc">Strength training 1RM estimator using multiple proven formulas.</span>
+                    <span class="tool-card-desc">Estimate one-rep max from submaximal lifts.</span>
                     <span class="tool-card-tag orange">Strength</span>
                 </a>
 
@@ -95,17 +95,17 @@
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                     </div>
                     <span class="tool-card-title">Walking Calorie Burn</span>
-                    <span class="tool-card-desc">Calculate calories burned while walking or running based on distance, speed, and weight.</span>
+                    <span class="tool-card-desc">Calculate calories burned while walking.</span>
                     <span class="tool-card-tag green">Cardio</span>
                 </a>
 
-                <a href="/tools/fitness/body-measurement-tracker.html" class="tool-card">
-                    <div class="tool-card-icon bg-purple-100 text-purple-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                <a href="/tools/fitness/exercise-calorie-burn.html" class="tool-card">
+                    <div class="tool-card-icon bg-yellow-100 text-yellow-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     </div>
-                    <span class="tool-card-title">Body Measurement Tracker</span>
-                    <span class="tool-card-desc">Log and track body measurements over time to monitor your progress.</span>
-                    <span class="tool-card-tag purple">Tracking</span>
+                    <span class="tool-card-title">Exercise Calorie Burn</span>
+                    <span class="tool-card-desc">Calculate calories burned for different exercises.</span>
+                    <span class="tool-card-tag yellow">Cardio</span>
                 </a>
 
                 <a href="/tools/fitness/heart-rate-zone-calculator.html" class="tool-card">
@@ -113,53 +113,17 @@
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                     </div>
                     <span class="tool-card-title">Heart Rate Zone Calculator</span>
-                    <span class="tool-card-desc">Calculate training heart rate zones for fat burn, cardio, and peak performance.</span>
+                    <span class="tool-card-desc">Calculate training heart rate zones by age.</span>
                     <span class="tool-card-tag pink">Training</span>
                 </a>
 
-                <a href="/tools/bmi-calculator.html" class="tool-card">
-                    <div class="tool-card-icon bg-blue-100 text-blue-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                <a href="/tools/fitness/body-measurement-tracker.html" class="tool-card">
+                    <div class="tool-card-icon bg-purple-100 text-purple-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
                     </div>
-                    <span class="tool-card-title">BMI Calculator</span>
-                    <span class="tool-card-desc">Calculate Body Mass Index and understand your weight category.</span>
-                    <span class="tool-card-tag blue">Health</span>
-                </a>
-
-                <a href="/tools/health/body-fat-calculator.html" class="tool-card">
-                    <div class="tool-card-icon bg-teal-100 text-teal-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                    </div>
-                    <span class="tool-card-title">Body Fat Calculator</span>
-                    <span class="tool-card-desc">Estimate body fat percentage using U.S. Navy and BMI-based methods.</span>
-                    <span class="tool-card-tag teal">Body Comp</span>
-                </a>
-
-                <a href="/tools/calculators/calorie-calculator.html" class="tool-card">
-                    <div class="tool-card-icon bg-amber-100 text-amber-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <span class="tool-card-title">Calorie Calculator</span>
-                    <span class="tool-card-desc">Calculate daily calorie needs with BMR and TDEE for weight goals.</span>
-                    <span class="tool-card-tag amber">Nutrition</span>
-                </a>
-
-                <a href="/tools/health/macro-calculator.html" class="tool-card">
-                    <div class="tool-card-icon bg-emerald-100 text-emerald-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
-                    </div>
-                    <span class="tool-card-title">Macro Calculator</span>
-                    <span class="tool-card-desc">Calculate daily protein, carbs, and fat targets based on your goals.</span>
-                    <span class="tool-card-tag emerald">Nutrition</span>
-                </a>
-
-                <a href="/tools/health/ideal-weight.html" class="tool-card">
-                    <div class="tool-card-icon bg-indigo-100 text-indigo-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
-                    </div>
-                    <span class="tool-card-title">Ideal Weight Calculator</span>
-                    <span class="tool-card-desc">Find your ideal weight range based on height, gender, and body frame.</span>
-                    <span class="tool-card-tag indigo">Health</span>
+                    <span class="tool-card-title">Body Measurement Tracker</span>
+                    <span class="tool-card-desc">Track body measurements over time with charts.</span>
+                    <span class="tool-card-tag purple">Tracking</span>
                 </a>
             </div>
         </section>
@@ -239,7 +203,7 @@
                 </div>
                 <div class="footer-col footer-about">
                     <h4>OptiDrop</h4>
-                    <p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, productivity, travel, and more.</p>
+                    <p>Free, fast, and 100% private browser-based tools. 306+ tools for images, PDFs, resumes, invoices, calculators, developers, health, productivity, travel, and more.</p>
                     <a href="/about.html">About</a>
                     <a href="/privacy-policy.html">Privacy Policy</a>
                     <a href="/terms.html">Terms</a>

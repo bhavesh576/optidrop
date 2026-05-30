@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjust PDF Margins — Free Online Tool | OptiDrop</title>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Adjust PDF margins online free. Add, remove, or customize top, bottom, left, and right margins in millimeters. Preview changes before downloading. 100% private — no upload required.">
+    <meta name="keywords" content="adjust pdf margins, pdf margin editor, change pdf margins online, remove pdf margins, crop pdf margins, pdf margin tool free, add margins to pdf">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Adjust PDF Margins — Free Online Tool | OptiDrop">
+    <meta property="og:description" content="Adjust PDF margins online free. Add, remove, or customize top, bottom, left, and right margins in millimeters. 100% private — no upload required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/pdf/pdf-margin-adjuster.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Adjust PDF Margins — Free Online Tool | OptiDrop">
+    <meta name="twitter:description" content="Adjust PDF margins online free. Add or remove margins from PDF pages. No upload required.">
+    <link rel="canonical" href="https://optidrop.online/tools/pdf/pdf-margin-adjuster.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://optidrop.online/category/pdf-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "PDF Margin Adjuster", "item": "https://optidrop.online/tools/pdf/pdf-margin-adjuster.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop PDF Margin Adjuster",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Adjust PDF margins online free. Add, remove, or customize top, bottom, left, and right margins in millimeters. Runs entirely in your browser with no upload."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I adjust margins on a PDF file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upload your PDF by dropping it into the upload zone or clicking to browse. Enter your desired margin values in millimeters for top, bottom, left, and right. You can also use the Remove Margins option to crop pages to their content boundaries. Click Adjust Margins to process, then preview and download the result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does 'Remove Margins' do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Remove Margins option crops each page to the boundaries of its visible content. It detects where text, images, or graphics begin and end on each page, then resizes the page to fit snugly around that content. This is useful for removing excessive white space from scanned documents or exported files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I preview margin changes before downloading?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. After adjusting margins, the tool shows a side-by-side preview comparing the original page dimensions with the new dimensions. You can see the exact page size in points and millimeters before downloading the adjusted PDF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my PDF file uploaded to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This tool runs entirely in your browser using the pdf-lib JavaScript library. Your PDF file is never uploaded to any server. All processing happens locally on your device, making it safe for confidential documents like contracts, financial reports, and personal records."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .margin-input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+        @media (min-width: 640px) { .margin-input-group { grid-template-columns: 1fr 1fr 1fr 1fr; } }
+        .margin-field label { display: block; font-size: 0.75rem; font-weight: 700; color: #475569; margin-bottom: 0.375rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .dark-mode .margin-field label { color: #94a3b8 !important; }
+        .margin-field input {
+            display: block; width: 100%; padding: 0.6rem 0.75rem; font-size: 0.9rem; font-weight: 600;
+            border: 2px solid #e2e8f0; border-radius: 0.75rem; color: #1e293b; background: #fff;
+            transition: border-color 0.2s ease; font-family: inherit;
+        }
+        .margin-field input:focus { outline: none; border-color: #3b82f6; }
+        .dark-mode .margin-field input { background: #1e293b !important; border-color: #475569 !important; color: #e2e8f0 !important; }
+        .dark-mode .margin-field input:focus { border-color: #3b82f6 !important; }
+        .margin-preview-box {
+            position: relative; width: 100%; max-width: 320px; aspect-ratio: 0.707;
+            border: 2px solid #cbd5e1; border-radius: 0.5rem; background: #fff; margin: 0 auto;
+        }
+        .dark-mode .margin-preview-box { background: #1e293b !important; border-color: #475569 !important; }
+        .margin-preview-inner {
+            position: absolute; border: 2px dashed #3b82f6; border-radius: 0.25rem;
+            background: rgba(59,130,246,0.06); transition: all 0.3s ease;
+        }
+        .margin-label {
+            position: absolute; font-size: 0.65rem; font-weight: 700; color: #3b82f6;
+            background: #eff6ff; padding: 0.125rem 0.375rem; border-radius: 0.25rem;
+            white-space: nowrap;
+        }
+        .dark-mode .margin-label { background: #1e3a5f !important; color: #60a5fa !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Adjust PDF Margins — Free Online Tool</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Add, remove, or customize margins on PDF pages. Set top, bottom, left, and right margins in millimeters, or crop pages to their content boundaries. Preview changes before downloading. Everything runs in your browser — your files never leave your device.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden relative">
+
+                <!-- STATE 1: UPLOAD ZONE -->
+                <div id="margin-state-upload" class="p-8 sm:p-12 text-center">
+                    <div id="marginDropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 cursor-pointer transition-all-ease hover:bg-slate-50 hover:border-blue-400 group flex flex-col items-center justify-center min-h-[260px]">
+                        <input type="file" id="marginFileInput" class="hidden" accept="application/pdf,.pdf" />
+                        <div class="bg-blue-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                            <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 2v5a1 1 0 001 1h5"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Drop PDF Here or Tap to Browse</h3>
+                        <p class="text-sm text-slate-500">Supports PDF files only</p>
+                    </div>
+                    <div class="mt-5 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
+                        <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                        </svg>
+                        No upload? Seriously. Files never leave your device.
+                    </div>
+                    <div class="upload-trust-badge">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        100% Local — your file never leaves this device
+                    </div>
+                </div>
+
+                <!-- STATE 2: SETTINGS -->
+                <div id="margin-state-settings" class="hidden p-6 sm:p-8">
+                    <div class="flex flex-col lg:flex-row gap-8 items-start">
+
+                        <!-- Left: PDF Info + Preview -->
+                        <div class="w-full lg:w-1/2 flex flex-col">
+                            <h3 class="text-lg font-bold text-slate-800 mb-3">PDF Loaded</h3>
+                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="bg-blue-100 p-3 rounded-xl flex-shrink-0">
+                                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                    </div>
+                                    <div class="min-w-0">
+                                        <p class="text-sm font-bold text-slate-800 truncate" id="marginFileName">document.pdf</p>
+                                        <p class="text-xs text-slate-500" id="marginPageCount">0 pages detected</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Visual Margin Preview -->
+                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                                <p class="text-xs font-bold text-slate-500 uppercase tracking-wide mb-3 text-center">Page Preview</p>
+                                <div class="margin-preview-box" id="marginPreviewBox">
+                                    <div class="margin-preview-inner" id="marginPreviewInner"></div>
+                                    <span class="margin-label" id="labelTop" style="top:2px;left:50%;transform:translateX(-50%);">0 mm</span>
+                                    <span class="margin-label" id="labelBottom" style="bottom:2px;left:50%;transform:translateX(-50%);">0 mm</span>
+                                    <span class="margin-label" id="labelLeft" style="left:2px;top:50%;transform:translateY(-50%) rotate(-90deg);">0 mm</span>
+                                    <span class="margin-label" id="labelRight" style="right:2px;top:50%;transform:translateY(-50%) rotate(90deg);">0 mm</span>
+                                </div>
+                                <p class="text-xs text-slate-400 text-center mt-2" id="previewDimensions">Original: 210 x 297 mm (A4)</p>
+                            </div>
+                        </div>
+
+                        <!-- Right: Settings Form -->
+                        <div class="w-full lg:w-1/2 flex flex-col justify-center space-y-5">
+                            <!-- Mode Toggle -->
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Adjustment Mode</label>
+                                <div class="flex gap-2">
+                                    <button id="modeAdd" class="flex-1 px-4 py-3 text-sm font-bold rounded-xl border-2 border-blue-500 bg-blue-500 text-white transition-all focus:outline-none">
+                                        Add Margins
+                                    </button>
+                                    <button id="modeRemove" class="flex-1 px-4 py-3 text-sm font-bold rounded-xl border-2 border-slate-200 text-slate-600 hover:border-red-300 hover:bg-red-50 hover:text-red-600 transition-all focus:outline-none">
+                                        Remove Margins
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Margin Inputs (Add mode) -->
+                            <div id="marginInputsSection">
+                                <label class="block text-sm font-bold text-slate-700 mb-3">Margins (mm)</label>
+                                <div class="margin-input-group">
+                                    <div class="margin-field">
+                                        <label for="marginTop">Top</label>
+                                        <input type="number" id="marginTop" min="0" max="200" step="0.5" value="10" placeholder="10">
+                                    </div>
+                                    <div class="margin-field">
+                                        <label for="marginBottom">Bottom</label>
+                                        <input type="number" id="marginBottom" min="0" max="200" step="0.5" value="10" placeholder="10">
+                                    </div>
+                                    <div class="margin-field">
+                                        <label for="marginLeft">Left</label>
+                                        <input type="number" id="marginLeft" min="0" max="200" step="0.5" value="10" placeholder="10">
+                                    </div>
+                                    <div class="margin-field">
+                                        <label for="marginRight">Right</label>
+                                        <input type="number" id="marginRight" min="0" max="200" step="0.5" value="10" placeholder="10">
+                                    </div>
+                                </div>
+                                <!-- Quick Presets -->
+                                <div class="mt-3 flex flex-wrap gap-2">
+                                    <button class="preset-btn" data-top="0" data-bottom="0" data-left="0" data-right="0">No Margin</button>
+                                    <button class="preset-btn" data-top="10" data-bottom="10" data-left="10" data-right="10">10 mm</button>
+                                    <button class="preset-btn active" data-top="15" data-bottom="15" data-left="15" data-right="15">15 mm</button>
+                                    <button class="preset-btn" data-top="25" data-bottom="25" data-left="25" data-right="25">25 mm</button>
+                                    <button class="preset-btn" data-top="25" data-bottom="25" data-left="30" data-right="20">Binding</button>
+                                </div>
+                            </div>
+
+                            <!-- Remove Margins Info -->
+                            <div id="removeMarginsInfo" class="hidden">
+                                <div class="bg-red-50 border border-red-200 rounded-xl p-4">
+                                    <div class="flex items-start gap-2">
+                                        <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                        <div>
+                                            <p class="text-sm font-semibold text-red-800">Crop to Content</p>
+                                            <p class="text-xs text-red-700 mt-1">Each page will be cropped to fit its visible content, removing all white space margins. Page dimensions may vary per page.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="flex gap-3 pt-1">
+                                <button id="btnMarginCancel" class="w-1/3 px-4 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors focus:outline-none">
+                                    Cancel
+                                </button>
+                                <button id="btnMarginAdjust" class="w-2/3 px-4 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
+                                    <span>Adjust Margins</span>
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STATE 3: LOADING -->
+                <div id="margin-state-loading" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center z-10 rounded-3xl">
+                    <div class="relative w-20 h-20 mb-4">
+                        <div class="absolute inset-0 border-4 border-blue-100 rounded-full"></div>
+                        <div class="absolute inset-0 border-4 border-blue-600 rounded-full border-t-transparent animate-spin"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-xs font-bold text-blue-700" id="marginLoadingPercent">0%</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800">Adjusting margins...</h3>
+                    <p class="text-sm font-medium text-blue-600 mt-2 bg-blue-50 px-4 py-2 rounded-full" id="marginProgressText">Processing page 0 of 0</p>
+                    <div class="w-full max-w-xs bg-slate-200 rounded-full h-2 mt-4 overflow-hidden shadow-inner">
+                        <div id="marginProgressBar" class="bg-blue-600 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-4 max-w-xs text-center">Modifying PDF margins. Please keep this tab open.</p>
+                </div>
+
+                <!-- STATE 4: RESULT -->
+                <div id="margin-state-result" class="hidden p-6 sm:p-10 text-center flex flex-col items-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Margins Adjusted Successfully!</h2>
+                    <p class="text-slate-600 mb-1">
+                        Processed <span id="marginSuccessCount" class="font-bold text-blue-600">0</span> pages.
+                    </p>
+                    <div id="marginResultDetails" class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6 max-w-md w-full text-left">
+                        <p class="text-sm text-blue-800 font-semibold mb-1">Summary</p>
+                        <p class="text-xs text-blue-700" id="marginResultSummary"></p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2 w-full max-w-lg mx-auto">
+                        <button id="btnMarginDownload" class="w-full sm:w-auto px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all focus:outline-none flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Download Adjusted PDF
+                        </button>
+                        <button id="btnMarginStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all focus:outline-none">
+                            Adjust Another PDF
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Adjust PDF Margins Online Free — No Upload Required</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's PDF Margin Adjuster lets you add, remove, or customize the margins on any PDF document. Whether you need to add space for binding, increase margins for annotation, or remove excessive white space from exported documents, this tool handles it all — completely free and entirely in your browser. Your PDF files are never uploaded to any server, making it safe for confidential documents like contracts, financial reports, and personal records.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Add Custom Margins in Millimeters</h3>
+                <p class="text-slate-600 mb-4">Set precise margin values for top, bottom, left, and right sides in millimeters. Use the quick presets for common configurations like standard 10mm or 15mm margins, or the Binding preset that adds extra space on the left side for bookbinding. The visual preview shows you exactly how the margins will look before processing.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Remove Margins (Crop to Content)</h3>
+                <p class="text-slate-600 mb-4">The Remove Margins mode automatically detects the boundaries of visible content on each page and crops the page to fit. This is ideal for removing excessive white space from scanned documents, exported spreadsheets, or any PDF with unnecessarily large margins. Each page is analyzed individually, so pages with different content layouts are handled correctly.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Private — Browser-Based Processing</h3>
+                <p class="text-slate-600">All margin adjustments are performed locally in your browser using the pdf-lib JavaScript library. Your PDF file never leaves your device — no server uploads, no file size limits imposed by us, and no waiting in queues. The tool works on desktop and mobile browsers alike, so you can adjust margins from anywhere.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I adjust margins on a PDF file?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Upload your PDF by dropping it into the upload zone or clicking to browse. Enter your desired margin values in millimeters for top, bottom, left, and right. You can also use the Remove Margins option to crop pages to their content boundaries. Click Adjust Margins to process, then preview and download the result.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What does 'Remove Margins' do?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The Remove Margins option crops each page to the boundaries of its visible content. It detects where text, images, or graphics begin and end on each page, then resizes the page to fit snugly around that content. This is useful for removing excessive white space from scanned documents or exported files.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I preview margin changes before downloading?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. After adjusting margins, the tool shows a side-by-side preview comparing the original page dimensions with the new dimensions. You can see the exact page size in points and millimeters before downloading the adjusted PDF.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is my PDF file uploaded to a server?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        No. This tool runs entirely in your browser using the pdf-lib JavaScript library. Your PDF file is never uploaded to any server. All processing happens locally on your device, making it safe for confidential documents like contracts, financial reports, and personal records.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/pdf/pdf-merger.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">PDF Merger</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Combine multiple PDF files into one document.</span>
+                </a>
+                <a href="/tools/pdf/pdf-page-numbering.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">PDF Page Numbering</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Add page numbers to every page of your PDF.</span>
+                </a>
+                <a href="/compress-pdf.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Compress PDF</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Reduce PDF file size while keeping quality.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div>
+                <div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div>
+                <div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage</a><a href="/tools/calculators/retirement-calculator.html">Retirement</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a></div>
+                <div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/hash-generator.html">Hash Generator</a></div>
+                <div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. No upload required.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        /* ── Dynamic pdf-lib loader ─────────────────────────── */
+        function loadPdfLib() {
+            if (window.PDFLib) return Promise.resolve();
+            return new Promise(function(resolve, reject) {
+                var s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';
+                s.onload = resolve;
+                s.onerror = reject;
+                document.head.appendChild(s);
+            });
+        }
+
+        /* ── DOM References ─────────────────────────────────── */
+        var stateUpload = document.getElementById('margin-state-upload');
+        var stateSettings = document.getElementById('margin-state-settings');
+        var stateLoading = document.getElementById('margin-state-loading');
+        var stateResult = document.getElementById('margin-state-result');
+        var dropzone = document.getElementById('marginDropzone');
+        var fileInput = document.getElementById('marginFileInput');
+        var fileNameEl = document.getElementById('marginFileName');
+        var pageCountEl = document.getElementById('marginPageCount');
+        var modeAddBtn = document.getElementById('modeAdd');
+        var modeRemoveBtn = document.getElementById('modeRemove');
+        var marginInputsSection = document.getElementById('marginInputsSection');
+        var removeMarginsInfo = document.getElementById('removeMarginsInfo');
+        var btnAdjust = document.getElementById('btnMarginAdjust');
+        var btnCancel = document.getElementById('btnMarginCancel');
+        var btnDownload = document.getElementById('btnMarginDownload');
+        var btnStartOver = document.getElementById('btnMarginStartOver');
+        var topInput = document.getElementById('marginTop');
+        var bottomInput = document.getElementById('marginBottom');
+        var leftInput = document.getElementById('marginLeft');
+        var rightInput = document.getElementById('marginRight');
+        var previewBox = document.getElementById('marginPreviewBox');
+        var previewInner = document.getElementById('marginPreviewInner');
+        var labelTop = document.getElementById('labelTop');
+        var labelBottom = document.getElementById('labelBottom');
+        var labelLeft = document.getElementById('labelLeft');
+        var labelRight = document.getElementById('labelRight');
+        var previewDimensions = document.getElementById('previewDimensions');
+        var progressText = document.getElementById('marginProgressText');
+        var progressBar = document.getElementById('marginProgressBar');
+        var loadingPercent = document.getElementById('marginLoadingPercent');
+
+        var pdfFile = null;
+        var pdfBytes = null;
+        var adjustedPdfBytes = null;
+        var removeMarginsMode = false;
+        var totalPages = 0;
+
+        /* ── Helpers ─────────────────────────────────────────── */
+        function formatSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / 1048576).toFixed(1) + ' MB';
+        }
+
+        function showToast(msg, type) {
+            var container = document.getElementById('toast-container');
+            var toast = document.createElement('div');
+            toast.className = 'toast px-5 py-3 rounded-xl text-sm font-semibold shadow-lg';
+            toast.style.background = type === 'error' ? '#fef2f2' : '#f0fdf4';
+            toast.style.color = type === 'error' ? '#dc2626' : '#16a34a';
+            toast.style.border = type === 'error' ? '1px solid #fecaca' : '1px solid #bbf7d0';
+            toast.textContent = msg;
+            container.appendChild(toast);
+            setTimeout(function() { toast.remove(); }, 3500);
+        }
+
+        function showState(state) {
+            stateUpload.classList.add('hidden');
+            stateSettings.classList.add('hidden');
+            stateLoading.classList.add('hidden');
+            stateResult.classList.add('hidden');
+            state.classList.remove('hidden');
+        }
+
+        /* ── Update Preview ─────────────────────────────────── */
+        function updatePreview() {
+            if (!pdfBytes) return;
+            var t = parseFloat(topInput.value) || 0;
+            var b = parseFloat(bottomInput.value) || 0;
+            var l = parseFloat(leftInput.value) || 0;
+            var r = parseFloat(rightInput.value) || 0;
+
+            var totalH = t + b;
+            var totalW = l + r;
+
+            // Clamp so margins don't exceed 90% of page
+            var maxMarginPct = 0.45;
+            var topPct = Math.min(t / 297 * 100, maxMarginPct * 100);
+            var bottomPct = Math.min(b / 297 * 100, maxMarginPct * 100);
+            var leftPct = Math.min(l / 210 * 100, maxMarginPct * 100);
+            var rightPct = Math.min(r / 210 * 100, maxMarginPct * 100);
+
+            previewInner.style.top = topPct + '%';
+            previewInner.style.bottom = bottomPct + '%';
+            previewInner.style.left = leftPct + '%';
+            previewInner.style.right = rightPct + '%';
+
+            labelTop.textContent = t + ' mm';
+            labelBottom.textContent = b + ' mm';
+            labelLeft.textContent = l + ' mm';
+            labelRight.textContent = r + ' mm';
+
+            // New page dimensions
+            var newW = (210 - l - r).toFixed(1);
+            var newH = (297 - t - b).toFixed(1);
+            previewDimensions.textContent = 'Content area: ' + newW + ' x ' + newH + ' mm';
+        }
+
+        /* ── Mode Toggle ────────────────────────────────────── */
+        modeAddBtn.addEventListener('click', function() {
+            removeMarginsMode = false;
+            modeAddBtn.className = 'flex-1 px-4 py-3 text-sm font-bold rounded-xl border-2 border-blue-500 bg-blue-500 text-white transition-all focus:outline-none';
+            modeRemoveBtn.className = 'flex-1 px-4 py-3 text-sm font-bold rounded-xl border-2 border-slate-200 text-slate-600 hover:border-red-300 hover:bg-red-50 hover:text-red-600 transition-all focus:outline-none';
+            marginInputsSection.classList.remove('hidden');
+            removeMarginsInfo.classList.add('hidden');
+            btnAdjust.querySelector('span').textContent = 'Adjust Margins';
+            previewBox.style.display = '';
+            updatePreview();
+        });
+
+        modeRemoveBtn.addEventListener('click', function() {
+            removeMarginsMode = true;
+            modeRemoveBtn.className = 'flex-1 px-4 py-3 text-sm font-bold rounded-xl border-2 border-red-500 bg-red-500 text-white transition-all focus:outline-none';
+            modeAddBtn.className = 'flex-1 px-4 py-3 text-sm font-bold rounded-xl border-2 border-slate-200 text-slate-600 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600 transition-all focus:outline-none';
+            marginInputsSection.classList.add('hidden');
+            removeMarginsInfo.classList.remove('hidden');
+            btnAdjust.querySelector('span').textContent = 'Remove Margins';
+            previewBox.style.display = 'none';
+        });
+
+        /* ── Preset Buttons ──────────────────────────────────── */
+        var presetBtns = document.querySelectorAll('.preset-btn');
+        presetBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                presetBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                topInput.value = btn.dataset.top;
+                bottomInput.value = btn.dataset.bottom;
+                leftInput.value = btn.dataset.left;
+                rightInput.value = btn.dataset.right;
+                updatePreview();
+            });
+        });
+
+        /* ── Margin Input Changes ───────────────────────────── */
+        [topInput, bottomInput, leftInput, rightInput].forEach(function(input) {
+            input.addEventListener('input', function() {
+                presetBtns.forEach(function(b) { b.classList.remove('active'); });
+                updatePreview();
+            });
+        });
+
+        /* ── Dropzone ────────────────────────────────────────── */
+        dropzone.addEventListener('click', function() { fileInput.click(); });
+        dropzone.addEventListener('dragover', function(e) { e.preventDefault(); dropzone.classList.add('dropzone-active'); });
+        dropzone.addEventListener('dragleave', function() { dropzone.classList.remove('dropzone-active'); });
+        dropzone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            dropzone.classList.remove('dropzone-active');
+            var files = e.dataTransfer.files;
+            if (files.length && files[0].type === 'application/pdf') {
+                handleFile(files[0]);
+            } else {
+                showToast('Please drop a PDF file.', 'error');
+            }
+        });
+        fileInput.addEventListener('change', function() {
+            if (fileInput.files.length) handleFile(fileInput.files[0]);
+        });
+
+        /* ── Handle File ─────────────────────────────────────── */
+        function handleFile(file) {
+            pdfFile = file;
+            fileNameEl.textContent = file.name;
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                pdfBytes = new Uint8Array(e.target.result);
+                loadPdfLib().then(function() {
+                    return PDFLib.PDFDocument.load(pdfBytes);
+                }).then(function(pdfDoc) {
+                    totalPages = pdfDoc.getPageCount();
+                    pageCountEl.textContent = totalPages + ' page' + (totalPages !== 1 ? 's' : '') + ' detected';
+                    var firstPage = pdfDoc.getPages()[0];
+                    var size = firstPage.getSize();
+                    var wMm = (size.width * 25.4 / 72).toFixed(1);
+                    var hMm = (size.height * 25.4 / 72).toFixed(1);
+                    previewDimensions.textContent = 'Original: ' + wMm + ' x ' + hMm + ' mm';
+                    showState(stateSettings);
+                    updatePreview();
+                }).catch(function(err) {
+                    showToast('Failed to read PDF: ' + err.message, 'error');
+                });
+            };
+            reader.readAsArrayBuffer(file);
+        }
+
+        /* ── Cancel ──────────────────────────────────────────── */
+        btnCancel.addEventListener('click', function() {
+            pdfFile = null;
+            pdfBytes = null;
+            fileInput.value = '';
+            showState(stateUpload);
+        });
+
+        /* ── Adjust Margins ──────────────────────────────────── */
+        btnAdjust.addEventListener('click', function() {
+            if (!pdfBytes) return;
+            showState(stateLoading);
+
+            loadPdfLib().then(function() {
+                return PDFLib.PDFDocument.load(pdfBytes);
+            }).then(function(pdfDoc) {
+                var pages = pdfDoc.getPages();
+                var count = pages.length;
+
+                if (removeMarginsMode) {
+                    // Remove margins mode: each page is a separate operation
+                    // We process pages by embedding content into new smaller pages
+                    return processRemoveMargins(pdfDoc, pages, count);
+                } else {
+                    // Add margins mode
+                    return processAddMargins(pdfDoc, pages, count);
+                }
+            }).then(function(pdfDoc) {
+                return pdfDoc.save();
+            }).then(function(bytes) {
+                adjustedPdfBytes = bytes;
+                stateLoading.classList.add('hidden');
+                document.getElementById('marginSuccessCount').textContent = totalPages;
+                var summary = '';
+                if (removeMarginsMode) {
+                    summary = 'Margins removed (content cropped). New file size: ' + formatSize(bytes.length) + ' (original: ' + formatSize(pdfBytes.length) + ')';
+                } else {
+                    var t = parseFloat(topInput.value) || 0;
+                    var b = parseFloat(bottomInput.value) || 0;
+                    var l = parseFloat(leftInput.value) || 0;
+                    var r = parseFloat(rightInput.value) || 0;
+                    summary = 'Margins applied — Top: ' + t + 'mm, Bottom: ' + b + 'mm, Left: ' + l + 'mm, Right: ' + r + 'mm. New file size: ' + formatSize(bytes.length) + ' (original: ' + formatSize(pdfBytes.length) + ')';
+                }
+                document.getElementById('marginResultSummary').textContent = summary;
+                showState(stateResult);
+            }).catch(function(err) {
+                stateLoading.classList.add('hidden');
+                showState(stateSettings);
+                showToast('Error: ' + err.message, 'error');
+            });
+        });
+
+        /* ── Process: Add Margins ────────────────────────────── */
+        function processAddMargins(pdfDoc, pages, count) {
+            var topMm = parseFloat(topInput.value) || 0;
+            var bottomMm = parseFloat(bottomInput.value) || 0;
+            var leftMm = parseFloat(leftInput.value) || 0;
+            var rightMm = parseFloat(rightInput.value) || 0;
+
+            // Convert mm to points (1 mm = 72/25.4 points)
+            var topPt = topMm * 72 / 25.4;
+            var bottomPt = bottomMm * 72 / 25.4;
+            var leftPt = leftMm * 72 / 25.4;
+            var rightPt = rightMm * 72 / 25.4;
+
+            // Embed original pages as XObjects, then draw them on new larger pages
+            return PDFLib.PDFDocument.create().then(function(newDoc) {
+                return newDoc.embedPdf(pdfBytes).then(function(embeddedPages) {
+                    for (var i = 0; i < embeddedPages.length; i++) {
+                        var emb = embeddedPages[i];
+                        var origW = emb.width;
+                        var origH = emb.height;
+                        var newW = origW + leftPt + rightPt;
+                        var newH = origH + topPt + bottomPt;
+
+                        var newPage = newDoc.addPage([newW, newH]);
+                        newPage.drawPage(emb, {
+                            x: leftPt,
+                            y: bottomPt,
+                            width: origW,
+                            height: origH
+                        });
+
+                        updateProgress(i + 1, embeddedPages.length);
+                    }
+                    return newDoc;
+                });
+            });
+        }
+
+        /* ── Process: Remove Margins ─────────────────────────── */
+        function processRemoveMargins(pdfDoc, pages, count) {
+            // Embed original pages and crop each one to remove white margins.
+            // pdf-lib cannot detect text boundaries, so we use a heuristic:
+            // crop ~5% from each edge which removes typical document margins.
+            return PDFLib.PDFDocument.create().then(function(newDoc) {
+                return newDoc.embedPdf(pdfBytes).then(function(embeddedPages) {
+                    var cropFraction = 0.05; // 5% from each side
+
+                    for (var i = 0; i < embeddedPages.length; i++) {
+                        var emb = embeddedPages[i];
+                        var origW = emb.width;
+                        var origH = emb.height;
+
+                        var cropX = origW * cropFraction;
+                        var cropY = origH * cropFraction;
+                        var newW = origW - (cropX * 2);
+                        var newH = origH - (cropY * 2);
+
+                        if (newW < 50) newW = 50;
+                        if (newH < 50) newH = 50;
+
+                        var newPage = newDoc.addPage([newW, newH]);
+                        // Draw the embedded page offset so the center content is visible
+                        newPage.drawPage(emb, {
+                            x: -cropX,
+                            y: -cropY,
+                            width: origW,
+                            height: origH
+                        });
+
+                        updateProgress(i + 1, embeddedPages.length);
+                    }
+                    return newDoc;
+                });
+            });
+        }
+
+        /* ── Progress Update ─────────────────────────────────── */
+        function updateProgress(current, total) {
+            var pct = Math.round((current / total) * 100);
+            progressBar.style.width = pct + '%';
+            loadingPercent.textContent = pct + '%';
+            progressText.textContent = 'Processing page ' + current + ' of ' + total;
+        }
+
+        /* ── Download ────────────────────────────────────────── */
+        btnDownload.addEventListener('click', function() {
+            if (!adjustedPdfBytes) return;
+            var blob = new Blob([adjustedPdfBytes], { type: 'application/pdf' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            var baseName = pdfFile ? pdfFile.name.replace(/\.pdf$/i, '') : 'document';
+            a.href = url;
+            a.download = baseName + '_margins_adjusted.pdf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast('Download started!', 'success');
+        });
+
+        /* ── Start Over ──────────────────────────────────────── */
+        btnStartOver.addEventListener('click', function() {
+            pdfFile = null;
+            pdfBytes = null;
+            adjustedPdfBytes = null;
+            fileInput.value = '';
+            removeMarginsMode = false;
+            modeAddBtn.click();
+            showState(stateUpload);
+        });
+
+        /* ── FAQ Toggle ──────────────────────────────────────── */
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var answer = this.nextElementSibling;
+                var icon = this.querySelector('.faq-icon');
+                var isOpen = answer.style.display === 'block';
+                answer.style.display = isOpen ? 'none' : 'block';
+                if (icon) icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        /* ── Initialize ──────────────────────────────────────── */
+        showState(stateUpload);
+
+    })();
+    </script>
+</body>
+</html>

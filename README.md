@@ -2,7 +2,7 @@
 
 **Free Online Tools — No Upload, No Sign-Up, No Cost**
 
-OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 categories** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, education, fitness, productivity, travel, design, parenting, fun, home improvement, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
+OptiDrop is a fully browser-based toolkit with **306 free tools** across **18 categories** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, education, fitness, productivity, travel, design, parenting, fun, home improvement, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
 
 **Live at:** [https://optidrop.online](https://optidrop.online)
 
@@ -12,22 +12,22 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 
 - [Tools](#tools)
   - [Image Tools](#image-tools-9)
-  - [PDF Tools](#pdf-tools-3)
-  - [Calculator Tools](#calculator-tools-48)
-  - [Text Tools](#text-tools-31)
-  - [Developer Tools](#developer-tools-34)
+  - [PDF Tools](#pdf-tools-18)
+  - [Calculator Tools](#calculator-tools-51)
+  - [Text Tools](#text-tools-32)
+  - [Developer Tools](#developer-tools-33)
   - [Career & Resume Tools](#career--resume-tools-7)
-  - [Business Document Tools](#business-document-tools-9)
+  - [Business Document Tools](#business-document-tools-19)
   - [Professional Tools](#professional-tools-4)
-  - [Health Tools](#health-tools-19)
-  - [Education Tools](#education-tools-7)
+  - [Health Tools](#health-tools-18)
+  - [Education Tools](#education-tools-22)
   - [Fitness Tools](#fitness-tools-6)
-  - [Utility Tools](#utility-tools-22)
+  - [Utility Tools](#utility-tools-25)
   - [Fun & Games Tools](#fun--games-tools-15)
   - [Home & DIY Tools](#home--diy-tools-7)
   - [Productivity Tools](#productivity-tools-7)
   - [Travel Tools](#travel-tools-7)
-  - [Design Tools](#design-tools-6)
+  - [Design Tools](#design-tools-21)
   - [Parenting Tools](#parenting-tools-5)
 - [Category Pages](#category-pages)
 - [Site Pages](#site-pages)
@@ -59,15 +59,30 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 | Signature Scanner | Scan and extract clean signatures from paper documents | [/signature-scanner.html](https://optidrop.online/signature-scanner.html) |
 | Image to Text (OCR) | Extract text from images using browser-based OCR | [/image-to-text-ocr.html](https://optidrop.online/image-to-text-ocr.html) |
 
-### PDF Tools (3)
+### PDF Tools (18)
 
 | Tool | Description | URL |
 |------|-------------|-----|
 | PDF Compressor | Reduce PDF file size while keeping quality | [/compress-pdf.html](https://optidrop.online/compress-pdf.html) |
 | JPG to PDF | Merge multiple images into a single PDF document | [/jpg-to-pdf.html](https://optidrop.online/jpg-to-pdf.html) |
 | PDF to JPG | Extract pages from PDF as high-quality JPG images | [/pdf-to-jpg.html](https://optidrop.online/pdf-to-jpg.html) |
+| PDF Merger | Combine multiple PDF files into a single document | [/tools/pdf/pdf-merger.html](https://optidrop.online/tools/pdf/pdf-merger.html) |
+| PDF Splitter | Split PDF into individual pages or page ranges | [/tools/pdf/pdf-splitter.html](https://optidrop.online/tools/pdf/pdf-splitter.html) |
+| PDF Watermark | Add text watermarks to all pages of a PDF | [/tools/pdf/pdf-watermark.html](https://optidrop.online/tools/pdf/pdf-watermark.html) |
+| PDF Page Rotator | Rotate PDF pages by 90, 180, or 270 degrees | [/tools/pdf/pdf-page-rotator.html](https://optidrop.online/tools/pdf/pdf-page-rotator.html) |
+| PDF Page Numbering | Add page numbers to PDF in any position and format | [/tools/pdf/pdf-page-numbering.html](https://optidrop.online/tools/pdf/pdf-page-numbering.html) |
+| PDF Extract Text | Extract all text content from PDF documents | [/tools/pdf/pdf-extract-text.html](https://optidrop.online/tools/pdf/pdf-extract-text.html) |
+| PDF Grayscale | Convert PDF pages to grayscale for printing | [/tools/pdf/pdf-grayscale.html](https://optidrop.online/tools/pdf/pdf-grayscale.html) |
+| HTML to PDF | Convert HTML code to PDF with live preview | [/tools/pdf/html-to-pdf.html](https://optidrop.online/tools/pdf/html-to-pdf.html) |
+| Markdown to PDF | Convert Markdown text to formatted PDF document | [/tools/pdf/markdown-to-pdf.html](https://optidrop.online/tools/pdf/markdown-to-pdf.html) |
+| PDF Margin Adjuster | Adjust PDF page margins for printing or binding | [/tools/pdf/pdf-margin-adjuster.html](https://optidrop.online/tools/pdf/pdf-margin-adjuster.html) |
+| Image to PDF Advanced | Convert images to PDF with custom layout options | [/tools/pdf/image-to-pdf-advanced.html](https://optidrop.online/tools/pdf/image-to-pdf-advanced.html) |
+| PDF Password Protector | Add password protection to PDF files | [/tools/pdf/pdf-password-protector.html](https://optidrop.online/tools/pdf/pdf-password-protector.html) |
+| PDF Unlock | Remove password protection from PDF files | [/tools/pdf/pdf-unlock.html](https://optidrop.online/tools/pdf/pdf-unlock.html) |
+| PDF Compressor Advanced | Advanced PDF compression with quality control | [/tools/pdf/pdf-compressor-advanced.html](https://optidrop.online/tools/pdf/pdf-compressor-advanced.html) |
+| Multi PDF Combiner | Combine multiple PDFs with interleave or append mode | [/tools/pdf/multi-pdf-combiner.html](https://optidrop.online/tools/pdf/multi-pdf-combiner.html) |
 
-### Calculator Tools (48)
+### Calculator Tools (51)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -113,7 +128,7 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 | Student Loan Calculator | Estimate student loan repayment and total interest | [/tools/calculators/student-loan.html](https://optidrop.online/tools/calculators/student-loan.html) |
 | Expense Splitter | Split shared expenses among groups | [/tools/calculators/expense-splitter.html](https://optidrop.online/tools/calculators/expense-splitter.html) |
 | Salary Negotiator | Calculate target salary with inflation and market adjustment | [/tools/calculators/salary-negotiator.html](https://optidrop.online/tools/calculators/salary-negotiator.html) |
-| Break-Even Analysis | Calculate break-even point for business pricing | [/tools/calculators/break-even.html](https://optidrop.online/tools/calculators/break-even.html) |
+| Break-Even Analysis | Calculate break-even point for business pricing | [/tools/calculators/break-even-analysis.html](https://optidrop.online/tools/calculators/break-even-analysis.html) |
 | Tip Splitter | Split tips among staff by hours worked | [/tools/calculators/tip-splitter.html](https://optidrop.online/tools/calculators/tip-splitter.html) |
 | Percentage Change Calculator | Calculate percentage increase or decrease between values | [/tools/calculators/percentage-change.html](https://optidrop.online/tools/calculators/percentage-change.html) |
 | Days Until Date | Countdown to any future date | [/tools/calculators/days-until-date.html](https://optidrop.online/tools/calculators/days-until-date.html) |
@@ -123,7 +138,7 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 | Percent Error Calculator | Calculate percent error between experimental and actual values | [/tools/calculators/percent-error.html](https://optidrop.online/tools/calculators/percent-error.html) |
 | Reverse Sales Tax Calculator | Calculate pre-tax price from total amount | [/tools/calculators/reverse-sales-tax.html](https://optidrop.online/tools/calculators/reverse-sales-tax.html) |
 
-### Text Tools (31)
+### Text Tools (32)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -153,14 +168,14 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 | Keyword Density Checker | Analyze keyword density for SEO optimization | [/tools/text/keyword-density-checker.html](https://optidrop.online/tools/text/keyword-density-checker.html) |
 | Word Scramble Game | Unscramble words in this fun vocabulary game | [/tools/text/word-scramble.html](https://optidrop.online/tools/text/word-scramble.html) |
 | Number Trivia | Fun facts and mathematical properties about any number | [/tools/text/number-trivia.html](https://optidrop.online/tools/text/number-trivia.html) |
-| Rhyming Words Finder | Find rhyming words for poetry and songwriting | [/tools/text/rhyming-words.html](https://optidrop.online/tools/text/rhyming-words.html) |
-| Phonetic Spelling Converter | Convert text to phonetic spelling | [/tools/text/phonetic-spelling.html](https://optidrop.online/tools/text/phonetic-spelling.html) |
-| Letter Count Analyzer | Analyze letter frequency and distribution | [/tools/text/letter-count.html](https://optidrop.online/tools/text/letter-count.html) |
-| Story Prompt Generator | Generate creative writing prompts and story ideas | [/tools/text/story-prompt.html](https://optidrop.online/tools/text/story-prompt.html) |
-| Email Subject Line Generator | Generate effective email subject lines | [/tools/text/email-subject-generator.html](https://optidrop.online/tools/text/email-subject-generator.html) |
-| Advanced Case Converter | Convert to camelCase, snake_case, kebab-case, and more | [/tools/text/advanced-case-converter.html](https://optidrop.online/tools/text/advanced-case-converter.html) |
+| Rhyming Words Finder | Find rhyming words for poetry and songwriting | [/tools/text/rhyming-words-finder.html](https://optidrop.online/tools/text/rhyming-words-finder.html) |
+| Phonetic Spelling Converter | Convert text to phonetic spelling | [/tools/text/phonetic-spelling-converter.html](https://optidrop.online/tools/text/phonetic-spelling-converter.html) |
+| Letter Count Analyzer | Analyze letter frequency and distribution | [/tools/text/letter-count-analyzer.html](https://optidrop.online/tools/text/letter-count-analyzer.html) |
+| Story Prompt Generator | Generate creative writing prompts and story ideas | [/tools/text/story-prompt-generator.html](https://optidrop.online/tools/text/story-prompt-generator.html) |
+| Email Subject Line Generator | Generate effective email subject lines | [/tools/text/email-subject-line-generator.html](https://optidrop.online/tools/text/email-subject-line-generator.html) |
+| Advanced Case Converter | Convert to camelCase, snake_case, kebab-case, and more | [/tools/text/case-converter-advanced.html](https://optidrop.online/tools/text/case-converter-advanced.html) |
 
-### Developer Tools (34)
+### Developer Tools (33)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -211,7 +226,7 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 | Internship Application Letter | Write internship letters for students and freshers | [/tools/career/internship-letter.html](https://optidrop.online/tools/career/internship-letter.html) |
 | Job Application Tracker | Track applications with status, notes, and CSV export | [/tools/career/job-tracker.html](https://optidrop.online/tools/career/job-tracker.html) |
 
-### Business Document Tools (9)
+### Business Document Tools (19)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -224,6 +239,16 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 | Experience Letter | Generate experience certificates and relieving letters | [/tools/business/experience-letter.html](https://optidrop.online/tools/business/experience-letter.html) |
 | Profit Calculator | Calculate profit margin, markup, and break-even point | [/tools/business/profit-calculator.html](https://optidrop.online/tools/business/profit-calculator.html) |
 | Receipt Generator | Create receipts and download as PDF | [/tools/business/receipt-generator.html](https://optidrop.online/tools/business/receipt-generator.html) |
+| Relieving Letter | Generate relieving letters for employees leaving | [/tools/business/relieving-letter.html](https://optidrop.online/tools/business/relieving-letter.html) |
+| Payslip Generator Pro | Advanced payslip with deductions and allowances | [/tools/business/payslip-generator-pro.html](https://optidrop.online/tools/business/payslip-generator-pro.html) |
+| Fee Receipt | Generate fee receipts for schools and colleges | [/tools/business/fee-receipt.html](https://optidrop.online/tools/business/fee-receipt.html) |
+| Quotation Generator | Generate business quotations with itemized pricing | [/tools/business/quotation-generator.html](https://optidrop.online/tools/business/quotation-generator.html) |
+| Purchase Order | Generate purchase orders for vendors | [/tools/business/purchase-order.html](https://optidrop.online/tools/business/purchase-order.html) |
+| Delivery Challan | Generate delivery challans for shipments | [/tools/business/delivery-challan.html](https://optidrop.online/tools/business/delivery-challan.html) |
+| Cash Voucher | Generate cash and payment vouchers | [/tools/business/cash-voucher.html](https://optidrop.online/tools/business/cash-voucher.html) |
+| Proforma Invoice | Generate proforma invoices for clients | [/tools/business/proforma-invoice.html](https://optidrop.online/tools/business/proforma-invoice.html) |
+| NDA Generator | Generate Non-Disclosure Agreements for business | [/tools/business/nda-generator.html](https://optidrop.online/tools/business/nda-generator.html) |
+| Experience Letter Pro | Advanced experience letter with achievements | [/tools/business/experience-letter-pro.html](https://optidrop.online/tools/business/experience-letter-pro.html) |
 
 ### Professional Tools (4)
 
@@ -234,7 +259,7 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 | Professional Bio Generator | Generate bios for LinkedIn, websites, and profiles | [/tools/professional/bio-generator.html](https://optidrop.online/tools/professional/bio-generator.html) |
 | SOP Generator | Write Statement of Purpose for university applications | [/tools/professional/sop-generator.html](https://optidrop.online/tools/professional/sop-generator.html) |
 
-### Health Tools (19)
+### Health Tools (18)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -256,9 +281,8 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 | Target Heart Rate | Calculate heart rate training zones | [/tools/health/target-heart-rate.html](https://optidrop.online/tools/health/target-heart-rate.html) |
 | Stress Level Assessor | Self-assess stress levels with coping suggestions | [/tools/health/stress-assessor.html](https://optidrop.online/tools/health/stress-assessor.html) |
 | Medication Reminder | Track medication schedules with local reminders | [/tools/health/medication-reminder.html](https://optidrop.online/tools/health/medication-reminder.html) |
-| Blood Sugar Tracker | Log and visualize blood glucose readings | [/tools/health/blood-sugar-tracker.html](https://optidrop.online/tools/health/blood-sugar-tracker.html) |
 
-### Education Tools (7)
+### Education Tools (22)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -269,6 +293,21 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 | Citation Generator | Generate APA and MLA style citations instantly | [/tools/education/citation-generator.html](https://optidrop.online/tools/education/citation-generator.html) |
 | Study Timer | Custom study sessions with break intervals and audio alerts | [/tools/education/study-timer.html](https://optidrop.online/tools/education/study-timer.html) |
 | Flashcard Generator | Create and study flashcards with progress tracking | [/tools/education/flashcard-generator.html](https://optidrop.online/tools/education/flashcard-generator.html) |
+| Bonafide Certificate | Generate bonafide certificates for students | [/tools/education/bonafide-certificate.html](https://optidrop.online/tools/education/bonafide-certificate.html) |
+| Character Certificate | Generate character certificates for students | [/tools/education/character-certificate.html](https://optidrop.online/tools/education/character-certificate.html) |
+| Gap Certificate | Generate gap year certificates for students | [/tools/education/gap-certificate.html](https://optidrop.online/tools/education/gap-certificate.html) |
+| Internship Certificate | Generate internship completion certificates | [/tools/education/internship-certificate.html](https://optidrop.online/tools/education/internship-certificate.html) |
+| Marksheet Generator | Generate mark sheets with grades and percentages | [/tools/education/marksheet-generator.html](https://optidrop.online/tools/education/marksheet-generator.html) |
+| Study Leave Letter | Generate study leave application letters | [/tools/education/study-leave-letter.html](https://optidrop.online/tools/education/study-leave-letter.html) |
+| Sick Leave Application | Generate sick leave applications for students | [/tools/education/sick-leave-application.html](https://optidrop.online/tools/education/sick-leave-application.html) |
+| Principal Application | Generate formal applications to school principals | [/tools/education/principal-application.html](https://optidrop.online/tools/education/principal-application.html) |
+| Scholarship Application | Generate scholarship applications with achievements | [/tools/education/scholarship-application.html](https://optidrop.online/tools/education/scholarship-application.html) |
+| Recommendation Letter | Generate recommendation letters for students | [/tools/education/recommendation-letter.html](https://optidrop.online/tools/education/recommendation-letter.html) |
+| SOP Builder | Build Statement of Purpose for university applications | [/tools/education/sop-builder.html](https://optidrop.online/tools/education/sop-builder.html) |
+| Student Bio Data | Generate student bio data with personal details | [/tools/education/student-bio-data.html](https://optidrop.online/tools/education/student-bio-data.html) |
+| Project Certificate | Generate project completion certificates | [/tools/education/project-certificate.html](https://optidrop.online/tools/education/project-certificate.html) |
+| Training Certificate | Generate training completion certificates | [/tools/education/training-certificate.html](https://optidrop.online/tools/education/training-certificate.html) |
+| Academic Declaration | Generate academic declaration and undertaking letters | [/tools/education/academic-declaration.html](https://optidrop.online/tools/education/academic-declaration.html) |
 
 ### Fitness Tools (6)
 
@@ -281,7 +320,7 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 | Heart Rate Zone Calculator | Find fat burn, cardio, and peak heart rate training zones | [/tools/fitness/heart-rate-zone-calculator.html](https://optidrop.online/tools/fitness/heart-rate-zone-calculator.html) |
 | Exercise Calorie Burn | Calculate calories burned for 100+ exercises | [/tools/fitness/exercise-calorie-burn.html](https://optidrop.online/tools/fitness/exercise-calorie-burn.html) |
 
-### Utility Tools (22)
+### Utility Tools (25)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -300,14 +339,16 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 | Timezone Converter | Convert times between different time zones | [/tools/utility/timezone-converter.html](https://optidrop.online/tools/utility/timezone-converter.html) |
 | Date Calculator | Add or subtract days from any date | [/tools/utility/date-calculator.html](https://optidrop.online/tools/utility/date-calculator.html) |
 | Binary Converter | Convert between binary, octal, decimal, and hex | [/tools/utility/binary-converter.html](https://optidrop.online/tools/utility/binary-converter.html) |
-| Roman Numeral Converter | Convert between Roman numerals and standard numbers | [/tools/utility/roman-numeral.html](https://optidrop.online/tools/utility/roman-numeral.html) |
-| Screen Resolution Checker | View your screen resolution and viewport size | [/tools/utility/screen-resolution.html](https://optidrop.online/tools/utility/screen-resolution.html) |
-| IP Address Lookup | View your public IP address and location | [/tools/utility/ip-lookup.html](https://optidrop.online/tools/utility/ip-lookup.html) |
+| Roman Numeral Converter | Convert between Roman numerals and standard numbers | [/tools/utility/roman-numeral-converter.html](https://optidrop.online/tools/utility/roman-numeral-converter.html) |
+| Screen Resolution Checker | View your screen resolution and viewport size | [/tools/utility/screen-resolution-checker.html](https://optidrop.online/tools/utility/screen-resolution-checker.html) |
+| IP Address Lookup | View your public IP address and location | [/tools/utility/ip-address-lookup.html](https://optidrop.online/tools/utility/ip-address-lookup.html) |
 | Recipe Scaler | Scale recipe ingredients up or down | [/tools/utility/recipe-scaler.html](https://optidrop.online/tools/utility/recipe-scaler.html) |
-| Book Reading Tracker | Track books you're reading with progress and notes | [/tools/utility/book-tracker.html](https://optidrop.online/tools/utility/book-tracker.html) |
+| Book Reading Tracker | Track books you're reading with progress and notes | [/tools/utility/book-reading-tracker.html](https://optidrop.online/tools/utility/book-reading-tracker.html) |
 | Movie Watchlist | Manage your movie watchlist with ratings | [/tools/utility/movie-watchlist.html](https://optidrop.online/tools/utility/movie-watchlist.html) |
-| Password Strength Tester | Test password strength and get improvement suggestions | [/tools/utility/password-strength.html](https://optidrop.online/tools/utility/password-strength.html) |
-| Unit Price Comparator | Compare unit prices to find the best deal | [/tools/utility/unit-price.html](https://optidrop.online/tools/utility/unit-price.html) |
+| Password Strength Tester | Test password strength and get improvement suggestions | [/tools/utility/password-strength-tester-advanced.html](https://optidrop.online/tools/utility/password-strength-tester-advanced.html) |
+| Unit Price Comparator | Compare unit prices to find the best deal | [/tools/utility/unit-price-comparator.html](https://optidrop.online/tools/utility/unit-price-comparator.html) |
+| Age in Different Units | Convert age into different time units | [/tools/utility/age-in-different-units.html](https://optidrop.online/tools/utility/age-in-different-units.html) |
+| Random Quote Generator | Generate random inspirational quotes | [/tools/utility/random-quote-generator.html](https://optidrop.online/tools/utility/random-quote-generator.html) |
 
 ### Fun & Games Tools (15)
 
@@ -360,31 +401,46 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 | Trip Cost Estimator | Estimate total trip cost with flights, hotels, and activities | [/tools/travel/trip-cost.html](https://optidrop.online/tools/travel/trip-cost.html) |
 | Packing List Generator | Generate packing lists based on destination and duration | [/tools/travel/packing-list.html](https://optidrop.online/tools/travel/packing-list.html) |
 | Itinerary Planner | Plan daily travel itineraries with activities | [/tools/travel/itinerary-planner.html](https://optidrop.online/tools/travel/itinerary-planner.html) |
-| Flight Time Calculator | Estimate flight duration between cities | [/tools/travel/flight-time.html](https://optidrop.online/tools/travel/flight-time.html) |
-| Visa Requirement Checker | Check visa requirements by passport and destination | [/tools/travel/visa-checker.html](https://optidrop.online/tools/travel/visa-checker.html) |
-| Currency Trip Converter | Convert currencies with trip budget tracking | [/tools/travel/currency-trip.html](https://optidrop.online/tools/travel/currency-trip.html) |
-| Hotel Cost Comparator | Compare hotel costs across dates and locations | [/tools/travel/hotel-compare.html](https://optidrop.online/tools/travel/hotel-compare.html) |
+| Flight Time Calculator | Estimate flight duration between cities | [/tools/travel/flight-time-calculator.html](https://optidrop.online/tools/travel/flight-time-calculator.html) |
+| Visa Requirement Checker | Check visa requirements by passport and destination | [/tools/travel/visa-requirement-checker.html](https://optidrop.online/tools/travel/visa-requirement-checker.html) |
+| Currency Trip Converter | Convert currencies with trip budget tracking | [/tools/travel/currency-trip-converter.html](https://optidrop.online/tools/travel/currency-trip-converter.html) |
+| Hotel Cost Comparator | Compare hotel costs across dates and locations | [/tools/travel/hotel-cost-comparator.html](https://optidrop.online/tools/travel/hotel-cost-comparator.html) |
 
-### Design Tools (6)
+### Design Tools (21)
 
 | Tool | Description | URL |
 |------|-------------|-----|
-| Social Media Mockup | Create social media post mockups for multiple platforms | [/tools/design/social-mockup.html](https://optidrop.online/tools/design/social-mockup.html) |
+| Social Media Mockup | Create social media post mockups for multiple platforms | [/tools/design/social-media-mockup.html](https://optidrop.online/tools/design/social-media-mockup.html) |
 | Button Generator | Design CSS buttons with live preview and code export | [/tools/design/button-generator.html](https://optidrop.online/tools/design/button-generator.html) |
 | Favicon Generator | Generate favicons in multiple sizes from an image | [/tools/design/favicon-generator.html](https://optidrop.online/tools/design/favicon-generator.html) |
 | Avatar Generator | Create custom avatars with styles and colors | [/tools/design/avatar-generator.html](https://optidrop.online/tools/design/avatar-generator.html) |
 | CSS Border Generator | Create CSS border styles with live preview | [/tools/design/css-border-generator.html](https://optidrop.online/tools/design/css-border-generator.html) |
-| Gradient Text Generator | Create gradient text effects with CSS | [/tools/design/gradient-text.html](https://optidrop.online/tools/design/gradient-text.html) |
+| Gradient Text Generator | Create gradient text effects with CSS | [/tools/design/gradient-text-generator.html](https://optidrop.online/tools/design/gradient-text-generator.html) |
+| Indian Passport Photo | Make Indian passport photos at 35x45mm, 300 DPI | [/tools/design/indian-passport-photo.html](https://optidrop.online/tools/design/indian-passport-photo.html) |
+| US Passport Photo | Make US passport photos at 2x2 inches, 300 DPI | [/tools/design/us-passport-photo.html](https://optidrop.online/tools/design/us-passport-photo.html) |
+| UK Passport Photo | Make UK passport photos at 35x45mm, 300 DPI | [/tools/design/uk-passport-photo.html](https://optidrop.online/tools/design/uk-passport-photo.html) |
+| Canada Passport Photo | Make Canada passport photos at 50x70mm, 300 DPI | [/tools/design/canada-passport-photo.html](https://optidrop.online/tools/design/canada-passport-photo.html) |
+| Visa Photo Generator | Generate visa photos with custom dimensions | [/tools/design/visa-photo-generator.html](https://optidrop.online/tools/design/visa-photo-generator.html) |
+| ID Card Generator | Generate ID cards with photo and details | [/tools/design/id-card-generator.html](https://optidrop.online/tools/design/id-card-generator.html) |
+| Employee ID Card | Generate employee ID cards with company details | [/tools/design/employee-id-card.html](https://optidrop.online/tools/design/employee-id-card.html) |
+| Student ID Card | Generate student ID cards with institution details | [/tools/design/student-id-card.html](https://optidrop.online/tools/design/student-id-card.html) |
+| Signature Drawer | Draw signatures using mouse or touch on canvas | [/tools/design/signature-drawer.html](https://optidrop.online/tools/design/signature-drawer.html) |
+| Text Signature Generator | Generate stylized text signatures with multiple fonts | [/tools/design/text-signature-generator.html](https://optidrop.online/tools/design/text-signature-generator.html) |
+| Scanner Simulator | Simulate a scanned document look from photos | [/tools/design/scanner-simulator.html](https://optidrop.online/tools/design/scanner-simulator.html) |
+| Document Cropper | Crop documents from photos with precision | [/tools/design/document-cropper.html](https://optidrop.online/tools/design/document-cropper.html) |
+| Image Stamp Tool | Add date and time stamps to images | [/tools/design/image-stamp-tool.html](https://optidrop.online/tools/design/image-stamp-tool.html) |
+| Watermark Creator | Add text watermarks to images with custom options | [/tools/design/watermark-creator.html](https://optidrop.online/tools/design/watermark-creator.html) |
+| Certificate Generator | Generate customizable certificates with templates | [/tools/design/certificate-generator.html](https://optidrop.online/tools/design/certificate-generator.html) |
 
 ### Parenting Tools (5)
 
 | Tool | Description | URL |
 |------|-------------|-----|
-| Baby Name Generator | Search and generate baby names by origin and meaning | [/tools/parenting/baby-name.html](https://optidrop.online/tools/parenting/baby-name.html) |
+| Baby Name Generator | Search and generate baby names by origin and meaning | [/tools/parenting/baby-name-generator.html](https://optidrop.online/tools/parenting/baby-name-generator.html) |
 | Feeding Schedule | Track baby feeding schedules and patterns | [/tools/parenting/feeding-schedule.html](https://optidrop.online/tools/parenting/feeding-schedule.html) |
 | Height Prediction | Predict child adult height from parents' heights | [/tools/parenting/height-prediction.html](https://optidrop.online/tools/parenting/height-prediction.html) |
 | Milestone Tracker | Track baby developmental milestones by age | [/tools/parenting/milestone-tracker.html](https://optidrop.online/tools/parenting/milestone-tracker.html) |
-| Sleep Schedule Planner | Plan baby and toddler sleep schedules | [/tools/parenting/sleep-schedule.html](https://optidrop.online/tools/parenting/sleep-schedule.html) |
+| Sleep Schedule Planner | Plan baby and toddler sleep schedules | [/tools/parenting/sleep-schedule-planner.html](https://optidrop.online/tools/parenting/sleep-schedule-planner.html) |
 
 ---
 
@@ -393,34 +449,34 @@ OptiDrop is a fully browser-based toolkit with **197 free tools** across **18 ca
 Browse tools by category:
 
 - [Image Tools](https://optidrop.online/category/image-tools.html) — Compress, convert, resize, and edit images
-- [PDF Tools](https://optidrop.online/category/pdf-tools.html) — Compress, convert, and extract PDF files
+- [PDF Tools](https://optidrop.online/category/pdf-tools.html) — Merge, split, compress, watermark, and convert PDF files
 - [Calculator Tools](https://optidrop.online/category/calculator-tools.html) — EMI, SIP, tax, mortgage, grade, and more
 - [Text Tools](https://optidrop.online/category/text-tools.html) — Word counter, case converter, lorem ipsum, binary converter
 - [Developer Tools](https://optidrop.online/category/developer-tools.html) — JSON formatter, Base64, URL encoder, color converter
 - [Career Tools](https://optidrop.online/category/career-tools.html) — Resumes, cover letters, LinkedIn, job tracker
-- [Business Tools](https://optidrop.online/category/business-tools.html) — Invoices, contracts, salary slips, offer letters
+- [Business Tools](https://optidrop.online/category/business-tools.html) — Invoices, contracts, salary slips, quotations, NDAs
 - [Professional Tools](https://optidrop.online/category/professional-tools.html) — Email signatures, business cards, bio generator
 - [Health Tools](https://optidrop.online/category/health-tools.html) — BMI, calorie, sleep, water intake, pregnancy
-- [Education Tools](https://optidrop.online/category/education-tools.html) — GPA calculator, quiz generator, citations, flashcards
+- [Education Tools](https://optidrop.online/category/education-tools.html) — GPA calculator, certificates, SOP builder, citations
 - [Fitness Tools](https://optidrop.online/category/fitness-tools.html) — BMR, TDEE, one rep max, heart rate zones
 - [Utility Tools](https://optidrop.online/category/utility-tools.html) — QR code, BMI, unit converter, password generator
 - [Fun & Games Tools](https://optidrop.online/category/fun-tools.html) — Jokes, recipes, coin flip, random generators
 - [Home & DIY Tools](https://optidrop.online/category/home-tools.html) — Paint, wallpaper, concrete calculators, cooking converter
 - [Productivity Tools](https://optidrop.online/category/productivity-tools.html) — Todo list, goal tracker, daily planner, priority matrix
 - [Travel Tools](https://optidrop.online/category/travel-tools.html) — Trip cost, packing list, itinerary, visa checker
-- [Design Tools](https://optidrop.online/category/design-tools.html) — Social mockups, button generator, favicon, avatar
+- [Design Tools](https://optidrop.online/category/design-tools.html) — Passport photos, ID cards, signatures, watermarks, certificates
 - [Parenting Tools](https://optidrop.online/category/parenting-tools.html) — Baby names, feeding schedule, milestones
 
 ---
 
 ## Site Pages
 
-- [Tools Directory](https://optidrop.online/tools.html) — Browse all 197 tools with search and category filters
+- [Tools Directory](https://optidrop.online/tools.html) — Browse all 306 tools with search and category filters
 - [About](https://optidrop.online/about.html) — What OptiDrop is and why it is free
 - [Privacy Policy](https://optidrop.online/privacy-policy.html) — No data collection, 100% browser-side processing
 - [Terms of Service](https://optidrop.online/terms.html) — Free to use, no warranties
 - [Contact](https://optidrop.online/contact.html) — contact@optidrop.online
-- [Blog](https://optidrop.online/blog/) — 16 guides and tutorials
+- [Blog](https://optidrop.online/blog/) — 17 guides and tutorials
 
 ---
 
@@ -440,28 +496,33 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 - **HTML5** — Semantic markup, accessible structure
 - **CSS3** — Custom styles + Tailwind CSS via CDN
 - **Vanilla JavaScript** — No frameworks, no build process, no npm
-- **Canvas API** — Image processing, compression, resizing, business card rendering
+- **Canvas API** — Image processing, compression, resizing, passport photos, ID cards, signatures
 - **Web Workers** — OffscreenCanvas compression, Tesseract.js OCR, background removal (off main thread)
 - **Web APIs** — File API, Blob API, crypto.getRandomValues, SubtleCrypto (SHA-256/512), localStorage, sessionStorage, URL parameters, Web Speech API, Intl API, Clipboard API
-- **jsPDF** — PDF generation for resumes, invoices, contracts, letters, receipts
+- **jsPDF** — PDF generation for resumes, invoices, contracts, letters, receipts, certificates
+- **pdf-lib** — PDF merging, splitting, watermarking, rotation, page numbering, encryption
+- **PDF.js** — PDF page rendering and text extraction
 - **marked.js** — Markdown to HTML rendering (developer tools)
 - **DOMPurify** — HTML sanitization for Markdown preview
 
-### External Libraries (loaded per page via CDN)
+### External Libraries (loaded dynamically per page via CDN)
 
 | Library | Used For |
 |---------|----------|
 | Tailwind CSS | Utility-first styling (all pages) |
 | Google Fonts (Inter) | Typography (all pages) |
 | JSZip | Batch ZIP downloads (image tools) |
-| jsPDF | PDF generation (career, business tools) |
+| jsPDF | PDF generation (career, business, education tools) |
+| pdf-lib | PDF manipulation (merge, split, watermark, rotate, encrypt) |
 | heic2any | HEIC to JPG conversion |
-| PDF.js | PDF page extraction |
+| PDF.js | PDF page extraction and text extraction |
 | qrcode-generator | QR code generation |
 | @imgly/background-removal | AI background removal (with Web Worker fallback) |
 | Tesseract.js | OCR text extraction (with Web Worker fallback) |
-| marked.js | Markdown preview (developer tools) |
+| marked.js | Markdown preview and Markdown to PDF |
 | DOMPurify | HTML sanitization (Markdown preview) |
+
+**Performance:** All heavy libraries load on-demand only when the user triggers the action (not on page open). This keeps initial page load fast.
 
 ---
 
@@ -477,9 +538,10 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 ├── contact.html                            # Contact page
 ├── 404.html                                # Custom 404 page
 ├── reindex-checklist.html                  # SEO reindex checklist
-├── sitemap.xml                             # XML sitemap (480+ URLs)
+├── sitemap.xml                             # XML sitemap (600+ URLs)
 ├── robots.txt                              # Robots file
 ├── ads.txt                                 # Google AdSense verification
+├── vercel.json                             # Vercel deployment config with caching headers
 ├── favicon.png                             # Favicon
 ├── Generated_image-removebg-preview.png    # Logo
 ├── styles.css                              # All CSS (single file)
@@ -501,22 +563,23 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   ├── unit-converter.html                 # Unit converter
 │   ├── pomodoro-timer.html                 # Pomodoro focus timer
 │   ├── aspect-ratio-calculator.html        # Aspect ratio calculator
-│   ├── calculators/                        # 48 calculator tools
-│   ├── text/                               # 31 text tools
-│   ├── developer/                          # 34 developer tools
-│   ├── health/                             # 19 health tools
-│   ├── utility/                            # 22 utility tools
+│   ├── calculators/                        # 51 calculator tools
+│   ├── text/                               # 32 text tools
+│   ├── developer/                          # 33 developer tools
+│   ├── health/                             # 18 health tools
+│   ├── utility/                            # 25 utility tools
 │   ├── fun/                                # 15 fun & games tools
-│   ├── business/                           # 9 business tools
+│   ├── business/                           # 19 business document tools
 │   ├── career/                             # 7 career tools
-│   ├── education/                          # 7 education tools
+│   ├── education/                          # 22 education tools
 │   ├── productivity/                       # 7 productivity tools
 │   ├── home/                               # 7 home & DIY tools
 │   ├── travel/                             # 7 travel tools
 │   ├── fitness/                            # 6 fitness tools
-│   ├── design/                             # 6 design tools
+│   ├── design/                             # 21 design tools
 │   ├── parenting/                          # 5 parenting tools
-│   └── professional/                       # 4 professional tools
+│   ├── professional/                       # 4 professional tools
+│   └── pdf/                                # 18 PDF tools
 ├── category/                               # 18 category pages
 ├── blog/                                   # 17 blog articles + index
 └── compress-image-for-instagram.html       # Instagram image compressor
@@ -527,11 +590,16 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 ## Key Features
 
 ### Recent Improvements (May 2026)
-- **Performance optimizations** — Deferred non-critical JS with `requestIdleCallback`, Web Workers for heavy processing, object URL cleanup to prevent memory leaks
-- **UI polish** — Sharper mega-menu dropdown with font smoothing, improved category card spacing and typography, better dark mode contrast across all components
-- **Dark mode overhaul** — Higher contrast text (#cbd5e1 navbar links, #94a3b8 tool counts), stronger section headings, improved readability in all panels
-- **Navbar alignment** — Fixed vertical alignment of Categories text and dropdown arrow with proper flexbox and line-height
-- **Consistent tool counts** — All pages (homepage, tools directory, mega-menu, sidebar) now show accurate per-category and total tool counts synced with the tools data registry
+- **306 tools** across 18 categories — expanded from 197 with 56 new PDF, education, business, and design tools
+- **PDF tools suite** — 18 PDF tools: merger, splitter, compressor, watermark, page numbering, text extraction, grayscale, HTML-to-PDF, Markdown-to-PDF, margin adjuster, password protector, unlock, image-to-PDF advanced, advanced compressor, multi-PDF combiner, page rotator, JPG-to-PDF, PDF-to-JPG
+- **Education tools suite** — 15 new tools: bonafide certificate, character certificate, gap certificate, internship certificate, marksheet generator, study leave letter, sick leave application, principal application, scholarship application, recommendation letter, SOP builder, student bio data, project certificate, training certificate, academic declaration
+- **Business tools suite** — 10 new tools: relieving letter, payslip pro, fee receipt, quotation, purchase order, delivery challan, cash voucher, proforma invoice, NDA generator, experience letter pro
+- **Design tools suite** — 15 new tools: passport photos (Indian, US, UK, Canada), visa photo, ID card, employee ID, student ID, signature drawer, text signature, scanner simulator, document cropper, image stamp, watermark creator, certificate generator
+- **Lazy-loaded libraries** — Heavy libraries (jsPDF, pdf-lib, PDF.js, Tesseract.js, heic2any, marked.js, @imgly) load on-demand only when user triggers action, not on page open
+- **Performance optimizations** — Deferred non-critical JS with `requestIdleCallback`, Web Workers for heavy processing, object URL cleanup to prevent memory leaks, 30-second worker timeouts with main-thread fallback
+- **Dark mode flicker fix** — Inline dark mode script in `<head>` before CSS loads prevents flash of wrong theme
+- **Verifiable tool counts** — Command palette dynamically derives from allToolsData (always in sync), all category counts match actual files on disk
+- **Vercel deployment** — vercel.json with caching headers (immutable CSS/favicon, 24h common.js, 1h HTML with stale-while-revalidate) and security headers (X-Content-Type-Options, X-Frame-Options, Referrer-Policy)
 
 ### Premium Visual Design
 OptiDrop uses a refined, modern visual language with GPU-accelerated CSS animations:
@@ -547,13 +615,13 @@ OptiDrop uses a refined, modern visual language with GPU-accelerated CSS animati
 The homepage shows your last 3 visited tools in a "Pick Up Where You Left Off" section. Tracked via localStorage under `optidrop_recent_tools` (stores last 5, displays last 3). Only visible when history exists.
 
 ### Keyboard Command Palette
-Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 197 tools. Real-time filtering as you type, arrow key navigation, Enter to open, Escape to close. A small keyboard hint appears in the header on all pages.
+Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 306 tools. Real-time filtering as you type, arrow key navigation, Enter to open, Escape to close. Dynamically synced with the tools data registry — always up to date.
 
 ### Dark Mode Toggle
-Sun/moon toggle button in the header on every page. Saves preference to localStorage under `optidrop_dark_mode`. Prevents flash of wrong theme by checking on script load. Deep navy color palette (#0f172a, #1e293b) — covers all components including tool cards, forms, footer, modals, and search.
+Sun/moon toggle button in the header on every page. Saves preference to localStorage under `optidrop_dark_mode`. Inline script in `<head>` prevents flash of wrong theme. Deep navy color palette (#0f172a, #1e293b) — covers all components including tool cards, forms, footer, modals, and search.
 
 ### Unified Navigation Header
-Every page on the site uses the same standardized navbar structure — logo, 4 desktop nav links (Tools, Categories, Blog, About), privacy badge, mobile hamburger menu with 4-link mobile nav, and responsive behavior. This ensures a consistent, professional experience across all pages. The navbar supports both light and dark themes with proper color transitions.
+Every page on the site uses the same standardized navbar structure — logo, 4 desktop nav links (Tools, Categories, Blog, About), privacy badge, mobile hamburger menu with 4-link mobile nav, and responsive behavior. This ensures a consistent, professional experience across all pages.
 
 ### Smart Clipboard Paste Detection
 On the homepage, pasting an image shows a toast with a link to Image Compressor. Pasting text longer than 20 characters shows a toast with a link to Word Counter.
@@ -562,13 +630,10 @@ On the homepage, pasting an image shows a toast with a link to Image Compressor.
 After completing a tool action (download or calculate), relevant tool pages show a "What do you want to do next?" block with related tool links.
 
 ### Parametric URL Sharing (Calculators)
-All calculator pages encode input values into the URL hash after calculation. A "Share this calculation" button copies the full URL. On page load, hash parameters pre-fill inputs and auto-calculate. Enables sharing specific calculations via link.
+All calculator pages encode input values into the URL hash after calculation. A "Share this calculation" button copies the full URL. On page load, hash parameters pre-fill inputs and auto-calculate.
 
 ### Mobile Floating Action Button
 On screens below 768px, a fixed blue button in the bottom-right opens a quick-access overlay with 8 popular tools as large tappable buttons. Dismissible by tapping outside or the X button.
-
-### Static Social Proof Counts
-The 6 most popular tool homepage cards show usage counts (e.g., "Used by 12,400+ users") as small muted text below the description.
 
 ### Global Drag-and-Drop File Router
 The homepage detects any dragged file and routes it to the correct tool based on file type: images go to the compressor, HEIC files go to the converter, PDFs go to the PDF compressor. Files are passed via sessionStorage so the destination tool loads them instantly.
@@ -579,7 +644,7 @@ Three tools use Web Workers to keep the UI responsive on low-end devices:
 - `ocr-worker.js` — Tesseract.js OCR in a dedicated worker
 - `background-worker.js` — AI background removal with fallback
 
-All workers fall back to main-thread processing if Web Workers or OffscreenCanvas are unavailable.
+All workers have 30-second timeouts and fall back to main-thread processing if Web Workers or OffscreenCanvas are unavailable.
 
 ### Auto-Save for Form Tools
 Resume builder, cover letter generator, invoice generator, salary slip generator, SOP generator, budget planner, habit tracker, body measurement tracker, plant watering reminder, quiz generator, and flashcard generator auto-save form data to localStorage. On return visits, a draft recovery bar offers to restore the previous session.
@@ -597,12 +662,17 @@ All file upload tool pages display a "100% Local — your file never leaves this
 
 ## Performance Optimizations
 
-- **Deferred library loading** — Heavy CDN libraries (jsPDF, JSZip, heic2any, Tesseract.js, PDF.js, @imgly/background-removal) use `defer` attribute to avoid blocking page render
+- **Lazy-loaded libraries** — Heavy CDN libraries (jsPDF, pdf-lib, JSZip, heic2any, Tesseract.js, PDF.js, @imgly/background-removal, marked.js, DOMPurify) load on-demand only when the user triggers the action
 - **requestIdleCallback** — Non-critical features (command palette, FAB, share bar observer, bookmark prompt, recently-used tools, dark mode toggle) are deferred until the browser is idle
 - **Feature guards** — FAQ accordion, search filter, and tools directory only initialize on pages that contain the relevant elements
-- **Web Workers** — Image compression, OCR, and background removal run off the main thread with main-thread fallback
+- **Web Workers** — Image compression, OCR, and background removal run off the main thread with main-thread fallback and 30-second timeouts
 - **Object URL cleanup** — All `URL.createObjectURL()` calls have matching `revokeObjectURL()` in reset/cleanup functions
 - **Event listener cleanup** — Compare modal removes previous drag listeners before attaching new ones to prevent memory leaks
+- **DNS prefetch** — `<link rel="dns-prefetch">` for cdn.jsdelivr.net, cdnjs.cloudflare.com, fonts.googleapis.com, fonts.gstatic.com
+- **Resource preconnect** — `<link rel="preconnect">` for Google Fonts with crossorigin
+- **CSS preload** — `<link rel="preload" href="styles.css" as="style">` for faster first paint
+- **Vercel caching** — Immutable cache for CSS/favicon (1 year), 24h for common.js, 1h for HTML with stale-while-revalidate
+- **Security headers** — X-Content-Type-Options, X-Frame-Options, Referrer-Policy on all HTML pages
 - **Single-file CSS** — One `styles.css` file with no unused frameworks; Tailwind loaded via CDN with JIT mode
 - **No build step** — Zero bundler overhead; files served as-is
 
@@ -622,7 +692,7 @@ All file upload tool pages display a "100% Local — your file never leaves this
   - Article schema (all blog posts)
   - Organization schema (about page)
   - WebPage schema (privacy, terms pages)
-- XML sitemap with 480+ URLs
+- XML sitemap with 600+ URLs
 - Internal linking: Workflow next-step sections, category pages, footer links
 - Blog with 17 SEO-optimized articles targeting long-tail keywords
 - CSS text logo (no image dependency for logo)

@@ -1,0 +1,771 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Text from PDF — Free Online Tool | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Extract all text from any PDF file instantly. Free online tool that works in your browser — no upload required. Get word count, character count, and download as .txt.">
+    <meta name="keywords" content="extract text from pdf, pdf text extractor, pdf to text online, copy text from pdf, pdf text reader, extract pdf content free">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Extract Text from PDF — Free Online Tool | OptiDrop">
+    <meta property="og:description" content="Extract all text from any PDF file instantly. Free online tool that works in your browser — no upload required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/pdf/pdf-extract-text.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Extract Text from PDF — Free Online Tool | OptiDrop">
+    <meta name="twitter:description" content="Extract all text from any PDF file instantly. Free, private, works in your browser.">
+    <link rel="canonical" href="https://optidrop.online/tools/pdf/pdf-extract-text.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://optidrop.online/category/pdf-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Extract Text from PDF", "item": "https://optidrop.online/tools/pdf/pdf-extract-text.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop PDF Text Extractor",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Extract all text from any PDF file instantly. Free online tool that works entirely in your browser with no upload required."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I extract text from a scanned PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This tool extracts selectable (digital) text embedded in a PDF. For scanned PDFs where text is part of an image, you would need an OCR tool first. If your PDF has selectable text that you can highlight in a PDF viewer, this tool will extract it perfectly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool upload my PDF to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All text extraction happens entirely in your browser using the pdf.js library. Your PDF file never leaves your device, making it completely safe for confidential documents like contracts, reports, and academic papers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the formatting and layout be preserved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool extracts raw text content from each page. Basic line breaks and paragraph separations are preserved, but complex formatting like tables, columns, and fonts will not be replicated in the plain text output. It is designed for extracting readable text content, not reproducing the visual layout."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a limit on PDF file size or number of pages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no artificial limit on file size or page count. Since all processing happens in your browser, the practical limit depends on your device memory. Most modern devices can handle PDFs with hundreds of pages without issues. Very large files (over 100MB) may take longer to process."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Dark Mode Script (must be before body paint) -->
+    <script>
+    (function(){try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');document.body.classList.add('dark-mode');}}catch(e){}})();
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="preload" href="../../styles.css" as="style">
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        /* Extract-text specific styles */
+        .extracted-text-box {
+            width: 100%;
+            min-height: 280px;
+            max-height: 480px;
+            padding: 1rem 1.25rem;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.7;
+            color: #1e293b;
+            background: #fff;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            resize: vertical;
+            transition: border-color 0.2s ease;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .extracted-text-box:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.08);
+        }
+        .dark-mode .extracted-text-box {
+            background: #1e293b !important;
+            border-color: #334155 !important;
+            color: #e2e8f0 !important;
+        }
+        .dark-mode .extracted-text-box:focus {
+            border-color: #3b82f6 !important;
+        }
+        .stat-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.4rem 0.875rem;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        .dark-mode .stat-pill {
+            background: #1e3a5f !important;
+            border-color: #2563eb !important;
+            color: #60a5fa !important;
+        }
+        .action-btn-pdf {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+        }
+        .action-btn-pdf:active { transform: scale(0.97); }
+        .btn-primary-pdf {
+            background: #2563eb;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+        }
+        .btn-primary-pdf:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(37,99,235,0.35);
+        }
+        .btn-secondary-pdf {
+            background: #fff;
+            color: #475569;
+            border-color: #e2e8f0;
+        }
+        .btn-secondary-pdf:hover {
+            background: #f8fafc;
+            border-color: #cbd5e1;
+            transform: translateY(-1px);
+        }
+        .dark-mode .btn-secondary-pdf {
+            background: #334155 !important;
+            color: #e2e8f0 !important;
+            border-color: #475569 !important;
+        }
+        .dark-mode .btn-secondary-pdf:hover {
+            background: #475569 !important;
+        }
+        .page-progress-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.75rem;
+            background: #f0fdf4;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #166534;
+        }
+        .dark-mode .page-progress-item {
+            background: #1a3a2a !important;
+            color: #4ade80 !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                    <svg class="w-5 h-5 dm-icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    <svg class="w-5 h-5 dm-icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </button>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/category/pdf-tools.html" onclick="this.parentElement.classList.remove('open')">PDF Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 Hero -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Extract Text from PDF — Free Online Tool</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Extract all text content from any PDF file instantly. View word count and character count, copy to clipboard, or download as a .txt file. Everything runs in your browser — your files never leave your device.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden relative">
+
+                <!-- STATE 1: UPLOAD -->
+                <div id="state-upload" class="p-8 sm:p-12 text-center">
+                    <div id="dropzone" class="border-2 border-dashed border-blue-200 rounded-2xl p-10 cursor-pointer transition-all hover:bg-blue-50 hover:border-blue-400 group flex flex-col items-center justify-center min-h-[260px]">
+                        <input type="file" id="fileInput" class="hidden" accept=".pdf,application/pdf" />
+                        <div class="bg-blue-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                            <svg class="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Drop a PDF File Here or Tap to Browse</h3>
+                        <p class="text-sm text-slate-500">Supports any PDF file with selectable text</p>
+                    </div>
+                    <div class="upload-trust-badge">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        100% Local — your file never leaves this device
+                    </div>
+                </div>
+
+                <!-- STATE 2: LOADING / EXTRACTING -->
+                <div id="state-loading" class="hidden p-8 sm:p-12 text-center flex flex-col items-center justify-center min-h-[340px]">
+                    <div class="relative w-20 h-20 mb-5">
+                        <div class="absolute inset-0 border-4 border-blue-100 rounded-full"></div>
+                        <div class="absolute inset-0 border-4 border-blue-500 rounded-full border-t-transparent animate-spin"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800">Extracting Text...</h3>
+                    <p id="progressText" class="text-sm font-medium text-blue-600 mt-2 bg-blue-50 px-4 py-2 rounded-full">Processing page 0 / 0</p>
+                    <div class="w-full max-w-xs bg-slate-200 rounded-full h-2 mt-4 overflow-hidden shadow-inner">
+                        <div id="progressBar" class="bg-blue-600 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-4 max-w-xs text-center">Reading each page and extracting text. Please keep this tab open.</p>
+                </div>
+
+                <!-- STATE 3: RESULT -->
+                <div id="state-result" class="hidden p-6 sm:p-8">
+
+                    <!-- File info bar -->
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </div>
+                            <div class="min-w-0">
+                                <p id="resultFileName" class="font-bold text-slate-800 text-sm truncate"></p>
+                                <p id="resultPageCount" class="text-xs text-slate-500"></p>
+                            </div>
+                        </div>
+                        <button id="btnStartOver" class="action-btn-pdf btn-secondary-pdf text-sm py-2.5 px-4">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            Extract Another
+                        </button>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="flex flex-wrap items-center gap-3 mb-5">
+                        <div class="stat-pill">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
+                            <span id="wordCount">0</span> words
+                        </div>
+                        <div class="stat-pill">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"/></svg>
+                            <span id="charCount">0</span> characters
+                        </div>
+                        <div class="stat-pill">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <span id="pageCountStat">0</span> pages
+                        </div>
+                    </div>
+
+                    <!-- Extracted text textarea -->
+                    <textarea id="extractedTextBox" class="extracted-text-box" readonly placeholder="Extracted text will appear here..."></textarea>
+
+                    <!-- Action buttons -->
+                    <div class="flex flex-col sm:flex-row gap-3 mt-5">
+                        <button id="btnCopyText" class="action-btn-pdf btn-primary-pdf flex-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                            Copy to Clipboard
+                        </button>
+                        <button id="btnDownloadTxt" class="action-btn-pdf btn-secondary-pdf flex-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Download as .txt
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section id="seo-features" class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Extract Text from Any PDF — Free, Private, Instant</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's PDF Text Extractor is a free online tool that pulls all readable text from your PDF documents in seconds. Whether you need to copy content from a research paper, extract data from a report, or convert a PDF document into editable plain text, our tool handles it all directly in your browser. There is no file size limit, no sign-up required, and absolutely no uploading — your PDF stays on your device the entire time.</p>
+
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How PDF Text Extraction Works</h3>
+                <p class="text-slate-600 mb-4">Our tool uses Mozilla's pdf.js library to read the internal structure of your PDF file. It processes each page sequentially, extracting every text element including headings, paragraphs, footnotes, and headers. The extracted text is then displayed in a clean, readable format with word count and character count statistics. You can copy the text to your clipboard with one click or download it as a plain .txt file.</p>
+
+                <h3 class="text-xl font-bold text-slate-800 mb-3">What Can You Do With Extracted Text?</h3>
+                <p class="text-slate-600 mb-4">Once you have extracted text from a PDF, the possibilities are endless. You can search through the content, run it through a text analysis tool, use it for data entry, paste it into a word processor for editing, or feed it into other tools on OptiDrop like our Word Counter or Find and Replace tool. This is especially useful for students, researchers, writers, and professionals who work with PDF documents regularly.</p>
+
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Private — Your PDF Never Leaves Your Device</h3>
+                <p class="text-slate-600">Unlike many online PDF tools that upload your files to a remote server, OptiDrop processes everything locally in your web browser. This means your confidential documents — whether they contain financial data, personal information, or proprietary content — remain completely private. The text extraction happens using JavaScript running on your own machine, so there is zero risk of data exposure.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I extract text from a scanned PDF?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        This tool extracts selectable (digital) text embedded in a PDF. For scanned PDFs where text is part of an image, you would need an OCR tool first. If your PDF has selectable text that you can highlight in a PDF viewer, this tool will extract it perfectly.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does this tool upload my PDF to a server?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        No. All text extraction happens entirely in your browser using the pdf.js library. Your PDF file never leaves your device, making it completely safe for confidential documents like contracts, reports, and academic papers.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Will the formatting and layout be preserved?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The tool extracts raw text content from each page. Basic line breaks and paragraph separations are preserved, but complex formatting like tables, columns, and fonts will not be replicated in the plain text output. It is designed for extracting readable text content, not reproducing the visual layout.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is there a limit on PDF file size or number of pages?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        There is no artificial limit on file size or page count. Since all processing happens in your browser, the practical limit depends on your device memory. Most modern devices can handle PDFs with hundreds of pages without issues. Very large files (over 100MB) may take longer to process.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="next-step-section">
+            <h2>What to do next &rarr;</h2>
+            <div class="next-step-grid">
+                <a href="/tools/pdf/pdf-merger.html" class="next-step-card">
+                    <div class="next-step-arrow"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div>
+                    <div class="next-step-info"><h3>Merge PDF Files</h3><p>Combine multiple PDF files into a single document with drag-and-drop ordering.</p></div>
+                </a>
+                <a href="/compress-pdf.html" class="next-step-card">
+                    <div class="next-step-arrow"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg></div>
+                    <div class="next-step-info"><h3>Compress PDF</h3><p>Reduce the file size of your PDF while keeping quality intact.</p></div>
+                </a>
+                <a href="/pdf-to-jpg.html" class="next-step-card">
+                    <div class="next-step-arrow"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                    <div class="next-step-info"><h3>PDF to JPG</h3><p>Extract pages from a PDF as individual JPG images for editing or sharing.</p></div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 306+ tools for images, PDFs, resumes, invoices, calculators, developers, health, productivity, travel, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function () {
+        'use strict';
+
+        // ── Dark Mode Toggle ─────────────────────────────────────
+        var darkToggle = document.getElementById('darkModeToggle');
+        if (darkToggle) {
+            darkToggle.addEventListener('click', function () {
+                var isDark = document.documentElement.classList.toggle('dark-mode');
+                document.body.classList.toggle('dark-mode', isDark);
+                try { localStorage.setItem('optidrop_dark_mode', isDark ? '1' : '0'); } catch (e) {}
+            });
+        }
+
+        // ── Load pdf.js on demand ────────────────────────────────
+        function loadPdfJs() {
+            if (typeof pdfjsLib !== 'undefined') return Promise.resolve();
+            return new Promise(function (resolve) {
+                var s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+                s.onload = function () {
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+                    resolve();
+                };
+                s.onerror = function () { resolve(); };
+                document.head.appendChild(s);
+            });
+        }
+
+        // ── DOM References ───────────────────────────────────────
+        var dropzone = document.getElementById('dropzone');
+        var fileInput = document.getElementById('fileInput');
+        var stateUpload = document.getElementById('state-upload');
+        var stateLoading = document.getElementById('state-loading');
+        var stateResult = document.getElementById('state-result');
+        var progressText = document.getElementById('progressText');
+        var progressBar = document.getElementById('progressBar');
+        var resultFileName = document.getElementById('resultFileName');
+        var resultPageCount = document.getElementById('resultPageCount');
+        var wordCountEl = document.getElementById('wordCount');
+        var charCountEl = document.getElementById('charCount');
+        var pageCountStatEl = document.getElementById('pageCountStat');
+        var extractedBox = document.getElementById('extractedTextBox');
+        var btnCopyText = document.getElementById('btnCopyText');
+        var btnDownloadTxt = document.getElementById('btnDownloadTxt');
+        var btnStartOver = document.getElementById('btnStartOver');
+
+        var currentFileName = '';
+        var extractedText = '';
+
+        // ── Dropzone Setup ───────────────────────────────────────
+        setupDropzone(dropzone, fileInput, function (files) {
+            if (files && files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        // ── Handle File ──────────────────────────────────────────
+        function handleFile(file) {
+            if (!file || file.type !== 'application/pdf') {
+                showToast('Please select a valid PDF file.', 'error');
+                return;
+            }
+            currentFileName = file.name.replace(/\.pdf$/i, '');
+            showState('loading');
+            extractTextFromFile(file);
+        }
+
+        // ── Extract Text ─────────────────────────────────────────
+        function extractTextFromFile(file) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                loadPdfJs().then(function () {
+                    if (typeof pdfjsLib === 'undefined') {
+                        showToast('Failed to load PDF library. Please try again.', 'error');
+                        showState('upload');
+                        return;
+                    }
+                    var typedArray = new Uint8Array(e.target.result);
+                    pdfjsLib.getDocument(typedArray).promise.then(function (pdf) {
+                        var totalPages = pdf.numPages;
+                        var allText = [];
+                        var pagesProcessed = 0;
+
+                        updateProgress(0, totalPages);
+
+                        function processPage(pageNum) {
+                            pdf.getPage(pageNum).then(function (page) {
+                                page.getTextContent().then(function (textContent) {
+                                    var pageText = '';
+                                    var lastY = null;
+                                    var items = textContent.items;
+
+                                    for (var i = 0; i < items.length; i++) {
+                                        var item = items[i];
+                                        var str = item.str || '';
+
+                                        // Detect new lines based on Y position change
+                                        if (lastY !== null && Math.abs(item.transform[5] - lastY) > 2) {
+                                            pageText += '\n';
+                                        } else if (i > 0 && str.length > 0 && pageText.length > 0 && pageText[pageText.length - 1] !== ' ' && str[0] !== ' ') {
+                                            // Add space between items on the same line if needed
+                                            // pdf.js usually handles this, but sometimes it doesn't
+                                        }
+
+                                        pageText += str;
+                                        lastY = item.transform[5];
+                                    }
+
+                                    if (pageText.trim().length > 0) {
+                                        allText.push(pageText.trim());
+                                    }
+
+                                    pagesProcessed++;
+                                    updateProgress(pagesProcessed, totalPages);
+
+                                    if (pagesProcessed === totalPages) {
+                                        finishExtraction(allText, totalPages, file.name);
+                                    } else {
+                                        processPage(pageNum + 1);
+                                    }
+                                }).catch(function () {
+                                    // Page text extraction failed, skip
+                                    pagesProcessed++;
+                                    updateProgress(pagesProcessed, totalPages);
+                                    if (pagesProcessed === totalPages) {
+                                        finishExtraction(allText, totalPages, file.name);
+                                    } else {
+                                        processPage(pageNum + 1);
+                                    }
+                                });
+                            }).catch(function () {
+                                // Page load failed, skip
+                                pagesProcessed++;
+                                updateProgress(pagesProcessed, totalPages);
+                                if (pagesProcessed === totalPages) {
+                                    finishExtraction(allText, totalPages, file.name);
+                                } else {
+                                    processPage(pageNum + 1);
+                                }
+                            });
+                        }
+
+                        processPage(1);
+
+                    }).catch(function (err) {
+                        showToast('Failed to read PDF. It may be corrupted or password-protected.', 'error');
+                        showState('upload');
+                    });
+                });
+            };
+            reader.onerror = function () {
+                showToast('Failed to read the file.', 'error');
+                showState('upload');
+            };
+            reader.readAsArrayBuffer(file);
+        }
+
+        // ── Update Progress ──────────────────────────────────────
+        function updateProgress(current, total) {
+            if (progressText) {
+                progressText.textContent = 'Processing page ' + current + ' / ' + total;
+            }
+            if (progressBar) {
+                var pct = total > 0 ? Math.round((current / total) * 100) : 0;
+                progressBar.style.width = pct + '%';
+            }
+        }
+
+        // ── Finish Extraction ────────────────────────────────────
+        function finishExtraction(pages, totalPages, fileName) {
+            extractedText = pages.join('\n\n');
+
+            // Count words and characters
+            var words = extractedText.trim().length > 0 ? extractedText.trim().split(/\s+/).length : 0;
+            var chars = extractedText.length;
+
+            // Update UI
+            if (resultFileName) resultFileName.textContent = currentFileName;
+            if (resultPageCount) resultPageCount.textContent = totalPages + ' page' + (totalPages !== 1 ? 's' : '') + ' processed';
+            if (wordCountEl) wordCountEl.textContent = words.toLocaleString();
+            if (charCountEl) charCountEl.textContent = chars.toLocaleString();
+            if (pageCountStatEl) pageCountStatEl.textContent = totalPages;
+            if (extractedBox) extractedBox.value = extractedText;
+
+            if (words === 0) {
+                showToast('No selectable text found in this PDF. It may be a scanned/image-based document.', 'error');
+            } else {
+                showToast('Text extracted successfully from ' + totalPages + ' page' + (totalPages !== 1 ? 's' : '') + '!');
+            }
+
+            showState('result');
+        }
+
+        // ── State Management ─────────────────────────────────────
+        function showState(state) {
+            if (stateUpload) stateUpload.classList.toggle('hidden', state !== 'upload');
+            if (stateLoading) stateLoading.classList.toggle('hidden', state !== 'loading');
+            if (stateResult) stateResult.classList.toggle('hidden', state !== 'result');
+
+            // Reset progress bar when entering loading
+            if (state === 'loading') {
+                if (progressBar) progressBar.style.width = '0%';
+                if (progressText) progressText.textContent = 'Processing page 0 / 0';
+            }
+        }
+
+        // ── Copy to Clipboard ────────────────────────────────────
+        if (btnCopyText) {
+            btnCopyText.addEventListener('click', function () {
+                if (!extractedText || extractedText.length === 0) {
+                    showToast('No text to copy.', 'error');
+                    return;
+                }
+                copyToClipboard(extractedText, 'Text copied to clipboard!');
+            });
+        }
+
+        // ── Download as .txt ─────────────────────────────────────
+        if (btnDownloadTxt) {
+            btnDownloadTxt.addEventListener('click', function () {
+                if (!extractedText || extractedText.length === 0) {
+                    showToast('No text to download.', 'error');
+                    return;
+                }
+                downloadTextFile(extractedText, (currentFileName || 'extracted') + '.txt');
+                showToast('Text file downloaded!');
+            });
+        }
+
+        // ── Start Over ───────────────────────────────────────────
+        if (btnStartOver) {
+            btnStartOver.addEventListener('click', function () {
+                extractedText = '';
+                currentFileName = '';
+                if (extractedBox) extractedBox.value = '';
+                if (fileInput) fileInput.value = '';
+                showState('upload');
+            });
+        }
+
+    })();
+    </script>
+</body>
+</html>

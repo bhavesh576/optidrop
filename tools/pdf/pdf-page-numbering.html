@@ -1,0 +1,845 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Page Numbers to PDF Online Free — PDF Page Numbering Tool | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Add page numbers to PDF files online free. Choose position, font size, start number, and format. No upload — runs entirely in your browser.">
+    <meta name="keywords" content="add page numbers to pdf, pdf page numbering, number pages in pdf, pdf page number tool, insert page numbers pdf, page number generator pdf">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#dc2626">
+    <meta property="og:title" content="Add Page Numbers to PDF Online Free — PDF Page Numbering Tool | OptiDrop">
+    <meta property="og:description" content="Add page numbers to PDF files online free. Choose position, font size, start number, and format. No upload — runs in your browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/pdf/pdf-page-numbering.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Add Page Numbers to PDF Online Free — PDF Page Numbering Tool | OptiDrop">
+    <meta name="twitter:description" content="Add page numbers to PDF files online free. Choose position, font size, start number, and format. No upload.">
+    <link rel="canonical" href="https://optidrop.online/tools/pdf/pdf-page-numbering.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://optidrop.online/category/pdf-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "PDF Page Numbering", "item": "https://optidrop.online/tools/pdf/pdf-page-numbering.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop PDF Page Numbering Tool",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Add page numbers to PDF files online free. Choose position, font size, start number, and number format. Runs entirely in your browser with no upload."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I choose where page numbers appear on the PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can place page numbers in six positions: bottom center, bottom right, bottom left, top center, top right, or top left. Simply select your preferred position from the dropdown before adding numbers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I start numbering from a specific page number?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. The Start Number field lets you begin numbering from any number you choose. For example, if you set the start number to 5, the first page will be labeled 5, the second page 6, and so on. This is useful for documents that continue from a previous section."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my PDF file safe when adding page numbers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Completely safe. Your PDF never leaves your device. All processing is done locally in your browser using the pdf-lib JavaScript library. No data is uploaded to any server, making it 100% private and secure for confidential documents."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What number formats are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Four formats are supported: plain numbers (1, 2, 3), 'Page' prefix (Page 1, Page 2), fraction format (1/N, 2/N showing total pages), and the full 'Page X of N' format. Choose the one that best fits your document style."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="preload" href="/styles.css" as="style">
+    <link rel="stylesheet" href="/styles.css">
+
+    <style>
+        /* Position grid */
+        .position-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+        .position-btn {
+            padding: 0.6rem 0.5rem; border: 2px solid #e2e8f0; border-radius: 0.75rem;
+            background: #fff; cursor: pointer; transition: all 0.2s ease;
+            text-align: center; font-size: 0.75rem; font-weight: 600; color: #475569;
+        }
+        .position-btn:hover { border-color: #ef4444; background: #fef2f2; }
+        .position-btn.active { border-color: #ef4444; background: #ef4444; color: #fff; }
+        .position-btn.active .pos-icon { color: #fff; }
+
+        /* Font size pills */
+        .fontsize-btn {
+            padding: 0.55rem 1.1rem; border: 2px solid #e2e8f0; border-radius: 9999px;
+            background: #fff; cursor: pointer; transition: all 0.2s ease;
+            font-size: 0.8rem; font-weight: 700; color: #475569;
+        }
+        .fontsize-btn:hover { border-color: #ef4444; background: #fef2f2; }
+        .fontsize-btn.active { border-color: #ef4444; background: #ef4444; color: #fff; }
+
+        /* Format pills */
+        .format-btn {
+            padding: 0.55rem 0.9rem; border: 2px solid #e2e8f0; border-radius: 9999px;
+            background: #fff; cursor: pointer; transition: all 0.2s ease;
+            font-size: 0.75rem; font-weight: 700; color: #475569; white-space: nowrap;
+        }
+        .format-btn:hover { border-color: #ef4444; background: #fef2f2; }
+        .format-btn.active { border-color: #ef4444; background: #ef4444; color: #fff; }
+
+        /* Start number input */
+        .start-num-input {
+            width: 100%; padding: 0.65rem 0.75rem; font-size: 0.875rem; font-weight: 600;
+            border: 2px solid #e2e8f0; border-radius: 0.75rem; color: #1e293b;
+            transition: border-color 0.2s ease; background: #fff;
+        }
+        .start-num-input:focus { outline: none; border-color: #ef4444; }
+
+        /* FAQ styles */
+        .faq-item { border: 1px solid #e2e8f0; border-radius: 0.75rem; overflow: hidden; }
+        .faq-question {
+            width: 100%; text-align: left; padding: 1rem 1.25rem;
+            font-weight: 700; color: #1e293b; display: flex; align-items: center;
+            justify-content: space-between; background: #f8fafc; cursor: pointer;
+            border: none; transition: background 0.2s ease;
+        }
+        .faq-question:hover { background: #f1f5f9; }
+        .faq-answer {
+            padding: 1rem 1.25rem; color: #475569; font-size: 0.875rem;
+            line-height: 1.65; border-top: 1px solid #f1f5f9; display: none;
+        }
+        .faq-item.open .faq-answer { display: block; }
+        .faq-item.open .faq-icon { transform: rotate(180deg); }
+
+        /* Next step cards */
+        .next-step-section { max-width: 56rem; margin: 0 auto; padding: 2.5rem 1rem; }
+        .next-step-section h2 { font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 1.25rem; text-align: center; }
+        .next-step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+        .next-step-card {
+            display: flex; align-items: center; gap: 1rem;
+            padding: 1rem 1.25rem; background: #fff; border: 1px solid #e2e8f0;
+            border-radius: 1rem; text-decoration: none; transition: all 0.2s ease;
+        }
+        .next-step-card:hover { border-color: #ef4444; box-shadow: 0 4px 12px rgba(239,68,68,0.1); transform: translateY(-2px); }
+        .next-step-arrow { width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; background: #fef2f2; border-radius: 0.75rem; color: #ef4444; flex-shrink: 0; }
+        .next-step-info h3 { font-size: 0.9rem; font-weight: 700; color: #1e293b; margin: 0 0 0.15rem; }
+        .next-step-info p { font-size: 0.75rem; color: #64748b; margin: 0; line-height: 1.4; }
+
+        /* Trust badge */
+        .upload-trust-badge {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.4rem 0.85rem; background: #f0fdf4; color: #16a34a;
+            font-size: 0.75rem; font-weight: 700; border-radius: 9999px;
+            margin-top: 0.75rem; border: 1px solid #bbf7d0;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Add Page Numbers to PDF Online — Free PDF Page Numbering Tool</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Insert page numbers into any PDF document. Choose position, font size, starting number, and format. Everything runs in your browser — your files never leave your device.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden relative">
+
+                <!-- STATE 1: UPLOAD ZONE -->
+                <div id="pdf-state-upload" class="p-8 sm:p-12 text-center">
+                    <div id="pdfDropzone" class="border-2 border-dashed border-red-200 rounded-2xl p-10 cursor-pointer transition-all hover:bg-red-50 hover:border-red-400 group flex flex-col items-center justify-center min-h-[260px]">
+                        <input type="file" id="pdfFileInput" class="hidden" accept=".pdf,application/pdf" />
+                        <div class="bg-red-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                            <svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v6h6"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Drop a PDF File Here or Tap to Browse</h3>
+                        <p class="text-sm text-slate-500">Supports PDF files up to 100MB</p>
+                    </div>
+                    <div class="mt-5 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
+                        <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+                        No upload — your PDF stays on your device.
+                    </div>
+                    <div class="upload-trust-badge">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        100% Local — your file never leaves this device
+                    </div>
+                </div>
+
+                <!-- STATE 2: SETTINGS -->
+                <div id="pdf-state-settings" class="hidden p-6 sm:p-8">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+
+                        <!-- Left: File Info -->
+                        <div class="w-full md:w-1/2 flex flex-col">
+                            <h3 class="text-lg font-bold text-slate-800 mb-3">Selected PDF</h3>
+                            <div id="pdfPreviewCard" class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                    </div>
+                                    <div class="min-w-0">
+                                        <p id="pdfFileName" class="font-bold text-slate-800 text-sm truncate"></p>
+                                        <p id="pdfFileSize" class="text-xs text-slate-500"></p>
+                                    </div>
+                                </div>
+                                <div id="pdfPageInfo" class="text-xs text-slate-500 bg-white border border-slate-100 rounded-lg p-2 text-center">
+                                    Loading page count...
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Settings -->
+                        <div class="w-full md:w-1/2 flex flex-col justify-center space-y-5">
+
+                            <!-- Position -->
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Page Number Position</label>
+                                <div class="position-grid">
+                                    <button class="position-btn" data-position="top-left">
+                                        <svg class="w-4 h-4 mx-auto mb-1 pos-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3-8 4 16 3-8h4"/></svg>
+                                        Top Left
+                                    </button>
+                                    <button class="position-btn" data-position="top-center">
+                                        <svg class="w-4 h-4 mx-auto mb-1 pos-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3-8 4 16 3-8h4"/></svg>
+                                        Top Center
+                                    </button>
+                                    <button class="position-btn" data-position="top-right">
+                                        <svg class="w-4 h-4 mx-auto mb-1 pos-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3-8 4 16 3-8h4"/></svg>
+                                        Top Right
+                                    </button>
+                                    <button class="position-btn active" data-position="bottom-left">
+                                        <svg class="w-4 h-4 mx-auto mb-1 pos-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3-8 4 16 3-8h4"/></svg>
+                                        Bottom Left
+                                    </button>
+                                    <button class="position-btn" data-position="bottom-center">
+                                        <svg class="w-4 h-4 mx-auto mb-1 pos-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3-8 4 16 3-8h4"/></svg>
+                                        Bottom Center
+                                    </button>
+                                    <button class="position-btn" data-position="bottom-right">
+                                        <svg class="w-4 h-4 mx-auto mb-1 pos-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3-8 4 16 3-8h4"/></svg>
+                                        Bottom Right
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Font Size -->
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Font Size</label>
+                                <div class="flex gap-3">
+                                    <button class="fontsize-btn" data-size="10">Small</button>
+                                    <button class="fontsize-btn active" data-size="14">Medium</button>
+                                    <button class="fontsize-btn" data-size="20">Large</button>
+                                </div>
+                            </div>
+
+                            <!-- Start Number -->
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Start Number</label>
+                                <input type="number" id="startNumber" class="start-num-input" value="1" min="0" max="9999" />
+                            </div>
+
+                            <!-- Number Format -->
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Number Format</label>
+                                <div class="flex flex-wrap gap-2">
+                                    <button class="format-btn active" data-format="plain">1</button>
+                                    <button class="format-btn" data-format="page">Page 1</button>
+                                    <button class="format-btn" data-format="fraction">1/N</button>
+                                    <button class="format-btn" data-format="full">Page 1 of N</button>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="flex gap-3 pt-1">
+                                <button id="btnPdfCancel" class="w-1/3 px-4 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors focus:outline-none">
+                                    Cancel
+                                </button>
+                                <button id="btnAddNumbers" class="w-2/3 px-4 py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
+                                    <span>Add Page Numbers</span>
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STATE 3: LOADING -->
+                <div id="pdf-state-loading" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center z-10 rounded-3xl">
+                    <div class="relative w-20 h-20 mb-4">
+                        <div class="absolute inset-0 border-4 border-red-100 rounded-full"></div>
+                        <div class="absolute inset-0 border-4 border-red-500 rounded-full border-t-transparent animate-spin"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800">Adding Page Numbers...</h3>
+                    <p class="text-sm font-medium text-red-600 mt-2 bg-red-50 px-4 py-2 rounded-full" id="pdfProgressText">Processing page 0 / 0</p>
+                    <div class="w-full max-w-xs bg-slate-200 rounded-full h-2 mt-4 overflow-hidden shadow-inner">
+                        <div id="pdfProgressBar" class="bg-red-600 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-4 max-w-xs text-center">Adding page numbers to each page. Please keep this tab open.</p>
+                </div>
+
+                <!-- STATE 4: RESULT -->
+                <div id="pdf-state-result" class="hidden p-6 sm:p-10 text-center flex flex-col items-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Page Numbers Added!</h2>
+                    <p id="resultSummary" class="text-slate-500 mb-6"></p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2 w-full max-w-lg mx-auto">
+                        <button id="btnPdfDownload" class="w-full sm:w-auto px-6 py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 shadow-lg transition-all flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Download PDF
+                        </button>
+                        <button id="btnPdfStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all">Number Another</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Add Page Numbers to PDF — Free, No Upload Required</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's PDF Page Numbering tool lets you insert page numbers into any PDF document in seconds. Whether you need to number pages for a thesis, report, legal document, or business proposal, our tool provides complete control over placement and formatting. Unlike online tools that require uploading your files, OptiDrop processes everything locally in your browser using the pdf-lib JavaScript library — your PDFs are never uploaded to any server, making it completely safe for confidential documents.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How PDF Page Numbering Works</h3>
+                <p class="text-slate-600 mb-4">Our tool uses pdf-lib to load your PDF file, iterate through every page, and draw the page number text at your chosen position. The library embeds Helvetica font (built-in) so no external font files are needed. The numbers are drawn directly onto the PDF pages as vector text, which means they remain crisp and sharp at any zoom level — unlike rasterized solutions.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Customizable Options</h3>
+                <p class="text-slate-600">Choose from six position options (top and bottom, left, center, right), three font sizes, and four number formats. Set a custom starting number for documents that continue from a previous section. The "Page 1 of N" format is especially popular for formal reports and academic papers where readers need to know the total page count.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I choose where page numbers appear on the PDF?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        Yes. You can place page numbers in six positions: bottom center, bottom right, bottom left, top center, top right, or top left. Simply select your preferred position from the dropdown before adding numbers.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I start numbering from a specific page number?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        Absolutely. The Start Number field lets you begin numbering from any number you choose. For example, if you set the start number to 5, the first page will be labeled 5, the second page 6, and so on. This is useful for documents that continue from a previous section.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is my PDF file safe when adding page numbers?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        Completely safe. Your PDF never leaves your device. All processing is done locally in your browser using the pdf-lib JavaScript library. No data is uploaded to any server, making it 100% private and secure for confidential documents.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What number formats are supported?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        Four formats are supported: plain numbers (1, 2, 3), "Page" prefix (Page 1, Page 2), fraction format (1/N, 2/N showing total pages), and the full "Page X of N" format. Choose the one that best fits your document style.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="next-step-section">
+            <h2>Related Tools</h2>
+            <div class="next-step-grid">
+                <a href="/compress-pdf.html" class="next-step-card">
+                    <div class="next-step-arrow">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                    </div>
+                    <div class="next-step-info">
+                        <h3>Compress PDF</h3>
+                        <p>Reduce PDF file size while keeping quality. Fast and free.</p>
+                    </div>
+                </a>
+                <a href="/jpg-to-pdf.html" class="next-step-card">
+                    <div class="next-step-arrow">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <div class="next-step-info">
+                        <h3>JPG to PDF</h3>
+                        <p>Convert JPG images into a single PDF document.</p>
+                    </div>
+                </a>
+                <a href="/pdf-to-jpg.html" class="next-step-card">
+                    <div class="next-step-arrow">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div class="next-step-info">
+                        <h3>PDF to JPG</h3>
+                        <p>Extract pages from PDF as individual JPG images.</p>
+                    </div>
+                </a>
+                <a href="/name-date-stamp.html" class="next-step-card">
+                    <div class="next-step-arrow">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                    </div>
+                    <div class="next-step-info">
+                        <h3>Name & Date Stamper</h3>
+                        <p>Overlay name and date stamps on images and documents.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 306+ tools for images, PDFs, resumes, invoices, calculators, developers, health, productivity, travel, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="/common.js"></script>
+    <script>
+    (function(){
+        // ── Load pdf-lib dynamically ──────────────────────────
+        function loadPdfLib() {
+            if (typeof PDFLib !== 'undefined') return Promise.resolve();
+            return new Promise(function (resolve, reject) {
+                var s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';
+                s.onload = function () {
+                    // pdf-lib exposes window.PDFLib
+                    resolve();
+                };
+                s.onerror = function () { reject(new Error('Failed to load pdf-lib')); };
+                document.head.appendChild(s);
+            });
+        }
+
+        // ── DOM References ────────────────────────────────────
+        var dropzone = document.getElementById('pdfDropzone');
+        var fileInput = document.getElementById('pdfFileInput');
+        var stateUpload = document.getElementById('pdf-state-upload');
+        var stateSettings = document.getElementById('pdf-state-settings');
+        var stateLoading = document.getElementById('pdf-state-loading');
+        var stateResult = document.getElementById('pdf-state-result');
+        var progressText = document.getElementById('pdfProgressText');
+        var progressBar = document.getElementById('pdfProgressBar');
+        var btnAddNumbers = document.getElementById('btnAddNumbers');
+        var btnCancel = document.getElementById('btnPdfCancel');
+        var btnDownload = document.getElementById('btnPdfDownload');
+        var btnStartOver = document.getElementById('btnPdfStartOver');
+        var startNumberInput = document.getElementById('startNumber');
+
+        var selectedFile = null;
+        var totalPages = 0;
+        var resultBlob = null;
+
+        // Settings state
+        var selectedPosition = 'bottom-center';
+        var selectedFontSize = 14;
+        var selectedFormat = 'plain';
+
+        // ── Position buttons ──────────────────────────────────
+        var positionBtns = document.querySelectorAll('.position-btn');
+        positionBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                positionBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                selectedPosition = btn.getAttribute('data-position');
+            });
+        });
+
+        // ── Font size buttons ─────────────────────────────────
+        var fontsizeBtns = document.querySelectorAll('.fontsize-btn');
+        fontsizeBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                fontsizeBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                selectedFontSize = parseInt(btn.getAttribute('data-size'), 10);
+            });
+        });
+
+        // ── Format buttons ────────────────────────────────────
+        var formatBtns = document.querySelectorAll('.format-btn');
+        formatBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                formatBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                selectedFormat = btn.getAttribute('data-format');
+            });
+        });
+
+        // ── Setup dropzone ────────────────────────────────────
+        setupDropzone(dropzone, fileInput, handleFile);
+
+        function handleFile(files) {
+            if (!files || !files.length) return;
+            var file = files[0];
+            if (file.type !== 'application/pdf') {
+                showToast('Please select a PDF file.', 'error');
+                return;
+            }
+            if (file.size > 100 * 1024 * 1024) {
+                showToast('File is too large. Maximum size is 100MB.', 'error');
+                return;
+            }
+            selectedFile = file;
+
+            // Show settings
+            document.getElementById('pdfFileName').textContent = file.name;
+            document.getElementById('pdfFileSize').textContent = formatBytes(file.size);
+            stateUpload.classList.add('hidden');
+            stateSettings.classList.remove('hidden');
+
+            // Get page count using pdf-lib
+            loadPdfLib().then(function() {
+                return file.arrayBuffer();
+            }).then(function(buffer) {
+                return PDFLib.PDFDocument.load(buffer);
+            }).then(function(pdfDoc) {
+                totalPages = pdfDoc.getPageCount();
+                document.getElementById('pdfPageInfo').textContent = totalPages + ' page' + (totalPages !== 1 ? 's' : '') + ' detected';
+            }).catch(function() {
+                document.getElementById('pdfPageInfo').textContent = 'Could not read page count';
+            });
+        }
+
+        // ── Cancel ────────────────────────────────────────────
+        btnCancel.addEventListener('click', function() {
+            selectedFile = null;
+            stateSettings.classList.add('hidden');
+            stateUpload.classList.remove('hidden');
+        });
+
+        // ── Format page number text ───────────────────────────
+        function formatPageNumber(pageNum, total, format) {
+            switch (format) {
+                case 'plain':
+                    return String(pageNum);
+                case 'page':
+                    return 'Page ' + pageNum;
+                case 'fraction':
+                    return pageNum + '/' + total;
+                case 'full':
+                    return 'Page ' + pageNum + ' of ' + total;
+                default:
+                    return String(pageNum);
+            }
+        }
+
+        // ── Get text position coordinates ─────────────────────
+        function getTextPosition(position, pageWidth, pageHeight, textWidth) {
+            var margin = 40; // margin from edge in points
+            var x, y;
+
+            // Horizontal position
+            switch (position) {
+                case 'top-left':
+                case 'bottom-left':
+                    x = margin;
+                    break;
+                case 'top-center':
+                case 'bottom-center':
+                    x = (pageWidth - textWidth) / 2;
+                    break;
+                case 'top-right':
+                case 'bottom-right':
+                    x = pageWidth - textWidth - margin;
+                    break;
+                default:
+                    x = (pageWidth - textWidth) / 2;
+            }
+
+            // Vertical position
+            if (position.indexOf('top') === 0) {
+                y = pageHeight - margin - selectedFontSize;
+            } else {
+                y = margin;
+            }
+
+            return { x: x, y: y };
+        }
+
+        // ── Add page numbers ──────────────────────────────────
+        btnAddNumbers.addEventListener('click', async function() {
+            if (!selectedFile) return;
+
+            stateSettings.classList.add('hidden');
+            stateLoading.classList.remove('hidden');
+            progressText.textContent = 'Loading pdf-lib...';
+
+            try {
+                await loadPdfLib();
+            } catch (e) {
+                showToast('Failed to load PDF library. Please check your connection.', 'error');
+                stateLoading.classList.add('hidden');
+                stateSettings.classList.remove('hidden');
+                return;
+            }
+
+            try {
+                var arrayBuffer = await selectedFile.arrayBuffer();
+                progressText.textContent = 'Loading PDF document...';
+
+                var pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+                var pages = pdfDoc.getPages();
+                var numPages = pages.length;
+                var startNum = parseInt(startNumberInput.value, 10) || 1;
+
+                progressText.textContent = 'Preparing fonts...';
+                var helveticaFont = await pdfDoc.embedFont(PDFLib.StandardFonts.Helvetica);
+
+                for (var i = 0; i < numPages; i++) {
+                    progressText.textContent = 'Processing page ' + (i + 1) + ' / ' + numPages;
+                    progressBar.style.width = Math.round(((i + 1) / numPages) * 100) + '%';
+
+                    var page = pages[i];
+                    var dimensions = page.getSize();
+                    var pageWidth = dimensions.width;
+                    var pageHeight = dimensions.height;
+
+                    var pageNum = startNum + i;
+                    var text = formatPageNumber(pageNum, numPages, selectedFormat);
+
+                    // Measure actual text width using the embedded font
+                    var textWidth = helveticaFont.widthOfTextAtSize(text, selectedFontSize);
+
+                    var pos = getTextPosition(selectedPosition, pageWidth, pageHeight, textWidth);
+
+                    page.drawText(text, {
+                        x: pos.x,
+                        y: pos.y,
+                        size: selectedFontSize,
+                        font: helveticaFont,
+                        color: PDFLib.rgb(0.2, 0.2, 0.2),
+                    });
+
+                    // Yield to keep UI responsive
+                    await new Promise(function(resolve) { setTimeout(resolve, 0); });
+                }
+
+                progressText.textContent = 'Finalizing PDF...';
+                var pdfBytes = await pdfDoc.save();
+                resultBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+
+                // Show result
+                document.getElementById('resultSummary').textContent =
+                    numPages + ' page number' + (numPages !== 1 ? 's' : '') + ' added starting from ' + startNum + '.';
+
+                stateLoading.classList.add('hidden');
+                stateResult.classList.remove('hidden');
+            } catch (err) {
+                console.error('PDF page numbering error:', err);
+                showToast('Failed to add page numbers. The file may be corrupted or password-protected.', 'error');
+                stateLoading.classList.add('hidden');
+                stateSettings.classList.remove('hidden');
+            }
+        });
+
+        // ── Download ──────────────────────────────────────────
+        btnDownload.addEventListener('click', function() {
+            if (!resultBlob) return;
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(resultBlob);
+            var name = selectedFile ? selectedFile.name.replace('.pdf', '') : 'document';
+            a.download = name + '-numbered.pdf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+
+        // ── Start Over ────────────────────────────────────────
+        btnStartOver.addEventListener('click', function() {
+            selectedFile = null;
+            resultBlob = null;
+            totalPages = 0;
+            progressBar.style.width = '0%';
+            stateResult.classList.add('hidden');
+            stateUpload.classList.remove('hidden');
+        });
+    })();
+    </script>
+</body>
+</html>

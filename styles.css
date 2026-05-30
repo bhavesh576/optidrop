@@ -1800,6 +1800,16 @@ body { font-size: 16px; }
     border-color: #334155 !important;
 }
 
+.dark-mode details.advanced-settings .advanced-content {
+    background: #1e293b !important;
+    color: #e2e8f0 !important;
+}
+
+.dark-mode details.advanced-settings summary:hover {
+    background: #334155 !important;
+    color: #e2e8f0 !important;
+}
+
 .dark-mode .site-footer {
     background: #1e293b !important;
     border-top-color: #334155 !important;

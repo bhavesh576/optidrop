@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
@@ -49,7 +49,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
 
     <header class="site-header">
         <div class="header-inner">
@@ -68,16 +68,17 @@
 
     <main class="flex-1">
         <section class="max-w-7xl mx-auto px-4 py-12">
-            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Education Tools</h1>
-            <p class="text-slate-600 text-lg max-w-2xl mb-8">Free online education tools for students and teachers. Calculate your GPA, generate citations in APA/MLA format, create quizzes and flashcards, track study time, and analyze essay readability — all in your browser.</p>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Education Tools <span class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-3 py-1 rounded-full ml-2 align-middle">22 Tools</span></h1>
+            <p class="text-slate-600 text-lg max-w-2xl mb-8">Free online education tools for students and teachers. Calculate your GPA, generate citations in APA/MLA format, create quizzes and flashcards, track study time, generate certificates and letters, and analyze essay readability — all in your browser.</p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Academic & Grades -->
                 <a href="/tools/education/gpa-calculator.html" class="tool-card">
                     <div class="tool-card-icon bg-blue-100 text-blue-600">
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
                     </div>
                     <span class="tool-card-title">GPA Calculator</span>
-                    <span class="tool-card-desc">Calculate GPA/CGPA with multiple subjects.</span>
+                    <span class="tool-card-desc">Calculate semester and cumulative GPA.</span>
                     <span class="tool-card-tag blue">Academic</span>
                 </a>
 
@@ -86,35 +87,27 @@
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
                     </div>
                     <span class="tool-card-title">Final Grade Calculator</span>
-                    <span class="tool-card-desc">What score needed on final exam.</span>
+                    <span class="tool-card-desc">Calculate what score you need on the final exam.</span>
                     <span class="tool-card-tag emerald">Grades</span>
                 </a>
 
+                <a href="/tools/education/marksheet-generator.html" class="tool-card">
+                    <div class="tool-card-icon bg-indigo-100 text-indigo-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Marksheet Generator</span>
+                    <span class="tool-card-desc">Generate mark sheets with grades and percentages.</span>
+                    <span class="tool-card-tag indigo">Academic</span>
+                </a>
+
+                <!-- Study Tools -->
                 <a href="/tools/education/quiz-generator.html" class="tool-card">
                     <div class="tool-card-icon bg-purple-100 text-purple-600">
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
                     <span class="tool-card-title">Quiz Generator</span>
-                    <span class="tool-card-desc">Create and take multiple choice quizzes.</span>
+                    <span class="tool-card-desc">Generate practice quizzes from study material.</span>
                     <span class="tool-card-tag purple">Interactive</span>
-                </a>
-
-                <a href="/tools/education/essay-word-counter.html" class="tool-card">
-                    <div class="tool-card-icon bg-amber-100 text-amber-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    </div>
-                    <span class="tool-card-title">Essay Word Counter</span>
-                    <span class="tool-card-desc">Advanced essay stats with readability.</span>
-                    <span class="tool-card-tag amber">Writing</span>
-                </a>
-
-                <a href="/tools/education/citation-generator.html" class="tool-card">
-                    <div class="tool-card-icon bg-teal-100 text-teal-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-                    </div>
-                    <span class="tool-card-title">Citation Generator</span>
-                    <span class="tool-card-desc">APA/MLA citation generator.</span>
-                    <span class="tool-card-tag teal">Research</span>
                 </a>
 
                 <a href="/tools/education/study-timer.html" class="tool-card">
@@ -122,7 +115,7 @@
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
                     <span class="tool-card-title">Study Timer</span>
-                    <span class="tool-card-desc">Custom study session timer.</span>
+                    <span class="tool-card-desc">Pomodoro-style study timer with session tracking.</span>
                     <span class="tool-card-tag indigo">Productivity</span>
                 </a>
 
@@ -131,8 +124,156 @@
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
                     </div>
                     <span class="tool-card-title">Flashcard Generator</span>
-                    <span class="tool-card-desc">Create and study flashcards.</span>
+                    <span class="tool-card-desc">Create study flashcards from any topic.</span>
                     <span class="tool-card-tag rose">Study Aid</span>
+                </a>
+
+                <!-- Writing & Research -->
+                <a href="/tools/education/citation-generator.html" class="tool-card">
+                    <div class="tool-card-icon bg-teal-100 text-teal-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                    </div>
+                    <span class="tool-card-title">Citation Generator</span>
+                    <span class="tool-card-desc">Generate APA, MLA, and Chicago style citations.</span>
+                    <span class="tool-card-tag teal">Research</span>
+                </a>
+
+                <a href="/tools/education/essay-word-counter.html" class="tool-card">
+                    <div class="tool-card-icon bg-amber-100 text-amber-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Essay Word Counter</span>
+                    <span class="tool-card-desc">Count words, pages, and reading time for essays.</span>
+                    <span class="tool-card-tag amber">Writing</span>
+                </a>
+
+                <a href="/tools/education/sop-builder.html" class="tool-card">
+                    <div class="tool-card-icon bg-sky-100 text-sky-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                    </div>
+                    <span class="tool-card-title">SOP Builder</span>
+                    <span class="tool-card-desc">Build Statement of Purpose for university applications.</span>
+                    <span class="tool-card-tag sky">Writing</span>
+                </a>
+
+                <!-- Certificates -->
+                <a href="/tools/education/bonafide-certificate.html" class="tool-card">
+                    <div class="tool-card-icon bg-orange-100 text-orange-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Bonafide Certificate</span>
+                    <span class="tool-card-desc">Generate bonafide certificates for students.</span>
+                    <span class="tool-card-tag orange">Certificate</span>
+                </a>
+
+                <a href="/tools/education/character-certificate.html" class="tool-card">
+                    <div class="tool-card-icon bg-pink-100 text-pink-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Character Certificate</span>
+                    <span class="tool-card-desc">Generate character certificates for students.</span>
+                    <span class="tool-card-tag pink">Certificate</span>
+                </a>
+
+                <a href="/tools/education/gap-certificate.html" class="tool-card">
+                    <div class="tool-card-icon bg-lime-100 text-lime-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Gap Certificate</span>
+                    <span class="tool-card-desc">Generate gap year certificates for students.</span>
+                    <span class="tool-card-tag lime">Certificate</span>
+                </a>
+
+                <a href="/tools/education/internship-certificate.html" class="tool-card">
+                    <div class="tool-card-icon bg-cyan-100 text-cyan-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Internship Certificate</span>
+                    <span class="tool-card-desc">Generate internship completion certificates.</span>
+                    <span class="tool-card-tag cyan">Certificate</span>
+                </a>
+
+                <a href="/tools/education/project-certificate.html" class="tool-card">
+                    <div class="tool-card-icon bg-violet-100 text-violet-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Project Certificate</span>
+                    <span class="tool-card-desc">Generate project completion certificates.</span>
+                    <span class="tool-card-tag violet">Certificate</span>
+                </a>
+
+                <a href="/tools/education/training-certificate.html" class="tool-card">
+                    <div class="tool-card-icon bg-fuchsia-100 text-fuchsia-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Training Certificate</span>
+                    <span class="tool-card-desc">Generate training completion certificates.</span>
+                    <span class="tool-card-tag fuchsia">Certificate</span>
+                </a>
+
+                <!-- Letters & Applications -->
+                <a href="/tools/education/study-leave-letter.html" class="tool-card">
+                    <div class="tool-card-icon bg-amber-100 text-amber-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Study Leave Letter</span>
+                    <span class="tool-card-desc">Generate study leave application letters.</span>
+                    <span class="tool-card-tag amber">Application</span>
+                </a>
+
+                <a href="/tools/education/sick-leave-application.html" class="tool-card">
+                    <div class="tool-card-icon bg-red-100 text-red-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Sick Leave Application</span>
+                    <span class="tool-card-desc">Generate sick leave applications for students.</span>
+                    <span class="tool-card-tag red">Application</span>
+                </a>
+
+                <a href="/tools/education/principal-application.html" class="tool-card">
+                    <div class="tool-card-icon bg-blue-100 text-blue-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Principal Application</span>
+                    <span class="tool-card-desc">Generate formal applications to school principals.</span>
+                    <span class="tool-card-tag blue">Application</span>
+                </a>
+
+                <a href="/tools/education/scholarship-application.html" class="tool-card">
+                    <div class="tool-card-icon bg-emerald-100 text-emerald-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Scholarship Application</span>
+                    <span class="tool-card-desc">Generate scholarship applications with achievements.</span>
+                    <span class="tool-card-tag emerald">Application</span>
+                </a>
+
+                <a href="/tools/education/recommendation-letter.html" class="tool-card">
+                    <div class="tool-card-icon bg-purple-100 text-purple-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Recommendation Letter</span>
+                    <span class="tool-card-desc">Generate recommendation letters for students.</span>
+                    <span class="tool-card-tag purple">Application</span>
+                </a>
+
+                <a href="/tools/education/academic-declaration.html" class="tool-card">
+                    <div class="tool-card-icon bg-slate-100 text-slate-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Academic Declaration</span>
+                    <span class="tool-card-desc">Generate academic declaration and undertaking letters.</span>
+                    <span class="tool-card-tag slate">Application</span>
+                </a>
+
+                <!-- Personal -->
+                <a href="/tools/education/student-bio-data.html" class="tool-card">
+                    <div class="tool-card-icon bg-teal-100 text-teal-600">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    </div>
+                    <span class="tool-card-title">Student Bio Data</span>
+                    <span class="tool-card-desc">Generate student bio data with personal details.</span>
+                    <span class="tool-card-tag teal">Personal</span>
                 </a>
             </div>
         </section>
@@ -212,7 +353,7 @@
                 </div>
                 <div class="footer-col footer-about">
                     <h4>OptiDrop</h4>
-                    <p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, productivity, travel, and more.</p>
+                    <p>Free, fast, and 100% private browser-based tools. 306+ tools for images, PDFs, resumes, invoices, calculators, developers, health, productivity, travel, and more.</p>
                     <a href="/about.html">About</a>
                     <a href="/privacy-policy.html">Privacy Policy</a>
                     <a href="/terms.html">Terms</a>

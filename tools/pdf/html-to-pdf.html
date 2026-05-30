@@ -1,0 +1,654 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to PDF Converter — Free Online Tool | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Convert HTML code to PDF online free. Paste your HTML, see a live preview, and download as PDF. Choose page size and orientation. Runs entirely in your browser — no upload required.">
+    <meta name="keywords" content="html to pdf, convert html to pdf, html to pdf online free, html to pdf converter, generate pdf from html, html code to pdf, create pdf from html">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#dc2626">
+    <meta property="og:title" content="HTML to PDF Converter — Free Online Tool | OptiDrop">
+    <meta property="og:description" content="Convert HTML code to PDF online free. Paste your HTML, see a live preview, and download as PDF. No upload — runs in your browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/pdf/html-to-pdf.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HTML to PDF Converter — Free Online Tool | OptiDrop">
+    <meta name="twitter:description" content="Convert HTML code to PDF online free. Live preview, page size & orientation options. No upload.">
+    <link rel="canonical" href="https://optidrop.online/tools/pdf/html-to-pdf.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://optidrop.online/category/pdf-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "HTML to PDF", "item": "https://optidrop.online/tools/pdf/html-to-pdf.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop HTML to PDF Converter",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Convert HTML code to PDF online free. Paste HTML, preview live, download as PDF with custom page size and orientation. Runs entirely in your browser."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the HTML to PDF converter work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our HTML to PDF converter uses the jsPDF library to render your HTML code into a PDF document entirely within your browser. You paste or write HTML on the left pane, see a live preview on the right, and click Download PDF to save the result. No server upload is involved."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What page sizes and orientations are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The converter supports two common page sizes: A4 (210 x 297 mm) and US Letter (8.5 x 11 inches). You can also choose between Portrait and Landscape orientation to best fit your content layout."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my HTML code kept private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. All conversion happens locally in your browser using JavaScript. Your HTML code is never uploaded to any server, making it completely safe for confidential content, business documents, or any private information."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I include CSS styles in my HTML?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can include inline styles, embedded style tags, and most CSS properties in your HTML code. The converter renders the styled HTML in the preview and applies the same styles when generating the PDF. Complex CSS features like Flexbox and Grid are supported through the jsPDF html() rendering engine."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Dark Mode Script (must run before body renders) -->
+    <script>(function(){try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');document.body.classList.add('dark-mode');}}catch(e){}})();</script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .html2pdf-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 500px;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+        .html2pdf-editor-pane {
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #e2e8f0;
+        }
+        .html2pdf-preview-pane {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+        .html2pdf-pane-header {
+            padding: 0.6rem 1rem;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .html2pdf-textarea {
+            flex: 1;
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+            line-height: 1.7;
+            color: #1e293b;
+            resize: none;
+            background: #fff;
+            tab-size: 2;
+        }
+        .html2pdf-preview-frame {
+            flex: 1;
+            width: 100%;
+            border: none;
+            background: #fff;
+        }
+        .html2pdf-settings {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .html2pdf-settings label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #475569;
+        }
+        .html2pdf-settings select {
+            padding: 0.4rem 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1e293b;
+            background: #fff;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .html2pdf-settings select:focus {
+            border-color: #dc2626;
+            box-shadow: 0 0 0 2px rgba(220,38,38,0.15);
+        }
+        .html2pdf-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: #dc2626;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: none;
+            border-radius: 0.625rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(220,38,38,0.3);
+        }
+        .html2pdf-download-btn:hover {
+            background: #b91c1c;
+            box-shadow: 0 4px 16px rgba(220,38,38,0.4);
+            transform: translateY(-1px);
+        }
+        .html2pdf-download-btn:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+        .html2pdf-download-btn .spinner {
+            display: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+        .html2pdf-download-btn.loading .spinner { display: inline-block; }
+        .html2pdf-download-btn.loading .btn-text { display: none; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .dark-mode .html2pdf-split { border-color: #334155; }
+        .dark-mode .html2pdf-editor-pane { border-right-color: #334155; }
+        .dark-mode .html2pdf-pane-header { background: #1e293b; border-bottom-color: #334155; color: #94a3b8; }
+        .dark-mode .html2pdf-textarea { background: #0f172a; color: #e2e8f0; }
+        .dark-mode .html2pdf-preview-pane { background: #1e293b; }
+        .dark-mode .html2pdf-settings { background: #1e293b; border-bottom-color: #334155; }
+        .dark-mode .html2pdf-settings label { color: #94a3b8; }
+        .dark-mode .html2pdf-settings select { background: #0f172a; color: #e2e8f0; border-color: #475569; }
+
+        @media (max-width: 768px) {
+            .html2pdf-split {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .html2pdf-editor-pane { border-right: none; border-bottom: 1px solid #e2e8f0; }
+            .html2pdf-textarea { min-height: 250px; }
+            .html2pdf-preview-frame { min-height: 300px; }
+            .html2pdf-settings { flex-direction: column; align-items: stretch; }
+            .html2pdf-settings > div { display: flex; justify-content: space-between; align-items: center; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER (injected by common.js) -->
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-6xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">HTML to PDF Converter — Free Online Tool</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Paste your HTML code, see a live preview, and download as a PDF document. Choose page size (A4 or Letter) and orientation (Portrait or Landscape). Everything runs in your browser — your code never leaves your device.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-6xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+
+                <!-- Settings Bar -->
+                <div class="html2pdf-settings">
+                    <div>
+                        <label for="html2pdfPageSize">Page Size</label>
+                        <select id="html2pdfPageSize">
+                            <option value="a4" selected>A4</option>
+                            <option value="letter">Letter</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="html2pdfOrientation">Orientation</label>
+                        <select id="html2pdfOrientation">
+                            <option value="portrait" selected>Portrait</option>
+                            <option value="landscape">Landscape</option>
+                        </select>
+                    </div>
+                    <div style="margin-left:auto;">
+                        <button id="html2pdfDownloadBtn" class="html2pdf-download-btn">
+                            <span class="btn-text">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download PDF
+                            </span>
+                            <span class="spinner"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Split Pane -->
+                <div class="html2pdf-split">
+                    <div class="html2pdf-editor-pane">
+                        <div class="html2pdf-pane-header">
+                            <span>HTML Code</span>
+                            <span id="html2pdfCharCount" class="text-slate-400 font-normal">0 chars</span>
+                        </div>
+                        <textarea id="html2pdfInput" class="html2pdf-textarea" spellcheck="false" placeholder="<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; }
+        h1 { color: #dc2626; }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <p>This is a sample HTML page.</p>
+</body>
+</html>"></textarea>
+                    </div>
+                    <div class="html2pdf-preview-pane">
+                        <div class="html2pdf-pane-header">
+                            <span>Live Preview</span>
+                            <span id="html2pdfStatus" class="text-green-500 font-normal">Ready</span>
+                        </div>
+                        <iframe id="html2pdfPreview" class="html2pdf-preview-frame" sandbox="allow-same-origin"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Convert HTML to PDF Online — Free, No Upload Required</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's HTML to PDF Converter is a free online tool that transforms your HTML code into a downloadable PDF document. Whether you are building an invoice template, generating a report layout, testing web designs, or creating printable documents from HTML, our tool gives you instant results. The split-pane interface shows your HTML source on the left and a live rendered preview on the right, so you can see exactly how your PDF will look before downloading.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How It Works</h3>
+                <p class="text-slate-600 mb-4">Simply paste or type your HTML code into the editor on the left side. The live preview on the right updates in real time as you type. When you are satisfied with the result, choose your preferred page size (A4 or US Letter) and orientation (Portrait or Landscape), then click Download PDF. The tool uses the jsPDF library to render your HTML into a high-quality PDF file that downloads directly to your device.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Full CSS Support</h3>
+                <p class="text-slate-600 mb-4">The converter supports inline styles, embedded style tags, and most CSS properties including fonts, colors, margins, padding, borders, backgrounds, Flexbox, and CSS Grid. This means you can create richly formatted documents with headers, tables, lists, images, and custom layouts — all from HTML and CSS code.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Private — Runs in Your Browser</h3>
+                <p class="text-slate-600">Unlike many online converters that upload your code to a remote server, OptiDrop processes everything locally in your browser using JavaScript. Your HTML code and the generated PDF never leave your device. This makes it completely safe for confidential business documents, invoices, contracts, and any sensitive content.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How does the HTML to PDF converter work?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Our HTML to PDF converter uses the jsPDF library to render your HTML code into a PDF document entirely within your browser. You paste or write HTML on the left pane, see a live preview on the right, and click Download PDF to save the result. No server upload is involved.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What page sizes and orientations are supported?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The converter supports two common page sizes: A4 (210 x 297 mm) and US Letter (8.5 x 11 inches). You can also choose between Portrait and Landscape orientation to best fit your content layout.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is my HTML code kept private?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Absolutely. All conversion happens locally in your browser using JavaScript. Your HTML code is never uploaded to any server, making it completely safe for confidential content, business documents, or any private information.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I include CSS styles in my HTML?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. You can include inline styles, embedded style tags, and most CSS properties in your HTML code. The converter renders the styled HTML in the preview and applies the same styles when generating the PDF. Complex CSS features like Flexbox and Grid are supported through the jsPDF html() rendering engine.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/pdf/markdown-to-pdf.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Markdown to PDF</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Convert Markdown text to a beautifully formatted PDF document.</span>
+            </a>
+            <a href="/tools/pdf/pdf-merger.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">PDF Merger</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Combine multiple PDF files into a single document online free.</span>
+            </a>
+            <a href="/compress-pdf.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Compress PDF</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Reduce PDF file size while maintaining quality. 100% browser-side.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Image &amp; PDF Tools</h4>
+                    <a href="/compress-image.html">Image Compressor</a>
+                    <a href="/heic-to-jpg.html">HEIC to JPG</a>
+                    <a href="/image-format-converter.html">Format Converter</a>
+                    <a href="/remove-background.html">Background Remover</a>
+                    <a href="/passport-photo-resizer.html">Photo Resizer</a>
+                    <a href="/name-date-stamp.html">Name &amp; Date Stamper</a>
+                    <a href="/signature-scanner.html">Signature Scanner</a>
+                    <a href="/image-to-text-ocr.html">Image to Text (OCR)</a>
+                    <a href="/compress-pdf.html">PDF Compressor</a>
+                    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+                    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Career Tools</h4>
+                    <a href="/tools/career/resume-builder.html">Resume Builder</a>
+                    <a href="/tools/career/cover-letter.html">Cover Letter</a>
+                    <a href="/tools/career/resignation-letter.html">Resignation Letter</a>
+                    <a href="/tools/career/thank-you-letter.html">Thank You Letter</a>
+                    <a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a>
+                    <a href="/tools/career/internship-letter.html">Internship Letter</a>
+                    <a href="/tools/career/job-tracker.html">Job Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Tools</h4>
+                    <a href="/tools/business/invoice-generator.html">Invoice Generator</a>
+                    <a href="/tools/business/freelance-contract.html">Freelance Contract</a>
+                    <a href="/tools/business/salary-slip.html">Salary Slip</a>
+                    <a href="/tools/business/business-proposal.html">Business Proposal</a>
+                    <a href="/tools/business/offer-letter.html">Offer Letter</a>
+                    <a href="/tools/business/noc-generator.html">NOC Generator</a>
+                    <a href="/tools/business/experience-letter.html">Experience Letter</a>
+                    <a href="/tools/business/profit-calculator.html">Profit Calculator</a>
+                    <a href="/tools/business/receipt-generator.html">Receipt Generator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculator Tools</h4>
+                    <a href="/tools/emi-calculator.html">EMI Calculator</a>
+                    <a href="/tools/calculators/sip-calculator.html">SIP Calculator</a>
+                    <a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a>
+                    <a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a>
+                    <a href="/tools/calculators/vat-calculator.html">VAT Calculator</a>
+                    <a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a>
+                    <a href="/tools/calculators/savings-goal.html">Savings Goal</a>
+                    <a href="/tools/calculators/compound-interest.html">Compound Interest</a>
+                    <a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developer Tools</h4>
+                    <a href="/tools/developer/json-formatter.html">JSON Formatter</a>
+                    <a href="/tools/developer/base64.html">Base64 Encoder</a>
+                    <a href="/tools/developer/url-encoder.html">URL Encoder</a>
+                    <a href="/tools/developer/color-converter.html">Color Converter</a>
+                    <a href="/tools/developer/markdown-preview.html">Markdown Preview</a>
+                    <a href="/tools/developer/hash-generator.html">Hash Generator</a>
+                    <a href="/tools/developer/css-minifier.html">CSS Minifier</a>
+                    <a href="/tools/developer/jwt-decoder.html">JWT Decoder</a>
+                </div>
+                <div class="footer-col footer-about">
+                    <h4>OptiDrop</h4>
+                    <p>Free, fast, and 100% private browser-based tools. 306+ tools for images, PDFs, resumes, invoices, calculators, developers, health, productivity, travel, and more.</p>
+                    <a href="/about.html">About</a>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var input = document.getElementById('html2pdfInput');
+        var preview = document.getElementById('html2pdfPreview');
+        var charCount = document.getElementById('html2pdfCharCount');
+        var statusEl = document.getElementById('html2pdfStatus');
+        var downloadBtn = document.getElementById('html2pdfDownloadBtn');
+        var pageSizeSel = document.getElementById('html2pdfPageSize');
+        var orientationSel = document.getElementById('html2pdfOrientation');
+        var previewTimer = null;
+
+        // Dynamic jsPDF loader
+        function loadJsPDF() {
+            if (typeof window.jspdf !== 'undefined') return Promise.resolve();
+            return new Promise(function(resolve) {
+                var s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+                s.onload = resolve;
+                s.onerror = function() { resolve(); };
+                document.head.appendChild(s);
+            });
+        }
+
+        // Update live preview
+        function updatePreview() {
+            var html = input.value;
+            charCount.textContent = html.length.toLocaleString() + ' chars';
+
+            if (!html.trim()) {
+                preview.srcdoc = '<html><body style="display:flex;align-items:center;justify-content:center;height:100%;margin:0;font-family:system-ui,sans-serif;color:#94a3b8;font-size:0.9rem;">Preview will appear here...</body></html>';
+                statusEl.textContent = 'Ready';
+                statusEl.className = 'text-slate-400 font-normal';
+                return;
+            }
+
+            try {
+                preview.srcdoc = html;
+                statusEl.textContent = 'Live';
+                statusEl.className = 'text-green-500 font-normal';
+            } catch(e) {
+                statusEl.textContent = 'Error';
+                statusEl.className = 'text-red-500 font-normal';
+            }
+        }
+
+        // Debounced preview update
+        input.addEventListener('input', function() {
+            clearTimeout(previewTimer);
+            previewTimer = setTimeout(updatePreview, 300);
+        });
+
+        // Tab key support in textarea
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                var start = this.selectionStart;
+                var end = this.selectionEnd;
+                this.value = this.value.substring(0, start) + '  ' + this.value.substring(end);
+                this.selectionStart = this.selectionEnd = start + 2;
+                updatePreview();
+            }
+        });
+
+        // Download PDF
+        downloadBtn.addEventListener('click', function() {
+            var html = input.value.trim();
+            if (!html) {
+                if (typeof showToast === 'function') showToast('Please enter some HTML code first.', 'error');
+                return;
+            }
+
+            downloadBtn.classList.add('loading');
+            downloadBtn.disabled = true;
+            statusEl.textContent = 'Generating...';
+            statusEl.className = 'text-amber-500 font-normal';
+
+            loadJsPDF().then(function() {
+                if (typeof window.jspdf === 'undefined') {
+                    if (typeof showToast === 'function') showToast('Failed to load PDF library. Please check your connection and try again.', 'error');
+                    downloadBtn.classList.remove('loading');
+                    downloadBtn.disabled = false;
+                    statusEl.textContent = 'Error';
+                    statusEl.className = 'text-red-500 font-normal';
+                    return;
+                }
+
+                var pageSize = pageSizeSel.value === 'letter' ? 'letter' : 'a4';
+                var orientation = orientationSel.value === 'landscape' ? 'landscape' : 'portrait';
+
+                var doc = new window.jspdf.jsPDF({
+                    orientation: orientation,
+                    unit: 'mm',
+                    format: pageSize
+                });
+
+                // Create a temporary container for rendering
+                var container = document.createElement('div');
+                container.style.position = 'absolute';
+                container.style.left = '-9999px';
+                container.style.top = '0';
+                container.style.width = orientation === 'landscape' ? '297mm' : '210mm';
+                if (pageSize === 'letter') {
+                    container.style.width = orientation === 'landscape' ? '279.4mm' : '215.9mm';
+                }
+                container.innerHTML = html;
+                document.body.appendChild(container);
+
+                doc.html(container, {
+                    callback: function(doc) {
+                        doc.save('document.pdf');
+                        document.body.removeChild(container);
+                        downloadBtn.classList.remove('loading');
+                        downloadBtn.disabled = false;
+                        statusEl.textContent = 'Downloaded';
+                        statusEl.className = 'text-green-500 font-normal';
+                        if (typeof showToast === 'function') showToast('PDF downloaded successfully!');
+                        setTimeout(function() {
+                            statusEl.textContent = 'Live';
+                        }, 2000);
+                    },
+                    x: 10,
+                    y: 10,
+                    width: orientation === 'landscape' ? 277 : 190,
+                    windowWidth: 800,
+                    autoPaging: 'text'
+                });
+            }).catch(function() {
+                downloadBtn.classList.remove('loading');
+                downloadBtn.disabled = false;
+                statusEl.textContent = 'Error';
+                statusEl.className = 'text-red-500 font-normal';
+                if (typeof showToast === 'function') showToast('An error occurred while generating the PDF.', 'error');
+            });
+        });
+
+        // Initialize preview
+        updatePreview();
+    })();
+    </script>
+</body>
+</html>

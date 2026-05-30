@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watermark Creator — Add Watermark to Images | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Add text watermarks to images online. Choose tile, center, or corner positioning. Adjust opacity, color, font size, and rotation. Free and private.">
+    <meta name="keywords" content="watermark creator, add watermark, text watermark, image watermark, watermark tool, photo watermark, free watermark maker, watermark online">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Watermark Creator — Add Watermark to Images | OptiDrop">
+    <meta property="og:description" content="Add text watermarks to images online. Choose tile, center, or corner. Adjust opacity, color, size, and rotation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/design/watermark-creator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Watermark Creator — Add Watermark to Images | OptiDrop">
+    <meta name="twitter:description" content="Add text watermarks to images. Tile, center, or corner. Adjustable opacity, color, size, rotation.">
+    <link rel="canonical" href="https://optidrop.online/tools/design/watermark-creator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Design Tools", "item": "https://optidrop.online/tools/design/"},
+        {"@type": "ListItem", "position": 3, "name": "Watermark Creator", "item": "https://optidrop.online/tools/design/watermark-creator.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Watermark Creator",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online watermark creator. Add text watermarks to images with tile, center, or corner positioning. Adjustable opacity, color, size, and rotation."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I add a watermark to an image?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upload your image, type your watermark text, choose position (tile, center, or corner), adjust opacity, color, font size, and rotation. Click 'Download Watermarked Image' to save."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the tile watermark option?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tile option repeats the watermark text across the entire image in a diagonal pattern. This is ideal for maximum protection against unauthorized use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I adjust the watermark opacity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can set the opacity from 10% to 100%. Lower opacity makes the watermark more subtle while higher opacity makes it more visible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my images uploaded to your server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All image processing happens in your browser using the Canvas API. Your images are never uploaded or stored on any server."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .control-group { margin-bottom: 1rem; }
+        .control-group label { display: block; font-size: 0.8rem; font-weight: 700; color: #475569; margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.03em; }
+        .dark-mode .control-group label { color: #94a3b8; }
+        .control-group input[type="range"] { width: 100%; height: 6px; border-radius: 3px; background: #e2e8f0; appearance: none; cursor: pointer; accent-color: #2563eb; }
+        .control-group .range-value { font-size: 0.8rem; font-weight: 700; color: #2563eb; float: right; }
+        .wm-preview { max-width: 100%; max-height: 400px; border-radius: 0.75rem; border: 2px solid #e2e8f0; display: block; margin: 0 auto; }
+        .dark-mode .wm-preview { border-color: #334155; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/tools/design/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    Design Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/tools/design/" onclick="this.parentElement.classList.remove('open')">Design Tools</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Watermark Creator — Add Watermark to Images</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Add text watermarks to your images. Choose tile, center, or corner positioning. Adjust opacity, color, font size, and rotation. 100% free and private.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div id="uploadArea" class="dropzone border-2 border-dashed border-slate-300 rounded-2xl p-10 text-center cursor-pointer mb-6" style="min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                        <svg class="w-12 h-12 text-slate-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        <p class="text-slate-600 font-semibold mb-1">Drop an image here or click to upload</p>
+                        <p class="text-slate-400 text-sm">JPG, PNG, WebP supported</p>
+                        <input type="file" id="fileInput" accept="image/*" class="hidden">
+                    </div>
+
+                    <div id="toolControls" style="display:none;">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div>
+                                <div class="control-group">
+                                    <label for="wmText">Watermark Text</label>
+                                    <input type="text" id="wmText" value="SAMPLE" maxlength="40" class="w-full px-4 py-2.5 text-sm border-2 border-slate-200 rounded-xl focus:border-blue-500 transition-colors text-slate-900 font-semibold">
+                                </div>
+
+                                <div class="control-group">
+                                    <label for="wmPosition">Position</label>
+                                    <select id="wmPosition" class="settings-select">
+                                        <option value="tile" selected>Tile (repeated)</option>
+                                        <option value="center">Center</option>
+                                        <option value="top-left">Top Left</option>
+                                        <option value="top-right">Top Right</option>
+                                        <option value="bottom-left">Bottom Left</option>
+                                        <option value="bottom-right">Bottom Right</option>
+                                    </select>
+                                </div>
+
+                                <div class="control-group">
+                                    <label>Font Size <span class="range-value" id="wmSizeVal">36px</span></label>
+                                    <input type="range" id="wmSize" min="12" max="120" value="36">
+                                </div>
+
+                                <div class="control-group">
+                                    <label for="wmColor">Text Color</label>
+                                    <div class="flex items-center gap-3">
+                                        <input type="color" id="wmColor" value="#ffffff" class="w-12 h-10 border-2 border-slate-200 rounded-lg cursor-pointer">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label>Opacity <span class="range-value" id="wmOpacityVal">30%</span></label>
+                                    <input type="range" id="wmOpacity" min="5" max="100" value="30">
+                                </div>
+
+                                <div class="control-group">
+                                    <label>Rotation <span class="range-value" id="wmRotationVal">-30</span></label>
+                                    <input type="range" id="wmRotation" min="-90" max="90" value="-30">
+                                </div>
+
+                                <div class="flex flex-col gap-3 mt-6">
+                                    <button onclick="downloadWatermarked()" class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                        Download Watermarked Image
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Preview</label>
+                                <canvas id="previewCanvas" class="wm-preview w-full"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Image Watermark Creator</h2>
+                <p class="text-slate-600 mb-4">Protect your images with text watermarks using our free online tool. Choose from tile (repeated across the image), center, or corner positioning. Adjust opacity, color, font size, and rotation for the perfect watermark.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Tile Watermark for Maximum Protection</h3>
+                <p class="text-slate-600 mb-4">The tile option repeats your watermark text diagonally across the entire image, making it nearly impossible to remove. This is the best option for protecting your photos and artwork online.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Customizable Appearance</h3>
+                <p class="text-slate-600 mb-4">Fine-tune every aspect of your watermark: text, color, font size, opacity (from subtle to prominent), and rotation angle. The live preview updates as you make changes.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Browser-Based Processing</h3>
+                <p class="text-slate-600">Your images are processed entirely in your browser. No uploads, no servers, complete privacy.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I add a watermark to an image?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Upload your image, type your watermark text, choose position (tile, center, or corner), adjust opacity, color, font size, and rotation. Click Download to save.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the tile watermark option?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The tile option repeats the watermark text across the entire image in a diagonal pattern. This is ideal for maximum protection against unauthorized use.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I adjust the watermark opacity?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, you can set the opacity from 5% to 100%. Lower opacity makes the watermark more subtle while higher opacity makes it more visible.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Are my images uploaded to your server?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        No. All image processing happens in your browser using the Canvas API. Your images are never uploaded or stored on any server.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/design/image-stamp-tool.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Image Stamp Tool</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Add date and time stamps to your images.</span>
+            </a>
+            <a href="/tools/design/signature-drawer.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Signature Drawer</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Draw your signature with mouse or touch.</span>
+            </a>
+            <a href="/tools/design/document-cropper.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Document Cropper</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Crop documents from photos easily.</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 306+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <div id="toast-container"></div>
+
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var uploadArea = document.getElementById('uploadArea');
+        var fileInput = document.getElementById('fileInput');
+        var toolControls = document.getElementById('toolControls');
+        var canvas = document.getElementById('previewCanvas');
+        var ctx = canvas.getContext('2d');
+        var loadedImg = null;
+
+        setupDropzone(uploadArea, fileInput, function(files) {
+            if (files && files.length > 0) loadFile(files[0]);
+        });
+
+        function loadFile(file) {
+            if (!file.type.startsWith('image/')) { showToast('Please upload an image file', 'error'); return; }
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var img = new Image();
+                img.onload = function() {
+                    loadedImg = img;
+                    uploadArea.style.display = 'none';
+                    toolControls.style.display = '';
+                    applyWatermark(canvas, ctx);
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function applyWatermark(targetCanvas, targetCtx) {
+            if (!loadedImg) return;
+
+            targetCanvas.width = loadedImg.width;
+            targetCanvas.height = loadedImg.height;
+            targetCtx.drawImage(loadedImg, 0, 0);
+
+            var text = document.getElementById('wmText').value || 'WATERMARK';
+            var position = document.getElementById('wmPosition').value;
+            var fontSize = parseInt(document.getElementById('wmSize').value);
+            var color = document.getElementById('wmColor').value;
+            var opacity = parseInt(document.getElementById('wmOpacity').value) / 100;
+            var rotation = parseInt(document.getElementById('wmRotation').value);
+
+            document.getElementById('wmSizeVal').textContent = fontSize + 'px';
+            document.getElementById('wmOpacityVal').textContent = Math.round(opacity * 100) + '%';
+            document.getElementById('wmRotationVal').textContent = rotation;
+
+            targetCtx.globalAlpha = opacity;
+            targetCtx.font = 'bold ' + fontSize + 'px Inter, sans-serif';
+            targetCtx.fillStyle = color;
+
+            if (position === 'tile') {
+                // Tile watermark
+                var textWidth = targetCtx.measureText(text).width;
+                var spacingX = textWidth + fontSize * 4;
+                var spacingY = fontSize * 5;
+
+                targetCtx.save();
+                targetCtx.translate(loadedImg.width / 2, loadedImg.height / 2);
+                targetCtx.rotate(rotation * Math.PI / 180);
+
+                var diag = Math.sqrt(loadedImg.width * loadedImg.width + loadedImg.height * loadedImg.height);
+                var startX = -diag;
+                var startY = -diag;
+
+                for (var y = startY; y < diag; y += spacingY) {
+                    for (var x = startX; x < diag; x += spacingX) {
+                        targetCtx.fillText(text, x, y);
+                    }
+                }
+                targetCtx.restore();
+            } else {
+                // Single watermark
+                var textW = targetCtx.measureText(text).width;
+                var padding = fontSize * 0.8;
+                var x, y;
+
+                switch(position) {
+                    case 'center':
+                        x = (loadedImg.width - textW) / 2;
+                        y = loadedImg.height / 2;
+                        break;
+                    case 'top-left':
+                        x = padding;
+                        y = padding + fontSize;
+                        break;
+                    case 'top-right':
+                        x = loadedImg.width - textW - padding;
+                        y = padding + fontSize;
+                        break;
+                    case 'bottom-left':
+                        x = padding;
+                        y = loadedImg.height - padding;
+                        break;
+                    case 'bottom-right':
+                        x = loadedImg.width - textW - padding;
+                        y = loadedImg.height - padding;
+                        break;
+                    default:
+                        x = (loadedImg.width - textW) / 2;
+                        y = loadedImg.height / 2;
+                }
+
+                // Shadow for visibility
+                targetCtx.shadowColor = 'rgba(0,0,0,0.3)';
+                targetCtx.shadowBlur = 4;
+                targetCtx.shadowOffsetX = 1;
+                targetCtx.shadowOffsetY = 1;
+
+                if (position === 'center') {
+                    targetCtx.save();
+                    targetCtx.translate(x + textW / 2, y);
+                    targetCtx.rotate(rotation * Math.PI / 180);
+                    targetCtx.fillText(text, -textW / 2, 0);
+                    targetCtx.restore();
+                } else {
+                    targetCtx.fillText(text, x, y);
+                }
+            }
+
+            targetCtx.globalAlpha = 1;
+            targetCtx.shadowColor = 'transparent';
+        }
+
+        function updatePreview() {
+            applyWatermark(canvas, ctx);
+        }
+
+        function downloadWatermarked() {
+            if (!loadedImg) { showToast('Please upload an image first', 'error'); return; }
+
+            var exportCanvas = document.createElement('canvas');
+            var exportCtx = exportCanvas.getContext('2d');
+            applyWatermark(exportCanvas, exportCtx);
+
+            var link = document.createElement('a');
+            link.download = 'watermarked-image.jpg';
+            link.href = exportCanvas.toDataURL('image/jpeg', 0.92);
+            link.click();
+            showToast('Watermarked image downloaded!');
+        }
+        window.downloadWatermarked = downloadWatermarked;
+
+        ['wmText','wmPosition','wmSize','wmColor','wmOpacity','wmRotation'].forEach(function(id) {
+            document.getElementById(id).addEventListener('input', updatePreview);
+        });
+    })();
+    </script>
+</body>
+</html>

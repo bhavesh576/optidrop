@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet Generator — Free Online Tool | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Generate mark sheets online free. Add subjects with marks, auto-calculate percentage and grade, preview the marksheet, and download as PDF. No sign-up required.">
+    <meta name="keywords" content="marksheet generator, mark sheet generator, marks card generator, grade calculator, percentage calculator, student marksheet, free marksheet maker, exam marksheet">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Marksheet Generator — Free Online Tool | OptiDrop">
+    <meta property="og:description" content="Generate mark sheets online free. Add subjects with marks, auto-calculate percentage and grade, preview, and download as PDF.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/education/marksheet-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marksheet Generator — Free Online Tool | OptiDrop">
+    <meta name="twitter:description" content="Generate mark sheets online free. Add subjects with marks, auto-calculate percentage and grade, download as PDF.">
+    <link rel="canonical" href="https://optidrop.online/tools/education/marksheet-generator.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Education Tools","item":"https://optidrop.online/category/education-tools.html"},{"@type":"ListItem","position":3,"name":"Marksheet Generator","item":"https://optidrop.online/tools/education/marksheet-generator.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Marksheet Generator","applicationCategory":"EducationalApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generate mark sheets online free. Add subjects with marks, auto-calculate percentage and grade, preview, and download as PDF."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the marksheet generator work?","acceptedAnswer":{"@type":"Answer","text":"Enter the student's name, institution, exam name, and add subjects with their marks obtained and total marks. The tool automatically calculates the total marks, percentage, and assigns a grade based on the percentage. You can then preview and download the marksheet as a PDF."}},{"@type":"Question","name":"How is the grade calculated?","acceptedAnswer":{"@type":"Answer","text":"Grades are assigned based on the percentage: 90% and above is A+, 80-89% is A, 70-79% is B+, 60-69% is B, 50-59% is C, 40-49% is D, and below 40% is F (Fail). This grading scale follows a common standard used by many educational boards."}},{"@type":"Question","name":"Can I add multiple subjects?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can add as many subjects as needed. Click the 'Add Subject' button to add new rows. Each row has fields for the subject name, marks obtained, and total marks. You can also remove any subject row by clicking the remove button."}},{"@type":"Question","name":"Is the marksheet generator suitable for all education boards?","acceptedAnswer":{"@type":"Answer","text":"The generator creates a general-purpose marksheet format that works for most education boards including CBSE, ICSE, state boards, and universities. You can customize the institution name, exam name, and other fields to match your specific board's requirements."}}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/tools/education/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    Education Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/tools/education/" onclick="this.parentElement.classList.remove('open')">Education Tools</a>
+            <a href="/tools.html" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Marksheet Generator</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Generate professional mark sheets with subject-wise marks. Add subjects, enter marks obtained and total marks, and the tool auto-calculates percentage and grade. Preview and download as PDF.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Form -->
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-800 dark:text-white mb-4">Marksheet Details</h2>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Student Name</label>
+                                    <input type="text" id="studentName" placeholder="e.g. Ananya Singh" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Institution Name</label>
+                                    <input type="text" id="institution" placeholder="e.g. Delhi Public School" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none">
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Roll Number</label>
+                                        <input type="text" id="rollNumber" placeholder="e.g. 101" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Exam Name</label>
+                                        <input type="text" id="examName" placeholder="e.g. Final Exam 2024-25" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none">
+                                    </div>
+                                </div>
+
+                                <!-- Subjects Table -->
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Subjects &amp; Marks</label>
+                                    <div id="subjectsList" class="space-y-2"></div>
+                                    <button onclick="addSubject()" class="mt-3 px-4 py-2 text-sm font-bold text-brand-600 bg-brand-50 dark:bg-brand-900/30 dark:text-brand-400 rounded-lg hover:bg-brand-100 dark:hover:bg-brand-900/50 transition inline-flex items-center gap-1">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                                        Add Subject
+                                    </button>
+                                </div>
+
+                                <!-- Summary -->
+                                <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-4 space-y-2">
+                                    <div class="flex justify-between text-sm font-semibold text-slate-600 dark:text-slate-400">
+                                        <span>Total Marks:</span>
+                                        <span id="totalDisplay">0 / 0</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm font-semibold text-slate-600 dark:text-slate-400">
+                                        <span>Percentage:</span>
+                                        <span id="percentDisplay">0%</span>
+                                    </div>
+                                    <div class="border-t border-slate-300 dark:border-slate-600 my-1"></div>
+                                    <div class="flex justify-between text-lg font-extrabold text-slate-900 dark:text-white">
+                                        <span>Grade:</span>
+                                        <span id="gradeDisplay">-</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Date of Issue</label>
+                                    <input type="date" id="issueDate" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none">
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-3 mt-6">
+                                <button onclick="generatePreview()" class="px-5 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-sm font-semibold transition flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                    Preview
+                                </button>
+                                <button onclick="downloadPDF()" class="px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-sm font-semibold transition flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                    Download PDF
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Preview -->
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-800 dark:text-white mb-4">Live Preview</h2>
+                            <div id="previewArea" class="bg-white border-2 border-slate-200 dark:border-slate-700 rounded-xl p-6 min-h-[400px] text-sm text-slate-800 leading-relaxed overflow-x-auto">
+                                <div class="text-center mb-4">
+                                    <h3 class="text-lg font-bold uppercase tracking-wider">Marksheet</h3>
+                                </div>
+                                <p id="previewContent" class="text-slate-500 italic text-center mt-16">Fill in the details and add subjects, then click Preview to see the marksheet here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Online Marksheet Generator</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Our marksheet generator helps students, teachers, and educational institutions create professional mark sheets quickly and easily. Simply enter the student's details, add subjects with marks obtained and total marks, and the tool automatically calculates the overall percentage and assigns a grade.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">Automatic Grade Calculation</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4">The tool uses a standard grading scale: A+ (90%+), A (80-89%), B+ (70-79%), B (60-69%), C (50-59%), D (40-49%), and F (below 40%). This grading system is widely recognized and follows common academic standards used by many education boards.</p>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">How to Use This Tool</h3>
+                <p class="text-slate-600 dark:text-slate-400">Enter the student's name, institution, roll number, and exam name. Then add subjects one by one, entering the marks obtained and total marks for each. The summary section shows the running total, percentage, and grade in real-time. When ready, preview the marksheet and download it as a PDF.</p>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">How does the marksheet generator work?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">Enter the student's name, institution, exam name, and add subjects with their marks obtained and total marks. The tool automatically calculates the total marks, percentage, and assigns a grade based on the percentage. You can then preview and download the marksheet as a PDF.</div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">How is the grade calculated?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">Grades are assigned based on the percentage: 90% and above is A+, 80-89% is A, 70-79% is B+, 60-69% is B, 50-59% is C, 40-49% is D, and below 40% is F (Fail). This grading scale follows a common standard used by many educational boards.</div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">Can I add multiple subjects?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">Yes, you can add as many subjects as needed. Click the 'Add Subject' button to add new rows. Each row has fields for the subject name, marks obtained, and total marks. You can also remove any subject row by clicking the remove button.</div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 font-semibold text-slate-800 dark:text-slate-200">Is the marksheet generator suitable for all education boards?<svg class="w-5 h-5 transition-transform group-open:rotate-180 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                    <div class="px-4 pb-4 text-slate-600 dark:text-slate-400">The generator creates a general-purpose marksheet format that works for most education boards including CBSE, ICSE, state boards, and universities. You can customize the institution name, exam name, and other fields to match your specific board's requirements.</div>
+                </details>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="/tools/education/bonafide-certificate.html" class="glass-panel rounded-xl p-5 hover:shadow-lg transition group">
+                    <h3 class="font-semibold text-slate-800 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition">Bonafide Certificate Generator</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Generate bonafide certificates for students.</p>
+                </a>
+                <a href="/tools/education/internship-certificate.html" class="glass-panel rounded-xl p-5 hover:shadow-lg transition group">
+                    <h3 class="font-semibold text-slate-800 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition">Internship Certificate Generator</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Generate internship completion certificates.</p>
+                </a>
+                <a href="/tools/education/gpa-calculator.html" class="glass-panel rounded-xl p-5 hover:shadow-lg transition group">
+                    <h3 class="font-semibold text-slate-800 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition">GPA Calculator</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Calculate your grade point average easily.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner"><div class="footer-grid"><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 252+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><p style="margin-top:0.75rem;font-size:0.75rem;color:#94a3b8;">&copy; <span id="year"></span> OptiDrop. All rights reserved.</p></div><div class="footer-col"><h4>Quick Links</h4><a href="/">Home</a><a href="/tools.html">All Tools</a><a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy Policy</a></div><div class="footer-col"><h4>Top Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/emi-calculator.html">EMI Calculator</a></div><div class="footer-col"><h4>Categories</h4><div style="display:grid;grid-template-columns:1fr 1fr;gap:0;"><a href="/category/image-tools.html">Image Tools</a><a href="/category/pdf-tools.html">PDF Tools</a><a href="/category/text-tools.html">Text Tools</a><a href="/category/career-tools.html">Career Tools</a><a href="/category/business-tools.html">Business Tools</a><a href="/category/professional-tools.html">Professional</a><a href="/category/calculator-tools.html">Calculators</a><a href="/category/developer-tools.html">Developer</a><a href="/category/utility-tools.html">Utility</a><a href="/category/health-tools.html">Health</a><a href="/category/education-tools.html">Education</a><a href="/category/fitness-tools.html">Fitness</a></div></div><div class="footer-col"><h4>Trust</h4><a href="/privacy-policy.html" style="display:flex;align-items:center;gap:0.375rem;">&#10003; 100% Private</a><a href="/about.html" style="display:flex;align-items:center;gap:0.375rem;">&#10003; No Upload Required</a><a href="/about.html" style="display:flex;align-items:center;gap:0.375rem;">&#10003; No Sign-Up</a><a href="/about.html" style="display:flex;align-items:center;gap:0.375rem;">&#10003; Works Globally</a></div></div><div class="footer-bottom"><p></p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div></div></div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var subjectCount = 0;
+
+        function escAttr(s) { return String(s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+        function formatDate(d) { return d ? new Date(d).toLocaleDateString('en-IN', {day:'2-digit',month:'long',year:'numeric'}) : '__________'; }
+
+        function getGrade(pct) {
+            if (pct >= 90) return 'A+';
+            if (pct >= 80) return 'A';
+            if (pct >= 70) return 'B+';
+            if (pct >= 60) return 'B';
+            if (pct >= 50) return 'C';
+            if (pct >= 40) return 'D';
+            return 'F';
+        }
+
+        function addSubject(name, obtained, total) {
+            subjectCount++;
+            var container = document.getElementById('subjectsList');
+            var div = document.createElement('div');
+            div.className = 'flex gap-2 items-center';
+            div.setAttribute('data-id', subjectCount);
+            div.innerHTML =
+                '<input type="text" placeholder="Subject" value="' + escAttr(name || '') + '" class="flex-1 px-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 outline-none subj-name">' +
+                '<input type="number" placeholder="Obtained" min="0" value="' + escAttr(obtained || '') + '" style="width:85px" class="px-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 outline-none text-center subj-obtained">' +
+                '<input type="number" placeholder="Total" min="0" value="' + escAttr(total || '') + '" style="width:85px" class="px-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-brand-500 outline-none text-center subj-total">' +
+                '<button onclick="this.parentElement.remove();recalculate();" class="text-red-500 hover:text-red-700 p-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button>';
+            container.appendChild(div);
+            div.querySelector('.subj-obtained').addEventListener('input', recalculate);
+            div.querySelector('.subj-total').addEventListener('input', recalculate);
+            recalculate();
+        }
+
+        function getSubjects() {
+            var subjects = [];
+            document.getElementById('subjectsList').querySelectorAll('.flex').forEach(function(row) {
+                var name = row.querySelector('.subj-name').value.trim();
+                var obtained = parseFloat(row.querySelector('.subj-obtained').value) || 0;
+                var total = parseFloat(row.querySelector('.subj-total').value) || 0;
+                if (name) subjects.push({name: name, obtained: obtained, total: total});
+            });
+            return subjects;
+        }
+
+        function recalculate() {
+            var subjects = getSubjects();
+            var totalObtained = 0, totalMax = 0;
+            subjects.forEach(function(s) { totalObtained += s.obtained; totalMax += s.total; });
+            var pct = totalMax > 0 ? (totalObtained / totalMax * 100) : 0;
+            document.getElementById('totalDisplay').textContent = totalObtained + ' / ' + totalMax;
+            document.getElementById('percentDisplay').textContent = pct.toFixed(2) + '%';
+            document.getElementById('gradeDisplay').textContent = subjects.length > 0 ? getGrade(pct) : '-';
+        }
+
+        function generatePreview() {
+            var studentName = document.getElementById('studentName').value.trim();
+            var institution = document.getElementById('institution').value.trim();
+            if (!studentName || !institution) { showToast('Please fill in student name and institution.', 'error'); return; }
+            var subjects = getSubjects();
+            if (subjects.length === 0) { showToast('Please add at least one subject.', 'error'); return; }
+
+            var totalObtained = 0, totalMax = 0;
+            subjects.forEach(function(s) { totalObtained += s.obtained; totalMax += s.total; });
+            var pct = totalMax > 0 ? (totalObtained / totalMax * 100) : 0;
+            var grade = getGrade(pct);
+            var dateStr = formatDate(document.getElementById('issueDate').value);
+            var rollNum = document.getElementById('rollNumber').value.trim();
+            var examName = document.getElementById('examName').value.trim();
+
+            var rows = '';
+            subjects.forEach(function(s, i) {
+                var sp = s.total > 0 ? (s.obtained / s.total * 100).toFixed(1) : '0.0';
+                rows += '<tr style="border-bottom:1px solid #e2e8f0;">' +
+                    '<td style="padding:8px 12px;">' + (i+1) + '</td>' +
+                    '<td style="padding:8px 12px;">' + escAttr(s.name) + '</td>' +
+                    '<td style="padding:8px 12px;text-align:center;">' + s.obtained + '</td>' +
+                    '<td style="padding:8px 12px;text-align:center;">' + s.total + '</td>' +
+                    '<td style="padding:8px 12px;text-align:center;">' + sp + '%</td>' +
+                    '</tr>';
+            });
+
+            var html = '<div style="border:3px double #1e3a8a;padding:20px;border-radius:8px;">' +
+                '<div style="text-align:center;margin-bottom:12px;">' +
+                    '<h2 style="font-size:18px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#1e3a8a;margin:0;">' + escAttr(institution) + '</h2>' +
+                    '<p style="font-size:11px;color:#64748b;margin:4px 0 0;">Marksheet - ' + escAttr(examName || 'Examination') + '</p>' +
+                '</div>' +
+                '<div style="border-top:2px solid #1e3a8a;margin-bottom:12px;"></div>' +
+                '<div style="display:flex;justify-content:space-between;margin-bottom:12px;font-size:12px;">' +
+                    '<span><strong>Student:</strong> ' + escAttr(studentName) + '</span>' +
+                    (rollNum ? '<span><strong>Roll No:</strong> ' + escAttr(rollNum) + '</span>' : '') +
+                    '<span><strong>Date:</strong> ' + dateStr + '</span>' +
+                '</div>' +
+                '<table style="width:100%;border-collapse:collapse;font-size:12px;margin-bottom:12px;">' +
+                    '<thead><tr style="background:#1e3a8a;color:white;">' +
+                        '<th style="padding:8px 12px;text-align:left;">#</th>' +
+                        '<th style="padding:8px 12px;text-align:left;">Subject</th>' +
+                        '<th style="padding:8px 12px;text-align:center;">Obtained</th>' +
+                        '<th style="padding:8px 12px;text-align:center;">Total</th>' +
+                        '<th style="padding:8px 12px;text-align:center;">%</th>' +
+                    '</tr></thead>' +
+                    '<tbody>' + rows + '</tbody>' +
+                    '<tfoot><tr style="background:#f1f5f9;font-weight:bold;border-top:2px solid #1e3a8a;">' +
+                        '<td style="padding:8px 12px;" colspan="2">Total</td>' +
+                        '<td style="padding:8px 12px;text-align:center;">' + totalObtained + '</td>' +
+                        '<td style="padding:8px 12px;text-align:center;">' + totalMax + '</td>' +
+                        '<td style="padding:8px 12px;text-align:center;">' + pct.toFixed(2) + '%</td>' +
+                    '</tr></tfoot>' +
+                '</table>' +
+                '<div style="display:flex;justify-content:space-between;align-items:center;border-top:2px solid #1e3a8a;padding-top:12px;">' +
+                    '<div><strong>Percentage:</strong> ' + pct.toFixed(2) + '%</div>' +
+                    '<div style="font-size:20px;font-weight:800;color:#1e3a8a;">Grade: ' + grade + '</div>' +
+                '</div>' +
+                '<div style="margin-top:30px;display:flex;justify-content:space-between;">' +
+                    '<div><p style="font-size:10px;color:#64748b;">Student Signature</p><div style="border-bottom:1px solid #94a3b8;width:100px;margin-top:30px;"></div></div>' +
+                    '<div style="text-align:right;"><p style="font-size:10px;color:#64748b;">Authorized Signatory</p><div style="border-bottom:1px solid #94a3b8;width:100px;margin-top:30px;"></div></div>' +
+                '</div>' +
+            '</div>';
+
+            document.getElementById('previewContent').style.display = 'none';
+            var previewArea = document.getElementById('previewArea');
+            var existingContent = previewArea.querySelector('.cert-preview');
+            if (existingContent) existingContent.remove();
+            var div = document.createElement('div');
+            div.className = 'cert-preview';
+            div.innerHTML = html;
+            previewArea.appendChild(div);
+            showToast('Preview generated!', 'success');
+        }
+
+        async function downloadPDF() {
+            var studentName = document.getElementById('studentName').value.trim();
+            var institution = document.getElementById('institution').value.trim();
+            if (!studentName || !institution) { showToast('Please fill in student name and institution.', 'error'); return; }
+            var subjects = getSubjects();
+            if (subjects.length === 0) { showToast('Please add at least one subject.', 'error'); return; }
+
+            showToast('Preparing PDF engine...');
+            await loadJsPDF();
+            var jsPDF = window.jspdf.jsPDF;
+            var doc = new jsPDF();
+
+            var totalObtained = 0, totalMax = 0;
+            subjects.forEach(function(s) { totalObtained += s.obtained; totalMax += s.total; });
+            var pct = totalMax > 0 ? (totalObtained / totalMax * 100) : 0;
+            var grade = getGrade(pct);
+            var dateStr = formatDate(document.getElementById('issueDate').value);
+            var rollNum = document.getElementById('rollNumber').value.trim();
+            var examName = document.getElementById('examName').value.trim();
+
+            // Border
+            doc.setDrawColor(30, 58, 138);
+            doc.setLineWidth(0.5);
+            doc.rect(12, 12, 186, 272);
+            doc.setLineWidth(0.2);
+            doc.rect(15, 15, 180, 266);
+
+            // Header
+            doc.setFontSize(20);
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(30, 58, 138);
+            doc.text(institution, 105, 35, {align:'center'});
+
+            doc.setFontSize(12);
+            doc.text('MARKSHEET', 105, 45, {align:'center'});
+            doc.setFontSize(10);
+            doc.setFont('helvetica', 'normal');
+            doc.setTextColor(100, 100, 100);
+            doc.text(examName || 'Examination', 105, 52, {align:'center'});
+
+            doc.setDrawColor(30, 58, 138);
+            doc.setLineWidth(0.8);
+            doc.line(25, 56, 185, 56);
+
+            // Student info
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Student Name:', 25, 66);
+            doc.setFont('helvetica', 'normal');
+            doc.text(studentName, 60, 66);
+            if (rollNum) {
+                doc.setFont('helvetica', 'bold');
+                doc.text('Roll No:', 130, 66);
+                doc.setFont('helvetica', 'normal');
+                doc.text(rollNum, 152, 66);
+            }
+            doc.setFont('helvetica', 'normal');
+            doc.text('Date: ' + dateStr, 130, 73);
+
+            // Table header
+            var y = 82;
+            doc.setFillColor(30, 58, 138);
+            doc.rect(25, y, 160, 8, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(9);
+            doc.text('#', 28, y + 5.5);
+            doc.text('Subject', 38, y + 5.5);
+            doc.text('Obtained', 115, y + 5.5);
+            doc.text('Total', 140, y + 5.5);
+            doc.text('%', 165, y + 5.5);
+            y += 10;
+
+            // Table rows
+            doc.setTextColor(33, 33, 33);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(10);
+            subjects.forEach(function(s, i) {
+                var sp = s.total > 0 ? (s.obtained / s.total * 100).toFixed(1) : '0.0';
+                if (i % 2 === 0) {
+                    doc.setFillColor(241, 245, 249);
+                    doc.rect(25, y - 4, 160, 7, 'F');
+                }
+                doc.text(String(i + 1), 28, y);
+                doc.text(s.name.substring(0, 35), 38, y);
+                doc.text(String(s.obtained), 120, y);
+                doc.text(String(s.total), 145, y);
+                doc.text(sp + '%', 165, y);
+                y += 7;
+                if (y > 250) { doc.addPage(); y = 25; }
+            });
+
+            // Total row
+            y += 2;
+            doc.setDrawColor(30, 58, 138);
+            doc.setLineWidth(0.5);
+            doc.line(25, y, 185, y);
+            y += 7;
+            doc.setFont('helvetica', 'bold');
+            doc.setFillColor(241, 245, 249);
+            doc.rect(25, y - 4, 160, 8, 'F');
+            doc.text('TOTAL', 38, y);
+            doc.text(String(totalObtained), 120, y);
+            doc.text(String(totalMax), 145, y);
+            doc.text(pct.toFixed(2) + '%', 165, y);
+
+            // Grade
+            y += 15;
+            doc.setFillColor(30, 58, 138);
+            doc.roundedRect(120, y - 6, 65, 18, 3, 3, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(14);
+            doc.text('Grade: ' + grade, 152, y + 5, {align:'center'});
+
+            // Signatures
+            y += 30;
+            doc.setTextColor(100, 100, 100);
+            doc.setFontSize(9);
+            doc.setFont('helvetica', 'normal');
+            doc.text('Student Signature', 30, y + 20);
+            doc.text('Authorized Signatory', 150, y + 20);
+            doc.setDrawColor(150, 150, 150);
+            doc.setLineWidth(0.3);
+            doc.line(30, y + 15, 80, y + 15);
+            doc.line(150, y + 15, 195, y + 15);
+
+            doc.save('Marksheet_' + studentName.replace(/\s+/g, '_') + '.pdf');
+            showToast('Marksheet PDF downloaded!');
+        }
+
+        // Initialize with default subjects
+        addSubject('', '', '');
+        addSubject('', '', '');
+        addSubject('', '', '');
+        document.getElementById('issueDate').valueAsDate = new Date();
+    })();
+    </script>
+</body>
+</html>
