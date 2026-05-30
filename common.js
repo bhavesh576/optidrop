@@ -40,7 +40,7 @@ var _ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1
                             '<div class="mega-menu-group"><h3>Document Tools</h3>' +
                                 '<a href="/category/image-tools.html" class="mega-menu-item"><span class="mm-emoji">🖼️</span><span class="mm-info"><span class="mm-name">Image Tools</span><span class="mm-count">8 tools</span></span></a>' +
                                 '<a href="/category/pdf-tools.html" class="mega-menu-item"><span class="mm-emoji">📄</span><span class="mm-info"><span class="mm-name">PDF Tools</span><span class="mm-count">3 tools</span></span></a>' +
-                                '<a href="/category/text-tools.html" class="mega-menu-item"><span class="mm-emoji">📝</span><span class="mm-info"><span class="mm-name">Text Tools</span><span class="mm-count">14 tools</span></span></a>' +
+                                '<a href="/category/text-tools.html" class="mega-menu-item"><span class="mm-emoji">📝</span><span class="mm-info"><span class="mm-name">Text Tools</span><span class="mm-count">15 tools</span></span></a>' +
                             '</div>' +
                             '<div class="mega-menu-group"><h3>Work Tools</h3>' +
                                 '<a href="/category/career-tools.html" class="mega-menu-item"><span class="mm-emoji">💼</span><span class="mm-info"><span class="mm-name">Career & Resume</span><span class="mm-count">7 tools</span></span></a>' +
@@ -48,23 +48,23 @@ var _ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1
                                 '<a href="/category/professional-tools.html" class="mega-menu-item"><span class="mm-emoji">👔</span><span class="mm-info"><span class="mm-name">Professional Tools</span><span class="mm-count">4 tools</span></span></a>' +
                             '</div>' +
                             '<div class="mega-menu-group"><h3>Calculators & Tech</h3>' +
-                                '<a href="/category/calculator-tools.html" class="mega-menu-item"><span class="mm-emoji">🧮</span><span class="mm-info"><span class="mm-name">Calculator Tools</span><span class="mm-count">24 tools</span></span></a>' +
-                                '<a href="/category/developer-tools.html" class="mega-menu-item"><span class="mm-emoji">💻</span><span class="mm-info"><span class="mm-name">Developer Tools</span><span class="mm-count">8 tools</span></span></a>' +
-                                '<a href="/category/utility-tools.html" class="mega-menu-item"><span class="mm-emoji">🔧</span><span class="mm-info"><span class="mm-name">Utility Tools</span><span class="mm-count">4 tools</span></span></a>' +
+                                '<a href="/category/calculator-tools.html" class="mega-menu-item"><span class="mm-emoji">🧮</span><span class="mm-info"><span class="mm-name">Calculator Tools</span><span class="mm-count">52 tools</span></span></a>' +
+                                '<a href="/category/developer-tools.html" class="mega-menu-item"><span class="mm-emoji">💻</span><span class="mm-info"><span class="mm-name">Developer Tools</span><span class="mm-count">29 tools</span></span></a>' +
+                                '<a href="/category/utility-tools.html" class="mega-menu-item"><span class="mm-emoji">🔧</span><span class="mm-info"><span class="mm-name">Utility Tools</span><span class="mm-count">5 tools</span></span></a>' +
                             '</div>' +
                             '<div class="mega-menu-group"><h3>Life & Lifestyle</h3>' +
-                                '<a href="/category/health-tools.html" class="mega-menu-item"><span class="mm-emoji">❤️</span><span class="mm-info"><span class="mm-name">Health & Fitness</span><span class="mm-count">15 tools</span></span></a>' +
+                                '<a href="/category/health-tools.html" class="mega-menu-item"><span class="mm-emoji">❤️</span><span class="mm-info"><span class="mm-name">Health & Fitness</span><span class="mm-count">18 tools</span></span></a>' +
                                 '<a href="/category/education-tools.html" class="mega-menu-item"><span class="mm-emoji">🎓</span><span class="mm-info"><span class="mm-name">Education</span><span class="mm-count">7 tools</span></span></a>' +
                                 '<a href="/category/fitness-tools.html" class="mega-menu-item"><span class="mm-emoji">🏋️</span><span class="mm-info"><span class="mm-name">Fitness</span><span class="mm-count">6 tools</span></span></a>' +
                                 '<a href="/category/travel-tools.html" class="mega-menu-item"><span class="mm-emoji">✈️</span><span class="mm-info"><span class="mm-name">Travel</span><span class="mm-count">2 tools</span></span></a>' +
                                 '<a href="/category/productivity-tools.html" class="mega-menu-item"><span class="mm-emoji">⏱️</span><span class="mm-info"><span class="mm-name">Productivity</span><span class="mm-count">7 tools</span></span></a>' +
                                 '<a href="/category/design-tools.html" class="mega-menu-item"><span class="mm-emoji">🎨</span><span class="mm-info"><span class="mm-name">Design</span><span class="mm-count">6 tools</span></span></a>' +
-                                '<a href="/category/home-tools.html" class="mega-menu-item"><span class="mm-emoji">🏠</span><span class="mm-info"><span class="mm-name">Home & DIY</span><span class="mm-count">5 tools</span></span></a>' +
-                                '<a href="/category/fun-tools.html" class="mega-menu-item"><span class="mm-emoji">🎮</span><span class="mm-info"><span class="mm-name">Fun & Games</span><span class="mm-count">12 tools</span></span></a>' +
+                                '<a href="/category/home-tools.html" class="mega-menu-item"><span class="mm-emoji">🏠</span><span class="mm-info"><span class="mm-name">Home & DIY</span><span class="mm-count">6 tools</span></span></a>' +
+                                '<a href="/category/fun-tools.html" class="mega-menu-item"><span class="mm-emoji">🎮</span><span class="mm-info"><span class="mm-name">Fun & Games</span><span class="mm-count">13 tools</span></span></a>' +
                                 '<a href="/category/parenting-tools.html" class="mega-menu-item"><span class="mm-emoji">👶</span><span class="mm-info"><span class="mm-name">Parenting</span><span class="mm-count">2 tools</span></span></a>' +
                             '</div>' +
                         '</div>' +
-                        '<div class="mega-menu-footer"><a href="/tools.html">Browse All 258 Tools →</a></div>' +
+                        '<div class="mega-menu-footer"><a href="/tools.html">Browse All 197 Tools →</a></div>' +
                     '</div>' +
                 '</div>' +
                 '<a href="/blog/" class="hide-mobile">Blog</a>' +
@@ -146,7 +146,7 @@ var _ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1
             '<div class="footer-grid" style="grid-template-columns:1.5fr 1fr 1fr 1.5fr 1fr;">' +
                 '<div class="footer-col footer-about">' +
                     '<h4>OptiDrop</h4>' +
-                    '<p>Free, fast, and 100% private browser-based tools. 258+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>' +
+                    '<p>Free, fast, and 100% private browser-based tools. 197+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>' +
                     '<p style="margin-top:0.75rem;font-size:0.75rem;color:#94a3b8;">© <span id="year"></span> OptiDrop. All rights reserved.</p>' +
                 '</div>' +
                 '<div class="footer-col">' +
@@ -548,24 +548,24 @@ var allToolsData = [
 ];
 
 var SIDEBAR_CATEGORIES = [
-    {id:'all',name:'All Tools',count:258},
+    {id:'all',name:'All Tools',count:197},
     {id:'image',name:'Image Tools',count:8},
     {id:'pdf',name:'PDF Tools',count:3},
-    {id:'text',name:'Text Tools',count:14},
+    {id:'text',name:'Text Tools',count:15},
     {id:'career',name:'Career & Resume',count:7},
     {id:'business',name:'Business Documents',count:9},
     {id:'professional',name:'Professional Tools',count:4},
-    {id:'calculator',name:'Calculator Tools',count:24},
-    {id:'developer',name:'Developer Tools',count:8},
-    {id:'utility',name:'Utility Tools',count:4},
-    {id:'health',name:'Health & Fitness',count:15},
+    {id:'calculator',name:'Calculator Tools',count:52},
+    {id:'developer',name:'Developer Tools',count:29},
+    {id:'utility',name:'Utility Tools',count:5},
+    {id:'health',name:'Health & Fitness',count:18},
     {id:'education',name:'Education',count:7},
     {id:'fitness',name:'Fitness',count:6},
     {id:'travel',name:'Travel',count:2},
     {id:'productivity',name:'Productivity',count:7},
     {id:'design',name:'Design',count:6},
-    {id:'home',name:'Home & DIY',count:5},
-    {id:'fun',name:'Fun & Games',count:12},
+    {id:'home',name:'Home & DIY',count:6},
+    {id:'fun',name:'Fun & Games',count:13},
     {id:'parenting',name:'Parenting',count:2}
 ];
 
