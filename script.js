@@ -702,7 +702,8 @@ window.downloadSingle = function (id, filename) {
     showToast('Image downloaded!');
 };
 
-// Before/After Comparison
+// Before/After Comparison — clean up previous listeners to prevent memory leaks
+var _compareHandlers = null;
 window.openCompare = function(id) {
     const item = fileQueue.find(f => f.id === id);
     if (!item) return;
@@ -718,6 +719,14 @@ window.openCompare = function(id) {
     slider.style.left = '50%';
     modal.classList.remove('hidden');
 
+    // Remove previous listeners if modal was opened before
+    if (_compareHandlers) {
+        slider.removeEventListener('mousedown', _compareHandlers.startDrag);
+        slider.removeEventListener('touchstart', _compareHandlers.startDrag);
+        document.removeEventListener('mouseup', _compareHandlers.stopDrag);
+        document.removeEventListener('touchend', _compareHandlers.stopDrag);
+    }
+
     let isDragging = false;
     const container = document.getElementById('compareContainer');
     function updateSlider(clientX) {
@@ -730,12 +739,17 @@ window.openCompare = function(id) {
     }
     const startDrag = () => isDragging = true;
     const stopDrag = () => isDragging = false;
+    const onMouseMove = (e) => { if (isDragging) updateSlider(e.clientX); };
+    const onTouchMove = (e) => { if (isDragging) updateSlider(e.touches[0].clientX); };
+
     slider.addEventListener('mousedown', startDrag);
-    container.addEventListener('mousemove', (e) => { if (isDragging) updateSlider(e.clientX); });
+    container.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', stopDrag);
     slider.addEventListener('touchstart', startDrag);
-    container.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0].clientX); });
+    container.addEventListener('touchmove', onTouchMove);
     document.addEventListener('touchend', stopDrag);
+
+    _compareHandlers = { startDrag, stopDrag };
 };
 
 window.closeCompareModal = function() {
@@ -1964,25 +1978,6 @@ if (btnStamperDownload) {
         showToast('Stamped photo downloaded!');
     });
 }
-
-
-/* ═══════════════════════════════════════════════════════════
-   FAQ ACCORDION (Smooth max-height transition)
-   ═══════════════════════════════════════════════════════════ */
-document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        const targetButton = e.target.closest('.faq-question');
-        if (!targetButton) return;
-        const item = targetButton.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => {
-            i.classList.remove('open');
-        });
-        if (!isOpen) {
-            item.classList.add('open');
-        }
-    });
-});
 
 
 /* ═══════════════════════════════════════════════════════════

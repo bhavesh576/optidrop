@@ -1,6 +1,12 @@
 /* =========================================================
    OptiDrop — common.js (Shared across all pages)
+   Performance: Non-critical features deferred via
+   requestIdleCallback. Heavy DOM (command palette, FAB,
+   share-bar observer) only created when the browser is idle.
    ========================================================= */
+
+// Polyfill requestIdleCallback for Safari
+var _ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1); };
 
 // ── Dark Mode (Feature 6) ───────────────────────────────────
 (function () {
@@ -181,22 +187,25 @@ function initToolsDirectory() {
 }
 
 // ── FAQ Accordion (Smooth max-height transition) ─────────────
-document.querySelectorAll('.faq-question').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-        var targetButton = e.target.closest('.faq-question');
-        if (!targetButton) return;
-        var item = targetButton.parentElement;
-        var isOpen = item.classList.contains('open');
-        // Close all items
-        document.querySelectorAll('.faq-item').forEach(function (i) {
-            i.classList.remove('open');
+// Guard: only attach listeners on pages that have FAQs
+(function () {
+    var faqBtns = document.querySelectorAll('.faq-question');
+    if (!faqBtns.length) return;
+    faqBtns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            var targetButton = e.target.closest('.faq-question');
+            if (!targetButton) return;
+            var item = targetButton.parentElement;
+            var isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(function (i) {
+                i.classList.remove('open');
+            });
+            if (!isOpen) {
+                item.classList.add('open');
+            }
         });
-        // Open clicked item if it was closed
-        if (!isOpen) {
-            item.classList.add('open');
-        }
     });
-});
+})();
 
 // ── Homepage Search Filter (Enhanced with Dropdown) ──────────
 (function () {
@@ -348,7 +357,7 @@ document.querySelectorAll('.faq-question').forEach(function (btn) {
 })();
 
 // ── Bookmark Prompt (Block 8) ───────────────────────────────
-(function () {
+_ric(function () {
     var pageKey = window.location.pathname.replace(/[^a-z0-9]/gi, '_');
     var storageKey = 'optidrop_usecount_' + pageKey;
     var dismissedKey = 'optidrop_bookmark_dismissed_' + pageKey;
@@ -386,7 +395,7 @@ document.querySelectorAll('.faq-question').forEach(function (btn) {
             setTimeout(function () { toast.remove(); }, 400);
         }, 4000);
     }
-})();
+});
 
 // ── Calculator URL Parameter State Sharing (Feature 5) ────
 function initCalculatorUrlParams(paramMap) {
@@ -572,7 +581,7 @@ function showDraftBar(key, onContinue, onStartFresh) {
 // ════════════════════════════════════════════════════════════
 // FEATURE 1 — Recently Used Tools
 // ════════════════════════════════════════════════════════════
-(function () {
+_ric(function () {
     var path = window.location.pathname;
     // Only track visits to actual tool pages
     var toolMeta = {
@@ -720,7 +729,7 @@ function showDraftBar(key, onContinue, onStartFresh) {
         if (recent.length > 5) recent = recent.slice(0, 5);
         localStorage.setItem('optidrop_recent_tools', JSON.stringify(recent));
     } catch (e) {}
-})();
+});
 
 // ── trackRecentTool — callable from any tool page ─────────
 function trackRecentTool(toolName, toolPath) {
@@ -735,7 +744,7 @@ function trackRecentTool(toolName, toolPath) {
 }
 
 // ── Render Recently Used on Homepage ────────────────────────
-(function () {
+_ric(function () {
     var container = document.getElementById('recentToolsSection');
     if (!container) return;
     try {
@@ -753,12 +762,12 @@ function trackRecentTool(toolName, toolPath) {
         container.innerHTML = html;
         container.parentElement.style.display = '';
     } catch (e) {}
-})();
+});
 
 // ════════════════════════════════════════════════════════════
 // FEATURE 3 — Keyboard Command Palette
 // ════════════════════════════════════════════════════════════
-(function () {
+_ric(function () {
     var allTools = [
         { name: 'Image Compressor', href: '/compress-image.html', cat: 'Image' },
         { name: 'HEIC to JPG', href: '/heic-to-jpg.html', cat: 'Image' },
@@ -980,12 +989,12 @@ function trackRecentTool(toolName, toolPath) {
             openPalette();
         }
     });
-})();
+});
 
 // ════════════════════════════════════════════════════════════
 // FEATURE 6 — Dark Mode Toggle
 // ════════════════════════════════════════════════════════════
-(function () {
+_ric(function () {
     var header = document.querySelector('.header-nav');
     if (!header) return;
 
@@ -1028,12 +1037,12 @@ function trackRecentTool(toolName, toolPath) {
         apply(isDark ? 'light' : 'dark');
         try { localStorage.setItem('optidrop_dark_mode', isDark ? '0' : '1'); } catch (e) {}
     });
-})();
+});
 
 // ════════════════════════════════════════════════════════════
 // FEATURE 8 — Mobile Floating Action Button
 // ════════════════════════════════════════════════════════════
-(function () {
+_ric(function () {
     var popularTools = [
         { name: 'Image Compressor', href: '/compress-image.html' },
         { name: 'HEIC to JPG', href: '/heic-to-jpg.html' },
@@ -1071,10 +1080,10 @@ function trackRecentTool(toolName, toolPath) {
             overlay.style.display = 'none';
         }
     });
-})();
+});
 
 // ── Share Bar Injection (appears in result cards after task completion) ──
-(function () {
+_ric(function () {
     var SHARE_URL = 'https://optidrop.online';
     var SHARE_TEXT = 'Found this useful? Share with a friend.';
     var SHARE_BTN = 'Copy Share Link';
@@ -1263,4 +1272,4 @@ function trackRecentTool(toolName, toolPath) {
             btn.addEventListener('click', function () { handleShareClick(btn); });
         }
     };
-})();
+});
