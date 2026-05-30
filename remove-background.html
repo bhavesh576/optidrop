@@ -106,9 +106,6 @@
     <!-- AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 
-    <!-- Background Removal CDN -->
-    <script defer src="https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.5/dist/index.umd.js"></script>
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
@@ -480,6 +477,17 @@
 
         setupDropzone(dropzone, fileInput, handleFile);
 
+        function loadBgRemovalLib() {
+            if (typeof removeBackground !== 'undefined') return Promise.resolve();
+            return new Promise(function (resolve, reject) {
+                var s = document.createElement('script');
+                s.src = 'https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.5/dist/index.umd.js';
+                s.onload = resolve;
+                s.onerror = function () { reject(new Error('Failed to load background removal library')); };
+                document.head.appendChild(s);
+            });
+        }
+
         function handleFile(files) {
             if (!files || !files.length) return;
             var file = files[0];
@@ -508,12 +516,19 @@
         }
 
         function _bgMainFallback(file) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                var blob = dataURLtoBlob(e.target.result);
-                processRemoval(blob);
-            };
-            reader.readAsDataURL(file);
+            progressText.textContent = 'Loading AI model... (first time only)';
+            loadBgRemovalLib().then(function () {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var blob = dataURLtoBlob(e.target.result);
+                    processRemoval(blob);
+                };
+                reader.readAsDataURL(file);
+            }).catch(function () {
+                showToast('Failed to load AI model. Please check your connection.', 'error');
+                stateLoading.classList.add('hidden');
+                stateUpload.classList.remove('hidden');
+            });
         }
 
         function dataURLtoBlob(dataURL) {
@@ -569,8 +584,14 @@
         });
 
         btnStartOver.addEventListener('click', function() {
-            if (resultBlob) resultBlob = null;
-            resultImage.src = '';
+            // Release memory (Block 3)
+            if (resultBlob) {
+                resultBlob = null;
+            }
+            if (resultImage.src) {
+                URL.revokeObjectURL(resultImage.src);
+                resultImage.src = '';
+            }
             stateResult.classList.add('hidden');
             stateUpload.classList.remove('hidden');
         });

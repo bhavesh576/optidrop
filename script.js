@@ -212,21 +212,26 @@ function resetAllTools() {
     document.getElementById('pdf2jpg-state-loading').classList.add('hidden');
     document.getElementById('pdf2jpg-state-result').classList.add('hidden');
 
-    // Reset resizer
+    // Reset resizer — release memory (Block 3)
+    if (resizerResultUrl) URL.revokeObjectURL(resizerResultUrl);
     resizerFile = null;
     resizerOriginalImg = null;
+    resizerResultBlob = null;
+    resizerResultUrl = null;
+    var _rc = document.getElementById('resizerCanvas');
+    if (_rc) { _rc.width = 1; _rc.height = 1; }
     document.getElementById('resizer-state-upload').classList.remove('hidden');
     document.getElementById('resizer-state-settings').classList.add('hidden');
     document.getElementById('resizer-state-result').classList.add('hidden');
 
-    // Reset stamper
+    // Reset stamper — release memory (Block 3)
     stamperFile = null;
     stamperOriginalImg = null;
     document.getElementById('stamper-state-upload').classList.remove('hidden');
     document.getElementById('stamper-state-settings').classList.add('hidden');
     document.getElementById('stamper-state-result').classList.add('hidden');
 
-    // Reset signature scanner
+    // Reset signature scanner — release memory (Block 3)
     signatureFile = null;
     signatureOriginalImg = null;
     if (signatureResultUrl) URL.revokeObjectURL(signatureResultUrl);
@@ -236,7 +241,9 @@ function resetAllTools() {
     document.getElementById('signature-state-settings').classList.add('hidden');
     document.getElementById('signature-state-result').classList.add('hidden');
 
-    // Reset OCR
+    // Reset OCR — release memory (Block 3)
+    var _ocrPreview = document.getElementById('ocrPreviewImage');
+    if (_ocrPreview && _ocrPreview.src) URL.revokeObjectURL(_ocrPreview.src);
     ocrFile = null;
     document.getElementById('ocr-state-upload').classList.remove('hidden');
     document.getElementById('ocr-state-processing').classList.add('hidden');
@@ -244,6 +251,48 @@ function resetAllTools() {
     document.getElementById('ocrTextOutput').value = '';
 }
 
+
+/* ═══════════════════════════════════════════════════════════
+   LAZY-LOAD HELPERS (Block 2)
+   Heavy libraries load on demand, not on page open.
+   ═══════════════════════════════════════════════════════════ */
+
+function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+        var s = document.createElement('script');
+        s.src = src;
+        s.onload = resolve;
+        s.onerror = function () { reject(new Error('Failed to load ' + src)); };
+        document.head.appendChild(s);
+    });
+}
+
+function loadTesseract() {
+    if (typeof Tesseract !== 'undefined') return Promise.resolve();
+    return loadScript('https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js');
+}
+
+function loadHeic2Any() {
+    if (typeof heic2any !== 'undefined') return Promise.resolve();
+    return loadScript('https://cdnjs.cloudflare.com/ajax/libs/heic2any/0.0.4/heic2any.min.js');
+}
+
+function loadPdfJs() {
+    if (typeof pdfjsLib !== 'undefined') return Promise.resolve();
+    return loadScript('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js').then(function () {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    });
+}
+
+function loadJsPdf() {
+    if (typeof window.jspdf !== 'undefined') return Promise.resolve();
+    return loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
+}
+
+function loadJSZip() {
+    if (typeof JSZip !== 'undefined') return Promise.resolve();
+    return loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js');
+}
 
 /* ═══════════════════════════════════════════════════════════
    TOOL 1: IMAGE COMPRESSOR
@@ -446,13 +495,26 @@ function _compressViaWorker(file, targetBytes, outputFormat, forcedWidth, forced
         var worker = _getCompressWorker();
         if (!worker) return reject(new Error('Worker not available'));
 
+        var timedOut = false;
+        var timer = setTimeout(function () {
+            timedOut = true;
+            worker.removeEventListener('message', onMsg);
+            worker.removeEventListener('error', onErr);
+            _compressWorkerSupported = false;
+            reject(new Error('Worker timeout'));
+        }, 30000);
+
         var onMsg = function (e) {
+            if (timedOut) return;
+            clearTimeout(timer);
             worker.removeEventListener('message', onMsg);
             worker.removeEventListener('error', onErr);
             if (e.data && e.data.error) reject(new Error(e.data.error));
             else resolve(e.data.blob);
         };
         var onErr = function (e) {
+            if (timedOut) return;
+            clearTimeout(timer);
             worker.removeEventListener('message', onMsg);
             worker.removeEventListener('error', onErr);
             _compressWorkerSupported = false;
@@ -757,10 +819,11 @@ window.closeCompareModal = function() {
 };
 
 // Download as PDF
-window.downloadAsPdf = function (id, filename) {
+window.downloadAsPdf = async function (id, filename) {
     const item = fileQueue.find(f => f.id === id);
     if (!item || !item.compressedBlob) { showToast('Image not ready.', 'error'); return; }
-    if (typeof window.jspdf === 'undefined') { showToast('PDF library loading...', 'error'); return; }
+    showToast('Preparing PDF engine...');
+    try { await loadJsPdf(); } catch (e) { showToast('Failed to load PDF engine.', 'error'); return; }
 
     const img = new Image();
     img.crossOrigin = 'anonymous';
@@ -799,7 +862,8 @@ window.downloadAsPdf = function (id, filename) {
 // Download All as ZIP
 if (btnDownloadZip) {
     btnDownloadZip.addEventListener('click', async () => {
-        if (typeof JSZip === 'undefined') { showToast('ZIP library loading...', 'error'); return; }
+        showToast('Preparing ZIP engine...');
+        try { await loadJSZip(); } catch (e) { showToast('Failed to load ZIP library.', 'error'); return; }
         const zip = new JSZip();
         const targetKB = targetKBInput.value;
         let addedCount = 0;
@@ -989,10 +1053,17 @@ let generatedPdfFilename = '';
 if (btnMergeGenerate) {
     btnMergeGenerate.addEventListener('click', async () => {
         if (mergeQueue.length === 0) { showToast('Please add at least one image.', 'error'); return; }
-        if (typeof window.jspdf === 'undefined') { showToast('PDF library loading...', 'error'); return; }
 
         mergeStateLoading.classList.remove('hidden');
         mergeStateSettings.classList.add('hidden');
+        mergeProgressText.textContent = 'Preparing PDF engine...';
+
+        try { await loadJsPdf(); } catch (e) {
+            showToast('Failed to load PDF engine.', 'error');
+            mergeStateLoading.classList.add('hidden');
+            mergeStateSettings.classList.remove('hidden');
+            return;
+        }
 
         const pageSize    = mergePageSize.value;
         const orientation = mergeOrientation.value;
@@ -1192,10 +1263,17 @@ if (btnHeicStartOver) {
 if (btnHeicConvert) {
     btnHeicConvert.addEventListener('click', async () => {
         if (heicQueue.length === 0) { showToast('Please add HEIC files.', 'error'); return; }
-        if (typeof heic2any === 'undefined') { showToast('HEIC library loading. Please wait...', 'error'); return; }
 
         heicStateLoading.classList.remove('hidden');
         heicStateSettings.classList.add('hidden');
+        heicProgressText.textContent = 'Loading HEIC converter...';
+
+        try { await loadHeic2Any(); } catch (e) {
+            showToast('Failed to load HEIC library.', 'error');
+            heicStateLoading.classList.add('hidden');
+            heicStateSettings.classList.remove('hidden');
+            return;
+        }
         const quality = parseFloat(heicQuality.value);
         let successCount = 0;
         const total = heicQueue.length;
@@ -1256,7 +1334,8 @@ function renderHeicResults() {
 
 if (btnHeicDownloadZip) {
     btnHeicDownloadZip.addEventListener('click', async () => {
-        if (typeof JSZip === 'undefined') { showToast('ZIP library loading...', 'error'); return; }
+        showToast('Preparing ZIP engine...');
+        try { await loadJSZip(); } catch (e) { showToast('Failed to load ZIP library.', 'error'); return; }
         const zip = new JSZip();
         let count = 0;
         heicQueue.forEach(item => {
@@ -1318,9 +1397,11 @@ async function handlePdf2jpgFile(files) {
         return;
     }
 
-    // Check if pdfjsLib is available
-    if (typeof pdfjsLib === 'undefined') {
-        showToast('PDF library is still loading. Please try again.', 'error');
+    /* Lazy-load PDF.js on first use */
+    try {
+        await loadPdfJs();
+    } catch (e) {
+        showToast('Failed to load PDF engine. Please check your connection.', 'error');
         return;
     }
 
@@ -1433,7 +1514,8 @@ function renderPdf2jpgResults() {
 
 if (btnPdf2jpgDownloadZip) {
     btnPdf2jpgDownloadZip.addEventListener('click', async () => {
-        if (typeof JSZip === 'undefined') { showToast('ZIP library loading...', 'error'); return; }
+        showToast('Preparing ZIP engine...');
+        try { await loadJSZip(); } catch (e) { showToast('Failed to load ZIP library.', 'error'); return; }
         if (pdf2jpgPages.length === 0) { showToast('No pages extracted.', 'error'); return; }
         const zip = new JSZip();
         pdf2jpgPages.forEach(item => {
@@ -2214,24 +2296,39 @@ function _ocrViaWorker(file) {
         var worker = _getOcrWorker();
         if (!worker) return reject(new Error('Worker not available'));
 
+        var timedOut = false;
+        var timer = setTimeout(function () {
+            timedOut = true;
+            worker.removeEventListener('message', onMsg);
+            worker.removeEventListener('error', onErr);
+            _ocrWorkerSupported = false;
+            _ocrWorker = null;
+            reject(new Error('Worker timeout'));
+        }, 30000);
+
         var onMsg = function (e) {
+            if (timedOut) return;
             var d = e.data;
             if (d.progress !== undefined) {
                 ocrProgressText.textContent = d.status || 'Processing...';
             }
             if (d.error) {
+                clearTimeout(timer);
                 worker.removeEventListener('message', onMsg);
                 worker.removeEventListener('error', onErr);
                 _ocrWorkerSupported = false;
                 _ocrWorker = null;
                 reject(new Error(d.error));
             } else if (d.success) {
+                clearTimeout(timer);
                 worker.removeEventListener('message', onMsg);
                 worker.removeEventListener('error', onErr);
                 resolve({ text: d.text, confidence: d.confidence });
             }
         };
         var onErr = function () {
+            if (timedOut) return;
+            clearTimeout(timer);
             worker.removeEventListener('message', onMsg);
             worker.removeEventListener('error', onErr);
             _ocrWorkerSupported = false;
@@ -2281,14 +2378,18 @@ function handleOcrFile(files) {
 }
 
 function _ocrMainFallback(file) {
-    const imageUrl = URL.createObjectURL(file);
-
-    if (typeof Tesseract === 'undefined') {
-        showToast('OCR library is still loading. Please try again.', 'error');
+    ocrProgressText.textContent = 'Loading OCR engine... (first time only)';
+    loadTesseract().then(function () {
+        return _ocrMainFallbackRun(file);
+    }).catch(function () {
+        showToast('Failed to load OCR engine. Please check your connection.', 'error');
         ocrStateProcessing.classList.add('hidden');
         ocrStateUpload.classList.remove('hidden');
-        return;
-    }
+    });
+}
+
+function _ocrMainFallbackRun(file) {
+    const imageUrl = URL.createObjectURL(file);
 
     Tesseract.recognize(imageUrl, 'eng', {
         logger: (m) => {

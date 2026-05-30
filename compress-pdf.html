@@ -106,12 +106,6 @@
     <!-- AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 
-    <!-- PDF.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-
-    <!-- jsPDF -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
@@ -469,9 +463,28 @@
     <script src="./common.js"></script>
     <script>
     (function(){
-        // Set PDF.js worker
-        if (typeof pdfjsLib !== 'undefined') {
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        function loadPdfJsLib() {
+            if (typeof pdfjsLib !== 'undefined') return Promise.resolve();
+            return new Promise(function (resolve, reject) {
+                var s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+                s.onload = function () {
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+                    resolve();
+                };
+                s.onerror = function () { reject(new Error('Failed to load PDF.js')); };
+                document.head.appendChild(s);
+            });
+        }
+        function loadJsPdfLib() {
+            if (typeof window.jspdf !== 'undefined') return Promise.resolve();
+            return new Promise(function (resolve, reject) {
+                var s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+                s.onload = resolve;
+                s.onerror = function () { reject(new Error('Failed to load jsPDF')); };
+                document.head.appendChild(s);
+            });
         }
 
         var dropzone = document.getElementById('pdfDropzone');
@@ -548,17 +561,17 @@
 
         btnCompress.addEventListener('click', async function() {
             if (!selectedFile) return;
-            if (typeof pdfjsLib === 'undefined') {
-                showToast('PDF library is still loading. Please wait a moment and try again.', 'error');
-                return;
-            }
-            if (typeof window.jspdf === 'undefined') {
-                showToast('PDF generation library is still loading. Please wait and try again.', 'error');
-                return;
-            }
 
             stateSettings.classList.add('hidden');
             stateLoading.classList.remove('hidden');
+            progressText.textContent = 'Loading PDF engines...';
+
+            try { await Promise.all([loadPdfJsLib(), loadJsPdfLib()]); } catch (e) {
+                showToast('Failed to load PDF libraries. Please check your connection.', 'error');
+                stateLoading.classList.add('hidden');
+                stateSettings.classList.remove('hidden');
+                return;
+            }
 
             try {
                 var arrayBuffer = await selectedFile.arrayBuffer();
@@ -632,6 +645,7 @@
         });
 
         btnStartOver.addEventListener('click', function() {
+            // Release memory (Block 3)
             selectedFile = null;
             resultBlob = null;
             totalPages = 0;

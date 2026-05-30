@@ -111,12 +111,6 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../styles.css">
 
-    <!-- Marked.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
-
-    <!-- DOMPurify (XSS sanitization for Markdown HTML output) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
-
     <style>
         .md-split {
             display: grid;
@@ -485,11 +479,30 @@ console.log('Hello!');
         var btnDownloadMd = document.getElementById('btnDownloadMd');
         var btnClear = document.getElementById('btnClear');
 
-        // Configure marked
-        if (typeof marked !== 'undefined') {
-            marked.setOptions({
-                breaks: true,
-                gfm: true
+        // Lazy-load marked.js and DOMPurify on first use
+        var _mdLibsLoaded = false;
+        function loadMarkdownLibs() {
+            if (_mdLibsLoaded) return Promise.resolve();
+            return Promise.all([
+                new Promise(function (resolve, reject) {
+                    var s = document.createElement('script');
+                    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js';
+                    s.onload = resolve;
+                    s.onerror = resolve;
+                    document.head.appendChild(s);
+                }),
+                new Promise(function (resolve, reject) {
+                    var s = document.createElement('script');
+                    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js';
+                    s.onload = resolve;
+                    s.onerror = resolve;
+                    document.head.appendChild(s);
+                })
+            ]).then(function () {
+                _mdLibsLoaded = true;
+                if (typeof marked !== 'undefined') {
+                    marked.setOptions({ breaks: true, gfm: true });
+                }
             });
         }
 
@@ -501,8 +514,9 @@ console.log('Hello!');
                 var rawHtml = marked.parse(text);
                 mdPreview.innerHTML = (typeof DOMPurify !== 'undefined') ? DOMPurify.sanitize(rawHtml) : rawHtml;
             } else {
-                // Fallback: basic rendering
+                // Fallback: basic rendering while libs load
                 mdPreview.innerHTML = '<p style="color:#94a3b8;">Loading Markdown parser...</p>';
+                loadMarkdownLibs().then(renderPreview);
             }
 
             // Update counts

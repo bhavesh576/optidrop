@@ -99,9 +99,6 @@
     <!-- AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 
-    <!-- jsPDF -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
@@ -449,7 +446,9 @@
             return d.toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'});
         }
 
-        function generatePDF() {
+        async function generatePDF() {
+            showToast('Preparing PDF engine...');
+            await loadJsPDF();
             var d = getFormData();
             var jsPDF = window.jspdf.jsPDF;
             var doc = new jsPDF();

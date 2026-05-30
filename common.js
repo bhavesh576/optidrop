@@ -64,7 +64,7 @@ var _ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1
                                 '<a href="/category/parenting-tools.html" class="mega-menu-item"><span class="mm-emoji">👶</span><span class="mm-info"><span class="mm-name">Parenting</span><span class="mm-count">2 tools</span></span></a>' +
                             '</div>' +
                         '</div>' +
-                        '<div class="mega-menu-footer"><a href="/tools.html">Browse All 197 Tools →</a></div>' +
+                        '<div class="mega-menu-footer"><a href="/tools.html">Browse All 258 Tools →</a></div>' +
                     '</div>' +
                 '</div>' +
                 '<a href="/blog/" class="hide-mobile">Blog</a>' +
@@ -146,7 +146,7 @@ var _ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1
             '<div class="footer-grid" style="grid-template-columns:1.5fr 1fr 1fr 1.5fr 1fr;">' +
                 '<div class="footer-col footer-about">' +
                     '<h4>OptiDrop</h4>' +
-                    '<p>Free, fast, and 100% private browser-based tools. 197+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>' +
+                    '<p>Free, fast, and 100% private browser-based tools. 258+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p>' +
                     '<p style="margin-top:0.75rem;font-size:0.75rem;color:#94a3b8;">© <span id="year"></span> OptiDrop. All rights reserved.</p>' +
                 '</div>' +
                 '<div class="footer-col">' +
@@ -544,29 +544,84 @@ var allToolsData = [
     {n:'Tile Calculator',h:'/tools/home/tile-calculator.html',c:'home',d:'Calculate tiles needed for floors and walls.'},
     {n:'Medication Reminder',h:'/tools/health/medication-reminder.html',c:'health',d:'Set medication reminders with dosage tracking.'},
     {n:'Savings Goal Tracker',h:'/tools/calculators/savings-goal-tracker.html',c:'calculator',d:'Track progress toward your savings goals.'},
-    {n:'Invoice Tax Calculator',h:'/tools/calculators/invoice-tax-calculator.html',c:'calculator',d:'Calculate tax amounts for invoices.'}
+    {n:'Invoice Tax Calculator',h:'/tools/calculators/invoice-tax-calculator.html',c:'calculator',d:'Calculate tax amounts for invoices.'},
+    {n:'Compress Image for Instagram',h:'/compress-image-for-instagram.html',c:'image',d:'Optimize images for Instagram post and story dimensions.'},
+    {n:'Reading Time Calculator',h:'/tools/text/reading-time-calculator.html',c:'text',d:'Estimate reading and speaking time for any text.'},
+    {n:'Text Diff Checker',h:'/tools/text/text-diff-checker.html',c:'text',d:'Compare two texts and highlight differences.'},
+    {n:'Typing Speed Test',h:'/tools/text/typing-speed-test.html',c:'text',d:'Test typing speed with WPM and accuracy measurement.'},
+    {n:'Acronym Generator',h:'/tools/text/acronym-generator.html',c:'text',d:'Generate acronyms from phrases with reverse lookup.'},
+    {n:'Anagram Solver',h:'/tools/text/anagram-solver.html',c:'text',d:'Find valid anagrams from any word.'},
+    {n:'Password Phrase Generator',h:'/tools/text/password-phrase-generator.html',c:'text',d:'Generate secure diceware-style passphrases.'},
+    {n:'Text to Speech Preview',h:'/tools/text/text-to-speech-preview.html',c:'text',d:'Preview browser text-to-speech with voice controls.'},
+    {n:'Bulk Text Replacer',h:'/tools/text/bulk-text-replacer.html',c:'text',d:'Apply multiple find-replace rules at once.'},
+    {n:'Keyword Density Checker',h:'/tools/text/keyword-density-checker.html',c:'text',d:'Analyze keyword density for SEO optimization.'},
+    {n:'Word Scramble Game',h:'/tools/text/word-scramble.html',c:'text',d:'Unscramble words in this fun vocabulary game.'},
+    {n:'Number Trivia',h:'/tools/text/number-trivia.html',c:'text',d:'Fun facts and mathematical properties about any number.'},
+    {n:'Rhyming Words Finder',h:'/tools/text/rhyming-words.html',c:'text',d:'Find rhyming words for poetry and songwriting.'},
+    {n:'Phonetic Spelling Converter',h:'/tools/text/phonetic-spelling.html',c:'text',d:'Convert text to phonetic spelling.'},
+    {n:'Letter Count Analyzer',h:'/tools/text/letter-count.html',c:'text',d:'Analyze letter frequency and distribution.'},
+    {n:'Story Prompt Generator',h:'/tools/text/story-prompt.html',c:'text',d:'Generate creative writing prompts and story ideas.'},
+    {n:'Email Subject Line Generator',h:'/tools/text/email-subject-generator.html',c:'text',d:'Generate effective email subject lines.'},
+    {n:'Advanced Case Converter',h:'/tools/text/advanced-case-converter.html',c:'text',d:'Convert to camelCase, snake_case, kebab-case, and more.'},
+    {n:'YouTube Timestamp Linker',h:'/tools/developer/youtube-timestamp-linker.html',c:'developer',d:'Generate timestamped YouTube links and embed codes.'},
+    {n:'HTML Encoder',h:'/tools/developer/html-encoder.html',c:'developer',d:'Encode and decode HTML entities and special characters.'},
+    {n:'Markdown to HTML',h:'/tools/developer/markdown-to-html.html',c:'developer',d:'Convert Markdown text to HTML markup.'},
+    {n:'Color Picker',h:'/tools/developer/color-picker.html',c:'developer',d:'Pick colors with HEX, RGB, and HSL output.'},
+    {n:'CSS Border Generator (Dev)',h:'/tools/developer/css-border-generator.html',c:'developer',d:'Create CSS border styles with live preview.'},
+    {n:'Blood Sugar Tracker',h:'/tools/health/blood-sugar-tracker.html',c:'health',d:'Log and visualize blood glucose readings.'},
+    {n:'BMI with Body Fat',h:'/tools/utility/bmi-with-body-fat.html',c:'utility',d:'Combined BMI calculator and body fat percentage estimator.'},
+    {n:'Pack Weight Calculator',h:'/tools/utility/pack-weight-calculator.html',c:'utility',d:'Estimate travel packing weight with airline limits.'},
+    {n:'Random Decision Maker',h:'/tools/utility/random-decision-maker.html',c:'utility',d:'Spin the wheel to make random decisions.'},
+    {n:'Habit Tracker',h:'/tools/utility/habit-tracker-simple.html',c:'utility',d:'Track daily habits with streak counting.'},
+    {n:'Screen Ruler',h:'/tools/utility/screen-ruler.html',c:'utility',d:'Measure pixels on screen with a draggable ruler.'},
+    {n:'World Clock',h:'/tools/utility/world-clock.html',c:'utility',d:'View live clocks for multiple cities worldwide.'},
+    {n:'File Size Converter',h:'/tools/utility/file-size-converter.html',c:'utility',d:'Convert between bytes, KB, MB, GB, and TB.'},
+    {n:'Timezone Converter',h:'/tools/utility/timezone-converter.html',c:'utility',d:'Convert times between different time zones.'},
+    {n:'Date Calculator',h:'/tools/utility/date-calculator.html',c:'utility',d:'Add or subtract days from any date.'},
+    {n:'Binary Converter (Utility)',h:'/tools/utility/binary-converter.html',c:'utility',d:'Convert between binary, octal, decimal, and hex.'},
+    {n:'Roman Numeral Converter',h:'/tools/utility/roman-numeral.html',c:'utility',d:'Convert between Roman numerals and standard numbers.'},
+    {n:'Screen Resolution Checker',h:'/tools/utility/screen-resolution.html',c:'utility',d:'View your screen resolution and viewport size.'},
+    {n:'IP Address Lookup',h:'/tools/utility/ip-lookup.html',c:'utility',d:'View your public IP address and location.'},
+    {n:'Recipe Scaler',h:'/tools/utility/recipe-scaler.html',c:'utility',d:'Scale recipe ingredients up or down.'},
+    {n:'Book Reading Tracker',h:'/tools/utility/book-tracker.html',c:'utility',d:'Track books you are reading with progress and notes.'},
+    {n:'Movie Watchlist',h:'/tools/utility/movie-watchlist.html',c:'utility',d:'Manage your movie watchlist with ratings.'},
+    {n:'Password Strength Tester',h:'/tools/utility/password-strength.html',c:'utility',d:'Test password strength and get improvement suggestions.'},
+    {n:'Unit Price Comparator',h:'/tools/utility/unit-price.html',c:'utility',d:'Compare unit prices to find the best deal.'},
+    {n:'Yes or No Decider',h:'/tools/fun/yes-no-decider.html',c:'fun',d:'Magic 8-ball style yes or no answers.'},
+    {n:'Would You Rather Advanced',h:'/tools/fun/would-you-rather-advanced.html',c:'fun',d:'Would you rather with custom scenarios and voting.'},
+    {n:'Plant Watering Reminder',h:'/tools/home/plant-watering-reminder.html',c:'home',d:'Track plant care schedules with watering reminders.'},
+    {n:'Itinerary Planner',h:'/tools/travel/itinerary-planner.html',c:'travel',d:'Plan daily travel itineraries with activities.'},
+    {n:'Flight Time Calculator',h:'/tools/travel/flight-time.html',c:'travel',d:'Estimate flight duration between cities.'},
+    {n:'Visa Requirement Checker',h:'/tools/travel/visa-checker.html',c:'travel',d:'Check visa requirements by passport and destination.'},
+    {n:'Currency Trip Converter',h:'/tools/travel/currency-trip.html',c:'travel',d:'Convert currencies with trip budget tracking.'},
+    {n:'Hotel Cost Comparator',h:'/tools/travel/hotel-compare.html',c:'travel',d:'Compare hotel costs across dates and locations.'},
+    {n:'Baby Name Generator',h:'/tools/parenting/baby-name.html',c:'parenting',d:'Search and generate baby names by origin and meaning.'},
+    {n:'Feeding Schedule',h:'/tools/parenting/feeding-schedule.html',c:'parenting',d:'Track baby feeding schedules and patterns.'},
+    {n:'Height Prediction',h:'/tools/parenting/height-prediction.html',c:'parenting',d:'Predict child adult height from parents heights.'},
+    {n:'Milestone Tracker',h:'/tools/parenting/milestone-tracker.html',c:'parenting',d:'Track baby developmental milestones by age.'},
+    {n:'Sleep Schedule Planner',h:'/tools/parenting/sleep-schedule.html',c:'parenting',d:'Plan baby and toddler sleep schedules.'}
 ];
 
 var SIDEBAR_CATEGORIES = [
-    {id:'all',name:'All Tools',count:197},
-    {id:'image',name:'Image Tools',count:8},
+    {id:'all',name:'All Tools',count:258},
+    {id:'image',name:'Image Tools',count:9},
     {id:'pdf',name:'PDF Tools',count:3},
-    {id:'text',name:'Text Tools',count:15},
+    {id:'text',name:'Text Tools',count:32},
     {id:'career',name:'Career & Resume',count:7},
     {id:'business',name:'Business Documents',count:9},
     {id:'professional',name:'Professional Tools',count:4},
     {id:'calculator',name:'Calculator Tools',count:52},
-    {id:'developer',name:'Developer Tools',count:29},
-    {id:'utility',name:'Utility Tools',count:5},
-    {id:'health',name:'Health & Fitness',count:18},
+    {id:'developer',name:'Developer Tools',count:34},
+    {id:'utility',name:'Utility Tools',count:23},
+    {id:'health',name:'Health & Fitness',count:19},
     {id:'education',name:'Education',count:7},
     {id:'fitness',name:'Fitness',count:6},
-    {id:'travel',name:'Travel',count:2},
+    {id:'travel',name:'Travel',count:7},
     {id:'productivity',name:'Productivity',count:7},
     {id:'design',name:'Design',count:6},
-    {id:'home',name:'Home & DIY',count:6},
-    {id:'fun',name:'Fun & Games',count:13},
-    {id:'parenting',name:'Parenting',count:2}
+    {id:'home',name:'Home & DIY',count:7},
+    {id:'fun',name:'Fun & Games',count:15},
+    {id:'parenting',name:'Parenting',count:7}
 ];
 
 function initToolsDirectoryV2() {
@@ -658,6 +713,22 @@ function initToolsDirectoryV2() {
 
     renderSidebar();
     applyFilter();
+}
+
+// ── Lazy-Load Helpers (Block 2) ───────────────────────────────
+function _loadScript(src) {
+    return new Promise(function (resolve, reject) {
+        var s = document.createElement('script');
+        s.src = src;
+        s.onload = resolve;
+        s.onerror = function () { reject(new Error('Failed to load ' + src)); };
+        document.head.appendChild(s);
+    });
+}
+
+function loadJsPDF() {
+    if (typeof window.jspdf !== 'undefined') return Promise.resolve();
+    return _loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
 }
 
 // ── Toast Notification ───────────────────────────────────────
