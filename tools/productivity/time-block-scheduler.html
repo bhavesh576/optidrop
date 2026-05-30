@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Block Scheduler — Weekly Calendar Planner | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free weekly time block scheduler. Plan your week with color-coded time blocks. Drag, drop, and organize your schedule with localStorage persistence.">
+    <meta name="keywords" content="time blocking, weekly planner, time block scheduler, calendar planner, weekly schedule, productivity tool, time management">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Time Block Scheduler — Weekly Calendar Planner | OptiDrop">
+    <meta property="og:description" content="Free weekly time block scheduler. Plan your week with color-coded time blocks. Drag, drop, and organize your schedule.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/productivity/time-block-scheduler.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Time Block Scheduler — Weekly Calendar Planner | OptiDrop">
+    <meta name="twitter:description" content="Free weekly time block scheduler. Plan your week with color-coded time blocks. Drag, drop, and organize your schedule.">
+    <link rel="canonical" href="https://optidrop.online/tools/productivity/time-block-scheduler.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Productivity Tools", "item": "https://optidrop.online/tools/productivity/"},
+        {"@type": "ListItem", "position": 3, "name": "Time Block Scheduler", "item": "https://optidrop.online/tools/productivity/time-block-scheduler.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Time Block Scheduler",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free weekly time block scheduler. Plan your week with color-coded time blocks. Drag, drop, and organize your schedule."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is time blocking?", "acceptedAnswer": {"@type": "Answer", "text": "Time blocking is a productivity technique where you divide your day into blocks of time, each dedicated to a specific task or group of tasks. It helps you focus and manage your time effectively."}},
+        {"@type": "Question", "name": "Can I customize the colors of my time blocks?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, each time block can be assigned one of several colors to help you visually categorize different types of activities like work, exercise, or personal time."}},
+        {"@type": "Question", "name": "Is my schedule saved between sessions?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, all your time blocks are saved to your browser's localStorage and will persist between sessions. No data is sent to any server."}},
+        {"@type": "Question", "name": "Can I add time blocks to any day of the week?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the scheduler shows a full week view (Monday through Sunday) with time slots from 6 AM to 10 PM. You can add blocks to any day and time slot."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .tb-grid { display: grid; grid-template-columns: 60px repeat(7, 1fr); gap: 1px; background: #e2e8f0; border: 1px solid #e2e8f0; border-radius: 0.75rem; overflow: hidden; }
+        .dark-mode .tb-grid { background: #334155; border-color: #334155; }
+        .tb-header { background: #f8fafc; padding: 0.5rem; text-align: center; font-size: 0.75rem; font-weight: 700; color: #475569; }
+        .dark-mode .tb-header { background: #1e293b; color: #94a3b8; }
+        .tb-time { background: #f8fafc; padding: 0.375rem 0.5rem; text-align: right; font-size: 0.7rem; font-weight: 600; color: #94a3b8; display: flex; align-items: center; justify-content: flex-end; min-height: 40px; }
+        .dark-mode .tb-time { background: #1e293b; color: #64748b; }
+        .tb-cell { background: #fff; min-height: 40px; position: relative; cursor: pointer; transition: background 0.15s; padding: 2px; }
+        .tb-cell:hover { background: #f1f5f9; }
+        .dark-mode .tb-cell { background: #0f172a; }
+        .dark-mode .tb-cell:hover { background: #1e293b; }
+        .tb-block { padding: 0.25rem 0.375rem; border-radius: 0.375rem; font-size: 0.7rem; font-weight: 600; color: #fff; cursor: grab; position: relative; line-height: 1.3; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; user-select: none; min-height: 24px; display: flex; align-items: center; justify-content: space-between; gap: 4px; }
+        .tb-block:active { cursor: grabbing; opacity: 0.8; }
+        .tb-block .tb-delete { display: none; cursor: pointer; flex-shrink: 0; width: 14px; height: 14px; border-radius: 50%; background: rgba(0,0,0,0.3); color: #fff; font-size: 10px; line-height: 14px; text-align: center; }
+        .tb-block:hover .tb-delete { display: block; }
+        .tb-block.dragging { opacity: 0.5; }
+        .tb-cell.drag-over { background: #dbeafe; }
+        .dark-mode .tb-cell.drag-over { background: #1e3a5f; }
+        @media (max-width: 768px) {
+            .tb-grid { grid-template-columns: 45px repeat(7, 1fr); font-size: 0.65rem; }
+            .tb-header { font-size: 0.65rem; padding: 0.375rem 0.25rem; }
+            .tb-time { font-size: 0.6rem; padding: 0.25rem; }
+            .tb-block { font-size: 0.6rem; padding: 0.2rem; }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-1 max-w-6xl mx-auto w-full px-4 py-8">
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-orange-100 mb-4">
+                <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h1 class="text-3xl font-extrabold text-slate-900 mb-2">Time Block Scheduler</h1>
+            <p class="text-slate-500 max-w-lg mx-auto">Plan your week with color-coded time blocks. Click any cell to add a block, drag to move them.</p>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div class="flex items-center gap-2">
+                <label class="text-sm font-semibold text-slate-700">Block Title:</label>
+                <input type="text" id="blockTitle" placeholder="e.g. Deep Work" class="px-3 py-2 rounded-lg border-2 border-slate-200 text-sm font-medium focus:border-blue-500 focus:outline-none w-40">
+            </div>
+            <div class="flex items-center gap-2 flex-wrap">
+                <label class="text-sm font-semibold text-slate-700">Color:</label>
+                <div class="flex gap-1" id="colorPicker">
+                    <button class="color-btn w-7 h-7 rounded-full bg-blue-500 border-2 border-blue-600 active" data-color="#3b82f6" title="Blue"></button>
+                    <button class="color-btn w-7 h-7 rounded-full bg-green-500 border-2 border-transparent" data-color="#22c55e" title="Green"></button>
+                    <button class="color-btn w-7 h-7 rounded-full bg-purple-500 border-2 border-transparent" data-color="#a855f7" title="Purple"></button>
+                    <button class="color-btn w-7 h-7 rounded-full bg-orange-500 border-2 border-transparent" data-color="#f97316" title="Orange"></button>
+                    <button class="color-btn w-7 h-7 rounded-full bg-pink-500 border-2 border-transparent" data-color="#ec4899" title="Pink"></button>
+                    <button class="color-btn w-7 h-7 rounded-full bg-teal-500 border-2 border-transparent" data-color="#14b8a6" title="Teal"></button>
+                    <button class="color-btn w-7 h-7 rounded-full bg-red-500 border-2 border-transparent" data-color="#ef4444" title="Red"></button>
+                    <button class="color-btn w-7 h-7 rounded-full bg-slate-700 border-2 border-transparent" data-color="#334155" title="Dark"></button>
+                </div>
+            </div>
+            <button id="btnClearWeek" class="px-4 py-2 text-sm font-bold text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-all">
+                Clear Week
+            </button>
+        </div>
+
+        <!-- Week Grid -->
+        <div class="overflow-x-auto pb-4">
+            <div id="weekGrid" class="tb-grid" style="min-width:700px;"></div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="mt-12 border-t border-slate-200 pt-8">
+            <h2 class="text-2xl font-extrabold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3 max-w-2xl mx-auto">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 bg-white hover:bg-slate-50 flex items-center justify-between font-semibold text-slate-800">
+                        What is time blocking?
+                        <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-sm text-slate-600">
+                        Time blocking is a productivity technique where you divide your day into blocks of time, each dedicated to a specific task or group of tasks. It helps you focus and manage your time effectively.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 bg-white hover:bg-slate-50 flex items-center justify-between font-semibold text-slate-800">
+                        Can I customize the colors of my time blocks?
+                        <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-sm text-slate-600">
+                        Yes, each time block can be assigned one of several colors to help you visually categorize different types of activities like work, exercise, or personal time.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 bg-white hover:bg-slate-50 flex items-center justify-between font-semibold text-slate-800">
+                        Is my schedule saved between sessions?
+                        <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-sm text-slate-600">
+                        Yes, all your time blocks are saved to your browser's localStorage and will persist between sessions. No data is sent to any server.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 bg-white hover:bg-slate-50 flex items-center justify-between font-semibold text-slate-800">
+                        Can I add time blocks to any day of the week?
+                        <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-sm text-slate-600">
+                        Yes, the scheduler shows a full week view (Monday through Sunday) with time slots from 6 AM to 10 PM. You can add blocks to any day and time slot.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="mt-12 border-t border-slate-200 pt-8">
+            <h2 class="text-2xl font-extrabold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/productivity/daily-planner.html" class="tool-card p-5">
+                    <div class="tool-card-icon bg-blue-100"><svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                    <span class="tool-card-title">Daily Planner</span>
+                    <span class="tool-card-desc">Plan your day with hourly time slots.</span>
+                </a>
+                <a href="/tools/productivity/priority-matrix.html" class="tool-card p-5">
+                    <div class="tool-card-icon bg-purple-100"><svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg></div>
+                    <span class="tool-card-title">Priority Matrix</span>
+                    <span class="tool-card-desc">Eisenhower matrix for task prioritization.</span>
+                </a>
+                <a href="/tools/productivity/todo-list-advanced.html" class="tool-card p-5">
+                    <div class="tool-card-icon bg-indigo-100"><svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div>
+                    <span class="tool-card-title">Advanced To-Do List</span>
+                    <span class="tool-card-desc">Manage tasks with priorities and categories.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div>
+                <div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div>
+                <div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div>
+                <div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div>
+                <div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div>
+        </div>
+    </footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+
+    <script>
+    (function() {
+        if(typeof trackRecentTool==='function')trackRecentTool('Time Block Scheduler','/tools/productivity/time-block-scheduler.html');
+
+        var STORAGE_KEY = 'optidrop_time_blocks';
+        var DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+        var START_HOUR = 6;
+        var END_HOUR = 22;
+        var selectedColor = '#3b82f6';
+        var draggedBlock = null;
+
+        function getWeekKey() {
+            var now = new Date();
+            var dayOfWeek = now.getDay();
+            var monday = new Date(now);
+            monday.setDate(now.getDate() - (dayOfWeek === 0 ? 6 : dayOfWeek - 1));
+            return STORAGE_KEY + '_' + monday.getFullYear() + '-' + String(monday.getMonth()+1).padStart(2,'0') + '-' + String(monday.getDate()).padStart(2,'0');
+        }
+
+        function loadBlocks() {
+            try { return JSON.parse(localStorage.getItem(getWeekKey())) || {}; } catch(e) { return {}; }
+        }
+
+        function saveBlocks(blocks) {
+            try { localStorage.setItem(getWeekKey(), JSON.stringify(blocks)); } catch(e) {}
+        }
+
+        function formatHour(h) {
+            if (h === 0 || h === 24) return '12 AM';
+            if (h === 12) return '12 PM';
+            if (h < 12) return h + ' AM';
+            return (h - 12) + ' PM';
+        }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        function generateBlockId() {
+            return 'tb_' + Date.now().toString(36) + Math.random().toString(36).substr(2, 4);
+        }
+
+        function renderGrid() {
+            var blocks = loadBlocks();
+            var grid = document.getElementById('weekGrid');
+            var html = '';
+
+            // Header row
+            html += '<div class="tb-header"></div>';
+            DAYS.forEach(function(day) {
+                html += '<div class="tb-header">' + day + '</div>';
+            });
+
+            // Time rows
+            for (var h = START_HOUR; h <= END_HOUR; h++) {
+                html += '<div class="tb-time">' + formatHour(h) + '</div>';
+                for (var d = 0; d < 7; d++) {
+                    var key = d + '_' + h;
+                    var block = blocks[key];
+                    html += '<div class="tb-cell" data-day="' + d + '" data-hour="' + h + '">';
+                    if (block) {
+                        html += '<div class="tb-block" draggable="true" data-key="' + key + '" data-id="' + block.id + '" style="background:' + block.color + '">' +
+                            '<span class="truncate">' + escapeHtml(block.title) + '</span>' +
+                            '<span class="tb-delete" data-key="' + key + '">&times;</span>' +
+                        '</div>';
+                    }
+                    html += '</div>';
+                }
+            }
+
+            grid.innerHTML = html;
+        }
+
+        function addBlock(day, hour) {
+            var title = document.getElementById('blockTitle').value.trim();
+            if (!title) {
+                title = prompt('Enter block title:');
+                if (!title || !title.trim()) return;
+                title = title.trim();
+            }
+
+            var blocks = loadBlocks();
+            var key = day + '_' + hour;
+            blocks[key] = { id: generateBlockId(), title: title, color: selectedColor };
+            saveBlocks(blocks);
+            renderGrid();
+            showToast('Block added!');
+        }
+
+        function deleteBlock(key) {
+            var blocks = loadBlocks();
+            delete blocks[key];
+            saveBlocks(blocks);
+            renderGrid();
+            showToast('Block removed.');
+        }
+
+        function moveBlock(fromKey, toDay, toHour) {
+            var blocks = loadBlocks();
+            var toKey = toDay + '_' + toHour;
+            if (blocks[toKey]) {
+                showToast('Cell already occupied!', 'error');
+                return;
+            }
+            blocks[toKey] = blocks[fromKey];
+            delete blocks[fromKey];
+            saveBlocks(blocks);
+            renderGrid();
+        }
+
+        // Color picker
+        document.getElementById('colorPicker').addEventListener('click', function(e) {
+            var btn = e.target.closest('.color-btn');
+            if (!btn) return;
+            selectedColor = btn.dataset.color;
+            document.querySelectorAll('.color-btn').forEach(function(b) {
+                b.classList.remove('active');
+                b.style.borderColor = 'transparent';
+            });
+            btn.classList.add('active');
+            btn.style.borderColor = btn.dataset.color;
+        });
+
+        // Cell click to add
+        document.getElementById('weekGrid').addEventListener('click', function(e) {
+            var deleteBtn = e.target.closest('.tb-delete');
+            if (deleteBtn) {
+                deleteBlock(deleteBtn.dataset.key);
+                return;
+            }
+            var cell = e.target.closest('.tb-cell');
+            if (cell && !cell.querySelector('.tb-block')) {
+                addBlock(parseInt(cell.dataset.day), parseInt(cell.dataset.hour));
+            }
+        });
+
+        // Drag and drop
+        document.getElementById('weekGrid').addEventListener('dragstart', function(e) {
+            var block = e.target.closest('.tb-block');
+            if (!block) return;
+            draggedBlock = block.dataset.key;
+            block.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+        });
+
+        document.getElementById('weekGrid').addEventListener('dragend', function(e) {
+            var block = e.target.closest('.tb-block');
+            if (block) block.classList.remove('dragging');
+            document.querySelectorAll('.tb-cell.drag-over').forEach(function(c) { c.classList.remove('drag-over'); });
+            draggedBlock = null;
+        });
+
+        document.getElementById('weekGrid').addEventListener('dragover', function(e) {
+            e.preventDefault();
+            var cell = e.target.closest('.tb-cell');
+            if (cell) {
+                document.querySelectorAll('.tb-cell.drag-over').forEach(function(c) { c.classList.remove('drag-over'); });
+                cell.classList.add('drag-over');
+            }
+        });
+
+        document.getElementById('weekGrid').addEventListener('dragleave', function(e) {
+            var cell = e.target.closest('.tb-cell');
+            if (cell) cell.classList.remove('drag-over');
+        });
+
+        document.getElementById('weekGrid').addEventListener('drop', function(e) {
+            e.preventDefault();
+            var cell = e.target.closest('.tb-cell');
+            if (!cell || !draggedBlock) return;
+            cell.classList.remove('drag-over');
+            var fromParts = draggedBlock.split('_');
+            moveBlock(draggedBlock, parseInt(cell.dataset.day), parseInt(cell.dataset.hour));
+            draggedBlock = null;
+        });
+
+        // Touch support for drag
+        var touchBlock = null;
+        var touchStartKey = null;
+
+        document.getElementById('weekGrid').addEventListener('touchstart', function(e) {
+            var block = e.target.closest('.tb-block');
+            if (!block) return;
+            touchBlock = block;
+            touchStartKey = block.dataset.key;
+        }, { passive: true });
+
+        document.getElementById('weekGrid').addEventListener('touchend', function(e) {
+            if (!touchBlock || !touchStartKey) return;
+            var touch = e.changedTouches[0];
+            var elem = document.elementFromPoint(touch.clientX, touch.clientY);
+            var cell = elem ? elem.closest('.tb-cell') : null;
+            if (cell) {
+                moveBlock(touchStartKey, parseInt(cell.dataset.day), parseInt(cell.dataset.hour));
+            }
+            touchBlock = null;
+            touchStartKey = null;
+        });
+
+        // Clear week
+        document.getElementById('btnClearWeek').addEventListener('click', function() {
+            if (!confirm('Clear all time blocks for this week?')) return;
+            try { localStorage.removeItem(getWeekKey()); } catch(e) {}
+            renderGrid();
+            showToast('Week cleared.');
+        });
+
+        // Initialize
+        renderGrid();
+    })();
+    </script>
+</body>
+</html>

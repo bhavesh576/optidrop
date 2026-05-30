@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eisenhower Priority Matrix — Urgent &amp; Important Task Sorter | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free Eisenhower Priority Matrix. Organize tasks into 4 quadrants: Urgent+Important, Important+Not Urgent, Urgent+Not Important, Neither. Drag and drop tasks between quadrants.">
+    <meta name="keywords" content="Eisenhower matrix, priority matrix, urgent important matrix, task prioritization, productivity tool, decision matrix, time management">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Eisenhower Priority Matrix — Urgent &amp; Important Task Sorter | OptiDrop">
+    <meta property="og:description" content="Free Eisenhower Priority Matrix. Organize tasks into 4 quadrants. Drag and drop tasks between quadrants.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/productivity/priority-matrix.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Eisenhower Priority Matrix — Urgent &amp; Important Task Sorter | OptiDrop">
+    <meta name="twitter:description" content="Free Eisenhower Priority Matrix. Organize tasks into 4 quadrants. Drag and drop tasks between quadrants.">
+    <link rel="canonical" href="https://optidrop.online/tools/productivity/priority-matrix.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Productivity Tools", "item": "https://optidrop.online/tools/productivity/"},
+        {"@type": "ListItem", "position": 3, "name": "Eisenhower Priority Matrix", "item": "https://optidrop.online/tools/productivity/priority-matrix.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Eisenhower Priority Matrix",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free Eisenhower Priority Matrix. Organize tasks into 4 quadrants. Drag and drop tasks between quadrants."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is the Eisenhower Matrix?", "acceptedAnswer": {"@type": "Answer", "text": "The Eisenhower Matrix is a productivity framework that organizes tasks into 4 quadrants based on urgency and importance: Do First (urgent+important), Schedule (important+not urgent), Delegate (urgent+not important), and Eliminate (neither)."}},
+        {"@type": "Question", "name": "Can I move tasks between quadrants?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can drag and drop tasks between any of the 4 quadrants. This makes it easy to re-prioritize as circumstances change."}},
+        {"@type": "Question", "name": "Is my matrix data saved?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, all tasks and their quadrant assignments are saved to your browser's localStorage. Your matrix persists between sessions."}},
+        {"@type": "Question", "name": "How do I use the matrix effectively?", "acceptedAnswer": {"@type": "Answer", "text": "Add all your tasks first, then sort them into quadrants. Do tasks in 'Do First' immediately, schedule 'Simplify' tasks, delegate 'Delegate' tasks if possible, and eliminate 'Eliminate' tasks."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .matrix-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 2px; background: #e2e8f0; border-radius: 1rem; overflow: hidden; }
+        .dark-mode .matrix-grid { background: #334155; }
+        .quadrant { min-height: 200px; padding: 1rem; display: flex; flex-direction: column; }
+        .quadrant-header { font-size: 0.85rem; font-weight: 800; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .quadrant-subtitle { font-size: 0.7rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .q-do { background: #fef2f2; }
+        .q-do .quadrant-header { color: #dc2626; }
+        .q-do .quadrant-subtitle { color: #b91c1c; }
+        .q-schedule { background: #eff6ff; }
+        .q-schedule .quadrant-header { color: #2563eb; }
+        .q-schedule .quadrant-subtitle { color: #1d4ed8; }
+        .q-delegate { background: #fffbeb; }
+        .q-delegate .quadrant-header { color: #d97706; }
+        .q-delegate .quadrant-subtitle { color: #b45309; }
+        .q-eliminate { background: #f8fafc; }
+        .q-eliminate .quadrant-header { color: #64748b; }
+        .q-eliminate .quadrant-subtitle { color: #94a3b8; }
+        .dark-mode .q-do { background: #3b1a1a; }
+        .dark-mode .q-do .quadrant-header { color: #fca5a5; }
+        .dark-mode .q-do .quadrant-subtitle { color: #f87171; }
+        .dark-mode .q-schedule { background: #1e3a5f; }
+        .dark-mode .q-schedule .quadrant-header { color: #93c5fd; }
+        .dark-mode .q-schedule .quadrant-subtitle { color: #60a5fa; }
+        .dark-mode .q-delegate { background: #451a03; }
+        .dark-mode .q-delegate .quadrant-header { color: #fcd34d; }
+        .dark-mode .q-delegate .quadrant-subtitle { color: #fbbf24; }
+        .dark-mode .q-eliminate { background: #1e293b; }
+        .dark-mode .q-eliminate .quadrant-header { color: #94a3b8; }
+        .dark-mode .q-eliminate .quadrant-subtitle { color: #64748b; }
+        .task-card { padding: 0.5rem 0.75rem; border-radius: 0.5rem; font-size: 0.8rem; font-weight: 600; color: #fff; cursor: grab; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.375rem; user-select: none; }
+        .task-card:active { cursor: grabbing; opacity: 0.8; }
+        .task-card .task-delete { display: none; cursor: pointer; flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; background: rgba(0,0,0,0.3); color: #fff; font-size: 12px; line-height: 18px; text-align: center; }
+        .task-card:hover .task-delete { display: block; }
+        .task-card.dragging { opacity: 0.5; }
+        .quadrant.drag-over { outline: 2px dashed #3b82f6; outline-offset: -2px; }
+        .axis-label { font-size: 0.75rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; text-align: center; padding: 0.5rem; }
+        .dark-mode .axis-label { color: #64748b; }
+        @media (max-width: 600px) {
+            .matrix-grid { grid-template-columns: 1fr; }
+            .axis-label-horizontal { display: none; }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-purple-100 mb-4">
+                <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+            </div>
+            <h1 class="text-3xl font-extrabold text-slate-900 mb-2">Eisenhower Priority Matrix</h1>
+            <p class="text-slate-500 max-w-lg mx-auto">Organize tasks by urgency and importance. Drag tasks between quadrants to re-prioritize.</p>
+        </div>
+
+        <!-- Add Task -->
+        <div class="flex flex-wrap gap-3 mb-6 items-center justify-center">
+            <input type="text" id="taskInput" placeholder="Enter a task..." class="px-4 py-3 rounded-xl border-2 border-slate-200 text-sm font-medium focus:border-blue-500 focus:outline-none w-full max-w-sm">
+            <select id="taskQuadrant" class="px-4 py-3 rounded-xl border-2 border-slate-200 text-sm font-semibold bg-white focus:border-blue-500 focus:outline-none">
+                <option value="do">Do First (Urgent + Important)</option>
+                <option value="schedule">Schedule (Important)</option>
+                <option value="delegate">Delegate (Urgent)</option>
+                <option value="eliminate">Eliminate (Neither)</option>
+            </select>
+            <button id="btnAddTask" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl transition-all shadow-md">
+                Add Task
+            </button>
+        </div>
+
+        <!-- Axis Labels -->
+        <div class="hidden md:flex items-center justify-center gap-4 mb-2">
+            <div class="axis-label">&larr; Not Urgent</div>
+            <div class="flex-1"></div>
+            <div class="axis-label">Urgent &rarr;</div>
+        </div>
+
+        <!-- Matrix -->
+        <div class="matrix-grid mb-2">
+            <div class="quadrant q-do" data-quadrant="do" id="q-do">
+                <div class="quadrant-header">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    DO FIRST
+                </div>
+                <div class="quadrant-subtitle">Urgent &amp; Important</div>
+                <div class="task-list flex-1 space-y-1" data-quadrant="do"></div>
+            </div>
+            <div class="quadrant q-schedule" data-quadrant="schedule" id="q-schedule">
+                <div class="quadrant-header">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    SCHEDULE
+                </div>
+                <div class="quadrant-subtitle">Important, Not Urgent</div>
+                <div class="task-list flex-1 space-y-1" data-quadrant="schedule"></div>
+            </div>
+            <div class="quadrant q-delegate" data-quadrant="delegate" id="q-delegate">
+                <div class="quadrant-header">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    DELEGATE
+                </div>
+                <div class="quadrant-subtitle">Urgent, Not Important</div>
+                <div class="task-list flex-1 space-y-1" data-quadrant="delegate"></div>
+            </div>
+            <div class="quadrant q-eliminate" data-quadrant="eliminate" id="q-eliminate">
+                <div class="quadrant-header">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                    ELIMINATE
+                </div>
+                <div class="quadrant-subtitle">Neither Urgent nor Important</div>
+                <div class="task-list flex-1 space-y-1" data-quadrant="eliminate"></div>
+            </div>
+        </div>
+
+        <!-- Task Count -->
+        <p id="taskCount" class="text-center text-sm text-slate-400 mb-6"></p>
+
+        <!-- FAQ Section -->
+        <section class="mt-12 border-t border-slate-200 pt-8">
+            <h2 class="text-2xl font-extrabold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3 max-w-2xl mx-auto">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 bg-white hover:bg-slate-50 flex items-center justify-between font-semibold text-slate-800">
+                        What is the Eisenhower Matrix?
+                        <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-sm text-slate-600">
+                        The Eisenhower Matrix is a productivity framework that organizes tasks into 4 quadrants based on urgency and importance: Do First (urgent+important), Schedule (important+not urgent), Delegate (urgent+not important), and Eliminate (neither).
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 bg-white hover:bg-slate-50 flex items-center justify-between font-semibold text-slate-800">
+                        Can I move tasks between quadrants?
+                        <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-sm text-slate-600">
+                        Yes, you can drag and drop tasks between any of the 4 quadrants. This makes it easy to re-prioritize as circumstances change.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 bg-white hover:bg-slate-50 flex items-center justify-between font-semibold text-slate-800">
+                        Is my matrix data saved?
+                        <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-sm text-slate-600">
+                        Yes, all tasks and their quadrant assignments are saved to your browser's localStorage. Your matrix persists between sessions.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 bg-white hover:bg-slate-50 flex items-center justify-between font-semibold text-slate-800">
+                        How do I use the matrix effectively?
+                        <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-sm text-slate-600">
+                        Add all your tasks first, then sort them into quadrants. Do tasks in 'Do First' immediately, schedule 'Schedule' tasks, delegate 'Delegate' tasks if possible, and eliminate 'Eliminate' tasks.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="mt-12 border-t border-slate-200 pt-8">
+            <h2 class="text-2xl font-extrabold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/productivity/todo-list-advanced.html" class="tool-card p-5">
+                    <div class="tool-card-icon bg-indigo-100"><svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div>
+                    <span class="tool-card-title">Advanced To-Do List</span>
+                    <span class="tool-card-desc">Manage tasks with priorities, due dates, and categories.</span>
+                </a>
+                <a href="/tools/productivity/time-block-scheduler.html" class="tool-card p-5">
+                    <div class="tool-card-icon bg-orange-100"><svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <span class="tool-card-title">Time Block Scheduler</span>
+                    <span class="tool-card-desc">Weekly time blocking calendar planner.</span>
+                </a>
+                <a href="/tools/productivity/goal-tracker.html" class="tool-card p-5">
+                    <div class="tool-card-icon bg-green-100"><svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+                    <span class="tool-card-title">Goal Tracker</span>
+                    <span class="tool-card-desc">Set SMART goals and track your progress.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div>
+                <div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div>
+                <div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div>
+                <div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div>
+                <div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div>
+        </div>
+    </footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+
+    <script>
+    (function() {
+        if(typeof trackRecentTool==='function')trackRecentTool('Eisenhower Priority Matrix','/tools/productivity/priority-matrix.html');
+
+        var STORAGE_KEY = 'optidrop_priority_matrix';
+        var draggedEl = null;
+        var draggedId = null;
+
+        var quadrantColors = {
+            do: '#dc2626',
+            schedule: '#2563eb',
+            delegate: '#d97706',
+            eliminate: '#64748b'
+        };
+
+        function loadTasks() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { do: [], schedule: [], delegate: [], eliminate: [] }; } catch(e) { return { do: [], schedule: [], delegate: [], eliminate: [] }; }
+        }
+
+        function saveTasks(data) {
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
+        }
+
+        function generateId() {
+            return 'pm_' + Date.now().toString(36) + Math.random().toString(36).substr(2, 4);
+        }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        function renderMatrix() {
+            var data = loadTasks();
+            var totalTasks = 0;
+
+            ['do','schedule','delegate','eliminate'].forEach(function(q) {
+                var list = document.querySelector('.task-list[data-quadrant="' + q + '"]');
+                if (!list) return;
+                var tasks = data[q] || [];
+                totalTasks += tasks.length;
+
+                if (tasks.length === 0) {
+                    list.innerHTML = '<div class="text-xs text-slate-400 italic p-2">Drop tasks here or add above</div>';
+                } else {
+                    list.innerHTML = tasks.map(function(task) {
+                        return '<div class="task-card" draggable="true" data-id="' + task.id + '" data-quadrant="' + q + '" style="background:' + quadrantColors[q] + '">' +
+                            '<span class="truncate">' + escapeHtml(task.title) + '</span>' +
+                            '<span class="task-delete" data-id="' + task.id + '" data-quadrant="' + q + '">&times;</span>' +
+                        '</div>';
+                    }).join('');
+                }
+            });
+
+            document.getElementById('taskCount').textContent = totalTasks + ' task' + (totalTasks !== 1 ? 's' : '') + ' across all quadrants';
+        }
+
+        function addTask() {
+            var input = document.getElementById('taskInput');
+            var title = input.value.trim();
+            if (!title) { showToast('Please enter a task.', 'error'); return; }
+
+            var quadrant = document.getElementById('taskQuadrant').value;
+            var data = loadTasks();
+            data[quadrant].push({ id: generateId(), title: title });
+            saveTasks(data);
+
+            input.value = '';
+            renderMatrix();
+            showToast('Task added!');
+        }
+
+        function deleteTask(id, quadrant) {
+            var data = loadTasks();
+            data[quadrant] = data[quadrant].filter(function(t) { return t.id !== id; });
+            saveTasks(data);
+            renderMatrix();
+            showToast('Task removed.');
+        }
+
+        function moveTask(id, fromQuadrant, toQuadrant) {
+            if (fromQuadrant === toQuadrant) return;
+            var data = loadTasks();
+            var task = null;
+            data[fromQuadrant] = data[fromQuadrant].filter(function(t) {
+                if (t.id === id) { task = t; return false; }
+                return true;
+            });
+            if (task) {
+                data[toQuadrant].push(task);
+                saveTasks(data);
+                renderMatrix();
+            }
+        }
+
+        // Event delegation
+        document.getElementById('btnAddTask').addEventListener('click', addTask);
+        document.getElementById('taskInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') addTask();
+        });
+
+        // Click to delete
+        document.addEventListener('click', function(e) {
+            var delBtn = e.target.closest('.task-delete');
+            if (delBtn) {
+                deleteTask(delBtn.dataset.id, delBtn.dataset.quadrant);
+            }
+        });
+
+        // Drag and drop
+        document.addEventListener('dragstart', function(e) {
+            var card = e.target.closest('.task-card');
+            if (!card) return;
+            draggedEl = card;
+            draggedId = card.dataset.id;
+            card.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/plain', card.dataset.id);
+        });
+
+        document.addEventListener('dragend', function(e) {
+            if (draggedEl) draggedEl.classList.remove('dragging');
+            document.querySelectorAll('.quadrant.drag-over').forEach(function(q) { q.classList.remove('drag-over'); });
+            draggedEl = null;
+            draggedId = null;
+        });
+
+        document.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            var quadrant = e.target.closest('.quadrant');
+            if (quadrant) {
+                document.querySelectorAll('.quadrant.drag-over').forEach(function(q) { q.classList.remove('drag-over'); });
+                quadrant.classList.add('drag-over');
+            }
+        });
+
+        document.addEventListener('dragleave', function(e) {
+            var quadrant = e.target.closest('.quadrant');
+            if (quadrant && !quadrant.contains(e.relatedTarget)) {
+                quadrant.classList.remove('drag-over');
+            }
+        });
+
+        document.addEventListener('drop', function(e) {
+            e.preventDefault();
+            var quadrant = e.target.closest('.quadrant');
+            if (!quadrant || !draggedEl) return;
+            quadrant.classList.remove('drag-over');
+
+            var toQ = quadrant.dataset.quadrant;
+            var fromQ = draggedEl.dataset.quadrant;
+            var id = draggedEl.dataset.id;
+
+            if (fromQ !== toQ) {
+                moveTask(id, fromQ, toQ);
+                showToast('Task moved!');
+            }
+        });
+
+        // Touch support
+        var touchCard = null;
+        var touchStartQuadrant = null;
+        var touchStartId = null;
+
+        document.addEventListener('touchstart', function(e) {
+            var card = e.target.closest('.task-card');
+            if (!card || e.target.closest('.task-delete')) return;
+            touchCard = card;
+            touchStartQuadrant = card.dataset.quadrant;
+            touchStartId = card.dataset.id;
+            card.style.opacity = '0.6';
+        }, { passive: true });
+
+        document.addEventListener('touchend', function(e) {
+            if (!touchCard) return;
+            touchCard.style.opacity = '1';
+            var touch = e.changedTouches[0];
+            var elem = document.elementFromPoint(touch.clientX, touch.clientY);
+            var quadrant = elem ? elem.closest('.quadrant') : null;
+            if (quadrant && quadrant.dataset.quadrant !== touchStartQuadrant) {
+                moveTask(touchStartId, touchStartQuadrant, quadrant.dataset.quadrant);
+                showToast('Task moved!');
+            }
+            touchCard = null;
+            touchStartQuadrant = null;
+            touchStartId = null;
+        });
+
+        // Initialize
+        renderMatrix();
+    })();
+    </script>
+</body>
+</html>

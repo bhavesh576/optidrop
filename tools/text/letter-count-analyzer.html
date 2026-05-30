@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Count Analyzer | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2"><link rel="shortcut icon" href="/favicon.png?v=2"><link rel="apple-touch-icon" href="/favicon.png?v=2"><meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Advanced character frequency analysis tool. Count letters, digits, spaces, punctuation and see a visual bar chart of letter frequency A-Z. Free online text analyzer."><meta name="keywords" content="letter count, character frequency, text analysis, letter frequency chart, character counter, text statistics, letter analyzer"><meta name="author" content="OptiDrop"><meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Letter Count Analyzer | OptiDrop"><meta property="og:description" content="Advanced character frequency analysis with visual bar chart. Count letters, digits, spaces, and more."><meta property="og:type" content="website"><meta property="og:url" content="https://optidrop.online/tools/text/letter-count-analyzer.html"><meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Letter Count Analyzer | OptiDrop"><meta name="twitter:description" content="Advanced character frequency analysis with visual bar chart.">
+    <link rel="canonical" href="https://optidrop.online/tools/text/letter-count-analyzer.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Text Tools","item":"https://optidrop.online/category/text-tools.html"},{"@type":"ListItem","position":3,"name":"Letter Count Analyzer","item":"https://optidrop.online/tools/text/letter-count-analyzer.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Letter Count Analyzer","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online letter count analyzer with character frequency bar chart and detailed text statistics."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the letter count analyzer show?","acceptedAnswer":{"@type":"Answer","text":"The analyzer shows total characters, letters, digits, spaces, and punctuation counts. It also displays a visual bar chart showing the frequency of each letter (A-Z) and identifies the most and least common letters."}},{"@type":"Question","name":"How is letter frequency calculated?","acceptedAnswer":{"@type":"Answer","text":"Letter frequency is calculated by counting how many times each letter (A-Z) appears in your text, ignoring case. The bar chart visually represents these counts so you can quickly see which letters appear most often."}},{"@type":"Question","name":"Can I analyze large texts?","acceptedAnswer":{"@type":"Answer","text":"Yes! The analyzer works with texts of any size. For very large texts (over 10,000 characters), the analysis may take a moment but will still complete entirely in your browser."}},{"@type":"Question","name":"Is my text data stored or shared?","acceptedAnswer":{"@type":"Answer","text":"No. All text processing happens entirely in your browser. Your text is never sent to any server, never stored anywhere, and never leaves your device. 100% private."}}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header"><div class="header-inner"><a href="/" class="logo-text">Opti<span>Drop</span></a><nav class="header-nav"><a href="/" class="back-link"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>All Tools</a><span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span><button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav></div><nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a></nav></header>
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center"><h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Letter Count Analyzer</h1><p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Advanced character frequency analysis. Paste your text to see total characters, letters, digits, spaces, punctuation, and a visual bar chart of letter frequency from A to Z.</p></section>
+        <section class="max-w-4xl mx-auto px-4 pb-8"><div class="glass-panel rounded-3xl shadow-xl overflow-hidden"><div class="p-6 sm:p-10">
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Enter or paste your text</label>
+            <textarea id="inputText" rows="6" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none text-base resize-y" placeholder="Paste any text here to analyze character frequency..."></textarea>
+            <div class="flex flex-col sm:flex-row gap-3 mt-3">
+                <button onclick="analyzeText()" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl transition-colors">Analyze Text</button>
+                <button onclick="clearAll()" class="px-6 py-3 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold rounded-xl transition-colors">Clear</button>
+            </div>
+
+            <div id="results" class="mt-6 hidden">
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
+                    <div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-center"><div class="text-2xl font-bold text-blue-600 dark:text-blue-400" id="totalCount">0</div><div class="text-xs text-slate-500 dark:text-slate-400">Total Characters</div></div>
+                    <div class="p-3 rounded-xl bg-green-50 dark:bg-green-900/20 text-center"><div class="text-2xl font-bold text-green-600 dark:text-green-400" id="letterCount">0</div><div class="text-xs text-slate-500 dark:text-slate-400">Letters</div></div>
+                    <div class="p-3 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-center"><div class="text-2xl font-bold text-purple-600 dark:text-purple-400" id="digitCount">0</div><div class="text-xs text-slate-500 dark:text-slate-400">Digits</div></div>
+                    <div class="p-3 rounded-xl bg-yellow-50 dark:bg-yellow-900/20 text-center"><div class="text-2xl font-bold text-yellow-600 dark:text-yellow-400" id="spaceCount">0</div><div class="text-xs text-slate-500 dark:text-slate-400">Spaces</div></div>
+                    <div class="p-3 rounded-xl bg-red-50 dark:bg-red-900/20 text-center"><div class="text-2xl font-bold text-red-600 dark:text-red-400" id="punctCount">0</div><div class="text-xs text-slate-500 dark:text-slate-400">Punctuation</div></div>
+                </div>
+
+                <div class="mb-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-lg font-semibold text-slate-800 dark:text-white">Letter Frequency (A-Z)</h3>
+                        <span id="mostCommon" class="text-sm text-slate-500 dark:text-slate-400"></span>
+                    </div>
+                    <div id="barChart" class="space-y-1"></div>
+                </div>
+
+                <div id="stats" class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800 text-sm"></div>
+            </div>
+        </div></div></section>
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+        <section class="max-w-4xl mx-auto px-4 py-8"><div class="prose max-w-none">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">About the Letter Count Analyzer</h2>
+            <p class="text-slate-600 dark:text-slate-400 mb-4">Our letter count analyzer provides detailed character frequency analysis of any text. It counts every character type and displays a visual bar chart showing how often each letter from A to Z appears in your text.</p>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Understanding Letter Frequency</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-4">In English text, the most common letters are typically E, T, A, O, I, N, S, H, and R. This pattern is the basis for frequency analysis, a technique used in cryptography to break ciphers. The letter E alone accounts for about 12-13% of all letters in English text.</p>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Uses for Letter Frequency Analysis</h3>
+            <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2">
+                <li><strong>Cryptography</strong> - Breaking simple substitution ciphers</li>
+                <li><strong>Language Learning</strong> - Understanding letter patterns in different languages</li>
+                <li><strong>Writing Analysis</strong> - Checking for overuse of certain letters</li>
+                <li><strong>Data Entry</strong> - Verifying text accuracy and completeness</li>
+            </ul>
+        </div></section>
+        <section class="max-w-3xl mx-auto px-4 py-8"><h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2><div class="space-y-3">
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">What does the letter count analyzer show?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">The analyzer shows total characters, letters, digits, spaces, and punctuation counts. It also displays a visual bar chart showing the frequency of each letter (A-Z) and identifies the most and least common letters.</div></details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">How is letter frequency calculated?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">Letter frequency is calculated by counting how many times each letter (A-Z) appears in your text, ignoring case. The bar chart visually represents these counts so you can quickly see which letters appear most often.</div></details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">Can I analyze large texts?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">Yes! The analyzer works with texts of any size. For very large texts (over 10,000 characters), the analysis may take a moment but will still complete entirely in your browser.</div></details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">Is my text data stored or shared?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">No. All text processing happens entirely in your browser. Your text is never sent to any server, never stored anywhere, and never leaves your device. 100% private.</div></details>
+        </div></section>
+        <section class="max-w-4xl mx-auto px-4 py-8"><h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 text-center">Related Tools</h2><div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <a href="/tools/text/character-counter.html" class="block p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors bg-white dark:bg-slate-800"><h3 class="font-semibold text-slate-800 dark:text-white">Character Counter</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Count characters in your text</p></a>
+            <a href="/tools/text/word-frequency.html" class="block p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors bg-white dark:bg-slate-800"><h3 class="font-semibold text-slate-800 dark:text-white">Word Frequency</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Analyze word frequency in text</p></a>
+            <a href="/tools/text/keyword-density-checker.html" class="block p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors bg-white dark:bg-slate-800"><h3 class="font-semibold text-slate-800 dark:text-white">Keyword Density</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Check keyword density for SEO</p></a>
+        </div></section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+        function analyzeText() {
+            const text = document.getElementById('inputText').value;
+            if (!text) {
+                showToast('Please enter some text to analyze');
+                return;
+            }
+
+            const resultsDiv = document.getElementById('results');
+            const totalCount = document.getElementById('totalCount');
+            const letterCount = document.getElementById('letterCount');
+            const digitCount = document.getElementById('digitCount');
+            const spaceCount = document.getElementById('spaceCount');
+            const punctCount = document.getElementById('punctCount');
+            const barChart = document.getElementById('barChart');
+            const mostCommon = document.getElementById('mostCommon');
+            const stats = document.getElementById('stats');
+
+            let letters = 0, digits = 0, spaces = 0, punctuation = 0;
+            const freq = {};
+            for (let i = 65; i <= 90; i++) freq[String.fromCharCode(i)] = 0;
+
+            for (let i = 0; i < text.length; i++) {
+                const ch = text[i];
+                const code = ch.charCodeAt(0);
+                if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
+                    letters++;
+                    freq[ch.toUpperCase()]++;
+                } else if (code >= 48 && code <= 57) {
+                    digits++;
+                } else if (ch === ' ') {
+                    spaces++;
+                } else if (ch === '\n' || ch === '\r' || ch === '\t') {
+                    spaces++;
+                } else {
+                    punctuation++;
+                }
+            }
+
+            totalCount.textContent = text.length;
+            letterCount.textContent = letters;
+            digitCount.textContent = digits;
+            spaceCount.textContent = spaces;
+            punctCount.textContent = punctuation;
+
+            // Build bar chart
+            const maxFreq = Math.max(...Object.values(freq), 1);
+            let sortedEntries = Object.entries(freq).sort((a, b) => b[1] - a[1]);
+            let mostCommonLetter = sortedEntries[0];
+            let leastCommonLetter = sortedEntries[sortedEntries.length - 1];
+
+            mostCommon.innerHTML = `Most common: <strong class="text-brand-600 dark:text-brand-400">${mostCommonLetter[0]}</strong> (${mostCommonLetter[1]})`;
+
+            barChart.innerHTML = '';
+            for (let i = 65; i <= 90; i++) {
+                const letter = String.fromCharCode(i);
+                const count = freq[letter];
+                const pct = (count / maxFreq) * 100;
+                const row = document.createElement('div');
+                row.className = 'flex items-center gap-2';
+                row.innerHTML = `
+                    <span class="w-5 text-xs font-mono text-slate-500 dark:text-slate-400 text-right">${letter}</span>
+                    <div class="flex-1 h-5 bg-slate-100 dark:bg-slate-800 rounded overflow-hidden">
+                        <div class="h-full bg-brand-500 rounded transition-all duration-500" style="width:${pct}%"></div>
+                    </div>
+                    <span class="w-8 text-xs font-mono text-slate-500 dark:text-slate-400">${count}</span>
+                `;
+                barChart.appendChild(row);
+            }
+
+            // Stats summary
+            const words = text.trim().split(/\s+/).filter(w => w.length > 0).length;
+            const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+            const lines = text.split('\n').length;
+            const vowels = (text.match(/[aeiouAEIOU]/g) || []).length;
+            const consonants = letters - vowels;
+
+            stats.innerHTML = `
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div><span class="text-slate-500 dark:text-slate-400">Words:</span> <strong>${words}</strong></div>
+                    <div><span class="text-slate-500 dark:text-slate-400">Sentences:</span> <strong>${sentences}</strong></div>
+                    <div><span class="text-slate-500 dark:text-slate-400">Lines:</span> <strong>${lines}</strong></div>
+                    <div><span class="text-slate-500 dark:text-slate-400">Vowels:</span> <strong>${vowels}</strong></div>
+                    <div><span class="text-slate-500 dark:text-slate-400">Consonants:</span> <strong>${consonants}</strong></div>
+                    <div><span class="text-slate-500 dark:text-slate-400">Avg Word Len:</span> <strong>${letters > 0 ? (letters / words).toFixed(1) : 0}</strong></div>
+                    <div><span class="text-slate-500 dark:text-slate-400">Most Common:</span> <strong class="text-brand-600 dark:text-brand-400">${mostCommonLetter[0]}</strong></div>
+                    <div><span class="text-slate-500 dark:text-slate-400">Least Common:</span> <strong>${leastCommonLetter[1] > 0 ? leastCommonLetter[0] : 'N/A'}</strong></div>
+                </div>
+            `;
+
+            resultsDiv.classList.remove('hidden');
+            showToast('Analysis complete');
+        }
+
+        function clearAll() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('results').classList.add('hidden');
+            showToast('Cleared');
+        }
+
+        // Real-time analysis on input
+        let analyzeTimeout;
+        document.getElementById('inputText').addEventListener('input', function() {
+            clearTimeout(analyzeTimeout);
+            if (this.value.length > 10) {
+                analyzeTimeout = setTimeout(analyzeText, 500);
+            }
+        });
+    </script>
+</body>
+</html>

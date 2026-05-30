@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Command Cheatsheet Free — 50+ Commands | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Interactive git command cheatsheet with 50+ commands. Search, filter by category, click to copy. Covers basic, branching, remote, stashing, undoing, and advanced commands.">
+    <meta name="keywords" content="git commands, git cheatsheet, git reference, git tutorial, git commands list, version control">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Git Command Cheatsheet Free | OptiDrop">
+    <meta property="og:description" content="50+ git commands with search, filter, and click-to-copy. Free online.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/git-command-cheatsheet.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Git Command Cheatsheet | OptiDrop">
+    <meta name="twitter:description" content="50+ git commands with search and click-to-copy.">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/git-command-cheatsheet.html">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},
+      {"@type":"ListItem","position":2,"name":"Developer Tools","item":"https://optidrop.online/tools/developer/"},
+      {"@type":"ListItem","position":3,"name":"Git Command Cheatsheet","item":"https://optidrop.online/tools/developer/git-command-cheatsheet.html"}
+    ]}</script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Git Command Cheatsheet","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Interactive git command cheatsheet with 50+ commands, search, filter, and click-to-copy."}</script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"How many git commands are included?","acceptedAnswer":{"@type":"Answer","text":"The cheatsheet includes over 50 common git commands across 6 categories: Basic, Branching, Remote, Stashing, Undoing, and Advanced."}},
+      {"@type":"Question","name":"Can I search for specific commands?","acceptedAnswer":{"@type":"Answer","text":"Yes, use the search bar to filter commands by name or description. You can also filter by category using the category buttons."}},
+      {"@type":"Question","name":"How do I copy a command?","acceptedAnswer":{"@type":"Answer","text":"Click on any command card to copy it to your clipboard. A toast notification confirms the copy action."}},
+      {"@type":"Question","name":"Is this suitable for git beginners?","acceptedAnswer":{"@type":"Answer","text":"Yes, each command includes a clear description explaining what it does. The category organization helps beginners find the right commands for their task."}}
+    ]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+    <header class="site-header"><div class="header-inner"><a href="/" class="logo-text">Opti<span>Drop</span></a><nav class="header-nav"><a href="/" class="back-link"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>All Tools</a><span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span><button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav></div><nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a></nav></header>
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Git Command Cheatsheet — 50+ Commands</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Search and filter 50+ git commands across 6 categories. Click any command to copy it to your clipboard. Perfect reference for beginners and pros.</p>
+        </section>
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden"><div class="p-6 sm:p-10">
+                <input type="text" id="search" placeholder="Search commands..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:outline-none mb-4">
+                <div class="flex flex-wrap gap-2 mb-6" id="catBtns"></div>
+                <div id="cmdList" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+                <div id="noResults" class="hidden text-center py-8 text-slate-500">No commands found matching your search.</div>
+            </div></div>
+        </section>
+        <section class="max-w-4xl mx-auto px-4 py-8"><div class="prose max-w-none">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Git Command Reference — Quick and Easy</h2>
+            <p class="text-slate-600 mb-4">Git is the most popular version control system used by developers worldwide. This cheatsheet covers the most commonly used git commands organized by category for quick reference.</p>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">How to Use</h3>
+            <p class="text-slate-600">Search for a command by name or description, or filter by category. Click any command card to copy it to your clipboard. Each command includes a brief description of what it does.</p>
+        </div></section>
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden"><button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">How many git commands are included?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Over 50 commands across 6 categories: Basic, Branching, Remote, Stashing, Undoing, and Advanced.</div></div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden"><button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">Can I search for specific commands?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Yes, use the search bar to filter commands by name or description.</div></div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden"><button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">How do I copy a command?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Click on any command card to copy it to your clipboard.</div></div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden"><button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">Is this suitable for beginners?<svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">Yes, each command includes a clear description. Categories help beginners find the right commands.</div></div>
+            </div>
+        </section>
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;"><h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;"><a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;"><span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span><span class="tool-card-desc" style="font-size:0.8rem;">Format and validate JSON data.</span></a><a href="/tools/developer/terminal-command-simulator.html" class="tool-card" style="padding:1rem;"><span class="tool-card-title" style="font-size:0.95rem;">Terminal Simulator</span><span class="tool-card-desc" style="font-size:0.8rem;">Practice terminal commands safely.</span></a><a href="/tools/developer/base64.html" class="tool-card" style="padding:1rem;"><span class="tool-card-title" style="font-size:0.95rem;">Base64 Encoder</span><span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode Base64 strings.</span></a></div></section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+    if(typeof trackRecentTool==='function')trackRecentTool('Git Command Cheatsheet','/tools/developer/git-command-cheatsheet.html');
+    (function() {
+        var COMMANDS=[
+            {cat:"Basic",cmd:"git init",desc:"Initialize a new git repository"},
+            {cat:"Basic",cmd:"git clone <url>",desc:"Clone a remote repository"},
+            {cat:"Basic",cmd:"git add .",desc:"Stage all changes for commit"},
+            {cat:"Basic",cmd:"git add <file>",desc:"Stage a specific file"},
+            {cat:"Basic",cmd:"git commit -m 'message'",desc:"Commit staged changes with a message"},
+            {cat:"Basic",cmd:"git status",desc:"Show working tree status"},
+            {cat:"Basic",cmd:"git log",desc:"Show commit history"},
+            {cat:"Basic",cmd:"git log --oneline",desc:"Show compact commit history"},
+            {cat:"Basic",cmd:"git diff",desc:"Show unstaged changes"},
+            {cat:"Basic",cmd:"git diff --staged",desc:"Show staged changes"},
+            {cat:"Basic",cmd:"git show <commit>",desc:"Show details of a specific commit"},
+            {cat:"Basic",cmd:"git rm <file>",desc:"Remove a file from working tree and staging area"},
+            {cat:"Branching",cmd:"git branch",desc:"List all local branches"},
+            {cat:"Branching",cmd:"git branch <name>",desc:"Create a new branch"},
+            {cat:"Branching",cmd:"git checkout <branch>",desc:"Switch to a branch"},
+            {cat:"Branching",cmd:"git checkout -b <name>",desc:"Create and switch to a new branch"},
+            {cat:"Branching",cmd:"git switch <branch>",desc:"Switch to a branch (modern)"},
+            {cat:"Branching",cmd:"git switch -c <name>",desc:"Create and switch (modern)"},
+            {cat:"Branching",cmd:"git merge <branch>",desc:"Merge a branch into current branch"},
+            {cat:"Branching",cmd:"git branch -d <name>",desc:"Delete a merged branch"},
+            {cat:"Branching",cmd:"git branch -D <name>",desc:"Force delete a branch"},
+            {cat:"Branching",cmd:"git rebase <branch>",desc:"Rebase current branch onto another"},
+            {cat:"Branching",cmd:"git cherry-pick <commit>",desc:"Apply a specific commit to current branch"},
+            {cat:"Remote",cmd:"git remote -v",desc:"List remote repositories"},
+            {cat:"Remote",cmd:"git remote add origin <url>",desc:"Add a remote repository"},
+            {cat:"Remote",cmd:"git push",desc:"Push commits to remote"},
+            {cat:"Remote",cmd:"git push -u origin <branch>",desc:"Push and set upstream branch"},
+            {cat:"Remote",cmd:"git pull",desc:"Fetch and merge from remote"},
+            {cat:"Remote",cmd:"git fetch",desc:"Fetch changes without merging"},
+            {cat:"Remote",cmd:"git push origin --delete <branch>",desc:"Delete a remote branch"},
+            {cat:"Remote",cmd:"git clone --depth 1 <url>",desc:"Shallow clone (latest commit only)"},
+            {cat:"Stashing",cmd:"git stash",desc:"Stash current changes"},
+            {cat:"Stashing",cmd:"git stash pop",desc:"Apply and remove latest stash"},
+            {cat:"Stashing",cmd:"git stash apply",desc:"Apply latest stash without removing"},
+            {cat:"Stashing",cmd:"git stash list",desc:"List all stashes"},
+            {cat:"Stashing",cmd:"git stash drop",desc:"Delete latest stash"},
+            {cat:"Stashing",cmd:"git stash clear",desc:"Delete all stashes"},
+            {cat:"Stashing",cmd:"git stash show -p",desc:"Show stash diff"},
+            {cat:"Undoing",cmd:"git reset HEAD <file>",desc:"Unstage a file"},
+            {cat:"Undoing",cmd:"git reset --soft HEAD~1",desc:"Undo last commit, keep changes staged"},
+            {cat:"Undoing",cmd:"git reset --mixed HEAD~1",desc:"Undo last commit, keep changes unstaged"},
+            {cat:"Undoing",cmd:"git reset --hard HEAD~1",desc:"Undo last commit, discard changes"},
+            {cat:"Undoing",cmd:"git revert <commit>",desc:"Create a new commit that reverses a commit"},
+            {cat:"Undoing",cmd:"git checkout -- <file>",desc:"Discard changes in working tree"},
+            {cat:"Undoing",cmd:"git restore <file>",desc:"Discard changes (modern)"},
+            {cat:"Undoing",cmd:"git restore --staged <file>",desc:"Unstage a file (modern)"},
+            {cat:"Advanced",cmd:"git tag <name>",desc:"Create a tag at current commit"},
+            {cat:"Advanced",cmd:"git tag -a <name> -m 'msg'",desc:"Create annotated tag"},
+            {cat:"Advanced",cmd:"git blame <file>",desc:"Show who changed each line"},
+            {cat:"Advanced",cmd:"git bisect start",desc:"Start binary search for bugs"},
+            {cat:"Advanced",cmd:"git reflog",desc:"Show all ref updates"},
+            {cat:"Advanced",cmd:"git clean -fd",desc:"Remove untracked files and directories"},
+            {cat:"Advanced",cmd:"git archive --format=zip HEAD",desc:"Create zip archive of repo"},
+            {cat:"Advanced",cmd:"git shortlog -sn",desc:"Show commit count by author"},
+            {cat:"Advanced",cmd:"git log --graph --oneline",desc:"Show branch graph"},
+            {cat:"Advanced",cmd:"git submodule add <url>",desc:"Add a git submodule"}
+        ];
+
+        var cats=["All","Basic","Branching","Remote","Stashing","Undoing","Advanced"];
+        var activeCat="All";
+
+        function renderCatBtns(){
+            var container=document.getElementById('catBtns');
+            container.innerHTML='';
+            cats.forEach(function(c){
+                var btn=document.createElement('button');
+                btn.className='px-4 py-2 text-sm font-bold rounded-full transition-all '+(c===activeCat?'bg-blue-600 text-white':'bg-slate-100 text-slate-700 hover:bg-slate-200');
+                btn.textContent=c;
+                btn.addEventListener('click',function(){activeCat=c;renderCatBtns();renderCmds();});
+                container.appendChild(btn);
+            });
+        }
+
+        function renderCmds(){
+            var query=document.getElementById('search').value.toLowerCase().trim();
+            var filtered=COMMANDS.filter(function(c){
+                var matchCat=activeCat==="All"||c.cat===activeCat;
+                var matchSearch=!query||c.cmd.toLowerCase().indexOf(query)!==-1||c.desc.toLowerCase().indexOf(query)!==-1;
+                return matchCat&&matchSearch;
+            });
+            var container=document.getElementById('cmdList');
+            var noResults=document.getElementById('noResults');
+            if(filtered.length===0){container.innerHTML='';noResults.classList.remove('hidden');return;}
+            noResults.classList.add('hidden');
+            container.innerHTML='';
+            filtered.forEach(function(c){
+                var div=document.createElement('button');
+                div.className='text-left p-4 bg-white border-2 border-slate-200 rounded-xl hover:border-blue-400 hover:bg-blue-50 transition-all cursor-pointer';
+                div.innerHTML='<p class="font-mono text-sm font-bold text-blue-700 mb-1">'+c.cmd+'</p><p class="text-xs text-slate-500">'+c.desc+'</p><span class="inline-block mt-2 px-2 py-0.5 bg-slate-100 text-slate-500 text-xs rounded-full">'+c.cat+'</span>';
+                div.addEventListener('click',function(){copyToClipboard(c.cmd,'Command copied: '+c.cmd);});
+                container.appendChild(div);
+            });
+        }
+
+        document.getElementById('search').addEventListener('input',renderCmds);
+        renderCatBtns();renderCmds();
+    })();
+    </script>
+</body>
+</html>

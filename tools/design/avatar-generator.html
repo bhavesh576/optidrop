@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Generator Free Online — Custom Face Maker PNG | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online avatar generator. Create customizable avatars with face shape, hair style, hair color, skin tone, eyes, and mouth options. Download as PNG. No upload required.">
+    <meta name="keywords" content="avatar generator, avatar maker, custom avatar, face generator, cartoon avatar, avatar creator online, avatar png download, profile picture maker">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Avatar Generator Free Online — Custom Face Maker | OptiDrop">
+    <meta property="og:description" content="Create customizable avatars with face, hair, skin, eyes, and mouth options. Download as PNG. Free and private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/design/avatar-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Avatar Generator Free Online — Custom Face Maker | OptiDrop">
+    <meta name="twitter:description" content="Create customizable avatars and download as PNG. Free and private.">
+    <link rel="canonical" href="https://optidrop.online/tools/design/avatar-generator.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Design Tools", "item": "https://optidrop.online/tools/design/"},
+        {"@type": "ListItem", "position": 3, "name": "Avatar Generator", "item": "https://optidrop.online/tools/design/avatar-generator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Avatar Generator",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online avatar generator. Create customizable avatars with face shape, hair style, hair color, skin tone, eyes, and mouth options."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I create a custom avatar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use the dropdown menus and color pickers to customize your avatar: choose face shape (round, oval, square), hair style (short, long, spiky, bald), hair color, skin tone, eye style, and mouth expression. The canvas preview updates in real time. Click 'Download PNG' to save your avatar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can I use the avatar for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can use the generated avatar as a profile picture on social media, forums, gaming platforms, or any website. The downloaded PNG is 256x256 pixels, which is suitable for most profile picture requirements. It can also be used as a placeholder avatar in app development."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I create both male and female avatars?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the avatar generator offers multiple face shapes, hair styles (including long and short options), and expressions that work for creating diverse avatars of any gender. Combine different options to create the look you want."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the avatar generator free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, OptiDrop's Avatar Generator is completely free. No account or sign-up is required. All rendering happens in your browser using HTML5 Canvas. The downloaded PNG is yours to use however you like."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .opt-select {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1e293b;
+            background: #fff;
+            cursor: pointer;
+            appearance: auto;
+        }
+        .opt-select:focus { outline: none; border-color: #3b82f6; }
+        .avatar-preview-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: repeating-conic-gradient(#f1f5f9 0% 25%, #fff 0% 50%) 50% / 20px 20px;
+            border-radius: 1rem;
+            border: 2px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Avatar Generator — Create Custom Avatars &amp; Download PNG</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Design unique avatars with customizable face shape, hair style, hair color, skin tone, eyes, and mouth. Canvas-based rendering. Download as PNG. 100% free and private.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Left: Controls -->
+                        <div>
+                            <!-- Face Shape -->
+                            <div class="mb-4">
+                                <label for="faceShape" class="block text-sm font-bold text-slate-700 mb-2">Face Shape</label>
+                                <select id="faceShape" class="opt-select">
+                                    <option value="round">Round</option>
+                                    <option value="oval">Oval</option>
+                                    <option value="square">Square</option>
+                                </select>
+                            </div>
+
+                            <!-- Skin Tone -->
+                            <div class="mb-4">
+                                <label for="skinTone" class="block text-sm font-bold text-slate-700 mb-2">Skin Tone</label>
+                                <select id="skinTone" class="opt-select">
+                                    <option value="#FDDCB5">Light</option>
+                                    <option value="#F5C5A3">Fair</option>
+                                    <option value="#D4A574">Medium</option>
+                                    <option value="#C68642">Tan</option>
+                                    <option value="#8D5524">Brown</option>
+                                    <option value="#5C3A1E">Dark</option>
+                                </select>
+                            </div>
+
+                            <!-- Hair Style -->
+                            <div class="mb-4">
+                                <label for="hairStyle" class="block text-sm font-bold text-slate-700 mb-2">Hair Style</label>
+                                <select id="hairStyle" class="opt-select">
+                                    <option value="short">Short</option>
+                                    <option value="long">Long</option>
+                                    <option value="spiky">Spiky</option>
+                                    <option value="bald">Bald</option>
+                                    <option value="buzz">Buzz Cut</option>
+                                </select>
+                            </div>
+
+                            <!-- Hair Color -->
+                            <div class="mb-4">
+                                <label for="hairColor" class="block text-sm font-bold text-slate-700 mb-2">Hair Color</label>
+                                <select id="hairColor" class="opt-select">
+                                    <option value="#2C1B18">Black</option>
+                                    <option value="#4A3728">Dark Brown</option>
+                                    <option value="#8B6914">Brown</option>
+                                    <option value="#D4A017">Blonde</option>
+                                    <option value="#C0392B">Red</option>
+                                    <option value="#7D3C98">Purple</option>
+                                    <option value="#2E86C1">Blue</option>
+                                    <option value="#808080">Gray</option>
+                                </select>
+                            </div>
+
+                            <!-- Eye Style -->
+                            <div class="mb-4">
+                                <label for="eyeStyle" class="block text-sm font-bold text-slate-700 mb-2">Eyes</label>
+                                <select id="eyeStyle" class="opt-select">
+                                    <option value="normal">Normal</option>
+                                    <option value="happy">Happy (Closed)</option>
+                                    <option value="wink">Wink</option>
+                                    <option value="surprised">Surprised</option>
+                                </select>
+                            </div>
+
+                            <!-- Mouth -->
+                            <div class="mb-4">
+                                <label for="mouthStyle" class="block text-sm font-bold text-slate-700 mb-2">Mouth</label>
+                                <select id="mouthStyle" class="opt-select">
+                                    <option value="smile">Smile</option>
+                                    <option value="neutral">Neutral</option>
+                                    <option value="open">Open (Talking)</option>
+                                    <option value="sad">Sad</option>
+                                </select>
+                            </div>
+
+                            <!-- Background Color -->
+                            <div class="mb-4">
+                                <label for="avatarBg" class="block text-sm font-bold text-slate-700 mb-2">Background Color</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="color" id="avatarBg" value="#E8F4FD" class="w-12 h-10 border-2 border-slate-200 rounded-lg cursor-pointer">
+                                    <input type="text" id="avatarBgText" value="#E8F4FD" class="flex-1 px-3 py-2 text-sm border-2 border-slate-200 rounded-lg font-mono font-bold text-slate-900">
+                                </div>
+                            </div>
+
+                            <!-- Download Button -->
+                            <button onclick="downloadAvatar()" class="mt-2 w-full px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download PNG (256x256)
+                            </button>
+
+                            <!-- Randomize -->
+                            <button onclick="randomize()" class="mt-2 w-full px-6 py-3 bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                                Randomize
+                            </button>
+                        </div>
+
+                        <!-- Right: Preview -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Live Preview</label>
+                            <div class="avatar-preview-area">
+                                <canvas id="avatarCanvas" width="256" height="256" style="width:256px;height:256px;border-radius:1rem;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online Avatar Generator — Create Custom Avatars</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Avatar Generator lets you create unique, customizable avatars right in your browser. Choose from multiple face shapes, hair styles, hair colors, skin tones, eye expressions, and mouth styles to design the perfect avatar.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Canvas-Based Rendering</h3>
+                <p class="text-slate-600 mb-4">The avatar is rendered using HTML5 Canvas, which means the drawing is smooth, scalable, and happens entirely in your browser. No images are uploaded or processed on any server.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Download as PNG</h3>
+                <p class="text-slate-600 mb-4">When you are happy with your avatar, click "Download PNG" to save a 256x256 pixel image. This size works well for profile pictures on most social media platforms, forums, and apps.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Randomize for Quick Results</h3>
+                <p class="text-slate-600">Use the "Randomize" button to generate a random combination of all options. This is a fun way to quickly create unique avatars or find inspiration for your perfect look.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I create a custom avatar?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Use the dropdown menus and color pickers to customize your avatar: choose face shape (round, oval, square), hair style (short, long, spiky, bald), hair color, skin tone, eye style, and mouth expression. The canvas preview updates in real time. Click "Download PNG" to save your avatar.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What can I use the avatar for?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        You can use the generated avatar as a profile picture on social media, forums, gaming platforms, or any website. The downloaded PNG is 256x256 pixels, which is suitable for most profile picture requirements. It can also be used as a placeholder avatar in app development.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I create both male and female avatars?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, the avatar generator offers multiple face shapes, hair styles (including long and short options), and expressions that work for creating diverse avatars of any gender. Combine different options to create the look you want.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is the avatar generator free?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, OptiDrop's Avatar Generator is completely free. No account or sign-up is required. All rendering happens in your browser using HTML5 Canvas. The downloaded PNG is yours to use however you like.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/design/favicon-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Favicon Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Create text-based favicons and download as PNG.</span>
+            </a>
+            <a href="/tools/design/button-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Button Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate CSS button styles with live preview.</span>
+            </a>
+            <a href="/tools/design/gradient-text-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Gradient Text Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Create beautiful gradient text with CSS.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var canvas = document.getElementById('avatarCanvas');
+        var ctx = canvas.getContext('2d');
+        var S = 256; // canvas size
+
+        var faceShape = document.getElementById('faceShape');
+        var skinTone = document.getElementById('skinTone');
+        var hairStyle = document.getElementById('hairStyle');
+        var hairColor = document.getElementById('hairColor');
+        var eyeStyle = document.getElementById('eyeStyle');
+        var mouthStyle = document.getElementById('mouthStyle');
+        var avatarBg = document.getElementById('avatarBg');
+        var avatarBgText = document.getElementById('avatarBgText');
+
+        function draw() {
+            var bg = avatarBg.value;
+            var skin = skinTone.value;
+            var hair = hairColor.value;
+            var face = faceShape.value;
+            var hairS = hairStyle.value;
+            var eyes = eyeStyle.value;
+            var mouth = mouthStyle.value;
+            var cx = S / 2;
+            var cy = S / 2 + 10;
+
+            ctx.clearRect(0, 0, S, S);
+
+            // Background
+            ctx.fillStyle = bg;
+            ctx.fillRect(0, 0, S, S);
+
+            // Face dimensions
+            var fw, fh, fy;
+            if (face === 'round') {
+                fw = 80; fh = 85; fy = cy - 60;
+                ctx.beginPath();
+                ctx.ellipse(cx, fy + fh / 2, fw, fh, 0, 0, Math.PI * 2);
+                ctx.fillStyle = skin;
+                ctx.fill();
+            } else if (face === 'oval') {
+                fw = 70; fh = 95; fy = cy - 65;
+                ctx.beginPath();
+                ctx.ellipse(cx, fy + fh / 2, fw, fh, 0, 0, Math.PI * 2);
+                ctx.fillStyle = skin;
+                ctx.fill();
+            } else { // square
+                fw = 80; fh = 85; fy = cy - 60;
+                var r = 20;
+                ctx.beginPath();
+                ctx.moveTo(cx - fw + r, fy);
+                ctx.arcTo(cx + fw, fy, cx + fw, fy + fh, r);
+                ctx.arcTo(cx + fw, fy + fh, cx - fw, fy + fh, r);
+                ctx.arcTo(cx - fw, fy + fh, cx - fw, fy, r);
+                ctx.arcTo(cx - fw, fy, cx + fw, fy, r);
+                ctx.closePath();
+                ctx.fillStyle = skin;
+                ctx.fill();
+            }
+
+            // Ears
+            ctx.fillStyle = skin;
+            ctx.beginPath();
+            ctx.ellipse(cx - fw + 5, fy + fh / 2, 12, 16, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.ellipse(cx + fw - 5, fy + fh / 2, 12, 16, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Hair
+            if (hairS !== 'bald') {
+                ctx.fillStyle = hair;
+                if (hairS === 'short') {
+                    ctx.beginPath();
+                    ctx.ellipse(cx, fy + 15, fw + 5, 50, 0, Math.PI, 0);
+                    ctx.fill();
+                    // Top hair
+                    ctx.beginPath();
+                    ctx.ellipse(cx, fy + 5, fw + 3, 40, 0, Math.PI, 0);
+                    ctx.fill();
+                } else if (hairS === 'long') {
+                    ctx.beginPath();
+                    ctx.ellipse(cx, fy + 15, fw + 8, 55, 0, Math.PI, 0);
+                    ctx.fill();
+                    // Side hair
+                    ctx.fillRect(cx - fw - 8, fy + 30, 18, 80);
+                    ctx.fillRect(cx + fw - 10, fy + 30, 18, 80);
+                } else if (hairS === 'spiky') {
+                    ctx.beginPath();
+                    ctx.ellipse(cx, fy + 20, fw + 5, 45, 0, Math.PI, 0);
+                    ctx.fill();
+                    // Spikes
+                    for (var i = -3; i <= 3; i++) {
+                        ctx.beginPath();
+                        ctx.moveTo(cx + i * 20 - 8, fy - 15);
+                        ctx.lineTo(cx + i * 20, fy - 45 + Math.abs(i) * 5);
+                        ctx.lineTo(cx + i * 20 + 8, fy - 15);
+                        ctx.fill();
+                    }
+                } else if (hairS === 'buzz') {
+                    ctx.beginPath();
+                    ctx.ellipse(cx, fy + 15, fw + 2, 42, 0, Math.PI, 0);
+                    ctx.fill();
+                }
+            }
+
+            // Eyes
+            var ey = fy + fh * 0.4;
+            var exL = cx - 28;
+            var exR = cx + 28;
+
+            if (eyes === 'normal') {
+                // White
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.ellipse(exL, ey, 14, 10, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.ellipse(exR, ey, 14, 10, 0, 0, Math.PI * 2);
+                ctx.fill();
+                // Pupil
+                ctx.fillStyle = '#333';
+                ctx.beginPath();
+                ctx.arc(exL, ey, 6, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(exR, ey, 6, 0, Math.PI * 2);
+                ctx.fill();
+                // Highlight
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.arc(exL + 2, ey - 2, 2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(exR + 2, ey - 2, 2, 0, Math.PI * 2);
+                ctx.fill();
+            } else if (eyes === 'happy') {
+                ctx.strokeStyle = '#333';
+                ctx.lineWidth = 3;
+                ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.arc(exL, ey, 10, 0.1 * Math.PI, 0.9 * Math.PI);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(exR, ey, 10, 0.1 * Math.PI, 0.9 * Math.PI);
+                ctx.stroke();
+            } else if (eyes === 'wink') {
+                // Left eye open
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.ellipse(exL, ey, 14, 10, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#333';
+                ctx.beginPath();
+                ctx.arc(exL, ey, 6, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.arc(exL + 2, ey - 2, 2, 0, Math.PI * 2);
+                ctx.fill();
+                // Right eye wink
+                ctx.strokeStyle = '#333';
+                ctx.lineWidth = 3;
+                ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.arc(exR, ey, 10, 0.1 * Math.PI, 0.9 * Math.PI);
+                ctx.stroke();
+            } else if (eyes === 'surprised') {
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.ellipse(exL, ey, 16, 14, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.ellipse(exR, ey, 16, 14, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#333';
+                ctx.beginPath();
+                ctx.arc(exL, ey, 8, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(exR, ey, 8, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.arc(exL + 3, ey - 3, 3, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(exR + 3, ey - 3, 3, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // Eyebrows
+            ctx.strokeStyle = hair === '#808080' ? '#555' : hair;
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+            ctx.beginPath();
+            ctx.moveTo(exL - 12, ey - 18);
+            ctx.quadraticCurveTo(exL, ey - 24, exL + 12, ey - 18);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(exR - 12, ey - 18);
+            ctx.quadraticCurveTo(exR, ey - 24, exR + 12, ey - 18);
+            ctx.stroke();
+
+            // Nose
+            ctx.strokeStyle = 'rgba(0,0,0,0.15)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(cx, fy + fh * 0.45);
+            ctx.quadraticCurveTo(cx + 8, fy + fh * 0.6, cx, fy + fh * 0.6);
+            ctx.stroke();
+
+            // Mouth
+            var my = fy + fh * 0.72;
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+            if (mouth === 'smile') {
+                ctx.strokeStyle = '#c0392b';
+                ctx.beginPath();
+                ctx.arc(cx, my - 5, 20, 0.1 * Math.PI, 0.9 * Math.PI);
+                ctx.stroke();
+            } else if (mouth === 'neutral') {
+                ctx.strokeStyle = '#7f8c8d';
+                ctx.beginPath();
+                ctx.moveTo(cx - 15, my);
+                ctx.lineTo(cx + 15, my);
+                ctx.stroke();
+            } else if (mouth === 'open') {
+                ctx.fillStyle = '#c0392b';
+                ctx.beginPath();
+                ctx.ellipse(cx, my, 16, 12, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.ellipse(cx, my + 6, 10, 4, 0, 0, Math.PI * 2);
+                ctx.fill();
+            } else if (mouth === 'sad') {
+                ctx.strokeStyle = '#7f8c8d';
+                ctx.beginPath();
+                ctx.arc(cx, my + 15, 18, 1.1 * Math.PI, 1.9 * Math.PI);
+                ctx.stroke();
+            }
+
+            // Cheeks (blush)
+            ctx.fillStyle = 'rgba(255, 150, 150, 0.2)';
+            ctx.beginPath();
+            ctx.ellipse(cx - 45, fy + fh * 0.6, 15, 10, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.ellipse(cx + 45, fy + fh * 0.6, 15, 10, 0, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function downloadAvatar() {
+            var link = document.createElement('a');
+            link.download = 'avatar-256x256.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            showToast('Avatar downloaded successfully!');
+        }
+        window.downloadAvatar = downloadAvatar;
+
+        function randomize() {
+            var selects = [faceShape, skinTone, hairStyle, hairColor, eyeStyle, mouthStyle];
+            selects.forEach(function(sel) {
+                var idx = Math.floor(Math.random() * sel.options.length);
+                sel.selectedIndex = idx;
+            });
+            // Random bg color
+            var colors = ['#E8F4FD', '#FDE8E8', '#E8FDE8', '#FDF8E8', '#F0E8FD', '#E8FDFA', '#FDE8F4', '#E8E8FD'];
+            var rc = colors[Math.floor(Math.random() * colors.length)];
+            avatarBg.value = rc;
+            avatarBgText.value = rc;
+            draw();
+            showToast('Randomized!');
+        }
+        window.randomize = randomize;
+
+        // Event listeners
+        [faceShape, skinTone, hairStyle, hairColor, eyeStyle, mouthStyle].forEach(function(el) {
+            el.addEventListener('change', draw);
+        });
+        avatarBg.addEventListener('input', function() { avatarBgText.value = this.value; draw(); });
+        avatarBgText.addEventListener('input', function() {
+            if (/^#[0-9a-fA-F]{6}$/.test(this.value)) { avatarBg.value = this.value; }
+            draw();
+        });
+
+        // Initialize
+        draw();
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Border Generator Free Online — Radius Shadow Outline | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online CSS border generator. Customize border radius (each corner), box shadow, and outline with sliders. Live preview and copy CSS code. No upload required.">
+    <meta name="keywords" content="css border generator, border radius generator, box shadow generator, outline generator, css border tool, border radius css, box shadow css, css generator online">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="CSS Border Generator Free Online — Radius Shadow Outline | OptiDrop">
+    <meta property="og:description" content="Free online CSS border generator. Customize border radius, box shadow, and outline with sliders. Live preview and copy CSS code.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/design/css-border-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CSS Border Generator Free Online — Radius Shadow Outline | OptiDrop">
+    <meta name="twitter:description" content="Free online CSS border generator with live preview and copy code.">
+    <link rel="canonical" href="https://optidrop.online/tools/design/css-border-generator.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Design Tools", "item": "https://optidrop.online/tools/design/"},
+        {"@type": "ListItem", "position": 3, "name": "CSS Border Generator", "item": "https://optidrop.online/tools/design/css-border-generator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop CSS Border Generator",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online CSS border generator. Customize border radius, box shadow, and outline with sliders and live preview."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I use the CSS border generator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use the sliders to adjust border radius for each corner (top-left, top-right, bottom-right, bottom-left), box shadow (X offset, Y offset, blur, spread, color), and outline (width, style, color). The live preview updates instantly. Click 'Copy CSS' to copy the generated code."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I set different radius for each corner?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, each corner has its own slider: top-left, top-right, bottom-right, and bottom-left. You can create asymmetric shapes by setting different values for each corner. The generated CSS uses the shorthand border-radius property."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between border and outline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A border is inside the element's box model and affects layout. An outline is drawn outside the border and does not take up space in the layout. Outlines are commonly used for focus states and accessibility highlights. This tool lets you configure both independently."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the CSS border generator free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, OptiDrop's CSS Border Generator is completely free. No account or sign-up is required. All processing happens in your browser. The generated CSS code is yours to use in any project."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .ctrl-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .ctrl-row label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            min-width: 100px;
+            flex-shrink: 0;
+        }
+        .ctrl-row input[type="range"] {
+            flex: 1;
+            height: 6px;
+            border-radius: 3px;
+            background: #e2e8f0;
+            appearance: none;
+            cursor: pointer;
+            accent-color: #2563eb;
+        }
+        .ctrl-row .val {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #2563eb;
+            min-width: 45px;
+            text-align: right;
+        }
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #1e293b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .preview-box {
+            width: 100%;
+            max-width: 280px;
+            height: 200px;
+            margin: 0 auto;
+            transition: all 0.15s ease;
+        }
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem 1.25rem;
+            border-radius: 0.75rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-all;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">CSS Border Generator — Radius, Shadow &amp; Outline</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate CSS for border radius (per corner), box shadow, and outline using intuitive sliders. Live preview and one-click copy. 100% free and private.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Left: Controls -->
+                        <div>
+                            <!-- Border Radius -->
+                            <div class="section-title">Border Radius</div>
+                            <div class="ctrl-row">
+                                <label>Top Left</label>
+                                <input type="range" id="rTL" min="0" max="100" value="12">
+                                <span class="val" id="rTLVal">12px</span>
+                            </div>
+                            <div class="ctrl-row">
+                                <label>Top Right</label>
+                                <input type="range" id="rTR" min="0" max="100" value="12">
+                                <span class="val" id="rTRVal">12px</span>
+                            </div>
+                            <div class="ctrl-row">
+                                <label>Bottom Right</label>
+                                <input type="range" id="rBR" min="0" max="100" value="12">
+                                <span class="val" id="rBRVal">12px</span>
+                            </div>
+                            <div class="ctrl-row">
+                                <label>Bottom Left</label>
+                                <input type="range" id="rBL" min="0" max="100" value="12">
+                                <span class="val" id="rBLVal">12px</span>
+                            </div>
+
+                            <!-- Box Shadow -->
+                            <div class="section-title mt-6">Box Shadow</div>
+                            <div class="ctrl-row">
+                                <label>X Offset</label>
+                                <input type="range" id="sX" min="-30" max="30" value="0">
+                                <span class="val" id="sXVal">0px</span>
+                            </div>
+                            <div class="ctrl-row">
+                                <label>Y Offset</label>
+                                <input type="range" id="sY" min="-30" max="30" value="4">
+                                <span class="val" id="sYVal">4px</span>
+                            </div>
+                            <div class="ctrl-row">
+                                <label>Blur</label>
+                                <input type="range" id="sBlur" min="0" max="50" value="12">
+                                <span class="val" id="sBlurVal">12px</span>
+                            </div>
+                            <div class="ctrl-row">
+                                <label>Spread</label>
+                                <input type="range" id="sSpread" min="-20" max="20" value="0">
+                                <span class="val" id="sSpreadVal">0px</span>
+                            </div>
+                            <div class="ctrl-row">
+                                <label>Color</label>
+                                <input type="color" id="sColor" value="#000000" class="w-10 h-8 border-2 border-slate-200 rounded cursor-pointer">
+                                <input type="text" id="sColorText" value="#000000" class="flex-1 px-2 py-1 text-xs border-2 border-slate-200 rounded font-mono font-bold text-slate-900">
+                                <span class="val" id="sAlphaVal">25%</span>
+                            </div>
+                            <div class="ctrl-row">
+                                <label>Opacity</label>
+                                <input type="range" id="sAlpha" min="0" max="100" value="25">
+                            </div>
+                            <div class="ctrl-row">
+                                <label></label>
+                                <label class="flex items-center gap-2 text-xs font-bold text-slate-600 cursor-pointer min-w-0">
+                                    <input type="checkbox" id="sInset" class="w-4 h-4 accent-blue-600"> Inset shadow
+                                </label>
+                            </div>
+
+                            <!-- Outline -->
+                            <div class="section-title mt-6">Outline</div>
+                            <div class="ctrl-row">
+                                <label>Width</label>
+                                <input type="range" id="oWidth" min="0" max="10" value="0">
+                                <span class="val" id="oWidthVal">0px</span>
+                            </div>
+                            <div class="ctrl-row">
+                                <label>Style</label>
+                                <select id="oStyle" class="flex-1 px-2 py-1 text-xs border-2 border-slate-200 rounded font-bold text-slate-700 cursor-pointer" style="appearance:auto;">
+                                    <option value="solid">solid</option>
+                                    <option value="dashed">dashed</option>
+                                    <option value="dotted">dotted</option>
+                                    <option value="double">double</option>
+                                    <option value="none">none</option>
+                                </select>
+                            </div>
+                            <div class="ctrl-row">
+                                <label>Color</label>
+                                <input type="color" id="oColor" value="#3b82f6" class="w-10 h-8 border-2 border-slate-200 rounded cursor-pointer">
+                                <input type="text" id="oColorText" value="#3b82f6" class="flex-1 px-2 py-1 text-xs border-2 border-slate-200 rounded font-mono font-bold text-slate-900">
+                            </div>
+                            <div class="ctrl-row">
+                                <label>Offset</label>
+                                <input type="range" id="oOffset" min="0" max="20" value="0">
+                                <span class="val" id="oOffsetVal">0px</span>
+                            </div>
+                        </div>
+
+                        <!-- Right: Preview + Code -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-4">Live Preview</label>
+                            <div class="flex items-center justify-center p-8 rounded-xl mb-6" style="background: repeating-conic-gradient(#f1f5f9 0% 25%, #fff 0% 50%) 50% / 20px 20px; border: 2px solid #e2e8f0; min-height: 280px;">
+                                <div id="previewBox" class="preview-box" style="background:#3b82f6;"></div>
+                            </div>
+
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Generated CSS</label>
+                            <div class="code-block" id="cssCode"></div>
+
+                            <button onclick="copyCssCode()" class="mt-4 w-full px-6 py-3 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                Copy CSS
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free CSS Border Generator — Border Radius, Box Shadow &amp; Outline</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's CSS Border Generator lets you visually design border-radius, box-shadow, and outline properties using intuitive sliders. Each corner of the border-radius can be adjusted independently, and the box shadow supports X/Y offset, blur, spread, color, opacity, and inset mode.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Per-Corner Border Radius</h3>
+                <p class="text-slate-600 mb-4">Unlike basic generators, this tool lets you set different radius values for each corner (top-left, top-right, bottom-right, bottom-left). Create organic shapes, asymmetric cards, and unique design elements.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Advanced Box Shadow</h3>
+                <p class="text-slate-600 mb-4">Control every aspect of the box shadow: X and Y offset, blur radius, spread radius, color with opacity, and inset/outset mode. The generated CSS is ready to paste into your stylesheet.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Outline Support</h3>
+                <p class="text-slate-600">Add an outline with customizable width, style (solid, dashed, dotted, double), color, and offset. Outlines are great for focus states and accessibility.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I use the CSS border generator?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Use the sliders to adjust border radius for each corner (top-left, top-right, bottom-right, bottom-left), box shadow (X offset, Y offset, blur, spread, color), and outline (width, style, color). The live preview updates instantly. Click "Copy CSS" to copy the generated code.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I set different radius for each corner?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, each corner has its own slider: top-left, top-right, bottom-right, and bottom-left. You can create asymmetric shapes by setting different values for each corner. The generated CSS uses the shorthand border-radius property.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the difference between border and outline?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A border is inside the element's box model and affects layout. An outline is drawn outside the border and does not take up space in the layout. Outlines are commonly used for focus states and accessibility highlights. This tool lets you configure both independently.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is the CSS border generator free?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, OptiDrop's CSS Border Generator is completely free. No account or sign-up is required. All processing happens in your browser. The generated CSS code is yours to use in any project.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/design/button-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Button Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate CSS button styles with live preview.</span>
+            </a>
+            <a href="/tools/design/gradient-text-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Gradient Text Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Create beautiful gradient text with CSS background-clip.</span>
+            </a>
+            <a href="/tools/developer/color-converter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Color Converter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Convert HEX to RGB, HSL and more color formats.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        // Border Radius
+        var rTL = document.getElementById('rTL');
+        var rTR = document.getElementById('rTR');
+        var rBR = document.getElementById('rBR');
+        var rBL = document.getElementById('rBL');
+
+        // Box Shadow
+        var sX = document.getElementById('sX');
+        var sY = document.getElementById('sY');
+        var sBlur = document.getElementById('sBlur');
+        var sSpread = document.getElementById('sSpread');
+        var sColor = document.getElementById('sColor');
+        var sColorText = document.getElementById('sColorText');
+        var sAlpha = document.getElementById('sAlpha');
+        var sInset = document.getElementById('sInset');
+
+        // Outline
+        var oWidth = document.getElementById('oWidth');
+        var oStyle = document.getElementById('oStyle');
+        var oColor = document.getElementById('oColor');
+        var oColorText = document.getElementById('oColorText');
+        var oOffset = document.getElementById('oOffset');
+
+        var previewBox = document.getElementById('previewBox');
+        var cssCode = document.getElementById('cssCode');
+
+        function hexToRgba(hex, alpha) {
+            hex = hex.replace('#', '');
+            var r = parseInt(hex.substring(0, 2), 16);
+            var g = parseInt(hex.substring(2, 4), 16);
+            var b = parseInt(hex.substring(4, 6), 16);
+            return 'rgba(' + r + ',' + g + ',' + b + ',' + (alpha / 100).toFixed(2) + ')';
+        }
+
+        function update() {
+            // Read values
+            var rtl = parseInt(rTL.value);
+            var rtr = parseInt(rTR.value);
+            var rbr = parseInt(rBR.value);
+            var rbl = parseInt(rBL.value);
+
+            var sx = parseInt(sX.value);
+            var sy = parseInt(sY.value);
+            var sblur = parseInt(sBlur.value);
+            var sspread = parseInt(sSpread.value);
+            var scolor = sColor.value;
+            var salpha = parseInt(sAlpha.value);
+            var sinset = sInset.checked;
+
+            var ow = parseInt(oWidth.value);
+            var ostyle = oStyle.value;
+            var ocolor = oColor.value;
+            var ooff = parseInt(oOffset.value);
+
+            // Update value labels
+            document.getElementById('rTLVal').textContent = rtl + 'px';
+            document.getElementById('rTRVal').textContent = rtr + 'px';
+            document.getElementById('rBRVal').textContent = rbr + 'px';
+            document.getElementById('rBLVal').textContent = rbl + 'px';
+            document.getElementById('sXVal').textContent = sx + 'px';
+            document.getElementById('sYVal').textContent = sy + 'px';
+            document.getElementById('sBlurVal').textContent = sblur + 'px';
+            document.getElementById('sSpreadVal').textContent = sspread + 'px';
+            document.getElementById('sAlphaVal').textContent = salpha + '%';
+            document.getElementById('oWidthVal').textContent = ow + 'px';
+            document.getElementById('oOffsetVal').textContent = ooff + 'px';
+
+            // Build CSS values
+            var radiusCSS = rtl + 'px ' + rtr + 'px ' + rbr + 'px ' + rbl + 'px';
+            var shadowCSS = 'none';
+            if (sblur > 0 || sx !== 0 || sy !== 0 || sspread !== 0) {
+                var insetStr = sinset ? 'inset ' : '';
+                shadowCSS = insetStr + sx + 'px ' + sy + 'px ' + sblur + 'px ' + sspread + 'px ' + hexToRgba(scolor, salpha);
+            }
+            var outlineCSS = 'none';
+            if (ow > 0 && ostyle !== 'none') {
+                outlineCSS = ow + 'px ' + ostyle + ' ' + ocolor;
+            }
+
+            // Apply to preview
+            previewBox.style.borderRadius = radiusCSS;
+            previewBox.style.boxShadow = shadowCSS;
+            previewBox.style.outline = outlineCSS;
+            previewBox.style.outlineOffset = ooff + 'px';
+
+            // Generate CSS code
+            var css = '.box {\n';
+            css += '  border-radius: ' + radiusCSS + ';\n';
+            css += '  box-shadow: ' + shadowCSS + ';\n';
+            css += '  outline: ' + outlineCSS + ';\n';
+            if (ow > 0 && ostyle !== 'none' && ooff > 0) {
+                css += '  outline-offset: ' + ooff + 'px;\n';
+            }
+            css += '}';
+            cssCode.textContent = css;
+        }
+
+        function copyCssCode() {
+            var text = cssCode.textContent;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showToast('CSS code copied to clipboard!');
+                }).catch(function() {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+        window.copyCssCode = copyCssCode;
+
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+                document.execCommand('copy');
+                showToast('CSS code copied to clipboard!');
+            } catch(e) {
+                showToast('Failed to copy. Please select and copy manually.', 'error');
+            }
+            document.body.removeChild(ta);
+        }
+
+        // Attach listeners
+        [rTL, rTR, rBR, rBL, sX, sY, sBlur, sSpread, sAlpha, oWidth, oOffset].forEach(function(el) {
+            el.addEventListener('input', update);
+        });
+        sInset.addEventListener('change', update);
+        oStyle.addEventListener('change', update);
+
+        sColor.addEventListener('input', function() { sColorText.value = this.value; update(); });
+        sColorText.addEventListener('input', function() {
+            if (/^#[0-9a-fA-F]{6}$/.test(this.value)) { sColor.value = this.value; }
+            update();
+        });
+        oColor.addEventListener('input', function() { oColorText.value = this.value; update(); });
+        oColorText.addEventListener('input', function() {
+            if (/^#[0-9a-fA-F]{6}$/.test(this.value)) { oColor.value = this.value; }
+            update();
+        });
+
+        // Initialize
+        update();
+    })();
+    </script>
+</body>
+</html>

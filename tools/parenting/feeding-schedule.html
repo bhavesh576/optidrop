@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Feeding Schedule Tracker | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2"><link rel="shortcut icon" href="/favicon.png?v=2"><link rel="apple-touch-icon" href="/favicon.png?v=2"><meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Track your baby's feeding schedule with our free online tracker. Log breast, bottle, and solid feedings with time, amount, and notes. LocalStorage persistence."><meta name="keywords" content="baby feeding tracker, feeding schedule, baby feeding log, breast feeding tracker, bottle feeding tracker, baby feeding schedule"><meta name="author" content="OptiDrop"><meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Baby Feeding Schedule Tracker | OptiDrop"><meta property="og:description" content="Track your baby's feeding schedule. Log feedings with time, type, amount, and notes."><meta property="og:type" content="website"><meta property="og:url" content="https://optidrop.online/tools/parenting/feeding-schedule.html"><meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Baby Feeding Schedule Tracker | OptiDrop"><meta name="twitter:description" content="Track your baby's feeding schedule. Log feedings with time, type, amount, and notes.">
+    <link rel="canonical" href="https://optidrop.online/tools/parenting/feeding-schedule.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Parenting Tools","item":"https://optidrop.online/category/parenting-tools.html"},{"@type":"ListItem","position":3,"name":"Feeding Schedule","item":"https://optidrop.online/tools/parenting/feeding-schedule.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Baby Feeding Schedule","applicationCategory":"LifestyleApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online baby feeding schedule tracker with localStorage persistence. Track breast, bottle, and solid feedings."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What types of feedings can I track?","acceptedAnswer":{"@type":"Answer","text":"You can track three types of feedings: breastfeeding (with left/right side), bottle feeding (with amount in ml/oz), and solid food (with notes about what was eaten)."}},{"@type":"Question","name":"Is my feeding data saved?","acceptedAnswer":{"@type":"Answer","text":"Yes! All feeding data is saved in your browser's localStorage. It persists between sessions but is only stored on your device. No data is sent to any server."}},{"@type":"Question","name":"Can I see today's feeding summary?","acceptedAnswer":{"@type":"Answer","text":"Yes! The tool shows a summary of today's feedings including total count, types breakdown, and total amount for bottle feedings. You can also view your full feeding history."}},{"@type":"Question","name":"Is my data private?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. All data is stored locally on your device using localStorage. Nothing is sent to any server, making it 100% private and secure."}}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header"><div class="header-inner"><a href="/" class="logo-text">Opti<span>Drop</span></a><nav class="header-nav"><a href="/" class="back-link"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>All Tools</a><span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span><button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav></div><nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a></nav></header>
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center"><h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Baby Feeding Schedule Tracker</h1><p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Track your baby's feeding schedule with ease. Log breast, bottle, and solid feedings with time, amount, and notes. Data is saved locally on your device.</p></section>
+        <section class="max-w-4xl mx-auto px-4 pb-8"><div class="glass-panel rounded-3xl shadow-xl overflow-hidden"><div class="p-6 sm:p-10">
+            <!-- Add Feeding Form -->
+            <h2 class="text-lg font-semibold text-slate-800 dark:text-white mb-4">Log a Feeding</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Feeding Type</label>
+                    <select id="feedType" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none" onchange="toggleAmountField()">
+                        <option value="breast">Breastfeeding</option>
+                        <option value="bottle">Bottle Feeding</option>
+                        <option value="solid">Solid Food</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Time</label>
+                    <input id="feedTime" type="time" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none">
+                </div>
+                <div id="sideField">
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Side</label>
+                    <select id="feedSide" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none">
+                        <option value="left">Left</option>
+                        <option value="right">Right</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+                <div id="amountField" class="hidden">
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Amount (ml)</label>
+                    <input id="feedAmount" type="number" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none" placeholder="e.g., 120" min="0">
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Notes (optional)</label>
+                    <input id="feedNotes" type="text" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none" placeholder="e.g., seemed hungry, ate well">
+                </div>
+            </div>
+            <button onclick="addFeeding()" class="w-full px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl transition-colors">Log Feeding</button>
+
+            <!-- Today's Summary -->
+            <div id="summary" class="mt-6">
+                <h2 class="text-lg font-semibold text-slate-800 dark:text-white mb-3">Today's Summary</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+                    <div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-center"><div class="text-2xl font-bold text-blue-600 dark:text-blue-400" id="totalCount">0</div><div class="text-xs text-slate-500 dark:text-slate-400">Total Feedings</div></div>
+                    <div class="p-3 rounded-xl bg-pink-50 dark:bg-pink-900/20 text-center"><div class="text-2xl font-bold text-pink-600 dark:text-pink-400" id="breastCount">0</div><div class="text-xs text-slate-500 dark:text-slate-400">Breast</div></div>
+                    <div class="p-3 rounded-xl bg-green-50 dark:bg-green-900/20 text-center"><div class="text-2xl font-bold text-green-600 dark:text-green-400" id="bottleCount">0</div><div class="text-xs text-slate-500 dark:text-slate-400">Bottle</div></div>
+                    <div class="p-3 rounded-xl bg-yellow-50 dark:bg-yellow-900/20 text-center"><div class="text-2xl font-bold text-yellow-600 dark:text-yellow-400" id="solidCount">0</div><div class="text-xs text-slate-500 dark:text-slate-400">Solid</div></div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-center mb-4">
+                    <span class="text-sm text-slate-500 dark:text-slate-400">Total Bottle Amount: </span>
+                    <span class="font-bold text-slate-800 dark:text-white" id="totalAmount">0 ml</span>
+                </div>
+            </div>
+
+            <!-- Feeding History -->
+            <div id="history">
+                <div class="flex items-center justify-between mb-3">
+                    <h2 class="text-lg font-semibold text-slate-800 dark:text-white">Feeding History</h2>
+                    <button onclick="clearHistory()" class="text-sm text-red-500 hover:text-red-600 font-medium">Clear All</button>
+                </div>
+                <div id="historyList" class="space-y-2"></div>
+                <div id="noHistory" class="text-center py-8 text-slate-400 dark:text-slate-500">
+                    <p>No feedings logged yet today.</p>
+                </div>
+            </div>
+        </div></div></section>
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+        <section class="max-w-4xl mx-auto px-4 py-8"><div class="prose max-w-none">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">About the Feeding Schedule Tracker</h2>
+            <p class="text-slate-600 dark:text-slate-400 mb-4">Keeping track of your baby's feeding schedule is important for ensuring they're getting enough nutrition. Our tracker makes it easy to log every feeding session with time, type, amount, and notes.</p>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Why Track Feedings?</h3>
+            <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2">
+                <li><strong>Nutrition Monitoring</strong> - Ensure your baby is getting enough milk or food</li>
+                <li><strong>Pattern Recognition</strong> - Identify feeding patterns and adjust schedules</li>
+                <li><strong>Doctor Visits</strong> - Provide accurate feeding information to pediatricians</li>
+                <li><strong>Parent Communication</strong> - Share feeding logs between caregivers</li>
+            </ul>
+        </div></section>
+        <section class="max-w-3xl mx-auto px-4 py-8"><h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2><div class="space-y-3">
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">What types of feedings can I track?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">You can track three types of feedings: breastfeeding (with left/right side), bottle feeding (with amount in ml/oz), and solid food (with notes about what was eaten).</div></details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">Is my feeding data saved?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">Yes! All feeding data is saved in your browser's localStorage. It persists between sessions but is only stored on your device. No data is sent to any server.</div></details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">Can I see today's feeding summary?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">Yes! The tool shows a summary of today's feedings including total count, types breakdown, and total amount for bottle feedings. You can also view your full feeding history.</div></details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">Is my data private?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">Absolutely. All data is stored locally on your device using localStorage. Nothing is sent to any server, making it 100% private and secure.</div></details>
+        </div></section>
+        <section class="max-w-4xl mx-auto px-4 py-8"><h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 text-center">Related Tools</h2><div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <a href="/tools/parenting/sleep-schedule-planner.html" class="block p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors bg-white dark:bg-slate-800"><h3 class="font-semibold text-slate-800 dark:text-white">Sleep Schedule Planner</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Plan baby's sleep routine</p></a>
+            <a href="/tools/parenting/milestone-tracker.html" class="block p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors bg-white dark:bg-slate-800"><h3 class="font-semibold text-slate-800 dark:text-white">Milestone Tracker</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Track developmental milestones</p></a>
+            <a href="/tools/parenting/baby-name-generator.html" class="block p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors bg-white dark:bg-slate-800"><h3 class="font-semibold text-slate-800 dark:text-white">Baby Name Generator</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Find the perfect baby name</p></a>
+        </div></section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+        const STORAGE_KEY = 'optidrop_feeding_log';
+
+        // Set default time to now
+        document.getElementById('feedTime').value = new Date().toTimeString().slice(0, 5);
+
+        function getToday() {
+            return new Date().toISOString().slice(0, 10);
+        }
+
+        function getFeedings() {
+            try {
+                return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            } catch(e) {
+                return [];
+            }
+        }
+
+        function saveFeedings(feedings) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(feedings));
+        }
+
+        function toggleAmountField() {
+            const type = document.getElementById('feedType').value;
+            document.getElementById('amountField').classList.toggle('hidden', type !== 'bottle');
+            document.getElementById('sideField').classList.toggle('hidden', type !== 'breast');
+        }
+
+        function addFeeding() {
+            const type = document.getElementById('feedType').value;
+            const time = document.getElementById('feedTime').value;
+            const notes = document.getElementById('feedNotes').value.trim();
+
+            if (!time) {
+                showToast('Please select a time', 'error');
+                return;
+            }
+
+            const feeding = {
+                id: Date.now(),
+                date: getToday(),
+                time: time,
+                type: type,
+                notes: notes
+            };
+
+            if (type === 'breast') {
+                feeding.side = document.getElementById('feedSide').value;
+            } else if (type === 'bottle') {
+                const amount = document.getElementById('feedAmount').value;
+                if (!amount || amount <= 0) {
+                    showToast('Please enter the amount in ml', 'error');
+                    return;
+                }
+                feeding.amount = parseInt(amount);
+            }
+
+            const feedings = getFeedings();
+            feedings.unshift(feeding);
+            saveFeedings(feedings);
+
+            // Clear notes
+            document.getElementById('feedNotes').value = '';
+            document.getElementById('feedAmount').value = '';
+
+            showToast('Feeding logged successfully');
+            renderFeedings();
+        }
+
+        function deleteFeeding(id) {
+            let feedings = getFeedings();
+            feedings = feedings.filter(f => f.id !== id);
+            saveFeedings(feedings);
+            showToast('Feeding removed');
+            renderFeedings();
+        }
+
+        function clearHistory() {
+            if (confirm('Are you sure you want to clear all feeding history?')) {
+                localStorage.removeItem(STORAGE_KEY);
+                showToast('History cleared');
+                renderFeedings();
+            }
+        }
+
+        function renderFeedings() {
+            const feedings = getFeedings();
+            const today = getToday();
+            const todayFeedings = feedings.filter(f => f.date === today);
+
+            // Update summary
+            document.getElementById('totalCount').textContent = todayFeedings.length;
+            document.getElementById('breastCount').textContent = todayFeedings.filter(f => f.type === 'breast').length;
+            document.getElementById('bottleCount').textContent = todayFeedings.filter(f => f.type === 'bottle').length;
+            document.getElementById('solidCount').textContent = todayFeedings.filter(f => f.type === 'solid').length;
+
+            const totalAmount = todayFeedings.filter(f => f.type === 'bottle').reduce((sum, f) => sum + (f.amount || 0), 0);
+            document.getElementById('totalAmount').textContent = totalAmount + ' ml';
+
+            // Render history
+            const historyList = document.getElementById('historyList');
+            const noHistory = document.getElementById('noHistory');
+
+            if (todayFeedings.length === 0) {
+                historyList.innerHTML = '';
+                noHistory.classList.remove('hidden');
+                return;
+            }
+
+            noHistory.classList.add('hidden');
+            historyList.innerHTML = '';
+
+            todayFeedings.forEach(feeding => {
+                const div = document.createElement('div');
+                div.className = 'flex items-center gap-3 p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700';
+
+                const typeColors = {
+                    breast: 'bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400',
+                    bottle: 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400',
+                    solid: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400'
+                };
+
+                const typeLabels = {
+                    breast: 'Breast',
+                    bottle: 'Bottle',
+                    solid: 'Solid'
+                };
+
+                let detail = '';
+                if (feeding.type === 'breast') detail = feeding.side.charAt(0).toUpperCase() + feeding.side.slice(1) + ' side';
+                if (feeding.type === 'bottle') detail = feeding.amount + ' ml';
+                if (feeding.notes) detail += (detail ? ' - ' : '') + feeding.notes;
+
+                div.innerHTML = `
+                    <span class="px-2 py-1 text-xs rounded-full ${typeColors[feeding.type]}">${typeLabels[feeding.type]}</span>
+                    <span class="font-mono text-sm text-slate-600 dark:text-slate-400">${feeding.time}</span>
+                    <span class="flex-1 text-sm text-slate-700 dark:text-slate-300">${detail}</span>
+                    <button onclick="deleteFeeding(${feeding.id})" class="text-red-400 hover:text-red-600 text-sm">&times;</button>
+                `;
+                historyList.appendChild(div);
+            });
+        }
+
+        // Initial render
+        renderFeedings();
+    </script>
+</body>
+</html>

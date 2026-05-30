@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Text Generator Free Online — CSS Background Clip | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online gradient text generator. Create beautiful text with CSS gradients using background-clip. Custom colors, direction, font size. Copy CSS code instantly. No upload required.">
+    <meta name="keywords" content="gradient text generator, css gradient text, background clip text, gradient text css, text gradient maker, css text effect, gradient font generator">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Gradient Text Generator Free Online — CSS Background Clip | OptiDrop">
+    <meta property="og:description" content="Create beautiful gradient text with CSS background-clip. Custom colors and direction. Copy CSS code. Free and private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/design/gradient-text-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gradient Text Generator Free Online — CSS Background Clip | OptiDrop">
+    <meta name="twitter:description" content="Create beautiful gradient text with CSS. Copy code instantly. Free and private.">
+    <link rel="canonical" href="https://optidrop.online/tools/design/gradient-text-generator.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Design Tools", "item": "https://optidrop.online/tools/design/"},
+        {"@type": "ListItem", "position": 3, "name": "Gradient Text Generator", "item": "https://optidrop.online/tools/design/gradient-text-generator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Gradient Text Generator",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online gradient text generator. Create beautiful text with CSS gradients using background-clip. Custom colors, direction, font size."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I create gradient text with CSS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This tool generates the CSS code using background-image with a linear-gradient, combined with -webkit-background-clip: text and -webkit-text-fill-color: transparent. Enter your text, choose 2-3 gradient colors and a direction, and the tool generates the complete CSS code for you to copy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use 3 colors in the gradient?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the tool supports 2 or 3 color stops. Use the 'Add 3rd Color' checkbox to add a third color. This creates richer, more complex gradients. You can also adjust the gradient direction from 0 to 360 degrees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does gradient text work in all browsers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The generated CSS uses -webkit-background-clip: text which works in Chrome, Firefox, Safari, and Edge. The tool also includes the standard background-clip: text property for future compatibility. All modern browsers support this technique."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the gradient text generator free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, OptiDrop's Gradient Text Generator is completely free. No account or sign-up is required. All processing happens in your browser. The generated CSS code is yours to use in any personal or commercial project."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .gradient-preview {
+            text-align: center;
+            padding: 2rem 1rem;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            word-break: break-word;
+        }
+        .gradient-preview span {
+            display: inline-block;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem 1.25rem;
+            border-radius: 0.75rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-all;
+            overflow-x: auto;
+        }
+        .color-stop-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .color-stop-row label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #475569;
+            min-width: 70px;
+        }
+        .preset-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .preset-btn:hover {
+            border-color: #3b82f6;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Gradient Text Generator — Beautiful CSS Gradient Text</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Create stunning text with CSS gradients using background-clip. Choose colors, direction, and font size. Live preview and one-click CSS copy. 100% free and private.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Left: Controls -->
+                        <div>
+                            <!-- Text Input -->
+                            <div class="mb-4">
+                                <label for="gradText" class="block text-sm font-bold text-slate-700 mb-2">Your Text</label>
+                                <input type="text" id="gradText" value="Gradient Text" maxlength="60" class="w-full px-4 py-3 text-lg border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-bold">
+                            </div>
+
+                            <!-- Font Size -->
+                            <div class="mb-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <label for="gradFontSize" class="text-sm font-bold text-slate-700">Font Size</label>
+                                    <span id="gradFontSizeVal" class="text-sm font-extrabold text-brand-600 bg-brand-50 px-3 py-1 rounded-lg">48px</span>
+                                </div>
+                                <input type="range" id="gradFontSize" min="16" max="120" value="48" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-600">
+                            </div>
+
+                            <!-- Font Weight -->
+                            <div class="mb-4">
+                                <label for="gradFontWeight" class="block text-sm font-bold text-slate-700 mb-2">Font Weight</label>
+                                <select id="gradFontWeight" class="w-full px-4 py-2.5 text-sm border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900 font-semibold cursor-pointer" style="appearance:auto;">
+                                    <option value="400">Regular (400)</option>
+                                    <option value="600">Semi Bold (600)</option>
+                                    <option value="700">Bold (700)</option>
+                                    <option value="800" selected>Extra Bold (800)</option>
+                                    <option value="900">Black (900)</option>
+                                </select>
+                            </div>
+
+                            <!-- Color Stops -->
+                            <div class="mb-2">
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Gradient Colors</label>
+                            </div>
+                            <div class="color-stop-row">
+                                <label>Color 1</label>
+                                <input type="color" id="color1" value="#ff0080" class="w-10 h-8 border-2 border-slate-200 rounded cursor-pointer">
+                                <input type="text" id="color1Text" value="#ff0080" class="flex-1 px-2 py-1 text-xs border-2 border-slate-200 rounded font-mono font-bold text-slate-900">
+                            </div>
+                            <div class="color-stop-row">
+                                <label>Color 2</label>
+                                <input type="color" id="color2" value="#7928ca" class="w-10 h-8 border-2 border-slate-200 rounded cursor-pointer">
+                                <input type="text" id="color2Text" value="#7928ca" class="flex-1 px-2 py-1 text-xs border-2 border-slate-200 rounded font-mono font-bold text-slate-900">
+                            </div>
+                            <div id="color3Row" class="color-stop-row hidden">
+                                <label>Color 3</label>
+                                <input type="color" id="color3" value="#0070f3" class="w-10 h-8 border-2 border-slate-200 rounded cursor-pointer">
+                                <input type="text" id="color3Text" value="#0070f3" class="flex-1 px-2 py-1 text-xs border-2 border-slate-200 rounded font-mono font-bold text-slate-900">
+                            </div>
+                            <div class="mb-4">
+                                <label class="flex items-center gap-2 text-sm font-bold text-slate-600 cursor-pointer">
+                                    <input type="checkbox" id="useThirdColor" class="w-4 h-4 accent-blue-600"> Add 3rd color
+                                </label>
+                            </div>
+
+                            <!-- Gradient Direction -->
+                            <div class="mb-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <label for="gradDir" class="text-sm font-bold text-slate-700">Gradient Direction</label>
+                                    <span id="gradDirVal" class="text-sm font-extrabold text-brand-600 bg-brand-50 px-3 py-1 rounded-lg">90deg</span>
+                                </div>
+                                <input type="range" id="gradDir" min="0" max="360" value="90" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-600">
+                            </div>
+
+                            <!-- Presets -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Quick Presets</label>
+                                <div class="flex flex-wrap gap-2">
+                                    <button class="preset-btn" style="background:linear-gradient(90deg,#ff0080,#7928ca)" onclick="applyPreset('#ff0080','#7928ca','#0070f3',90)" title="Pink to Purple"></button>
+                                    <button class="preset-btn" style="background:linear-gradient(90deg,#f97316,#ef4444)" onclick="applyPreset('#f97316','#ef4444','#0070f3',90)" title="Orange to Red"></button>
+                                    <button class="preset-btn" style="background:linear-gradient(90deg,#06b6d4,#3b82f6)" onclick="applyPreset('#06b6d4','#3b82f6','#0070f3',90)" title="Cyan to Blue"></button>
+                                    <button class="preset-btn" style="background:linear-gradient(90deg,#10b981,#3b82f6)" onclick="applyPreset('#10b981','#3b82f6','#8b5cf6',90)" title="Green to Blue"></button>
+                                    <button class="preset-btn" style="background:linear-gradient(90deg,#f59e0b,#ef4444,#7c3aed)" onclick="applyPreset('#f59e0b','#ef4444','#7c3aed',90)" title="3-Color Warm"></button>
+                                    <button class="preset-btn" style="background:linear-gradient(90deg,#ec4899,#8b5cf6,#06b6d4)" onclick="applyPreset('#ec4899','#8b5cf6','#06b6d4',90)" title="3-Color Cool"></button>
+                                    <button class="preset-btn" style="background:linear-gradient(135deg,#667eea,#764ba2)" onclick="applyPreset('#667eea','#764ba2','#0070f3',135)" title="Indigo to Purple"></button>
+                                    <button class="preset-btn" style="background:linear-gradient(90deg,#11998e,#38ef7d)" onclick="applyPreset('#11998e','#38ef7d','#0070f3',90)" title="Teal to Green"></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Preview + Code -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Live Preview</label>
+                            <div class="rounded-xl mb-6" style="background: repeating-conic-gradient(#f1f5f9 0% 25%, #fff 0% 50%) 50% / 20px 20px; border: 2px solid #e2e8f0;">
+                                <div id="gradientPreview" class="gradient-preview">
+                                    <span id="previewText">Gradient Text</span>
+                                </div>
+                            </div>
+
+                            <!-- Dark preview -->
+                            <label class="block text-sm font-bold text-slate-700 mb-2">On Dark Background</label>
+                            <div class="rounded-xl mb-6" style="background: #0f172a; border: 2px solid #1e293b;">
+                                <div id="gradientPreviewDark" class="gradient-preview">
+                                    <span id="previewTextDark">Gradient Text</span>
+                                </div>
+                            </div>
+
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Generated CSS</label>
+                            <div class="code-block" id="cssCode"></div>
+
+                            <button onclick="copyCssCode()" class="mt-4 w-full px-6 py-3 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                Copy CSS
+                            </button>
+
+                            <!-- Copy HTML too -->
+                            <button onclick="copyHtmlCode()" class="mt-2 w-full px-6 py-3 bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                                Copy HTML
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Gradient Text Generator — CSS Background Clip Text</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Gradient Text Generator creates stunning text effects using CSS background-clip. Enter your text, choose 2-3 gradient colors, set the direction, and see the result instantly. Copy the complete CSS code with one click.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How CSS Gradient Text Works</h3>
+                <p class="text-slate-600 mb-4">The technique uses a linear-gradient as the background-image, combined with -webkit-background-clip: text and -webkit-text-fill-color: transparent. This clips the gradient to the text shape, creating a beautiful colored text effect without any images.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">2 or 3 Color Gradients</h3>
+                <p class="text-slate-600 mb-4">Choose between 2 or 3 color stops for your gradient. Three-color gradients create richer, more complex effects. Use the quick presets for popular gradient combinations, or create your own custom color scheme.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Preview on Light and Dark Backgrounds</h3>
+                <p class="text-slate-600">See how your gradient text looks on both light and dark backgrounds. This helps ensure readability and visual impact in different contexts.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I create gradient text with CSS?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        This tool generates the CSS code using background-image with a linear-gradient, combined with -webkit-background-clip: text and -webkit-text-fill-color: transparent. Enter your text, choose 2-3 gradient colors and a direction, and the tool generates the complete CSS code for you to copy.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I use 3 colors in the gradient?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, the tool supports 2 or 3 color stops. Use the "Add 3rd Color" checkbox to add a third color. This creates richer, more complex gradients. You can also adjust the gradient direction from 0 to 360 degrees.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does gradient text work in all browsers?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The generated CSS uses -webkit-background-clip: text which works in Chrome, Firefox, Safari, and Edge. The tool also includes the standard background-clip: text property for future compatibility. All modern browsers support this technique.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is the gradient text generator free?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, OptiDrop's Gradient Text Generator is completely free. No account or sign-up is required. All processing happens in your browser. The generated CSS code is yours to use in any personal or commercial project.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/design/button-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Button Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate CSS button styles with live preview.</span>
+            </a>
+            <a href="/tools/design/css-border-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">CSS Border Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Generate border radius, box shadow, and outline CSS.</span>
+            </a>
+            <a href="/tools/developer/color-converter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Color Converter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Convert HEX to RGB, HSL and more color formats.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var gradText = document.getElementById('gradText');
+        var gradFontSize = document.getElementById('gradFontSize');
+        var gradFontSizeVal = document.getElementById('gradFontSizeVal');
+        var gradFontWeight = document.getElementById('gradFontWeight');
+        var color1 = document.getElementById('color1');
+        var color1Text = document.getElementById('color1Text');
+        var color2 = document.getElementById('color2');
+        var color2Text = document.getElementById('color2Text');
+        var color3 = document.getElementById('color3');
+        var color3Text = document.getElementById('color3Text');
+        var color3Row = document.getElementById('color3Row');
+        var useThirdColor = document.getElementById('useThirdColor');
+        var gradDir = document.getElementById('gradDir');
+        var gradDirVal = document.getElementById('gradDirVal');
+
+        var previewText = document.getElementById('previewText');
+        var previewTextDark = document.getElementById('previewTextDark');
+        var cssCode = document.getElementById('cssCode');
+
+        function update() {
+            var text = gradText.value || 'Gradient Text';
+            var fs = gradFontSize.value + 'px';
+            var fw = gradFontWeight.value;
+            var c1 = color1.value;
+            var c2 = color2.value;
+            var c3 = color3.value;
+            var dir = gradDir.value;
+            var useC3 = useThirdColor.checked;
+
+            // Update value displays
+            gradFontSizeVal.textContent = fs;
+            gradDirVal.textContent = dir + 'deg';
+
+            // Show/hide 3rd color
+            if (useC3) {
+                color3Row.classList.remove('hidden');
+            } else {
+                color3Row.classList.add('hidden');
+            }
+
+            // Build gradient
+            var gradient;
+            if (useC3) {
+                gradient = 'linear-gradient(' + dir + 'deg, ' + c1 + ', ' + c2 + ', ' + c3 + ')';
+            } else {
+                gradient = 'linear-gradient(' + dir + 'deg, ' + c1 + ', ' + c2 + ')';
+            }
+
+            // Apply to previews
+            [previewText, previewTextDark].forEach(function(el) {
+                el.textContent = text;
+                el.style.backgroundImage = gradient;
+                el.style.fontSize = fs;
+                el.style.fontWeight = fw;
+                el.style.fontFamily = "'Inter', system-ui, sans-serif";
+            });
+
+            // Generate CSS code
+            var css = '.gradient-text {\n';
+            css += '  background: ' + gradient + ';\n';
+            css += '  -webkit-background-clip: text;\n';
+            css += '  background-clip: text;\n';
+            css += '  -webkit-text-fill-color: transparent;\n';
+            css += '  font-size: ' + fs + ';\n';
+            css += '  font-weight: ' + fw + ';\n';
+            css += '}';
+            cssCode.textContent = css;
+        }
+
+        function applyPreset(c1, c2, c3, dir) {
+            color1.value = c1;
+            color1Text.value = c1;
+            color2.value = c2;
+            color2Text.value = c2;
+            color3.value = c3;
+            color3Text.value = c3;
+            gradDir.value = dir;
+            useThirdColor.checked = true;
+            update();
+        }
+        window.applyPreset = applyPreset;
+
+        function copyCssCode() {
+            var text = cssCode.textContent;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showToast('CSS code copied to clipboard!');
+                }).catch(function() {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+        window.copyCssCode = copyCssCode;
+
+        function copyHtmlCode() {
+            var text = gradText.value || 'Gradient Text';
+            var fs = gradFontSize.value + 'px';
+            var fw = gradFontWeight.value;
+            var c1 = color1.value;
+            var c2 = color2.value;
+            var c3 = color3.value;
+            var dir = gradDir.value;
+            var useC3 = useThirdColor.checked;
+
+            var gradient;
+            if (useC3) {
+                gradient = 'linear-gradient(' + dir + 'deg, ' + c1 + ', ' + c2 + ', ' + c3 + ')';
+            } else {
+                gradient = 'linear-gradient(' + dir + 'deg, ' + c1 + ', ' + c2 + ')';
+            }
+
+            var html = '<span style="' +
+                'background:' + gradient + '; ' +
+                '-webkit-background-clip:text; ' +
+                'background-clip:text; ' +
+                '-webkit-text-fill-color:transparent; ' +
+                'font-size:' + fs + '; ' +
+                'font-weight:' + fw + ';">' +
+                text + '</span>';
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(html).then(function() {
+                    showToast('HTML code copied to clipboard!');
+                }).catch(function() {
+                    fallbackCopy(html);
+                });
+            } else {
+                fallbackCopy(html);
+            }
+        }
+        window.copyHtmlCode = copyHtmlCode;
+
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+                document.execCommand('copy');
+                showToast('Code copied to clipboard!');
+            } catch(e) {
+                showToast('Failed to copy. Please select and copy manually.', 'error');
+            }
+            document.body.removeChild(ta);
+        }
+
+        // Event listeners
+        gradText.addEventListener('input', update);
+        gradFontSize.addEventListener('input', update);
+        gradFontWeight.addEventListener('change', update);
+        gradDir.addEventListener('input', update);
+        useThirdColor.addEventListener('change', update);
+
+        color1.addEventListener('input', function() { color1Text.value = this.value; update(); });
+        color1Text.addEventListener('input', function() {
+            if (/^#[0-9a-fA-F]{6}$/.test(this.value)) { color1.value = this.value; }
+            update();
+        });
+        color2.addEventListener('input', function() { color2Text.value = this.value; update(); });
+        color2Text.addEventListener('input', function() {
+            if (/^#[0-9a-fA-F]{6}$/.test(this.value)) { color2.value = this.value; }
+            update();
+        });
+        color3.addEventListener('input', function() { color3Text.value = this.value; update(); });
+        color3Text.addEventListener('input', function() {
+            if (/^#[0-9a-fA-F]{6}$/.test(this.value)) { color3.value = this.value; }
+            update();
+        });
+
+        // Initialize
+        update();
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced To-Do List — Task Manager with Priorities | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free advanced to-do list with priorities, due dates, categories, and filters. Manage tasks efficiently with localStorage persistence. No sign-up required.">
+    <meta name="keywords" content="to-do list, task manager, todo app, priority tasks, task tracker, productivity tool, online todo list">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Advanced To-Do List — Task Manager with Priorities | OptiDrop">
+    <meta property="og:description" content="Free advanced to-do list with priorities, due dates, categories, and filters. Manage tasks efficiently with localStorage persistence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/productivity/todo-list-advanced.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Advanced To-Do List — Task Manager with Priorities | OptiDrop">
+    <meta name="twitter:description" content="Free advanced to-do list with priorities, due dates, categories, and filters. Manage tasks efficiently with localStorage persistence.">
+    <link rel="canonical" href="https://optidrop.online/tools/productivity/todo-list-advanced.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Productivity Tools", "item": "https://optidrop.online/tools/productivity/"},
+        {"@type": "ListItem", "position": 3, "name": "Advanced To-Do List", "item": "https://optidrop.online/tools/productivity/todo-list-advanced.html"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Advanced To-Do List",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free advanced to-do list with priorities, due dates, categories, and filters. Manage tasks efficiently with localStorage persistence."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Is my to-do list data saved automatically?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, all your tasks are automatically saved to your browser's localStorage. They persist even after closing the browser until you manually delete them."}},
+        {"@type": "Question", "name": "Can I filter tasks by priority or category?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can filter tasks by priority (High, Medium, Low), by category, and by status (All, Active, Completed). You can also sort tasks by due date."}},
+        {"@type": "Question", "name": "Is my data sent to any server?", "acceptedAnswer": {"@type": "Answer", "text": "No, all data stays on your device. The tool runs entirely in your browser with zero server communication, ensuring 100% privacy."}},
+        {"@type": "Question", "name": "Can I edit tasks after adding them?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, click the edit icon on any task to modify its title, priority, category, or due date. Changes are saved automatically."}}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-indigo-100 mb-4">
+                <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            </div>
+            <h1 class="text-3xl font-extrabold text-slate-900 mb-2">Advanced To-Do List</h1>
+            <p class="text-slate-500 max-w-lg mx-auto">Organize your tasks with priorities, due dates, and categories. All data saved locally in your browser.</p>
+        </div>
+
+        <!-- Add Task Form -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 mb-6 shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Task Title</label>
+                    <input type="text" id="taskInput" placeholder="What needs to be done?" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-blue-500 focus:outline-none text-sm font-medium">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Priority</label>
+                    <select id="taskPriority" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-blue-500 focus:outline-none text-sm font-medium bg-white">
+                        <option value="high">High Priority</option>
+                        <option value="medium" selected>Medium Priority</option>
+                        <option value="low">Low Priority</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Category</label>
+                    <input type="text" id="taskCategory" placeholder="e.g. Work, Personal, Shopping" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-blue-500 focus:outline-none text-sm font-medium">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Due Date</label>
+                    <input type="date" id="taskDueDate" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-blue-500 focus:outline-none text-sm font-medium">
+                </div>
+            </div>
+            <button id="btnAddTask" class="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all duration-200 shadow-md hover:shadow-lg">
+                Add Task
+            </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex flex-wrap gap-3 mb-4">
+            <select id="filterStatus" class="px-4 py-2 rounded-lg border-2 border-slate-200 text-sm font-semibold bg-white focus:border-blue-500 focus:outline-none">
+                <option value="all">All Tasks</option>
+                <option value="active">Active</option>
+                <option value="completed">Completed</option>
+            </select>
+            <select id="filterPriority" class="px-4 py-2 rounded-lg border-2 border-slate-200 text-sm font-semibold bg-white focus:border-blue-500 focus:outline-none">
+                <option value="all">All Priorities</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <select id="filterCategory" class="px-4 py-2 rounded-lg border-2 border-slate-200 text-sm font-semibold bg-white focus:border-blue-500 focus:outline-none">
+                <option value="all">All Categories</option>
+            </select>
+            <select id="sortBy" class="px-4 py-2 rounded-lg border-2 border-slate-200 text-sm font-semibold bg-white focus:border-blue-500 focus:outline-none">
+                <option value="created">Sort by Created</option>
+                <option value="dueDate">Sort by Due Date</option>
+                <option value="priority">Sort by Priority</option>
+            </select>
+        </div>
+
+        <!-- Task Count -->
+        <div class="flex justify-between items-center mb-4">
+            <p id="taskCount" class="text-sm text-slate-500 font-medium"></p>
+            <button id="btnClearCompleted" class="text-sm text-red-500 hover:text-red-700 font-semibold hidden">Clear Completed</button>
+        </div>
+
+        <!-- Task List -->
+        <div id="taskList" class="space-y-3 mb-8"></div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="text-center py-16 hidden">
+            <svg class="w-16 h-16 text-slate-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            <p class="text-slate-400 font-medium">No tasks yet. Add your first task above!</p>
+        </div>
+
+        <!-- Edit Modal -->
+        <div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
+            <div class="bg-white rounded-2xl p-6 w-full max-w-md shadow-2xl">
+                <h3 class="text-lg font-bold text-slate-900 mb-4">Edit Task</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Task Title</label>
+                        <input type="text" id="editTitle" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-blue-500 focus:outline-none text-sm font-medium">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Priority</label>
+                        <select id="editPriority" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-blue-500 focus:outline-none text-sm font-medium bg-white">
+                            <option value="high">High Priority</option>
+                            <option value="medium">Medium Priority</option>
+                            <option value="low">Low Priority</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Category</label>
+                        <input type="text" id="editCategory" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-blue-500 focus:outline-none text-sm font-medium">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Due Date</label>
+                        <input type="date" id="editDueDate" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-blue-500 focus:outline-none text-sm font-medium">
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-6">
+                    <button id="btnSaveEdit" class="flex-1 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all">Save Changes</button>
+                    <button id="btnCancelEdit" class="flex-1 px-4 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl transition-all">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="mt-12 border-t border-slate-200 pt-8">
+            <h2 class="text-2xl font-extrabold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3 max-w-2xl mx-auto">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 bg-white hover:bg-slate-50 flex items-center justify-between font-semibold text-slate-800">
+                        Is my to-do list data saved automatically?
+                        <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-sm text-slate-600">
+                        Yes, all your tasks are automatically saved to your browser's localStorage. They persist even after closing the browser until you manually delete them.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 bg-white hover:bg-slate-50 flex items-center justify-between font-semibold text-slate-800">
+                        Can I filter tasks by priority or category?
+                        <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-sm text-slate-600">
+                        Yes, you can filter tasks by priority (High, Medium, Low), by category, and by status (All, Active, Completed). You can also sort tasks by due date.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 bg-white hover:bg-slate-50 flex items-center justify-between font-semibold text-slate-800">
+                        Is my data sent to any server?
+                        <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-sm text-slate-600">
+                        No, all data stays on your device. The tool runs entirely in your browser with zero server communication, ensuring 100% privacy.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 bg-white hover:bg-slate-50 flex items-center justify-between font-semibold text-slate-800">
+                        Can I edit tasks after adding them?
+                        <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 text-sm text-slate-600">
+                        Yes, click the edit icon on any task to modify its title, priority, category, or due date. Changes are saved automatically.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="mt-12 border-t border-slate-200 pt-8">
+            <h2 class="text-2xl font-extrabold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/productivity/goal-tracker.html" class="tool-card p-5">
+                    <div class="tool-card-icon bg-green-100"><svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+                    <span class="tool-card-title">Goal Tracker</span>
+                    <span class="tool-card-desc">Set SMART goals and track your progress over time.</span>
+                </a>
+                <a href="/tools/productivity/daily-planner.html" class="tool-card p-5">
+                    <div class="tool-card-icon bg-blue-100"><svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                    <span class="tool-card-title">Daily Planner</span>
+                    <span class="tool-card-desc">Plan your day with time slots from 6 AM to 10 PM.</span>
+                </a>
+                <a href="/tools/productivity/priority-matrix.html" class="tool-card p-5">
+                    <div class="tool-card-icon bg-purple-100"><svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg></div>
+                    <span class="tool-card-title">Priority Matrix</span>
+                    <span class="tool-card-desc">Eisenhower matrix to organize tasks by urgency and importance.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div>
+                <div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div>
+                <div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div>
+                <div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div>
+                <div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div>
+                <div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div>
+        </div>
+    </footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+
+    <script>
+    (function() {
+        if(typeof trackRecentTool==='function')trackRecentTool('Advanced To-Do List','/tools/productivity/todo-list-advanced.html');
+
+        var STORAGE_KEY = 'optidrop_todos';
+        var editingId = null;
+
+        function loadTasks() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch(e) { return []; }
+        }
+
+        function saveTasks(tasks) {
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks)); } catch(e) {}
+        }
+
+        function generateId() {
+            return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+        }
+
+        function getPriorityWeight(p) {
+            return p === 'high' ? 3 : p === 'medium' ? 2 : 1;
+        }
+
+        function getPriorityColor(p) {
+            return p === 'high' ? 'red' : p === 'medium' ? 'amber' : 'green';
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return '';
+            var d = new Date(dateStr + 'T00:00:00');
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+        }
+
+        function isOverdue(dateStr) {
+            if (!dateStr) return false;
+            var today = new Date();
+            today.setHours(0,0,0,0);
+            var due = new Date(dateStr + 'T00:00:00');
+            return due < today;
+        }
+
+        function updateCategoryFilter() {
+            var tasks = loadTasks();
+            var categories = {};
+            tasks.forEach(function(t) {
+                if (t.category) categories[t.category] = true;
+            });
+            var sel = document.getElementById('filterCategory');
+            var current = sel.value;
+            sel.innerHTML = '<option value="all">All Categories</option>';
+            Object.keys(categories).sort().forEach(function(c) {
+                var opt = document.createElement('option');
+                opt.value = c; opt.textContent = c;
+                sel.appendChild(opt);
+            });
+            sel.value = current || 'all';
+        }
+
+        function renderTasks() {
+            var tasks = loadTasks();
+            var statusFilter = document.getElementById('filterStatus').value;
+            var priorityFilter = document.getElementById('filterPriority').value;
+            var categoryFilter = document.getElementById('filterCategory').value;
+            var sortBy = document.getElementById('sortBy').value;
+
+            // Filter
+            var filtered = tasks.filter(function(t) {
+                if (statusFilter === 'active' && t.completed) return false;
+                if (statusFilter === 'completed' && !t.completed) return false;
+                if (priorityFilter !== 'all' && t.priority !== priorityFilter) return false;
+                if (categoryFilter !== 'all' && t.category !== categoryFilter) return false;
+                return true;
+            });
+
+            // Sort
+            if (sortBy === 'dueDate') {
+                filtered.sort(function(a, b) {
+                    if (!a.dueDate && !b.dueDate) return 0;
+                    if (!a.dueDate) return 1;
+                    if (!b.dueDate) return -1;
+                    return new Date(a.dueDate) - new Date(b.dueDate);
+                });
+            } else if (sortBy === 'priority') {
+                filtered.sort(function(a, b) {
+                    return getPriorityWeight(b.priority) - getPriorityWeight(a.priority);
+                });
+            } else {
+                filtered.sort(function(a, b) { return b.createdAt - a.createdAt; });
+            }
+
+            var container = document.getElementById('taskList');
+            var emptyState = document.getElementById('emptyState');
+            var taskCount = document.getElementById('taskCount');
+            var clearBtn = document.getElementById('btnClearCompleted');
+
+            var activeCount = tasks.filter(function(t) { return !t.completed; }).length;
+            var completedCount = tasks.filter(function(t) { return t.completed; }).length;
+            taskCount.textContent = activeCount + ' active, ' + completedCount + ' completed';
+            clearBtn.classList.toggle('hidden', completedCount === 0);
+
+            if (filtered.length === 0) {
+                container.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+
+            container.innerHTML = filtered.map(function(t) {
+                var color = getPriorityColor(t.priority);
+                var overdue = !t.completed && isOverdue(t.dueDate);
+                var priorityLabel = t.priority.charAt(0).toUpperCase() + t.priority.slice(1);
+                return '<div class="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 ' + (t.completed ? 'opacity-60' : '') + '" data-id="' + t.id + '">' +
+                    '<button class="toggle-btn mt-1 w-6 h-6 rounded-full border-2 flex-shrink-0 flex items-center justify-center transition-all ' +
+                        (t.completed ? 'bg-green-500 border-green-500 text-white' : 'border-slate-300 hover:border-blue-500') + '" data-id="' + t.id + '">' +
+                        (t.completed ? '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>' : '') +
+                    '</button>' +
+                    '<div class="flex-1 min-w-0">' +
+                        '<div class="flex items-center gap-2 flex-wrap">' +
+                            '<span class="' + (t.completed ? 'line-through text-slate-400' : 'text-slate-800') + ' font-medium text-sm">' + escapeHtml(t.title) + '</span>' +
+                            '<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-' + color + '-100 text-' + color + '-700">' + priorityLabel + '</span>' +
+                            (t.category ? '<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-600">' + escapeHtml(t.category) + '</span>' : '') +
+                        '</div>' +
+                        (t.dueDate ? '<div class="text-xs mt-1 ' + (overdue ? 'text-red-500 font-semibold' : 'text-slate-400') + '">' +
+                            (overdue ? 'Overdue: ' : 'Due: ') + formatDate(t.dueDate) + '</div>' : '') +
+                    '</div>' +
+                    '<div class="flex gap-1 flex-shrink-0">' +
+                        '<button class="edit-btn p-2 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-blue-600 transition-all" data-id="' + t.id + '" title="Edit">' +
+                            '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>' +
+                        '</button>' +
+                        '<button class="delete-btn p-2 rounded-lg hover:bg-red-50 text-slate-400 hover:text-red-600 transition-all" data-id="' + t.id + '" title="Delete">' +
+                            '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>' +
+                        '</button>' +
+                    '</div>' +
+                '</div>';
+            }).join('');
+        }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        function addTask() {
+            var title = document.getElementById('taskInput').value.trim();
+            if (!title) { showToast('Please enter a task title.', 'error'); return; }
+
+            var tasks = loadTasks();
+            tasks.push({
+                id: generateId(),
+                title: title,
+                priority: document.getElementById('taskPriority').value,
+                category: document.getElementById('taskCategory').value.trim(),
+                dueDate: document.getElementById('taskDueDate').value,
+                completed: false,
+                createdAt: Date.now()
+            });
+            saveTasks(tasks);
+
+            document.getElementById('taskInput').value = '';
+            document.getElementById('taskCategory').value = '';
+            document.getElementById('taskDueDate').value = '';
+            document.getElementById('taskPriority').value = 'medium';
+
+            updateCategoryFilter();
+            renderTasks();
+            showToast('Task added successfully!');
+        }
+
+        function toggleTask(id) {
+            var tasks = loadTasks();
+            for (var i = 0; i < tasks.length; i++) {
+                if (tasks[i].id === id) {
+                    tasks[i].completed = !tasks[i].completed;
+                    break;
+                }
+            }
+            saveTasks(tasks);
+            renderTasks();
+        }
+
+        function deleteTask(id) {
+            var tasks = loadTasks();
+            tasks = tasks.filter(function(t) { return t.id !== id; });
+            saveTasks(tasks);
+            updateCategoryFilter();
+            renderTasks();
+            showToast('Task deleted.');
+        }
+
+        function openEditModal(id) {
+            var tasks = loadTasks();
+            var task = null;
+            for (var i = 0; i < tasks.length; i++) {
+                if (tasks[i].id === id) { task = tasks[i]; break; }
+            }
+            if (!task) return;
+            editingId = id;
+            document.getElementById('editTitle').value = task.title;
+            document.getElementById('editPriority').value = task.priority;
+            document.getElementById('editCategory').value = task.category || '';
+            document.getElementById('editDueDate').value = task.dueDate || '';
+            document.getElementById('editModal').classList.remove('hidden');
+        }
+
+        function saveEdit() {
+            var title = document.getElementById('editTitle').value.trim();
+            if (!title) { showToast('Task title cannot be empty.', 'error'); return; }
+
+            var tasks = loadTasks();
+            for (var i = 0; i < tasks.length; i++) {
+                if (tasks[i].id === editingId) {
+                    tasks[i].title = title;
+                    tasks[i].priority = document.getElementById('editPriority').value;
+                    tasks[i].category = document.getElementById('editCategory').value.trim();
+                    tasks[i].dueDate = document.getElementById('editDueDate').value;
+                    break;
+                }
+            }
+            saveTasks(tasks);
+            document.getElementById('editModal').classList.add('hidden');
+            editingId = null;
+            updateCategoryFilter();
+            renderTasks();
+            showToast('Task updated!');
+        }
+
+        function clearCompleted() {
+            var tasks = loadTasks();
+            tasks = tasks.filter(function(t) { return !t.completed; });
+            saveTasks(tasks);
+            updateCategoryFilter();
+            renderTasks();
+            showToast('Completed tasks cleared.');
+        }
+
+        // Event listeners
+        document.getElementById('btnAddTask').addEventListener('click', addTask);
+        document.getElementById('taskInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') addTask();
+        });
+
+        document.getElementById('filterStatus').addEventListener('change', renderTasks);
+        document.getElementById('filterPriority').addEventListener('change', renderTasks);
+        document.getElementById('filterCategory').addEventListener('change', renderTasks);
+        document.getElementById('sortBy').addEventListener('change', renderTasks);
+        document.getElementById('btnClearCompleted').addEventListener('click', clearCompleted);
+
+        document.getElementById('btnSaveEdit').addEventListener('click', saveEdit);
+        document.getElementById('btnCancelEdit').addEventListener('click', function() {
+            document.getElementById('editModal').classList.add('hidden');
+            editingId = null;
+        });
+
+        document.getElementById('taskList').addEventListener('click', function(e) {
+            var toggleBtn = e.target.closest('.toggle-btn');
+            if (toggleBtn) { toggleTask(toggleBtn.dataset.id); return; }
+            var editBtn = e.target.closest('.edit-btn');
+            if (editBtn) { openEditModal(editBtn.dataset.id); return; }
+            var deleteBtn = e.target.closest('.delete-btn');
+            if (deleteBtn) { deleteTask(deleteBtn.dataset.id); return; }
+        });
+
+        // Initialize
+        updateCategoryFilter();
+        renderTasks();
+    })();
+    </script>
+</body>
+</html>

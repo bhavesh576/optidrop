@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist Free Online — Track Movies with Ratings | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online movie watchlist. Add movies with genre, priority, and personal ratings. Filter and sort your watchlist. Saves to your browser. No login required.">
+    <meta name="keywords" content="movie watchlist, movie tracker, film watchlist, movie rating tracker, watchlist online, movie organizer">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Movie Watchlist Free Online — Track Movies with Ratings | OptiDrop">
+    <meta property="og:description" content="Free online movie watchlist. Add movies with genre, priority, and ratings. Filter and sort your watchlist. No login required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/utility/movie-watchlist.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Movie Watchlist Free Online — Track Movies with Ratings | OptiDrop">
+    <meta name="twitter:description" content="Free online movie watchlist. Add movies with genre, priority, and ratings. No login required.">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/movie-watchlist.html">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Utility Tools", "item": "https://optidrop.online/tools/utility/"},
+        {"@type": "ListItem", "position": 3, "name": "Movie Watchlist", "item": "https://optidrop.online/tools/utility/movie-watchlist.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Movie Watchlist",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online movie watchlist. Add movies with genre, priority, and personal ratings. Filter and sort your watchlist."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the movie watchlist work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Add movies with a title, genre, priority level (High, Medium, Low), and an optional personal rating (1-5 stars). You can filter your watchlist by genre or priority, and sort by title, priority, or rating. All data is saved to your browser's localStorage and persists between visits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I rate movies I have already watched?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can add a personal rating from 1 to 5 stars for any movie in your watchlist. You can update the rating at any time by clicking the star icons. This helps you keep track of which movies you enjoyed the most."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I filter my movie watchlist?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can filter your watchlist by genre (Action, Comedy, Drama, Horror, Sci-Fi, Romance, Documentary, Thriller, Animation, Other) and by priority level (High, Medium, Low). You can also sort by title, priority, or rating to find the movie you want to watch next."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my watchlist data private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All your watchlist data is stored locally in your browser using localStorage. Nothing is sent to any server. If you clear your browser data or use a different device, your watchlist will not carry over. Your data is 100% private and stays on your device."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')" >All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a>
+        </nav>
+    </header>
+
+    <!-- Ad Slot: Below header -->
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Movie Watchlist Online — Track Movies with Ratings Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Build your movie watchlist with genre, priority, and personal ratings. Filter and sort to find what to watch next. Data saved to your browser. 100% free, no sign-up required.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Add Movie Form -->
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Add a Movie</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                        <div>
+                            <label for="movieTitle" class="block text-sm font-bold text-slate-700 mb-2">Movie Title</label>
+                            <input type="text" id="movieTitle" placeholder="e.g. Inception" maxlength="100"
+                                class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="movieGenre" class="block text-sm font-bold text-slate-700 mb-2">Genre</label>
+                            <select id="movieGenre" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                <option value="Action">Action</option>
+                                <option value="Comedy">Comedy</option>
+                                <option value="Drama">Drama</option>
+                                <option value="Horror">Horror</option>
+                                <option value="Sci-Fi">Sci-Fi</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Documentary">Documentary</option>
+                                <option value="Thriller">Thriller</option>
+                                <option value="Animation">Animation</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="moviePriority" class="block text-sm font-bold text-slate-700 mb-2">Priority</label>
+                            <select id="moviePriority" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium bg-white">
+                                <option value="High">High</option>
+                                <option value="Medium" selected>Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Rating (1-5 stars)</label>
+                            <div id="starInput" class="flex gap-1 py-2">
+                                <span class="star-btn text-3xl cursor-pointer text-slate-300" data-val="1">&#9733;</span>
+                                <span class="star-btn text-3xl cursor-pointer text-slate-300" data-val="2">&#9733;</span>
+                                <span class="star-btn text-3xl cursor-pointer text-slate-300" data-val="3">&#9733;</span>
+                                <span class="star-btn text-3xl cursor-pointer text-slate-300" data-val="4">&#9733;</span>
+                                <span class="star-btn text-3xl cursor-pointer text-slate-300" data-val="5">&#9733;</span>
+                            </div>
+                            <input type="hidden" id="movieRating" value="0">
+                        </div>
+                    </div>
+
+                    <button id="btnAddMovie" class="w-full mb-6 px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
+                        Add to Watchlist
+                    </button>
+
+                    <!-- Filters -->
+                    <div id="filtersSection" class="hidden mb-6">
+                        <div class="flex flex-wrap gap-3 items-center">
+                            <label class="text-sm font-bold text-slate-700">Filter:</label>
+                            <select id="filterGenre" class="px-3 py-2 text-sm border-2 border-slate-200 rounded-lg bg-white focus:border-blue-500">
+                                <option value="">All Genres</option>
+                            </select>
+                            <select id="filterPriority" class="px-3 py-2 text-sm border-2 border-slate-200 rounded-lg bg-white focus:border-blue-500">
+                                <option value="">All Priorities</option>
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                            <select id="sortBy" class="px-3 py-2 text-sm border-2 border-slate-200 rounded-lg bg-white focus:border-blue-500">
+                                <option value="added">Sort: Date Added</option>
+                                <option value="title">Sort: Title</option>
+                                <option value="priority">Sort: Priority</option>
+                                <option value="rating">Sort: Rating</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Movies List -->
+                    <div id="moviesList" class="space-y-3"></div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot: After tool -->
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Movie Watchlist Online — Organize Your Movie List</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Movie Watchlist is a free online tool that helps you organize movies you want to watch. Add movies with genre, priority level, and personal ratings. Filter by genre or priority and sort by title, priority, or rating to find the perfect movie for any mood.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">How Does the Movie Watchlist Work?</h3>
+                <p class="text-slate-600 mb-4">Enter the movie title, select a genre, set a priority level (High, Medium, Low), and optionally rate it from 1 to 5 stars. Your watchlist is displayed as a clean card layout with all the details. Use the filter and sort options to quickly find movies by genre, priority, or rating. All data is saved to your browser's localStorage.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Never Forget a Movie Again</h3>
+                <p class="text-slate-600">We all hear about great movies and forget them by the time we sit down to watch something. This watchlist lets you capture movie recommendations instantly and organize them by how excited you are to watch them. Mark high-priority movies and filter to see what to watch next. 100% private, no account needed.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How does the movie watchlist work?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Add movies with a title, genre, priority level (High, Medium, Low), and an optional personal rating (1-5 stars). You can filter your watchlist by genre or priority, and sort by title, priority, or rating. All data is saved to your browser's localStorage and persists between visits.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I rate movies I have already watched?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. You can add a personal rating from 1 to 5 stars for any movie in your watchlist. You can update the rating at any time by clicking the star icons. This helps you keep track of which movies you enjoyed the most.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I filter my movie watchlist?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. You can filter your watchlist by genre (Action, Comedy, Drama, Horror, Sci-Fi, Romance, Documentary, Thriller, Animation, Other) and by priority level (High, Medium, Low). You can also sort by title, priority, or rating to find the movie you want to watch next.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is my watchlist data private?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. All your watchlist data is stored locally in your browser using localStorage. Nothing is sent to any server. If you clear your browser data or use a different device, your watchlist will not carry over. Your data is 100% private and stays on your device.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <a href="/tools/utility/book-reading-tracker.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Book Reading Tracker</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Track your reading progress and estimate finish dates.</span>
+                </a>
+                <a href="/tools/utility/recipe-scaler.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Recipe Scaler</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Scale recipe ingredients up or down by changing servings.</span>
+                </a>
+                <a href="/tools/utility/unit-price-comparator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Unit Price Comparator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Compare price per unit to find the best deal.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function() {
+        var STORAGE_KEY = 'optidrop_movie_watchlist';
+        var selectedRating = 0;
+
+        // Star input
+        var stars = document.querySelectorAll('.star-btn');
+        stars.forEach(function(s) {
+            s.addEventListener('click', function() {
+                selectedRating = parseInt(s.getAttribute('data-val'));
+                document.getElementById('movieRating').value = selectedRating;
+                stars.forEach(function(st) {
+                    st.style.color = parseInt(st.getAttribute('data-val')) <= selectedRating ? '#facc15' : '#cbd5e1';
+                });
+            });
+            s.addEventListener('mouseenter', function() {
+                var val = parseInt(s.getAttribute('data-val'));
+                stars.forEach(function(st) {
+                    st.style.color = parseInt(st.getAttribute('data-val')) <= val ? '#fde68a' : '#cbd5e1';
+                });
+            });
+            s.addEventListener('mouseleave', function() {
+                stars.forEach(function(st) {
+                    st.style.color = parseInt(st.getAttribute('data-val')) <= selectedRating ? '#facc15' : '#cbd5e1';
+                });
+            });
+        });
+
+        function loadMovies() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch(e) { return []; }
+        }
+        function saveMovies(movies) {
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(movies)); } catch(e) {}
+        }
+
+        function updateGenreFilter() {
+            var movies = loadMovies();
+            var genres = [];
+            movies.forEach(function(m) { if (genres.indexOf(m.genre) === -1) genres.push(m.genre); });
+            var sel = document.getElementById('filterGenre');
+            var current = sel.value;
+            sel.innerHTML = '<option value="">All Genres</option>';
+            genres.sort().forEach(function(g) {
+                var opt = document.createElement('option');
+                opt.value = g; opt.textContent = g;
+                if (g === current) opt.selected = true;
+                sel.appendChild(opt);
+            });
+        }
+
+        function renderMovies() {
+            var movies = loadMovies();
+            var list = document.getElementById('moviesList');
+            document.getElementById('filtersSection').classList.toggle('hidden', movies.length === 0);
+            updateGenreFilter();
+
+            var filterGenre = document.getElementById('filterGenre').value;
+            var filterPriority = document.getElementById('filterPriority').value;
+            var sortBy = document.getElementById('sortBy').value;
+
+            var filtered = movies.filter(function(m, i) {
+                m._idx = i;
+                if (filterGenre && m.genre !== filterGenre) return false;
+                if (filterPriority && m.priority !== filterPriority) return false;
+                return true;
+            });
+
+            var priorityOrder = { High: 0, Medium: 1, Low: 2 };
+            filtered.sort(function(a, b) {
+                if (sortBy === 'title') return a.title.localeCompare(b.title);
+                if (sortBy === 'priority') return priorityOrder[a.priority] - priorityOrder[b.priority];
+                if (sortBy === 'rating') return (b.rating || 0) - (a.rating || 0);
+                return 0; // date added = original order
+            });
+
+            list.innerHTML = '';
+            if (filtered.length === 0) {
+                list.innerHTML = '<p class="text-center text-slate-500 py-8">No movies found. Add some movies to your watchlist!</p>';
+                return;
+            }
+
+            filtered.forEach(function(movie) {
+                var starsHtml = '';
+                for (var s = 1; s <= 5; s++) {
+                    starsHtml += '<span class="rate-star cursor-pointer text-xl" data-midx="' + movie._idx + '" data-star="' + s + '" style="color:' + (s <= movie.rating ? '#facc15' : '#cbd5e1') + '">&#9733;</span>';
+                }
+                var priorityColors = { High: 'bg-red-100 text-red-700', Medium: 'bg-amber-100 text-amber-700', Low: 'bg-slate-100 text-slate-600' };
+                var card = document.createElement('div');
+                card.className = 'flex items-center justify-between bg-white border border-slate-200 rounded-xl px-5 py-4 shadow-sm';
+                card.innerHTML = '<div class="flex-1"><div class="flex items-center gap-2 mb-1"><h4 class="font-bold text-slate-900">' + movie.title + '</h4><span class="text-xs font-semibold px-2 py-0.5 rounded-full ' + (priorityColors[movie.priority] || priorityColors.Medium) + '">' + movie.priority + '</span></div><div class="flex items-center gap-3"><span class="text-sm text-slate-500">' + movie.genre + '</span><div class="flex gap-0.5">' + starsHtml + '</div></div></div>'
+                    + '<button data-idx="' + movie._idx + '" class="delete-movie text-red-400 hover:text-red-600 font-bold text-xl ml-4">&times;</button>';
+                list.appendChild(card);
+            });
+        }
+
+        document.getElementById('btnAddMovie').addEventListener('click', function() {
+            var title = document.getElementById('movieTitle').value.trim();
+            var genre = document.getElementById('movieGenre').value;
+            var priority = document.getElementById('moviePriority').value;
+            var rating = parseInt(document.getElementById('movieRating').value) || 0;
+
+            if (!title) { showToast('Please enter a movie title.', 'error'); return; }
+
+            var movies = loadMovies();
+            movies.push({ title: title, genre: genre, priority: priority, rating: rating, addedDate: new Date().toISOString() });
+            saveMovies(movies);
+
+            document.getElementById('movieTitle').value = '';
+            selectedRating = 0;
+            document.getElementById('movieRating').value = 0;
+            stars.forEach(function(st) { st.style.color = '#cbd5e1'; });
+
+            renderMovies();
+            showToast('Movie added to watchlist!');
+        });
+
+        document.getElementById('movieTitle').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') document.getElementById('btnAddMovie').click();
+        });
+
+        document.getElementById('moviesList').addEventListener('click', function(e) {
+            if (e.target.classList.contains('delete-movie')) {
+                var idx = parseInt(e.target.getAttribute('data-idx'));
+                var movies = loadMovies();
+                movies.splice(idx, 1);
+                saveMovies(movies);
+                renderMovies();
+                showToast('Movie removed.');
+            }
+            if (e.target.classList.contains('rate-star')) {
+                var midx = parseInt(e.target.getAttribute('data-midx'));
+                var star = parseInt(e.target.getAttribute('data-star'));
+                var movies = loadMovies();
+                movies[midx].rating = movies[midx].rating === star ? 0 : star;
+                saveMovies(movies);
+                renderMovies();
+            }
+        });
+
+        ['filterGenre', 'filterPriority', 'sortBy'].forEach(function(id) {
+            document.getElementById(id).addEventListener('change', renderMovies);
+        });
+
+        renderMovies();
+    })();
+    </script>
+</body>
+</html>

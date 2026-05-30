@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developmental Milestone Tracker | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2"><link rel="shortcut icon" href="/favicon.png?v=2"><link rel="apple-touch-icon" href="/favicon.png?v=2"><meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Track your child's developmental milestones from 0-5 years. Free checklist with progress tracking, age-appropriate milestones, and localStorage persistence."><meta name="keywords" content="milestone tracker, developmental milestones, baby milestones, child development tracker, baby development checklist, pediatric milestones"><meta name="author" content="OptiDrop"><meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Developmental Milestone Tracker | OptiDrop"><meta property="og:description" content="Track your child's developmental milestones from 0-5 years with progress tracking."><meta property="og:type" content="website"><meta property="og:url" content="https://optidrop.online/tools/parenting/milestone-tracker.html"><meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Developmental Milestone Tracker | OptiDrop"><meta name="twitter:description" content="Track your child's developmental milestones from 0-5 years.">
+    <link rel="canonical" href="https://optidrop.online/tools/parenting/milestone-tracker.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},{"@type":"ListItem","position":2,"name":"Parenting Tools","item":"https://optidrop.online/category/parenting-tools.html"},{"@type":"ListItem","position":3,"name":"Milestone Tracker","item":"https://optidrop.online/tools/parenting/milestone-tracker.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OptiDrop Milestone Tracker","applicationCategory":"LifestyleApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online developmental milestone tracker for children ages 0-5 years with progress tracking."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What age ranges are covered?","acceptedAnswer":{"@type":"Answer","text":"The milestone tracker covers 5 age ranges: 0-6 months, 6-12 months, 1-2 years, 2-3 years, and 3-5 years. Each range includes age-appropriate developmental milestones."}},{"@type":"Question","name":"What types of milestones are tracked?","acceptedAnswer":{"@type":"Answer","text":"Milestones are categorized into physical/motor skills, language/communication, social/emotional, and cognitive development. Each category has specific, age-appropriate milestones."}},{"@type":"Question","name":"Is my progress saved?","acceptedAnswer":{"@type":"Answer","text":"Yes! All milestone progress is saved in your browser's localStorage. It persists between sessions but is only stored on your device. No data is sent to any server."}},{"@type":"Question","name":"Should I be concerned if my child hasn't reached a milestone?","acceptedAnswer":{"@type":"Answer","text":"Every child develops at their own pace. These milestones are general guidelines, not strict timelines. If you have concerns about your child's development, consult your pediatrician."}}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .milestone-check:checked + span { text-decoration: line-through; color: #94a3b8; }
+        .progress-bar { transition: width 0.5s ease; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+    <header class="site-header"><div class="header-inner"><a href="/" class="logo-text">Opti<span>Drop</span></a><nav class="header-nav"><a href="/" class="back-link"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>All Tools</a><span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span><button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav></div><nav class="mobile-nav"><a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a></nav></header>
+    <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center"><h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Developmental Milestone Tracker</h1><p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Track your child's developmental milestones from birth to 5 years. Check off milestones as your child reaches them and monitor progress across different developmental areas.</p></section>
+        <section class="max-w-4xl mx-auto px-4 pb-8"><div class="glass-panel rounded-3xl shadow-xl overflow-hidden"><div class="p-6 sm:p-10">
+            <!-- Age Range Selector -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <button onclick="showAgeRange('0-6')" class="age-btn active px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 text-sm font-medium transition-colors hover:bg-brand-600 hover:text-white hover:border-brand-600" data-range="0-6">0-6 months</button>
+                <button onclick="showAgeRange('6-12')" class="age-btn px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 text-sm font-medium transition-colors hover:bg-brand-600 hover:text-white hover:border-brand-600" data-range="6-12">6-12 months</button>
+                <button onclick="showAgeRange('1-2')" class="age-btn px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 text-sm font-medium transition-colors hover:bg-brand-600 hover:text-white hover:border-brand-600" data-range="1-2">1-2 years</button>
+                <button onclick="showAgeRange('2-3')" class="age-btn px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 text-sm font-medium transition-colors hover:bg-brand-600 hover:text-white hover:border-brand-600" data-range="2-3">2-3 years</button>
+                <button onclick="showAgeRange('3-5')" class="age-btn px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 text-sm font-medium transition-colors hover:bg-brand-600 hover:text-white hover:border-brand-600" data-range="3-5">3-5 years</button>
+            </div>
+
+            <!-- Overall Progress -->
+            <div class="mb-6">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Overall Progress</span>
+                    <span id="progressText" class="text-sm font-bold text-brand-600 dark:text-brand-400">0%</span>
+                </div>
+                <div class="w-full h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                    <div id="progressBar" class="progress-bar h-full bg-brand-600 rounded-full" style="width:0%"></div>
+                </div>
+            </div>
+
+            <!-- Milestones -->
+            <div id="milestones" class="space-y-6"></div>
+
+            <button onclick="resetProgress()" class="mt-6 w-full px-6 py-3 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold rounded-xl transition-colors">Reset All Progress</button>
+        </div></div></section>
+        <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+        <section class="max-w-4xl mx-auto px-4 py-8"><div class="prose max-w-none">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">About the Milestone Tracker</h2>
+            <p class="text-slate-600 dark:text-slate-400 mb-4">Developmental milestones are skills or activities that most children can do by a certain age. Tracking these milestones helps parents understand their child's development and identify any areas that may need attention.</p>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Types of Development</h3>
+            <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2">
+                <li><strong>Physical/Motor</strong> - Gross motor (crawling, walking) and fine motor (grasping, drawing)</li>
+                <li><strong>Language</strong> - Babbling, first words, sentences, and communication skills</li>
+                <li><strong>Social/Emotional</strong> - Smiling, interacting with others, expressing emotions</li>
+                <li><strong>Cognitive</strong> - Problem-solving, learning, understanding cause and effect</li>
+            </ul>
+        </div></section>
+        <section class="max-w-3xl mx-auto px-4 py-8"><h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2><div class="space-y-3">
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">What age ranges are covered?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">The milestone tracker covers 5 age ranges: 0-6 months, 6-12 months, 1-2 years, 2-3 years, and 3-5 years. Each range includes age-appropriate developmental milestones.</div></details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">What types of milestones are tracked?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">Milestones are categorized into physical/motor skills, language/communication, social/emotional, and cognitive development. Each category has specific, age-appropriate milestones.</div></details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">Is my progress saved?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">Yes! All milestone progress is saved in your browser's localStorage. It persists between sessions but is only stored on your device. No data is sent to any server.</div></details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"><summary class="flex justify-between items-center px-5 py-4 cursor-pointer bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750"><span class="font-medium text-slate-800 dark:text-white">Should I be concerned if my child hasn't reached a milestone?</span><svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-5 py-4 text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">Every child develops at their own pace. These milestones are general guidelines, not strict timelines. If you have concerns about your child's development, consult your pediatrician.</div></details>
+        </div></section>
+        <section class="max-w-4xl mx-auto px-4 py-8"><h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 text-center">Related Tools</h2><div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <a href="/tools/parenting/feeding-schedule.html" class="block p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors bg-white dark:bg-slate-800"><h3 class="font-semibold text-slate-800 dark:text-white">Feeding Schedule</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Track baby's feeding schedule</p></a>
+            <a href="/tools/parenting/sleep-schedule-planner.html" class="block p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors bg-white dark:bg-slate-800"><h3 class="font-semibold text-slate-800 dark:text-white">Sleep Schedule Planner</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Plan baby's sleep routine</p></a>
+            <a href="/tools/parenting/height-prediction.html" class="block p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors bg-white dark:bg-slate-800"><h3 class="font-semibold text-slate-800 dark:text-white">Height Prediction</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Predict your child's adult height</p></a>
+        </div></section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+    <div id="toast-container"></div>
+    <script src="../../common.js"></script>
+    <script>
+        const STORAGE_KEY = 'optidrop_milestones';
+
+        const MILESTONES = {
+            "0-6": {
+                "Physical/Motor": [
+                    "Lifts head during tummy time",
+                    "Brings hands to mouth",
+                    "Pushes up on elbows during tummy time",
+                    "Rolls from tummy to back",
+                    "Reaches for and grasps objects",
+                    "Sits with support",
+                    "Holds head steady when pulled to sit"
+                ],
+                "Language": [
+                    "Makes cooing sounds",
+                    "Responds to sounds",
+                    "Makes vowel sounds (ah, eh, oh)",
+                    "Laughs and squeals",
+                    "Responds to own name",
+                    "Babbles with consonant sounds"
+                ],
+                "Social/Emotional": [
+                    "Smiles at people",
+                    "Enjoys playing with people",
+                    "Recognizes familiar faces",
+                    "Likes to look at self in mirror",
+                    "Shows excitement when seeing familiar people"
+                ],
+                "Cognitive": [
+                    "Follows objects with eyes",
+                    "Opens mouth for spoon",
+                    "Shows curiosity about things",
+                    "Puts things in mouth to explore",
+                    "Reaches for toy with one hand"
+                ]
+            },
+            "6-12": {
+                "Physical/Motor": [
+                    "Sits without support",
+                    "Crawls forward",
+                    "Pulls up to stand",
+                    "Cruises along furniture",
+                    "Picks up small objects with thumb and finger",
+                    "Transfers objects from one hand to other",
+                    "Stands momentarily without support",
+                    "May take first steps"
+                ],
+                "Language": [
+                    "Babbles chains of sounds (ba-ba-ba, da-da-da)",
+                    "Responds to simple verbal requests",
+                    "Uses simple gestures (waving, pointing)",
+                    "Says 'mama' and 'dada'",
+                    "Understands 'no'",
+                    "Tries to imitate words"
+                ],
+                "Social/Emotional": [
+                    "May be afraid of strangers",
+                    "Shows affection to familiar people",
+                    "Plays peek-a-boo",
+                    "Shows preferences for certain people and toys",
+                    "May cry when parent leaves"
+                ],
+                "Cognitive": [
+                    "Explores objects in different ways",
+                    "Looks for hidden objects",
+                    "Bangs objects together",
+                    "Puts objects into containers",
+                    "Follows simple directions with gestures"
+                ]
+            },
+            "1-2": {
+                "Physical/Motor": [
+                    "Walks alone",
+                    "Pulls toys while walking",
+                    "Climbs onto and down from furniture",
+                    "Kicks a ball",
+                    "Stacks blocks",
+                    "Drinks from a cup",
+                    "Eats with a spoon",
+                    "Runs",
+                    "Walks up stairs with help"
+                ],
+                "Language": [
+                    "Says several single words",
+                    "Points to things when named",
+                    "Knows names of familiar people",
+                    "Follows simple instructions",
+                    "Uses 2-word phrases",
+                    "Points to body parts",
+                    "Names pictures in books"
+                ],
+                "Social/Emotional": [
+                    "Shows defiant behavior",
+                    "Plays alongside other children",
+                    "Shows excitement around other children",
+                    "Copies others",
+                    "Shows growing independence"
+                ],
+                "Cognitive": [
+                    "Sorts shapes and colors",
+                    "Completes sentences in familiar books",
+                    "Follows two-step instructions",
+                    "Plays simple pretend games",
+                    "Builds towers of 4+ blocks"
+                ]
+            },
+            "2-3": {
+                "Physical/Motor": [
+                    "Climbs and runs well",
+                    "Pedals a tricycle",
+                    "Walks up and down stairs with one foot per step",
+                    "Jumps off the ground",
+                    "Turns pages of a book",
+                    "Uses scissors",
+                    "Draws simple shapes"
+                ],
+                "Language": [
+                    "Uses 2-3 word sentences",
+                    "Names many objects",
+                    "Uses words like 'in', 'on', 'under'",
+                    "Says first name, age, and gender",
+                    "Strangers can understand most of speech",
+                    "Tells you what happened in a simple event",
+                    "Asks 'why' frequently"
+                ],
+                "Social/Emotional": [
+                    "Shows concern for crying friend",
+                    "Takes turns in games",
+                    "Understands 'mine' and 'theirs'",
+                    "Shows wide range of emotions",
+                    "Separates easily from parents",
+                    "May get upset with major routine changes"
+                ],
+                "Cognitive": [
+                    "Plays make-believe with dolls, animals, and people",
+                    "Sorts objects by shape and color",
+                    "Completes puzzles with 3 or 4 pieces",
+                    "Understands 'two'",
+                    "Turns book pages one at a time",
+                    "Screws and unscrews jar lids"
+                ]
+            },
+            "3-5": {
+                "Physical/Motor": [
+                    "Hops and stands on one foot",
+                    "Catches a bounced ball",
+                    "Pours and cuts with supervision",
+                    "Uses the toilet independently",
+                    "Dresses and undresses",
+                    "Draws a person with 2-4 body parts",
+                    "Uses fork and spoon",
+                    "Writes some letters"
+                ],
+                "Language": [
+                    "Tells stories",
+                    "Says full name and address",
+                    "Speaks in sentences of 5-6 words",
+                    "Uses future and past tense",
+                    "Says rhyming words",
+                    "Names colors and numbers",
+                    "Asks meaning of words"
+                ],
+                "Social/Emotional": [
+                    "Wants to please friends",
+                    "Likes to sing, dance, and act",
+                    "Shows empathy",
+                    "Understands taking turns",
+                    "Can separate from parents more easily",
+                    "May confuse fantasy and reality"
+                ],
+                "Cognitive": [
+                    "Counts to 10 or more",
+                    "Understands 'same' and 'different'",
+                    "Draws a person with body parts",
+                    "Uses scissors",
+                    "Names some colors",
+                    "Understands counting",
+                    "Prints some letters",
+                    "Plays board games"
+                ]
+            }
+        };
+
+        let currentRange = '0-6';
+
+        function getChecked() {
+            try {
+                return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+            } catch(e) {
+                return {};
+            }
+        }
+
+        function saveChecked(checked) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(checked));
+        }
+
+        function showAgeRange(range) {
+            currentRange = range;
+            document.querySelectorAll('.age-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.range === range) {
+                    btn.classList.add('active');
+                    btn.style.backgroundColor = '#2563eb';
+                    btn.style.color = 'white';
+                    btn.style.borderColor = '#2563eb';
+                } else {
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                    btn.style.borderColor = '';
+                }
+            });
+            renderMilestones();
+        }
+
+        function toggleMilestone(key) {
+            const checked = getChecked();
+            checked[key] = !checked[key];
+            saveChecked(checked);
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const checked = getChecked();
+            const range = MILESTONES[currentRange];
+            let total = 0, completed = 0;
+
+            for (const [category, items] of Object.entries(range)) {
+                items.forEach((item, i) => {
+                    total++;
+                    const key = currentRange + '_' + category + '_' + i;
+                    if (checked[key]) completed++;
+                });
+            }
+
+            const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+            document.getElementById('progressText').textContent = pct + '%';
+            document.getElementById('progressBar').style.width = pct + '%';
+        }
+
+        function renderMilestones() {
+            const checked = getChecked();
+            const range = MILESTONES[currentRange];
+            const container = document.getElementById('milestones');
+            container.innerHTML = '';
+
+            const categoryColors = {
+                "Physical/Motor": "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300",
+                "Language": "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300",
+                "Social/Emotional": "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300",
+                "Cognitive": "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300"
+            };
+
+            for (const [category, items] of Object.entries(range)) {
+                const section = document.createElement('div');
+                section.innerHTML = `
+                    <h3 class="text-md font-semibold mb-3">
+                        <span class="px-3 py-1 rounded-full text-xs ${categoryColors[category] || ''}">${category}</span>
+                    </h3>
+                    <div class="space-y-2 ml-2"></div>
+                `;
+
+                const list = section.querySelector('div');
+                items.forEach((item, i) => {
+                    const key = currentRange + '_' + category + '_' + i;
+                    const isChecked = checked[key] || false;
+                    const label = document.createElement('label');
+                    label.className = 'flex items-center gap-3 p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors';
+                    label.innerHTML = `
+                        <input type="checkbox" class="milestone-check w-5 h-5 rounded border-slate-300 dark:border-slate-600 text-brand-600 focus:ring-brand-500" ${isChecked ? 'checked' : ''} onchange="toggleMilestone('${key}')">
+                        <span class="text-slate-700 dark:text-slate-300">${item}</span>
+                    `;
+                    list.appendChild(label);
+                });
+
+                container.appendChild(section);
+            }
+
+            updateProgress();
+        }
+
+        function resetProgress() {
+            if (confirm('Are you sure you want to reset all milestone progress?')) {
+                localStorage.removeItem(STORAGE_KEY);
+                renderMilestones();
+                showToast('Progress reset');
+            }
+        }
+
+        // Initialize
+        showAgeRange('0-6');
+    </script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Generator Free Online — Text Icon Creator PNG | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online favicon generator. Create text-based favicons with custom colors and font size. Preview at 16x16, 32x32, 64x64. Download as PNG. No upload required.">
+    <meta name="keywords" content="favicon generator, favicon maker, text favicon, favicon creator online, favicon png download, site icon generator, favicon from text">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Favicon Generator Free Online — Text Icon Creator | OptiDrop">
+    <meta property="og:description" content="Create text-based favicons with custom colors. Preview at multiple sizes and download as PNG. Free and private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/design/favicon-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Favicon Generator Free Online — Text Icon Creator | OptiDrop">
+    <meta name="twitter:description" content="Create text-based favicons with custom colors. Download as PNG. Free and private.">
+    <link rel="canonical" href="https://optidrop.online/tools/design/favicon-generator.html">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Design Tools", "item": "https://optidrop.online/tools/design/"},
+        {"@type": "ListItem", "position": 3, "name": "Favicon Generator", "item": "https://optidrop.online/tools/design/favicon-generator.html"}
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OptiDrop Favicon Generator",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Free online favicon generator. Create text-based favicons with custom colors. Preview at multiple sizes and download as PNG."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I create a favicon from text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter 1-2 characters in the text field, choose a background color and text color, adjust the font size, and the tool generates a favicon preview at 16x16, 32x32, and 64x64 pixels. Click 'Download PNG' to save the 64x64 version as a PNG file you can use as your website favicon."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What size should a favicon be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard favicons are 16x16 pixels for browser tabs, 32x32 for taskbars, and 64x64 for high-DPI displays. This tool lets you preview at all three sizes. The 64x64 download provides the best quality and browsers will automatically scale it down as needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use a custom font for my favicon?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The generator uses a bold sans-serif font optimized for small sizes. This ensures your text favicon is readable even at 16x16 pixels. The font is rendered on a canvas element, so the output is a clean rasterized PNG."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the favicon generator free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, OptiDrop's Favicon Generator is completely free. No account or sign-up is required. All processing happens in your browser using HTML5 Canvas. The downloaded PNG file is yours to use on any website."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        .preview-size-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .preview-size-box canvas {
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            image-rendering: pixelated;
+        }
+        .preview-size-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-text">Opti<span>Drop</span></a>
+            <nav class="header-nav">
+                <a href="/" class="back-link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    All Tools
+                </a>
+                <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
+                <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </nav>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/" onclick="this.parentElement.classList.remove('open')">All Tools</a>
+            <a href="/blog/" onclick="this.parentElement.classList.remove('open')">Blog</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- H1 for SEO -->
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Favicon Generator — Create Text Icons &amp; Download PNG</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate text-based favicons with custom background and text colors. Preview at 16x16, 32x32, and 64x64 pixels. Download as PNG instantly. 100% free and private.</p>
+        </section>
+
+        <!-- TOOL WIDGET -->
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Left: Controls -->
+                        <div>
+                            <!-- Favicon Text -->
+                            <div class="mb-4">
+                                <label for="favText" class="block text-sm font-bold text-slate-700 mb-2">Text (1-2 characters)</label>
+                                <input type="text" id="favText" value="OD" maxlength="2" class="w-full px-4 py-3 text-lg border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-bold text-center uppercase">
+                            </div>
+
+                            <!-- Background Color -->
+                            <div class="mb-4">
+                                <label for="favBgColor" class="block text-sm font-bold text-slate-700 mb-2">Background Color</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="color" id="favBgColor" value="#2563eb" class="w-12 h-10 border-2 border-slate-200 rounded-lg cursor-pointer">
+                                    <input type="text" id="favBgColorText" value="#2563eb" class="flex-1 px-3 py-2 text-sm border-2 border-slate-200 rounded-lg font-mono font-bold text-slate-900">
+                                </div>
+                            </div>
+
+                            <!-- Text Color -->
+                            <div class="mb-4">
+                                <label for="favTextColor" class="block text-sm font-bold text-slate-700 mb-2">Text Color</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="color" id="favTextColor" value="#ffffff" class="w-12 h-10 border-2 border-slate-200 rounded-lg cursor-pointer">
+                                    <input type="text" id="favTextColorText" value="#ffffff" class="flex-1 px-3 py-2 text-sm border-2 border-slate-200 rounded-lg font-mono font-bold text-slate-900">
+                                </div>
+                            </div>
+
+                            <!-- Font Size -->
+                            <div class="mb-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <label for="favFontSize" class="text-sm font-bold text-slate-700">Font Size</label>
+                                    <span id="favFontSizeVal" class="text-sm font-extrabold text-brand-600 bg-brand-50 px-3 py-1 rounded-lg">70%</span>
+                                </div>
+                                <input type="range" id="favFontSize" min="30" max="100" value="70" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-600">
+                            </div>
+
+                            <!-- Border Radius -->
+                            <div class="mb-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <label for="favRadius" class="text-sm font-bold text-slate-700">Corner Radius</label>
+                                    <span id="favRadiusVal" class="text-sm font-extrabold text-brand-600 bg-brand-50 px-3 py-1 rounded-lg">20%</span>
+                                </div>
+                                <input type="range" id="favRadius" min="0" max="50" value="20" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-600">
+                            </div>
+
+                            <!-- Download Button -->
+                            <button onclick="downloadFavicon()" class="mt-2 w-full px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download PNG (64x64)
+                            </button>
+                        </div>
+
+                        <!-- Right: Previews -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-4">Preview at Multiple Sizes</label>
+
+                            <div class="flex flex-wrap items-end justify-center gap-8 mb-8">
+                                <div class="preview-size-box">
+                                    <canvas id="canvas16" width="16" height="16" style="width:64px;height:64px;"></canvas>
+                                    <span class="preview-size-label">16 x 16</span>
+                                </div>
+                                <div class="preview-size-box">
+                                    <canvas id="canvas32" width="32" height="32" style="width:96px;height:96px;"></canvas>
+                                    <span class="preview-size-label">32 x 32</span>
+                                </div>
+                                <div class="preview-size-box">
+                                    <canvas id="canvas64" width="64" height="64" style="width:128px;height:128px;"></canvas>
+                                    <span class="preview-size-label">64 x 64</span>
+                                </div>
+                            </div>
+
+                            <!-- Large Preview -->
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Large Preview</label>
+                            <div class="flex items-center justify-center p-8 rounded-xl" style="background: repeating-conic-gradient(#f1f5f9 0% 25%, #fff 0% 50%) 50% / 20px 20px; border: 2px solid #e2e8f0;">
+                                <canvas id="canvasLarge" width="128" height="128" style="width:128px;height:128px;border-radius:8px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot ad-slot-leaderboard" style="max-width:728px;margin:1rem auto;">
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Free Online Favicon Generator — Create Text-Based Favicons</h2>
+                <p class="text-slate-600 mb-4">OptiDrop's Favicon Generator lets you create simple, clean text-based favicons for your website. Enter 1-2 characters, choose your colors, adjust the font size and corner radius, and preview the result at multiple sizes. Download the favicon as a PNG file.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Preview at Multiple Sizes</h3>
+                <p class="text-slate-600 mb-4">See your favicon at 16x16 (browser tab), 32x32 (taskbar), and 64x64 (high-DPI) pixels. The pixelated rendering shows exactly how your favicon will appear at each size, helping you choose the right design.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Download as PNG</h3>
+                <p class="text-slate-600 mb-4">Click "Download PNG" to save a 64x64 pixel version of your favicon. Browsers will automatically scale it down to 16x16 and 32x32 as needed. You can also rename the file to favicon.ico or use it directly as a PNG favicon.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">100% Browser-Based</h3>
+                <p class="text-slate-600">All rendering happens using HTML5 Canvas in your browser. No images are uploaded to any server. The tool is completely free and private.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I create a favicon from text?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Enter 1-2 characters in the text field, choose a background color and text color, adjust the font size, and the tool generates a favicon preview at 16x16, 32x32, and 64x64 pixels. Click "Download PNG" to save the 64x64 version as a PNG file you can use as your website favicon.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What size should a favicon be?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Standard favicons are 16x16 pixels for browser tabs, 32x32 for taskbars, and 64x64 for high-DPI displays. This tool lets you preview at all three sizes. The 64x64 download provides the best quality and browsers will automatically scale it down as needed.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I use a custom font for my favicon?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The generator uses a bold sans-serif font optimized for small sizes. This ensures your text favicon is readable even at 16x16 pixels. The font is rendered on a canvas element, so the output is a clean rasterized PNG.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is the favicon generator free to use?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes, OptiDrop's Favicon Generator is completely free. No account or sign-up is required. All processing happens in your browser using HTML5 Canvas. The downloaded PNG file is yours to use on any website.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
+        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <a href="/tools/design/avatar-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Avatar Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Create customizable avatars with face, hair, and color options.</span>
+            </a>
+            <a href="/tools/design/gradient-text-generator.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Gradient Text Generator</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Create beautiful gradient text with CSS background-clip.</span>
+            </a>
+            <a href="/tools/developer/color-converter.html" class="tool-card" style="padding:1rem;">
+                <span class="tool-card-title" style="font-size:0.95rem;">Color Converter</span>
+                <span class="tool-card-desc" style="font-size:0.8rem;">Convert HEX to RGB, HSL and more color formats.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 200+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../common.js"></script>
+    <script>
+    (function(){
+        var favText = document.getElementById('favText');
+        var favBgColor = document.getElementById('favBgColor');
+        var favBgColorText = document.getElementById('favBgColorText');
+        var favTextColor = document.getElementById('favTextColor');
+        var favTextColorText = document.getElementById('favTextColorText');
+        var favFontSize = document.getElementById('favFontSize');
+        var favFontSizeVal = document.getElementById('favFontSizeVal');
+        var favRadius = document.getElementById('favRadius');
+        var favRadiusVal = document.getElementById('favRadiusVal');
+
+        var canvas16 = document.getElementById('canvas16');
+        var canvas32 = document.getElementById('canvas32');
+        var canvas64 = document.getElementById('canvas64');
+        var canvasLarge = document.getElementById('canvasLarge');
+
+        function drawRoundedRect(ctx, x, y, w, h, r) {
+            if (r > w / 2) r = w / 2;
+            if (r > h / 2) r = h / 2;
+            ctx.beginPath();
+            ctx.moveTo(x + r, y);
+            ctx.arcTo(x + w, y, x + w, y + h, r);
+            ctx.arcTo(x + w, y + h, x, y + h, r);
+            ctx.arcTo(x, y + h, x, y, r);
+            ctx.arcTo(x, y, x + w, y, r);
+            ctx.closePath();
+        }
+
+        function drawFavicon(canvas, size) {
+            var ctx = canvas.getContext('2d');
+            var text = (favText.value || 'O').toUpperCase();
+            var bg = favBgColor.value;
+            var tc = favTextColor.value;
+            var fontSizePct = parseInt(favFontSize.value);
+            var radiusPct = parseInt(favRadius.value);
+            var r = Math.round(size * (radiusPct / 100));
+
+            ctx.clearRect(0, 0, size, size);
+
+            // Draw rounded background
+            drawRoundedRect(ctx, 0, 0, size, size, r);
+            ctx.fillStyle = bg;
+            ctx.fill();
+
+            // Draw text
+            var fontSize = Math.round(size * (fontSizePct / 100));
+            ctx.fillStyle = tc;
+            ctx.font = 'bold ' + fontSize + 'px Arial, Helvetica, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, size / 2, size / 2 + 1);
+        }
+
+        function updateAll() {
+            favFontSizeVal.textContent = favFontSize.value + '%';
+            favRadiusVal.textContent = favRadius.value + '%';
+            drawFavicon(canvas16, 16);
+            drawFavicon(canvas32, 32);
+            drawFavicon(canvas64, 64);
+            drawFavicon(canvasLarge, 128);
+        }
+
+        function downloadFavicon() {
+            if (!favText.value.trim()) {
+                showToast('Please enter at least 1 character for the favicon.', 'error');
+                return;
+            }
+            // Draw at 64x64 for download
+            var dlCanvas = document.createElement('canvas');
+            dlCanvas.width = 64;
+            dlCanvas.height = 64;
+            drawFavicon(dlCanvas, 64);
+
+            var link = document.createElement('a');
+            link.download = 'favicon-64x64.png';
+            link.href = dlCanvas.toDataURL('image/png');
+            link.click();
+            showToast('Favicon downloaded successfully!');
+        }
+        window.downloadFavicon = downloadFavicon;
+
+        // Color picker sync
+        favBgColor.addEventListener('input', function() { favBgColorText.value = this.value; updateAll(); });
+        favBgColorText.addEventListener('input', function() {
+            if (/^#[0-9a-fA-F]{6}$/.test(this.value)) { favBgColor.value = this.value; }
+            updateAll();
+        });
+        favTextColor.addEventListener('input', function() { favTextColorText.value = this.value; updateAll(); });
+        favTextColorText.addEventListener('input', function() {
+            if (/^#[0-9a-fA-F]{6}$/.test(this.value)) { favTextColor.value = this.value; }
+            updateAll();
+        });
+
+        favText.addEventListener('input', updateAll);
+        favFontSize.addEventListener('input', updateAll);
+        favRadius.addEventListener('input', updateAll);
+
+        // Initialize
+        updateAll();
+    })();
+    </script>
+</body>
+</html>
