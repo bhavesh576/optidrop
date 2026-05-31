@@ -243,6 +243,641 @@ var _ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1
 })();
 
 // ════════════════════════════════════════════════════════════
+// ADSENSE HIGH-VALUE CONTENT ENGINE
+// Dynamically injects SEO documentation, FAQ accordion, and
+// FAQPage JSON-LD schema beneath tool widgets to satisfy
+// Google AdSense "High-Value Content" policy requirements.
+// ════════════════════════════════════════════════════════════
+_ric(function () {
+    var path = window.location.pathname;
+
+    // Skip non-tool pages (homepage, tools directory, blog, category, static pages)
+    var SKIP_PREFIXES = ['/', '/index.html', '/tools.html', '/blog/', '/category/', '/about', '/contact', '/privacy', '/terms', '/404', '/reindex'];
+    var skip = SKIP_PREFIXES.some(function (p) {
+        return path === p || (p !== '/' && path.indexOf(p) === 0);
+    });
+    // Also skip if path is exactly '/' (homepage)
+    if (path === '/' || path === '/index.html') skip = true;
+    if (skip) return;
+
+    // ── Tool Content Database ─────────────────────────────────
+    var TOOL_CONTENT_DB = {
+        '/tools/emi-calculator.html': {
+            name: 'EMI Calculator',
+            about: [
+                'The OptiDrop EMI Calculator is a comprehensive financial planning tool that helps you determine the exact monthly installment for any type of loan. Whether you are applying for a home loan, car loan, personal loan, or education loan, this calculator provides instant and accurate EMI calculations based on the principal amount, interest rate, and loan tenure.',
+                'Understanding your EMI obligations before taking a loan is essential for sound financial planning. This calculator not only shows your monthly payment but also breaks down the total interest payable and the overall cost of the loan, empowering you to compare different loan offers and choose the most affordable option.'
+            ],
+            steps: [
+                'Enter the total loan amount (principal) you wish to borrow in the designated input field.',
+                'Input the annual interest rate offered by your lender. This is typically expressed as a percentage per annum.',
+                'Specify the loan tenure in months or years — the duration over which you will repay the loan.',
+                'Click the "Calculate EMI" button to instantly view your monthly installment, total interest, and total payment amount.',
+                'Use the share button to copy a link with your calculation parameters for future reference or to share with others.'
+            ],
+            faqs: [
+                { q: 'What is EMI and how is it calculated?', a: 'EMI stands for Equated Monthly Installment. It is the fixed amount you pay every month toward your loan. The formula used is: EMI = [P × R × (1+R)^N] / [(1+R)^N − 1], where P is the principal, R is the monthly interest rate, and N is the number of installments.' },
+                { q: 'Can I use this calculator for home loans and car loans?', a: 'Yes. This EMI calculator works for all fixed-rate loan types including home loans, car loans, personal loans, education loans, and gold loans. Simply enter the loan amount, interest rate, and tenure specific to your loan.' },
+                { q: 'Does the EMI amount change during the loan tenure?', a: 'For a fixed-rate loan, the EMI remains constant throughout the tenure. However, with floating-rate loans, the EMI may change when the bank revises the interest rate. This calculator assumes a fixed interest rate.' },
+                { q: 'Is my financial data safe when using this calculator?', a: 'Absolutely. All calculations happen directly in your browser using JavaScript. No data is sent to any server, ensuring complete privacy and security of your financial information.' }
+            ]
+        },
+        '/tools/gst-calculator.html': {
+            name: 'GST Calculator',
+            about: [
+                'The OptiDrop GST Calculator simplifies Goods and Services Tax calculations for businesses and consumers across India. It supports all standard GST rates — 5%, 12%, 18%, and 28% — and can calculate both the GST amount to add to a base price and the GST component embedded in an inclusive price.',
+                'Whether you are a business owner generating invoices, a freelancer quoting project fees, or a consumer checking the tax breakdown on a purchase, this tool provides instant and accurate results. It eliminates the need for manual calculations and reduces the risk of errors in tax computation.'
+            ],
+            steps: [
+                'Enter the base amount (before tax) or the total amount (GST-inclusive) in the input field.',
+                'Select the applicable GST rate from the available options: 5%, 12%, 18%, or 28%.',
+                'Choose whether you want to add GST to the amount or extract GST from an inclusive price.',
+                'Click "Calculate" to view the GST amount, net price, and gross total instantly.',
+                'Copy the results for use in invoices, quotations, or financial records.'
+            ],
+            faqs: [
+                { q: 'What are the different GST rates in India?', a: 'India has four primary GST slabs: 5% (essential goods), 12% (processed food, business class air tickets), 18% (most goods and services), and 28% (luxury items, automobiles). The applicable rate depends on the product or service category.' },
+                { q: 'How do I calculate GST-inclusive price?', a: 'To extract GST from an inclusive price, use the formula: GST Amount = Total Amount × (GST Rate / (100 + GST Rate)). Our calculator handles this automatically when you select the "GST Inclusive" option.' },
+                { q: 'Is this GST calculator applicable for all states?', a: 'Yes. GST is a unified national tax, so the rates are the same across all Indian states. For intra-state transactions, GST is split into CGST and SGST; for inter-state transactions, IGST applies at the same combined rate.' }
+            ]
+        },
+        '/tools/age-calculator.html': {
+            name: 'Age Calculator',
+            about: [
+                'The OptiDrop Age Calculator computes your exact age in years, months, and days from your date of birth to today or any specified date. It goes beyond simple year calculations to give you precise results that account for varying month lengths and leap years.',
+                'This tool is useful for verifying age eligibility for exams, government services, insurance policies, and retirement planning. It also shows your age in total days, hours, and minutes for a fun and detailed perspective on your life timeline.'
+            ],
+            steps: [
+                'Enter your date of birth using the date picker or by typing in DD/MM/YYYY format.',
+                'Optionally, select a specific end date if you want to calculate age as of a past or future date.',
+                'Click "Calculate Age" to see your exact age broken down into years, months, and days.',
+                'View additional statistics like your next birthday countdown, total days lived, and zodiac sign.'
+            ],
+            faqs: [
+                { q: 'How accurate is this age calculator?', a: 'The calculator is 100% accurate. It accounts for leap years, varying month lengths (28–31 days), and calculates the precise difference between two calendar dates down to the exact day.' },
+                { q: 'Can I calculate age for a future date?', a: 'Yes. Simply select a future end date to find out how old you will be on that specific date. This is useful for retirement planning or eligibility checks.' },
+                { q: 'Does this calculator account for leap years?', a: 'Absolutely. The calculation algorithm correctly handles leap years (including century leap year rules), ensuring accurate results for any date range.' }
+            ]
+        },
+        '/tools/percentage-calculator.html': {
+            name: 'Percentage Calculator',
+            about: [
+                'The OptiDrop Percentage Calculator handles all types of percentage computations in one place. From basic percentage-of-a-number calculations to complex percentage increase, decrease, and difference problems, this tool delivers instant and accurate results.',
+                'Students, professionals, and business owners use this calculator for tasks like calculating exam scores, profit margins, discount percentages, tax rates, and statistical analysis. The intuitive interface makes even complex percentage problems simple to solve.'
+            ],
+            steps: [
+                'Select the type of percentage calculation you need: percentage of a number, percentage change, or what percentage one number is of another.',
+                'Enter the required values in the input fields provided.',
+                'Click "Calculate" to get the result instantly with a clear breakdown of the computation.',
+                'Use the share button to save or share your calculation with others.'
+            ],
+            faqs: [
+                { q: 'How do I calculate percentage increase or decrease?', a: 'Percentage change = ((New Value − Old Value) / Old Value) × 100. A positive result indicates an increase; a negative result indicates a decrease. Our calculator handles this automatically.' },
+                { q: 'Can I calculate what percentage one number is of another?', a: 'Yes. Use the "X is what percent of Y" mode. The formula is: (X / Y) × 100. For example, 45 is what percent of 60? Answer: 75%.' },
+                { q: 'How do I calculate a discount percentage?', a: 'Enter the original price and the discounted price into the percentage change calculator. The result will show the discount percentage. You can also use the percentage-of-a-number mode to calculate the discount amount directly.' }
+            ]
+        },
+        '/tools/bmi-calculator.html': {
+            name: 'BMI Calculator',
+            about: [
+                'The OptiDrop BMI Calculator computes your Body Mass Index using the internationally recognized formula: weight (kg) divided by height squared (m²). It classifies your result into standard health categories — underweight, normal weight, overweight, and obese — based on WHO guidelines.',
+                'BMI is a widely used screening tool to assess whether your weight is in a healthy range relative to your height. While it does not directly measure body fat, it provides a reliable general indicator used by healthcare professionals worldwide for initial health assessments.'
+            ],
+            steps: [
+                'Enter your weight in kilograms (kg) or pounds (lbs) using the unit toggle.',
+                'Enter your height in centimeters (cm) or feet and inches.',
+                'Click "Calculate BMI" to see your BMI value and health category classification.',
+                'Review the BMI chart reference to understand where your result falls within the standard ranges.'
+            ],
+            faqs: [
+                { q: 'What is a healthy BMI range?', a: 'According to the World Health Organization (WHO), a BMI between 18.5 and 24.9 is considered normal and healthy. Below 18.5 is underweight, 25–29.9 is overweight, and 30 or above is classified as obese.' },
+                { q: 'Is BMI accurate for all body types?', a: 'BMI is a useful screening tool but has limitations. It may overestimate body fat in athletes with high muscle mass and underestimate it in older adults with reduced muscle. For a complete health assessment, consult a healthcare professional.' },
+                { q: 'Does this calculator support both metric and imperial units?', a: 'Yes. You can switch between metric (kg/cm) and imperial (lbs/ft-in) units using the toggle provided. The calculator converts units automatically for accurate results.' }
+            ]
+        },
+        '/tools/calculators/sip-calculator.html': {
+            name: 'SIP Calculator',
+            about: [
+                'The OptiDrop SIP Calculator helps you estimate the returns on your Systematic Investment Plan (SIP) in mutual funds. By entering your monthly investment amount, expected annual return rate, and investment duration, you can see the projected maturity value and total wealth gained.',
+                'SIP is one of the most popular investment strategies in India, allowing you to invest a fixed amount regularly in mutual funds. This calculator uses the future value of annuity formula to project how your investments will grow over time through the power of compounding and rupee cost averaging.'
+            ],
+            steps: [
+                'Enter the amount you plan to invest each month in your SIP.',
+                'Input the expected annual rate of return (typically 10–15% for equity mutual funds over the long term).',
+                'Specify the investment duration in years.',
+                'Click "Calculate" to view the total invested amount, estimated returns, and projected maturity value.'
+            ],
+            faqs: [
+                { q: 'What is a SIP in mutual funds?', a: 'SIP stands for Systematic Investment Plan. It allows you to invest a fixed amount at regular intervals (usually monthly) in a mutual fund scheme. SIPs benefit from rupee cost averaging and the power of compounding over long periods.' },
+                { q: 'What is a realistic expected return rate for SIP?', a: 'Historically, equity mutual funds in India have delivered 12–15% average annual returns over 10+ year periods. Conservative estimates of 10–12% are commonly used for planning. Debt mutual funds typically offer 6–8% returns.' },
+                { q: 'Can I stop or modify my SIP anytime?', a: 'Yes. Most mutual fund houses allow you to pause, increase, decrease, or stop your SIP at any time without penalties. This flexibility is one of the key advantages of SIP investing.' }
+            ]
+        },
+        '/tools/calculators/income-tax-calculator.html': {
+            name: 'Income Tax Calculator',
+            about: [
+                'The OptiDrop Income Tax Calculator helps Indian taxpayers estimate their income tax liability for the financial year 2025-26 under both the old and new tax regimes. It accounts for all applicable deductions, exemptions, and surcharges to give you an accurate tax estimate.',
+                'Choosing between the old and new tax regime can significantly impact your take-home income. This calculator compares both regimes side-by-side, showing you which option results in lower tax liability based on your specific income and deduction profile.'
+            ],
+            steps: [
+                'Enter your gross annual income from all sources (salary, business, rental, etc.).',
+                'Under the old regime section, input your eligible deductions such as Section 80C (up to ₹1.5 lakh), HRA, home loan interest, and NPS contributions.',
+                'Click "Calculate Tax" to see a detailed comparison of tax liability under both regimes.',
+                'Review the breakdown showing taxable income, tax slabs applied, cess, and the final tax payable amount.'
+            ],
+            faqs: [
+                { q: 'Which is better — old tax regime or new tax regime?', a: 'It depends on your deductions. If your total deductions exceed ₹3.75 lakh (for salaried individuals), the old regime is usually better. If you have minimal deductions, the new regime with lower tax rates may be more beneficial. Use this calculator to compare both.' },
+                { q: 'What is the standard deduction for FY 2025-26?', a: 'Under the new tax regime, the standard deduction is ₹75,000 for salaried individuals. Under the old regime, it is ₹50,000. This deduction is available automatically without any investment.' },
+                { q: 'Is this calculator updated for the latest tax slabs?', a: 'Yes. This calculator is updated for the Financial Year 2025-26 (Assessment Year 2026-27) and includes the latest tax slabs, surcharges, and health & education cess as per the Union Budget.' }
+            ]
+        },
+        '/tools/calculators/mortgage-calculator.html': {
+            name: 'Mortgage Calculator',
+            about: [
+                'The OptiDrop Mortgage Calculator estimates your monthly mortgage payment based on the loan amount, interest rate, and loan term. It provides a complete amortization overview showing how much of each payment goes toward principal versus interest over the life of the loan.',
+                'Understanding your mortgage obligations is critical before committing to a home purchase. This calculator helps you evaluate affordability, compare different loan scenarios, and plan your finances by showing the total cost of borrowing including all interest payments.'
+            ],
+            steps: [
+                'Enter the total home loan amount you plan to borrow.',
+                'Input the annual interest rate offered by your lender.',
+                'Select the loan term (typically 15 or 30 years).',
+                'Click "Calculate" to see your monthly payment, total interest, and total cost of the loan.'
+            ],
+            faqs: [
+                { q: 'How is mortgage EMI calculated?', a: 'Mortgage EMI uses the formula: EMI = [P × R × (1+R)^N] / [(1+R)^N − 1], where P is the loan principal, R is the monthly interest rate, and N is the total number of monthly payments.' },
+                { q: 'Should I choose a 15-year or 30-year mortgage?', a: 'A 15-year mortgage has higher monthly payments but significantly lower total interest. A 30-year mortgage offers lower monthly payments but costs more in total interest. Choose based on your monthly budget and long-term financial goals.' },
+                { q: 'What is the typical down payment required?', a: 'Most lenders require 10–20% of the property value as a down payment. A higher down payment reduces your loan amount, monthly EMI, and total interest cost.' }
+            ]
+        },
+        '/tools/word-counter.html': {
+            name: 'Word Counter',
+            about: [
+                'The OptiDrop Word Counter is a comprehensive text analysis tool that instantly counts words, characters, sentences, paragraphs, and estimates reading and speaking time. It processes text entirely in your browser, making it fast and completely private.',
+                'Writers, students, content creators, and social media managers use this tool to meet word count requirements for essays, articles, tweets, meta descriptions, and other content formats. The real-time counting updates as you type or paste text.'
+            ],
+            steps: [
+                'Paste or type your text into the text area provided.',
+                'View the real-time statistics displayed below the input area: word count, character count (with and without spaces), sentence count, paragraph count, and estimated reading time.',
+                'Use the clear button to reset and start with new text.',
+                'Copy the analysis results or the processed text as needed.'
+            ],
+            faqs: [
+                { q: 'How is word count calculated?', a: 'Words are counted by splitting the text on whitespace characters (spaces, tabs, line breaks). Consecutive whitespace is treated as a single separator. Punctuation attached to words is included as part of the word.' },
+                { q: 'How is reading time estimated?', a: 'Reading time is calculated using an average reading speed of 200–250 words per minute for adults. Speaking time uses approximately 150 words per minute, which is the average pace for presentations and speeches.' },
+                { q: 'Is there a character limit?', a: 'There is no strict character limit. The tool can handle very large texts including full research papers and book chapters. All processing happens locally in your browser for instant results.' }
+            ]
+        },
+        '/tools/text-case-converter.html': {
+            name: 'Text Case Converter',
+            about: [
+                'The OptiDrop Text Case Converter transforms text between multiple case formats instantly: UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, kebab-case, and more. It is an essential utility for developers, writers, and content editors.',
+                'Whether you need to format a headline in title case, convert variable names to camelCase for code, or standardize text to lowercase for database entries, this tool handles all common case transformations in a single click.'
+            ],
+            steps: [
+                'Paste or type your text into the input area.',
+                'Select the desired output case format from the available options.',
+                'The converted text appears instantly in the output area.',
+                'Copy the result to your clipboard using the copy button.'
+            ],
+            faqs: [
+                { q: 'What is the difference between Title Case and Sentence case?', a: 'Title Case capitalizes the first letter of every major word (e.g., "The Quick Brown Fox"). Sentence case capitalizes only the first letter of the first word in each sentence (e.g., "The quick brown fox").' },
+                { q: 'What are camelCase and snake_case?', a: 'camelCase joins words with no separator and capitalizes each word boundary (e.g., "myVariableName"). snake_case joins words with underscores and uses all lowercase (e.g., "my_variable_name"). Both are common naming conventions in programming.' },
+                { q: 'Does the tool preserve line breaks and formatting?', a: 'Yes. Line breaks, paragraph spacing, and other structural formatting are preserved during the case conversion. Only the letter casing is modified.' }
+            ]
+        },
+        '/tools/password-generator.html': {
+            name: 'Password Generator',
+            about: [
+                'The OptiDrop Password Generator creates cryptographically strong, random passwords directly in your browser. You can customize the password length and character types (uppercase, lowercase, numbers, symbols) to meet specific security requirements for any website or application.',
+                'Strong passwords are your first line of defense against unauthorized access. This tool uses the browser built-in crypto.getRandomValues() API to generate truly random passwords, not pseudo-random sequences, ensuring maximum security for your accounts.'
+            ],
+            steps: [
+                'Set the desired password length using the slider (recommended: 16+ characters).',
+                'Select which character types to include: uppercase letters, lowercase letters, numbers, and special symbols.',
+                'Click "Generate Password" to create a new random password.',
+                'Click the copy button to save the password to your clipboard, then paste it into the password field on the target website.'
+            ],
+            faqs: [
+                { q: 'How strong is a randomly generated password?', a: 'A 16-character password with all character types has approximately 95^16 possible combinations — that is over 4 × 10^31 possibilities. Such passwords are practically unbreakable by brute force with current technology.' },
+                { q: 'Is it safe to generate passwords in a browser?', a: 'Yes. This generator uses the Web Crypto API (crypto.getRandomValues), which provides cryptographically secure random numbers. No data is sent to any server — everything runs locally.' },
+                { q: 'How often should I change my passwords?', a: 'Security experts recommend changing passwords if you suspect a breach, after a service reports a data leak, or every 6–12 months for critical accounts. Using unique passwords for each account is more important than frequent changes.' }
+            ]
+        },
+        '/tools/developer/json-formatter.html': {
+            name: 'JSON Formatter',
+            about: [
+                'The OptiDrop JSON Formatter & Validator formats, beautifies, and validates JSON data instantly in your browser. It detects syntax errors, highlights the exact error location, and pretty-prints your JSON with proper indentation for easy reading and debugging.',
+                'Developers use this tool daily to format API responses, debug configuration files, and validate JSON payloads before sending them to servers. The minify option compresses formatted JSON into a compact single-line format suitable for production use.'
+            ],
+            steps: [
+                'Paste your raw JSON text into the input editor area.',
+                'Click "Format / Beautify" to pretty-print the JSON with proper indentation and line breaks.',
+                'If the JSON contains errors, the tool highlights the exact line and character position of the syntax issue.',
+                'Use "Minify" to compress the formatted JSON back into a compact single-line string for production use.'
+            ],
+            faqs: [
+                { q: 'What is JSON format?', a: 'JSON (JavaScript Object Notation) is a lightweight data interchange format that uses human-readable text to store and transmit data objects consisting of key-value pairs and arrays. It is the most common format for REST API responses.' },
+                { q: 'Can this tool handle large JSON files?', a: 'Yes. The formatter can process large JSON documents including API responses with thousands of entries. All processing happens locally in your browser for instant results and complete privacy.' },
+                { q: 'What is the difference between formatting and minifying?', a: 'Formatting (beautifying) adds indentation and line breaks to make JSON readable. Minifying removes all unnecessary whitespace to create the smallest possible file size, which is ideal for network transmission.' }
+            ]
+        },
+        '/tools/career/resume-builder.html': {
+            name: 'Resume Builder',
+            about: [
+                'The OptiDrop Resume Builder helps you create a professional, ATS-friendly resume in minutes. Choose from multiple modern templates, fill in your details using the guided form, and download a polished PDF resume ready for job applications.',
+                'Every section is designed to pass Applicant Tracking Systems (ATS) used by major employers. The builder includes sections for personal details, work experience, education, skills, projects, and certifications — all formatted to industry standards.'
+            ],
+            steps: [
+                'Select a resume template from the available professional designs.',
+                'Fill in your personal information: name, email, phone number, and LinkedIn profile.',
+                'Add your work experience entries with job title, company name, duration, and key responsibilities.',
+                'Enter your education details, technical skills, and any certifications or projects.',
+                'Preview the resume and click "Download PDF" to save a print-ready copy.'
+            ],
+            faqs: [
+                { q: 'Is this resume builder really free?', a: 'Yes, completely free with no hidden charges. You can create, edit, and download unlimited resumes without signing up or providing payment information.' },
+                { q: 'Are the resumes ATS-friendly?', a: 'Yes. All templates use clean formatting with standard section headings that Applicant Tracking Systems can easily parse. Avoid using tables, graphics, or unusual fonts for best ATS compatibility.' },
+                { q: 'Can I edit my resume after downloading?', a: 'Your resume data is automatically saved in your browser. You can return to the tool anytime to make changes and download an updated version. We recommend re-downloading after any edits.' }
+            ]
+        },
+        '/tools/business/invoice-generator.html': {
+            name: 'Invoice Generator',
+            about: [
+                'The OptiDrop Invoice Generator creates professional, GST-compliant invoices for freelancers, small businesses, and service providers. It supports automatic tax calculations, itemized billing, discount application, and generates print-ready PDF invoices.',
+                'Whether you need a simple receipt or a detailed commercial invoice with multiple line items, this tool handles it all. All calculations — subtotal, tax, discount, and grand total — are computed automatically as you enter line items.'
+            ],
+            steps: [
+                'Enter your business details: company name, address, GSTIN, and contact information.',
+                'Add the client or customer details including their name, address, and GSTIN (if applicable).',
+                'Add line items with description, quantity, unit price, and applicable tax rate for each item.',
+                'Review the auto-calculated subtotal, tax breakdown, discounts, and grand total.',
+                'Click "Download PDF" to generate a professional invoice ready for sending.'
+            ],
+            faqs: [
+                { q: 'Can I add GST to my invoices?', a: 'Yes. The invoice generator supports GST calculations at all standard rates (5%, 12%, 18%, 28%). It automatically splits GST into CGST and SGST for intra-state transactions or applies IGST for inter-state transactions.' },
+                { q: 'Can I customize the invoice number?', a: 'Yes. You can set a custom invoice number prefix and starting number. The generator also auto-increments invoice numbers for sequential billing.' },
+                { q: 'Is the invoice legally valid?', a: 'The generated invoice contains all fields required for a valid tax invoice under GST rules. However, you should verify compliance with your local tax regulations and consult a chartered accountant for specific legal advice.' }
+            ]
+        },
+        '/tools/pdf/pdf-merger.html': {
+            name: 'PDF Merger',
+            about: [
+                'The OptiDrop PDF Merger combines multiple PDF files into a single document in seconds. Simply upload your PDFs, arrange them in the desired order, and download the merged file. The entire process happens in your browser — no file uploads to external servers.',
+                'This tool is perfect for combining invoices, merging report chapters, consolidating signed documents, or creating a single PDF from multiple scanned pages. You can drag and drop files to reorder them before merging.'
+            ],
+            steps: [
+                'Upload two or more PDF files using the file selector or by dragging and dropping them into the upload area.',
+                'Arrange the files in the desired merge order by dragging them up or down in the list.',
+                'Click "Merge PDFs" to combine all files into a single PDF document.',
+                'Download the merged PDF file to your device.'
+            ],
+            faqs: [
+                { q: 'Is there a limit to how many PDFs I can merge?', a: 'There is no strict file count limit. The tool can handle merging multiple PDFs, though very large combined file sizes (over 100MB) may be slower depending on your device processing power.' },
+                { q: 'Will the quality of my PDFs be affected?', a: 'No. The merger preserves the original quality of all pages. Text, images, and vector graphics retain their original resolution and formatting in the merged document.' },
+                { q: 'Is my data private?', a: 'Absolutely. All PDF processing happens locally in your browser using JavaScript. Your files are never uploaded to any server, ensuring complete privacy and data security.' }
+            ]
+        },
+        '/tools/text/remove-duplicate-lines.html': {
+            name: 'Duplicate Line Remover',
+            about: [
+                'The OptiDrop Duplicate Line Remover instantly identifies and removes duplicate lines from any text. It processes large lists, datasets, and text files entirely in your browser, preserving the original order of unique lines while eliminating all repetitions.',
+                'This tool is invaluable for cleaning up email lists, deduplicating keyword research data, removing repeated entries from spreadsheets, and sanitizing data before import. It handles files with thousands of lines in seconds.'
+            ],
+            steps: [
+                'Paste your text into the input area or upload a text file.',
+                'Click "Remove Duplicates" to process the text.',
+                'View the results showing the original line count, number of duplicates removed, and the cleaned output.',
+                'Copy the deduplicated text or download it as a new file.'
+            ],
+            faqs: [
+                { q: 'Does the tool preserve the order of lines?', a: 'Yes. The tool keeps the first occurrence of each unique line and removes subsequent duplicates, preserving the original order of the remaining lines.' },
+                { q: 'Is the comparison case-sensitive?', a: 'By default, the comparison is case-sensitive (uppercase and lowercase versions are treated as different lines). Many tools also offer a case-insensitive option for more aggressive deduplication.' },
+                { q: 'Can it handle very large files?', a: 'Yes. The tool can process files with tens of thousands of lines. All processing happens locally in your browser, so performance depends on your device capabilities.' }
+            ]
+        },
+        '/tools/developer/base64.html': {
+            name: 'Base64 Encoder/Decoder',
+            about: [
+                'The OptiDrop Base64 Encoder & Decoder converts text and files to and from Base64 encoding instantly. Base64 is a binary-to-text encoding scheme widely used in web development, email attachments, and data URLs for embedding images in HTML and CSS.',
+                'Developers use Base64 encoding when they need to transmit binary data over text-based protocols like HTTP, JSON, or XML. This tool handles both text strings and file encoding with a single click.'
+            ],
+            steps: [
+                'Paste your text or upload a file into the input area.',
+                'Click "Encode" to convert the input to Base64 format, or "Decode" to convert Base64 back to readable text.',
+                'The result appears instantly in the output area.',
+                'Copy the encoded or decoded result to your clipboard.'
+            ],
+            faqs: [
+                { q: 'What is Base64 encoding?', a: 'Base64 is a group of binary-to-text encoding schemes that represent binary data in an ASCII string format. It uses a set of 64 characters (A-Z, a-z, 0-9, +, /) to encode data, making it safe for transmission over text-based channels.' },
+                { q: 'Is Base64 the same as encryption?', a: 'No. Base64 is an encoding scheme, not encryption. It does not provide any security — anyone can decode a Base64 string. It is designed for data compatibility, not confidentiality.' },
+                { q: 'Why is Base64 used in web development?', a: 'Base64 is commonly used for embedding images in CSS (data URLs), encoding binary data in JSON, transmitting files via APIs, and encoding email attachments (MIME). It ensures binary data survives text-only transmission channels.' }
+            ]
+        }
+    };
+
+    // ── Fallback Content Generator ────────────────────────────
+    function generateFallbackContent(toolName, toolDesc) {
+        var safe = toolName || 'This Tool';
+        return {
+            name: safe,
+            about: [
+                'The OptiDrop ' + safe + ' is a free, browser-based utility designed to help you accomplish tasks quickly and efficiently. ' + (toolDesc ? toolDesc.charAt(0).toUpperCase() + toolDesc.slice(1) : 'It provides a clean, intuitive interface for fast and accurate results.') + ' There is no software to install and no account required — just open the page and start using it.',
+                'Built for students, professionals, and everyday users, this tool processes everything locally in your web browser. Whether you need a quick one-time calculation or use it regularly for work, the ' + safe + ' delivers reliable results in seconds with zero learning curve.'
+            ],
+            steps: [
+                'Open the ' + safe + ' page on OptiDrop by clicking the tool link or searching for it in the tools directory.',
+                'Enter your input data, values, or files in the designated fields provided by the tool interface.',
+                'Click the action button (such as Calculate, Generate, Convert, or Process) to execute the operation.',
+                'Review the results displayed on screen and use the Copy or Download button to save your output.'
+            ],
+            faqs: [
+                { q: 'Is the ' + safe + ' free to use?', a: 'Yes, OptiDrop provides this tool completely free of charge. There are no hidden fees, premium tiers, or sign-up requirements. All features are available to every user.' },
+                { q: 'Is my data safe when using this tool?', a: 'Absolutely. All processing happens directly in your browser using local JavaScript APIs. Your input data, files, and results are never transmitted to or stored on any external server.' },
+                { q: 'Does this tool work on mobile devices?', a: 'Yes. The ' + safe + ' is fully responsive and works on smartphones, tablets, laptops, and desktops. It is compatible with all modern browsers including Chrome, Firefox, Safari, and Edge.' }
+            ]
+        };
+    }
+
+    // ── Security Statement ────────────────────────────────────
+    var SECURITY_STATEMENT = 'All processing in the OptiDrop ' + '%%NAME%%' + ' executes entirely within your web browser using local JavaScript APIs and the Web Workers framework. Your input data, files, and generated results are never transmitted across the network to any external server. This client-side architecture guarantees complete data privacy, eliminates the risk of data breaches, and ensures the tool works offline after the initial page load. No account creation, login credentials, or personal information is required at any point.';
+
+    // ── Detect Current Tool ───────────────────────────────────
+    var toolData = TOOL_CONTENT_DB[path];
+    var toolName, toolDesc;
+
+    if (!toolData && typeof allToolsData !== 'undefined') {
+        var match = allToolsData.filter(function (t) { return t.h === path; });
+        if (match.length > 0) {
+            toolName = match[0].n;
+            toolDesc = match[0].d;
+        }
+    }
+
+    // Skip if no tool identified and no DB entry
+    if (!toolData && !toolName) return;
+
+    // Use DB data or generate fallback
+    var content = toolData || generateFallbackContent(toolName, toolDesc);
+    var name = content.name;
+
+    // ── Skip if Content Already Exists ────────────────────────
+    // Check for existing hardcoded SEO content to avoid duplication
+    var existingH2s = document.querySelectorAll('h2');
+    var hasAbout = false;
+    var hasFaq = false;
+    for (var i = 0; i < existingH2s.length; i++) {
+        var txt = existingH2s[i].textContent.toLowerCase();
+        if (txt.indexOf('about') !== -1 && txt.indexOf(name.toLowerCase()) !== -1) hasAbout = true;
+        if (txt.indexOf('frequently asked') !== -1 || txt.indexOf('faq') !== -1) hasFaq = true;
+    }
+    if (hasAbout && hasFaq) return; // Both exist — skip injection
+
+    // ── Build Documentation HTML ──────────────────────────────
+    var docHtml = '<section class="tool-doc-section" id="tool-about-section">';
+
+    if (!hasAbout) {
+        docHtml += '<h2 class="text-xl md:text-2xl font-semibold text-slate-100 mt-8 mb-4">About ' + name + '</h2>';
+        content.about.forEach(function (p) {
+            docHtml += '<p>' + p + '</p>';
+        });
+
+        docHtml += '<h2 class="text-xl md:text-2xl font-semibold text-slate-100 mt-8 mb-4">How to Use the ' + name + '</h2>';
+        docHtml += '<ol class="list-decimal list-inside space-y-2 text-slate-300">';
+        content.steps.forEach(function (s) {
+            docHtml += '<li>' + s + '</li>';
+        });
+        docHtml += '</ol>';
+
+        docHtml += '<h2 class="text-xl md:text-2xl font-semibold text-slate-100 mt-8 mb-4">100% Secure & Local Processing</h2>';
+        docHtml += '<p>' + SECURITY_STATEMENT.replace('%%NAME%%', name) + '</p>';
+    }
+
+    // ── FAQ Accordion ─────────────────────────────────────────
+    if (!hasFaq && content.faqs.length > 0) {
+        docHtml += '<h2 class="text-xl md:text-2xl font-semibold text-slate-100 mt-8 mb-4">Frequently Asked Questions</h2>';
+        docHtml += '<div class="space-y-3">';
+        content.faqs.forEach(function (faq) {
+            docHtml += '<div class="faq-item border border-slate-200 rounded-xl overflow-hidden">' +
+                '<button class="faq-question w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">' +
+                    '<span>' + faq.q + '</span>' +
+                    '<svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>' +
+                '</button>' +
+                '<div class="faq-answer px-5 text-slate-600 leading-relaxed">' + faq.a + '</div>' +
+            '</div>';
+        });
+        docHtml += '</div>';
+    }
+
+    docHtml += '</section>';
+
+    // ── Inject Documentation into DOM ─────────────────────────
+    var footer = document.querySelector('.site-footer');
+    if (footer) {
+        var wrapper = document.createElement('div');
+        wrapper.innerHTML = docHtml;
+        var section = wrapper.firstChild;
+        footer.parentNode.insertBefore(section, footer);
+
+        // Attach FAQ accordion listeners
+        section.querySelectorAll('.faq-question').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var item = this.parentElement;
+                var isOpen = item.classList.contains('open');
+                section.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('open'); });
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+    }
+
+    // ── Inject FAQPage JSON-LD Schema ─────────────────────────
+    if (!hasFaq && content.faqs.length > 0) {
+        // Check if a FAQPage schema already exists
+        var existingSchemas = document.querySelectorAll('script[type="application/ld+json"]');
+        var hasFaqSchema = false;
+        for (var j = 0; j < existingSchemas.length; j++) {
+            if (existingSchemas[j].textContent.indexOf('"FAQPage"') !== -1) {
+                hasFaqSchema = true;
+                break;
+            }
+        }
+
+        if (!hasFaqSchema) {
+            var faqEntities = content.faqs.map(function (faq) {
+                return {
+                    '@type': 'Question',
+                    'name': faq.q,
+                    'acceptedAnswer': {
+                        '@type': 'Answer',
+                        'text': faq.a
+                    }
+                };
+            });
+
+            var schema = {
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                'mainEntity': faqEntities
+            };
+
+            var script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.textContent = JSON.stringify(schema, null, 2);
+            document.head.appendChild(script);
+        }
+    }
+
+    // ── Inject AdSense Slot Wrappers ──────────────────────────
+    var header = document.querySelector('.site-header');
+
+    // Top leaderboard ad slot (below header)
+    if (header && !document.querySelector('.adsense-slot-wrapper--leaderboard')) {
+        var topAd = document.createElement('div');
+        topAd.className = 'adsense-slot-wrapper adsense-slot-wrapper--leaderboard';
+        topAd.setAttribute('aria-label', 'Advertisement');
+        header.parentNode.insertBefore(topAd, header.nextSibling);
+    }
+
+    // Mid-content rectangle ad slot (before documentation)
+    var docSection = document.getElementById('tool-about-section');
+    if (docSection && !document.querySelector('.adsense-slot-wrapper--banner')) {
+        var midAd = document.createElement('div');
+        midAd.className = 'adsense-slot-wrapper adsense-slot-wrapper--banner';
+        midAd.setAttribute('aria-label', 'Advertisement');
+        docSection.parentNode.insertBefore(midAd, docSection);
+    }
+});
+
+// ════════════════════════════════════════════════════════════
+// CLIENT-SIDE STAR RATING SYSTEM
+// 5-star rating widget injected on tool pages.
+// Ratings saved to localStorage keyed by page path.
+// ════════════════════════════════════════════════════════════
+_ric(function () {
+    var path = window.location.pathname;
+
+    // Only inject on actual tool pages (skip homepage, tools dir, blog, category, static)
+    var SKIP_RATING = ['/', '/index.html', '/tools.html', '/blog/', '/category/', '/about', '/contact', '/privacy', '/terms', '/404', '/reindex'];
+    var skipRating = SKIP_RATING.some(function (p) {
+        return path === p || (p !== '/' && path.indexOf(p) === 0);
+    });
+    if (path === '/' || path === '/index.html') skipRating = true;
+    if (skipRating) return;
+
+    // Skip if a rating widget already exists on the page
+    if (document.getElementById('od-star-rating')) return;
+
+    var storageKey = 'optidrop_rating_' + path;
+    var existingRating = 0;
+
+    // Check for saved rating
+    try {
+        var saved = localStorage.getItem(storageKey);
+        if (saved) existingRating = parseInt(saved, 10) || 0;
+    } catch (e) {}
+
+    // Build the star rating widget
+    var wrapper = document.createElement('div');
+    wrapper.id = 'od-star-rating';
+    wrapper.className = 'od-star-rating-widget';
+
+    var starSvgEmpty = '<svg class="od-star-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>';
+    var starSvgFilled = '<svg class="od-star-icon od-star-filled" width="28" height="28" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>';
+
+    var starsHtml = '';
+    for (var i = 1; i <= 5; i++) {
+        starsHtml += '<button class="od-star-btn" data-star="' + i + '" aria-label="Rate ' + i + ' stars">' +
+            (i <= existingRating ? starSvgFilled : starSvgEmpty) +
+        '</button>';
+    }
+
+    var thankYouHtml = existingRating > 0
+        ? '<span class="od-rating-thankyou">Thank you for your feedback!</span>'
+        : '<span class="od-rating-thankyou" style="display:none;">Thank you for your feedback!</span>';
+
+    wrapper.innerHTML =
+        '<div class="od-rating-container">' +
+            '<p class="od-rating-prompt">Was this tool helpful? Rate your experience</p>' +
+            '<div class="od-stars-row">' + starsHtml + '</div>' +
+            thankYouHtml +
+        '</div>';
+
+    // Find insertion point: before footer, or before the ad/documentation sections
+    var footer = document.querySelector('.site-footer');
+    var aboutSection = document.getElementById('tool-about-section');
+    var insertBefore = aboutSection || footer;
+
+    if (insertBefore) {
+        insertBefore.parentNode.insertBefore(wrapper, insertBefore);
+    }
+
+    // If already rated, disable further clicks
+    var isRated = existingRating > 0;
+
+    // Attach click handlers
+    var buttons = wrapper.querySelectorAll('.od-star-btn');
+    buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            if (isRated) return;
+            var rating = parseInt(this.getAttribute('data-star'), 10);
+
+            // Fill stars up to the clicked one
+            buttons.forEach(function (b, idx) {
+                var svg = b.querySelector('.od-star-icon');
+                if (idx < rating) {
+                    svg.setAttribute('fill', '#f59e0b');
+                    svg.setAttribute('stroke', '#f59e0b');
+                    svg.classList.add('od-star-filled');
+                } else {
+                    svg.setAttribute('fill', 'none');
+                    svg.setAttribute('stroke', 'currentColor');
+                    svg.classList.remove('od-star-filled');
+                }
+            });
+
+            // Save to localStorage
+            try { localStorage.setItem(storageKey, String(rating)); } catch (e) {}
+
+            // Show thank you message
+            var thankYou = wrapper.querySelector('.od-rating-thankyou');
+            if (thankYou) thankYou.style.display = 'inline';
+
+            isRated = true;
+        });
+
+        // Hover preview (only if not yet rated)
+        btn.addEventListener('mouseenter', function () {
+            if (isRated) return;
+            var hoverRating = parseInt(this.getAttribute('data-star'), 10);
+            buttons.forEach(function (b, idx) {
+                var svg = b.querySelector('.od-star-icon');
+                if (idx < hoverRating) {
+                    svg.setAttribute('fill', '#fbbf24');
+                    svg.setAttribute('stroke', '#fbbf24');
+                } else {
+                    svg.setAttribute('fill', 'none');
+                    svg.setAttribute('stroke', 'currentColor');
+                }
+            });
+        });
+    });
+
+    // Reset hover preview when leaving the star row
+    var starsRow = wrapper.querySelector('.od-stars-row');
+    if (starsRow) {
+        starsRow.addEventListener('mouseleave', function () {
+            if (isRated) return;
+            buttons.forEach(function (b) {
+                var svg = b.querySelector('.od-star-icon');
+                if (!svg.classList.contains('od-star-filled')) {
+                    svg.setAttribute('fill', 'none');
+                    svg.setAttribute('stroke', 'currentColor');
+                }
+            });
+        });
+    }
+});
+
+// ════════════════════════════════════════════════════════════
 // CATEGORY PAGES — "You might also like" injection
 // ════════════════════════════════════════════════════════════
 (function () {
