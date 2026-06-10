@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Pincode Search — Find Area by PIN Code | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Search Indian pincodes to find area, city, district, and state information instantly. Free browser-based tool.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Indian Pincode Search — Find Area by PIN Code | OptiDrop">
+    <meta property="og:description" content="Search Indian pincodes to find area, city, district, and state information instantly. Free browser-based tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/utility/pincode-search.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/pincode-search.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Utility Tools", "item": "https://optidrop.online/category/utility-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Pincode Search", "item": "https://optidrop.online/tools/utility/pincode-search.html"}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
+
+    <header class="site-header"></header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Indian Pincode Search — Find Area by PIN Code</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Search any 6-digit Indian PIN code or type a city or area name to find location details instantly. 100% private — nothing leaves your browser.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="mb-6">
+                        <label for="pinInput" class="block text-sm font-bold text-slate-700 mb-2">Enter PIN Code or City/Area Name</label>
+                        <input type="text" id="pinInput" placeholder="e.g. 110001 or Connaught Place"
+                            class="block w-full px-4 py-4 text-lg border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900"
+                            autocomplete="off" spellcheck="false">
+                    </div>
+
+                    <div id="resultCount" class="text-sm text-slate-500 mb-4"></div>
+
+                    <div id="resultsTable" class="hidden overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="px-4 py-3 text-sm font-bold text-slate-700 rounded-tl-lg">PIN</th>
+                                    <th class="px-4 py-3 text-sm font-bold text-slate-700">Area</th>
+                                    <th class="px-4 py-3 text-sm font-bold text-slate-700">City</th>
+                                    <th class="px-4 py-3 text-sm font-bold text-slate-700 rounded-tr-lg">State</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultsBody"></tbody>
+                        </table>
+                    </div>
+
+                    <div id="noResults" class="hidden text-center py-8">
+                        <svg class="w-12 h-12 text-slate-300 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        <p class="text-slate-500">No results found. Try a different PIN code or area name.</p>
+                    </div>
+
+                    <div class="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
+                        <strong>Tip:</strong> Type a 6-digit PIN code to find its area, or type a city or area name to see all matching pincodes. Results update as you type.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is an Indian PIN code?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        PIN stands for Postal Index Number. It is a 6-digit code used by India Post to identify specific geographic regions for efficient mail delivery. The first digit represents the postal zone, the first two digits represent the sub-zone, and the last three digits identify the specific sorting office or delivery post office.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How many PIN codes are there in India?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        India has over 19,000 PIN codes covering more than 150,000 post offices across all states and union territories. This tool includes a curated database of major city pincodes. For a complete directory, visit the official India Post website.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What do the digits in a PIN code represent?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The first digit indicates one of 9 postal regions (1 for Delhi, 2 for UP/Uttarakhand, 3 for Rajasthan/Gujarat, 4 for Maharashtra/Chhattisgarh/MP, 5 for South India, 6 for East India, 7 for Northeast, 8 for Bihar/Jharkhand, 9 for Army Post Office). The first two digits together indicate the sub-region or state, and the last three digits identify the specific delivery post office.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is this pincode data official and up to date?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        This tool contains a curated dataset of major Indian pincodes covering key cities and areas. While we strive for accuracy, pincodes may change or new ones may be assigned. For official and complete pincode data, please refer to the India Post website at indiapost.gov.in.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/utility/pan-card-validator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">PAN Card Validator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Validate Indian PAN card numbers.</span>
+                </a>
+                <a href="/tools/utility/vehicle-number-validator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Vehicle Number Validator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Validate Indian vehicle registration numbers.</span>
+                </a>
+                <a href="/tools/utility/indian-number-format.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Indian Number Format</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert numbers to lakh, crore format.</span>
+                </a>
+            </div>
+        </section>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;text-align:center;">Last updated: June 2026</p>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function() {
+        var PINCODES = [
+            {pin:'110001',area:'Connaught Place',city:'New Delhi',state:'Delhi'},
+            {pin:'110002',area:'Darya Ganj',city:'New Delhi',state:'Delhi'},
+            {pin:'110003',area:'Red Fort',city:'New Delhi',state:'Delhi'},
+            {pin:'110005',area:'Karol Bagh',city:'New Delhi',state:'Delhi'},
+            {pin:'110006',area:'Patel Nagar',city:'New Delhi',state:'Delhi'},
+            {pin:'110011',area:'Hauz Khas',city:'New Delhi',state:'Delhi'},
+            {pin:'110016',area:'Nehru Place',city:'New Delhi',state:'Delhi'},
+            {pin:'110024',area:'Defence Colony',city:'New Delhi',state:'Delhi'},
+            {pin:'110025',area:'Lajpat Nagar',city:'New Delhi',state:'Delhi'},
+            {pin:'110029',area:'Saket',city:'New Delhi',state:'Delhi'},
+            {pin:'110034',area:'Rohini',city:'New Delhi',state:'Delhi'},
+            {pin:'110048',area:'Dwarka',city:'New Delhi',state:'Delhi'},
+            {pin:'110065',area:'Pitampura',city:'New Delhi',state:'Delhi'},
+            {pin:'110075',area:'Vasant Kunj',city:'New Delhi',state:'Delhi'},
+            {pin:'110092',area:'Shahdara',city:'New Delhi',state:'Delhi'},
+            {pin:'400001',area:'Fort',city:'Mumbai',state:'Maharashtra'},
+            {pin:'400002',area:'Kalbadevi',city:'Mumbai',state:'Maharashtra'},
+            {pin:'400004',area:'Girgaon',city:'Mumbai',state:'Maharashtra'},
+            {pin:'400005',area:'Colaba',city:'Mumbai',state:'Maharashtra'},
+            {pin:'400008',area:'Parel',city:'Mumbai',state:'Maharashtra'},
+            {pin:'400020',area:'Andheri West',city:'Mumbai',state:'Maharashtra'},
+            {pin:'400025',area:'Dadar',city:'Mumbai',state:'Maharashtra'},
+            {pin:'400050',area:'Bandra West',city:'Mumbai',state:'Maharashtra'},
+            {pin:'400053',area:'Bandra East',city:'Mumbai',state:'Maharashtra'},
+            {pin:'400064',area:'Kurla',city:'Mumbai',state:'Maharashtra'},
+            {pin:'400070',area:'Powai',city:'Mumbai',state:'Maharashtra'},
+            {pin:'400076',area:'Vikhroli',city:'Mumbai',state:'Maharashtra'},
+            {pin:'400078',area:'Borivali West',city:'Mumbai',state:'Maharashtra'},
+            {pin:'400092',area:'Malad West',city:'Mumbai',state:'Maharashtra'},
+            {pin:'560001',area:'Bangalore GPO',city:'Bangalore',state:'Karnataka'},
+            {pin:'560002',area:'Bangalore City Market',city:'Bangalore',state:'Karnataka'},
+            {pin:'560004',area:'Basavanagudi',city:'Bangalore',state:'Karnataka'},
+            {pin:'560008',area:'Shivajinagar',city:'Bangalore',state:'Karnataka'},
+            {pin:'560011',area:'MG Road',city:'Bangalore',state:'Karnataka'},
+            {pin:'560025',area:'Koramangala',city:'Bangalore',state:'Karnataka'},
+            {pin:'560034',area:'Jayanagar',city:'Bangalore',state:'Karnataka'},
+            {pin:'560038',area:'Indiranagar',city:'Bangalore',state:'Karnataka'},
+            {pin:'560043',area:'Whitefield',city:'Bangalore',state:'Karnataka'},
+            {pin:'560066',area:'Electronic City',city:'Bangalore',state:'Karnataka'},
+            {pin:'560076',area:'HSR Layout',city:'Bangalore',state:'Karnataka'},
+            {pin:'560100',area:'Marathahalli',city:'Bangalore',state:'Karnataka'},
+            {pin:'600001',area:'Parrys Corner',city:'Chennai',state:'Tamil Nadu'},
+            {pin:'600002',area:'Egmore',city:'Chennai',state:'Tamil Nadu'},
+            {pin:'600004',area:'Nungambakkam',city:'Chennai',state:'Tamil Nadu'},
+            {pin:'600006',area:'T Nagar',city:'Chennai',state:'Tamil Nadu'},
+            {pin:'600008',area:'Anna Nagar',city:'Chennai',state:'Tamil Nadu'},
+            {pin:'600017',area:'Adyar',city:'Chennai',state:'Tamil Nadu'},
+            {pin:'600020',area:'Besant Nagar',city:'Chennai',state:'Tamil Nadu'},
+            {pin:'600028',area:'Velachery',city:'Chennai',state:'Tamil Nadu'},
+            {pin:'600034',area:'Guindy',city:'Chennai',state:'Tamil Nadu'},
+            {pin:'600041',area:'Sholinganallur',city:'Chennai',state:'Tamil Nadu'},
+            {pin:'600096',area:'Mylapore',city:'Chennai',state:'Tamil Nadu'},
+            {pin:'600100',area:'Tambaram',city:'Chennai',state:'Tamil Nadu'},
+            {pin:'700001',area:'BBD Bagh',city:'Kolkata',state:'West Bengal'},
+            {pin:'700006',area:'Ballygunge',city:'Kolkata',state:'West Bengal'},
+            {pin:'700009',area:'Bhowanipore',city:'Kolkata',state:'West Bengal'},
+            {pin:'700013',area:'Salt Lake',city:'Kolkata',state:'West Bengal'},
+            {pin:'700017',area:'Park Street',city:'Kolkata',state:'West Bengal'},
+            {pin:'700019',area:'Dum Dum',city:'Kolkata',state:'West Bengal'},
+            {pin:'700020',area:'New Alipore',city:'Kolkata',state:'West Bengal'},
+            {pin:'700029',area:'Gariahat',city:'Kolkata',state:'West Bengal'},
+            {pin:'700034',area:'Jadavpur',city:'Kolkata',state:'West Bengal'},
+            {pin:'700053',area:'Rajarhat',city:'Kolkata',state:'West Bengal'},
+            {pin:'700064',area:'Behala',city:'Kolkata',state:'West Bengal'},
+            {pin:'700091',area:'New Town',city:'Kolkata',state:'West Bengal'},
+            {pin:'500001',area:'Abids',city:'Hyderabad',state:'Telangana'},
+            {pin:'500003',area:'Koti',city:'Hyderabad',state:'Telangana'},
+            {pin:'500004',area:'Sultan Bazaar',city:'Hyderabad',state:'Telangana'},
+            {pin:'500016',area:'Ameerpet',city:'Hyderabad',state:'Telangana'},
+            {pin:'500018',area:'Banjara Hills',city:'Hyderabad',state:'Telangana'},
+            {pin:'500029',area:'Begumpet',city:'Hyderabad',state:'Telangana'},
+            {pin:'500032',area:'Jubilee Hills',city:'Hyderabad',state:'Telangana'},
+            {pin:'500034',area:'HITEC City',city:'Hyderabad',state:'Telangana'},
+            {pin:'500038',area:'Gachibowli',city:'Hyderabad',state:'Telangana'},
+            {pin:'500049',area:'Kukatpally',city:'Hyderabad',state:'Telangana'},
+            {pin:'500062',area:'Secunderabad',city:'Hyderabad',state:'Telangana'},
+            {pin:'500072',area:'Uppal',city:'Hyderabad',state:'Telangana'},
+            {pin:'500081',area:'Madhapur',city:'Hyderabad',state:'Telangana'},
+            {pin:'411001',area:'Pune City',city:'Pune',state:'Maharashtra'},
+            {pin:'411002',area:'Shivajinagar',city:'Pune',state:'Maharashtra'},
+            {pin:'411004',area:'Sadashiv Peth',city:'Pune',state:'Maharashtra'},
+            {pin:'411005',area:'Camp',city:'Pune',state:'Maharashtra'},
+            {pin:'411007',area:'Deccan Gymkhana',city:'Pune',state:'Maharashtra'},
+            {pin:'411014',area:'Kothrud',city:'Pune',state:'Maharashtra'},
+            {pin:'411016',area:'Hadapsar',city:'Pune',state:'Maharashtra'},
+            {pin:'411021',area:'Wakad',city:'Pune',state:'Maharashtra'},
+            {pin:'411027',area:'Kalyani Nagar',city:'Pune',state:'Maharashtra'},
+            {pin:'411028',area:'Koregaon Park',city:'Pune',state:'Maharashtra'},
+            {pin:'411038',area:'Hinjewadi',city:'Pune',state:'Maharashtra'},
+            {pin:'411045',area:'Baner',city:'Pune',state:'Maharashtra'},
+            {pin:'380001',area:'Lal Darwaja',city:'Ahmedabad',state:'Gujarat'},
+            {pin:'380006',area:'Navrangpura',city:'Ahmedabad',state:'Gujarat'},
+            {pin:'380007',area:'Paldi',city:'Ahmedabad',state:'Gujarat'},
+            {pin:'380009',area:'Vastrapur',city:'Ahmedabad',state:'Gujarat'},
+            {pin:'380015',area:'Bodakdev',city:'Ahmedabad',state:'Gujarat'},
+            {pin:'380051',area:'Satellite',city:'Ahmedabad',state:'Gujarat'},
+            {pin:'380054',area:'Thaltej',city:'Ahmedabad',state:'Gujarat'},
+            {pin:'380058',area:'SG Highway',city:'Ahmedabad',state:'Gujarat'},
+            {pin:'380060',area:'Chandkheda',city:'Ahmedabad',state:'Gujarat'},
+            {pin:'380061',area:'Gota',city:'Ahmedabad',state:'Gujarat'},
+            {pin:'302001',area:'MI Road',city:'Jaipur',state:'Rajasthan'},
+            {pin:'302002',area:'Johari Bazaar',city:'Jaipur',state:'Rajasthan'},
+            {pin:'302003',area:'Bani Park',city:'Jaipur',state:'Rajasthan'},
+            {pin:'302004',area:'Raja Park',city:'Jaipur',state:'Rajasthan'},
+            {pin:'302005',area:'Hawa Mahal',city:'Jaipur',state:'Rajasthan'},
+            {pin:'302012',area:'Vaishali Nagar',city:'Jaipur',state:'Rajasthan'},
+            {pin:'302015',area:'Malviya Nagar',city:'Jaipur',state:'Rajasthan'},
+            {pin:'302016',area:'Mansarovar',city:'Jaipur',state:'Rajasthan'},
+            {pin:'302017',area:'Jagatpura',city:'Jaipur',state:'Rajasthan'},
+            {pin:'302020',area:'Tonk Road',city:'Jaipur',state:'Rajasthan'},
+            {pin:'302021',area:'Pratap Nagar',city:'Jaipur',state:'Rajasthan'},
+            {pin:'302039',area:'Civil Lines',city:'Jaipur',state:'Rajasthan'},
+            {pin:'226001',area:'Hazratganj',city:'Lucknow',state:'Uttar Pradesh'},
+            {pin:'226002',area:'Aminabad',city:'Lucknow',state:'Uttar Pradesh'},
+            {pin:'226003',area:'Chowk',city:'Lucknow',state:'Uttar Pradesh'},
+            {pin:'226004',area:'Alambagh',city:'Lucknow',state:'Uttar Pradesh'},
+            {pin:'226005',area:'Gomti Nagar',city:'Lucknow',state:'Uttar Pradesh'},
+            {pin:'226006',area:'Aliganj',city:'Lucknow',state:'Uttar Pradesh'},
+            {pin:'226010',area:'Indira Nagar',city:'Lucknow',state:'Uttar Pradesh'},
+            {pin:'226012',area:'Mahanagar',city:'Lucknow',state:'Uttar Pradesh'},
+            {pin:'226016',area:'Vikas Nagar',city:'Lucknow',state:'Uttar Pradesh'},
+            {pin:'226020',area:'Jankipuram',city:'Lucknow',state:'Uttar Pradesh'},
+            {pin:'226024',area:'Sushant Golf City',city:'Lucknow',state:'Uttar Pradesh'},
+            {pin:'226028',area:'Rajajipuram',city:'Lucknow',state:'Uttar Pradesh'}
+        ];
+
+        var pinInput = document.getElementById('pinInput');
+        var resultsTable = document.getElementById('resultsTable');
+        var resultsBody = document.getElementById('resultsBody');
+        var noResults = document.getElementById('noResults');
+        var resultCount = document.getElementById('resultCount');
+
+        function searchPincodes(query) {
+            query = query.trim().toLowerCase();
+            if (!query) {
+                resultsTable.classList.add('hidden');
+                noResults.classList.add('hidden');
+                resultCount.textContent = '';
+                return;
+            }
+
+            var matches = PINCODES.filter(function(item) {
+                return item.pin.indexOf(query) !== -1 ||
+                       item.area.toLowerCase().indexOf(query) !== -1 ||
+                       item.city.toLowerCase().indexOf(query) !== -1 ||
+                       item.state.toLowerCase().indexOf(query) !== -1;
+            });
+
+            if (matches.length === 0) {
+                resultsTable.classList.add('hidden');
+                noResults.classList.remove('hidden');
+                resultCount.textContent = 'No results found';
+                return;
+            }
+
+            noResults.classList.add('hidden');
+            resultsTable.classList.remove('hidden');
+            resultCount.textContent = matches.length + ' result' + (matches.length !== 1 ? 's' : '') + ' found';
+
+            var html = '';
+            matches.forEach(function(item, index) {
+                var bgClass = index % 2 === 0 ? 'bg-white' : 'bg-slate-50';
+                html += '<tr class="' + bgClass + ' border-b border-slate-100 hover:bg-blue-50 transition-colors">' +
+                    '<td class="px-4 py-3 font-mono font-bold text-blue-600">' + item.pin + '</td>' +
+                    '<td class="px-4 py-3 text-slate-800">' + item.area + '</td>' +
+                    '<td class="px-4 py-3 text-slate-700">' + item.city + '</td>' +
+                    '<td class="px-4 py-3 text-slate-600">' + item.state + '</td>' +
+                '</tr>';
+            });
+            resultsBody.innerHTML = html;
+        }
+
+        pinInput.addEventListener('input', function() {
+            searchPincodes(this.value);
+        });
+
+        pinInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                this.value = '';
+                searchPincodes('');
+            }
+        });
+
+        // Focus input on page load
+        pinInput.focus();
+    })();
+    </script>
+</body>
+</html>

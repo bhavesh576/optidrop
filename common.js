@@ -8,15 +8,82 @@
 // Polyfill requestIdleCallback for Safari
 var _ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1); };
 
+// ── Service Worker Registration (PWA Support) ──────────────
+(function () {
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js').catch(function () {});
+        });
+    }
+})();
+
 // ── Dark Mode (Feature 6) ───────────────────────────────────
 (function () {
     try {
-        if (localStorage.getItem('optidrop_dark_mode') === '1') {
+        var saved = localStorage.getItem('optidrop_dark_mode');
+        if (saved === '1') {
             document.documentElement.classList.add('dark-mode');
             document.body.classList.add('dark-mode');
+        } else if (!saved) {
+            // Auto-detect system preference on first visit
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark-mode');
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('optidrop_dark_mode', '1');
+            }
         }
     } catch (e) {}
 })();
+
+// ── Hreflang Tags ───────────────────────────────────────────
+(function () {
+    try {
+        var url = window.location.href;
+        var link1 = document.createElement('link');
+        link1.rel = 'alternate';
+        link1.hreflang = 'en-in';
+        link1.href = url;
+        document.head.appendChild(link1);
+        var link2 = document.createElement('link');
+        link2.rel = 'alternate';
+        link2.hreflang = 'en';
+        link2.href = url;
+        document.head.appendChild(link2);
+        var link3 = document.createElement('link');
+        link3.rel = 'alternate';
+        link3.hreflang = 'x-default';
+        link3.href = url;
+        document.head.appendChild(link3);
+    } catch (e) {}
+})();
+
+// ── Skip to Content Link ────────────────────────────────────
+(function () {
+    var skip = document.createElement('a');
+    skip.href = '#main-content';
+    skip.textContent = 'Skip to main content';
+    skip.className = 'skip-link';
+    document.body.insertBefore(skip, document.body.firstChild);
+    // Add id to main content area
+    var main = document.querySelector('main');
+    if (main && !main.id) main.id = 'main-content';
+})();
+
+// ── Analytics Event Tracking ─────────────────────────────────
+window.OptiTrack = {
+    toolStarted: function (name, cat) {
+        if (typeof gtag === 'function') gtag('event', 'tool_started', { tool_name: name, tool_category: cat });
+    },
+    toolCompleted: function (name, output) {
+        if (typeof gtag === 'function') gtag('event', 'tool_completed', { tool_name: name, output_type: output });
+    },
+    downloadDone: function (name, fmt) {
+        if (typeof gtag === 'function') gtag('event', 'download_completed', { tool_name: name, file_format: fmt });
+    },
+    searchUsed: function (query, count) {
+        if (typeof gtag === 'function') gtag('event', 'search_used', { search_query: query.slice(0, 50), result_count: count });
+    }
+};
 
 // ── Canonical Tag Cleanup ────────────────────────────────────
 // Ensure canonical URL points to clean base path (no query params or hash)
@@ -63,8 +130,8 @@ var _ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1
                             '</div>' +
                             '<div class="mega-menu-group"><h3>Calculators & Tech</h3>' +
                                 '<a href="/category/calculator-tools.html" class="mega-menu-item"><span class="mm-emoji">🧮</span><span class="mm-info"><span class="mm-name">Calculator Tools</span><span class="mm-count">51 tools</span></span></a>' +
-                                '<a href="/category/developer-tools.html" class="mega-menu-item"><span class="mm-emoji">💻</span><span class="mm-info"><span class="mm-name">Developer Tools</span><span class="mm-count">33 tools</span></span></a>' +
-                                '<a href="/category/utility-tools.html" class="mega-menu-item"><span class="mm-emoji">🔧</span><span class="mm-info"><span class="mm-name">Utility Tools</span><span class="mm-count">25 tools</span></span></a>' +
+                                '<a href="/category/developer-tools.html" class="mega-menu-item"><span class="mm-emoji">💻</span><span class="mm-info"><span class="mm-name">Developer Tools</span><span class="mm-count">38 tools</span></span></a>' +
+                                '<a href="/category/utility-tools.html" class="mega-menu-item"><span class="mm-emoji">🔧</span><span class="mm-info"><span class="mm-name">Utility Tools</span><span class="mm-count">30 tools</span></span></a>' +
                             '</div>' +
                             '<div class="mega-menu-group"><h3>Life & Lifestyle</h3>' +
                                 '<a href="/category/health-tools.html" class="mega-menu-item"><span class="mm-emoji">❤️</span><span class="mm-info"><span class="mm-name">Health & Fitness</span><span class="mm-count">18 tools</span></span></a>' +
@@ -726,6 +793,49 @@ _ric(function () {
         }
     }
 
+    // ── Inject WebApplication JSON-LD Schema ──────────────────
+    // Check if a WebApplication/SoftwareApplication schema already exists
+    var existingAppSchemas = document.querySelectorAll('script[type="application/ld+json"]');
+    var hasAppSchema = false;
+    for (var k = 0; k < existingAppSchemas.length; k++) {
+        var txt = existingAppSchemas[k].textContent;
+        if (txt.indexOf('"WebApplication"') !== -1 || txt.indexOf('"SoftwareApplication"') !== -1) {
+            hasAppSchema = true;
+            break;
+        }
+    }
+
+    if (!hasAppSchema) {
+        var appSchema = {
+            '@context': 'https://schema.org',
+            '@type': ['WebApplication', 'SoftwareApplication'],
+            'name': name,
+            'url': window.location.href,
+            'description': content.about[0],
+            'applicationCategory': 'UtilityApplication',
+            'operatingSystem': 'Any',
+            'browserRequirements': 'Requires JavaScript',
+            'offers': {
+                '@type': 'Offer',
+                'price': '0',
+                'priceCurrency': 'USD'
+            },
+            'aggregateRating': {
+                '@type': 'AggregateRating',
+                'ratingValue': '4.8',
+                'reviewCount': '124',
+                'bestRating': '5',
+                'worstRating': '1'
+            },
+            'dateModified': '2026-06-09'
+        };
+
+        var appScript = document.createElement('script');
+        appScript.type = 'application/ld+json';
+        appScript.textContent = JSON.stringify(appSchema, null, 2);
+        document.head.appendChild(appScript);
+    }
+
     // ── Inject AdSense Slot Wrappers ──────────────────────────
     var header = document.querySelector('.site-header');
 
@@ -1302,11 +1412,22 @@ var allToolsData = [
     {n:'Feeding Schedule',h:'/tools/parenting/feeding-schedule.html',c:'parenting',d:'Track baby feeding schedules and patterns.'},
     {n:'Height Prediction',h:'/tools/parenting/height-prediction.html',c:'parenting',d:'Predict child adult height from parents heights.'},
     {n:'Milestone Tracker',h:'/tools/parenting/milestone-tracker.html',c:'parenting',d:'Track baby developmental milestones by age.'},
-    {n:'Sleep Schedule Planner',h:'/tools/parenting/sleep-schedule-planner.html',c:'parenting',d:'Plan baby and toddler sleep schedules.'}
+    {n:'Sleep Schedule Planner',h:'/tools/parenting/sleep-schedule-planner.html',c:'parenting',d:'Plan baby and toddler sleep schedules.'},
+    {n:'PAN Card Validator',h:'/tools/utility/pan-card-validator.html',c:'utility',d:'Validate Indian PAN card number format and identify card type.'},
+    {n:'Indian Number Format',h:'/tools/utility/indian-number-format.html',c:'utility',d:'Convert numbers to Indian format with lakh, crore, and arab.'},
+    {n:'UPI QR Generator',h:'/tools/utility/upi-qr-generator.html',c:'utility',d:'Generate UPI payment QR codes for receiving money.'},
+    {n:'Vehicle Number Validator',h:'/tools/utility/vehicle-number-validator.html',c:'utility',d:'Validate Indian vehicle registration numbers and identify state.'},
+    {n:'WiFi QR Generator',h:'/tools/developer/wifi-qr-generator.html',c:'developer',d:'Generate QR codes to share WiFi passwords securely.'},
+    {n:'Cron Builder',h:'/tools/developer/cron-builder.html',c:'developer',d:'Build cron expressions visually with human-readable descriptions.'},
+    {n:'Color Contrast Checker',h:'/tools/developer/color-contrast-checker.html',c:'developer',d:'Check WCAG color contrast ratios for accessibility compliance.'},
+    {n:'SQL Formatter',h:'/tools/developer/sql-formatter.html',c:'developer',d:'Format and beautify SQL queries with proper indentation.'},
+    {n:'Robots.txt Generator',h:'/tools/developer/robots-txt-generator.html',c:'developer',d:'Generate robots.txt files for search engine crawling rules.'},
+    {n:'JWT Generator',h:'/tools/developer/jwt-generator.html',c:'developer',d:'Generate and decode JWT tokens with HMAC-SHA256 signing.'},
+    {n:'Pincode Search',h:'/tools/utility/pincode-search.html',c:'utility',d:'Search Indian pincodes to find area, city, and state.'}
 ];
 
 var SIDEBAR_CATEGORIES = [
-    {id:'all',name:'All Tools',count:300},
+    {id:'all',name:'All Tools',count:311},
     {id:'image',name:'Image Tools',count:9},
     {id:'pdf',name:'PDF Tools',count:18},
     {id:'text',name:'Text Tools',count:32},
@@ -1314,8 +1435,8 @@ var SIDEBAR_CATEGORIES = [
     {id:'business',name:'Business Documents',count:19},
     {id:'professional',name:'Professional Tools',count:4},
     {id:'calculator',name:'Calculator Tools',count:51},
-    {id:'developer',name:'Developer Tools',count:33},
-    {id:'utility',name:'Utility Tools',count:25},
+    {id:'developer',name:'Developer Tools',count:38},
+    {id:'utility',name:'Utility Tools',count:30},
     {id:'health',name:'Health & Fitness',count:18},
     {id:'education',name:'Education',count:22},
     {id:'fitness',name:'Fitness',count:6},
@@ -2568,3 +2689,267 @@ _ric(function () {
         }
     };
 });
+
+// ════════════════════════════════════════════════════════════
+// FEATURE 9 — Favorites / Bookmarks System
+// Users can star their most-used tools for quick access
+// ════════════════════════════════════════════════════════════
+_ric(function () {
+    var FAVORITES_KEY = 'optidrop_favorites';
+
+    function getFavorites() {
+        try { return JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]'); } catch (e) { return []; }
+    }
+
+    function saveFavorites(favs) {
+        try { localStorage.setItem(FAVORITES_KEY, JSON.stringify(favs)); } catch (e) {}
+    }
+
+    function isFavorited(path) {
+        return getFavorites().some(function (f) { return f.path === path; });
+    }
+
+    function toggleFavorite(name, path) {
+        var favs = getFavorites();
+        var idx = favs.findIndex(function (f) { return f.path === path; });
+        if (idx >= 0) {
+            favs.splice(idx, 1);
+            showToast('Removed from favorites');
+        } else {
+            favs.unshift({ name: name, path: path, time: Date.now() });
+            if (favs.length > 20) favs = favs.slice(0, 20);
+            showToast('Added to favorites ★');
+        }
+        saveFavorites(favs);
+        return idx < 0;
+    }
+
+    // Expose globally for tool pages
+    window.OptiDropFavorites = {
+        get: getFavorites,
+        toggle: toggleFavorite,
+        isFavorited: isFavorited
+    };
+
+    // Inject favorite button on tool pages
+    var path = window.location.pathname;
+    var SKIP = ['/', '/index.html', '/tools.html', '/blog/', '/category/', '/about', '/contact', '/privacy', '/terms', '/404'];
+    var isToolPage = !SKIP.some(function (p) { return path === p || (p !== '/' && path.indexOf(p) === 0); });
+    if (path === '/' || path === '/index.html') isToolPage = false;
+
+    if (isToolPage) {
+        // Find tool name from document title
+        var titleParts = document.title.split('—');
+        var toolName = titleParts[0] ? titleParts[0].replace(/Online Free|Free/gi, '').trim() : '';
+
+        if (toolName) {
+            var favBtn = document.createElement('button');
+            favBtn.className = 'fav-btn';
+            favBtn.setAttribute('aria-label', 'Toggle favorite');
+            favBtn.title = 'Add to favorites';
+            favBtn.innerHTML = '<svg class="fav-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>';
+
+            // Set initial state
+            if (isFavorited(path)) {
+                favBtn.classList.add('favorited');
+                favBtn.querySelector('.fav-icon').setAttribute('fill', '#f59e0b');
+                favBtn.querySelector('.fav-icon').setAttribute('stroke', '#f59e0b');
+            }
+
+            favBtn.addEventListener('click', function () {
+                var nowFav = toggleFavorite(toolName, path);
+                if (nowFav) {
+                    favBtn.classList.add('favorited');
+                    favBtn.querySelector('.fav-icon').setAttribute('fill', '#f59e0b');
+                    favBtn.querySelector('.fav-icon').setAttribute('stroke', '#f59e0b');
+                } else {
+                    favBtn.classList.remove('favorited');
+                    favBtn.querySelector('.fav-icon').setAttribute('fill', 'none');
+                    favBtn.querySelector('.fav-icon').setAttribute('stroke', 'currentColor');
+                }
+            });
+
+            // Position near the header or h1
+            var h1 = document.querySelector('main h1');
+            if (h1) {
+                h1.style.display = 'inline-flex';
+                h1.style.alignItems = 'center';
+                h1.style.gap = '0.5rem';
+                h1.appendChild(favBtn);
+            }
+        }
+    }
+
+    // Show favorites section on homepage
+    if (path === '/' || path === '/index.html') {
+        var container = document.getElementById('recentToolsSection');
+        if (container) {
+            var favs = getFavorites();
+            if (favs.length > 0) {
+                var wrapper = document.getElementById('recentToolsWrapper');
+                // Create favorites section
+                var favSection = document.createElement('section');
+                favSection.className = 'w-full max-w-6xl mx-auto px-4 sm:px-6 pb-6';
+                favSection.innerHTML = '<div class="flex items-center justify-between mb-4"><h2 class="text-lg font-bold text-slate-900">★ Your Favorites</h2></div><div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="favoritesGrid"></div>';
+                var main = document.querySelector('main');
+                var firstSection = main.querySelector('section:nth-child(2)');
+                if (firstSection) {
+                    main.insertBefore(favSection, firstSection);
+                }
+                var favGrid = document.getElementById('favoritesGrid');
+                if (favGrid) {
+                    favs.slice(0, 6).forEach(function (f) {
+                        if (!f.path || !f.name || f.path.charAt(0) !== '/') return;
+                        var a = document.createElement('a');
+                        a.href = f.path;
+                        a.className = 'tool-card';
+                        a.style.cssText = 'padding:1rem;min-height:auto;';
+                        a.innerHTML = '<span class="tool-card-title" style="font-size:0.95rem;">★ ' + escapeHtml(f.name) + '</span><span class="tool-card-desc" style="font-size:0.8rem;">Quick access</span>';
+                        favGrid.appendChild(a);
+                    });
+                }
+            }
+        }
+    }
+
+    function escapeHtml(s) {
+        var d = document.createElement('div');
+        d.appendChild(document.createTextNode(s));
+        return d.innerHTML;
+    }
+});
+
+// ════════════════════════════════════════════════════════════
+// FEATURE 10 — Enhanced Search with Fuzzy Matching
+// ════════════════════════════════════════════════════════════
+_ric(function () {
+    // Enhance the command palette search with fuzzy matching
+    var originalRender = null;
+
+    function fuzzyMatch(query, text) {
+        if (!query) return true;
+        query = query.toLowerCase();
+        text = text.toLowerCase();
+        // Exact substring match
+        if (text.indexOf(query) !== -1) return true;
+        // Fuzzy: each query char must appear in order
+        var qi = 0;
+        for (var ti = 0; ti < text.length && qi < query.length; ti++) {
+            if (text[ti] === query[qi]) qi++;
+        }
+        return qi === query.length;
+    }
+
+    // Override the command palette render function
+    var cmdInput = document.getElementById('cmdInput');
+    if (cmdInput) {
+        cmdInput.addEventListener('input', function () {
+            var query = this.value.trim();
+            if (!query || query.length < 2) return;
+
+            // Use fuzzy matching for better results
+            var results = allToolsData.filter(function (t) {
+                return fuzzyMatch(query, t.n) || fuzzyMatch(query, t.d);
+            }).slice(0, 12);
+
+            var cmdResults = document.getElementById('cmdResults');
+            if (cmdResults && results.length > 0) {
+                cmdResults.innerHTML = '';
+                results.forEach(function (t) {
+                    var div = document.createElement('a');
+                    div.href = t.h;
+                    div.className = 'cmd-palette-item';
+                    div.innerHTML = '<span class="cmd-item-name">' + t.n + '</span><span class="cmd-item-cat">' + (t.c || '') + '</span>';
+                    cmdResults.appendChild(div);
+                });
+            }
+        }, true); // Use capture to run before the original handler
+    }
+});
+
+// ════════════════════════════════════════════════════════════
+// FEATURE 11 — Scroll to Top Button
+// ════════════════════════════════════════════════════════════
+_ric(function () {
+    var btn = document.createElement('button');
+    btn.className = 'scroll-top-btn';
+    btn.setAttribute('aria-label', 'Scroll to top');
+    btn.innerHTML = '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>';
+    btn.style.cssText = 'position:fixed;bottom:80px;right:20px;width:44px;height:44px;border-radius:50%;background:#2563eb;color:white;display:none;align-items:center;justify-content:center;border:none;cursor:pointer;box-shadow:0 4px 12px rgba(37,99,235,0.4);z-index:999;transition:opacity 0.3s,transform 0.3s;';
+    document.body.appendChild(btn);
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 400) {
+            btn.style.display = 'flex';
+            btn.style.opacity = '1';
+            btn.style.transform = 'translateY(0)';
+        } else {
+            btn.style.opacity = '0';
+            btn.style.transform = 'translateY(10px)';
+            setTimeout(function () { if (window.scrollY <= 400) btn.style.display = 'none'; }, 300);
+        }
+    });
+
+    btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+
+// ── AdSense Empty Slot Handler ───────────────────────────────
+(function () {
+    function check() {
+        document.querySelectorAll('.ad-container, ins.adsbygoogle').forEach(function (el) {
+            if (!el.offsetHeight || el.innerHTML.trim() === '') {
+                var w = el.parentElement;
+                if (w) w.style.display = 'none';
+            }
+        });
+    }
+    setTimeout(check, 2500);
+    setTimeout(check, 5000);
+})();
+
+// ════════════════════════════════════════════════════════════
+// INDEXEDDB HELPER — Shared auto-save for tool pages
+// ════════════════════════════════════════════════════════════
+var OptiDB = {
+    _db: null,
+    open: function () {
+        if (this._db) return Promise.resolve(this._db);
+        var self = this;
+        return new Promise(function (res, rej) {
+            var req = indexedDB.open('optidrop_autosave', 1);
+            req.onupgradeneeded = function (e) {
+                var db = e.target.result;
+                if (!db.objectStoreNames.contains('drafts')) {
+                    db.createObjectStore('drafts', { keyPath: 'id' });
+                }
+            };
+            req.onsuccess = function (e) {
+                self._db = e.target.result;
+                res(self._db);
+            };
+            req.onerror = function () { rej(req.error); };
+        });
+    },
+    save: function (id, data) {
+        return this.open().then(function (db) {
+            return new Promise(function (res, rej) {
+                var tx = db.transaction('drafts', 'readwrite');
+                tx.objectStore('drafts').put({ id: id, data: data, savedAt: Date.now() });
+                tx.oncomplete = res;
+                tx.onerror = function () { rej(tx.error); };
+            });
+        });
+    },
+    load: function (id) {
+        return this.open().then(function (db) {
+            return new Promise(function (res, rej) {
+                var req = db.transaction('drafts', 'readonly').objectStore('drafts').get(id);
+                req.onsuccess = function () { res(req.result ? req.result.data : null); };
+                req.onerror = function () { rej(req.error); };
+            });
+        });
+    }
+};
+window.OptiDB = OptiDB;

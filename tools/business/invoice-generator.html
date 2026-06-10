@@ -4,7 +4,7 @@
     <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Invoice Generator Online — Download PDF Invoice | OptiDrop</title>
+    <title>Free Invoice Generator — Create GST Invoice & Download PDF | OptiDrop</title>
     <link rel="icon" type="image/png" href="/favicon.png?v=2">
     <link rel="shortcut icon" href="/favicon.png?v=2">
     <link rel="apple-touch-icon" href="/favicon.png?v=2">
@@ -101,10 +101,8 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
-
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="/tailwind.min.css">
+<!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -113,6 +111,7 @@
     <link rel="stylesheet" href="/styles.css?v=2.1">
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
 
     <!-- HEADER -->
     <header class="site-header">
@@ -345,6 +344,40 @@
                 </a>
             </div>
         </section>
+    <!-- Static About + FAQ for AdSense -->
+<section style="max-width:800px;margin:3rem auto 0;padding:1.5rem;">
+  <h2 style="font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.75rem;">Invoice Generator — About This Tool</h2>
+  <p style="color:#475569;line-height:1.7;margin-bottom:1rem;">The OptiDrop Invoice Generator is a free online tool that helps freelancers, small businesses, and entrepreneurs create professional GST-compliant invoices in minutes. Add your business details, client information, line items with quantities and prices, select your currency and tax rate, and download a clean PDF invoice ready to send. The tool supports 10+ currencies, automatic tax calculation, and saves your data locally so you can resume editing later.</p>
+
+  <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:1.5rem 0 0.5rem;">How to Use the Invoice Generator</h3>
+  <ol style="color:#475569;line-height:1.8;padding-left:1.5rem;margin-bottom:1rem;">
+    <li>Enter your business name and address in the left column, and your client's name and address in the right column.</li>
+    <li>Fill in the invoice number, invoice date, due date, and select your preferred currency from the dropdown.</li>
+    <li>Add line items by clicking "Add Line Item" — enter the description, quantity, and unit price for each product or service. The totals update automatically.</li>
+    <li>Select the appropriate tax rate, then click "Download PDF" to save the invoice or "Copy Text" to copy it as plain text.</li>
+  </ol>
+
+  <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:1.5rem 0 0.75rem;">Frequently Asked Questions</h3>
+
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">What is a GST-compliant invoice and what details must it include?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">A GST-compliant invoice in India must include the supplier's name, address, and GSTIN (GST Identification Number), the recipient's name and address, a unique sequential invoice number, the date of issue, a description of goods or services, the quantity and unit price, the taxable value, the applicable GST rate (CGST, SGST, or IGST broken down separately), and the total amount. While this generator creates a clean professional invoice, you should manually add your GSTIN and the recipient's GSTIN if you are registered under GST. The tool calculates the tax amount automatically based on the rate you select.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">Can I add multiple line items to a single invoice?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">Yes, you can add as many line items as you need. Click the "Add Line Item" button to add a new row to the table. Each line item has its own description, quantity, and unit price fields. The subtotal, tax, and total are recalculated automatically every time you change any value. You can also remove any line item by clicking the trash icon on that row. This makes it easy to create detailed invoices for projects with multiple products or services, such as a web development invoice that lists design, coding, and testing as separate line items.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">Which currencies are supported?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">The invoice generator supports 10 major currencies: US Dollar (USD), British Pound (GBP), Euro (EUR), Indian Rupee (INR), Australian Dollar (AUD), Canadian Dollar (CAD), Japanese Yen (JPY), Chinese Yuan (CNY), Brazilian Real (BRL), and Mexican Peso (MXN). The currency symbol is automatically applied to all amounts on the invoice and in the downloaded PDF. If you need a currency that is not listed, you can download the PDF and manually edit the symbol using a PDF editor. The tool is designed for international use and handles currency formatting correctly for all supported options.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">How should I handle invoice numbering for my business?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">Invoice numbers should be unique and sequential for proper bookkeeping and tax compliance. Common formats include simple sequential numbering (INV-001, INV-002, INV-003), year-based numbering (INV-2026-001), or a combination with client codes (ACME-INV-001). The key rules are: never reuse an invoice number, keep the format consistent across all invoices, and maintain a log of all issued numbers. This tool lets you type any invoice number you want, so you can follow whatever numbering system your business uses. For GST compliance in India, sequential invoice numbering is mandatory, and gaps in the sequence may be flagged during audits.</p>
+  </div>
+</section>
+
+    <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;">Last updated: June 2026</p>
     </main>
 
         <footer class="site-footer">

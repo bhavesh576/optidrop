@@ -1,0 +1,29 @@
+{
+  "name": "OptiDrop — Free Online Tools",
+  "short_name": "OptiDrop",
+  "description": "300+ free browser-based tools for images, PDFs, documents, calculators, and more. No upload, no sign-up, 100% private.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#1d4ed8",
+  "orientation": "any",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity"],
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false
+}

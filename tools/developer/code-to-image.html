@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code to Image — Convert Code Snippet to PNG | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <meta name="description" content="Convert code snippets to beautiful shareable images. Choose language, background color, and font size. Download as PNG. Free code-to-image converter with live preview.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/code-to-image.html">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},
+        {"@type":"ListItem","position":2,"name":"Developer Tools","item":"https://optidrop.online/tools/developer/"},
+        {"@type":"ListItem","position":3,"name":"Code to Image","item":"https://optidrop.online/tools/developer/code-to-image.html"}
+    ]}
+    </script>
+    <style>
+        .code-preview-wrap{overflow:auto;border-radius:12px;}
+        .code-preview{font-family:'Fira Code',monospace;line-height:1.6;white-space:pre;padding:24px 28px;margin:0;font-size:14px;min-width:400px;}
+        .code-preview .code-header{display:flex;align-items:center;gap:8px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.1);}
+        .code-preview .dot{width:12px;height:12px;border-radius:50%;}
+        .code-preview .dot.red{background:#ff5f57;}
+        .code-preview .dot.yellow{background:#febc2e;}
+        .code-preview .dot.green{background:#28c840;}
+        .code-preview .code-lang{margin-left:auto;font-size:12px;opacity:0.5;text-transform:uppercase;}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+    <header class="site-header"></header>
+    <main class="flex-grow max-w-4xl mx-auto px-4 py-8 w-full">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6">Code to Image</h1>
+        <p class="text-slate-600 mb-6">Convert code snippets into beautiful, shareable images. Customize the look and download as PNG.</p>
+
+        <!-- Controls -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Language</label>
+                    <select id="langSelect" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="SQL">SQL</option>
+                        <option value="JSON">JSON</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Background Color</label>
+                    <input type="color" id="bgColor" value="#1e293b" class="w-full h-10 rounded-lg cursor-pointer border border-slate-300">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Font Size: <span id="fontSizeVal">14</span>px</label>
+                    <input type="range" id="fontSize" min="10" max="24" value="14" class="w-full">
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Code</label>
+                <textarea id="codeInput" rows="10" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none font-mono text-sm" placeholder="Paste your code here...">function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log(fibonacci(10)); // 55</textarea>
+            </div>
+        </div>
+
+        <!-- Preview -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-6">
+            <h2 class="text-lg font-semibold text-slate-900 mb-4">Live Preview</h2>
+            <div class="code-preview-wrap" style="display:inline-block;max-width:100%;">
+                <div id="codePreview" class="code-preview" style="background:#1e293b;color:#e2e8f0;">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="code-lang" id="previewLang">JavaScript</span>
+                    </div>
+                    <code id="previewCode"></code>
+                </div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+                <button id="downloadBtn" class="px-5 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">Download as PNG</button>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function(){
+        var libLoaded=false;
+        function loadLib(cb){
+            if(libLoaded){cb();return;}
+            var s=document.createElement('script');
+            s.src='https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
+            s.onload=function(){libLoaded=true;cb();};
+            s.onerror=function(){showToast('Failed to load html2canvas library.','error');};
+            document.head.appendChild(s);
+        }
+
+        function showToast(msg,type){
+            var c=document.getElementById('toast-container');
+            if(!c)return;
+            var t=document.createElement('div');
+            t.className='toast toast-'+(type||'info');
+            t.textContent=msg;
+            c.appendChild(t);
+            setTimeout(function(){t.remove();},3000);
+        }
+
+        var codeInput=document.getElementById('codeInput');
+        var langSelect=document.getElementById('langSelect');
+        var bgColor=document.getElementById('bgColor');
+        var fontSizeSlider=document.getElementById('fontSize');
+        var fontSizeVal=document.getElementById('fontSizeVal');
+        var codePreview=document.getElementById('codePreview');
+        var previewCode=document.getElementById('previewCode');
+        var previewLang=document.getElementById('previewLang');
+        var downloadBtn=document.getElementById('downloadBtn');
+
+        function escapeHtml(str){
+            return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        }
+
+        function updatePreview(){
+            var code=codeInput.value;
+            previewCode.innerHTML=escapeHtml(code);
+            previewLang.textContent=langSelect.value;
+            codePreview.style.background=bgColor.value;
+            codePreview.style.fontSize=fontSizeSlider.value+'px';
+
+            // Auto text color based on background brightness
+            var hex=bgColor.value.replace('#','');
+            var r=parseInt(hex.substr(0,2),16);
+            var g=parseInt(hex.substr(2,2),16);
+            var b=parseInt(hex.substr(4,2),16);
+            var brightness=(r*299+g*587+b*114)/1000;
+            codePreview.style.color=brightness>128?'#1e293b':'#e2e8f0';
+        }
+
+        codeInput.addEventListener('input',updatePreview);
+        langSelect.addEventListener('change',updatePreview);
+        bgColor.addEventListener('input',updatePreview);
+        fontSizeSlider.addEventListener('input',function(){
+            fontSizeVal.textContent=this.value;
+            updatePreview();
+        });
+
+        downloadBtn.addEventListener('click',function(){
+            loadLib(function(){
+                showToast('Generating image...','info');
+                html2canvas(codePreview,{
+                    scale:2,
+                    backgroundColor:null,
+                    useCORS:true,
+                    logging:false
+                }).then(function(canvas){
+                    var link=document.createElement('a');
+                    link.download='code-snippet-'+langSelect.value.toLowerCase()+'.png';
+                    link.href=canvas.toDataURL('image/png');
+                    link.click();
+                    showToast('Code image downloaded!','success');
+                    if(window.OptiTrack)OptiTrack.downloadDone('Code to Image','png');
+                }).catch(function(err){
+                    showToast('Error generating image.','error');
+                });
+            });
+        });
+
+        // Initial render
+        updatePreview();
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free SQL Formatter — Beautify SQL Queries Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Free online SQL formatter and beautifier. Format, indent, and minify SQL queries instantly. Supports all major SQL keywords. 100% browser-based.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Free SQL Formatter — Beautify SQL Queries Online | OptiDrop">
+    <meta property="og:description" content="Free online SQL formatter and beautifier. Format, indent, and minify SQL queries. 100% browser-based.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/sql-formatter.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/sql-formatter.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/category/developer-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "SQL Formatter", "item": "https://optidrop.online/tools/developer/sql-formatter.html"}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
+
+    <header class="site-header"></header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">SQL Formatter — Beautify SQL Queries Online</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Format, indent, and minify SQL queries instantly. Uppercase keywords, proper indentation, and clean formatting. 100% browser-based.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Input -->
+                    <div class="mb-4">
+                        <label for="sqlInput" class="block text-sm font-bold text-slate-700 mb-2">Input SQL</label>
+                        <textarea id="sqlInput" rows="8" placeholder="Paste your SQL query here..."
+                            class="block w-full px-4 py-4 text-sm border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-mono resize-y"
+                            autocomplete="off" spellcheck="false" style="line-height:1.6;"></textarea>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex flex-wrap gap-3 mb-4">
+                        <button id="btnFormat" class="flex-1 px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+                            Format / Beautify
+                        </button>
+                        <button id="btnMinify" class="flex-1 px-6 py-3 bg-slate-600 text-white font-bold rounded-xl hover:bg-slate-700 transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            Minify
+                        </button>
+                        <button id="btnCopy" class="px-6 py-3 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                            Copy
+                        </button>
+                    </div>
+
+                    <!-- Output -->
+                    <div>
+                        <label for="sqlOutput" class="block text-sm font-bold text-slate-700 mb-2">Output</label>
+                        <textarea id="sqlOutput" rows="12" readonly placeholder="Formatted SQL will appear here..."
+                            class="block w-full px-4 py-4 text-sm border-2 border-slate-200 rounded-xl bg-slate-50 text-slate-900 font-mono resize-y"
+                            style="line-height:1.6;"></textarea>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What SQL keywords are supported?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        This formatter supports all major SQL keywords including SELECT, FROM, WHERE, JOIN (INNER/LEFT/RIGHT/FULL/CROSS), GROUP BY, ORDER BY, HAVING, LIMIT, INSERT, UPDATE, DELETE, CREATE, ALTER, DROP, UNION, EXCEPT, INTERSECT, and more.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does it support all SQL dialects?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The formatter works with standard SQL syntax used by MySQL, PostgreSQL, SQL Server, Oracle, and SQLite. It handles common constructs across all major dialects. Some very dialect-specific syntax may not be perfectly formatted.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What does the Minify option do?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Minify removes all unnecessary whitespace, line breaks, and indentation from the SQL, collapsing it into a single line. This is useful for reducing the size of SQL strings in code or when sending queries over the network.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Format, validate, and minify JSON.</span>
+                </a>
+                <a href="/tools/developer/css-minifier.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">CSS Minifier</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Minify CSS code to reduce file size.</span>
+                </a>
+                <a href="/tools/developer/js-minifier.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">JS Minifier</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Minify JavaScript code.</span>
+                </a>
+            </div>
+        </section>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;text-align:center;">Last updated: June 2026</p>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function() {
+        var sqlInput = document.getElementById('sqlInput');
+        var sqlOutput = document.getElementById('sqlOutput');
+        var btnFormat = document.getElementById('btnFormat');
+        var btnMinify = document.getElementById('btnMinify');
+        var btnCopy = document.getElementById('btnCopy');
+
+        // Keywords that start a new line
+        var MAJOR_KEYWORDS = [
+            'SELECT', 'FROM', 'WHERE', 'AND', 'OR', 'JOIN', 'INNER JOIN', 'LEFT JOIN',
+            'RIGHT JOIN', 'FULL JOIN', 'CROSS JOIN', 'LEFT OUTER JOIN', 'RIGHT OUTER JOIN',
+            'FULL OUTER JOIN', 'GROUP BY', 'ORDER BY', 'HAVING', 'LIMIT', 'OFFSET',
+            'INSERT INTO', 'VALUES', 'UPDATE', 'SET', 'DELETE FROM', 'CREATE TABLE',
+            'ALTER TABLE', 'DROP TABLE', 'CREATE INDEX', 'UNION', 'UNION ALL',
+            'EXCEPT', 'INTERSECT', 'ON', 'INTO', 'AS'
+        ];
+
+        // All SQL keywords to uppercase
+        var ALL_KEYWORDS = [
+            'SELECT', 'FROM', 'WHERE', 'AND', 'OR', 'NOT', 'IN', 'IS', 'NULL', 'LIKE',
+            'BETWEEN', 'EXISTS', 'ANY', 'ALL', 'JOIN', 'INNER', 'LEFT', 'RIGHT', 'FULL',
+            'OUTER', 'CROSS', 'ON', 'GROUP', 'ORDER', 'BY', 'HAVING', 'LIMIT', 'OFFSET',
+            'INSERT', 'INTO', 'VALUES', 'UPDATE', 'SET', 'DELETE', 'CREATE', 'ALTER',
+            'DROP', 'TABLE', 'INDEX', 'VIEW', 'UNION', 'EXCEPT', 'INTERSECT', 'AS',
+            'DISTINCT', 'COUNT', 'SUM', 'AVG', 'MIN', 'MAX', 'CASE', 'WHEN', 'THEN',
+            'ELSE', 'END', 'ASC', 'DESC', 'NULLS', 'FIRST', 'LAST', 'FETCH', 'NEXT',
+            'ROWS', 'ONLY', 'WITH', 'RECURSIVE', 'TRUE', 'FALSE', 'PRIMARY', 'KEY',
+            'FOREIGN', 'REFERENCES', 'CONSTRAINT', 'UNIQUE', 'CHECK', 'DEFAULT',
+            'AUTO_INCREMENT', 'SERIAL', 'VARCHAR', 'INTEGER', 'TEXT', 'BOOLEAN',
+            'TIMESTAMP', 'DATE', 'DECIMAL', 'FLOAT', 'BIGINT', 'SMALLINT', 'CHAR',
+            'BLOB', 'CLOB', 'CASCADE', 'RESTRICT', 'GRANT', 'REVOKE', 'TRUNCATE',
+            'EXPLAIN', 'ANALYZE', 'VACUUM', 'COMMIT', 'ROLLBACK', 'BEGIN', 'START',
+            'TRANSACTION', 'SAVEPOINT', 'RELEASE'
+        ];
+
+        // Build keyword regex for matching (case-insensitive)
+        // Sort by length descending so longer keywords match first
+        var sortedKeywords = ALL_KEYWORDS.slice().sort(function(a, b) { return b.length - a.length; });
+        var keywordPattern = sortedKeywords.map(function(k) { return k.replace(/ /g, '\\s+'); }).join('|');
+        var keywordRegex = new RegExp('\\b(' + keywordPattern + ')\\b', 'gi');
+
+        // Major keywords that get newlines before them
+        var majorSorted = MAJOR_KEYWORDS.slice().sort(function(a, b) { return b.length - a.length; });
+        var majorPattern = majorSorted.map(function(k) { return k.replace(/ /g, '\\s+'); }).join('|');
+        var majorRegex = new RegExp('(^|\\s)(' + majorPattern + ')\\b', 'gi');
+
+        function formatSQL(sql) {
+            if (!sql.trim()) return '';
+
+            // Normalize whitespace
+            sql = sql.replace(/\s+/g, ' ').trim();
+
+            // Uppercase all keywords (but not inside strings)
+            // Split by string literals to preserve them
+            var parts = [];
+            var regex = /('(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*")/g;
+            var lastIndex = 0;
+            var match;
+            while ((match = regex.exec(sql)) !== null) {
+                if (match.index > lastIndex) {
+                    parts.push({ text: sql.substring(lastIndex, match.index), isString: false });
+                }
+                parts.push({ text: match[1], isString: true });
+                lastIndex = regex.lastIndex;
+            }
+            if (lastIndex < sql.length) {
+                parts.push({ text: sql.substring(lastIndex), isString: false });
+            }
+
+            // Uppercase keywords in non-string parts
+            var result = parts.map(function(part) {
+                if (part.isString) return part.text;
+                return part.text.replace(keywordRegex, function(m) { return m.toUpperCase(); });
+            }).join('');
+
+            // Add newlines before major keywords
+            // Use a more careful approach
+            var lines = [];
+            var current = '';
+            var tokens = tokenize(result);
+
+            for (var i = 0; i < tokens.length; i++) {
+                var token = tokens[i];
+                var upper = token.toUpperCase().trim();
+
+                // Check if this token (possibly combined with next) is a major keyword
+                var isMajor = false;
+                for (var mi = 0; mi < MAJOR_KEYWORDS.length; mi++) {
+                    var mk = MAJOR_KEYWORDS[mi];
+                    // Check single token
+                    if (upper === mk) { isMajor = true; break; }
+                    // Check two-word keywords
+                    if (mk.indexOf(' ') !== -1) {
+                        var mkParts = mk.split(' ');
+                        if (upper === mkParts[0] && i + 1 < tokens.length && tokens[i+1].toUpperCase().trim() === mkParts[1]) {
+                            isMajor = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (isMajor && current.trim()) {
+                    lines.push(current.trim());
+                    current = '';
+                }
+
+                current += token;
+            }
+            if (current.trim()) lines.push(current.trim());
+
+            // Indent subclauses
+            var formatted = '';
+            var indent = 0;
+            for (var li = 0; li < lines.length; li++) {
+                var line = lines[li].trim();
+                var lineUpper = line.toUpperCase();
+
+                // Decrease indent for closing keywords
+                if (lineUpper.indexOf('END') === 0 || lineUpper.indexOf(')') === 0) {
+                    indent = Math.max(0, indent - 1);
+                }
+
+                var indentStr = '';
+                for (var ii = 0; ii < indent; ii++) indentStr += '    ';
+
+                // Indent SELECT columns
+                if (lineUpper.indexOf('SELECT') === 0 && line.length > 7) {
+                    var cols = line.substring(7).split(',');
+                    if (cols.length > 1) {
+                        formatted += indentStr + 'SELECT\n';
+                        for (var ci = 0; ci < cols.length; ci++) {
+                            formatted += indentStr + '    ' + cols[ci].trim();
+                            if (ci < cols.length - 1) formatted += ',';
+                            formatted += '\n';
+                        }
+                    } else {
+                        formatted += indentStr + line + '\n';
+                    }
+                } else {
+                    formatted += indentStr + line + '\n';
+                }
+
+                // Increase indent for certain keywords
+                if (lineUpper.indexOf('CASE') !== -1 || lineUpper.indexOf('THEN') !== -1) {
+                    indent++;
+                }
+            }
+
+            return formatted.trim();
+        }
+
+        function tokenize(sql) {
+            var tokens = [];
+            var current = '';
+            var inString = false;
+            var stringChar = '';
+
+            for (var i = 0; i < sql.length; i++) {
+                var ch = sql[i];
+
+                if (inString) {
+                    current += ch;
+                    if (ch === stringChar && sql[i-1] !== '\\') {
+                        inString = false;
+                    }
+                    continue;
+                }
+
+                if (ch === "'" || ch === '"') {
+                    if (current) { tokens.push(current); current = ''; }
+                    inString = true;
+                    stringChar = ch;
+                    current += ch;
+                    continue;
+                }
+
+                if (ch === ' ' || ch === '\t' || ch === '\n') {
+                    if (current) { tokens.push(current); current = ''; }
+                    tokens.push(' ');
+                    continue;
+                }
+
+                if (ch === ',' || ch === '(' || ch === ')' || ch === ';') {
+                    if (current) { tokens.push(current); current = ''; }
+                    tokens.push(ch);
+                    continue;
+                }
+
+                current += ch;
+            }
+            if (current) tokens.push(current);
+            return tokens;
+        }
+
+        function minifySQL(sql) {
+            return sql.replace(/\s+/g, ' ').replace(/\s*,\s*/g, ',').replace(/\s*\(\s*/g, '(').replace(/\s*\)\s*/g, ')').replace(/\s*;\s*/g, ';').trim();
+        }
+
+        btnFormat.addEventListener('click', function() {
+            var input = sqlInput.value;
+            if (!input.trim()) { showToast('Please enter a SQL query.', 'error'); return; }
+            sqlOutput.value = formatSQL(input);
+            showToast('SQL formatted!');
+        });
+
+        btnMinify.addEventListener('click', function() {
+            var input = sqlInput.value;
+            if (!input.trim()) { showToast('Please enter a SQL query.', 'error'); return; }
+            sqlOutput.value = minifySQL(input);
+            showToast('SQL minified!');
+        });
+
+        btnCopy.addEventListener('click', function() {
+            var output = sqlOutput.value;
+            if (!output) { showToast('Nothing to copy. Format or minify first.', 'error'); return; }
+            copyToClipboard(output);
+        });
+    })();
+    </script>
+</body>
+</html>

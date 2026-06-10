@@ -108,10 +108,8 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
-
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="/tailwind.min.css">
+<!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -121,6 +119,7 @@
     <link rel="stylesheet" href="/styles.css?v=2.1">
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
 
     <!-- HEADER -->
     <header class="site-header">
@@ -358,6 +357,39 @@
 
             </div>
         </section>
+
+<!-- Static About + FAQ for AdSense -->
+<section style="max-width:800px;margin:3rem auto 0;padding:1.5rem;">
+  <h2 style="font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.75rem;">PDF Compressor — About This Tool</h2>
+  <p style="color:#475569;line-height:1.7;margin-bottom:1rem;">OptiDrop PDF Compressor reduces the file size of your PDF documents while preserving visual quality. It is perfect for compressing scanned documents, academic papers, and reports so they meet email attachment limits or government portal upload restrictions. Choose from High, Medium, or Low compression levels depending on your needs. All processing happens locally in your browser — your PDF is never uploaded to any server, making it safe for confidential documents like contracts, invoices, and financial records.</p>
+
+  <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:1.5rem 0 0.5rem;">How to Use PDF Compressor</h3>
+  <ol style="color:#475569;line-height:1.8;padding-left:1.5rem;margin-bottom:1rem;">
+    <li>Drop your PDF file into the upload zone or tap to browse. Files up to 100MB are supported.</li>
+    <li>Choose your compression level: High (best quality, moderate reduction), Medium (balanced), or Low (smallest file size).</li>
+    <li>Click Compress PDF and watch the progress bar as each page is recompressed locally in your browser.</li>
+    <li>View the before/after size comparison and download your compressed PDF instantly.</li>
+  </ol>
+
+  <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:1.5rem 0 0.75rem;">Frequently Asked Questions</h3>
+
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">Will compressing my PDF reduce its quality?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">At the High quality setting, the visual difference is minimal and barely noticeable even when comparing side by side. Text remains crisp and readable at all compression levels — only embedded images within the PDF are recompressed. Medium offers a great balance between size reduction and visual quality for everyday use. Low produces the smallest files and is ideal for email attachments where file size limits are strict. For example, a scanned 20-page contract at High quality typically shrinks by 30-50% while remaining perfectly legible.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">What is the maximum PDF file size I can compress?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">OptiDrop can handle PDFs up to 100MB. Since all compression happens in your browser using JavaScript, the actual practical limit depends on your device's available memory. Most modern smartphones, tablets, and computers handle files up to 100MB without issues. If your browser struggles with a very large file, try closing other tabs to free up memory. There is no daily limit on how many PDFs you can compress — the tool is completely free with no hidden restrictions.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">Does this work well for scanned PDFs?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">Yes, scanned PDFs are actually the best candidates for compression because they typically contain large, uncompressed or lightly compressed images of each scanned page. OptiDrop recompresses these embedded images using JPEG encoding at your chosen quality level, often achieving 40-70% size reduction on scanned documents. The text on scanned pages remains readable, and the overall document structure is preserved. This is especially useful when you need to email a multi-page scanned contract or upload scanned certificates to a government portal with strict file size limits.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">Is my PDF file kept private and secure?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">Absolutely. Your PDF never leaves your device at any point during the compression process. OptiDrop reads your file using the browser's built-in JavaScript APIs, renders each page to a canvas, recompresses the images, and assembles a new PDF — all locally on your machine. No data is transmitted to any external server, no cloud processing is involved, and no copies of your document are stored anywhere outside your browser's temporary memory. This makes it completely safe for compressing confidential documents like financial statements, legal contracts, medical records, and government forms.</p>
+  </div>
+</section>
     </main>
 <section class="next-step-section">
     <h2>What to do next &rarr;</h2>

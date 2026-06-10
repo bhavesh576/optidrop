@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Barcode Generator — CODE128 & EAN-13 | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <meta name="description" content="Generate barcodes online in CODE128, EAN-13, UPC-A, and CODE39 formats. Free barcode generator with customizable size. Download as PNG. No upload required.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/barcode-generator.html">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},
+        {"@type":"ListItem","position":2,"name":"Developer Tools","item":"https://optidrop.online/tools/developer/"},
+        {"@type":"ListItem","position":3,"name":"Barcode Generator","item":"https://optidrop.online/tools/developer/barcode-generator.html"}
+    ]}
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+    <header class="site-header"></header>
+    <main class="flex-grow max-w-4xl mx-auto px-4 py-8 w-full">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6">Barcode Generator</h1>
+        <p class="text-slate-600 mb-6">Generate barcodes in CODE128, EAN-13, UPC-A, and CODE39 formats. Customize size and download as PNG.</p>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Text / Value</label>
+                    <input type="text" id="barcodeText" value="123456789012" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="Enter barcode value">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Format</label>
+                    <select id="barcodeFormat" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                        <option value="CODE128">CODE128</option>
+                        <option value="EAN13">EAN-13</option>
+                        <option value="UPC">UPC-A</option>
+                        <option value="CODE39">CODE39</option>
+                    </select>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Bar Width: <span id="widthVal">2</span>px</label>
+                    <input type="range" id="barWidth" min="1" max="4" value="2" class="w-full">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Height: <span id="heightVal">100</span>px</label>
+                    <input type="range" id="barHeight" min="30" max="200" value="100" class="w-full">
+                </div>
+            </div>
+            <button id="generateBtn" class="w-full sm:w-auto px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">Generate Barcode</button>
+        </div>
+
+        <div id="barcodeOutput" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 text-center hidden">
+            <canvas id="barcodeCanvas"></canvas>
+            <div class="mt-4 flex flex-wrap gap-3 justify-center">
+                <button id="downloadPng" class="px-5 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">Download PNG</button>
+                <button id="copyBarcode" class="px-5 py-2 bg-slate-600 text-white font-semibold rounded-lg hover:bg-slate-700 transition-colors">Copy to Clipboard</button>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function(){
+        var libLoaded = false;
+        function loadLib(cb){
+            if(libLoaded){cb();return;}
+            var s=document.createElement('script');
+            s.src='https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js';
+            s.onload=function(){libLoaded=true;cb();};
+            s.onerror=function(){showToast('Failed to load barcode library.','error');};
+            document.head.appendChild(s);
+        }
+
+        function showToast(msg,type){
+            var c=document.getElementById('toast-container');
+            if(!c)return;
+            var t=document.createElement('div');
+            t.className='toast toast-'+(type||'info');
+            t.textContent=msg;
+            c.appendChild(t);
+            setTimeout(function(){t.remove();},3000);
+        }
+
+        var textInput=document.getElementById('barcodeText');
+        var formatSelect=document.getElementById('barcodeFormat');
+        var widthSlider=document.getElementById('barWidth');
+        var heightSlider=document.getElementById('barHeight');
+        var widthVal=document.getElementById('widthVal');
+        var heightVal=document.getElementById('heightVal');
+        var generateBtn=document.getElementById('generateBtn');
+        var outputDiv=document.getElementById('barcodeOutput');
+        var canvas=document.getElementById('barcodeCanvas');
+        var downloadBtn=document.getElementById('downloadPng');
+        var copyBtn=document.getElementById('copyBarcode');
+
+        widthSlider.addEventListener('input',function(){widthVal.textContent=this.value;});
+        heightSlider.addEventListener('input',function(){heightVal.textContent=this.value;});
+
+        formatSelect.addEventListener('change',function(){
+            var v=this.value;
+            if(v==='EAN13'){textInput.placeholder='Enter 12 or 13 digits';textInput.maxLength=13;}
+            else if(v==='UPC'){textInput.placeholder='Enter 11 or 12 digits';textInput.maxLength=12;}
+            else if(v==='CODE39'){textInput.placeholder='Enter alphanumeric text (A-Z, 0-9, -.$/+%)';textInput.maxLength=30;}
+            else{textInput.placeholder='Enter any text';textInput.maxLength=50;}
+        });
+
+        generateBtn.addEventListener('click',function(){
+            var val=textInput.value.trim();
+            if(!val){showToast('Please enter a value for the barcode.','error');return;}
+            var fmt=formatSelect.value;
+            loadLib(function(){
+                try{
+                    JsBarcode(canvas,val,{
+                        format:fmt,
+                        width:parseInt(widthSlider.value),
+                        height:parseInt(heightSlider.value),
+                        displayValue:true,
+                        fontSize:14,
+                        margin:10,
+                        background:'#ffffff',
+                        lineColor:'#000000'
+                    });
+                    outputDiv.classList.remove('hidden');
+                    showToast('Barcode generated successfully!','success');
+                    if(window.OptiTrack)OptiTrack.toolCompleted('Barcode Generator','canvas');
+                }catch(e){
+                    showToast('Error: '+e.message,'error');
+                    outputDiv.classList.add('hidden');
+                }
+            });
+        });
+
+        downloadBtn.addEventListener('click',function(){
+            var link=document.createElement('a');
+            link.download='barcode-'+textInput.value.trim().replace(/[^a-zA-Z0-9]/g,'_')+'.png';
+            link.href=canvas.toDataURL('image/png');
+            link.click();
+            showToast('Barcode downloaded!','success');
+            if(window.OptiTrack)OptiTrack.downloadDone('Barcode Generator','png');
+        });
+
+        copyBtn.addEventListener('click',function(){
+            canvas.toBlob(function(blob){
+                try{
+                    navigator.clipboard.write([new ClipboardItem({'image/png':blob})]).then(function(){
+                        showToast('Barcode copied to clipboard!','success');
+                    }).catch(function(){
+                        showToast('Copy not supported in this browser.','error');
+                    });
+                }catch(e){
+                    showToast('Copy not supported in this browser.','error');
+                }
+            },'image/png');
+        });
+
+        // Generate default barcode on load
+        loadLib(function(){
+            try{
+                JsBarcode(canvas,'123456789012',{format:'CODE128',width:2,height:100,displayValue:true,fontSize:14,margin:10});
+                outputDiv.classList.remove('hidden');
+            }catch(e){}
+        });
+    })();
+    </script>
+</body>
+</html>

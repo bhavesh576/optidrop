@@ -28,6 +28,10 @@
     <meta name="twitter:description" content="Free online tools for images, PDFs, resumes, invoices, calculators, and more. 300+ browser-based tools. No upload, no sign-up, no cost. 100% private.">
 
     <link rel="canonical" href="https://optidrop.online">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="OptiDrop">
 
     <!-- DNS Prefetch & Preconnect (Block 5) -->
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
@@ -81,22 +85,8 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-    darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#eff6ff', 100:'#dbeafe', 500:'#3b82f6', 600:'#2563eb', 700:'#1d4ed8', 900:'#1e3a8a' }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="/tailwind.min.css">
+<!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -104,9 +94,13 @@
     <!-- Global Styles -->
     <link rel="preload" href="/styles.css?v=2.1" as="style">
     <link rel="stylesheet" href="/styles.css?v=2.1">
+    <script type="speculationrules">
+{"prerender":[{"where":{"href_matches":"/tools/*"},"eagerness":"moderate"}]}
+    </script>
 </head>
 
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
 
     <!-- Drag-and-Drop File Router Overlay -->
     <div id="dragDropOverlay" class="drag-drop-overlay">

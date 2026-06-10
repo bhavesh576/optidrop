@@ -4,7 +4,7 @@
     <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIP Calculator Online Free — Mutual Fund Returns | OptiDrop</title>
+    <title>Free SIP Calculator — Calculate Mutual Fund Returns & Maturity | OptiDrop</title>
     <link rel="icon" type="image/png" href="/favicon.png?v=2">
     <link rel="shortcut icon" href="/favicon.png?v=2">
     <link rel="apple-touch-icon" href="/favicon.png?v=2">
@@ -100,10 +100,8 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
-
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="/tailwind.min.css">
+<!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -112,6 +110,7 @@
     <link rel="stylesheet" href="/styles.css?v=2.1">
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
 
     <!-- HEADER -->
     <header class="site-header">
@@ -300,6 +299,40 @@
                 </a>
             </div>
         </section>
+    <!-- Static About + FAQ for AdSense -->
+<section style="max-width:800px;margin:3rem auto 0;padding:1.5rem;">
+  <h2 style="font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.75rem;">SIP Calculator — About This Tool</h2>
+  <p style="color:#475569;line-height:1.7;margin-bottom:1rem;">The OptiDrop SIP Calculator is a free online tool that helps you estimate the future value of your mutual fund Systematic Investment Plan (SIP) investments. By entering your monthly investment amount, expected annual return rate, and investment duration, you can instantly see how much wealth you will accumulate over time through the power of compounding. It is an essential planning tool for anyone starting a SIP or reviewing their existing investment strategy.</p>
+
+  <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:1.5rem 0 0.5rem;">How to Use the SIP Calculator</h3>
+  <ol style="color:#475569;line-height:1.8;padding-left:1.5rem;margin-bottom:1rem;">
+    <li>Enter the amount you plan to invest every month in the "Monthly Investment" field — the minimum is Rs. 500.</li>
+    <li>Enter your expected annual rate of return. For equity mutual funds, 12% is a reasonable long-term expectation; for debt funds, 6-8% is typical.</li>
+    <li>Enter the investment duration in years. SIP works best over longer periods, so try 10, 15, or 20 years to see the true power of compounding.</li>
+    <li>Click "Calculate SIP Returns" to see your total invested amount, estimated returns, maturity value, and a visual breakdown bar.</li>
+  </ol>
+
+  <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:1.5rem 0 0.75rem;">Frequently Asked Questions</h3>
+
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">What is a Systematic Investment Plan (SIP) and how does it work?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">A Systematic Investment Plan is a disciplined investment method where you invest a fixed amount at regular intervals (usually monthly) into a mutual fund scheme. Each month, your money buys units of the fund at the current Net Asset Value (NAV). When prices are low, you buy more units; when prices are high, you buy fewer. This is called rupee cost averaging, and it smooths out the impact of market volatility over time. Combined with the power of compounding, SIPs can help you build significant wealth without needing to time the market.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">What formula does the SIP calculator use?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">The SIP calculator uses the future value of annuity formula: FV = P x [(1 + r)^n - 1] / r x (1 + r), where P is the monthly investment amount, r is the monthly rate of return (annual rate divided by 12 and then by 100), and n is the total number of monthly installments. This formula accounts for the compounding effect on each monthly contribution. The final value (FV) represents the total maturity amount, which includes both your invested capital and the returns earned on it. This is the industry-standard formula used by all major financial institutions.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">What is a step-up SIP and should I use one?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">A step-up SIP (also called a top-up SIP) allows you to increase your monthly investment amount automatically at a fixed rate each year, typically matching your annual salary increment. For example, if you start with Rs. 10,000 per month and set a 10% annual step-up, you would invest Rs. 11,000 in the second year, Rs. 12,100 in the third year, and so on. This approach significantly boosts your final corpus because the higher contributions in later years benefit from compounding for the remaining duration. Most financial advisors recommend a step-up SIP if your income is expected to grow regularly.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">What are the tax implications of SIP returns in India?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">The tax treatment of SIP returns depends on the type of mutual fund and the holding period. For equity mutual funds, gains held for more than 12 months are classified as long-term capital gains (LTCG) and are taxed at 12.5% on gains exceeding Rs. 1.25 lakh per financial year. Short-term gains (held less than 12 months) are taxed at 20%. For debt mutual funds, gains are taxed at your applicable income tax slab rate regardless of the holding period. Each SIP installment is treated as a separate investment for calculating the holding period, so the tax rate may differ for each installment.</p>
+  </div>
+</section>
+
+    <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;">Last updated: June 2026</p>
     </main>
 
         <footer class="site-footer">

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free WiFi QR Code Generator — Share WiFi Password | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Generate WiFi QR codes to share your WiFi password instantly. Supports WPA2, WEP, and open networks. 100% browser-based, password never leaves your device.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Free WiFi QR Code Generator — Share WiFi Password | OptiDrop">
+    <meta property="og:description" content="Generate WiFi QR codes to share your WiFi password instantly. 100% browser-based, password never leaves your device.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/wifi-qr-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/wifi-qr-generator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/category/developer-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "WiFi QR Generator", "item": "https://optidrop.online/tools/developer/wifi-qr-generator.html"}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
+
+    <header class="site-header"></header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">WiFi QR Code Generator — Share WiFi Password Instantly</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate a QR code for your WiFi network. Guests scan it to connect instantly — no typing required. Your password never leaves your device.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div class="sm:col-span-2">
+                            <label for="ssid" class="block text-sm font-bold text-slate-700 mb-2">Network Name (SSID) <span class="text-red-500">*</span></label>
+                            <input type="text" id="ssid" placeholder="e.g. MyHomeWiFi" class="block w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900" autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="password" class="block text-sm font-bold text-slate-700 mb-2">Password</label>
+                            <input type="text" id="password" placeholder="WiFi password" class="block w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900 font-mono" autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="security" class="block text-sm font-bold text-slate-700 mb-2">Security Type</label>
+                            <select id="security" class="block w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900 bg-white">
+                                <option value="WPA">WPA/WPA2/WPA3</option>
+                                <option value="WEP">WEP</option>
+                                <option value="nopass">None (Open)</option>
+                            </select>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="flex items-center gap-3 cursor-pointer">
+                                <input type="checkbox" id="hidden" class="w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500">
+                                <span class="text-sm font-semibold text-slate-700">Hidden network (SSID is not broadcast)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button id="btnGenerate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+                        Generate WiFi QR Code
+                    </button>
+
+                    <div id="qrResult" class="hidden mt-8 text-center">
+                        <div class="inline-block bg-white border-2 border-slate-200 rounded-2xl p-6 shadow-md">
+                            <canvas id="qrCanvas" width="250" height="250" style="display:block;margin:0 auto;"></canvas>
+                        </div>
+                        <div class="mt-4 flex flex-wrap justify-center gap-3">
+                            <button id="btnDownload" class="px-6 py-3 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download PNG
+                            </button>
+                            <button id="btnCopyWifi" class="px-6 py-3 bg-slate-600 text-white font-bold rounded-xl hover:bg-slate-700 transition-all flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                Copy WiFi String
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-green-50 border border-green-200 rounded-xl p-4 text-sm text-green-800">
+                        <strong>Privacy:</strong> Your WiFi password is processed entirely in your browser. It is never sent to any server. The QR code is generated locally using JavaScript.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How do I use the WiFi QR code?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Print the QR code or display it on a screen. Anyone can scan it with their phone camera (iPhone) or a QR scanner app (Android). The phone will automatically connect to the WiFi network without needing to type the password.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What devices can scan this QR code?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        iOS 11+ and Android 10+ devices can scan WiFi QR codes natively with their camera apps. Older Android devices may need a QR scanner app. Windows and macOS do not natively support WiFi QR scanning.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is my password safe?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. The password is encoded directly into the QR code pattern on your device. It is not transmitted over the internet. However, anyone who scans the QR code will gain access to your WiFi, so only display it where you trust the audience.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/qr-code-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">QR Code Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate QR codes for URLs and text.</span>
+                </a>
+                <a href="/tools/utility/upi-qr-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">UPI QR Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate UPI payment QR codes.</span>
+                </a>
+                <a href="/tools/password-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Password Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate strong, secure passwords.</span>
+                </a>
+            </div>
+        </section>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;text-align:center;">Last updated: June 2026</p>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function() {
+        var ssidInput = document.getElementById('ssid');
+        var passwordInput = document.getElementById('password');
+        var securitySelect = document.getElementById('security');
+        var hiddenCheck = document.getElementById('hidden');
+        var btnGenerate = document.getElementById('btnGenerate');
+        var qrResult = document.getElementById('qrResult');
+        var qrCanvas = document.getElementById('qrCanvas');
+        var btnDownload = document.getElementById('btnDownload');
+        var btnCopyWifi = document.getElementById('btnCopyWifi');
+
+        var currentWifiString = '';
+
+        // Toggle password field based on security type
+        securitySelect.addEventListener('change', function() {
+            passwordInput.disabled = this.value === 'nopass';
+            if (this.value === 'nopass') passwordInput.value = '';
+        });
+
+        // ── QR Code Generator (same as UPI QR) ──
+        function generateQR(text, canvas, size) {
+            var ctx = canvas.getContext('2d');
+            canvas.width = size;
+            canvas.height = size;
+            var modules = encodeQR(text);
+            var moduleCount = modules.length;
+            var cellSize = size / moduleCount;
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, size, size);
+            ctx.fillStyle = '#000000';
+            for (var r = 0; r < moduleCount; r++) {
+                for (var c = 0; c < moduleCount; c++) {
+                    if (modules[r][c]) {
+                        ctx.fillRect(c * cellSize, r * cellSize, Math.ceil(cellSize), Math.ceil(cellSize));
+                    }
+                }
+            }
+        }
+
+        function encodeQR(text) {
+            var dataBytes = [];
+            for (var i = 0; i < text.length; i++) {
+                var code = text.charCodeAt(i);
+                if (code < 128) { dataBytes.push(code); }
+                else if (code < 2048) { dataBytes.push(0xC0 | (code >> 6)); dataBytes.push(0x80 | (code & 0x3F)); }
+                else { dataBytes.push(0xE0 | (code >> 12)); dataBytes.push(0x80 | ((code >> 6) & 0x3F)); dataBytes.push(0x80 | (code & 0x3F)); }
+            }
+            var version = 1;
+            var capacity = [0, 14, 26, 42, 62, 84, 106, 122, 152, 180, 213];
+            for (var v = 1; v < capacity.length; v++) {
+                if (dataBytes.length <= capacity[v]) { version = v; break; }
+                version = v;
+            }
+            if (dataBytes.length > capacity[9]) version = 9;
+            var moduleCount = version * 4 + 17;
+            var bits = [];
+            addBits(bits, 0x4, 4);
+            var charCountBits = version >= 10 ? 16 : 8;
+            addBits(bits, dataBytes.length, charCountBits);
+            for (var j = 0; j < dataBytes.length; j++) addBits(bits, dataBytes[j], 8);
+            var totalDataBits = getDataCodewords(version, 1) * 8;
+            var remaining = totalDataBits - bits.length;
+            addBits(bits, 0, Math.min(4, remaining));
+            while (bits.length % 8 !== 0) bits.push(0);
+            var padBytes = [0xEC, 0x11]; var pi = 0;
+            while (bits.length < totalDataBits) { addBits(bits, padBytes[pi], 8); pi = (pi + 1) % 2; }
+            var matrix = []; var reserved = [];
+            for (var r = 0; r < moduleCount; r++) { matrix[r] = []; reserved[r] = []; for (var cc = 0; cc < moduleCount; cc++) { matrix[r][cc] = false; reserved[r][cc] = false; } }
+            placeFinder(matrix, reserved, 0, 0); placeFinder(matrix, reserved, moduleCount - 7, 0); placeFinder(matrix, reserved, 0, moduleCount - 7);
+            if (version >= 2) { var alignPos = getAlignmentPositions(version); for (var ai = 0; ai < alignPos.length; ai++) { for (var aj = 0; aj < alignPos.length; aj++) { var ap = alignPos[ai]; var aq = alignPos[aj]; if ((ap < 9 && aq < 9) || (ap < 9 && aq > moduleCount - 9) || (ap > moduleCount - 9 && aq < 9)) continue; placeAlignment(matrix, reserved, ap, aq); } } }
+            for (var t = 8; t < moduleCount - 8; t++) { if (!reserved[6][t]) { matrix[6][t] = t % 2 === 0; reserved[6][t] = true; } if (!reserved[t][6]) { matrix[t][6] = t % 2 === 0; reserved[t][6] = true; } }
+            matrix[moduleCount - 8][8] = true; reserved[moduleCount - 8][8] = true;
+            for (var fi = 0; fi < 8; fi++) { reserved[8][fi] = true; reserved[fi][8] = true; reserved[8][moduleCount - 1 - fi] = true; reserved[moduleCount - 1 - fi][8] = true; }
+            reserved[8][8] = true;
+            var bitIdx = 0; var upward = true;
+            for (var col = moduleCount - 1; col >= 0; col -= 2) { if (col === 6) col = 5; var rows = []; for (var rr = 0; rr < moduleCount; rr++) rows.push(upward ? moduleCount - 1 - rr : rr); for (var ri = 0; ri < rows.length; ri++) { for (var ci = 0; ci < 2; ci++) { var ccol = col - ci; if (ccol < 0) continue; var rrow = rows[ri]; if (reserved[rrow][ccol]) continue; matrix[rrow][ccol] = bitIdx < bits.length ? bits[bitIdx] === 1 : false; bitIdx++; } } upward = !upward; }
+            for (var mr = 0; mr < moduleCount; mr++) { for (var mc = 0; mc < moduleCount; mc++) { if (!reserved[mr][mc]) { if ((mr + mc) % 2 === 0) matrix[mr][mc] = !matrix[mr][mc]; } } }
+            placeFormatInfo(matrix, moduleCount, 0x5412);
+            return matrix;
+        }
+        function addBits(arr, val, len) { for (var i = len - 1; i >= 0; i--) arr.push((val >> i) & 1); }
+        function getDataCodewords(version) { var t = [0, 16, 28, 44, 64, 86, 108, 124, 154, 182, 216]; return t[version] || 16; }
+        function getAlignmentPositions(version) { var p = [[],[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50]]; return p[version] || []; }
+        function placeFinder(matrix, reserved, row, col) { for (var r = -1; r <= 7; r++) { for (var c = -1; c <= 7; c++) { var rr = row + r; var cc = col + c; if (rr < 0 || rr >= matrix.length || cc < 0 || cc >= matrix.length) continue; var inOuter = r === 0 || r === 6 || c === 0 || c === 6; var inInner = r >= 2 && r <= 4 && c >= 2 && c <= 4; var inBorder = r === -1 || r === 7 || c === -1 || c === 7; if (inBorder) matrix[rr][cc] = false; else if (inOuter || inInner) matrix[rr][cc] = true; else matrix[rr][cc] = false; reserved[rr][cc] = true; } } }
+        function placeAlignment(matrix, reserved, row, col) { for (var r = -2; r <= 2; r++) { for (var c = -2; c <= 2; c++) { var rr = row + r; var cc = col + c; matrix[rr][cc] = Math.abs(r) === 2 || Math.abs(c) === 2 || (r === 0 && c === 0); reserved[rr][cc] = true; } } }
+        function placeFormatInfo(matrix, moduleCount, formatInfo) { var bits = []; for (var i = 14; i >= 0; i--) bits.push((formatInfo >> i) & 1); var p1 = [[8,0],[8,1],[8,2],[8,3],[8,4],[8,5],[8,7],[8,8],[7,8],[5,8],[4,8],[3,8],[2,8],[1,8],[0,8]]; for (var p = 0; p < 15; p++) matrix[p1[p][0]][p1[p][1]] = bits[p] === 1; var p2 = [[moduleCount-1,8],[moduleCount-2,8],[moduleCount-3,8],[moduleCount-4,8],[moduleCount-5,8],[moduleCount-6,8],[moduleCount-7,8],[8,moduleCount-8],[8,moduleCount-7],[8,moduleCount-6],[8,moduleCount-5],[8,moduleCount-4],[8,moduleCount-3],[8,moduleCount-2],[8,moduleCount-1]]; for (var q = 0; q < 15; q++) matrix[p2[q][0]][p2[q][1]] = bits[q] === 1; }
+
+        // Escape special characters for WiFi QR format
+        function escapeWifi(str) {
+            return str.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/"/g, '\\"').replace(/:/g, '\\:');
+        }
+
+        function buildWifiString() {
+            var ssid = ssidInput.value.trim();
+            if (!ssid) return null;
+
+            var sec = securitySelect.value;
+            var pass = passwordInput.value;
+            var isHidden = hiddenCheck.checked;
+
+            var str = 'WIFI:T:' + sec + ';S:' + escapeWifi(ssid) + ';';
+            if (sec !== 'nopass') {
+                str += 'P:' + escapeWifi(pass) + ';';
+            }
+            if (isHidden) {
+                str += 'H:true;';
+            }
+            str += ';';
+            return str;
+        }
+
+        function generate() {
+            var ssid = ssidInput.value.trim();
+            if (!ssid) {
+                showToast('Please enter the WiFi network name (SSID).', 'error');
+                return;
+            }
+
+            if (securitySelect.value !== 'nopass' && !passwordInput.value) {
+                showToast('Please enter the WiFi password, or select "None" for open networks.', 'error');
+                return;
+            }
+
+            var wifiStr = buildWifiString();
+            currentWifiString = wifiStr;
+            generateQR(wifiStr, qrCanvas, 250);
+            qrResult.classList.remove('hidden');
+            showToast('WiFi QR code generated!');
+        }
+
+        btnGenerate.addEventListener('click', generate);
+
+        btnDownload.addEventListener('click', function() {
+            var link = document.createElement('a');
+            link.download = 'wifi-qr-code.png';
+            link.href = qrCanvas.toDataURL('image/png');
+            link.click();
+            showToast('QR code downloaded!');
+        });
+
+        btnCopyWifi.addEventListener('click', function() {
+            if (currentWifiString) copyToClipboard(currentWifiString);
+        });
+
+        ssidInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') { e.preventDefault(); passwordInput.focus(); }
+        });
+        passwordInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') { e.preventDefault(); generate(); }
+        });
+    })();
+    </script>
+</body>
+</html>

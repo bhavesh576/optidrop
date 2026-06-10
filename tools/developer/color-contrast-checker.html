@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCAG Color Contrast Checker — AA/AAA Test | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Check WCAG color contrast ratios for accessibility compliance. Test AA and AAA levels for normal and large text. Free online color contrast checker.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="WCAG Color Contrast Checker — AA/AAA Test | OptiDrop">
+    <meta property="og:description" content="Check WCAG color contrast ratios for accessibility compliance. Test AA and AAA levels. Free online tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/color-contrast-checker.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/color-contrast-checker.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/category/developer-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Color Contrast Checker", "item": "https://optidrop.online/tools/developer/color-contrast-checker.html"}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
+
+    <header class="site-header"></header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">WCAG Color Contrast Checker — AA &amp; AAA Test</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Check if your foreground and background colors meet WCAG 2.1 accessibility standards. Test for normal text and large text at AA and AAA levels.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Color Pickers -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Foreground (Text) Color</label>
+                            <div class="flex items-center gap-3">
+                                <input type="color" id="fgColor" value="#000000" class="w-14 h-14 rounded-xl border-2 border-slate-200 cursor-pointer">
+                                <input type="text" id="fgHex" value="#000000" class="flex-1 px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 font-mono text-slate-900 uppercase" maxlength="7" autocomplete="off">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Background Color</label>
+                            <div class="flex items-center gap-3">
+                                <input type="color" id="bgColor" value="#ffffff" class="w-14 h-14 rounded-xl border-2 border-slate-200 cursor-pointer">
+                                <input type="text" id="bgHex" value="#ffffff" class="flex-1 px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 font-mono text-slate-900 uppercase" maxlength="7" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contrast Ratio Display -->
+                    <div class="text-center mb-8">
+                        <p class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">Contrast Ratio</p>
+                        <p id="contrastRatio" class="text-6xl font-extrabold text-slate-900">21:1</p>
+                    </div>
+
+                    <!-- WCAG Results -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+                        <div id="wcagNormalAA" class="rounded-xl border-2 p-4 text-center">
+                            <p class="text-xs font-bold text-slate-500 mb-1">Normal AA</p>
+                            <p class="text-sm font-semibold text-slate-400 mb-1">4.5:1</p>
+                            <p class="text-lg font-extrabold" id="normalAAResult">PASS</p>
+                        </div>
+                        <div id="wcagNormalAAA" class="rounded-xl border-2 p-4 text-center">
+                            <p class="text-xs font-bold text-slate-500 mb-1">Normal AAA</p>
+                            <p class="text-sm font-semibold text-slate-400 mb-1">7:1</p>
+                            <p class="text-lg font-extrabold" id="normalAAAResult">PASS</p>
+                        </div>
+                        <div id="wcagLargeAA" class="rounded-xl border-2 p-4 text-center">
+                            <p class="text-xs font-bold text-slate-500 mb-1">Large AA</p>
+                            <p class="text-sm font-semibold text-slate-400 mb-1">3:1</p>
+                            <p class="text-lg font-extrabold" id="largeAAResult">PASS</p>
+                        </div>
+                        <div id="wcagLargeAAA" class="rounded-xl border-2 p-4 text-center">
+                            <p class="text-xs font-bold text-slate-500 mb-1">Large AAA</p>
+                            <p class="text-sm font-semibold text-slate-400 mb-1">4.5:1</p>
+                            <p class="text-lg font-extrabold" id="largeAAAResult">PASS</p>
+                        </div>
+                    </div>
+
+                    <!-- Live Preview -->
+                    <div class="rounded-2xl border-2 border-slate-200 overflow-hidden">
+                        <div class="bg-slate-100 px-4 py-2 border-b border-slate-200">
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Live Preview</span>
+                        </div>
+                        <div id="previewBox" class="p-8 text-center">
+                            <p class="text-sm mb-2" id="previewSmall">Small text (14px) — The quick brown fox jumps over the lazy dog.</p>
+                            <p class="text-lg font-bold mb-2" id="previewLarge">Large text (18px bold) — The quick brown fox jumps over the lazy dog.</p>
+                            <p class="text-3xl font-extrabold" id="previewXLarge">Extra Large Text</p>
+                        </div>
+                    </div>
+
+                    <!-- Swap Button -->
+                    <div class="mt-4 text-center">
+                        <button id="btnSwap" class="px-6 py-3 bg-slate-600 text-white font-bold rounded-xl hover:bg-slate-700 transition-all inline-flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/></svg>
+                            Swap Colors
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is WCAG color contrast?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        WCAG (Web Content Accessibility Guidelines) defines minimum contrast ratios between text and background colors to ensure readability for users with visual impairments. AA level is the minimum standard, while AAA is the enhanced standard.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the difference between AA and AAA?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        AA requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text. AAA requires 7:1 for normal text and 4.5:1 for large text. AA is the legal minimum in many jurisdictions; AAA is the gold standard for maximum accessibility.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What counts as "large text"?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        WCAG defines large text as at least 18pt (24px) regular weight, or at least 14pt (18.66px) bold weight. Large text has lower contrast requirements because it is easier to read at smaller ratios.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/developer/color-converter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Color Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert between HEX, RGB, HSL.</span>
+                </a>
+                <a href="/tools/developer/color-palette-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Color Palette Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate beautiful color palettes.</span>
+                </a>
+                <a href="/tools/developer/color-picker.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Color Picker</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Pick colors with HEX, RGB output.</span>
+                </a>
+            </div>
+        </section>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;text-align:center;">Last updated: June 2026</p>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function() {
+        var fgColor = document.getElementById('fgColor');
+        var bgColor = document.getElementById('bgColor');
+        var fgHex = document.getElementById('fgHex');
+        var bgHex = document.getElementById('bgHex');
+        var contrastRatioEl = document.getElementById('contrastRatio');
+        var previewBox = document.getElementById('previewBox');
+        var btnSwap = document.getElementById('btnSwap');
+
+        function hexToRgb(hex) {
+            hex = hex.replace('#', '');
+            if (hex.length === 3) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+            var r = parseInt(hex.substring(0, 2), 16);
+            var g = parseInt(hex.substring(2, 4), 16);
+            var b = parseInt(hex.substring(4, 6), 16);
+            return { r: r, g: g, b: b };
+        }
+
+        function relativeLuminance(rgb) {
+            var rsrgb = rgb.r / 255;
+            var gsrgb = rgb.g / 255;
+            var bsrgb = rgb.b / 255;
+            var r = rsrgb <= 0.03928 ? rsrgb / 12.92 : Math.pow((rsrgb + 0.055) / 1.055, 2.4);
+            var g = gsrgb <= 0.03928 ? gsrgb / 12.92 : Math.pow((gsrgb + 0.055) / 1.055, 2.4);
+            var b = bsrgb <= 0.03928 ? bsrgb / 12.92 : Math.pow((bsrgb + 0.055) / 1.055, 2.4);
+            return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+        }
+
+        function contrastRatio(l1, l2) {
+            var lighter = Math.max(l1, l2);
+            var darker = Math.min(l1, l2);
+            return (lighter + 0.05) / (darker + 0.05);
+        }
+
+        function updateResult(id, passed) {
+            var el = document.getElementById(id);
+            var card = el.parentElement;
+            if (passed) {
+                el.textContent = 'PASS';
+                el.className = 'text-lg font-extrabold text-green-600';
+                card.className = card.className.replace(/border-\w+-\d+/g, '') + ' border-green-400 bg-green-50';
+            } else {
+                el.textContent = 'FAIL';
+                el.className = 'text-lg font-extrabold text-red-600';
+                card.className = card.className.replace(/border-\w+-\d+/g, '') + ' border-red-400 bg-red-50';
+            }
+        }
+
+        function check() {
+            var fg = fgHex.value;
+            var bg = bgHex.value;
+            if (!/^#[0-9A-Fa-f]{6}$/.test(fg) || !/^#[0-9A-Fa-f]{6}$/.test(bg)) return;
+
+            var fgRgb = hexToRgb(fg);
+            var bgRgb = hexToRgb(bg);
+            var fgLum = relativeLuminance(fgRgb);
+            var bgLum = relativeLuminance(bgRgb);
+            var ratio = contrastRatio(fgLum, bgLum);
+
+            contrastRatioEl.textContent = ratio.toFixed(2) + ':1';
+
+            updateResult('normalAAResult', ratio >= 4.5);
+            updateResult('normalAAAResult', ratio >= 7);
+            updateResult('largeAAResult', ratio >= 3);
+            updateResult('largeAAAResult', ratio >= 4.5);
+
+            // Update preview
+            previewBox.style.backgroundColor = bg;
+            previewBox.querySelectorAll('p').forEach(function(p) { p.style.color = fg; });
+        }
+
+        // Sync color pickers and hex inputs
+        fgColor.addEventListener('input', function() { fgHex.value = this.value; check(); });
+        bgColor.addEventListener('input', function() { bgHex.value = this.value; check(); });
+        fgHex.addEventListener('input', function() { if (/^#[0-9A-Fa-f]{6}$/.test(this.value)) { fgColor.value = this.value; check(); } });
+        bgHex.addEventListener('input', function() { if (/^#[0-9A-Fa-f]{6}$/.test(this.value)) { bgColor.value = this.value; check(); } });
+
+        btnSwap.addEventListener('click', function() {
+            var tmpColor = fgColor.value;
+            var tmpHex = fgHex.value;
+            fgColor.value = bgColor.value;
+            fgHex.value = bgHex.value;
+            bgColor.value = tmpColor;
+            bgHex.value = tmpHex;
+            check();
+        });
+
+        // Initial check
+        check();
+    })();
+    </script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Resume Builder Online — Download PDF Resume | OptiDrop</title>
+    <title>Free Resume Builder — Create Professional Resume PDF Instantly | OptiDrop</title>
     <link rel="icon" type="image/png" href="/favicon.png?v=2">
     <link rel="shortcut icon" href="/favicon.png?v=2">
     <link rel="apple-touch-icon" href="/favicon.png?v=2">
@@ -101,10 +101,8 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
-
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="/tailwind.min.css">
+<!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -150,6 +148,7 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
 
     <!-- HEADER -->
     <header class="site-header">
@@ -346,6 +345,40 @@
                 </div>
             </div>
         </section>
+    <!-- Static About + FAQ for AdSense -->
+<section style="max-width:800px;margin:3rem auto 0;padding:1.5rem;">
+  <h2 style="font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.75rem;">Resume Builder — About This Tool</h2>
+  <p style="color:#475569;line-height:1.7;margin-bottom:1rem;">The OptiDrop Resume Builder is a free online tool that lets you create a professional, polished resume in minutes without any design skills or paid software. Choose from four carefully crafted templates — Classic, Modern, Minimal, and ATS Friendly — fill in your details, see a live preview as you type, and download a clean PDF ready to send to employers. Your data auto-saves to your browser every two seconds, so you never lose progress.</p>
+
+  <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:1.5rem 0 0.5rem;">How to Use the Resume Builder</h3>
+  <ol style="color:#475569;line-height:1.8;padding-left:1.5rem;margin-bottom:1rem;">
+    <li>Select a template from the four available options at the top of the tool — Classic, Modern, Minimal, or ATS Friendly.</li>
+    <li>Fill in your personal information, professional summary, work experience, education, skills, and optional certifications in the form fields.</li>
+    <li>Watch the live preview on the right side update in real time as you type, so you can see exactly how your resume will look.</li>
+    <li>Click "Download PDF" to save your resume, use "Print" for a paper copy, or "Save JSON" to back up your data for future editing.</li>
+  </ol>
+
+  <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:1.5rem 0 0.75rem;">Frequently Asked Questions</h3>
+
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">How many resume templates are available and which should I choose?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">There are four templates to choose from. The Classic template uses a traditional, clean layout suitable for most industries including finance, law, and government. The Modern template features blue accent headings and a contemporary design ideal for tech, marketing, and creative roles. The Minimal template uses understated formatting with subtle borders, perfect for designers and professionals who prefer a clean aesthetic. The ATS Friendly template uses Times New Roman font with simple formatting specifically optimized to pass through Applicant Tracking Systems used by large employers and recruitment agencies.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">Will my resume pass Applicant Tracking Systems (ATS)?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">If you choose the "ATS Friendly" template, your resume is specifically designed to pass through automated screening systems. This template avoids graphics, tables, columns, and fancy formatting that confuse ATS software. It uses standard section headings like "Professional Summary," "Work Experience," "Education," and "Skills" that ATS systems are programmed to recognize. To further improve your ATS score, use keywords from the job description naturally in your summary and experience sections. The PDF output uses clean text that automated parsers can read without issues.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">Can I add a photo to my resume?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">The current version of the resume builder does not include a photo upload feature. This is intentional for several reasons. In many countries including the United States, Canada, the United Kingdom, and Australia, including a photo on a resume is discouraged or even prohibited due to anti-discrimination laws. In India and some European countries, photos are more common but not always required. By omitting the photo, the tool keeps the resume focused on your qualifications and experience, which is what most hiring managers care about. If you need a photo, you can add one after downloading the PDF using a PDF editor.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">What sections are included in the resume and can I customize them?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">The resume builder includes the following sections: Personal Information (name, email, phone, location, LinkedIn), Professional Summary, Work Experience (with multiple entries), Education (with multiple entries), Skills, and Certifications (optional). You can add multiple work experience and education entries using the "+ Add" buttons, and remove any entry using the X button. The Professional Summary has a 400-character limit to keep it concise. Skills are entered as comma-separated values and displayed as tags. All sections are included in the PDF output, and the builder will skip any section you leave empty so your resume stays clean.</p>
+  </div>
+</section>
+
+    <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;">Last updated: June 2026</p>
     </main>
 
     <section class="next-step-section">

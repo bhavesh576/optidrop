@@ -53,9 +53,8 @@
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/tailwind.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css?v=2.1">
@@ -68,6 +67,7 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
 
     <header class="site-header">
         <div class="header-inner">
@@ -159,7 +159,7 @@
 
                     <!-- Stats -->
                     <div class="border-t border-slate-200 pt-6 mt-6">
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-2 gap-4 mb-4">
                             <div class="text-center">
                                 <span class="text-2xl font-extrabold text-blue-600" id="totalPomodoros">0</span>
                                 <span class="block text-xs text-slate-500 mt-1">Pomodoros Today</span>
@@ -168,6 +168,13 @@
                                 <span class="text-2xl font-extrabold text-green-600" id="totalMinutes">0</span>
                                 <span class="block text-xs text-slate-500 mt-1">Focus Minutes</span>
                             </div>
+                        </div>
+                        <!-- Session Stats Card -->
+                        <div id="sessionStatsCard" class="bg-gradient-to-br from-indigo-50 to-blue-100 border border-indigo-200 rounded-xl p-4 text-center">
+                            <p class="text-xs font-bold text-indigo-600 uppercase tracking-wide mb-1">Session Tracker</p>
+                            <p class="text-lg font-extrabold text-indigo-900">
+                                Today: <span id="todaySessions">0</span> sessions | All-time: <span id="alltimeSessions">0</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -219,6 +226,7 @@
                 </div>
             </div>
         </section>
+    <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;">Last updated: June 2026</p>
     </main>
 
     <footer class="site-footer">
@@ -242,6 +250,8 @@
     <script src="/common.js?v=2.1"></script>
     <script>
     (function() {
+        var TODAY_KEY = 'optidrop_pomodoro_today';
+        var TOTAL_KEY = 'optidrop_pomodoro_total';
         var timerDisplay = document.getElementById('timerDisplay');
         var timerRing = document.getElementById('timerRing');
         var timerSubtext = document.getElementById('timerSubtext');
@@ -254,6 +264,8 @@
         var longBreakMinInput = document.getElementById('longBreakMin');
         var totalPomodorosEl = document.getElementById('totalPomodoros');
         var totalMinutesEl = document.getElementById('totalMinutes');
+        var todaySessionsEl = document.getElementById('todaySessions');
+        var alltimeSessionsEl = document.getElementById('alltimeSessions');
 
         var circumference = 2 * Math.PI * 100; // 628.32
         var originalTitle = document.title;
@@ -265,6 +277,49 @@
         var remainingMs = 0;
         var intervalId = null;
         var paused = false;
+
+        // Session tracking with localStorage
+        function getToday() {
+            return new Date().toISOString().slice(0, 10);
+        }
+
+        function loadTodaySessions() {
+            try {
+                var data = JSON.parse(localStorage.getItem(TODAY_KEY));
+                if (data && data.date === getToday()) return data.count;
+            } catch(e) {}
+            return 0;
+        }
+
+        function saveTodaySessions(count) {
+            try {
+                localStorage.setItem(TODAY_KEY, JSON.stringify({ date: getToday(), count: count }));
+            } catch(e) {}
+        }
+
+        function loadAlltimeSessions() {
+            try {
+                var val = parseInt(localStorage.getItem(TOTAL_KEY));
+                return isNaN(val) ? 0 : val;
+            } catch(e) {}
+            return 0;
+        }
+
+        function saveAlltimeSessions(count) {
+            try {
+                localStorage.setItem(TOTAL_KEY, count.toString());
+            } catch(e) {}
+        }
+
+        function updateSessionStats() {
+            var todayCount = loadTodaySessions();
+            var alltimeCount = loadAlltimeSessions();
+            todaySessionsEl.textContent = todayCount;
+            alltimeSessionsEl.textContent = alltimeCount;
+        }
+
+        // Initialize session stats
+        updateSessionStats();
 
         function getWorkMs() { return parseInt(workMinInput.value) * 60 * 1000; }
         function getBreakMs() { return parseInt(breakMinInput.value) * 60 * 1000; }
@@ -351,6 +406,13 @@
                 totalPomodorosEl.textContent = totalPomodoros;
                 totalMinutesEl.textContent = totalMinutes;
                 updateDots();
+
+                // Track sessions in localStorage
+                var todayCount = loadTodaySessions() + 1;
+                saveTodaySessions(todayCount);
+                var alltimeCount = loadAlltimeSessions() + 1;
+                saveAlltimeSessions(alltimeCount);
+                updateSessionStats();
 
                 if (currentPomodoro >= 4) {
                     currentPomodoro = 0;

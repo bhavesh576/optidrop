@@ -101,10 +101,8 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
-
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="/tailwind.min.css">
+<!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -192,6 +190,7 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
 
     <!-- HEADER -->
     <header class="site-header">
@@ -250,11 +249,17 @@
                         </div>
                     </div>
 
-                    <!-- Flip Button -->
-                    <div class="max-w-md mx-auto mb-8">
+                    <!-- Flip Buttons -->
+                    <div class="max-w-md mx-auto mb-4">
                         <button id="btnFlip" class="w-full px-6 py-4 bg-gradient-to-r from-amber-500 to-yellow-500 text-white font-bold rounded-xl hover:from-amber-600 hover:to-yellow-600 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2 text-lg">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                             Flip the Coin
+                        </button>
+                    </div>
+                    <div class="max-w-md mx-auto mb-8">
+                        <button id="btnFlip10" class="w-full px-6 py-3 bg-gradient-to-r from-orange-400 to-amber-400 text-white font-bold rounded-xl hover:from-orange-500 hover:to-amber-500 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2 text-base">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            Flip 10x
                         </button>
                     </div>
 
@@ -296,6 +301,11 @@
                         <div id="recentFlips" class="flex flex-wrap gap-2">
                             <span class="text-sm text-slate-400">No flips yet</span>
                         </div>
+                    </div>
+
+                    <!-- Running Stats Bar -->
+                    <div id="runningStats" class="max-w-lg mx-auto mb-6 text-center text-sm font-semibold text-slate-600">
+                        <span id="runningStatsText">Heads: 0 (50%) | Tails: 0 (50%)</span>
                     </div>
 
                     <!-- Reset Button -->
@@ -402,6 +412,7 @@
                 </a>
             </div>
         </section>
+    <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;">Last updated: June 2026</p>
     </main>
 
     <footer class="site-footer">
@@ -497,10 +508,12 @@
     if(typeof trackRecentTool==='function')trackRecentTool('Coin Flip Simulator','/tools/fun/coin-flip.html');
     (function() {
         var STORAGE_KEY = 'optidrop_coin_flips';
+        var HISTORY_KEY = 'optidrop_coinflip_history';
         var coin = document.getElementById('coin');
         var coinShadow = document.getElementById('coinShadow');
         var resultDisplay = document.getElementById('resultDisplay');
         var btnFlip = document.getElementById('btnFlip');
+        var btnFlip10 = document.getElementById('btnFlip10');
         var btnReset = document.getElementById('btnReset');
         var isFlipping = false;
 
@@ -516,6 +529,30 @@
             try {
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
             } catch(e) {}
+        }
+
+        function loadHistory() {
+            try {
+                var data = localStorage.getItem(HISTORY_KEY);
+                if (data) return JSON.parse(data);
+            } catch(e) {}
+            return [];
+        }
+
+        function saveHistory(history) {
+            try {
+                localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+            } catch(e) {}
+        }
+
+        function updateRunningStats(stats) {
+            var h = stats.heads;
+            var t = stats.tails;
+            var total = h + t;
+            var hPct = total > 0 ? Math.round((h / total) * 100) : 50;
+            var tPct = total > 0 ? Math.round((t / total) * 100) : 50;
+            document.getElementById('runningStatsText').textContent =
+                'Heads: ' + h + ' (' + hPct + '%) | Tails: ' + t + ' (' + tPct + '%)';
         }
 
         function updateDisplay(stats) {
@@ -546,6 +583,8 @@
                     recentContainer.appendChild(span);
                 });
             }
+
+            updateRunningStats(stats);
         }
 
         function flipCoin() {
@@ -553,6 +592,8 @@
             isFlipping = true;
             btnFlip.disabled = true;
             btnFlip.classList.add('opacity-60');
+            btnFlip10.disabled = true;
+            btnFlip10.classList.add('opacity-60');
 
             var result = Math.random() < 0.5 ? 'heads' : 'tails';
 
@@ -588,20 +629,84 @@
                 stats.history.push(result);
                 if (stats.history.length > 50) stats.history = stats.history.slice(-50);
                 saveStats(stats);
+
+                // Save to localStorage history (last 20)
+                var flipHistory = loadHistory();
+                flipHistory.push(result);
+                if (flipHistory.length > 20) flipHistory = flipHistory.slice(-20);
+                saveHistory(flipHistory);
+
                 updateDisplay(stats);
 
                 isFlipping = false;
                 btnFlip.disabled = false;
                 btnFlip.classList.remove('opacity-60');
+                btnFlip10.disabled = false;
+                btnFlip10.classList.remove('opacity-60');
+            }, 1050);
+        }
+
+        function flipTenTimes() {
+            if (isFlipping) return;
+            isFlipping = true;
+            btnFlip.disabled = true;
+            btnFlip.classList.add('opacity-60');
+            btnFlip10.disabled = true;
+            btnFlip10.classList.add('opacity-60');
+
+            var results = [];
+            for (var i = 0; i < 10; i++) {
+                results.push(Math.random() < 0.5 ? 'heads' : 'tails');
+            }
+
+            var headsCount = results.filter(function(r) { return r === 'heads'; }).length;
+            var tailsCount = 10 - headsCount;
+
+            // Show batch result
+            resultDisplay.textContent = headsCount + ' Heads, ' + tailsCount + ' Tails';
+            resultDisplay.className = 'inline-block px-6 py-2 rounded-full bg-purple-100 text-purple-800 font-bold text-lg result-badge';
+
+            // Update stats
+            var stats = loadStats();
+            stats.total += 10;
+            stats.heads += headsCount;
+            stats.tails += tailsCount;
+            results.forEach(function(r) { stats.history.push(r); });
+            if (stats.history.length > 50) stats.history = stats.history.slice(-50);
+            saveStats(stats);
+
+            // Save to localStorage history (last 20)
+            var flipHistory = loadHistory();
+            results.forEach(function(r) { flipHistory.push(r); });
+            if (flipHistory.length > 20) flipHistory = flipHistory.slice(-20);
+            saveHistory(flipHistory);
+
+            updateDisplay(stats);
+
+            // Animate the coin once for visual feedback
+            coin.classList.remove('flipping-heads', 'flipping-tails');
+            coinShadow.classList.remove('flipping');
+            void coin.offsetWidth;
+            coinShadow.classList.add('flipping');
+            coin.classList.add('flipping-heads');
+
+            setTimeout(function() {
+                isFlipping = false;
+                btnFlip.disabled = false;
+                btnFlip.classList.remove('opacity-60');
+                btnFlip10.disabled = false;
+                btnFlip10.classList.remove('opacity-60');
             }, 1050);
         }
 
         btnFlip.addEventListener('click', flipCoin);
+        btnFlip10.addEventListener('click', flipTenTimes);
 
         btnReset.addEventListener('click', function() {
             if (confirm('Reset all coin flip statistics?')) {
                 var emptyStats = {total:0, heads:0, tails:0, history:[]};
                 saveStats(emptyStats);
+                saveHistory([]);
                 updateDisplay(emptyStats);
                 resultDisplay.textContent = 'Press the button to flip!';
                 resultDisplay.className = 'inline-block px-6 py-2 rounded-full bg-slate-100 text-slate-500 font-bold text-lg';
@@ -609,7 +714,7 @@
             }
         });
 
-        // Initialize display
+        // Initialize display from localStorage
         updateDisplay(loadStats());
     })();
     </script>

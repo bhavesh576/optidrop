@@ -116,10 +116,8 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
-
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="/tailwind.min.css">
+<!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -128,6 +126,7 @@
     <link rel="stylesheet" href="/styles.css?v=2.1">
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
 
     <!-- HEADER -->
     <header class="site-header">
@@ -284,6 +283,74 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- How We Build Our Tools -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">How We Build Our Tools</h2>
+            <p class="text-slate-600 mb-4 leading-relaxed">Every tool on OptiDrop is selected for its real-world utility, built with a privacy-first mindset, and designed to work with zero friction. We believe a great online tool should load fast, require no setup, and respect your time and data.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="bg-white border border-slate-200 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Utility-Driven</h3>
+                    <p class="text-sm text-slate-600">Each tool is chosen to solve a common, everyday problem. No filler, no gimmicks — only tools people actually need.</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Privacy-First</h3>
+                    <p class="text-sm text-slate-600">Every tool processes data locally in your browser. We never collect, store, or transmit your files or personal information.</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Zero Friction</h3>
+                    <p class="text-sm text-slate-600">No sign-ups, no downloads, no waiting. Open a tool, use it, and move on. That simple.</p>
+                </div>
+            </div>
+            <p class="text-slate-600 mt-4 leading-relaxed">All tools are thoroughly tested on mobile and desktop devices to ensure a consistent, reliable experience. We review and update the entire toolset monthly to keep everything running smoothly.</p>
+        </section>
+
+        <!-- Our Team -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Our Team</h2>
+            <p class="text-slate-600 leading-relaxed">OptiDrop is built by a small, dedicated team of independent developers and designers. We believe free tools should be genuinely free — no hidden agendas, no data harvesting, and no bait-and-switch tactics. Our mission is to create useful, accessible tools that respect your privacy and your time. We are passionate about building software that works for everyone, without compromise.</p>
+        </section>
+
+        <!-- Update Frequency -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Update Frequency</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="bg-white border border-slate-200 rounded-xl p-6 text-center">
+                    <div class="text-sm font-bold text-blue-600 mb-1">Last Updated</div>
+                    <div class="text-lg font-bold text-slate-900">June 2026</div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-6 text-center">
+                    <div class="text-sm font-bold text-green-600 mb-1">New Tools Added</div>
+                    <div class="text-lg font-bold text-slate-900">Monthly</div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-6 text-center">
+                    <div class="text-sm font-bold text-purple-600 mb-1">Full Review</div>
+                    <div class="text-lg font-bold text-slate-900">Quarterly</div>
+                </div>
+            </div>
+            <p class="text-slate-600 mt-4 leading-relaxed">We are committed to keeping OptiDrop fresh and up to date. New tools are added on a monthly basis, and the entire platform undergoes a comprehensive review every quarter to ensure quality, accuracy, and compatibility with the latest browsers and devices.</p>
+        </section>
+
+        <!-- Privacy Commitment -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Privacy Commitment</h2>
+            <div class="bg-white border border-slate-200 rounded-xl p-6">
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span class="text-slate-600"><strong class="text-slate-800">No file ever leaves your device.</strong> Every image, document, and piece of data you process on OptiDrop stays entirely within your browser.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span class="text-slate-600"><strong class="text-slate-800">All processing is local in your browser.</strong> We use JavaScript to handle everything on your device. No servers are involved in any tool's core functionality.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span class="text-slate-600"><strong class="text-slate-800">We have no access to your files or data.</strong> There is no backend that sees, stores, or processes your information. What you do on OptiDrop is completely private.</span>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>

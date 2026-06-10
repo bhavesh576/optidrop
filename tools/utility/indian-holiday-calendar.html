@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Holiday Calendar 2026 — National & State Holidays | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <meta name="description" content="View all Indian national and religious holidays for 2026. Includes Republic Day, Holi, Eid, Independence Day, Diwali, Christmas and more. Filter by holiday type.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/indian-holiday-calendar.html">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},
+        {"@type":"ListItem","position":2,"name":"Utility Tools","item":"https://optidrop.online/tools/utility/"},
+        {"@type":"ListItem","position":3,"name":"Indian Holiday Calendar","item":"https://optidrop.online/tools/utility/indian-holiday-calendar.html"}
+    ]}
+    </script>
+    <style>
+        .filter-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:9999px;font-size:13px;font-weight:500;cursor:pointer;border:1px solid #e2e8f0;background:#fff;color:#64748b;transition:all 0.15s;}
+        .filter-chip:hover{border-color:#93c5fd;color:#2563eb;}
+        .filter-chip.active{background:#2563eb;color:#fff;border-color:#2563eb;}
+        .holiday-card{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:12px;border:1px solid #e2e8f0;background:#fff;transition:all 0.15s;}
+        .holiday-card:hover{box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+        .holiday-date-box{width:56px;height:56px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;}
+        .holiday-date-box .day{font-size:1.25rem;line-height:1;}
+        .holiday-date-box .month{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.05em;opacity:0.8;}
+        .type-national{background:#fef2f2;color:#dc2626;border-color:#fecaca;}
+        .type-hindu{background:#fff7ed;color:#ea580c;border-color:#fed7aa;}
+        .type-muslim{background:#f0fdf4;color:#16a34a;border-color:#bbf7d0;}
+        .type-christian{background:#eff6ff;color:#2563eb;border-color:#bfdbfe;}
+        .badge{display:inline-block;padding:2px 8px;border-radius:9999px;font-size:11px;font-weight:600;}
+        .badge-national{background:#fef2f2;color:#dc2626;}
+        .badge-hindu{background:#fff7ed;color:#ea580c;}
+        .badge-muslim{background:#f0fdf4;color:#16a34a;}
+        .badge-christian{background:#eff6ff;color:#2563eb;}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+    <header class="site-header"></header>
+    <main class="flex-grow max-w-4xl mx-auto px-4 py-8 w-full">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">Indian Holiday Calendar 2026</h1>
+        <p class="text-slate-600 mb-6">All national and major religious holidays in India for the year 2026. Filter by type to find what matters to you.</p>
+
+        <!-- Next Holiday Countdown -->
+        <div id="nextHolidayCard" class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 mb-6 text-white hidden">
+            <p class="text-sm opacity-80 mb-1">Next Upcoming Holiday</p>
+            <h2 id="nextHolidayName" class="text-xl font-bold"></h2>
+            <p id="nextHolidayDate" class="text-sm opacity-90 mt-1"></p>
+            <p id="nextHolidayDays" class="text-3xl font-extrabold mt-2"></p>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="flex flex-wrap gap-2 mb-6" id="filterChips">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="national">National</button>
+            <button class="filter-chip" data-filter="hindu">Hindu</button>
+            <button class="filter-chip" data-filter="muslim">Muslim</button>
+            <button class="filter-chip" data-filter="christian">Christian</button>
+        </div>
+
+        <!-- Holiday List -->
+        <div id="holidayList" class="space-y-3"></div>
+        <p id="noResults" class="text-center text-slate-500 py-8 hidden">No holidays found for this filter.</p>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function(){
+        var holidays=[
+            {name:"New Year's Day",date:"2026-01-01",type:"national"},
+            {name:"Makar Sankranti / Pongal",date:"2026-01-14",type:"hindu"},
+            {name:"Republic Day",date:"2026-01-26",type:"national"},
+            {name:"Basant Panchami",date:"2026-02-02",type:"hindu"},
+            {name:"Maha Shivaratri",date:"2026-02-15",type:"hindu"},
+            {name:"Holi",date:"2026-03-14",type:"hindu"},
+            {name:"Ugadi / Gudi Padwa",date:"2026-03-22",type:"hindu"},
+            {name:"Ram Navami",date:"2026-04-02",type:"hindu"},
+            {name:"Eid ul-Fitr",date:"2026-04-01",type:"muslim"},
+            {name:"Ambedkar Jayanti",date:"2026-04-14",type:"national"},
+            {name:"Good Friday",date:"2026-04-03",type:"christian"},
+            {name:"Easter Sunday",date:"2026-04-05",type:"christian"},
+            {name:"May Day",date:"2026-05-01",type:"national"},
+            {name:"Buddha Purnima",date:"2026-05-12",type:"hindu"},
+            {name:"Eid ul-Adha (Bakrid)",date:"2026-06-07",type:"muslim"},
+            {name:"Rath Yatra",date:"2026-06-27",type:"hindu"},
+            {name:"Muharram",date:"2026-06-26",type:"muslim"},
+            {name:"Independence Day",date:"2026-08-15",type:"national"},
+            {name:"Janmashtami",date:"2026-08-16",type:"hindu"},
+            {name:"Ganesh Chaturthi",date:"2026-08-27",type:"hindu"},
+            {name:"Milad un-Nabi",date:"2026-08-25",type:"muslim"},
+            {name:"Onam",date:"2026-09-05",type:"hindu"},
+            {name:"Navratri Begins",date:"2026-10-10",type:"hindu"},
+            {name:"Dussehra (Vijayadashami)",date:"2026-10-19",type:"hindu"},
+            {name:"Gandhi Jayanti",date:"2026-10-02",type:"national"},
+            {name:"Diwali",date:"2026-10-20",type:"hindu"},
+            {name:"Govardhan Puja",date:"2026-10-21",type:"hindu"},
+            {name:"Bhai Dooj",date:"2026-10-22",type:"hindu"},
+            {name:"Guru Nanak Jayanti",date:"2026-11-05",type:"hindu"},
+            {name:"Christmas",date:"2026-12-25",type:"christian"}
+        ];
+
+        var monthNames=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+        var fullMonthNames=["January","February","March","April","May","June","July","August","September","October","November","December"];
+        var activeFilter='all';
+
+        function parseDate(d){var p=d.split('-');return new Date(parseInt(p[0]),parseInt(p[1])-1,parseInt(p[2]));}
+
+        function renderNextHoliday(){
+            var today=new Date();
+            today.setHours(0,0,0,0);
+            var next=null;
+            for(var i=0;i<holidays.length;i++){
+                var hd=parseDate(holidays[i].date);
+                if(hd>=today){next=holidays[i];break;}
+            }
+            if(!next){
+                document.getElementById('nextHolidayCard').classList.add('hidden');
+                return;
+            }
+            var card=document.getElementById('nextHolidayCard');
+            card.classList.remove('hidden');
+            document.getElementById('nextHolidayName').textContent=next.name;
+            var hd=parseDate(next.date);
+            document.getElementById('nextHolidayDate').textContent=fullMonthNames[hd.getMonth()]+' '+hd.getDate()+', '+hd.getFullYear()+' ('+next.type.charAt(0).toUpperCase()+next.type.slice(1)+')';
+            var diff=Math.ceil((hd-today)/(1000*60*60*24));
+            if(diff===0){
+                document.getElementById('nextHolidayDays').textContent='Today!';
+            }else if(diff===1){
+                document.getElementById('nextHolidayDays').textContent='Tomorrow';
+            }else{
+                document.getElementById('nextHolidayDays').textContent=diff+' days away';
+            }
+        }
+
+        function renderHolidays(){
+            var list=document.getElementById('holidayList');
+            var noResults=document.getElementById('noResults');
+            var filtered=holidays;
+            if(activeFilter!=='all'){
+                filtered=holidays.filter(function(h){return h.type===activeFilter;});
+            }
+            if(filtered.length===0){
+                list.innerHTML='';
+                noResults.classList.remove('hidden');
+                return;
+            }
+            noResults.classList.add('hidden');
+
+            var today=new Date();
+            today.setHours(0,0,0,0);
+            var html='';
+            var currentMonth=-1;
+
+            for(var i=0;i<filtered.length;i++){
+                var h=filtered[i];
+                var hd=parseDate(h.date);
+                var m=hd.getMonth();
+                if(m!==currentMonth){
+                    currentMonth=m;
+                    html+='<h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mt-6 mb-2">'+fullMonthNames[m]+' 2026</h3>';
+                }
+                var isPast=hd<today;
+                var diffDays=Math.ceil((hd-today)/(1000*60*60*24));
+                var daysLabel='';
+                if(diffDays===0)daysLabel='<span class="text-xs font-semibold text-blue-600 ml-2">Today</span>';
+                else if(diffDays===1)daysLabel='<span class="text-xs font-semibold text-blue-600 ml-2">Tomorrow</span>';
+                else if(diffDays>1&&diffDays<=30)daysLabel='<span class="text-xs font-semibold text-slate-400 ml-2">in '+diffDays+' days</span>';
+
+                var typeClass='type-'+h.type;
+                var badgeClass='badge-'+h.type;
+                var typeName=h.type.charAt(0).toUpperCase()+h.type.slice(1);
+
+                html+='<div class="holiday-card'+(isPast?' opacity-50':'')+'">';
+                html+='<div class="holiday-date-box '+typeClass+'">';
+                html+='<span class="day">'+hd.getDate()+'</span>';
+                html+='<span class="month">'+monthNames[m]+'</span>';
+                html+='</div>';
+                html+='<div class="flex-grow">';
+                html+='<div class="font-semibold text-slate-900">'+h.name+daysLabel+'</div>';
+                html+='<div class="text-xs text-slate-500 mt-0.5">'+fullMonthNames[hd.getMonth()]+' '+hd.getDate()+', '+hd.getFullYear()+' &middot; <span class="'+badgeClass+' badge">'+typeName+'</span></div>';
+                html+='</div>';
+                html+='</div>';
+            }
+            list.innerHTML=html;
+        }
+
+        // Filter chips
+        document.getElementById('filterChips').addEventListener('click',function(e){
+            var chip=e.target.closest('.filter-chip');
+            if(!chip)return;
+            var filter=chip.getAttribute('data-filter');
+            activeFilter=filter;
+            document.querySelectorAll('.filter-chip').forEach(function(c){c.classList.remove('active');});
+            chip.classList.add('active');
+            renderHolidays();
+        });
+
+        renderNextHoliday();
+        renderHolidays();
+    })();
+    </script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GST Calculator Free Online — No Upload Required | OptiDrop</title>
+    <title>Free GST Calculator — Add or Remove GST at 5%–28% | OptiDrop</title>
     <link rel="icon" type="image/png" href="/favicon.png?v=2">
     <link rel="shortcut icon" href="/favicon.png?v=2">
     <link rel="apple-touch-icon" href="/favicon.png?v=2">
@@ -100,10 +100,8 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
-
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="/tailwind.min.css">
+<!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -112,6 +110,7 @@
     <link rel="stylesheet" href="/styles.css?v=2.1">
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
 
     <!-- HEADER -->
     <header class="site-header">
@@ -336,6 +335,40 @@
                 </a>
             </div>
         </section>
+    <!-- Static About + FAQ for AdSense -->
+<section style="max-width:800px;margin:3rem auto 0;padding:1.5rem;">
+  <h2 style="font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.75rem;">GST Calculator — About This Tool</h2>
+  <p style="color:#475569;line-height:1.7;margin-bottom:1rem;">The OptiDrop GST Calculator is a free online tool that lets you add or remove Goods and Services Tax from any amount at all four standard Indian GST rates — 5%, 12%, 18%, and 28%. Whether you are a small business owner preparing invoices, a freelancer calculating project costs, or a consumer checking the tax breakdown on a bill, this calculator gives you instant and accurate results. Everything runs in your browser, so your financial data stays completely private.</p>
+
+  <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:1.5rem 0 0.5rem;">How to Use the GST Calculator</h3>
+  <ol style="color:#475569;line-height:1.8;padding-left:1.5rem;margin-bottom:1rem;">
+    <li>Enter the base amount (to add GST) or the final price (to remove GST) in the input field.</li>
+    <li>Select the applicable GST rate from the dropdown — 5%, 12%, 18%, or 28%.</li>
+    <li>Choose whether you want to add GST to a base price or extract GST from an inclusive price using the tab switcher.</li>
+    <li>Click the calculate button and instantly see the GST amount, original price, and total price displayed in a clear summary.</li>
+  </ol>
+
+  <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:1.5rem 0 0.75rem;">Frequently Asked Questions</h3>
+
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">What are the different GST rates in India and when do they apply?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">India uses a four-tier GST structure. The 5% rate applies to essential goods like packaged food items and economy-class air tickets. The 12% rate covers processed foods, business-class air tickets, and certain industrial inputs. The 18% rate is the most common and applies to most goods and services including electronics, restaurants, and professional services. The 28% rate is reserved for luxury and demerit items such as automobiles, tobacco products, and aerated beverages. Some goods and services are also exempt or taxed at 0%.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">What is the difference between adding GST and removing GST?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">Adding GST means calculating the tax on top of a base price to arrive at the final selling price. For example, if your product costs Rs. 1,000 and you add 18% GST, the total becomes Rs. 1,180. Removing GST (also called reverse GST) works the opposite way — you start with a GST-inclusive price and back-calculate the original amount. For Rs. 1,180 at 18%, the original price is Rs. 1,000 and the GST component is Rs. 180. This is useful when you receive a bill and want to know the pre-tax cost.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">What is IGST and how does it differ from CGST and SGST?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">IGST (Integrated GST) is charged on interstate transactions where the supplier and buyer are in different states. It is collected by the central government and then distributed between the centre and the destination state. CGST (Central GST) and SGST (State GST) are charged on intrastate transactions, where both parties are in the same state. In that case, the GST rate is split equally — for example, 18% GST becomes 9% CGST plus 9% SGST. The total tax burden remains the same regardless of whether IGST or CGST+SGST applies.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">Can businesses use this GST calculator for filing returns?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">Yes, this calculator is helpful for quickly verifying GST amounts on invoices before filing returns. However, it is a tool for calculation only — it does not file returns directly or connect to the GST portal. For actual return filing, you will need to use the official GSTN portal or authorized GST Suvidha Providers. The calculator is ideal for double-checking figures, preparing quotations, and understanding the tax breakdown on purchases. All calculations happen locally in your browser, so your financial data is never sent to any server.</p>
+  </div>
+</section>
+
+    <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;">Last updated: June 2026</p>
     </main>
 
         <footer class="site-footer">

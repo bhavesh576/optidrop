@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Vehicle Number Plate Validator | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Validate Indian vehicle registration number plates online. Check format, identify state, and distinguish standard vs BH series plates. Free browser-based tool.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Indian Vehicle Number Plate Validator | OptiDrop">
+    <meta property="og:description" content="Validate Indian vehicle registration number plates. Check format and identify state. Free browser-based tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/utility/vehicle-number-validator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/vehicle-number-validator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Utility Tools", "item": "https://optidrop.online/category/utility-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Vehicle Number Validator", "item": "https://optidrop.online/tools/utility/vehicle-number-validator.html"}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
+
+    <header class="site-header"></header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Indian Vehicle Number Plate Validator</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Validate Indian vehicle registration numbers. Identify the state, district, and vehicle type. Supports both standard and BH series plates.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="mb-6">
+                        <label for="vehicleInput" class="block text-sm font-bold text-slate-700 mb-2">Enter Vehicle Registration Number</label>
+                        <input type="text" id="vehicleInput" placeholder="e.g. MH12AB1234 or 22BH1234AA" maxlength="12"
+                            class="block w-full px-4 py-4 text-lg border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-mono uppercase"
+                            autocomplete="off" spellcheck="false" style="letter-spacing:0.1em;">
+                    </div>
+
+                    <button id="btnValidate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Validate
+                    </button>
+
+                    <div id="resultCard" class="hidden mt-8">
+                        <!-- Result injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the format of Indian vehicle numbers?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Standard Indian vehicle numbers follow the format: 2-letter state code + 2-digit district code + 1-2 letter series + 4-digit number (e.g., MH12AB1234). The new BH series uses: registration year + BH + 4 digits + 1-2 letters (e.g., 22BH1234AA).
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the BH series registration?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        BH (Bharat Series) is a new registration format introduced in 2021 for vehicles of defense personnel, government employees, and others who frequently transfer across states. It eliminates the need to re-register when moving to a different state.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does this verify the registration with RTO?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        No. This tool only validates the format of the number plate and identifies the state code. It does not verify with any RTO database. To check registration details, visit the official Vahan portal (vahan.parivahan.gov.in).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/utility/pan-card-validator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">PAN Card Validator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Validate Indian PAN card numbers.</span>
+                </a>
+                <a href="/tools/utility/indian-number-format.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Indian Number Format</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert numbers to lakh, crore format.</span>
+                </a>
+                <a href="/tools/password-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Password Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate strong, secure passwords.</span>
+                </a>
+            </div>
+        </section>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;text-align:center;">Last updated: June 2026</p>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function() {
+        var vehicleInput = document.getElementById('vehicleInput');
+        var btnValidate = document.getElementById('btnValidate');
+        var resultCard = document.getElementById('resultCard');
+
+        var STANDARD_REGEX = /^([A-Z]{2})(\d{2})([A-Z]{1,2})(\d{4})$/;
+        var BH_REGEX = /^(\d{2})BH(\d{4})([A-Z]{1,2})$/;
+
+        var STATE_CODES = {
+            'AN': 'Andaman and Nicobar Islands',
+            'AP': 'Andhra Pradesh',
+            'AR': 'Arunachal Pradesh',
+            'AS': 'Assam',
+            'BR': 'Bihar',
+            'CG': 'Chhattisgarh',
+            'CH': 'Chandigarh',
+            'DD': 'Daman and Diu',
+            'DL': 'Delhi',
+            'DN': 'Dadra and Nagar Haveli',
+            'GA': 'Goa',
+            'GJ': 'Gujarat',
+            'HP': 'Himachal Pradesh',
+            'HR': 'Haryana',
+            'JH': 'Jharkhand',
+            'JK': 'Jammu and Kashmir',
+            'KA': 'Karnataka',
+            'KL': 'Kerala',
+            'LA': 'Ladakh',
+            'LD': 'Lakshadweep',
+            'MH': 'Maharashtra',
+            'ML': 'Meghalaya',
+            'MN': 'Manipur',
+            'MP': 'Madhya Pradesh',
+            'MZ': 'Mizoram',
+            'NL': 'Nagaland',
+            'OD': 'Odisha',
+            'PB': 'Punjab',
+            'PY': 'Puducherry',
+            'RJ': 'Rajasthan',
+            'SK': 'Sikkim',
+            'TN': 'Tamil Nadu',
+            'TR': 'Tripura',
+            'TS': 'Telangana',
+            'UK': 'Uttarakhand',
+            'UP': 'Uttar Pradesh',
+            'WB': 'West Bengal'
+        };
+
+        function validate() {
+            var input = vehicleInput.value.trim().toUpperCase().replace(/\s+/g, '');
+            vehicleInput.value = input;
+
+            if (!input) {
+                showToast('Please enter a vehicle number.', 'error');
+                return;
+            }
+
+            // Check BH series first
+            var bhMatch = input.match(BH_REGEX);
+            if (bhMatch) {
+                var year = '20' + bhMatch[1];
+                var number = bhMatch[2];
+                var letters = bhMatch[3];
+                showResult(true, input, {
+                    format: 'BH Series (Bharat Series)',
+                    year: year,
+                    number: number,
+                    series: letters,
+                    state: 'All India (Bharat Series)',
+                    type: 'New BH Format'
+                });
+                return;
+            }
+
+            // Check standard format
+            var stdMatch = input.match(STANDARD_REGEX);
+            if (stdMatch) {
+                var stateCode = stdMatch[1];
+                var districtCode = stdMatch[2];
+                var seriesCode = stdMatch[3];
+                var vehicleNumber = stdMatch[4];
+                var stateName = STATE_CODES[stateCode] || 'Unknown State';
+
+                showResult(true, input, {
+                    format: 'Standard Format',
+                    state: stateName,
+                    stateCode: stateCode,
+                    district: districtCode,
+                    series: seriesCode,
+                    number: vehicleNumber,
+                    type: 'Standard Registration'
+                });
+                return;
+            }
+
+            // Invalid
+            showResult(false, input, null);
+        }
+
+        function showResult(isValid, input, details) {
+            var iconSvg = isValid
+                ? '<svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+                : '<svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
+
+            var borderColor = isValid ? 'border-green-200 bg-green-50' : 'border-red-200 bg-red-50';
+            var textColor = isValid ? 'text-green-800' : 'text-red-800';
+
+            var html = '<div class="border-2 ' + borderColor + ' rounded-2xl p-6 text-center">' +
+                '<div class="flex justify-center mb-3">' + iconSvg + '</div>' +
+                '<p class="text-lg font-bold ' + textColor + ' mb-2">' +
+                    (isValid ? 'Valid number plate format!' : 'Invalid number plate format.') + '</p>' +
+                '<p class="font-mono text-2xl font-extrabold text-slate-900 tracking-wider mb-4">' + input + '</p>';
+
+            if (isValid && details) {
+                html += '<div class="bg-white rounded-xl border border-slate-200 p-4 text-left space-y-3">';
+
+                if (details.format === 'BH Series (Bharat Series)') {
+                    html += '<div class="flex justify-between"><span class="text-sm font-semibold text-slate-500">Format</span><span class="text-sm font-bold text-slate-900">' + details.format + '</span></div>';
+                    html += '<div class="flex justify-between"><span class="text-sm font-semibold text-slate-500">Registration Year</span><span class="text-sm font-bold text-blue-600">' + details.year + '</span></div>';
+                    html += '<div class="flex justify-between"><span class="text-sm font-semibold text-slate-500">Number</span><span class="font-mono text-sm font-bold text-slate-900">' + details.number + '</span></div>';
+                    html += '<div class="flex justify-between"><span class="text-sm font-semibold text-slate-500">Series</span><span class="font-mono text-sm font-bold text-slate-900">' + details.series + '</span></div>';
+                    html += '<div class="flex justify-between"><span class="text-sm font-semibold text-slate-500">Coverage</span><span class="text-sm font-bold text-green-600">' + details.state + '</span></div>';
+                } else {
+                    html += '<div class="flex justify-between"><span class="text-sm font-semibold text-slate-500">State</span><span class="text-sm font-bold text-blue-600">' + details.state + '</span></div>';
+                    html += '<div class="flex justify-between"><span class="text-sm font-semibold text-slate-500">State Code</span><span class="font-mono text-lg font-bold text-slate-900">' + details.stateCode + '</span></div>';
+                    html += '<div class="flex justify-between"><span class="text-sm font-semibold text-slate-500">District Code</span><span class="font-mono text-sm font-bold text-slate-900">' + details.district + '</span></div>';
+                    html += '<div class="flex justify-between"><span class="text-sm font-semibold text-slate-500">Series</span><span class="font-mono text-sm font-bold text-slate-900">' + details.series + '</span></div>';
+                    html += '<div class="flex justify-between"><span class="text-sm font-semibold text-slate-500">Vehicle Number</span><span class="font-mono text-sm font-bold text-slate-900">' + details.number + '</span></div>';
+                }
+
+                html += '</div>';
+            } else if (!isValid) {
+                html += '<p class="text-sm text-red-600 mt-2">Expected formats:<br>' +
+                    '<span class="font-mono">MH12AB1234</span> (Standard) or <span class="font-mono">22BH1234AA</span> (BH Series)</p>';
+            }
+
+            html += '</div>';
+            resultCard.innerHTML = html;
+            resultCard.classList.remove('hidden');
+        }
+
+        btnValidate.addEventListener('click', validate);
+
+        vehicleInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') { e.preventDefault(); validate(); }
+        });
+
+        vehicleInput.addEventListener('input', function() {
+            this.value = this.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+        });
+    })();
+    </script>
+</body>
+</html>

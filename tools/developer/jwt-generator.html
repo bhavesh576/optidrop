@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free JWT Generator — Create HS256 Tokens Online | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Generate JWT tokens with HMAC-SHA256 signing. Edit header and payload JSON, enter a secret, and see the signed token with color-coded parts. Free online tool.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Free JWT Generator — Create HS256 Tokens Online | OptiDrop">
+    <meta property="og:description" content="Generate JWT tokens with HMAC-SHA256 signing. Edit header and payload JSON. Free online tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/jwt-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/jwt-generator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/category/developer-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "JWT Generator", "item": "https://optidrop.online/tools/developer/jwt-generator.html"}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
+
+    <header class="site-header"></header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">JWT Generator — Create HS256 Tokens Online</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate signed JWT tokens with HMAC-SHA256. Edit the header and payload as JSON, enter a secret, and get a color-coded JWT. 100% browser-based using Web Crypto API.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Header JSON -->
+                    <div class="mb-4">
+                        <label for="jwtHeader" class="block text-sm font-bold text-slate-700 mb-2">
+                            Header
+                            <span class="ml-2 text-xs font-bold px-2 py-0.5 rounded-full bg-purple-100 text-purple-700">PURPLE</span>
+                        </label>
+                        <textarea id="jwtHeader" rows="4"
+                            class="block w-full px-4 py-3 text-sm border-2 border-purple-200 rounded-xl focus:ring-0 focus:border-purple-500 text-slate-900 font-mono resize-y bg-purple-50"
+                            autocomplete="off" spellcheck="false">{
+  "alg": "HS256",
+  "typ": "JWT"
+}</textarea>
+                    </div>
+
+                    <!-- Payload JSON -->
+                    <div class="mb-4">
+                        <label for="jwtPayload" class="block text-sm font-bold text-slate-700 mb-2">
+                            Payload
+                            <span class="ml-2 text-xs font-bold px-2 py-0.5 rounded-full bg-cyan-100 text-cyan-700">CYAN</span>
+                        </label>
+                        <textarea id="jwtPayload" rows="6"
+                            class="block w-full px-4 py-3 text-sm border-2 border-cyan-200 rounded-xl focus:ring-0 focus:border-cyan-500 text-slate-900 font-mono resize-y bg-cyan-50"
+                            autocomplete="off" spellcheck="false">{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "iat": 1516239022
+}</textarea>
+                    </div>
+
+                    <!-- Secret -->
+                    <div class="mb-6">
+                        <label for="jwtSecret" class="block text-sm font-bold text-slate-700 mb-2">Secret Key</label>
+                        <input type="text" id="jwtSecret" value="your-256-bit-secret" placeholder="Enter your secret key"
+                            class="block w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900 font-mono"
+                            autocomplete="off" spellcheck="false">
+                    </div>
+
+                    <!-- Generate Button -->
+                    <button id="btnGenerate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+                        Generate JWT
+                    </button>
+
+                    <!-- Output -->
+                    <div id="jwtOutput" class="hidden mt-6">
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Generated JWT Token</label>
+                        <div class="bg-slate-900 rounded-2xl p-5 overflow-x-auto">
+                            <pre id="jwtToken" class="text-sm font-mono leading-relaxed whitespace-pre-wrap break-all" style="color:#e2e8f0;"></pre>
+                        </div>
+                        <div class="mt-3 flex flex-wrap gap-2 text-xs">
+                            <span class="inline-flex items-center gap-1"><span class="w-3 h-3 rounded bg-purple-500 inline-block"></span> Header</span>
+                            <span class="text-slate-400">+</span>
+                            <span class="inline-flex items-center gap-1"><span class="w-3 h-3 rounded bg-cyan-500 inline-block"></span> Payload</span>
+                            <span class="text-slate-400">+</span>
+                            <span class="inline-flex items-center gap-1"><span class="w-3 h-3 rounded bg-red-500 inline-block"></span> Signature</span>
+                        </div>
+                        <div class="mt-4 flex gap-3">
+                            <button id="btnCopy" class="flex-1 px-6 py-3 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                Copy Token
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+                        <strong>Warning:</strong> This tool is for development and testing purposes only. Do not use it to generate tokens for production authentication systems. Never share real secrets in online tools.
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is JWT?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        JWT (JSON Web Token) is an open standard (RFC 7519) for securely transmitting information between parties as a JSON object. It consists of three parts: a header (algorithm and token type), a payload (claims), and a signature. The signature ensures the token has not been tampered with.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is HMAC-SHA256?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        HMAC-SHA256 (HS256) is a symmetric signing algorithm for JWTs. It uses a shared secret key to create a hash-based message authentication code. Both the sender and receiver must have the same secret key. This tool uses the Web Crypto API (SubtleCrypto) for cryptographic operations.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is this tool safe for production use?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        No. This tool is intended for development, testing, and learning purposes only. Never enter production secrets or generate tokens for real authentication systems using online tools. In production, generate tokens server-side using your backend framework's JWT library.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/developer/jwt-decoder.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">JWT Decoder</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Decode and inspect JWT tokens.</span>
+                </a>
+                <a href="/tools/developer/hash-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Hash Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate SHA-256 and SHA-512 hashes.</span>
+                </a>
+                <a href="/tools/developer/base64.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Base64 Encoder</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode Base64 strings.</span>
+                </a>
+            </div>
+        </section>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;text-align:center;">Last updated: June 2026</p>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function() {
+        var headerInput = document.getElementById('jwtHeader');
+        var payloadInput = document.getElementById('jwtPayload');
+        var secretInput = document.getElementById('jwtSecret');
+        var btnGenerate = document.getElementById('btnGenerate');
+        var jwtOutput = document.getElementById('jwtOutput');
+        var jwtToken = document.getElementById('jwtToken');
+        var btnCopy = document.getElementById('btnCopy');
+
+        function base64UrlEncode(str) {
+            return btoa(str).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+        }
+
+        function arrayBufferToBase64Url(buffer) {
+            var bytes = new Uint8Array(buffer);
+            var binary = '';
+            for (var i = 0; i < bytes.length; i++) {
+                binary += String.fromCharCode(bytes[i]);
+            }
+            return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+        }
+
+        async function generateJWT() {
+            var headerStr = headerInput.value.trim();
+            var payloadStr = payloadInput.value.trim();
+            var secret = secretInput.value;
+
+            if (!headerStr) { showToast('Please enter a JWT header.', 'error'); return; }
+            if (!payloadStr) { showToast('Please enter a JWT payload.', 'error'); return; }
+            if (!secret) { showToast('Please enter a secret key.', 'error'); return; }
+
+            // Validate JSON
+            var headerObj, payloadObj;
+            try {
+                headerObj = JSON.parse(headerStr);
+            } catch (e) {
+                showToast('Invalid JSON in header: ' + e.message, 'error');
+                return;
+            }
+            try {
+                payloadObj = JSON.parse(payloadStr);
+            } catch (e) {
+                showToast('Invalid JSON in payload: ' + e.message, 'error');
+                return;
+            }
+
+            // Encode header and payload
+            var headerEncoded = base64UrlEncode(JSON.stringify(headerObj));
+            var payloadEncoded = base64UrlEncode(JSON.stringify(payloadObj));
+            var signingInput = headerEncoded + '.' + payloadEncoded;
+
+            try {
+                // Import the secret key
+                var encoder = new TextEncoder();
+                var keyData = encoder.encode(secret);
+                var cryptoKey = await crypto.subtle.importKey(
+                    'raw',
+                    keyData,
+                    { name: 'HMAC', hash: 'SHA-256' },
+                    false,
+                    ['sign']
+                );
+
+                // Sign
+                var signature = await crypto.subtle.sign(
+                    'HMAC',
+                    cryptoKey,
+                    encoder.encode(signingInput)
+                );
+
+                var signatureEncoded = arrayBufferToBase64Url(signature);
+
+                var fullToken = signingInput + '.' + signatureEncoded;
+
+                // Display color-coded token
+                jwtToken.innerHTML =
+                    '<span style="color:#a855f7;">' + headerEncoded + '</span>' +
+                    '<span style="color:#64748b;">.</span>' +
+                    '<span style="color:#06b6d4;">' + payloadEncoded + '</span>' +
+                    '<span style="color:#64748b;">.</span>' +
+                    '<span style="color:#ef4444;">' + signatureEncoded + '</span>';
+
+                jwtOutput.classList.remove('hidden');
+                showToast('JWT generated successfully!');
+            } catch (e) {
+                showToast('Failed to generate JWT: ' + e.message, 'error');
+            }
+        }
+
+        btnGenerate.addEventListener('click', generateJWT);
+
+        btnCopy.addEventListener('click', function() {
+            var text = jwtToken.textContent;
+            if (!text) { showToast('Generate a JWT first.', 'error'); return; }
+            copyToClipboard(text);
+        });
+    })();
+    </script>
+</body>
+</html>

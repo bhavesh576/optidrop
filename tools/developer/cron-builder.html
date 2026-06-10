@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Cron Expression Builder — Cron Job Generator | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Build cron expressions visually with a human-readable description. Includes presets for common schedules. Free online cron job generator.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Visual Cron Expression Builder — Cron Job Generator | OptiDrop">
+    <meta property="og:description" content="Build cron expressions visually with a human-readable description. Free online cron job generator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/cron-builder.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/cron-builder.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/category/developer-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Cron Builder", "item": "https://optidrop.online/tools/developer/cron-builder.html"}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
+
+    <header class="site-header"></header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Visual Cron Expression Builder</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Build cron expressions visually with live human-readable descriptions. Includes presets for common schedules. Copy with one click.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- Presets -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-bold text-slate-700 mb-3">Quick Presets</label>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="preset-btn px-4 py-2 text-sm font-semibold rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all" data-cron="*/5 * * * *">Every 5 min</button>
+                            <button class="preset-btn px-4 py-2 text-sm font-semibold rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all" data-cron="0 * * * *">Every hour</button>
+                            <button class="preset-btn px-4 py-2 text-sm font-semibold rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all" data-cron="0 0 * * *">Daily midnight</button>
+                            <button class="preset-btn px-4 py-2 text-sm font-semibold rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all" data-cron="0 9 * * 1">Weekly Mon 9am</button>
+                            <button class="preset-btn px-4 py-2 text-sm font-semibold rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all" data-cron="0 0 1 * *">Monthly 1st</button>
+                            <button class="preset-btn px-4 py-2 text-sm font-semibold rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all" data-cron="0 0 * * 0">Every Sunday</button>
+                            <button class="preset-btn px-4 py-2 text-sm font-semibold rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all" data-cron="0 9 * * 1-5">Weekdays 9am</button>
+                            <button class="preset-btn px-4 py-2 text-sm font-semibold rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all" data-cron="0 0 1 1 *">Yearly Jan 1</button>
+                        </div>
+                    </div>
+
+                    <!-- Input Fields -->
+                    <div class="grid grid-cols-5 gap-3 mb-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 mb-1 text-center">Minute</label>
+                            <input type="text" id="cronMinute" value="*" class="cron-field block w-full px-3 py-3 text-center border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900 font-mono text-lg" autocomplete="off">
+                            <p class="text-xs text-slate-400 mt-1 text-center">0-59</p>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 mb-1 text-center">Hour</label>
+                            <input type="text" id="cronHour" value="*" class="cron-field block w-full px-3 py-3 text-center border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900 font-mono text-lg" autocomplete="off">
+                            <p class="text-xs text-slate-400 mt-1 text-center">0-23</p>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 mb-1 text-center">Day (Month)</label>
+                            <input type="text" id="cronDay" value="*" class="cron-field block w-full px-3 py-3 text-center border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900 font-mono text-lg" autocomplete="off">
+                            <p class="text-xs text-slate-400 mt-1 text-center">1-31</p>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 mb-1 text-center">Month</label>
+                            <input type="text" id="cronMonth" value="*" class="cron-field block w-full px-3 py-3 text-center border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900 font-mono text-lg" autocomplete="off">
+                            <p class="text-xs text-slate-400 mt-1 text-center">1-12</p>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 mb-1 text-center">Day (Week)</label>
+                            <input type="text" id="cronDow" value="*" class="cron-field block w-full px-3 py-3 text-center border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900 font-mono text-lg" autocomplete="off">
+                            <p class="text-xs text-slate-400 mt-1 text-center">0-6 (Sun=0)</p>
+                        </div>
+                    </div>
+
+                    <!-- Result -->
+                    <div class="bg-slate-900 rounded-2xl p-6 mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Cron Expression</span>
+                            <button id="btnCopy" class="px-4 py-1.5 text-xs font-bold bg-slate-700 text-white rounded-lg hover:bg-slate-600 transition-all">Copy</button>
+                        </div>
+                        <pre id="cronOutput" class="text-2xl font-bold text-green-400 font-mono text-center">* * * * *</pre>
+                    </div>
+
+                    <div id="humanReadable" class="bg-blue-50 border-2 border-blue-200 rounded-xl p-4 text-center">
+                        <p id="humanText" class="text-lg font-semibold text-blue-800">Runs every minute</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is a cron expression?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A cron expression is a string of five fields that specifies a schedule for running recurring tasks. The fields represent: minute (0-59), hour (0-23), day of month (1-31), month (1-12), and day of week (0-6, Sunday=0). Special characters include * (any), , (list), - (range), and / (step).
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What does */5 mean in cron?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        */5 means "every 5th value" within the valid range. In the minute field, */5 means every 5 minutes (0, 5, 10, 15, ...). The */N syntax is a shorthand for a step value and is equivalent to writing 0-59/5.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I use this for Linux crontab?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. This tool generates standard 5-field cron expressions compatible with Linux crontab, systemd timers, and most scheduling systems. Some systems also support a 6th field for seconds, but that is not covered here.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/developer/regex-tester.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Regex Tester</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Test regular expressions with live matching.</span>
+                </a>
+                <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Format, validate, and minify JSON.</span>
+                </a>
+                <a href="/tools/developer/timestamp-converter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Timestamp Converter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert Unix timestamps to dates.</span>
+                </a>
+            </div>
+        </section>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;text-align:center;">Last updated: June 2026</p>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function() {
+        var fields = {
+            minute: document.getElementById('cronMinute'),
+            hour: document.getElementById('cronHour'),
+            day: document.getElementById('cronDay'),
+            month: document.getElementById('cronMonth'),
+            dow: document.getElementById('cronDow')
+        };
+        var cronOutput = document.getElementById('cronOutput');
+        var humanText = document.getElementById('humanText');
+        var btnCopy = document.getElementById('btnCopy');
+
+        var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var MONTHS = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        function getCronExpression() {
+            return fields.minute.value.trim() + ' ' + fields.hour.value.trim() + ' ' + fields.day.value.trim() + ' ' + fields.month.value.trim() + ' ' + fields.dow.value.trim();
+        }
+
+        function describeField(value, unit, names) {
+            if (value === '*') return 'every ' + unit;
+
+            // Step: */N
+            if (value.indexOf('*/') === 0) {
+                var step = parseInt(value.substring(2));
+                return 'every ' + step + ' ' + unit + 's';
+            }
+
+            // Range: N-M
+            if (value.indexOf('-') !== -1 && value.indexOf('/') === -1) {
+                var parts = value.split('-');
+                var start = names ? names[parseInt(parts[0])] || parts[0] : parts[0];
+                var end = names ? names[parseInt(parts[1])] || parts[1] : parts[1];
+                return start + ' through ' + end;
+            }
+
+            // Step range: N-M/S
+            if (value.indexOf('/') !== -1) {
+                var stepParts = value.split('/');
+                var range = stepParts[0];
+                var stepVal = stepParts[1];
+                if (range === '*') return 'every ' + stepVal + ' ' + unit + 's';
+                return 'every ' + stepVal + ' ' + unit + 's from ' + range;
+            }
+
+            // List: N,M,O
+            if (value.indexOf(',') !== -1) {
+                var items = value.split(',');
+                var named = items.map(function(v) { return names ? names[parseInt(v)] || v : v; });
+                return named.join(', ');
+            }
+
+            // Single value
+            return names ? names[parseInt(value)] || value : value;
+        }
+
+        function updateOutput() {
+            var cron = getCronExpression();
+            cronOutput.textContent = cron;
+
+            // Build human-readable description
+            var minDesc = describeField(fields.minute.value.trim(), 'minute', null);
+            var hourDesc = describeField(fields.hour.value.trim(), 'hour', null);
+            var dayDesc = describeField(fields.day.value.trim(), 'day', null);
+            var monthDesc = describeField(fields.month.value.trim(), 'month', MONTHS);
+            var dowDesc = describeField(fields.dow.value.trim(), 'day of week', DAYS);
+
+            var min = fields.minute.value.trim();
+            var hour = fields.hour.value.trim();
+            var day = fields.day.value.trim();
+            var month = fields.month.value.trim();
+            var dow = fields.dow.value.trim();
+
+            var desc = 'Runs ';
+
+            if (min === '*' && hour === '*' && day === '*' && month === '*' && dow === '*') {
+                desc = 'Runs every minute';
+            } else if (min.indexOf('*/') === 0 && hour === '*' && day === '*' && month === '*' && dow === '*') {
+                desc = 'Runs every ' + min.substring(2) + ' minutes';
+            } else if (hour === '*' && day === '*' && month === '*' && dow === '*') {
+                desc = 'Runs at minute ' + min + ' of every hour';
+            } else if (day === '*' && month === '*' && dow === '*') {
+                desc = 'Runs at ' + padTime(hour) + ':' + padTime(min) + ' every day';
+            } else if (month === '*' && dow === '*') {
+                desc = 'Runs at ' + padTime(hour) + ':' + padTime(min) + ' on day ' + day + ' of every month';
+            } else if (month === '*' && day === '*') {
+                desc = 'Runs at ' + padTime(hour) + ':' + padTime(min) + ' on ' + dowDesc;
+            } else if (dow === '*' && day === '*') {
+                desc = 'Runs at ' + padTime(hour) + ':' + padTime(min) + ' every day in ' + monthDesc;
+            } else {
+                desc = 'Runs at ' + padTime(hour) + ':' + padTime(min);
+                if (day !== '*') desc += ' on day ' + day;
+                if (month !== '*') desc += ' in ' + monthDesc;
+                if (dow !== '*') desc += ' on ' + dowDesc;
+            }
+
+            humanText.textContent = desc;
+        }
+
+        function padTime(v) {
+            if (v === '*') return '*';
+            if (v.indexOf('*') !== -1 || v.indexOf('/') !== -1 || v.indexOf(',') !== -1 || v.indexOf('-') !== -1) return v;
+            return v.length < 2 ? '0' + v : v;
+        }
+
+        // Listen for input changes
+        Object.keys(fields).forEach(function(key) {
+            fields[key].addEventListener('input', updateOutput);
+        });
+
+        // Presets
+        document.querySelectorAll('.preset-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var cron = this.getAttribute('data-cron').split(' ');
+                fields.minute.value = cron[0];
+                fields.hour.value = cron[1];
+                fields.day.value = cron[2];
+                fields.month.value = cron[3];
+                fields.dow.value = cron[4];
+                updateOutput();
+                showToast('Preset applied!');
+            });
+        });
+
+        // Copy
+        btnCopy.addEventListener('click', function() {
+            copyToClipboard(getCronExpression());
+        });
+
+        // Initial update
+        updateOutput();
+    })();
+    </script>
+</body>
+</html>

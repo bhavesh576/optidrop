@@ -4,7 +4,7 @@
     <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Calculator Free Online — No Upload Required | OptiDrop</title>
+    <title>Free BMI Calculator — Check BMI & Healthy Weight Range | OptiDrop</title>
     <link rel="icon" type="image/png" href="/favicon.png?v=2">
     <link rel="shortcut icon" href="/favicon.png?v=2">
     <link rel="apple-touch-icon" href="/favicon.png?v=2">
@@ -100,10 +100,8 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',900:'#1e3a8a'}}}}}</script>
-
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="/tailwind.min.css">
+<!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -112,6 +110,7 @@
     <link rel="stylesheet" href="/styles.css?v=2.1">
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
 
     <!-- HEADER -->
     <header class="site-header">
@@ -212,8 +211,8 @@
                     <!-- Result Area -->
                     <div id="bmiResult" class="hidden mt-8 max-w-md mx-auto">
                         <!-- BMI Value -->
-                        <div class="text-center mb-6">
-                            <p class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-1">Your BMI</p>
+                        <div id="bmiResultBox" class="rounded-2xl p-6 mb-6 text-center transition-all duration-300">
+                            <p class="text-sm font-bold uppercase tracking-wider mb-1" id="bmiLabel" style="opacity:0.7">Your BMI</p>
                             <p id="bmiValue" class="text-5xl font-extrabold text-slate-900">—</p>
                             <p id="bmiCategory" class="mt-2 text-lg font-bold px-4 py-1.5 rounded-full inline-block">—</p>
                         </div>
@@ -276,7 +275,7 @@
                         <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
-                        BMI stands for Body Mass Index. It is a numerical value calculated from your weight and height that provides a simple way to categorize body weight. It helps assess whether a person is underweight, normal weight, overweight, or obese based on their height-to-weight ratio.
+                        BMI stands for Body Mass Index — a simple numerical value calculated from your weight and height that helps categorize your body weight status. It is one of the most widely used screening tools by healthcare professionals worldwide to quickly assess whether a person falls into the underweight, normal weight, overweight, or obese category. This matters because BMI serves as an early indicator of potential health risks associated with being underweight (such as malnutrition and weakened immunity) or overweight (such as heart disease, type 2 diabetes, and joint problems). For example, if you are 170 cm tall and weigh 75 kg, your BMI would be approximately 26.0, placing you in the overweight category, which may prompt you to consider lifestyle changes or consult a doctor. OptiDrop calculates your BMI entirely in your browser, so your weight and height data are never uploaded to any server, keeping your health information completely private.
                     </div>
                 </div>
 
@@ -286,7 +285,7 @@
                         <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
-                        BMI is calculated by dividing your weight in kilograms by the square of your height in meters (BMI = kg/m2). For imperial units, the formula is (weight in pounds / height in inches2) x 703. This calculator does the math instantly — just enter your height and weight.
+                        BMI is calculated by dividing your weight in kilograms by the square of your height in meters using the formula BMI = kg/m squared. For imperial units, the formula is (weight in pounds divided by height in inches squared) multiplied by 703. This matters because knowing the formula helps you verify results and understand what the number actually represents — it is essentially a measure of your body density relative to your height. For example, a person weighing 65 kg who is 1.65 meters tall would have a BMI of 65 / (1.65 x 1.65) = 23.9, which falls in the normal range. OptiDrop handles both metric and imperial calculations automatically, so you do not need to remember or apply any formula yourself. Just enter your measurements and get instant results — all processed locally in your browser without uploading your personal health data anywhere.
                     </div>
                 </div>
 
@@ -296,7 +295,7 @@
                         <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
-                        A normal BMI for adults falls between 18.5 and 24.9. Below 18.5 is considered underweight, 25 to 29.9 is overweight, and 30 or above is classified as obese. These ranges apply to adults aged 20 and older.
+                        A normal BMI for adults aged 20 and older falls between 18.5 and 24.9, according to the World Health Organization (WHO). Below 18.5 is classified as underweight, 25.0 to 29.9 is overweight, and 30.0 or above is classified as obese. Within the obese category, 30-34.9 is Class I obesity, 35-39.9 is Class II, and 40+ is Class III (severe obesity). This matters because these categories are linked to different levels of health risk — being in the normal range is associated with the lowest risk of weight-related health conditions. For example, if your BMI is 22.5, you are comfortably in the normal range, but if it is 27.0, you are in the overweight category and may benefit from increased physical activity and dietary changes. OptiDrop also shows your healthy weight range based on your height, giving you a concrete target to aim for. All calculations happen locally in your browser.
                     </div>
                 </div>
 
@@ -306,12 +305,46 @@
                         <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
-                        BMI is a useful screening tool but has limitations. It does not distinguish between muscle and fat mass, so athletes may have a high BMI despite being fit. It also does not account for age, sex, bone density, or fat distribution. For a complete health assessment, consult a healthcare professional.
+                        BMI is a useful and widely accepted screening tool, but it does have important limitations. It does not distinguish between muscle mass and fat mass, so a muscular athlete or bodybuilder may have a high BMI (25+) despite having very low body fat. BMI also does not account for age, sex, bone density, or where fat is distributed on the body (abdominal fat carries higher health risks than fat on the hips). This matters because relying solely on BMI can give a misleading picture of your health — for example, an elderly person may have a normal BMI but low muscle mass, which is a health concern. For a complete health assessment, consider additional metrics like waist circumference, body fat percentage, and blood work, and always consult a healthcare professional. OptiDrop provides BMI as a quick reference tool, and since all calculations run locally in your browser, your personal health measurements are never shared with any server.
                     </div>
                 </div>
 
             </div>
         </section>
+    <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;">Last updated: June 2026</p>
+
+<!-- Static About + FAQ for AdSense -->
+<section style="max-width:800px;margin:3rem auto 0;padding:1.5rem;">
+  <h2 style="font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.75rem;">BMI Calculator — About This Tool</h2>
+  <p style="color:#475569;line-height:1.7;margin-bottom:1rem;">OptiDrop BMI Calculator instantly computes your Body Mass Index using either metric units (kilograms and centimeters) or imperial units (pounds, feet, and inches). It displays your BMI value, weight category (underweight, normal, overweight, or obese), a visual color-coded scale, and the healthy weight range for your height. BMI is one of the most widely used health screening tools by doctors and fitness professionals worldwide. All calculations happen in your browser, so your personal health measurements are never shared with any server.</p>
+
+  <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:1.5rem 0 0.5rem;">How to Use BMI Calculator</h3>
+  <ol style="color:#475569;line-height:1.8;padding-left:1.5rem;margin-bottom:1rem;">
+    <li>Select your preferred unit system: Metric (kg/cm) or Imperial (lbs/ft/in) using the toggle buttons at the top.</li>
+    <li>Enter your height — in centimeters for metric, or in feet and inches for imperial.</li>
+    <li>Enter your weight — in kilograms for metric, or in pounds for imperial.</li>
+    <li>Click Calculate BMI to see your BMI value, category, position on the visual scale, and healthy weight range.</li>
+  </ol>
+
+  <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:1.5rem 0 0.75rem;">Frequently Asked Questions</h3>
+
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">What is BMI and why is it important?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">BMI stands for Body Mass Index — a simple numerical value calculated from your weight and height that helps categorize your body weight status. It is one of the most widely used screening tools by healthcare professionals worldwide to quickly assess whether a person is underweight, normal weight, overweight, or obese. BMI matters because it serves as an early indicator of potential health risks: being underweight may signal malnutrition or weakened immunity, while being overweight increases the risk of heart disease, type 2 diabetes, and joint problems. OptiDrop calculates your BMI entirely in your browser, so your weight and height data are never uploaded to any server.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">What is a healthy or normal BMI range?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">According to the World Health Organization (WHO), a normal BMI for adults aged 20 and older falls between 18.5 and 24.9. Below 18.5 is classified as underweight, 25.0 to 29.9 is overweight, and 30.0 or above is classified as obese. Within the obese category, 30-34.9 is Class I, 35-39.9 is Class II, and 40+ is Class III (severe obesity). These ranges are associated with different levels of health risk — being in the normal range is linked to the lowest risk of weight-related conditions. OptiDrop also calculates and displays the specific healthy weight range for your exact height, giving you a concrete target to aim for.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">How accurate is BMI as a health measure?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">BMI is a useful and widely accepted screening tool, but it has important limitations. It does not distinguish between muscle mass and fat mass, so a muscular athlete or bodybuilder may have a high BMI (25+) despite having very low body fat. BMI also does not account for age, sex, bone density, or where fat is distributed on the body — abdominal fat carries higher health risks than fat stored on the hips. For a complete health assessment, consider additional metrics like waist circumference, body fat percentage, waist-to-hip ratio, and blood work, and always consult a healthcare professional for personalized advice.</p>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <strong style="color:#0f172a;">What are the limitations of BMI?</strong>
+    <p style="color:#475569;line-height:1.7;margin-top:0.25rem;">BMI has several well-documented limitations. It was developed primarily based on data from European populations and may not accurately reflect health risks for all ethnic groups — for example, Asian populations may have higher health risks at lower BMI values. BMI also does not differentiate between fat and lean body mass, making it unreliable for athletes, bodybuilders, and the elderly who may have low muscle mass despite a normal BMI. Additionally, BMI does not consider factors like age, sex, pregnancy, or medical conditions. It should be used as one of several screening tools, not as a sole diagnostic measure. OptiDrop provides BMI as a quick reference, and since all calculations run locally in your browser, your personal health data stays completely private.</p>
+  </div>
+</section>
     </main>
 
     <section class="next-step-section">
@@ -508,6 +541,31 @@
             bmiCategory.textContent = category;
             bmiCategory.style.background = catColor + '20';
             bmiCategory.style.color = catColor;
+
+            // Color the result box based on category
+            var bmiResultBox = document.getElementById('bmiResultBox');
+            var bmiLabel = document.getElementById('bmiLabel');
+            if (bmi < 18.5) {
+                // Underweight - blue
+                bmiResultBox.style.background = 'linear-gradient(135deg, #dbeafe, #bfdbfe)';
+                bmiResultBox.style.border = '2px solid #93c5fd';
+                bmiLabel.style.color = '#1d4ed8';
+            } else if (bmi < 25) {
+                // Normal - green
+                bmiResultBox.style.background = 'linear-gradient(135deg, #dcfce7, #bbf7d0)';
+                bmiResultBox.style.border = '2px solid #86efac';
+                bmiLabel.style.color = '#15803d';
+            } else if (bmi < 30) {
+                // Overweight - yellow
+                bmiResultBox.style.background = 'linear-gradient(135deg, #fef9c3, #fef08a)';
+                bmiResultBox.style.border = '2px solid #fde047';
+                bmiLabel.style.color = '#a16207';
+            } else {
+                // Obese - red
+                bmiResultBox.style.background = 'linear-gradient(135deg, #fee2e2, #fecaca)';
+                bmiResultBox.style.border = '2px solid #fca5a5';
+                bmiLabel.style.color = '#b91c1c';
+            }
 
             // Position marker on scale (map BMI 10-40 to 0-100%)
             var pct = Math.max(0, Math.min(100, ((bmi - 10) / 30) * 100));

@@ -3132,3 +3132,113 @@ body { font-size: 16px; }
 .dark-mode .bcard-preview [style*="color:#333"] {
     color: #0f172a !important; /* Keep original colors in export previews */
 }
+
+/* ── Favorite Button ─────────────────────────────────────── */
+.fav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    padding: 0;
+}
+.fav-btn:hover {
+    border-color: #f59e0b;
+    background: #fffbeb;
+    transform: scale(1.1);
+}
+.fav-btn.favorited {
+    border-color: #f59e0b;
+    background: #fffbeb;
+}
+.fav-btn.favorited:hover {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+.dark-mode .fav-btn {
+    background: #1e293b;
+    border-color: #334155;
+}
+.dark-mode .fav-btn:hover {
+    border-color: #f59e0b;
+    background: #422006;
+}
+.dark-mode .fav-btn.favorited {
+    border-color: #f59e0b;
+    background: #422006;
+}
+.fav-icon {
+    transition: all 0.2s ease;
+}
+
+/* ── PWA Install Prompt ──────────────────────────────────── */
+.pwa-install-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 400px;
+    animation: slideUpFade 0.4s ease-out;
+}
+.pwa-install-banner button {
+    background: white;
+    color: #2563eb;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.pwa-install-banner .pwa-dismiss {
+    background: transparent;
+    color: rgba(255,255,255,0.7);
+    padding: 0.25rem;
+    font-size: 1.2rem;
+}
+
+/* ── Focus Styles for Accessibility ──────────────────────── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+.cmd-palette-item:focus-visible,
+.tool-card:focus-visible,
+.category-card:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: -2px;
+}
+
+/* ── Performance Optimizations ───────────────────────────── */
+.tool-card,.category-card,.faq-item,.blog-card{content-visibility:auto;contain-intrinsic-size:0 220px;}
+.ad-container,ins.adsbygoogle{min-height:90px;}
+
+/* ── Skip Link Accessibility ──────────────────────────────── */
+.skip-link{position:absolute;top:-120%;left:1rem;background:#2563eb;color:#fff;padding:.5rem 1rem;border-radius:.375rem;z-index:9999;text-decoration:none;font-weight:600;transition:top .2s;}
+.skip-link:focus{top:1rem;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}}
+h1,h2,h3{text-wrap:balance;}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:#0f172a;}
+::-webkit-scrollbar-thumb{background:#334155;border-radius:4px;}
+button,[role="button"],select,.tool-card,.category-card{min-height:44px;}

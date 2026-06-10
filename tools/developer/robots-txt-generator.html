@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free robots.txt Generator | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Generate robots.txt files for your website. Control search engine crawling with User-agent, Disallow, Allow, Crawl-delay, and Sitemap directives. Free online tool.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Free robots.txt Generator | OptiDrop">
+    <meta property="og:description" content="Generate robots.txt files for your website. Control search engine crawling. Free online tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/robots-txt-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/robots-txt-generator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/category/developer-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Robots.txt Generator", "item": "https://optidrop.online/tools/developer/robots-txt-generator.html"}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
+
+    <header class="site-header"></header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Free robots.txt Generator</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate a robots.txt file for your website. Control which pages search engines can crawl and index. Download or copy with one click.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+
+                    <!-- User-agent -->
+                    <div class="mb-6">
+                        <label for="userAgent" class="block text-sm font-bold text-slate-700 mb-2">User-agent</label>
+                        <select id="userAgent" class="block w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900 bg-white">
+                            <option value="*">* (All bots)</option>
+                            <option value="Googlebot">Googlebot (Google)</option>
+                            <option value="Bingbot">Bingbot (Bing)</option>
+                            <option value="Slurp">Slurp (Yahoo)</option>
+                            <option value="DuckDuckBot">DuckDuckBot (DuckDuckGo)</option>
+                            <option value="Baiduspider">Baiduspider (Baidu)</option>
+                            <option value="YandexBot">YandexBot (Yandex)</option>
+                        </select>
+                    </div>
+
+                    <!-- Disallow Paths -->
+                    <div class="mb-6">
+                        <label for="disallowPaths" class="block text-sm font-bold text-slate-700 mb-2">Disallow Paths <span class="text-slate-400 font-normal">(one per line)</span></label>
+                        <textarea id="disallowPaths" rows="5" placeholder="/admin/&#10;/private/&#10;/tmp/&#10;/cgi-bin/"
+                            class="block w-full px-4 py-3 text-sm border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900 font-mono resize-y"
+                            autocomplete="off" spellcheck="false"></textarea>
+                    </div>
+
+                    <!-- Allow Paths -->
+                    <div class="mb-6">
+                        <label for="allowPaths" class="block text-sm font-bold text-slate-700 mb-2">Allow Paths <span class="text-slate-400 font-normal">(one per line, optional)</span></label>
+                        <textarea id="allowPaths" rows="3" placeholder="/public/&#10;/blog/"
+                            class="block w-full px-4 py-3 text-sm border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900 font-mono resize-y"
+                            autocomplete="off" spellcheck="false"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <!-- Crawl-delay -->
+                        <div>
+                            <label for="crawlDelay" class="block text-sm font-bold text-slate-700 mb-2">Crawl-delay <span class="text-slate-400 font-normal">(seconds, optional)</span></label>
+                            <input type="number" id="crawlDelay" placeholder="e.g. 10" min="0" class="block w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900" autocomplete="off">
+                        </div>
+                        <!-- Sitemap -->
+                        <div>
+                            <label for="sitemapUrl" class="block text-sm font-bold text-slate-700 mb-2">Sitemap URL <span class="text-slate-400 font-normal">(optional)</span></label>
+                            <input type="url" id="sitemapUrl" placeholder="https://example.com/sitemap.xml" class="block w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <button id="btnGenerate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        Generate robots.txt
+                    </button>
+
+                    <!-- Output -->
+                    <div class="hidden mt-6" id="outputSection">
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Your robots.txt</label>
+                        <textarea id="robotsOutput" rows="10" readonly
+                            class="block w-full px-4 py-4 text-sm border-2 border-slate-200 rounded-xl bg-slate-900 text-green-400 font-mono resize-y"
+                            style="line-height:1.6;"></textarea>
+                        <div class="mt-3 flex gap-3">
+                            <button id="btnCopy" class="flex-1 px-6 py-3 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                Copy
+                            </button>
+                            <button id="btnDownload" class="flex-1 px-6 py-3 bg-slate-600 text-white font-bold rounded-xl hover:bg-slate-700 transition-all flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is a robots.txt file?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A robots.txt file is a text file placed at the root of your website (e.g., https://example.com/robots.txt) that tells search engine crawlers which pages or sections of your site they are allowed or not allowed to crawl. It follows the Robots Exclusion Protocol.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Where do I put the robots.txt file?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Upload the robots.txt file to the root directory of your website so it is accessible at https://yourdomain.com/robots.txt. It must be at the root — crawlers will not look for it in subdirectories.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does robots.txt prevent indexing?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        No. robots.txt controls crawling, not indexing. A page blocked by robots.txt can still appear in search results if other pages link to it. To prevent indexing, use a noindex meta tag or X-Robots-Tag HTTP header instead.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/developer/meta-tag-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Meta Tag Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate HTML meta tags for SEO.</span>
+                </a>
+                <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Format, validate, and minify JSON.</span>
+                </a>
+                <a href="/tools/developer/url-encoder.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">URL Encoder</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode URLs.</span>
+                </a>
+            </div>
+        </section>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;text-align:center;">Last updated: June 2026</p>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function() {
+        var userAgent = document.getElementById('userAgent');
+        var disallowPaths = document.getElementById('disallowPaths');
+        var allowPaths = document.getElementById('allowPaths');
+        var crawlDelay = document.getElementById('crawlDelay');
+        var sitemapUrl = document.getElementById('sitemapUrl');
+        var btnGenerate = document.getElementById('btnGenerate');
+        var outputSection = document.getElementById('outputSection');
+        var robotsOutput = document.getElementById('robotsOutput');
+        var btnCopy = document.getElementById('btnCopy');
+        var btnDownload = document.getElementById('btnDownload');
+
+        function generate() {
+            var lines = [];
+
+            lines.push('User-agent: ' + userAgent.value);
+            lines.push('');
+
+            // Disallow paths
+            var disallow = disallowPaths.value.trim().split('\n').map(function(l) { return l.trim(); }).filter(function(l) { return l; });
+            if (disallow.length === 0) {
+                // Default: allow all
+            } else {
+                disallow.forEach(function(path) {
+                    lines.push('Disallow: ' + path);
+                });
+            }
+            lines.push('');
+
+            // Allow paths
+            var allow = allowPaths.value.trim().split('\n').map(function(l) { return l.trim(); }).filter(function(l) { return l; });
+            allow.forEach(function(path) {
+                lines.push('Allow: ' + path);
+            });
+            if (allow.length > 0) lines.push('');
+
+            // Crawl-delay
+            var delay = crawlDelay.value.trim();
+            if (delay && parseInt(delay) >= 0) {
+                lines.push('Crawl-delay: ' + delay);
+                lines.push('');
+            }
+
+            // Sitemap
+            var sitemap = sitemapUrl.value.trim();
+            if (sitemap) {
+                lines.push('Sitemap: ' + sitemap);
+            }
+
+            robotsOutput.value = lines.join('\n').trim();
+            outputSection.classList.remove('hidden');
+            showToast('robots.txt generated!');
+        }
+
+        btnGenerate.addEventListener('click', generate);
+
+        btnCopy.addEventListener('click', function() {
+            if (!robotsOutput.value) { showToast('Generate robots.txt first.', 'error'); return; }
+            copyToClipboard(robotsOutput.value);
+        });
+
+        btnDownload.addEventListener('click', function() {
+            if (!robotsOutput.value) { showToast('Generate robots.txt first.', 'error'); return; }
+            var blob = new Blob([robotsOutput.value], { type: 'text/plain' });
+            var link = document.createElement('a');
+            link.download = 'robots.txt';
+            link.href = URL.createObjectURL(blob);
+            link.click();
+            URL.revokeObjectURL(link.href);
+            showToast('robots.txt downloaded!');
+        });
+    })();
+    </script>
+</body>
+</html>

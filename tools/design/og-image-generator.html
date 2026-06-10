@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free OG Image Generator — Create 1200x630 Social Images | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <meta name="description" content="Create Open Graph and social media images at 1200x630 pixels. Free OG image generator with gradient backgrounds, title, subtitle, and brand name. Download as PNG.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://optidrop.online/tools/design/og-image-generator.html">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://optidrop.online"},
+        {"@type":"ListItem","position":2,"name":"Design Tools","item":"https://optidrop.online/tools/design/"},
+        {"@type":"ListItem","position":3,"name":"OG Image Generator","item":"https://optidrop.online/tools/design/og-image-generator.html"}
+    ]}
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+    <header class="site-header"></header>
+    <main class="flex-grow max-w-4xl mx-auto px-4 py-8 w-full">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6">OG Image Generator</h1>
+        <p class="text-slate-600 mb-6">Create 1200x630 Open Graph and social media images with gradient backgrounds. Perfect for sharing links on Twitter, Facebook, LinkedIn, and more.</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Controls -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4">Customize Your Image</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Title Text</label>
+                        <input type="text" id="ogTitle" value="Your Amazing Title" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" maxlength="80">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Subtitle Text</label>
+                        <input type="text" id="ogSubtitle" value="A brief description goes here" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" maxlength="120">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Brand Name</label>
+                        <input type="text" id="ogBrand" value="OptiDrop" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" maxlength="30">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Gradient Start</label>
+                            <input type="color" id="color1" value="#667eea" class="w-full h-10 rounded-lg cursor-pointer border border-slate-300">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Gradient End</label>
+                            <input type="color" id="color2" value="#764ba2" class="w-full h-10 rounded-lg cursor-pointer border border-slate-300">
+                        </div>
+                    </div>
+                    <button id="generateBtn" class="w-full px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">Generate Image</button>
+                </div>
+            </div>
+
+            <!-- Preview -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4">Preview <span class="text-sm font-normal text-slate-500">(50% scale)</span></h2>
+                <div class="border border-slate-200 rounded-lg overflow-hidden">
+                    <canvas id="previewCanvas" width="600" height="315" style="width:100%;height:auto;display:block;"></canvas>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-3 justify-center">
+                    <button id="downloadBtn" class="px-5 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">Download 1200x630 PNG</button>
+                </div>
+                <p class="text-xs text-slate-500 text-center mt-3">Output: 1200 x 630 pixels — ideal for OG images, Twitter Cards, and LinkedIn shares.</p>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function(){
+        function showToast(msg,type){
+            var c=document.getElementById('toast-container');
+            if(!c)return;
+            var t=document.createElement('div');
+            t.className='toast toast-'+(type||'info');
+            t.textContent=msg;
+            c.appendChild(t);
+            setTimeout(function(){t.remove();},3000);
+        }
+
+        var titleInput=document.getElementById('ogTitle');
+        var subtitleInput=document.getElementById('ogSubtitle');
+        var brandInput=document.getElementById('ogBrand');
+        var color1Input=document.getElementById('color1');
+        var color2Input=document.getElementById('color2');
+        var previewCanvas=document.getElementById('previewCanvas');
+        var ctx=previewCanvas.getContext('2d');
+        var generateBtn=document.getElementById('generateBtn');
+        var downloadBtn=document.getElementById('downloadBtn');
+
+        function renderPreview(){
+            var W=1200,H=630;
+            // Draw to preview canvas at 50% scale
+            var pw=600,ph=315;
+            previewCanvas.width=pw;
+            previewCanvas.height=ph;
+
+            // Create gradient
+            var grad=ctx.createLinearGradient(0,0,W,H);
+            grad.addColorStop(0,color1Input.value);
+            grad.addColorStop(1,color2Input.value);
+
+            // Scale context for 50% preview
+            ctx.save();
+            ctx.scale(pw/W,ph/H);
+
+            // Background gradient
+            ctx.fillStyle=grad;
+            ctx.fillRect(0,0,W,H);
+
+            // Subtle pattern overlay
+            ctx.globalAlpha=0.05;
+            for(var i=0;i<20;i++){
+                ctx.beginPath();
+                ctx.arc(Math.random()*W,Math.random()*H,Math.random()*200+50,0,Math.PI*2);
+                ctx.fillStyle='#ffffff';
+                ctx.fill();
+            }
+            ctx.globalAlpha=1;
+
+            // Brand name (top left)
+            ctx.fillStyle='rgba(255,255,255,0.8)';
+            ctx.font='600 28px Inter, sans-serif';
+            ctx.textAlign='left';
+            ctx.textBaseline='top';
+            ctx.fillText(brandInput.value||'Brand',60,50);
+
+            // Title (center)
+            var title=titleInput.value||'Your Title Here';
+            ctx.fillStyle='#ffffff';
+            ctx.font='800 64px Inter, sans-serif';
+            ctx.textAlign='center';
+            ctx.textBaseline='middle';
+            wrapText(ctx,title,W/2,H/2-20,W-120,76);
+
+            // Subtitle
+            var subtitle=subtitleInput.value||'';
+            if(subtitle){
+                ctx.fillStyle='rgba(255,255,255,0.85)';
+                ctx.font='400 30px Inter, sans-serif';
+                wrapText(ctx,subtitle,W/2,H/2+80,W-140,40);
+            }
+
+            // Decorative line
+            ctx.strokeStyle='rgba(255,255,255,0.3)';
+            ctx.lineWidth=2;
+            ctx.beginPath();
+            ctx.moveTo(W/2-80,H/2+140);
+            ctx.lineTo(W/2+80,H/2+140);
+            ctx.stroke();
+
+            ctx.restore();
+        }
+
+        function wrapText(context,text,x,y,maxWidth,lineHeight){
+            var words=text.split(' ');
+            var line='';
+            var lines=[];
+            for(var n=0;n<words.length;n++){
+                var testLine=line+words[n]+' ';
+                var metrics=context.measureText(testLine);
+                if(metrics.width>maxWidth&&n>0){
+                    lines.push(line.trim());
+                    line=words[n]+' ';
+                }else{
+                    line=testLine;
+                }
+            }
+            lines.push(line.trim());
+            var startY=y-((lines.length-1)*lineHeight)/2;
+            for(var i=0;i<lines.length;i++){
+                context.fillText(lines[i],x,startY+i*lineHeight);
+            }
+        }
+
+        function generateFullSize(){
+            var W=1200,H=630;
+            var offscreen=document.createElement('canvas');
+            offscreen.width=W;
+            offscreen.height=H;
+            var octx=offscreen.getContext('2d');
+
+            var grad=octx.createLinearGradient(0,0,W,H);
+            grad.addColorStop(0,color1Input.value);
+            grad.addColorStop(1,color2Input.value);
+
+            octx.fillStyle=grad;
+            octx.fillRect(0,0,W,H);
+
+            // Subtle pattern overlay
+            octx.globalAlpha=0.05;
+            for(var i=0;i<20;i++){
+                octx.beginPath();
+                octx.arc(Math.random()*W,Math.random()*H,Math.random()*200+50,0,Math.PI*2);
+                octx.fillStyle='#ffffff';
+                octx.fill();
+            }
+            octx.globalAlpha=1;
+
+            // Brand name
+            octx.fillStyle='rgba(255,255,255,0.8)';
+            octx.font='600 28px Inter, sans-serif';
+            octx.textAlign='left';
+            octx.textBaseline='top';
+            octx.fillText(brandInput.value||'Brand',60,50);
+
+            // Title
+            var title=titleInput.value||'Your Title Here';
+            octx.fillStyle='#ffffff';
+            octx.font='800 64px Inter, sans-serif';
+            octx.textAlign='center';
+            octx.textBaseline='middle';
+            wrapText(octx,title,W/2,H/2-20,W-120,76);
+
+            // Subtitle
+            var subtitle=subtitleInput.value||'';
+            if(subtitle){
+                octx.fillStyle='rgba(255,255,255,0.85)';
+                octx.font='400 30px Inter, sans-serif';
+                wrapText(octx,subtitle,W/2,H/2+80,W-140,40);
+            }
+
+            // Decorative line
+            octx.strokeStyle='rgba(255,255,255,0.3)';
+            octx.lineWidth=2;
+            octx.beginPath();
+            octx.moveTo(W/2-80,H/2+140);
+            octx.lineTo(W/2+80,H/2+140);
+            octx.stroke();
+
+            return offscreen;
+        }
+
+        // Live preview on input change
+        [titleInput,subtitleInput,brandInput,color1Input,color2Input].forEach(function(el){
+            el.addEventListener('input',renderPreview);
+        });
+
+        generateBtn.addEventListener('click',function(){
+            renderPreview();
+            showToast('Image preview updated!','success');
+        });
+
+        downloadBtn.addEventListener('click',function(){
+            var fullCanvas=generateFullSize();
+            var link=document.createElement('a');
+            link.download='og-image-1200x630.png';
+            link.href=fullCanvas.toDataURL('image/png');
+            link.click();
+            showToast('OG image downloaded at 1200x630!','success');
+            if(window.OptiTrack)OptiTrack.downloadDone('OG Image Generator','png');
+        });
+
+        // Initial render
+        renderPreview();
+    })();
+    </script>
+</body>
+</html>

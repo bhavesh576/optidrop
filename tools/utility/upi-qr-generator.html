@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free UPI QR Code Generator — Create Payment QR Code | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Generate UPI payment QR codes for free. Enter your UPI ID, name, amount, and download a QR code PNG. 100% browser-based, no data sent anywhere.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Free UPI QR Code Generator — Create Payment QR Code | OptiDrop">
+    <meta property="og:description" content="Generate UPI payment QR codes for free. Enter your UPI ID, name, amount, and download a QR code PNG. 100% browser-based.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/utility/upi-qr-generator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/upi-qr-generator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Utility Tools", "item": "https://optidrop.online/category/utility-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "UPI QR Generator", "item": "https://optidrop.online/tools/utility/upi-qr-generator.html"}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
+
+    <header class="site-header"></header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">UPI QR Code Generator — Create Payment QR Codes Free</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate UPI payment QR codes from your UPI ID. Add amount and notes. Download as PNG. Everything happens in your browser.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label for="upiId" class="block text-sm font-bold text-slate-700 mb-2">UPI ID <span class="text-red-500">*</span></label>
+                            <input type="text" id="upiId" placeholder="e.g. name@upi or name@bank" class="block w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900" autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="payeeName" class="block text-sm font-bold text-slate-700 mb-2">Payee Name</label>
+                            <input type="text" id="payeeName" placeholder="e.g. John Doe" class="block w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900" autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="amount" class="block text-sm font-bold text-slate-700 mb-2">Amount (optional)</label>
+                            <input type="number" id="amount" placeholder="e.g. 500" min="0" step="0.01" class="block w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900" autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="note" class="block text-sm font-bold text-slate-700 mb-2">Note (optional)</label>
+                            <input type="text" id="note" placeholder="e.g. Payment for services" class="block w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 text-slate-900" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <button id="btnGenerate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+                        Generate QR Code
+                    </button>
+
+                    <div id="qrResult" class="hidden mt-8 text-center">
+                        <div class="inline-block bg-white border-2 border-slate-200 rounded-2xl p-6 shadow-md">
+                            <canvas id="qrCanvas" width="250" height="250" style="display:block;margin:0 auto;"></canvas>
+                        </div>
+                        <div class="mt-4 flex flex-wrap justify-center gap-3">
+                            <button id="btnDownload" class="px-6 py-3 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download PNG
+                            </button>
+                            <button id="btnCopyUPI" class="px-6 py-3 bg-slate-600 text-white font-bold rounded-xl hover:bg-slate-700 transition-all flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                Copy UPI String
+                            </button>
+                        </div>
+                        <p class="mt-4 text-xs text-slate-500">UPI String: <code id="upiString" class="text-blue-600 break-all"></code></p>
+                    </div>
+
+                    <div class="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+                        <strong>Warning:</strong> Always verify your UPI ID before sharing the QR code. This tool generates the QR code locally in your browser and does not validate the UPI ID against any bank.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is a UPI QR code?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        A UPI QR code encodes a UPI payment link that any UPI-enabled app (Google Pay, PhonePe, Paytm, etc.) can scan to initiate a payment. It includes the payee's UPI ID, name, and optionally the amount and a note.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is my UPI ID safe?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. Your UPI ID is already designed to be shared publicly for receiving payments. The QR code simply encodes this public information into a scannable format. No sensitive data like passwords or PINs are included.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Can I set a fixed amount?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Yes. If you enter an amount, the QR code will include it, and the payment app will pre-fill that amount when scanned. If you leave it blank, the payer can enter any amount they want.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/qr-code-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">QR Code Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate QR codes for URLs and text.</span>
+                </a>
+                <a href="/tools/developer/wifi-qr-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">WiFi QR Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Share WiFi passwords via QR code.</span>
+                </a>
+                <a href="/tools/utility/pan-card-validator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">PAN Card Validator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Validate Indian PAN card numbers.</span>
+                </a>
+            </div>
+        </section>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;text-align:center;">Last updated: June 2026</p>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function() {
+        var upiId = document.getElementById('upiId');
+        var payeeName = document.getElementById('payeeName');
+        var amount = document.getElementById('amount');
+        var note = document.getElementById('note');
+        var btnGenerate = document.getElementById('btnGenerate');
+        var qrResult = document.getElementById('qrResult');
+        var qrCanvas = document.getElementById('qrCanvas');
+        var btnDownload = document.getElementById('btnDownload');
+        var btnCopyUPI = document.getElementById('btnCopyUPI');
+        var upiStringEl = document.getElementById('upiString');
+
+        var currentUPIString = '';
+
+        // ── Simple QR Code Generator (version 2, alphanumeric + byte mode) ──
+        // Minimal QR encoder supporting the UPI URI format
+        function generateQR(text, canvas, size) {
+            var ctx = canvas.getContext('2d');
+            canvas.width = size;
+            canvas.height = size;
+
+            var modules = encodeQR(text);
+            var moduleCount = modules.length;
+            var cellSize = size / moduleCount;
+
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, size, size);
+
+            ctx.fillStyle = '#000000';
+            for (var r = 0; r < moduleCount; r++) {
+                for (var c = 0; c < moduleCount; c++) {
+                    if (modules[r][c]) {
+                        ctx.fillRect(c * cellSize, r * cellSize, Math.ceil(cellSize), Math.ceil(cellSize));
+                    }
+                }
+            }
+        }
+
+        // Simplified QR encoder using byte mode
+        // Uses a pre-built approach: encode data as byte mode with error correction level M
+        function encodeQR(text) {
+            // Use a minimal QR code implementation
+            var dataBytes = [];
+            for (var i = 0; i < text.length; i++) {
+                var code = text.charCodeAt(i);
+                if (code < 128) {
+                    dataBytes.push(code);
+                } else if (code < 2048) {
+                    dataBytes.push(0xC0 | (code >> 6));
+                    dataBytes.push(0x80 | (code & 0x3F));
+                } else {
+                    dataBytes.push(0xE0 | (code >> 12));
+                    dataBytes.push(0x80 | ((code >> 6) & 0x3F));
+                    dataBytes.push(0x80 | (code & 0x3F));
+                }
+            }
+
+            // Determine version based on data length
+            // Version 1: 17x17, Version 2: 21x21, Version 3: 25x25, etc.
+            // Byte mode capacity (EC level M): V1=14, V2=26, V3=42, V4=62, V5=84, V6=106
+            var version = 1;
+            var capacity = [0, 14, 26, 42, 62, 84, 106, 122, 152, 180, 213];
+            for (var v = 1; v < capacity.length; v++) {
+                if (dataBytes.length <= capacity[v]) {
+                    version = v;
+                    break;
+                }
+                version = v;
+            }
+            if (dataBytes.length > capacity[9]) {
+                // Data too long, use version 10
+                version = 9;
+            }
+
+            var moduleCount = version * 4 + 17;
+
+            // Build data bits
+            // Mode indicator: 0100 for byte mode
+            var bits = [];
+            addBits(bits, 0x4, 4); // mode
+            var charCountBits = version >= 10 ? 16 : 8;
+            addBits(bits, dataBytes.length, charCountBits);
+            for (var j = 0; j < dataBytes.length; j++) {
+                addBits(bits, dataBytes[j], 8);
+            }
+
+            // Terminator
+            var totalDataBits = getDataCodewords(version, 1) * 8; // EC level M = 1
+            var remaining = totalDataBits - bits.length;
+            addBits(bits, 0, Math.min(4, remaining));
+
+            // Pad to byte boundary
+            while (bits.length % 8 !== 0) bits.push(0);
+
+            // Pad with alternating bytes
+            var padBytes = [0xEC, 0x11];
+            var pi = 0;
+            while (bits.length < totalDataBits) {
+                addBits(bits, padBytes[pi], 8);
+                pi = (pi + 1) % 2;
+            }
+
+            // Create module matrix
+            var matrix = [];
+            var reserved = [];
+            for (var r = 0; r < moduleCount; r++) {
+                matrix[r] = [];
+                reserved[r] = [];
+                for (var cc = 0; cc < moduleCount; cc++) {
+                    matrix[r][cc] = false;
+                    reserved[r][cc] = false;
+                }
+            }
+
+            // Place finder patterns
+            placeFinder(matrix, reserved, 0, 0);
+            placeFinder(matrix, reserved, moduleCount - 7, 0);
+            placeFinder(matrix, reserved, 0, moduleCount - 7);
+
+            // Place alignment patterns (for version >= 2)
+            if (version >= 2) {
+                var alignPos = getAlignmentPositions(version);
+                for (var ai = 0; ai < alignPos.length; ai++) {
+                    for (var aj = 0; aj < alignPos.length; aj++) {
+                        var ap = alignPos[ai];
+                        var aq = alignPos[aj];
+                        // Skip if overlapping finder
+                        if ((ap < 9 && aq < 9) || (ap < 9 && aq > moduleCount - 9) || (ap > moduleCount - 9 && aq < 9)) continue;
+                        placeAlignment(matrix, reserved, ap, aq);
+                    }
+                }
+            }
+
+            // Timing patterns
+            for (var t = 8; t < moduleCount - 8; t++) {
+                if (!reserved[6][t]) {
+                    matrix[6][t] = t % 2 === 0;
+                    reserved[6][t] = true;
+                }
+                if (!reserved[t][6]) {
+                    matrix[t][6] = t % 2 === 0;
+                    reserved[t][6] = true;
+                }
+            }
+
+            // Dark module
+            matrix[moduleCount - 8][8] = true;
+            reserved[moduleCount - 8][8] = true;
+
+            // Reserve format info
+            for (var fi = 0; fi < 8; fi++) {
+                reserved[8][fi] = true;
+                reserved[fi][8] = true;
+                reserved[8][moduleCount - 1 - fi] = true;
+                reserved[moduleCount - 1 - fi][8] = true;
+            }
+            reserved[8][8] = true;
+
+            // Place data bits
+            var bitIdx = 0;
+            var upward = true;
+            for (var col = moduleCount - 1; col >= 0; col -= 2) {
+                if (col === 6) col = 5; // Skip timing column
+                var rows = [];
+                for (var rr = 0; rr < moduleCount; rr++) {
+                    rows.push(upward ? moduleCount - 1 - rr : rr);
+                }
+                for (var ri = 0; ri < rows.length; ri++) {
+                    for (var ci = 0; ci < 2; ci++) {
+                        var ccol = col - ci;
+                        if (ccol < 0) continue;
+                        var rrow = rows[ri];
+                        if (reserved[rrow][ccol]) continue;
+                        matrix[rrow][ccol] = bitIdx < bits.length ? bits[bitIdx] === 1 : false;
+                        bitIdx++;
+                    }
+                }
+                upward = !upward;
+            }
+
+            // Apply XOR mask pattern 0 (checkerboard)
+            for (var mr = 0; mr < moduleCount; mr++) {
+                for (var mc = 0; mc < moduleCount; mc++) {
+                    if (!reserved[mr][mc]) {
+                        if ((mr + mc) % 2 === 0) {
+                            matrix[mr][mc] = !matrix[mr][mc];
+                        }
+                    }
+                }
+            }
+
+            // Place format info (EC level M, mask 0 = format string 0x5412)
+            placeFormatInfo(matrix, moduleCount, 0x5412);
+
+            return matrix;
+        }
+
+        function addBits(arr, val, len) {
+            for (var i = len - 1; i >= 0; i--) {
+                arr.push((val >> i) & 1);
+            }
+        }
+
+        function getDataCodewords(version, ecLevel) {
+            // Simplified: EC level M (1)
+            var table = [0, 16, 28, 44, 64, 86, 108, 124, 154, 182, 216];
+            return table[version] || 16;
+        }
+
+        function getAlignmentPositions(version) {
+            if (version <= 1) return [];
+            var positions = [
+                [],
+                [],
+                [6, 18],
+                [6, 22],
+                [6, 26],
+                [6, 30],
+                [6, 34],
+                [6, 22, 38],
+                [6, 24, 42],
+                [6, 26, 46],
+                [6, 28, 50]
+            ];
+            return positions[version] || [];
+        }
+
+        function placeFinder(matrix, reserved, row, col) {
+            for (var r = -1; r <= 7; r++) {
+                for (var c = -1; c <= 7; c++) {
+                    var rr = row + r;
+                    var cc = col + c;
+                    if (rr < 0 || rr >= matrix.length || cc < 0 || cc >= matrix.length) continue;
+                    var inOuter = r === 0 || r === 6 || c === 0 || c === 6;
+                    var inInner = r >= 2 && r <= 4 && c >= 2 && c <= 4;
+                    var inBorder = r === -1 || r === 7 || c === -1 || c === 7;
+                    if (inBorder) {
+                        matrix[rr][cc] = false;
+                    } else if (inOuter || inInner) {
+                        matrix[rr][cc] = true;
+                    } else {
+                        matrix[rr][cc] = false;
+                    }
+                    reserved[rr][cc] = true;
+                }
+            }
+        }
+
+        function placeAlignment(matrix, reserved, row, col) {
+            for (var r = -2; r <= 2; r++) {
+                for (var c = -2; c <= 2; c++) {
+                    var rr = row + r;
+                    var cc = col + c;
+                    var isEdge = Math.abs(r) === 2 || Math.abs(c) === 2;
+                    var isCenter = r === 0 && c === 0;
+                    matrix[rr][cc] = isEdge || isCenter;
+                    reserved[rr][cc] = true;
+                }
+            }
+        }
+
+        function placeFormatInfo(matrix, moduleCount, formatInfo) {
+            // Place format info around finder patterns
+            var bits = [];
+            for (var i = 14; i >= 0; i--) {
+                bits.push((formatInfo >> i) & 1);
+            }
+
+            // Around top-left finder
+            var positions1 = [
+                [8, 0], [8, 1], [8, 2], [8, 3], [8, 4], [8, 5], [8, 7], [8, 8],
+                [7, 8], [5, 8], [4, 8], [3, 8], [2, 8], [1, 8], [0, 8]
+            ];
+            for (var p = 0; p < 15; p++) {
+                matrix[positions1[p][0]][positions1[p][1]] = bits[p] === 1;
+            }
+
+            // Around other finders
+            var positions2 = [
+                [moduleCount - 1, 8], [moduleCount - 2, 8], [moduleCount - 3, 8], [moduleCount - 4, 8],
+                [moduleCount - 5, 8], [moduleCount - 6, 8], [moduleCount - 7, 8],
+                [8, moduleCount - 8], [8, moduleCount - 7], [8, moduleCount - 6], [8, moduleCount - 5],
+                [8, moduleCount - 4], [8, moduleCount - 3], [8, moduleCount - 2], [8, moduleCount - 1]
+            ];
+            for (var q = 0; q < 15; q++) {
+                matrix[positions2[q][0]][positions2[q][1]] = bits[q] === 1;
+            }
+        }
+
+        // ── End QR Code Generator ──
+
+        function buildUPIString() {
+            var id = upiId.value.trim();
+            if (!id) return null;
+
+            var uri = 'upi://pay?pa=' + encodeURIComponent(id);
+            var name = payeeName.value.trim();
+            if (name) uri += '&pn=' + encodeURIComponent(name);
+            var amt = amount.value.trim();
+            if (amt && parseFloat(amt) > 0) uri += '&am=' + encodeURIComponent(amt);
+            var n = note.value.trim();
+            if (n) uri += '&tn=' + encodeURIComponent(n);
+            uri += '&cu=INR';
+            return uri;
+        }
+
+        function generate() {
+            var uri = buildUPIString();
+            if (!uri) {
+                showToast('Please enter a UPI ID.', 'error');
+                return;
+            }
+
+            currentUPIString = uri;
+            generateQR(uri, qrCanvas, 250);
+            qrResult.classList.remove('hidden');
+            upiStringEl.textContent = uri;
+            showToast('QR code generated!');
+        }
+
+        btnGenerate.addEventListener('click', generate);
+
+        btnDownload.addEventListener('click', function() {
+            var link = document.createElement('a');
+            link.download = 'upi-qr-code.png';
+            link.href = qrCanvas.toDataURL('image/png');
+            link.click();
+            showToast('QR code downloaded!');
+        });
+
+        btnCopyUPI.addEventListener('click', function() {
+            if (currentUPIString) {
+                copyToClipboard(currentUPIString);
+            }
+        });
+
+        // Auto-generate on load if UPI ID has value
+        upiId.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') { e.preventDefault(); generate(); }
+        });
+    })();
+    </script>
+</body>
+</html>

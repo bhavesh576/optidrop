@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free PAN Card Validator — Check PAN Number Format | OptiDrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <meta name="msapplication-TileImage" content="/favicon.png?v=2">
+    <meta name="description" content="Validate Indian PAN card number format online. Check if your PAN is valid and identify the card type (Individual, Company, Firm, Trust, etc). 100% browser-based.">
+    <meta name="author" content="OptiDrop">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta property="og:title" content="Free PAN Card Validator — Check PAN Number Format | OptiDrop">
+    <meta property="og:description" content="Validate Indian PAN card number format online. Check if your PAN is valid and identify the card type. 100% browser-based.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optidrop.online/tools/utility/pan-card-validator.html">
+    <meta property="og:image" content="https://optidrop.online/Generated_image-removebg-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/pan-card-validator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Utility Tools", "item": "https://optidrop.online/category/utility-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "PAN Card Validator", "item": "https://optidrop.online/tools/utility/pan-card-validator.html"}
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8226291768848348" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.1">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload this page.</p><p><a href="/tools.html" style="color:#b45309;">Browse all tools →</a></p></div></noscript>
+
+    <header class="site-header"></header>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">PAN Card Validator — Check PAN Number Format Online</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Validate the format of any Indian PAN (Permanent Account Number) card and identify the cardholder type. 100% private — nothing leaves your browser.</p>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <div class="mb-6">
+                        <label for="panInput" class="block text-sm font-bold text-slate-700 mb-2">Enter PAN Number</label>
+                        <input type="text" id="panInput" placeholder="e.g. ABCDE1234F" maxlength="10"
+                            class="block w-full px-4 py-4 text-lg border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-mono uppercase"
+                            autocomplete="off" spellcheck="false" style="letter-spacing:0.15em;">
+                    </div>
+
+                    <button id="btnValidate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Validate PAN
+                    </button>
+
+                    <div id="resultCard" class="hidden mt-8">
+                        <!-- Result injected by JS -->
+                    </div>
+
+                    <div class="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+                        <strong>Note:</strong> This tool validates the PAN format only (AAAAA9999A). It does not verify whether the PAN is registered with the Income Tax Department of India.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is a PAN card?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        PAN (Permanent Account Number) is a 10-character alphanumeric identifier issued by the Income Tax Department of India. It is mandatory for financial transactions, filing tax returns, and opening bank accounts.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What does each character in a PAN mean?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The first 3 characters are alphabetic (A-Z sequence). The 4th character identifies the holder type (P=Individual, C=Company, H=HUF, etc.). The 5th character is the first letter of the holder's surname. Characters 6-9 are sequential digits, and the 10th is an alphabetic check digit.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Does this tool verify my PAN with the government?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        No. This tool only validates the format of the PAN number using regex pattern matching. It does not connect to any government database. To verify a PAN's authenticity, visit the official Income Tax Department e-filing portal.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="/tools/utility/indian-number-format.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Indian Number Format</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Convert numbers to lakh, crore format.</span>
+                </a>
+                <a href="/tools/utility/vehicle-number-validator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Vehicle Number Validator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Validate Indian vehicle registration numbers.</span>
+                </a>
+                <a href="/tools/password-generator.html" class="tool-card" style="padding:1rem;">
+                    <span class="tool-card-title" style="font-size:0.95rem;">Password Generator</span>
+                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate strong, secure passwords.</span>
+                </a>
+            </div>
+        </section>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;text-align:center;">Last updated: June 2026</p>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=2.1"></script>
+    <script>
+    (function() {
+        var panInput = document.getElementById('panInput');
+        var btnValidate = document.getElementById('btnValidate');
+        var resultCard = document.getElementById('resultCard');
+
+        var PAN_REGEX = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+
+        var PAN_TYPES = {
+            'P': 'Individual (Person)',
+            'C': 'Company',
+            'H': 'Hindu Undivided Family (HUF)',
+            'F': 'Firm / Partnership',
+            'A': 'Association of Persons (AOP)',
+            'T': 'Trust',
+            'B': 'Body of Individuals (BOI)',
+            'L': 'Local Authority',
+            'G': 'Government',
+            'J': 'Artificial Juridical Person'
+        };
+
+        function validatePAN() {
+            var pan = panInput.value.trim().toUpperCase();
+            panInput.value = pan;
+
+            if (!pan) {
+                showToast('Please enter a PAN number.', 'error');
+                return;
+            }
+
+            if (pan.length !== 10) {
+                showResult(false, 'PAN must be exactly 10 characters.', pan, null);
+                return;
+            }
+
+            if (!PAN_REGEX.test(pan)) {
+                showResult(false, 'Invalid PAN format. Expected format: AAAAANNNNA (5 letters, 4 digits, 1 letter).', pan, null);
+                return;
+            }
+
+            var fourthChar = pan.charAt(3);
+            var holderType = PAN_TYPES[fourthChar] || 'Unknown';
+
+            showResult(true, 'Valid PAN format!', pan, holderType);
+        }
+
+        function showResult(isValid, message, pan, holderType) {
+            var iconSvg = isValid
+                ? '<svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+                : '<svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
+
+            var borderColor = isValid ? 'border-green-200 bg-green-50' : 'border-red-200 bg-red-50';
+            var textColor = isValid ? 'text-green-800' : 'text-red-800';
+
+            var html = '<div class="border-2 ' + borderColor + ' rounded-2xl p-6 text-center">' +
+                '<div class="flex justify-center mb-3">' + iconSvg + '</div>' +
+                '<p class="text-lg font-bold ' + textColor + ' mb-2">' + message + '</p>' +
+                '<p class="font-mono text-2xl font-extrabold text-slate-900 tracking-wider mb-4">' + pan + '</p>';
+
+            if (isValid && holderType) {
+                html += '<div class="bg-white rounded-xl border border-slate-200 p-4 text-left">' +
+                    '<div class="flex justify-between items-center mb-2">' +
+                        '<span class="text-sm font-semibold text-slate-500">Card Type</span>' +
+                        '<span class="text-sm font-bold text-slate-900">' + holderType + '</span>' +
+                    '</div>' +
+                    '<div class="flex justify-between items-center">' +
+                        '<span class="text-sm font-semibold text-slate-500">4th Character</span>' +
+                        '<span class="font-mono text-lg font-bold text-blue-600">' + pan.charAt(3) + '</span>' +
+                    '</div>' +
+                '</div>';
+            }
+
+            html += '</div>';
+            resultCard.innerHTML = html;
+            resultCard.classList.remove('hidden');
+        }
+
+        btnValidate.addEventListener('click', validatePAN);
+
+        panInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                validatePAN();
+            }
+        });
+
+        // Auto-uppercase as user types
+        panInput.addEventListener('input', function() {
+            this.value = this.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+        });
+    })();
+    </script>
+</body>
+</html>

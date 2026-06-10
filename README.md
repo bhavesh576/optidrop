@@ -2,7 +2,7 @@
 
 **Free Online Tools — No Upload, No Sign-Up, No Cost**
 
-OptiDrop is a fully browser-based toolkit with **300+ free tools** across **18 categories** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, education, fitness, productivity, travel, design, parenting, fun, home improvement, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device.
+OptiDrop is a fully browser-based toolkit with **330+ free tools** across **18 categories** for images, PDFs, documents, resumes, invoices, calculators, text, developer utilities, health, education, fitness, productivity, travel, design, parenting, fun, home improvement, and more. Every tool runs 100% in your browser — no files are uploaded to any server, no sign-up required, no data leaves your device. Installable as a PWA on mobile and desktop.
 
 **Live at:** [https://optidrop.online](https://optidrop.online)
 
@@ -15,14 +15,14 @@ OptiDrop is a fully browser-based toolkit with **300+ free tools** across **18 c
   - [PDF Tools](#pdf-tools-18)
   - [Calculator Tools](#calculator-tools-51)
   - [Text Tools](#text-tools-32)
-  - [Developer Tools](#developer-tools-33)
+  - [Developer Tools](#developer-tools-40)
   - [Career & Resume Tools](#career--resume-tools-7)
   - [Business Document Tools](#business-document-tools-19)
   - [Professional Tools](#professional-tools-4)
   - [Health Tools](#health-tools-18)
   - [Education Tools](#education-tools-22)
   - [Fitness Tools](#fitness-tools-6)
-  - [Utility Tools](#utility-tools-25)
+  - [Utility Tools](#utility-tools-31)
   - [Fun & Games Tools](#fun--games-tools-15)
   - [Home & DIY Tools](#home--diy-tools-7)
   - [Productivity Tools](#productivity-tools-7)
@@ -175,7 +175,7 @@ OptiDrop is a fully browser-based toolkit with **300+ free tools** across **18 c
 | Email Subject Line Generator | Generate effective email subject lines | [/tools/text/email-subject-line-generator.html](https://optidrop.online/tools/text/email-subject-line-generator.html) |
 | Advanced Case Converter | Convert to camelCase, snake_case, kebab-case, and more | [/tools/text/case-converter-advanced.html](https://optidrop.online/tools/text/case-converter-advanced.html) |
 
-### Developer Tools (33)
+### Developer Tools (40)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -213,6 +213,14 @@ OptiDrop is a fully browser-based toolkit with **300+ free tools** across **18 c
 | Markdown to HTML | Convert Markdown text to HTML markup | [/tools/developer/markdown-to-html.html](https://optidrop.online/tools/developer/markdown-to-html.html) |
 | Color Picker | Pick colors with HEX, RGB, and HSL output | [/tools/developer/color-picker.html](https://optidrop.online/tools/developer/color-picker.html) |
 | CSS Border Generator | Create CSS border styles with live preview | [/tools/developer/css-border-generator.html](https://optidrop.online/tools/developer/css-border-generator.html) |
+| WiFi QR Code Generator | Generate QR codes to share WiFi passwords securely | [/tools/developer/wifi-qr-generator.html](https://optidrop.online/tools/developer/wifi-qr-generator.html) |
+| Cron Expression Builder | Build cron expressions visually with human-readable descriptions | [/tools/developer/cron-builder.html](https://optidrop.online/tools/developer/cron-builder.html) |
+| WCAG Color Contrast Checker | Check color contrast ratios for accessibility AA/AAA compliance | [/tools/developer/color-contrast-checker.html](https://optidrop.online/tools/developer/color-contrast-checker.html) |
+| SQL Formatter | Format and beautify SQL queries with proper indentation | [/tools/developer/sql-formatter.html](https://optidrop.online/tools/developer/sql-formatter.html) |
+| Robots.txt Generator | Generate robots.txt files for search engine crawling rules | [/tools/developer/robots-txt-generator.html](https://optidrop.online/tools/developer/robots-txt-generator.html) |
+| JWT Generator | Generate and sign JWT tokens with HMAC-SHA256 | [/tools/developer/jwt-generator.html](https://optidrop.online/tools/developer/jwt-generator.html) |
+| Barcode Generator | Generate barcodes in CODE128, EAN-13, UPC-A formats | [/tools/developer/barcode-generator.html](https://optidrop.online/tools/developer/barcode-generator.html) |
+| Code to Image | Convert code snippets to beautiful shareable PNG images | [/tools/developer/code-to-image.html](https://optidrop.online/tools/developer/code-to-image.html) |
 
 ### Career & Resume Tools (7)
 
@@ -320,7 +328,7 @@ OptiDrop is a fully browser-based toolkit with **300+ free tools** across **18 c
 | Heart Rate Zone Calculator | Find fat burn, cardio, and peak heart rate training zones | [/tools/fitness/heart-rate-zone-calculator.html](https://optidrop.online/tools/fitness/heart-rate-zone-calculator.html) |
 | Exercise Calorie Burn | Calculate calories burned for 100+ exercises | [/tools/fitness/exercise-calorie-burn.html](https://optidrop.online/tools/fitness/exercise-calorie-burn.html) |
 
-### Utility Tools (25)
+### Utility Tools (31)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -349,6 +357,14 @@ OptiDrop is a fully browser-based toolkit with **300+ free tools** across **18 c
 | Unit Price Comparator | Compare unit prices to find the best deal | [/tools/utility/unit-price-comparator.html](https://optidrop.online/tools/utility/unit-price-comparator.html) |
 | Age in Different Units | Convert age into different time units | [/tools/utility/age-in-different-units.html](https://optidrop.online/tools/utility/age-in-different-units.html) |
 | Random Quote Generator | Generate random inspirational quotes | [/tools/utility/random-quote-generator.html](https://optidrop.online/tools/utility/random-quote-generator.html) |
+| PAN Card Validator | Validate Indian PAN card number format and identify card type | [/tools/utility/pan-card-validator.html](https://optidrop.online/tools/utility/pan-card-validator.html) |
+| Indian Number Format Converter | Convert numbers to Indian format with lakh, crore, and arab | [/tools/utility/indian-number-format.html](https://optidrop.online/tools/utility/indian-number-format.html) |
+| UPI QR Code Generator | Generate UPI payment QR codes for receiving money | [/tools/utility/upi-qr-generator.html](https://optidrop.online/tools/utility/upi-qr-generator.html) |
+| Vehicle Number Validator | Validate Indian vehicle registration numbers and identify state | [/tools/utility/vehicle-number-validator.html](https://optidrop.online/tools/utility/vehicle-number-validator.html) |
+| Voice Recorder | Record audio directly in browser and download as WebM | [/tools/utility/voice-recorder.html](https://optidrop.online/tools/utility/voice-recorder.html) |
+| Indian Holiday Calendar 2026 | View Indian national and religious holidays for 2026 | [/tools/utility/indian-holiday-calendar.html](https://optidrop.online/tools/utility/indian-holiday-calendar.html) |
+| Social Media Image Sizes | Find correct image dimensions for all social media platforms | [/tools/utility/social-media-size-calculator.html](https://optidrop.online/tools/utility/social-media-size-calculator.html) |
+| Indian Pincode Search | Search Indian pincodes to find area, city, and state | [/tools/utility/pincode-search.html](https://optidrop.online/tools/utility/pincode-search.html) |
 
 ### Fun & Games Tools (15)
 
@@ -406,7 +422,7 @@ OptiDrop is a fully browser-based toolkit with **300+ free tools** across **18 c
 | Currency Trip Converter | Convert currencies with trip budget tracking | [/tools/travel/currency-trip-converter.html](https://optidrop.online/tools/travel/currency-trip-converter.html) |
 | Hotel Cost Comparator | Compare hotel costs across dates and locations | [/tools/travel/hotel-cost-comparator.html](https://optidrop.online/tools/travel/hotel-cost-comparator.html) |
 
-### Design Tools (21)
+### Design Tools (22)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -431,6 +447,7 @@ OptiDrop is a fully browser-based toolkit with **300+ free tools** across **18 c
 | Image Stamp Tool | Add date and time stamps to images | [/tools/design/image-stamp-tool.html](https://optidrop.online/tools/design/image-stamp-tool.html) |
 | Watermark Creator | Add text watermarks to images with custom options | [/tools/design/watermark-creator.html](https://optidrop.online/tools/design/watermark-creator.html) |
 | Certificate Generator | Generate customizable certificates with templates | [/tools/design/certificate-generator.html](https://optidrop.online/tools/design/certificate-generator.html) |
+| OG Image Generator | Create 1200x630 social media and Open Graph images | [/tools/design/og-image-generator.html](https://optidrop.online/tools/design/og-image-generator.html) |
 
 ### Parenting Tools (5)
 
@@ -452,14 +469,14 @@ Browse tools by category:
 - [PDF Tools](https://optidrop.online/category/pdf-tools.html) — Merge, split, compress, watermark, and convert PDF files
 - [Calculator Tools](https://optidrop.online/category/calculator-tools.html) — EMI, SIP, tax, mortgage, grade, and more
 - [Text Tools](https://optidrop.online/category/text-tools.html) — Word counter, case converter, lorem ipsum, binary converter
-- [Developer Tools](https://optidrop.online/category/developer-tools.html) — JSON formatter, Base64, URL encoder, color converter
+- [Developer Tools](https://optidrop.online/category/developer-tools.html) — JSON formatter, Base64, URL encoder, color converter, SQL formatter, JWT generator, cron builder, barcode generator
 - [Career Tools](https://optidrop.online/category/career-tools.html) — Resumes, cover letters, LinkedIn, job tracker
 - [Business Tools](https://optidrop.online/category/business-tools.html) — Invoices, contracts, salary slips, quotations, NDAs
 - [Professional Tools](https://optidrop.online/category/professional-tools.html) — Email signatures, business cards, bio generator
 - [Health Tools](https://optidrop.online/category/health-tools.html) — BMI, calorie, sleep, water intake, pregnancy
 - [Education Tools](https://optidrop.online/category/education-tools.html) — GPA calculator, certificates, SOP builder, citations
 - [Fitness Tools](https://optidrop.online/category/fitness-tools.html) — BMR, TDEE, one rep max, heart rate zones
-- [Utility Tools](https://optidrop.online/category/utility-tools.html) — QR code, BMI, unit converter, password generator
+- [Utility Tools](https://optidrop.online/category/utility-tools.html) — QR code, BMI, unit converter, password generator, PAN validator, UPI QR, vehicle validator, pincode search
 - [Fun & Games Tools](https://optidrop.online/category/fun-tools.html) — Jokes, recipes, coin flip, random generators
 - [Home & DIY Tools](https://optidrop.online/category/home-tools.html) — Paint, wallpaper, concrete calculators, cooking converter
 - [Productivity Tools](https://optidrop.online/category/productivity-tools.html) — Todo list, goal tracker, daily planner, priority matrix
@@ -471,12 +488,16 @@ Browse tools by category:
 
 ## Site Pages
 
-- [Tools Directory](https://optidrop.online/tools.html) — Browse all 300+ tools with search and category filters
+- [Tools Directory](https://optidrop.online/tools.html) — Browse all 330+ tools with search and category filters
 - [About](https://optidrop.online/about.html) — What OptiDrop is and why it is free
 - [Privacy Policy](https://optidrop.online/privacy-policy.html) — No data collection, 100% browser-side processing
 - [Terms of Service](https://optidrop.online/terms.html) — Free to use, no warranties
 - [Contact](https://optidrop.online/contact.html) — contact@optidrop.online
-- [Blog](https://optidrop.online/blog/) — 17 guides and tutorials
+- [Blog](https://optidrop.online/blog/) — 22 guides and tutorials
+- [OptiDrop vs ilovePDF](https://optidrop.online/vs/ilovepdf.html) — Feature comparison
+- [Best Free PDF Tools](https://optidrop.online/best/free-pdf-tools.html) — 18 PDF tools list
+- [Student Tools](https://optidrop.online/use-cases/students.html) — GPA, citations, resume
+- [Small Business Tools](https://optidrop.online/use-cases/small-business.html) — GST, invoice, QR code
 
 ---
 
@@ -494,7 +515,7 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 ## Tech Stack
 
 - **HTML5** — Semantic markup, accessible structure
-- **CSS3** — Custom styles + Tailwind CSS via CDN
+- **CSS3** — Custom styles + Tailwind CSS (served locally for performance)
 - **Vanilla JavaScript** — No frameworks, no build process, no npm
 - **Canvas API** — Image processing, compression, resizing, passport photos, ID cards, signatures
 - **Web Workers** — OffscreenCanvas compression, Tesseract.js OCR, background removal (off main thread)
@@ -509,7 +530,7 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 
 | Library | Used For |
 |---------|----------|
-| Tailwind CSS | Utility-first styling (all pages) |
+| Tailwind CSS | Utility-first styling (served locally as tailwind.min.css) |
 | Google Fonts (Inter) | Typography (all pages) |
 | JSZip | Batch ZIP downloads (image tools) |
 | jsPDF | PDF generation (career, business, education tools) |
@@ -538,10 +559,13 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 ├── contact.html                            # Contact page
 ├── 404.html                                # Custom 404 page
 ├── reindex-checklist.html                  # SEO reindex checklist
-├── sitemap.xml                             # XML sitemap (600+ URLs)
+├── sitemap.xml                             # XML sitemap (383 URLs)
 ├── robots.txt                              # Robots file
 ├── ads.txt                                 # Google AdSense verification
-├── vercel.json                             # Vercel deployment config with caching headers
+├── vercel.json                             # Vercel deployment config with caching + security headers
+├── manifest.json                           # PWA manifest for installable app
+├── sw.js                                   # Service worker for offline caching
+├── tailwind.min.css                        # Tailwind CSS (local, 2.8MB)
 ├── favicon.png                             # Favicon
 ├── Generated_image-removebg-preview.png    # Logo
 ├── styles.css                              # All CSS (single file)
@@ -565,9 +589,9 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   ├── aspect-ratio-calculator.html        # Aspect ratio calculator
 │   ├── calculators/                        # 51 calculator tools
 │   ├── text/                               # 32 text tools
-│   ├── developer/                          # 33 developer tools
+│   ├── developer/                          # 40 developer tools
 │   ├── health/                             # 18 health tools
-│   ├── utility/                            # 25 utility tools
+│   ├── utility/                            # 31 utility tools
 │   ├── fun/                                # 15 fun & games tools
 │   ├── business/                           # 19 business document tools
 │   ├── career/                             # 7 career tools
@@ -576,12 +600,15 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 │   ├── home/                               # 7 home & DIY tools
 │   ├── travel/                             # 7 travel tools
 │   ├── fitness/                            # 6 fitness tools
-│   ├── design/                             # 21 design tools
+│   ├── design/                             # 22 design tools
 │   ├── parenting/                          # 5 parenting tools
 │   ├── professional/                       # 4 professional tools
 │   └── pdf/                                # 18 PDF tools
 ├── category/                               # 18 category pages
-├── blog/                                   # 17 blog articles + index
+├── blog/                                   # 22 blog articles + index
+├── vs/                                     # Comparison pages (ilovepdf)
+├── best/                                   # Best-of pages (free PDF tools)
+├── use-cases/                              # Use case pages (students, small business)
 └── compress-image-for-instagram.html       # Instagram image compressor
 ```
 
@@ -589,11 +616,21 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 
 ## Key Features
 
-### Recent Improvements (May 2026)
-- **Client-side star rating system** — 5-star feedback widget on every tool page using localStorage (keyed by page path). Displays gold-filled stars on click, shows "Thank you for your feedback!" message, and persists ratings across sessions. Hover preview for unrated state, disabled after rating.
-- **Mobile UI typography & grid optimizations** — Responsive category grid cards prevent mid-word text splitting (`word-break: keep-all`, reduced font size/padding on mobile). Hero section uses responsive Tailwind classes (`text-3xl sm:text-5xl`, `text-base sm:text-lg`, `leading-relaxed`). Section headings, spacing, and trust badges adjusted for cleaner mobile breathing room.
-- **Final QA sweep: AdSense content layers, path normalization, dark mode contrast, and micro-padding** — Dynamic AdSense documentation engine injects About, How-To, and FAQ sections with FAQPage JSON-LD schema on all tool pages. All 348 HTML asset paths normalized to root-absolute format with `?v=2.1` cache-busting (no relative `./` or `../` references remain). Dark mode contrast upgraded for FAQ answers and doc body text (slate-300 on dark panels). Sub-360px micro-padding guardrails added for ultra-narrow viewports: category grid collapses to single column, star rating widget scales to 20px icons, typography sizes reduce to prevent text overlap.
-- **300+ tools** across 18 categories — expanded from 197 with 56 new PDF, education, business, and design tools
+### Recent Improvements (June 2026)
+- **PWA Support** — Installable as a Progressive Web App on mobile and desktop. Service worker provides offline caching for static assets. manifest.json with app icons and theme colors.
+- **Favorites System** — Star your most-used tools on any tool page. Favorites appear as a dedicated section on the homepage. Stored in localStorage (up to 20 favorites).
+- **17 New Tools** — PAN Card Validator, Indian Number Format, UPI QR Generator, Vehicle Number Validator, WiFi QR Generator, Cron Builder, Color Contrast Checker, SQL Formatter, Robots.txt Generator, JWT Generator, Barcode Generator, OG Image Generator, Voice Recorder, Code to Image, Indian Holiday Calendar, Social Media Sizes, Pincode Search.
+- **7 Tool Upgrades** — Coin Flip (10x flip + running stats), Dice Roller (shake animation + sum display), BMI Calculator (color-coded results), Word Counter (Flesch-Kincaid grade + top keywords), Pomodoro Timer (session tracking), Yes/No Decider (question history), Random Color Generator (palette save/export).
+- **5 New Blog Articles** — WhatsApp image compression guide, EMI calculator guide India, PAN card format explained, UPI QR code guide, free resume builder guide.
+- **4 New SEO Pages** — OptiDrop vs ilovePDF comparison, 18 best free PDF tools, student tools use case, small business tools use case.
+- **Tailwind CSS served locally** — Downloaded tailwind.min.css (2.8MB) instead of CDN for faster page loads and offline support.
+- **Security headers** — Content-Security-Policy, Strict-Transport-Security with preload, Permissions-Policy added to vercel.json.
+- **Accessibility** — Skip-to-content link, focus-visible styles for keyboard navigation, prefers-reduced-motion support.
+- **Analytics events** — OptiTrack object for tool_started, tool_completed, download_completed, search_used events.
+- **IndexedDB helper** — OptiDB shared helper for auto-save tools with open/save/load methods.
+- **AdSense optimization** — Empty ad slot handler hides unfilled ad containers after 2.5s and 5s. Static About+FAQ content baked into top 14 pages.
+- **AI crawler blocking** — robots.txt blocks GPTBot, ChatGPT-User, CCBot, anthropic-ai.
+- **330+ tools** across 18 categories
 - **PDF tools suite** — 18 PDF tools: merger, splitter, compressor, watermark, page numbering, text extraction, grayscale, HTML-to-PDF, Markdown-to-PDF, margin adjuster, password protector, unlock, image-to-PDF advanced, advanced compressor, multi-PDF combiner, page rotator, JPG-to-PDF, PDF-to-JPG
 - **Education tools suite** — 15 new tools: bonafide certificate, character certificate, gap certificate, internship certificate, marksheet generator, study leave letter, sick leave application, principal application, scholarship application, recommendation letter, SOP builder, student bio data, project certificate, training certificate, academic declaration
 - **Business tools suite** — 10 new tools: relieving letter, payslip pro, fee receipt, quotation, purchase order, delivery challan, cash voucher, proforma invoice, NDA generator, experience letter pro
@@ -618,7 +655,7 @@ OptiDrop uses a refined, modern visual language with GPU-accelerated CSS animati
 The homepage shows your last 3 visited tools in a "Pick Up Where You Left Off" section. Tracked via localStorage under `optidrop_recent_tools` (stores last 5, displays last 3). Only visible when history exists.
 
 ### Keyboard Command Palette
-Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 300+ tools. Real-time filtering as you type, arrow key navigation, Enter to open, Escape to close. Dynamically synced with the tools data registry — always up to date.
+Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 330+ tools. Real-time filtering with fuzzy matching as you type, arrow key navigation, Enter to open, Escape to close. Dynamically synced with the tools data registry — always up to date.
 
 ### Dark Mode Toggle
 Sun/moon toggle button in the header on every page. Saves preference to localStorage under `optidrop_dark_mode`. Inline script in `<head>` prevents flash of wrong theme. Deep navy color palette (#0f172a, #1e293b) — covers all components including tool cards, forms, footer, modals, and search.
@@ -656,7 +693,16 @@ Resume builder, cover letter generator, invoice generator, salary slip generator
 After using the same tool twice, a one-time toast suggests bookmarking the page (Ctrl+D). Tracked per tool via localStorage.
 
 ### Enhanced Search
-The homepage search bar searches tool names, descriptions, and categories. Results appear in a dropdown with tool name, category label, and one-line description. Supports keyboard navigation (arrow keys + Enter) and Ctrl+K / Cmd+K shortcut to focus.
+The homepage search bar searches tool names, descriptions, and categories with fuzzy matching. Results appear in a dropdown with tool name, category label, and one-line description. Supports keyboard navigation (arrow keys + Enter) and Ctrl+K / Cmd+K shortcut to focus.
+
+### Favorites / Bookmarks System
+Star your most-used tools on any tool page with the ★ button in the title. Favorites are stored in localStorage and displayed as a dedicated "Your Favorites" section on the homepage for quick access. Supports up to 20 favorites.
+
+### PWA Support (Installable App)
+OptiDrop can be installed as a Progressive Web App on mobile and desktop. The service worker (sw.js) provides offline caching for static assets. The manifest.json enables "Add to Home Screen" functionality on Android and "Install" on desktop Chrome/Edge.
+
+### Scroll to Top Button
+A floating blue button appears after scrolling down 400px on any page. Clicking it smoothly scrolls back to the top. Fully accessible with keyboard navigation.
 
 ### Upload Trust Badges
 All file upload tool pages display a "100% Local — your file never leaves this device" badge with a lock icon below the upload zone.
@@ -676,7 +722,7 @@ All file upload tool pages display a "100% Local — your file never leaves this
 - **CSS preload** — `<link rel="preload" href="styles.css" as="style">` for faster first paint
 - **Vercel caching** — Immutable cache for CSS/favicon (1 year), 24h for common.js, 1h for HTML with stale-while-revalidate
 - **Security headers** — X-Content-Type-Options, X-Frame-Options, Referrer-Policy on all HTML pages
-- **Single-file CSS** — One `styles.css` file with no unused frameworks; Tailwind loaded via CDN with JIT mode
+- **Single-file CSS** — One `styles.css` file with no unused frameworks; Tailwind served locally as tailwind.min.css
 - **No build step** — Zero bundler overhead; files served as-is
 
 ---
@@ -689,15 +735,17 @@ All file upload tool pages display a "100% Local — your file never leaves this
 - Open Graph and Twitter Card meta tags on every page
 - JSON-LD structured data:
   - WebSite schema (homepage)
-  - SoftwareApplication schema (all tool pages)
+  - WebApplication + SoftwareApplication schema (all tool pages)
   - BreadcrumbList schema with 3 levels (Home > Category > Tool)
   - FAQPage schema (all tool pages, 4 questions each)
   - Article schema (all blog posts)
   - Organization schema (about page)
   - WebPage schema (privacy, terms pages)
-- XML sitemap with 600+ URLs
+- Hreflang tags (en-in, en, x-default) on all pages
+- Speculation rules for prerendering tool pages
+- XML sitemap with 383 URLs
 - Internal linking: Workflow next-step sections, category pages, footer links
-- Blog with 17 SEO-optimized articles targeting long-tail keywords
+- Blog with 22 SEO-optimized articles targeting long-tail keywords
 - CSS text logo (no image dependency for logo)
 - Mobile-first responsive design
 - Category filter chips on tools directory page (18 categories)
