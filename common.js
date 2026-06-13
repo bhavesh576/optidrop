@@ -2896,18 +2896,22 @@ _ric(function () {
 });
 
 // ── AdSense Empty Slot Handler ───────────────────────────────
-(function () {
-    function check() {
-        document.querySelectorAll('.ad-container, ins.adsbygoogle').forEach(function (el) {
-            if (!el.offsetHeight || el.innerHTML.trim() === '') {
-                var w = el.parentElement;
-                if (w) w.style.display = 'none';
-            }
-        });
-    }
-    setTimeout(check, 2500);
-    setTimeout(check, 5000);
-})();
+// DISABLED: On localhost/development, AdSense can't load ads.
+// This handler was hiding parent elements of empty ad slots,
+// which could hide entire page sections or the whole page.
+// Re-enable for production by uncommenting the code below.
+// (function () {
+//     function check() {
+//         document.querySelectorAll('.ad-container, ins.adsbygoogle').forEach(function (el) {
+//             if (!el.offsetHeight || el.innerHTML.trim() === '') {
+//                 var w = el.parentElement;
+//                 if (w) w.style.display = 'none';
+//             }
+//         });
+//     }
+//     setTimeout(check, 2500);
+//     setTimeout(check, 5000);
+// })();
 
 // ════════════════════════════════════════════════════════════
 // INDEXEDDB HELPER — Shared auto-save for tool pages
