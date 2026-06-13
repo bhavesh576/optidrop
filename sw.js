@@ -1,24 +1,77 @@
-/* OptiDrop Service Worker v6 — DISABLED
-   This SW clears all caches and does NOT intercept any requests.
-   All fetches go directly to the network with zero interference. */
 
-self.addEventListener('install', function (event) {
+/* =========================================================
+   OptiDrop Service Worker — FIXED v2
+   ========================================================= */
+
+const CACHE_NAME = 'optidrop-v2';  // ← Changed v1 to v2 (clears old broken cache)
+
+const STATIC_ASSETS = [
+  '/',
+  '/index.html',
+  '/favicon.png',
+  '/tools.html',
+  '/about.html',
+  '/contact.html'
+  // ← Removed styles.css and common.js from pre-cache
+];
+
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.keys().then(function (keys) {
-      return Promise.all(keys.map(function (k) { return caches.delete(k); }));
-    })
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(STATIC_ASSETS))
+      .then(() => self.skipWaiting())
   );
-  self.skipWaiting();
 });
 
-self.addEventListener('activate', function (event) {
+self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(function (keys) {
-      return Promise.all(keys.map(function (k) { return caches.delete(k); }));
-    }).then(function () {
-      return self.clients.claim();
-    })
+    caches.keys().then(keys =>
+      Promise.all(
+        keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+      )
+    ).then(() => self.clients.claim())
   );
 });
 
-// NO fetch handler — every request passes through to the network untouched
+self.addEventListener('fetch', event => {
+  const { request } = event;
+  const url = new URL(request.url);
+
+  if (request.method !== 'GET') return;
+  if (url.origin !== location.origin) return;
+
+  // Never cache these files — always fetch fresh from network
+  const alwaysFresh = ['/tailwind.min.css', '/styles.css', '/common.js'];
+  if (alwaysFresh.some(f => url.pathname.startsWith(f.split('?')[0]))) {
+    event.respondWith(fetch(request));
+    return;
+  }
+
+  // HTML pages: always try network first
+  if (request.headers.get('accept')?.includes('text/html')) {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
+          return response;
+        })
+        .catch(() => caches.match(request).then(r => r || caches.match('/index.html')))
+    );
+    return;
+  }
+
+  // All other assets: cache-first
+  event.respondWith(
+    caches.match(request).then(cached => {
+      if (cached) return cached;
+      return fetch(request).then(response => {
+        if (response.ok) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
+        }
+        return response;
+      });
+    })
+  );
+});
