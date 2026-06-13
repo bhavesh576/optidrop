@@ -836,25 +836,8 @@ _ric(function () {
         document.head.appendChild(appScript);
     }
 
-    // ── Inject AdSense Slot Wrappers ──────────────────────────
-    var header = document.querySelector('.site-header');
-
-    // Top leaderboard ad slot (below header)
-    if (header && !document.querySelector('.adsense-slot-wrapper--leaderboard')) {
-        var topAd = document.createElement('div');
-        topAd.className = 'adsense-slot-wrapper adsense-slot-wrapper--leaderboard';
-        topAd.setAttribute('aria-label', 'Advertisement');
-        header.parentNode.insertBefore(topAd, header.nextSibling);
-    }
-
-    // Mid-content rectangle ad slot (before documentation)
-    var docSection = document.getElementById('tool-about-section');
-    if (docSection && !document.querySelector('.adsense-slot-wrapper--banner')) {
-        var midAd = document.createElement('div');
-        midAd.className = 'adsense-slot-wrapper adsense-slot-wrapper--banner';
-        midAd.setAttribute('aria-label', 'Advertisement');
-        docSection.parentNode.insertBefore(midAd, docSection);
-    }
+    // AdSense Auto Ads handles placement automatically.
+    // No manual ad slot injection needed.
 });
 
 // ════════════════════════════════════════════════════════════
@@ -2896,22 +2879,19 @@ _ric(function () {
 });
 
 // ── AdSense Empty Slot Handler ───────────────────────────────
-// DISABLED: On localhost/development, AdSense can't load ads.
-// This handler was hiding parent elements of empty ad slots,
-// which could hide entire page sections or the whole page.
-// Re-enable for production by uncommenting the code below.
-// (function () {
-//     function check() {
-//         document.querySelectorAll('.ad-container, ins.adsbygoogle').forEach(function (el) {
-//             if (!el.offsetHeight || el.innerHTML.trim() === '') {
-//                 var w = el.parentElement;
-//                 if (w) w.style.display = 'none';
-//             }
-//         });
-//     }
-//     setTimeout(check, 2500);
-//     setTimeout(check, 5000);
-// })();
+// Hides empty ad containers so they don't leave blank gaps.
+// Only hides the ad element itself — never its parent (which caused blank pages).
+(function () {
+    function check() {
+        document.querySelectorAll('ins.adsbygoogle').forEach(function (el) {
+            if (!el.offsetHeight || el.innerHTML.trim() === '') {
+                el.style.display = 'none';
+            }
+        });
+    }
+    setTimeout(check, 3000);
+    setTimeout(check, 6000);
+})();
 
 // ════════════════════════════════════════════════════════════
 // INDEXEDDB HELPER — Shared auto-save for tool pages
