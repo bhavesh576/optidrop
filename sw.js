@@ -1,21 +1,20 @@
+
 /* =========================================================
-   OptiDrop Service Worker
-   Provides offline support and intelligent caching
+   OptiDrop Service Worker — FIXED v2
    ========================================================= */
 
-const CACHE_NAME = 'optidrop-v1';
+const CACHE_NAME = 'optidrop-v2';  // ← Changed v1 to v2 (clears old broken cache)
+
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/styles.css',
-  '/common.js',
   '/favicon.png',
   '/tools.html',
   '/about.html',
   '/contact.html'
+  // ← Removed styles.css and common.js from pre-cache
 ];
 
-// Install: Pre-cache critical assets
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -24,7 +23,6 @@ self.addEventListener('install', event => {
   );
 });
 
-// Activate: Clean old caches
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
@@ -35,18 +33,21 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch: Network-first with cache fallback
 self.addEventListener('fetch', event => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Skip non-GET requests
   if (request.method !== 'GET') return;
-
-  // Skip cross-origin requests (CDN scripts, analytics, etc.)
   if (url.origin !== location.origin) return;
 
-  // HTML pages: Network-first (always try fresh)
+  // Never cache these files — always fetch fresh from network
+  const alwaysFresh = ['/tailwind.min.css', '/styles.css', '/common.js'];
+  if (alwaysFresh.some(f => url.pathname.startsWith(f.split('?')[0]))) {
+    event.respondWith(fetch(request));
+    return;
+  }
+
+  // HTML pages: always try network first
   if (request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
       fetch(request)
@@ -60,7 +61,7 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Static assets (CSS, JS, images): Cache-first
+  // All other assets: cache-first
   event.respondWith(
     caches.match(request).then(cached => {
       if (cached) return cached;
