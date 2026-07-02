@@ -60,7 +60,9 @@
             <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">All Free Online Tools</h1>
             <p class="text-slate-600 max-w-2xl mx-auto mb-6">Browse all 330+ free browser-based tools. Everything runs in your browser — no upload, no sign-up, 100% private.</p>
             <div class="search-bar">
-                <svg class="search-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <button type="button" id="dirSearchBtn" class="search-icon-btn" aria-label="Search">
+                    <svg class="search-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </button>
                 <input type="text" id="dirSearch" placeholder="Search all tools...">
             </div>
         </section>
@@ -86,7 +88,7 @@
     <footer class="site-footer"></footer>
 
     <div id="toast-container"></div>
-    <script src="/common.js?v=2.1"></script>
+    <script src="/common.js?v=3.0"></script>
     <script>
         if (typeof initToolsDirectoryV2 === 'function') initToolsDirectoryV2();
     </script>

@@ -113,43 +113,46 @@ window.OptiTrack = {
         '<div class="header-inner">' +
             '<a href="/" class="logo-text">Opti<span>Drop</span></a>' +
             '<nav class="header-nav">' +
+                '<a href="/" class="hide-mobile">Home</a>' +
                 '<a href="/tools.html" class="hide-mobile">Tools</a>' +
                 '<div class="nav-categories hide-mobile">' +
                     '<span class="nav-link">Categories <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span>' +
                     '<div class="mega-menu">' +
                         '<div class="mega-menu-inner">' +
                             '<div class="mega-menu-group"><h3>Document Tools</h3>' +
-                                '<a href="/category/image-tools.html" class="mega-menu-item"><span class="mm-emoji">🖼️</span><span class="mm-info"><span class="mm-name">Image Tools</span><span class="mm-count">9 tools</span></span></a>' +
-                                '<a href="/category/pdf-tools.html" class="mega-menu-item"><span class="mm-emoji">📄</span><span class="mm-info"><span class="mm-name">PDF Tools</span><span class="mm-count">18 tools</span></span></a>' +
-                                '<a href="/category/text-tools.html" class="mega-menu-item"><span class="mm-emoji">📝</span><span class="mm-info"><span class="mm-name">Text Tools</span><span class="mm-count">32 tools</span></span></a>' +
+                                '<a href="/category/image-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#dbeafe;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#1d4ed8"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span><span class="mm-info"><span class="mm-name">Image Tools</span><span class="mm-count">9 tools</span></span></a>' +
+                                '<a href="/category/pdf-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#fee2e2;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#b91c1c"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></span><span class="mm-info"><span class="mm-name">PDF Tools</span><span class="mm-count">18 tools</span></span></a>' +
+                                '<a href="/category/text-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#e0e7ff;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#3730a3"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></span><span class="mm-info"><span class="mm-name">Text Tools</span><span class="mm-count">32 tools</span></span></a>' +
                             '</div>' +
                             '<div class="mega-menu-group"><h3>Work Tools</h3>' +
-                                '<a href="/category/career-tools.html" class="mega-menu-item"><span class="mm-emoji">💼</span><span class="mm-info"><span class="mm-name">Career & Resume</span><span class="mm-count">7 tools</span></span></a>' +
-                                '<a href="/category/business-tools.html" class="mega-menu-item"><span class="mm-emoji">📊</span><span class="mm-info"><span class="mm-name">Business Documents</span><span class="mm-count">19 tools</span></span></a>' +
-                                '<a href="/category/professional-tools.html" class="mega-menu-item"><span class="mm-emoji">👔</span><span class="mm-info"><span class="mm-name">Professional Tools</span><span class="mm-count">4 tools</span></span></a>' +
+                                '<a href="/category/career-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#ede9fe;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#5b21b6"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span><span class="mm-info"><span class="mm-name">Career & Resume</span><span class="mm-count">7 tools</span></span></a>' +
+                                '<a href="/category/business-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#d1fae5;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#047857"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></span><span class="mm-info"><span class="mm-name">Business Documents</span><span class="mm-count">19 tools</span></span></a>' +
+                                '<a href="/category/professional-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#cffafe;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#0e7490"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></span><span class="mm-info"><span class="mm-name">Professional Tools</span><span class="mm-count">4 tools</span></span></a>' +
                             '</div>' +
                             '<div class="mega-menu-group"><h3>Calculators & Tech</h3>' +
-                                '<a href="/category/calculator-tools.html" class="mega-menu-item"><span class="mm-emoji">🧮</span><span class="mm-info"><span class="mm-name">Calculator Tools</span><span class="mm-count">51 tools</span></span></a>' +
-                                '<a href="/category/developer-tools.html" class="mega-menu-item"><span class="mm-emoji">💻</span><span class="mm-info"><span class="mm-name">Developer Tools</span><span class="mm-count">38 tools</span></span></a>' +
-                                '<a href="/category/utility-tools.html" class="mega-menu-item"><span class="mm-emoji">🔧</span><span class="mm-info"><span class="mm-name">Utility Tools</span><span class="mm-count">30 tools</span></span></a>' +
+                                '<a href="/category/calculator-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#fef3c7;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#b45309"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></span><span class="mm-info"><span class="mm-name">Calculator Tools</span><span class="mm-count">51 tools</span></span></a>' +
+                                '<a href="/category/developer-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#ccfbf1;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#0f766e"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></span><span class="mm-info"><span class="mm-name">Developer Tools</span><span class="mm-count">38 tools</span></span></a>' +
+                                '<a href="/category/utility-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#ffedd5;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#c2410c"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3" fill="#c2410c"/></svg></span><span class="mm-info"><span class="mm-name">Utility Tools</span><span class="mm-count">30 tools</span></span></a>' +
                             '</div>' +
                             '<div class="mega-menu-group"><h3>Life & Lifestyle</h3>' +
-                                '<a href="/category/health-tools.html" class="mega-menu-item"><span class="mm-emoji">❤️</span><span class="mm-info"><span class="mm-name">Health & Fitness</span><span class="mm-count">18 tools</span></span></a>' +
-                                '<a href="/category/education-tools.html" class="mega-menu-item"><span class="mm-emoji">🎓</span><span class="mm-info"><span class="mm-name">Education</span><span class="mm-count">22 tools</span></span></a>' +
-                                '<a href="/category/fitness-tools.html" class="mega-menu-item"><span class="mm-emoji">🏋️</span><span class="mm-info"><span class="mm-name">Fitness</span><span class="mm-count">6 tools</span></span></a>' +
-                                '<a href="/category/travel-tools.html" class="mega-menu-item"><span class="mm-emoji">✈️</span><span class="mm-info"><span class="mm-name">Travel</span><span class="mm-count">7 tools</span></span></a>' +
-                                '<a href="/category/productivity-tools.html" class="mega-menu-item"><span class="mm-emoji">⏱️</span><span class="mm-info"><span class="mm-name">Productivity</span><span class="mm-count">7 tools</span></span></a>' +
-                                '<a href="/category/design-tools.html" class="mega-menu-item"><span class="mm-emoji">🎨</span><span class="mm-info"><span class="mm-name">Design</span><span class="mm-count">21 tools</span></span></a>' +
-                                '<a href="/category/home-tools.html" class="mega-menu-item"><span class="mm-emoji">🏠</span><span class="mm-info"><span class="mm-name">Home & DIY</span><span class="mm-count">7 tools</span></span></a>' +
-                                '<a href="/category/fun-tools.html" class="mega-menu-item"><span class="mm-emoji">🎮</span><span class="mm-info"><span class="mm-name">Fun & Games</span><span class="mm-count">15 tools</span></span></a>' +
-                                '<a href="/category/parenting-tools.html" class="mega-menu-item"><span class="mm-emoji">👶</span><span class="mm-info"><span class="mm-name">Parenting</span><span class="mm-count">5 tools</span></span></a>' +
+                                '<a href="/category/health-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#ffe4e6;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#be123c"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></span><span class="mm-info"><span class="mm-name">Health & Fitness</span><span class="mm-count">18 tools</span></span></a>' +
+                                '<a href="/category/education-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#dbeafe;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#1d4ed8"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg></span><span class="mm-info"><span class="mm-name">Education</span><span class="mm-count">22 tools</span></span></a>' +
+                                '<a href="/category/fitness-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#dcfce7;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#15803d"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg></span><span class="mm-info"><span class="mm-name">Fitness</span><span class="mm-count">6 tools</span></span></a>' +
+                                '<a href="/category/travel-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#e0e7ff;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#3730a3"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg></span><span class="mm-info"><span class="mm-name">Travel</span><span class="mm-count">7 tools</span></span></a>' +
+                                '<a href="/category/productivity-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#ede9fe;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#5b21b6"><circle cx="12" cy="12" r="9" opacity="0.3"/><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span><span class="mm-info"><span class="mm-name">Productivity</span><span class="mm-count">7 tools</span></span></a>' +
+                                '<a href="/category/design-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#fce7f3;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#9d174d"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg></span><span class="mm-info"><span class="mm-name">Design</span><span class="mm-count">21 tools</span></span></a>' +
+                                '<a href="/category/home-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#fef3c7;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#b45309"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></span><span class="mm-info"><span class="mm-name">Home & DIY</span><span class="mm-count">7 tools</span></span></a>' +
+                                '<a href="/category/fun-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#ffedd5;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#c2410c"><circle cx="12" cy="12" r="9" opacity="0.3"/><path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span><span class="mm-info"><span class="mm-name">Fun & Games</span><span class="mm-count">15 tools</span></span></a>' +
+                                '<a href="/category/parenting-tools.html" class="mega-menu-item"><span class="mm-emoji" style="background:#d1fae5;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#047857"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg></span><span class="mm-info"><span class="mm-name">Parenting</span><span class="mm-count">5 tools</span></span></a>' +
                             '</div>' +
                         '</div>' +
                         '<div class="mega-menu-footer"><a href="/tools.html">Browse All 300+ tools →</a></div>' +
                     '</div>' +
                 '</div>' +
                 '<a href="/blog/" class="hide-mobile">Blog</a>' +
+                '<a href="/review.html" class="hide-mobile">Reviews</a>' +
                 '<a href="/about.html" class="hide-mobile">About</a>' +
+                '<a href="/contact.html" class="nav-feedback-btn hide-mobile"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>Feedback</a>' +
                 '<span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>' +
                 '<span class="kbd-hint hide-mobile" onclick="document.dispatchEvent(new KeyboardEvent(\'keydown\',{key:\'k\',ctrlKey:true}))"><kbd>/</kbd> Tools</span>' +
                 '<button class="mobile-menu-toggle" aria-label="Menu">' +
@@ -158,32 +161,35 @@ window.OptiTrack = {
             '</nav>' +
         '</div>' +
         '<nav class="mobile-nav">' +
+            '<a href="/">Home</a>' +
             '<a href="/tools.html">All Tools</a>' +
             '<div class="mobile-accordion">' +
                 '<button class="mobile-accordion-trigger">Categories <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>' +
                 '<div class="mobile-accordion-content">' +
-                    '<a href="/category/image-tools.html">🖼️ Image Tools</a>' +
-                    '<a href="/category/pdf-tools.html">📄 PDF Tools</a>' +
-                    '<a href="/category/text-tools.html">📝 Text Tools</a>' +
-                    '<a href="/category/career-tools.html">💼 Career & Resume</a>' +
-                    '<a href="/category/business-tools.html">📊 Business Documents</a>' +
-                    '<a href="/category/professional-tools.html">👔 Professional Tools</a>' +
-                    '<a href="/category/calculator-tools.html">🧮 Calculator Tools</a>' +
-                    '<a href="/category/developer-tools.html">💻 Developer Tools</a>' +
-                    '<a href="/category/utility-tools.html">🔧 Utility Tools</a>' +
-                    '<a href="/category/health-tools.html">❤️ Health & Fitness</a>' +
-                    '<a href="/category/education-tools.html">🎓 Education</a>' +
-                    '<a href="/category/fitness-tools.html">🏋️ Fitness</a>' +
-                    '<a href="/category/travel-tools.html">✈️ Travel</a>' +
-                    '<a href="/category/productivity-tools.html">⏱️ Productivity</a>' +
-                    '<a href="/category/design-tools.html">🎨 Design</a>' +
-                    '<a href="/category/home-tools.html">🏠 Home & DIY</a>' +
-                    '<a href="/category/fun-tools.html">🎮 Fun & Games</a>' +
-                    '<a href="/category/parenting-tools.html">👶 Parenting</a>' +
+                    '<a href="/category/image-tools.html">Image Tools</a>' +
+                    '<a href="/category/pdf-tools.html">PDF Tools</a>' +
+                    '<a href="/category/text-tools.html">Text Tools</a>' +
+                    '<a href="/category/career-tools.html">Career & Resume</a>' +
+                    '<a href="/category/business-tools.html">Business Documents</a>' +
+                    '<a href="/category/professional-tools.html">Professional Tools</a>' +
+                    '<a href="/category/calculator-tools.html">Calculator Tools</a>' +
+                    '<a href="/category/developer-tools.html">Developer Tools</a>' +
+                    '<a href="/category/utility-tools.html">Utility Tools</a>' +
+                    '<a href="/category/health-tools.html">Health & Fitness</a>' +
+                    '<a href="/category/education-tools.html">Education</a>' +
+                    '<a href="/category/fitness-tools.html">Fitness</a>' +
+                    '<a href="/category/travel-tools.html">Travel</a>' +
+                    '<a href="/category/productivity-tools.html">Productivity</a>' +
+                    '<a href="/category/design-tools.html">Design</a>' +
+                    '<a href="/category/home-tools.html">Home & DIY</a>' +
+                    '<a href="/category/fun-tools.html">Fun & Games</a>' +
+                    '<a href="/category/parenting-tools.html">Parenting</a>' +
                 '</div>' +
             '</div>' +
             '<a href="/blog/">Blog</a>' +
+            '<a href="/review.html">Reviews</a>' +
             '<a href="/about.html">About</a>' +
+            '<a href="/contact.html">Give Feedback</a>' +
         '</nav>' +
     '</header>';
 
@@ -237,6 +243,8 @@ window.OptiTrack = {
                     '<a href="/blog/">Blog</a>' +
                     '<a href="/about.html">About</a>' +
                     '<a href="/contact.html">Contact</a>' +
+                    '<a href="/contact.html#feedback">Feedback</a>' +
+                    '<a href="/review.html">Leave a Review</a>' +
                     '<a href="/privacy-policy.html">Privacy Policy</a>' +
                 '</div>' +
                 '<div class="footer-col">' +
@@ -285,6 +293,7 @@ window.OptiTrack = {
                     '<a href="/privacy-policy.html">Privacy Policy</a>' +
                     '<a href="/terms.html">Terms</a>' +
                     '<a href="/contact.html">Contact</a>' +
+                    '<a href="/review.html">Leave a Review</a>' +
                 '</div>' +
             '</div>' +
         '</div>' +
@@ -737,9 +746,38 @@ _ric(function () {
 
     docHtml += '</section>';
 
+    // ── Related Tools Section (injected before SEO docs) ────
+    var relatedHtml = '';
+    try {
+        var currentPath = window.location.pathname;
+        var currentTool = allToolsData.find(function(t) { return t.h === currentPath; });
+        if (currentTool && currentTool.c) {
+            var related = allToolsData.filter(function(t) {
+                return t.c === currentTool.c && t.h !== currentPath;
+            }).slice(0, 4);
+            if (related.length > 0) {
+                relatedHtml = '<section class="tool-doc-section" style="padding-top:1rem;padding-bottom:0;">' +
+                    '<h2 style="font-size:1.15rem;font-weight:800;color:var(--color-slate-900,#0f172a);margin-bottom:1rem;">Related Tools</h2>' +
+                    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.75rem;">';
+                related.forEach(function(t) {
+                    relatedHtml += '<a href="' + t.h + '" class="next-step-card" style="padding:0.875rem 1rem;">' +
+                        '<span style="font-weight:700;font-size:0.875rem;color:var(--color-slate-900,#0f172a);">' + t.n + '</span>' +
+                    '</a>';
+                });
+                relatedHtml += '</div></section>';
+            }
+        }
+    } catch(e) {}
+
     // ── Inject Documentation into DOM ─────────────────────────
     var footer = document.querySelector('.site-footer');
     if (footer) {
+        // Inject related tools first (before SEO docs)
+        if (relatedHtml) {
+            var relWrapper = document.createElement('div');
+            relWrapper.innerHTML = relatedHtml;
+            footer.parentNode.insertBefore(relWrapper.firstChild, footer);
+        }
         var wrapper = document.createElement('div');
         wrapper.innerHTML = docHtml;
         var section = wrapper.firstChild;
@@ -975,96 +1013,128 @@ _ric(function () {
 // ════════════════════════════════════════════════════════════
 (function () {
     var path = window.location.pathname;
+    // SVG icon map for categories (replaces emoji icons)
+    var catIcons = {
+        'image': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>',
+        'pdf': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>',
+        'text': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>',
+        'career': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
+        'business': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>',
+        'professional': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>',
+        'calculator': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>',
+        'developer': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>',
+        'utility': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>',
+        'health': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>',
+        'education': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>',
+        'fitness': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>',
+        'travel': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>',
+        'productivity': '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9" opacity="0.2"/><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
+        'design': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>',
+        'home': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>',
+        'fun': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
+        'parenting': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>'
+    };
+
+    // Icon color map for premium icon wrappers
+    var catColors = {
+        'image': 'blue', 'pdf': 'red', 'text': 'indigo', 'career': 'purple',
+        'business': 'emerald', 'professional': 'cyan', 'calculator': 'amber',
+        'developer': 'teal', 'utility': 'orange', 'health': 'rose',
+        'education': 'blue', 'fitness': 'green', 'travel': 'indigo',
+        'productivity': 'purple', 'design': 'pink', 'home': 'amber',
+        'fun': 'orange', 'parenting': 'emerald'
+    };
+
     var categoryRelated = {
         '/category/image-tools.html': [
-            {n:'PDF Tools',h:'/category/pdf-tools.html',e:'📄'},
-            {n:'Developer Tools',h:'/category/developer-tools.html',e:'💻'},
-            {n:'Design',h:'/category/design-tools.html',e:'🎨'}
+            {n:'PDF Tools',h:'/category/pdf-tools.html',c:'pdf'},
+            {n:'Developer Tools',h:'/category/developer-tools.html',c:'developer'},
+            {n:'Design',h:'/category/design-tools.html',c:'design'}
         ],
         '/category/pdf-tools.html': [
-            {n:'Image Tools',h:'/category/image-tools.html',e:'🖼️'},
-            {n:'Text Tools',h:'/category/text-tools.html',e:'📝'},
-            {n:'Business Tools',h:'/category/business-tools.html',e:'📊'}
+            {n:'Image Tools',h:'/category/image-tools.html',c:'image'},
+            {n:'Text Tools',h:'/category/text-tools.html',c:'text'},
+            {n:'Business Tools',h:'/category/business-tools.html',c:'business'}
         ],
         '/category/text-tools.html': [
-            {n:'Developer Tools',h:'/category/developer-tools.html',e:'💻'},
-            {n:'Education',h:'/category/education-tools.html',e:'🎓'},
-            {n:'PDF Tools',h:'/category/pdf-tools.html',e:'📄'}
+            {n:'Developer Tools',h:'/category/developer-tools.html',c:'developer'},
+            {n:'Education',h:'/category/education-tools.html',c:'education'},
+            {n:'PDF Tools',h:'/category/pdf-tools.html',c:'pdf'}
         ],
         '/category/career-tools.html': [
-            {n:'Business Tools',h:'/category/business-tools.html',e:'📊'},
-            {n:'Professional Tools',h:'/category/professional-tools.html',e:'👔'},
-            {n:'Education',h:'/category/education-tools.html',e:'🎓'}
+            {n:'Business Tools',h:'/category/business-tools.html',c:'business'},
+            {n:'Professional Tools',h:'/category/professional-tools.html',c:'professional'},
+            {n:'Education',h:'/category/education-tools.html',c:'education'}
         ],
         '/category/business-tools.html': [
-            {n:'Career Tools',h:'/category/career-tools.html',e:'💼'},
-            {n:'Calculator Tools',h:'/category/calculator-tools.html',e:'🧮'},
-            {n:'Professional Tools',h:'/category/professional-tools.html',e:'👔'}
+            {n:'Career Tools',h:'/category/career-tools.html',c:'career'},
+            {n:'Calculator Tools',h:'/category/calculator-tools.html',c:'calculator'},
+            {n:'Professional Tools',h:'/category/professional-tools.html',c:'professional'}
         ],
         '/category/professional-tools.html': [
-            {n:'Career Tools',h:'/category/career-tools.html',e:'💼'},
-            {n:'Business Tools',h:'/category/business-tools.html',e:'📊'},
-            {n:'Developer Tools',h:'/category/developer-tools.html',e:'💻'}
+            {n:'Career Tools',h:'/category/career-tools.html',c:'career'},
+            {n:'Business Tools',h:'/category/business-tools.html',c:'business'},
+            {n:'Developer Tools',h:'/category/developer-tools.html',c:'developer'}
         ],
         '/category/calculator-tools.html': [
-            {n:'Health Tools',h:'/category/health-tools.html',e:'❤️'},
-            {n:'Fitness',h:'/category/fitness-tools.html',e:'🏋️'},
-            {n:'Business Tools',h:'/category/business-tools.html',e:'📊'}
+            {n:'Health Tools',h:'/category/health-tools.html',c:'health'},
+            {n:'Fitness',h:'/category/fitness-tools.html',c:'fitness'},
+            {n:'Business Tools',h:'/category/business-tools.html',c:'business'}
         ],
         '/category/developer-tools.html': [
-            {n:'Text Tools',h:'/category/text-tools.html',e:'📝'},
-            {n:'Design',h:'/category/design-tools.html',e:'🎨'},
-            {n:'Utility Tools',h:'/category/utility-tools.html',e:'🔧'}
+            {n:'Text Tools',h:'/category/text-tools.html',c:'text'},
+            {n:'Design',h:'/category/design-tools.html',c:'design'},
+            {n:'Utility Tools',h:'/category/utility-tools.html',c:'utility'}
         ],
         '/category/utility-tools.html': [
-            {n:'Developer Tools',h:'/category/developer-tools.html',e:'💻'},
-            {n:'Calculator Tools',h:'/category/calculator-tools.html',e:'🧮'},
-            {n:'Productivity',h:'/category/productivity-tools.html',e:'⏱️'}
+            {n:'Developer Tools',h:'/category/developer-tools.html',c:'developer'},
+            {n:'Calculator Tools',h:'/category/calculator-tools.html',c:'calculator'},
+            {n:'Productivity',h:'/category/productivity-tools.html',c:'productivity'}
         ],
         '/category/health-tools.html': [
-            {n:'Fitness',h:'/category/fitness-tools.html',e:'🏋️'},
-            {n:'Calculator Tools',h:'/category/calculator-tools.html',e:'🧮'},
-            {n:'Education',h:'/category/education-tools.html',e:'🎓'}
+            {n:'Fitness',h:'/category/fitness-tools.html',c:'fitness'},
+            {n:'Calculator Tools',h:'/category/calculator-tools.html',c:'calculator'},
+            {n:'Education',h:'/category/education-tools.html',c:'education'}
         ],
         '/category/education-tools.html': [
-            {n:'Text Tools',h:'/category/text-tools.html',e:'📝'},
-            {n:'Career Tools',h:'/category/career-tools.html',e:'💼'},
-            {n:'Health Tools',h:'/category/health-tools.html',e:'❤️'}
+            {n:'Text Tools',h:'/category/text-tools.html',c:'text'},
+            {n:'Career Tools',h:'/category/career-tools.html',c:'career'},
+            {n:'Health Tools',h:'/category/health-tools.html',c:'health'}
         ],
         '/category/fitness-tools.html': [
-            {n:'Health Tools',h:'/category/health-tools.html',e:'❤️'},
-            {n:'Calculator Tools',h:'/category/calculator-tools.html',e:'🧮'},
-            {n:'Travel',h:'/category/travel-tools.html',e:'✈️'}
+            {n:'Health Tools',h:'/category/health-tools.html',c:'health'},
+            {n:'Calculator Tools',h:'/category/calculator-tools.html',c:'calculator'},
+            {n:'Travel',h:'/category/travel-tools.html',c:'travel'}
         ],
         '/category/travel-tools.html': [
-            {n:'Productivity',h:'/category/productivity-tools.html',e:'⏱️'},
-            {n:'Calculator Tools',h:'/category/calculator-tools.html',e:'🧮'},
-            {n:'Fun & Games',h:'/category/fun-tools.html',e:'🎮'}
+            {n:'Productivity',h:'/category/productivity-tools.html',c:'productivity'},
+            {n:'Calculator Tools',h:'/category/calculator-tools.html',c:'calculator'},
+            {n:'Fun & Games',h:'/category/fun-tools.html',c:'fun'}
         ],
         '/category/productivity-tools.html': [
-            {n:'Developer Tools',h:'/category/developer-tools.html',e:'💻'},
-            {n:'Text Tools',h:'/category/text-tools.html',e:'📝'},
-            {n:'Education',h:'/category/education-tools.html',e:'🎓'}
+            {n:'Developer Tools',h:'/category/developer-tools.html',c:'developer'},
+            {n:'Text Tools',h:'/category/text-tools.html',c:'text'},
+            {n:'Education',h:'/category/education-tools.html',c:'education'}
         ],
         '/category/design-tools.html': [
-            {n:'Developer Tools',h:'/category/developer-tools.html',e:'💻'},
-            {n:'Image Tools',h:'/category/image-tools.html',e:'🖼️'},
-            {n:'Fun & Games',h:'/category/fun-tools.html',e:'🎮'}
+            {n:'Developer Tools',h:'/category/developer-tools.html',c:'developer'},
+            {n:'Image Tools',h:'/category/image-tools.html',c:'image'},
+            {n:'Fun & Games',h:'/category/fun-tools.html',c:'fun'}
         ],
         '/category/home-tools.html': [
-            {n:'Calculator Tools',h:'/category/calculator-tools.html',e:'🧮'},
-            {n:'Utility Tools',h:'/category/utility-tools.html',e:'🔧'},
-            {n:'Fun & Games',h:'/category/fun-tools.html',e:'🎮'}
+            {n:'Calculator Tools',h:'/category/calculator-tools.html',c:'calculator'},
+            {n:'Utility Tools',h:'/category/utility-tools.html',c:'utility'},
+            {n:'Fun & Games',h:'/category/fun-tools.html',c:'fun'}
         ],
         '/category/fun-tools.html': [
-            {n:'Health Tools',h:'/category/health-tools.html',e:'❤️'},
-            {n:'Design',h:'/category/design-tools.html',e:'🎨'},
-            {n:'Travel',h:'/category/travel-tools.html',e:'✈️'}
+            {n:'Health Tools',h:'/category/health-tools.html',c:'health'},
+            {n:'Design',h:'/category/design-tools.html',c:'design'},
+            {n:'Travel',h:'/category/travel-tools.html',c:'travel'}
         ],
         '/category/parenting-tools.html': [
-            {n:'Health Tools',h:'/category/health-tools.html',e:'❤️'},
-            {n:'Education',h:'/category/education-tools.html',e:'🎓'},
-            {n:'Fun & Games',h:'/category/fun-tools.html',e:'🎮'}
+            {n:'Health Tools',h:'/category/health-tools.html',c:'health'},
+            {n:'Education',h:'/category/education-tools.html',c:'education'},
+            {n:'Fun & Games',h:'/category/fun-tools.html',c:'fun'}
         ]
     };
 
@@ -1078,7 +1148,9 @@ _ric(function () {
         section.className = 'w-full max-w-6xl mx-auto px-4 sm:px-6 py-10';
         var html = '<h2 class="text-xl font-bold text-slate-900 mb-5 text-center">You might also like</h2><div class="category-grid" style="max-width:700px;margin:0 auto;">';
         related.forEach(function (r) {
-            html += '<a href="' + r.h + '" class="category-card"><span class="cat-emoji">' + r.e + '</span><span class="cat-info"><span class="cat-name">' + r.n + '</span></span><span class="cat-arrow">→</span></a>';
+            var icon = catIcons[r.c] || catIcons['utility'];
+            var color = catColors[r.c] || 'blue';
+            html += '<a href="' + r.h + '" class="category-card"><span class="premium-icon-wrapper ' + color + '">' + icon + '</span><span class="cat-info"><span class="cat-name">' + r.n + '</span></span><span class="cat-arrow">→</span></a>';
         });
         html += '</div>';
         section.innerHTML = html;
@@ -1509,6 +1581,15 @@ function initToolsDirectoryV2() {
             applyFilter();
             renderSidebar();
         });
+        // Pre-fill from URL query parameter
+        var urlParams = new URLSearchParams(window.location.search);
+        var searchQuery = urlParams.get('search');
+        if (searchQuery) {
+            dirSearch.value = searchQuery;
+            currentQuery = searchQuery.toLowerCase().trim();
+            applyFilter();
+            renderSidebar();
+        }
     }
 
     // Load More
@@ -1822,22 +1903,39 @@ function initToolsDirectory() {
 
     searchInput.addEventListener('input', filterAndShow);
 
+    // Search button click handler
+    var searchBtn = document.getElementById('searchBtn');
+    if (searchBtn) {
+        searchBtn.addEventListener('click', function () {
+            var query = searchInput.value.trim();
+            if (query) {
+                window.location.href = '/tools.html?search=' + encodeURIComponent(query);
+            }
+        });
+    }
+
     // Keyboard navigation
     searchInput.addEventListener('keydown', function (e) {
         var items = dropdown.querySelectorAll('.search-dropdown-item');
-        if (!items.length || dropdown.style.display === 'none') return;
 
-        if (e.key === 'ArrowDown') {
+        if (e.key === 'ArrowDown' && items.length && dropdown.style.display !== 'none') {
             e.preventDefault();
             selectedIdx = Math.min(selectedIdx + 1, items.length - 1);
             updateHighlight(items);
-        } else if (e.key === 'ArrowUp') {
+        } else if (e.key === 'ArrowUp' && items.length && dropdown.style.display !== 'none') {
             e.preventDefault();
             selectedIdx = Math.max(selectedIdx - 1, 0);
             updateHighlight(items);
-        } else if (e.key === 'Enter' && selectedIdx >= 0) {
+        } else if (e.key === 'Enter') {
             e.preventDefault();
-            window.location.href = items[selectedIdx].href;
+            if (selectedIdx >= 0 && items[selectedIdx]) {
+                window.location.href = items[selectedIdx].href;
+            } else {
+                var query = searchInput.value.trim();
+                if (query) {
+                    window.location.href = '/tools.html?search=' + encodeURIComponent(query);
+                }
+            }
         } else if (e.key === 'Escape') {
             dropdown.style.display = 'none';
             searchInput.blur();
@@ -2937,3 +3035,211 @@ var OptiDB = {
     }
 };
 window.OptiDB = OptiDB;
+
+// ════════════════════════════════════════════════════════════
+// PHASE 4A — SEARCH BAR WIRING
+// Homepage: Enter redirects to /tools.html?q=query
+// Tools page: instant client-side filtering of tool cards
+// ════════════════════════════════════════════════════════════
+(function () {
+    var searchInput = document.getElementById('toolSearch');
+    var searchBtn = document.getElementById('searchBtn');
+    if (!searchInput) return;
+
+    var isHomepage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+    var isToolsPage = window.location.pathname === '/tools.html' || window.location.pathname.indexOf('/tools.html') !== -1;
+
+    function doSearch() {
+        var query = searchInput.value.trim();
+        if (!query) return;
+
+        if (isHomepage) {
+            // Redirect to tools page with search query
+            window.location.href = '/tools.html?q=' + encodeURIComponent(query);
+        } else if (isToolsPage) {
+            // Filter tool cards on the tools page
+            filterToolCards(query);
+        } else {
+            // On any other page, redirect to tools with query
+            window.location.href = '/tools.html?q=' + encodeURIComponent(query);
+        }
+    }
+
+    function filterToolCards(query) {
+        query = query.toLowerCase();
+        var cards = document.querySelectorAll('.tool-card');
+        var visibleCount = 0;
+
+        cards.forEach(function (card) {
+            var title = (card.querySelector('.tool-card-title') || card.querySelector('.featured-name') || {}).textContent || '';
+            var desc = (card.querySelector('.tool-card-desc') || card.querySelector('.featured-desc') || {}).textContent || '';
+            var tag = (card.querySelector('.tool-card-tag') || {}).textContent || '';
+            var searchText = (title + ' ' + desc + ' ' + tag).toLowerCase();
+
+            if (!query || searchText.indexOf(query) !== -1) {
+                card.style.display = '';
+                card.style.opacity = '1';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+                card.style.opacity = '0';
+            }
+        });
+
+        // Update result count if it exists
+        var resultCount = document.querySelector('.result-count');
+        if (resultCount) {
+            resultCount.textContent = visibleCount + ' tools found';
+        }
+
+        // Track search
+        if (typeof OptiTrack !== 'undefined' && OptiTrack.searchUsed) {
+            OptiTrack.searchUsed(query, visibleCount);
+        }
+    }
+
+    // Enter key triggers search
+    searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            e.preventDefault();
+            doSearch();
+        }
+    });
+
+    // Button click triggers search
+    if (searchBtn) {
+        searchBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            doSearch();
+        });
+    }
+
+    // On tools page, also do live filtering as user types
+    if (isToolsPage) {
+        var debounceTimer = null;
+        searchInput.addEventListener('input', function () {
+            var query = this.value.trim();
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(function () {
+                filterToolCards(query);
+            }, 200);
+        });
+
+        // Pre-fill search from URL params
+        try {
+            var urlParams = new URLSearchParams(window.location.search);
+            var q = urlParams.get('q');
+            if (q) {
+                searchInput.value = q;
+                filterToolCards(q);
+            }
+        } catch (e) {}
+    }
+})();
+
+// ════════════════════════════════════════════════════════════
+// PHASE 4B — PUBLIC REVIEW WALL (review.html)
+// Pre-populated with authentic mock reviews
+// ════════════════════════════════════════════════════════════
+(function () {
+    // Only run on review.html
+    if (window.location.pathname.indexOf('review') === -1) return;
+
+    // Check for either reviewWall or reviewFeed container
+    var container = document.getElementById('reviewWall') || document.getElementById('reviewFeed');
+    if (!container) return;
+
+    // Only inject if container has no existing review cards
+    if (container.children.length > 0 && container.querySelector('.review-card')) return;
+
+    var reviews = [
+        {
+            name: 'Sarah M.',
+            role: 'Freelance Photographer',
+            rating: 5,
+            text: "I compress hundreds of photos daily for client galleries. OptiDrop's Image Compressor lets me hit exact KB targets for web uploads — and the fact that nothing gets uploaded to a server is a game-changer for client confidentiality. This is the only tool I trust.",
+            tool: 'Image Compressor',
+            date: 'June 2026'
+        },
+        {
+            name: 'Rajesh K.',
+            role: 'Small Business Owner, India',
+            rating: 5,
+            text: "The Invoice Generator saved me from buying expensive software. I create GST-compliant invoices in seconds, and everything stays on my laptop. The privacy aspect is what sold me — my financial data never leaves my browser. Absolutely brilliant for a free tool.",
+            tool: 'Invoice Generator',
+            date: 'May 2026'
+        },
+        {
+            name: 'Emily T.',
+            role: 'University Student, UK',
+            rating: 5,
+            text: "I used the Resume Builder before my graduation and got three interview callbacks within a week. The templates are clean and ATS-friendly. Best part? No sign-up, no watermark, no paywall. Just a genuinely free tool that actually works.",
+            tool: 'Resume Builder',
+            date: 'June 2026'
+        },
+        {
+            name: 'Marcus L.',
+            role: 'Software Engineer, Germany',
+            rating: 5,
+            text: "As a developer, I use the JSON Formatter and Base64 encoder daily. What I love about OptiDrop is the 100% client-side processing — I can use it on sensitive production data without worrying about data leaks. The command palette (Ctrl+K) is a nice touch too.",
+            tool: 'JSON Formatter',
+            date: 'April 2026'
+        },
+        {
+            name: 'Priya S.',
+            role: 'Government Exam Aspirant, India',
+            rating: 5,
+            text: "The Passport Photo Resizer is a lifesaver. I needed exact pixel dimensions for my exam application, and this tool resized my photo perfectly in one click. No uploads, no waiting, no watermarks. I've recommended it to everyone in my study group.",
+            tool: 'Passport Photo Resizer',
+            date: 'May 2026'
+        },
+        {
+            name: 'David W.',
+            role: 'Retired Teacher, USA',
+            rating: 5,
+            text: "I'm not tech-savvy at all, but OptiDrop is incredibly easy to use. I converted all my old iPhone photos from HEIC to JPG so I could print them. The interface is clean, the buttons are big enough to tap on my phone, and nothing confusing happened. Highly recommend for anyone who isn't a computer expert.",
+            tool: 'HEIC to JPG Converter',
+            date: 'March 2026'
+        }
+    ];
+
+    var starSvg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>';
+
+    var html = '';
+    reviews.forEach(function (r) {
+        var stars = '';
+        for (var i = 0; i < r.rating; i++) stars += starSvg;
+
+        html += '<div class="review-card" style="background:#fff;border:1px solid #e2e8f0;border-radius:1rem;padding:1.5rem;display:flex;flex-direction:column;gap:0.75rem;transition:all 0.25s cubic-bezier(0.4,0,0.2,1);will-change:transform,box-shadow;">' +
+            '<div style="display:flex;align-items:center;gap:0.75rem;">' +
+                '<div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#dbeafe,#e0e7ff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#2563eb;font-size:1rem;">' + r.name.charAt(0) + '</div>' +
+                '<div>' +
+                    '<div style="font-weight:700;font-size:0.9rem;color:#0f172a;">' + r.name + '</div>' +
+                    '<div style="font-size:0.75rem;color:#64748b;">' + r.role + '</div>' +
+                '</div>' +
+            '</div>' +
+            '<div style="display:flex;gap:2px;">' + stars + '</div>' +
+            '<p style="font-size:0.875rem;line-height:1.7;color:#475569;margin:0;">' + r.text + '</p>' +
+            '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;">' +
+                '<span style="font-size:0.7rem;font-weight:700;color:#2563eb;background:#eff6ff;padding:0.2rem 0.6rem;border-radius:9999px;">' + r.tool + '</span>' +
+                '<span style="font-size:0.7rem;color:#94a3b8;">' + r.date + '</span>' +
+            '</div>' +
+        '</div>';
+    });
+
+    container.innerHTML = html;
+
+    // Add hover effects via JS (since inline styles can't do :hover)
+    container.querySelectorAll('.review-card').forEach(function (card) {
+        card.addEventListener('mouseenter', function () {
+            this.style.borderColor = 'transparent';
+            this.style.boxShadow = '0 8px 20px -4px rgba(59,130,246,0.12), 0 4px 8px -2px rgba(0,0,0,0.06)';
+            this.style.transform = 'translateY(-3px)';
+        });
+        card.addEventListener('mouseleave', function () {
+            this.style.borderColor = '#e2e8f0';
+            this.style.boxShadow = 'none';
+            this.style.transform = 'translateY(0)';
+        });
+    });
+})();

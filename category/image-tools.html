@@ -37,7 +37,7 @@
 
     <link rel="stylesheet" href="/tailwind.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css?v=2.1">
+    <link rel="stylesheet" href="/styles.css?v=3.0">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TXPNV88YM"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2TXPNV88YM');</script>
@@ -54,11 +54,12 @@
                 <a href="#categories" class="hide-mobile">Categories</a>
                 <a href="/blog/" class="hide-mobile">Blog</a>
                 <a href="/about.html" class="hide-mobile">About</a>
+                <a href="/contact.html" class="nav-feedback-btn hide-mobile"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>Feedback</a>
                 <span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>
                 <button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
             </nav>
         </div>
-        <nav class="mobile-nav"><a href="/tools.html" onclick="this.parentElement.classList.remove('open')" >All Tools</a><a href="#categories" onclick="this.parentElement.classList.remove('open')" >Categories</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a><a href="/about.html" onclick="this.parentElement.classList.remove('open')" >About</a></nav>
+        <nav class="mobile-nav"><a href="/tools.html" onclick="this.parentElement.classList.remove('open')" >All Tools</a><a href="#categories" onclick="this.parentElement.classList.remove('open')" >Categories</a><a href="/blog/" onclick="this.parentElement.classList.remove('open')" >Blog</a><a href="/about.html" onclick="this.parentElement.classList.remove('open')" >About</a><a href="/contact.html" onclick="this.parentElement.classList.remove('open')" >💬 Give Feedback</a></nav>
     </header>
 
     <main class="flex-1">
@@ -68,81 +69,63 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <a href="/compress-image.html" class="tool-card">
-                    <div class="tool-card-icon bg-blue-100 text-blue-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    </div>
+                    <div class="premium-icon-wrapper blue"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h6a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2h-2.586a1 1 0 01-.707-.293l-1.414-1.414A1 1 0 0012.586 6H5a2 2 0 00-2 2v9a2 2 0 002 2z" opacity="0.2"/><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
                     <span class="tool-card-title">Image Compressor</span>
                     <span class="tool-card-desc">Compress images to exact KB limits for passport photos, forms, and WhatsApp.</span>
                     <span class="tool-card-tag blue">Most Popular</span>
                 </a>
 
                 <a href="/heic-to-jpg.html" class="tool-card">
-                    <div class="tool-card-icon bg-orange-100 text-orange-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
-                    </div>
+                    <div class="premium-icon-wrapper orange"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="3" width="20" height="18" rx="3" opacity="0.2"/><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
                     <span class="tool-card-title">HEIC to JPG Converter</span>
                     <span class="tool-card-desc">Convert iPhone HEIC photos to universal JPG format instantly.</span>
                     <span class="tool-card-tag orange">iPhone Users</span>
                 </a>
 
                 <a href="/image-format-converter.html" class="tool-card">
-                    <div class="tool-card-icon bg-teal-100 text-teal-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
-                    </div>
+                    <div class="premium-icon-wrapper teal"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div>
                     <span class="tool-card-title">Image Format Converter</span>
                     <span class="tool-card-desc">Convert between JPG, PNG, and WebP formats in your browser.</span>
                     <span class="tool-card-tag teal">Format Change</span>
                 </a>
 
                 <a href="/remove-background.html" class="tool-card">
-                    <div class="tool-card-icon bg-rose-100 text-rose-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                    </div>
+                    <div class="premium-icon-wrapper rose"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="3" opacity="0.2"/><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></div>
                     <span class="tool-card-title">Background Remover</span>
                     <span class="tool-card-desc">Remove backgrounds from photos with one click. AI-powered, runs locally.</span>
                     <span class="tool-card-tag rose">AI Powered</span>
                 </a>
 
                 <a href="/passport-photo-resizer.html" class="tool-card">
-                    <div class="tool-card-icon bg-emerald-100 text-emerald-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
-                    </div>
+                    <div class="premium-icon-wrapper emerald"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="3" opacity="0.2"/><path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg></div>
                     <span class="tool-card-title">Passport Photo Resizer</span>
                     <span class="tool-card-desc">Resize photos to passport and visa dimensions at 300 DPI.</span>
                     <span class="tool-card-tag emerald">Passport &amp; Visa</span>
                 </a>
 
                 <a href="/name-date-stamp.html" class="tool-card">
-                    <div class="tool-card-icon bg-rose-100 text-rose-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-                    </div>
+                    <div class="premium-icon-wrapper rose"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="3" opacity="0.2"/><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg></div>
                     <span class="tool-card-title">Name &amp; Date Stamper</span>
                     <span class="tool-card-desc">Add name and date stamps to exam and ID photos.</span>
                     <span class="tool-card-tag rose">Exam Ready</span>
                 </a>
 
                 <a href="/signature-scanner.html" class="tool-card">
-                    <div class="tool-card-icon bg-teal-100 text-teal-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
-                    </div>
+                    <div class="premium-icon-wrapper teal"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></div>
                     <span class="tool-card-title">Signature Scanner</span>
                     <span class="tool-card-desc">Scan and extract clean signatures from paper documents.</span>
                     <span class="tool-card-tag teal">Clean Scan</span>
                 </a>
 
                 <a href="/image-to-text-ocr.html" class="tool-card">
-                    <div class="tool-card-icon bg-cyan-100 text-cyan-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    </div>
+                    <div class="premium-icon-wrapper cyan"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="3" width="16" height="18" rx="2" opacity="0.2"/><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
                     <span class="tool-card-title">Image to Text (OCR)</span>
                     <span class="tool-card-desc">Extract text from images using browser-based OCR technology.</span>
                     <span class="tool-card-tag cyan">OCR</span>
                 </a>
 
                 <a href="/compress-image-for-instagram.html" class="tool-card">
-                    <div class="tool-card-icon bg-pink-100 text-pink-600">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    </div>
+                    <div class="premium-icon-wrapper pink"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" opacity="0.2"/><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
                     <span class="tool-card-title">Compress Image for Instagram</span>
                     <span class="tool-card-desc">Optimize images for Instagram post and story dimensions.</span>
                     <span class="tool-card-tag pink">Social Media</span>
