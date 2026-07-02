@@ -231,11 +231,12 @@
                         <div class="action-buttons">
                             <button id="btnCopy" class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-blue-600 bg-white border border-slate-200 rounded-lg hover:border-blue-300 transition-all">Copy</button>
                             <button id="btnDownload" class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-emerald-600 bg-white border border-slate-200 rounded-lg hover:border-emerald-300 transition-all">Download .txt</button>
+                            <button id="btnRegenerate" class="px-3 py-1.5 text-sm font-bold text-violet-600 bg-violet-50 border border-violet-200 rounded-lg hover:bg-violet-100 transition-all">Regenerate ↻</button>
                         </div>
                     </div>
                     <div id="loremOutput" class="lorem-output">Click "Generate" to create lorem ipsum placeholder text...</div>
                     <div class="mt-2 text-sm text-slate-500">
-                        Words: <strong id="wordCount" class="text-slate-800">0</strong> &middot; Characters: <strong id="charCount" class="text-slate-800">0</strong>
+                        Words: <strong id="wordCount" class="text-slate-800">0</strong> &middot; Characters: <strong id="charCount" class="text-slate-800">0</strong> &middot; Bytes: <strong id="byteCount" class="text-slate-800">0</strong>
                     </div>
 
                 </div>
@@ -319,24 +320,6 @@
     </main>
 
     <!-- Related Tools -->
-    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
-        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-            <a href="/tools/developer/word-counter.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Word Counter</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Count words, characters, and sentences in any text.</span>
-            </a>
-            <a href="/tools/developer/text-case-converter.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Text Case Converter</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Convert text to uppercase, lowercase, title case, and more.</span>
-            </a>
-            <a href="/tools/developer/password-generator.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Password Generator</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Generate strong, random passwords with custom options.</span>
-            </a>
-        </div>
-    </section>
-
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-inner">
@@ -419,6 +402,8 @@
         var loremOutput = document.getElementById('loremOutput');
         var wordCountEl = document.getElementById('wordCount');
         var charCountEl = document.getElementById('charCount');
+        var byteCountEl = document.getElementById('byteCount');
+        var btnRegenerate = document.getElementById('btnRegenerate');
 
         var currentOutput = '';
 
@@ -511,12 +496,16 @@
             var wordCount = result.split(/\s+/).filter(function(w) { return w.length > 0; }).length;
             wordCountEl.textContent = wordCount.toLocaleString();
             charCountEl.textContent = result.length.toLocaleString();
+            byteCountEl.textContent = new Blob([result]).size.toLocaleString();
 
             showToast('Lorem ipsum text generated!');
         }
 
         // Generate on button click
         btnGenerate.addEventListener('click', generate);
+
+        // Regenerate button
+        btnRegenerate.addEventListener('click', generate);
 
         // Generate on Enter key in count input
         loremCount.addEventListener('keypress', function(e) {

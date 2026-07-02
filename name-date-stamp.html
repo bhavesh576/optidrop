@@ -213,12 +213,12 @@
                             </div>
 
                             <div>
-                                <label for="stamperFontSize" class="block text-sm font-bold text-slate-700 mb-2">Font Size</label>
-                                <select id="stamperFontSize" class="settings-select">
-                                    <option value="small">Small</option>
-                                    <option value="medium" selected>Medium</option>
-                                    <option value="large">Large</option>
-                                </select>
+                                <label for="stamperFontSizeSlider" class="block text-sm font-bold text-slate-700 mb-2">Font Size: <span id="stamperFontSizeVal" class="text-brand-600">24</span>px</label>
+                                <input type="range" id="stamperFontSizeSlider" min="8" max="72" value="24" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-600">
+                                <div class="flex justify-between text-xs text-slate-400 mt-1">
+                                    <span>8px</span>
+                                    <span>72px</span>
+                                </div>
                             </div>
 
                             <div>
@@ -229,6 +229,10 @@
                                     <button class="stamper-color-btn" data-color="red" style="background:#dc2626;"></button>
                                     <button class="stamper-color-btn" data-color="blue" style="background:#2563eb;"></button>
                                 </div>
+                                <div class="mt-2">
+                                    <label class="block text-xs text-slate-500 mb-1">Custom Color</label>
+                                    <input type="color" id="stamperColorPicker" value="#ffffff" class="w-10 h-10 rounded-lg border-2 border-slate-200 cursor-pointer">
+                                </div>
                             </div>
 
                             <div class="flex gap-3 pt-1">
@@ -236,7 +240,8 @@
                                     Cancel
                                 </button>
                                 <button id="btnStamperStamp" class="w-2/3 px-4 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
-                                    <span>Stamp Photo</span>
+                                    <span class="btn-default-text">Stamp Photo</span>
+                                    <span class="btn-loading-text hidden">Processing... ⏳</span>
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                                 </button>
                             </div>
@@ -333,25 +338,7 @@
         </section>
     </main>
     <!-- Related Tools -->
-    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
-        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-            <a href="/passport-photo-resizer.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Photo Resizer</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Resize photos to passport and visa dimensions at 300 DPI.</span>
-            </a>
-            <a href="/signature-scanner.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Signature Scanner</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Scan and extract clean signatures from paper documents.</span>
-            </a>
-            <a href="/compress-image.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Image Compressor</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Compress images to exact KB for web, forms, and email.</span>
-            </a>
-        </div>
-    </section>
-
-        <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
             <div class="footer-grid">
                 <div class="footer-col">
@@ -441,5 +428,37 @@
     <!-- Scripts -->
     <script src="/common.js?v=2.1"></script>
     <script src="/script.js?v=2.1"></script>
+    <script>
+    // Name & Date Stamp: font size slider and color picker
+    (function() {
+        var fontSizeSlider = document.getElementById('stamperFontSizeSlider');
+        var fontSizeVal = document.getElementById('stamperFontSizeVal');
+        var colorPicker = document.getElementById('stamperColorPicker');
+        var colorBtns = document.querySelectorAll('.stamper-color-btn');
+
+        if (fontSizeSlider) {
+            fontSizeSlider.addEventListener('input', function() {
+                fontSizeVal.textContent = this.value;
+            });
+        }
+
+        if (colorPicker) {
+            colorPicker.addEventListener('input', function() {
+                colorBtns.forEach(function(b) { b.classList.remove('active'); });
+            });
+        }
+
+        // When a color button is clicked, update the color picker
+        colorBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var colorName = btn.getAttribute('data-color');
+                var colorMap = { white: '#ffffff', black: '#000000', red: '#dc2626', blue: '#2563eb' };
+                if (colorPicker && colorMap[colorName]) {
+                    colorPicker.value = colorMap[colorName];
+                }
+            });
+        });
+    })();
+    </script>
 </body>
 </html>

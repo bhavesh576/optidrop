@@ -150,6 +150,9 @@
                     <div class="mb-5">
                         <label for="inputText" class="block text-sm font-bold text-slate-700 mb-2">Enter your text</label>
                         <textarea id="inputText" placeholder="Type or paste your text here..." class="block w-full px-5 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y" style="min-height:150px;font-family:inherit;line-height:1.7;" oninput="reverseText()"></textarea>
+                        <div class="flex items-center justify-between mt-2 text-xs text-slate-500">
+                            <span>Characters: <strong class="text-slate-700" id="charCount">0</strong> · Words: <strong class="text-slate-700" id="wordCount">0</strong> · Bytes: <strong class="text-slate-700" id="byteCount">0</strong></span>
+                        </div>
                     </div>
 
                     <!-- Mode Selection -->
@@ -178,6 +181,10 @@
                             <button onclick="copyResult()" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all flex items-center gap-1.5">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
                                 Copy
+                            </button>
+                            <button onclick="downloadTextFile(document.getElementById('outputText').value,'reversed-text.txt')" class="px-4 py-2 text-sm font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 rounded-lg hover:bg-emerald-100 transition-all flex items-center gap-1.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download .txt
                             </button>
                         </div>
                         <textarea id="outputText" readonly placeholder="Reversed text will appear here..." class="block w-full px-5 py-4 text-base border-2 border-slate-200 rounded-xl bg-slate-50 text-slate-900 font-medium resize-y cursor-default" style="min-height:150px;font-family:inherit;line-height:1.7;"></textarea>
@@ -250,24 +257,6 @@
     </main>
 
     <!-- Related Tools -->
-    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
-        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-            <a href="/tools/text-case-converter.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Text Case Converter</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Convert text to uppercase, lowercase, title case, and more instantly.</span>
-            </a>
-            <a href="/tools/text/text-repeater.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Text Repeater</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Repeat any text or word multiple times with a custom separator.</span>
-            </a>
-            <a href="/tools/word-counter.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Word Counter</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Count words, characters, sentences, and paragraphs in your text online.</span>
-            </a>
-        </div>
-    </section>
-
     <!-- Footer -->
         <footer class="site-footer">
         <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
@@ -405,6 +394,15 @@
                     }).join(' ');
                 });
                 outputText.value = result.join('\n');
+            }
+        };
+
+            // Update counters
+            if (document.getElementById('charCount')) {
+                document.getElementById('charCount').textContent = text.length.toLocaleString();
+                var w = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+                document.getElementById('wordCount').textContent = w.toLocaleString();
+                document.getElementById('byteCount').textContent = new TextEncoder().encode(text).length.toLocaleString();
             }
         };
 

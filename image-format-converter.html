@@ -39,7 +39,7 @@
       {"@type":"Question","name":"What image formats does OptiDrop support?","acceptedAnswer":{"@type":"Answer","text":"OptiDrop supports converting between JPG, PNG, WebP, and BMP formats. You can convert from any of these formats to any other."}},
       {"@type":"Question","name":"Does converting image formats reduce quality?","acceptedAnswer":{"@type":"Answer","text":"It depends on the format. PNG conversion is lossless — no quality loss. JPG and WebP use lossy compression, so there may be minimal quality loss depending on the quality setting you choose."}},
       {"@type":"Question","name":"What is the best image format for web use?","acceptedAnswer":{"@type":"Answer","text":"WebP offers the best quality-to-size ratio and is supported by all modern browsers. JPG is best for photos with universal compatibility. PNG is best for images needing transparency or lossless quality."}},
-      {"@type":"Question","name":"Can I batch convert multiple images?","acceptedAnswer":{"@type":"Answer","text":"Currently the tool converts one image at a time. For batch conversion, you can use the Image Compressor tool which supports up to 20 images with format conversion."}},
+      {"@type":"Question","name":"Can I batch convert multiple images?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can select multiple images at once. Download converted files individually or as a ZIP archive."}},
       {"@type":"Question","name":"Is my image uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All conversion happens in your browser using HTML5 Canvas. Your images never leave your device, making it safe for sensitive photos and documents."}}
     ]}
     </script>
@@ -95,12 +95,12 @@
                 <!-- STATE 1: UPLOAD -->
                 <div id="fmt-state-upload" class="p-8 sm:p-12 text-center">
                     <div id="fmtDropzone" class="border-2 border-dashed border-indigo-200 rounded-2xl p-10 cursor-pointer transition-all-ease hover:bg-indigo-50 hover:border-indigo-400 group flex flex-col items-center justify-center min-h-[260px]">
-                        <input type="file" id="fmtFileInput" class="hidden" accept="image/jpeg,image/png,image/webp,image/bmp" />
+                        <input type="file" id="fmtFileInput" class="hidden" accept="image/jpeg,image/png,image/webp,image/bmp" multiple />
                         <div class="bg-indigo-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
                             <svg class="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-800 mb-2">Drop an Image to Convert</h3>
-                        <p class="text-sm text-slate-500">Supports JPG, PNG, WebP, and BMP</p>
+                        <p class="text-sm text-slate-500">Supports JPG, PNG, WebP, and BMP — multiple files allowed</p>
                     </div>
                     <div class="mt-5 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
                         <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
@@ -146,7 +146,8 @@
                             <div class="flex gap-3 pt-1">
                                 <button id="btnFmtCancel" class="w-1/3 px-4 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors">Cancel</button>
                                 <button id="btnFmtConvert" class="w-2/3 px-4 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
-                                    <span>Convert</span>
+                                    <span class="btn-default-text">Convert</span>
+                                    <span class="btn-loading-text hidden">Processing... ⏳</span>
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
                                 </button>
                             </div>
@@ -170,6 +171,10 @@
                         <button id="btnFmtDownload" class="w-full sm:w-auto px-6 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-lg transition-all flex justify-center items-center gap-2 transform hover:-translate-y-1">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                             Download
+                        </button>
+                        <button id="btnFmtDownloadZip" class="hidden w-full sm:w-auto px-6 py-4 bg-indigo-700 text-white font-bold rounded-xl hover:bg-indigo-800 shadow-lg transition-all flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Download All (ZIP)
                         </button>
                         <button id="btnFmtStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all">Convert Another</button>
                     </div>
@@ -228,7 +233,7 @@
                         <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
-                        Currently the converter handles one image at a time. For batch conversion with compression, try the Image Compressor tool which supports up to 20 images with format selection.
+                        Yes. You can select multiple images at once. Download converted files individually or as a ZIP archive.
                     </div>
                 </div>
                 <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
@@ -346,6 +351,7 @@
     <div id="toast-container"></div>
 
     <script src="/common.js?v=2.1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script>
     (function() {
         const dropzone = document.getElementById('fmtDropzone');
@@ -362,16 +368,20 @@
         const qualitySlider = document.getElementById('fmtQuality');
         const qualityVal = document.getElementById('fmtQualityVal');
         const btnConvert = document.getElementById('btnFmtConvert');
+        const btnConvertDefault = btnConvert.querySelector('.btn-default-text');
+        const btnConvertLoading = btnConvert.querySelector('.btn-loading-text');
         const btnCancel = document.getElementById('btnFmtCancel');
         const btnDownload = document.getElementById('btnFmtDownload');
+        const btnDownloadZip = document.getElementById('btnFmtDownloadZip');
         const btnStartOver = document.getElementById('btnFmtStartOver');
         const resultImg = document.getElementById('fmtResultImg');
         const origInfo = document.getElementById('fmtOrigInfo');
         const newInfo = document.getElementById('fmtNewInfo');
 
-        let currentFile = null;
-        let resultBlob = null;
-        let resultUrl = null;
+        var currentFiles = [];
+        var resultBlobs = [];
+        var resultUrls = [];
+        var resultPreviewIdx = 0;
 
         const mimeToExt = { 'image/jpeg': 'JPG', 'image/png': 'PNG', 'image/webp': 'WebP', 'image/bmp': 'BMP' };
 
@@ -379,15 +389,26 @@
 
         function handleFile(files) {
             if (!files || !files.length) return;
-            const file = files[0];
-            if (!file.type.match('image.*')) { showToast('Please select an image file.', 'error'); return; }
-            currentFile = file;
-            const url = URL.createObjectURL(file);
+            var validFiles = [];
+            for (var i = 0; i < files.length; i++) {
+                if (files[i].type.match('image.*')) {
+                    validFiles.push(files[i]);
+                } else {
+                    showToast('Skipped non-image file: ' + files[i].name, 'error');
+                }
+            }
+            if (!validFiles.length) { showToast('No valid image files selected.', 'error'); return; }
+            currentFiles = validFiles;
+            var file = validFiles[0];
+            var url = URL.createObjectURL(file);
             previewImg.src = url;
             origFormat.textContent = mimeToExt[file.type] || file.type;
             origSize.textContent = formatBytes(file.size);
+            if (validFiles.length > 1) {
+                origSize.textContent += ' (' + validFiles.length + ' files selected)';
+            }
 
-            const img = new Image();
+            var img = new Image();
             img.onload = function() {
                 origDims.textContent = img.width + ' x ' + img.height + ' px';
                 URL.revokeObjectURL(url);
@@ -399,7 +420,7 @@
         }
 
         outputFormat.addEventListener('change', function() {
-            const fmt = this.value;
+            var fmt = this.value;
             qualityWrap.style.display = (fmt === 'image/png') ? 'none' : '';
         });
 
@@ -408,66 +429,166 @@
         });
 
         btnCancel.addEventListener('click', function() {
-            currentFile = null;
+            currentFiles = [];
             stateSettings.classList.add('hidden');
             stateUpload.classList.remove('hidden');
         });
 
+        function setLoading(loading) {
+            if (loading) {
+                btnConvertDefault.classList.add('hidden');
+                btnConvertLoading.classList.remove('hidden');
+                btnConvert.disabled = true;
+                btnConvert.style.opacity = '0.7';
+            } else {
+                btnConvertDefault.classList.remove('hidden');
+                btnConvertLoading.classList.add('hidden');
+                btnConvert.disabled = false;
+                btnConvert.style.opacity = '';
+            }
+        }
+
+        function convertSingleFile(file, fmt, quality) {
+            return new Promise(function(resolve, reject) {
+                var img = new Image();
+                img.onload = function() {
+                    var canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    var ctx = canvas.getContext('2d');
+                    if (fmt === 'image/jpeg') {
+                        ctx.fillStyle = '#FFFFFF';
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    }
+                    ctx.drawImage(img, 0, 0);
+                    canvas.toBlob(function(blob) {
+                        URL.revokeObjectURL(img.src);
+                        if (!blob) { reject(new Error('Conversion failed for ' + file.name)); return; }
+                        resolve({ original: file, blob: blob });
+                    }, fmt, fmt === 'image/png' ? undefined : quality);
+                };
+                img.onerror = function() { reject(new Error('Failed to load ' + file.name)); };
+                img.src = URL.createObjectURL(file);
+            });
+        }
+
         btnConvert.addEventListener('click', async function() {
-            if (!currentFile) return;
-            const fmt = outputFormat.value;
-            const quality = parseInt(qualitySlider.value) / 100;
+            if (!currentFiles.length) {
+                dropzone.style.borderColor = '#ef4444';
+                dropzone.style.animation = 'shake 0.4s ease';
+                setTimeout(function() {
+                    dropzone.style.borderColor = '';
+                    dropzone.style.animation = '';
+                }, 1500);
+                return;
+            }
+            var fmt = outputFormat.value;
+            var quality = parseInt(qualitySlider.value) / 100;
+            setLoading(true);
 
-            const img = new Image();
-            img.onload = async function() {
-                const canvas = document.createElement('canvas');
-                canvas.width = img.width;
-                canvas.height = img.height;
-                const ctx = canvas.getContext('2d');
-                if (fmt === 'image/jpeg') {
-                    ctx.fillStyle = '#FFFFFF';
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+            try {
+                resultBlobs = [];
+                for (var i = 0; i < resultUrls.length; i++) {
+                    URL.revokeObjectURL(resultUrls[i]);
                 }
-                ctx.drawImage(img, 0, 0);
+                resultUrls = [];
 
-                canvas.toBlob(function(blob) {
-                    if (!blob) { showToast('Conversion failed.', 'error'); return; }
-                    resultBlob = blob;
-                    if (resultUrl) URL.revokeObjectURL(resultUrl);
-                    resultUrl = URL.createObjectURL(blob);
-                    resultImg.src = resultUrl;
+                for (var j = 0; j < currentFiles.length; j++) {
+                    var result = await convertSingleFile(currentFiles[j], fmt, quality);
+                    resultBlobs.push(result);
+                    resultUrls.push(URL.createObjectURL(result.blob));
+                }
 
-                    const origExt = mimeToExt[currentFile.type] || 'Image';
-                    const newExt = mimeToExt[fmt] || 'Image';
-                    origInfo.textContent = origExt + ' (' + formatBytes(currentFile.size) + ')';
-                    newInfo.textContent = newExt + ' (' + formatBytes(blob.size) + ')';
+                resultPreviewIdx = 0;
+                var firstResult = resultBlobs[0];
+                var firstUrl = resultUrls[0];
+                resultImg.src = firstUrl;
 
-                    stateSettings.classList.add('hidden');
-                    stateResult.classList.remove('hidden');
-                }, fmt, fmt === 'image/png' ? undefined : quality);
-            };
-            img.src = URL.createObjectURL(currentFile);
+                var origExt = mimeToExt[firstResult.original.type] || 'Image';
+                var newExt = mimeToExt[fmt] || 'Image';
+                var infoText = origExt + ' (' + formatBytes(firstResult.original.size) + ') -> ' + newExt + ' (' + formatBytes(firstResult.blob.size) + ')';
+                if (resultBlobs.length > 1) {
+                    infoText = resultBlobs.length + ' files converted';
+                    var totalOrig = 0, totalNew = 0;
+                    for (var k = 0; k < resultBlobs.length; k++) {
+                        totalOrig += resultBlobs[k].original.size;
+                        totalNew += resultBlobs[k].blob.size;
+                    }
+                    infoText += ' — ' + formatBytes(totalOrig) + ' -> ' + formatBytes(totalNew);
+                }
+                origInfo.textContent = '';
+                newInfo.textContent = infoText;
+
+                if (resultBlobs.length > 1) {
+                    btnDownload.classList.add('hidden');
+                    btnDownloadZip.classList.remove('hidden');
+                } else {
+                    btnDownload.classList.remove('hidden');
+                    btnDownloadZip.classList.add('hidden');
+                }
+
+                stateSettings.classList.add('hidden');
+                stateResult.classList.remove('hidden');
+                showToast('Conversion complete!', 'success');
+            } catch (err) {
+                showToast(err.message || 'Conversion failed.', 'error');
+            } finally {
+                setLoading(false);
+            }
         });
 
         btnDownload.addEventListener('click', function() {
-            if (!resultBlob) return;
-            const fmt = outputFormat.value;
-            const ext = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' }[fmt] || 'jpg';
-            const a = document.createElement('a');
-            a.href = resultUrl;
-            a.download = (currentFile.name.replace(/\.[^.]+$/, '') || 'converted') + '.' + ext;
+            if (!resultBlobs.length) return;
+            var r = resultBlobs[0];
+            var fmt = outputFormat.value;
+            var ext = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' }[fmt] || 'jpg';
+            var a = document.createElement('a');
+            a.href = resultUrls[0];
+            a.download = (r.original.name.replace(/\.[^.]+$/, '') || 'converted') + '.' + ext;
             a.click();
         });
 
+        btnDownloadZip.addEventListener('click', async function() {
+            if (!resultBlobs.length || typeof JSZip === 'undefined') { showToast('ZIP library not loaded.', 'error'); return; }
+            setLoading(true);
+            try {
+                var zip = new JSZip();
+                var fmt = outputFormat.value;
+                var ext = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' }[fmt] || 'jpg';
+                for (var i = 0; i < resultBlobs.length; i++) {
+                    var r = resultBlobs[i];
+                    var name = (r.original.name.replace(/\.[^.]+$/, '') || 'converted_' + (i + 1)) + '.' + ext;
+                    zip.file(name, r.blob);
+                }
+                var content = await zip.generateAsync({ type: 'blob' });
+                var a = document.createElement('a');
+                a.href = URL.createObjectURL(content);
+                a.download = 'converted_images.zip';
+                a.click();
+                URL.revokeObjectURL(a.href);
+                showToast('ZIP downloaded!', 'success');
+            } catch (err) {
+                showToast('Failed to create ZIP.', 'error');
+            } finally {
+                setLoading(false);
+            }
+        });
+
         btnStartOver.addEventListener('click', function() {
-            currentFile = null;
-            resultBlob = null;
-            if (resultUrl) URL.revokeObjectURL(resultUrl);
-            resultUrl = null;
+            currentFiles = [];
+            resultBlobs = [];
+            for (var i = 0; i < resultUrls.length; i++) {
+                URL.revokeObjectURL(resultUrls[i]);
+            }
+            resultUrls = [];
             resultImg.src = '';
             stateResult.classList.add('hidden');
             stateUpload.classList.remove('hidden');
         });
+
+        var shakeStyle = document.createElement('style');
+        shakeStyle.textContent = '@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}';
+        document.head.appendChild(shakeStyle);
     })();
     </script>
 </body>

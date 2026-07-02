@@ -37,7 +37,11 @@
             <div id="results" class="mt-6 hidden">
                 <div class="flex items-center justify-between mb-3">
                     <h3 class="text-lg font-semibold text-slate-800 dark:text-white">Rhyming Words</h3>
-                    <span id="count" class="text-sm text-slate-500 dark:text-slate-400"></span>
+                    <div class="flex items-center gap-2">
+                        <span id="count" class="text-sm text-slate-500 dark:text-slate-400"></span>
+                        <button id="btnCopyRhymes" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors hidden">Copy All</button>
+                        <button id="btnDownloadRhymes" class="px-4 py-2 text-sm font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 rounded-lg hover:bg-emerald-100 transition-colors hidden">Download .txt</button>
+                    </div>
                 </div>
                 <div id="rhymeList" class="flex flex-wrap gap-2"></div>
                 <div id="noResults" class="hidden text-center py-8">

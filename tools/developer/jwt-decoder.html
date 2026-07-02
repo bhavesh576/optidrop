@@ -114,6 +114,8 @@
                         <strong>Warning:</strong> This tool decodes JWT tokens but does NOT verify the signature. Never paste tokens containing sensitive production credentials into any online tool.
                     </div>
 
+                    <button onclick="document.getElementById('jwtInput').value='';document.getElementById('resultsJWT').classList.add('hidden');" class="w-full px-6 py-3 bg-red-50 text-red-600 font-bold rounded-xl hover:bg-red-100 border border-red-200 transition-all mb-3">Clear</button>
+
                     <button id="btnDecodeJWT" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
                         Decode JWT
@@ -123,10 +125,12 @@
                         <div>
                             <h3 class="text-lg font-bold text-slate-800 mb-2">Header</h3>
                             <pre id="jwtHeader" class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm font-mono overflow-x-auto"></pre>
+                            <button onclick="copyToClipboard(document.getElementById('jwtHeader').textContent)" class="mt-2 px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all flex items-center gap-1.5">Copy Header</button>
                         </div>
                         <div>
                             <h3 class="text-lg font-bold text-slate-800 mb-2">Payload</h3>
                             <pre id="jwtPayload" class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm font-mono overflow-x-auto"></pre>
+                            <button onclick="copyToClipboard(document.getElementById('jwtPayload').textContent)" class="mt-2 px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all flex items-center gap-1.5">Copy Payload</button>
                         </div>
                         <div id="jwtMeta" class="hidden">
                             <h3 class="text-lg font-bold text-slate-800 mb-2">Token Info</h3>

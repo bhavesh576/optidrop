@@ -135,7 +135,8 @@
                         </div>
                         <div class="flex justify-between items-center mb-3">
                             <h3 class="text-lg font-bold text-slate-800">Top 20 Words</h3>
-                            <button onclick="copyToClipboard(document.getElementById('wfTable').innerText)" class="text-sm font-bold text-blue-600 hover:text-blue-700">Copy Table</button>
+                            <button onclick="copyToClipboard(document.getElementById('wfTable').innerText)" class="text-sm font-bold text-blue-600 hover:text-blue-700 mr-2">Copy Table</button>
+                            <button onclick="downloadWFReport()" class="text-sm font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Download Report</button>
                         </div>
                         <div class="table-responsive" id="wfTable">
                             <table class="w-full text-sm">
@@ -324,6 +325,26 @@
         document.getElementById('resultsWF').classList.remove('hidden');
         showToast('Analysis complete!');
     });
+
+    function downloadWFReport() {
+        var table = document.getElementById('wfTable');
+        if (!table || document.getElementById('resultsWF').classList.contains('hidden')) {
+            showToast('No results to download. Analyze text first.', 'error');
+            return;
+        }
+        var txt = 'Word Frequency Report\n=====================\n\n';
+        txt += 'Total Words: ' + document.getElementById('rWFTotal').textContent + '\n';
+        txt += 'Unique Words: ' + document.getElementById('rWFUnique').textContent + '\n\n';
+        txt += document.getElementById('wfTable').innerText;
+        var blob = new Blob([txt], { type: 'text/plain' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'word-frequency-report.txt';
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast('Report downloaded!');
+    }
     </script>
 </body>
 </html>

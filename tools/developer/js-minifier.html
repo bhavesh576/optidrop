@@ -134,6 +134,7 @@
                             <div class="flex gap-2">
                                 <button onclick="copyToClipboard(document.getElementById('jsOutput').value)" class="text-sm font-bold text-purple-600 hover:text-purple-700">Copy</button>
                                 <button onclick="var b=new Blob([document.getElementById('jsOutput').value],{type:'application/javascript'});var u=URL.createObjectURL(b);var a=document.createElement('a');a.href=u;a.download='script.min.js';a.click();URL.revokeObjectURL(u)" class="text-sm font-bold text-green-600 hover:text-green-700">Download .js</button>
+                                <button onclick="document.getElementById('jsInput').value='';document.getElementById('resultsJS').classList.add('hidden');" class="text-sm font-bold text-slate-500 hover:text-red-600">Clear</button>
                             </div>
                         </div>
                         <textarea id="jsOutput" rows="8" readonly

@@ -249,6 +249,10 @@
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                             Download .md
                         </button>
+                        <button id="btnDownloadHtml" class="px-4 py-2.5 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all text-sm flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Download .html
+                        </button>
                         <button id="btnClear" class="px-4 py-2.5 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all text-sm flex items-center gap-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                             Clear
@@ -362,24 +366,6 @@ console.log('Hello!');
     </main>
 
     <!-- Related Tools -->
-    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
-        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-            <a href="/tools/word-counter.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Word Counter</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Count words, characters, sentences, and paragraphs instantly.</span>
-            </a>
-            <a href="/tools/text-case-converter.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Character Counter</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Count characters with and without spaces in any text.</span>
-            </a>
-            <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Format, minify, and validate JSON with syntax highlighting.</span>
-            </a>
-        </div>
-    </section>
-
     <!-- FOOTER -->
         <footer class="site-footer">
         <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
@@ -478,6 +464,7 @@ console.log('Hello!');
         var mdWordCount = document.getElementById('mdWordCount');
         var btnCopyHtml = document.getElementById('btnCopyHtml');
         var btnDownloadMd = document.getElementById('btnDownloadMd');
+        var btnDownloadHtml = document.getElementById('btnDownloadHtml');
         var btnClear = document.getElementById('btnClear');
 
         // Lazy-load marked.js and DOMPurify on first use
@@ -535,6 +522,17 @@ console.log('Hello!');
                 return;
             }
             copyToClipboard(html, 'HTML copied to clipboard!');
+        });
+
+        btnDownloadHtml.addEventListener('click', function() {
+            var html = mdPreview.innerHTML;
+            if (!html || html.indexOf('Preview will appear') !== -1) {
+                showToast('Nothing to download. Write some Markdown first.', 'error');
+                return;
+            }
+            var fullHtml = '<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>Document</title>\n</head>\n<body>\n' + html + '\n</body>\n</html>';
+            downloadTextFile(fullHtml, 'document.html');
+            showToast('HTML file downloaded!');
         });
 
         btnDownloadMd.addEventListener('click', function() {

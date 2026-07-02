@@ -190,10 +190,38 @@
                                 </div>
                             </div>
 
+                            <div class="control-group">
+                                <label for="borderColor">Border / Accent Color</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="color" id="borderColor" value="#1a365d" class="w-10 h-10 rounded-lg border-2 border-slate-200 cursor-pointer">
+                                    <span id="borderColorHex" class="text-sm font-mono text-slate-600">#1a365d</span>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label for="bgColor">Background Color</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="color" id="bgColor" value="#fffff5" class="w-10 h-10 rounded-lg border-2 border-slate-200 cursor-pointer">
+                                    <span id="bgColorHex" class="text-sm font-mono text-slate-600">#fffff5</span>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label>Download Format</label>
+                                <div class="flex gap-2" id="formatOptions">
+                                    <button type="button" class="format-btn active px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg cursor-pointer" data-format="png">PNG</button>
+                                    <button type="button" class="format-btn px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg cursor-pointer" data-format="jpg">JPG</button>
+                                </div>
+                            </div>
+
                             <div class="flex flex-col gap-3 mt-6">
-                                <button onclick="generateAndDownload()" class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                                    Generate &amp; Download PNG
+                                <button id="downloadBtn" onclick="generateAndDownload()" class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4 download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                    <svg class="w-4 h-4 spinner-icon hidden animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
+                                    <span class="btn-label">Generate &amp; Download</span>
+                                </button>
+                                <button onclick="resetForm()" class="w-full px-4 py-2 text-sm font-bold text-slate-500 bg-slate-100 border border-slate-200 rounded-lg hover:bg-slate-200 transition-colors">
+                                    Reset
                                 </button>
                             </div>
                         </div>
@@ -271,24 +299,6 @@
         </section>
     <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;">Last updated: June 2026</p>
     </main>
-
-    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
-        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-            <a href="/tools/design/text-signature-generator.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Text Signature Generator</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Generate stylized text signatures with multiple fonts.</span>
-            </a>
-            <a href="/tools/design/watermark-creator.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Watermark Creator</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Add text watermarks to your images.</span>
-            </a>
-            <a href="/tools/design/signature-drawer.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Signature Drawer</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Draw your signature with mouse or touch.</span>
-            </a>
-        </div>
-    </section>
 
     <footer class="site-footer"><div class="footer-inner" style="max-width:72rem;margin:0 auto;"><div class="footer-grid"><div class="footer-col"><h4>Image &amp; PDF Tools</h4><a href="/compress-image.html">Image Compressor</a><a href="/heic-to-jpg.html">HEIC to JPG</a><a href="/image-format-converter.html">Format Converter</a><a href="/remove-background.html">Background Remover</a><a href="/passport-photo-resizer.html">Photo Resizer</a><a href="/name-date-stamp.html">Name &amp; Date Stamper</a><a href="/signature-scanner.html">Signature Scanner</a><a href="/image-to-text-ocr.html">Image to Text (OCR)</a><a href="/compress-pdf.html">PDF Compressor</a><a href="/jpg-to-pdf.html">JPG to PDF</a><a href="/pdf-to-jpg.html">PDF to JPG</a></div><div class="footer-col"><h4>Career Tools</h4><a href="/tools/career/resume-builder.html">Resume Builder</a><a href="/tools/career/cover-letter.html">Cover Letter</a><a href="/tools/career/resignation-letter.html">Resignation Letter</a><a href="/tools/career/thank-you-letter.html">Thank You Letter</a><a href="/tools/career/linkedin-generator.html">LinkedIn Generator</a><a href="/tools/career/internship-letter.html">Internship Letter</a><a href="/tools/career/job-tracker.html">Job Tracker</a></div><div class="footer-col"><h4>Business Tools</h4><a href="/tools/business/invoice-generator.html">Invoice Generator</a><a href="/tools/business/freelance-contract.html">Freelance Contract</a><a href="/tools/business/salary-slip.html">Salary Slip</a><a href="/tools/business/business-proposal.html">Business Proposal</a><a href="/tools/business/offer-letter.html">Offer Letter</a><a href="/tools/business/noc-generator.html">NOC Generator</a><a href="/tools/business/experience-letter.html">Experience Letter</a><a href="/tools/business/profit-calculator.html">Profit Calculator</a><a href="/tools/business/receipt-generator.html">Receipt Generator</a></div><div class="footer-col"><h4>Calculator Tools</h4><a href="/tools/emi-calculator.html">EMI Calculator</a><a href="/tools/calculators/sip-calculator.html">SIP Calculator</a><a href="/tools/calculators/mortgage-calculator.html">Mortgage Calculator</a><a href="/tools/calculators/401k-calculator.html">401(k) Calculator</a><a href="/tools/calculators/paycheck-calculator.html">Paycheck Calculator</a><a href="/tools/calculators/vat-calculator.html">VAT Calculator</a><a href="/tools/calculators/overtime-calculator.html">Overtime Calculator</a><a href="/tools/calculators/savings-goal.html">Savings Goal</a><a href="/tools/calculators/compound-interest.html">Compound Interest</a><a href="/tools/calculators/retirement-calculator.html">Retirement Calculator</a></div><div class="footer-col"><h4>Developer Tools</h4><a href="/tools/developer/json-formatter.html">JSON Formatter</a><a href="/tools/developer/base64.html">Base64 Encoder</a><a href="/tools/developer/url-encoder.html">URL Encoder</a><a href="/tools/developer/color-converter.html">Color Converter</a><a href="/tools/developer/markdown-preview.html">Markdown Preview</a><a href="/tools/developer/hash-generator.html">Hash Generator</a><a href="/tools/developer/css-minifier.html">CSS Minifier</a><a href="/tools/developer/jwt-decoder.html">JWT Decoder</a></div><div class="footer-col footer-about"><h4>OptiDrop</h4><p>Free, fast, and 100% private browser-based tools. 300+ tools for images, PDFs, resumes, invoices, calculators, developers, health, and more.</p><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> OptiDrop. All rights reserved.</p><div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></div></footer>
 

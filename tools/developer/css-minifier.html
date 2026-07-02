@@ -135,6 +135,7 @@
                             <div class="flex gap-2">
                                 <button onclick="copyToClipboard(document.getElementById('cssOutput').value)" class="text-sm font-bold text-blue-600 hover:text-blue-700">Copy</button>
                                 <button onclick="var b=new Blob([document.getElementById('cssOutput').value],{type:'text/css'});var u=URL.createObjectURL(b);var a=document.createElement('a');a.href=u;a.download='style.min.css';a.click();URL.revokeObjectURL(u)" class="text-sm font-bold text-green-600 hover:text-green-700">Download .css</button>
+                                <button onclick="document.getElementById('cssInput').value='';document.getElementById('resultsCSS').classList.add('hidden');" class="text-sm font-bold text-slate-500 hover:text-red-600">Clear</button>
                             </div>
                         </div>
                         <textarea id="cssOutput" rows="8" readonly

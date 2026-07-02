@@ -265,11 +265,33 @@
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
                             Copy Text
                         </button>
+                        <button id="btnPreview" onclick="togglePreview()" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors inline-flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            Preview
+                        </button>
+                        <button id="btnPrint" onclick="printPreview()" class="px-4 py-2 text-sm font-bold text-indigo-600 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 transition-colors inline-flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                            Print
+                        </button>
+                        <button id="btnReset" onclick="resetForm()" class="px-4 py-2 text-sm font-bold text-slate-500 bg-slate-100 border border-slate-200 rounded-lg hover:bg-slate-200 transition-colors inline-flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            Reset
+                        </button>
                     </div>
 
                 </div>
             </div>
         </section>
+
+        <div id="previewSection" class="max-w-4xl mx-auto px-4 pb-6 hidden">
+            <div class="bg-white border-2 border-slate-200 rounded-2xl p-8 shadow-lg">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold text-slate-800">Document Preview</h3>
+                    <button onclick="togglePreview()" class="text-sm text-slate-500 hover:text-slate-700 font-medium">Close Preview</button>
+                </div>
+                <div id="previewContent" class="prose max-w-none text-sm"></div>
+            </div>
+        </div>
 
         <!-- SEO Content -->
         <section class="max-w-4xl mx-auto px-4 py-8">
@@ -704,8 +726,85 @@
         document.getElementById('invDate').addEventListener('input', saveData);
         document.getElementById('dueDate').addEventListener('input', saveData);
 
-        document.getElementById('btnGenerate').addEventListener('click', generatePDF);
+        document.getElementById('btnGenerate').addEventListener('click', function() {
+            var btn = this;
+            setLoading(btn, true);
+            generatePDF().then(function() { setLoading(btn, false); }).catch(function() { setLoading(btn, false); });
+        });
         document.getElementById('btnCopy').addEventListener('click', function() { copyToClipboard(generateText(), 'Invoice text copied!'); });
+
+        function togglePreview() {
+            var sec = document.getElementById('previewSection');
+            if (sec.classList.contains('hidden')) {
+                sec.classList.remove('hidden');
+                document.getElementById('previewContent').innerHTML = buildPreviewHTML();
+                sec.scrollIntoView({behavior:'smooth',block:'start'});
+            } else {
+                sec.classList.add('hidden');
+            }
+        }
+
+        function buildPreviewHTML() {
+            var sym = getCurrencySymbol();
+            var items = getItems();
+            var subtotal = 0;
+            var rows = '';
+            items.forEach(function(item) {
+                var amount = item.qty * item.price;
+                subtotal += amount;
+                rows += '<tr><td>' + (escAttr(item.desc) || '-') + '</td><td class="text-center">' + item.qty + '</td><td class="text-right">' + sym + item.price.toFixed(2) + '</td><td class="text-right font-bold">' + sym + amount.toFixed(2) + '</td></tr>';
+            });
+            var taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+            var tax = subtotal * taxRate / 100;
+            var total = subtotal + tax;
+            return '<h1>INVOICE</h1>' +
+                '<p><strong>Invoice #:</strong> ' + escAttr(document.getElementById('invNumber').value || 'N/A') + '</p>' +
+                '<p><strong>Date:</strong> ' + (document.getElementById('invDate').value || 'N/A') + ' &nbsp; <strong>Due Date:</strong> ' + (document.getElementById('dueDate').value || 'N/A') + '</p>' +
+                '<p><strong>Currency:</strong> ' + document.getElementById('currency').value + '</p>' +
+                '<div class="summary-box"><strong>From:</strong><br>' + (escAttr(document.getElementById('bizName').value) || 'Your Business').replace(/\n/g,'<br>') + '</div>' +
+                '<div class="summary-box"><strong>Bill To:</strong><br>' + (escAttr(document.getElementById('clientName').value) || 'Client').replace(/\n/g,'<br>') + '</div>' +
+                '<table><thead><tr><th>Description</th><th class="text-center">Qty</th><th class="text-right">Unit Price</th><th class="text-right">Amount</th></tr></thead><tbody>' + rows + '</tbody></table>' +
+                '<div class="summary-box">' +
+                '<div><span class="label">Subtotal:</span> <span class="value">' + sym + subtotal.toFixed(2) + '</span></div>' +
+                '<div><span class="label">Tax (' + taxRate + '%):</span> <span class="value">' + sym + tax.toFixed(2) + '</span></div>' +
+                '<div class="total-row"><span class="label">Total:</span> <span class="value">' + sym + total.toFixed(2) + '</span></div>' +
+                '</div>';
+        }
+
+        function printPreview() {
+            var content = document.getElementById('previewContent') || {innerHTML:''};
+            var sec = document.getElementById('previewSection');
+            var wasHidden = sec && sec.classList.contains('hidden');
+            if (wasHidden && sec) {
+                sec.classList.remove('hidden');
+                content.innerHTML = buildPreviewHTML();
+            }
+            var printWin = window.open('','','width=800,height=600');
+            printWin.document.write('<html><head><title>Print</title><style>body{font-family:Arial,sans-serif;padding:40px;max-width:800px;margin:0 auto;color:#1e293b;}h1{font-size:24px;border-bottom:2px solid #2563eb;padding-bottom:8px;}h2{font-size:18px;color:#2563eb;margin-top:24px;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid #e2e8f0;padding:8px;text-align:left;font-size:13px;}th{background:#2563eb;color:#fff;font-weight:700;}.total-row{font-weight:bold;background:#f0fdf4;}.summary-box{background:#f8fafc;border:1px solid #e2e8f0;padding:12px;border-radius:8px;margin:12px 0;}.label{color:#64748b;font-size:12px;}.value{font-size:16px;font-weight:700;}@media print{body{padding:20px;}}</style></head><body>');
+            printWin.document.write(content.innerHTML);
+            printWin.document.write('</body></html>');
+            printWin.document.close();
+            printWin.focus();
+            setTimeout(function(){printWin.print();},300);
+            if (wasHidden && sec) sec.classList.add('hidden');
+        }
+
+        function resetForm() {
+            if (!confirm('Are you sure you want to clear all form data? This cannot be undone.')) return;
+            localStorage.removeItem('invoice_gen');
+            location.reload();
+        }
+
+        function setLoading(btn, loading) {
+            if (loading) {
+                btn.disabled = true;
+                btn.dataset.origText = btn.innerHTML;
+                btn.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg> Generating...';
+            } else {
+                btn.disabled = false;
+                if (btn.dataset.origText) btn.innerHTML = btn.dataset.origText;
+            }
+        }
     })();
     </script>
 <script>

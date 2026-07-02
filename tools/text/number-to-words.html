@@ -187,6 +187,14 @@
                         <div id="rupeeResult" class="bg-green-50 border-2 border-green-200 rounded-xl px-5 py-4 text-green-900 font-bold text-base min-h-[56px]" style="line-height:1.7;">Enter an amount above to see the cheque format</div>
                     </div>
 
+                    <!-- Download Button -->
+                    <div class="flex gap-2 flex-wrap mt-4">
+                        <button onclick="downloadNumberReport()" class="px-4 py-2 text-sm font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 rounded-lg hover:bg-emerald-100 transition-all flex items-center gap-1.5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Download Report
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -254,24 +262,6 @@
     </main>
 
     <!-- Related Tools -->
-    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
-        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-            <a href="/tools/gst-calculator.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">GST Calculator</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Calculate GST inclusive and exclusive amounts with CGST, SGST, IGST breakup.</span>
-            </a>
-            <a href="/tools/business/invoice-generator.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Invoice Generator</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Create professional invoices with itemized billing, taxes, and download as PDF.</span>
-            </a>
-            <a href="/tools/percentage-calculator.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Percentage Calculator</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Calculate percentages, percentage change, increase, and decrease instantly.</span>
-            </a>
-        </div>
-    </section>
-
     <!-- Footer -->
         <footer class="site-footer">
         <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
@@ -504,6 +494,22 @@
             result += ' Only';
 
             rupeeResult.textContent = result;
+        };
+
+        window.downloadNumberReport = function() {
+            var num = document.getElementById('numInput').value.trim();
+            var rupee = document.getElementById('rupeeInput').value.trim();
+            var report = 'Number to Words Report\n=======================\n\n';
+            if (num) {
+                report += 'Number: ' + num + '\n';
+                report += 'International: ' + document.getElementById('intlResult').textContent + '\n';
+                report += 'Indian: ' + document.getElementById('indianResult').textContent + '\n\n';
+            }
+            if (rupee) {
+                report += 'Rupee Amount: ' + rupee + '\n';
+                report += 'In Words: ' + document.getElementById('rupeeResult').textContent + '\n';
+            }
+            downloadTextFile(report, 'number-to-words.txt');
         };
 
         window.copyText = function(elementId) {

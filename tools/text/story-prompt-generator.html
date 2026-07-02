@@ -51,8 +51,12 @@
             </div>
 
             <div class="flex flex-col sm:flex-row gap-3 mt-4">
-                <button onclick="generatePrompt()" class="flex-1 px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl transition-colors">Generate Prompt</button>
-                <button onclick="copyPrompt()" class="px-6 py-3 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold rounded-xl transition-colors">Copy Prompt</button>
+                <button onclick="generatePrompt()" class="flex-1 px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl transition-colors">
+                    <span class="btn-default-text">Generate Prompt</span>
+                    <span class="btn-loading-text hidden">Generating... ⏳</span>
+                </button>
+                <button onclick="copyPrompt()" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors">Copy Prompt</button>
+                <button id="btnDownloadPrompt" class="px-4 py-2 text-sm font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 rounded-lg hover:bg-emerald-100 transition-colors">Download .txt</button>
             </div>
         </div></div></section>
         <div class="ad-slot ad-slot-rectangle" style="max-width:336px;margin:1.5rem auto;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8226291768848348" data-ad-slot="REPLACE_WITH_YOUR_AD_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>

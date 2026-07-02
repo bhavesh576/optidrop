@@ -220,6 +220,19 @@
                                             <span class="block text-xs text-slate-500">Smallest</span>
                                         </button>
                                     </div>
+                                    <details class="mt-3">
+                                        <summary class="text-sm font-bold text-slate-700 cursor-pointer hover:text-slate-900 transition-colors">Advanced Options</summary>
+                                        <div class="mt-3 space-y-3">
+                                            <div>
+                                                <label class="block text-sm font-bold text-slate-700 mb-2">Fine Quality: <span id="pdfQualitySliderVal" class="text-red-600">70</span>%</label>
+                                                <input type="range" id="pdfQualitySlider" min="1" max="100" value="70" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-red-600">
+                                                <div class="flex justify-between text-xs text-slate-400 mt-1">
+                                                    <span>Smaller file</span>
+                                                    <span>Better quality</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </details>
                                 </div>
 
                                 <div class="flex gap-3 pt-1">
@@ -227,7 +240,8 @@
                                         Cancel
                                     </button>
                                     <button id="btnCompressPdf" class="w-2/3 px-4 py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
-                                        <span>Compress PDF</span>
+                                        <span class="btn-default-text">Compress PDF</span>
+                                        <span class="btn-loading-text hidden">Processing... ⏳</span>
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                                     </button>
                                 </div>
@@ -550,6 +564,16 @@
             });
         });
 
+        // Quality slider
+        var pdfQualitySlider = document.getElementById('pdfQualitySlider');
+        var pdfQualitySliderVal = document.getElementById('pdfQualitySliderVal');
+        if (pdfQualitySlider) {
+            pdfQualitySlider.addEventListener('input', function() {
+                pdfQualitySliderVal.textContent = this.value;
+                selectedQuality = parseInt(this.value) / 100;
+            });
+        }
+
         // Style for active quality button
         var style = document.createElement('style');
         style.textContent = '.quality-btn { padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 0.75rem; background: #fff; cursor: pointer; transition: all 0.2s ease; text-align: center; } .quality-btn:hover { border-color: #ef4444; background: #fef2f2; } .quality-btn.active { border-color: #ef4444; background: #ef4444; color: #fff; } .quality-btn.active span { color: #fff !important; }';
@@ -597,12 +621,18 @@
 
             stateSettings.classList.add('hidden');
             stateLoading.classList.remove('hidden');
+            btnCompress.querySelector('.btn-default-text').classList.add('hidden');
+            btnCompress.querySelector('.btn-loading-text').classList.remove('hidden');
+            btnCompress.disabled = true;
             progressText.textContent = 'Loading PDF engines...';
 
             try { await Promise.all([loadPdfJsLib(), loadJsPdfLib()]); } catch (e) {
                 showToast('Failed to load PDF libraries. Please check your connection.', 'error');
                 stateLoading.classList.add('hidden');
                 stateSettings.classList.remove('hidden');
+                btnCompress.querySelector('.btn-default-text').classList.remove('hidden');
+                btnCompress.querySelector('.btn-loading-text').classList.add('hidden');
+                btnCompress.disabled = false;
                 return;
             }
 
@@ -658,11 +688,17 @@
 
                 stateLoading.classList.add('hidden');
                 stateResult.classList.remove('hidden');
+                btnCompress.querySelector('.btn-default-text').classList.remove('hidden');
+                btnCompress.querySelector('.btn-loading-text').classList.add('hidden');
+                btnCompress.disabled = false;
             } catch (err) {
                 console.error('PDF compression error:', err);
                 showToast('PDF compression failed. The file may be corrupted or too complex.', 'error');
                 stateLoading.classList.add('hidden');
                 stateSettings.classList.remove('hidden');
+                btnCompress.querySelector('.btn-default-text').classList.remove('hidden');
+                btnCompress.querySelector('.btn-loading-text').classList.add('hidden');
+                btnCompress.disabled = false;
             }
         });
 

@@ -210,12 +210,35 @@
                                 </select>
                             </div>
 
+                            <div>
+                                <label for="signatureFormat" class="block text-sm font-bold text-slate-700 mb-2">Output Format</label>
+                                <select id="signatureFormat" class="settings-select">
+                                    <option value="jpeg" selected>JPG — Smaller file size</option>
+                                    <option value="png">PNG — Lossless quality</option>
+                                </select>
+                            </div>
+
+                            <details class="mt-2">
+                                <summary class="text-sm font-bold text-slate-700 cursor-pointer hover:text-slate-900 transition-colors">Advanced Options</summary>
+                                <div class="mt-3 space-y-3">
+                                    <div>
+                                        <label class="block text-sm font-bold text-slate-700 mb-2">Quality: <span id="signatureQualityVal" class="text-brand-600">90</span>%</label>
+                                        <input type="range" id="signatureQuality" min="1" max="100" value="90" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-600">
+                                        <div class="flex justify-between text-xs text-slate-400 mt-1">
+                                            <span>Smaller file</span>
+                                            <span>Better quality</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+
                             <div class="flex gap-3 pt-1">
                                 <button id="btnSignatureCancel" class="w-1/3 px-4 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors focus:outline-none">
                                     Cancel
                                 </button>
                                 <button id="btnSignatureProcess" class="w-2/3 px-4 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
-                                    <span>Clean & Compress</span>
+                                    <span class="btn-default-text">Clean & Compress</span>
+                                    <span class="btn-loading-text hidden">Processing... ⏳</span>
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                                 </button>
                             </div>
@@ -313,25 +336,7 @@
         </section>
     </main>
     <!-- Related Tools -->
-    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
-        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-            <a href="/image-to-text-ocr.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Image to Text (OCR)</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Extract text from images using browser-based OCR.</span>
-            </a>
-            <a href="/name-date-stamp.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Name & Date Stamper</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Add name and date stamps to exam and ID photos.</span>
-            </a>
-            <a href="/compress-image.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Image Compressor</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Compress images to exact KB for web, forms, and email.</span>
-            </a>
-        </div>
-    </section>
-
-        <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
             <div class="footer-grid">
                 <div class="footer-col">
@@ -421,5 +426,17 @@
     <!-- Scripts -->
     <script src="/common.js?v=2.1"></script>
     <script src="/script.js?v=2.1"></script>
+    <script>
+    // Signature: quality slider and format
+    (function() {
+        var sigQuality = document.getElementById('signatureQuality');
+        var sigQualityVal = document.getElementById('signatureQualityVal');
+        if (sigQuality) {
+            sigQuality.addEventListener('input', function() {
+                sigQualityVal.textContent = this.value;
+            });
+        }
+    })();
+    </script>
 </body>
 </html>

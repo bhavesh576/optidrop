@@ -201,12 +201,24 @@
                         <textarea id="ocrTextOutput" readonly rows="10"
                             class="w-full px-4 py-3 text-sm border-2 border-slate-200 rounded-xl bg-white text-slate-800 font-mono resize-y focus:outline-none focus:border-brand-500"
                             placeholder="Extracted text will appear here..."></textarea>
+                        <div class="flex justify-between items-center text-xs text-slate-500 mt-1 px-1">
+                            <span>Characters: <span id="ocrCharCount" class="font-bold text-slate-700">0</span></span>
+                            <span>Words: <span id="ocrWordCount" class="font-bold text-slate-700">0</span></span>
+                        </div>
                     </div>
 
                     <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2 w-full max-w-lg mx-auto">
                         <button id="btnOcrCopy" class="w-full sm:w-auto px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-lg shadow-brand-200 transition-all focus:outline-none flex justify-center items-center gap-2 transform hover:-translate-y-1">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
                             Copy
+                        </button>
+                        <button id="btnOcrDownloadTxt" class="w-full sm:w-auto px-6 py-4 bg-slate-600 text-white font-bold rounded-xl hover:bg-slate-700 shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Download .txt
+                        </button>
+                        <button id="btnOcrClear" class="w-full sm:w-auto px-6 py-4 bg-red-100 text-red-700 font-bold rounded-xl hover:bg-red-200 transition-all focus:outline-none flex justify-center items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                            Clear
                         </button>
                         <button id="btnOcrStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all focus:outline-none">
                             Extract Another
@@ -284,25 +296,7 @@
         </section>
     </main>
     <!-- Related Tools -->
-    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
-        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-            <a href="/signature-scanner.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Signature Scanner</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Scan and extract clean signatures from paper documents.</span>
-            </a>
-            <a href="/compress-image.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Image Compressor</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Compress images to exact KB for web, forms, and email.</span>
-            </a>
-            <a href="/remove-background.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Background Remover</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Remove backgrounds from photos instantly in your browser.</span>
-            </a>
-        </div>
-    </section>
-
-        <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
             <div class="footer-grid">
                 <div class="footer-col">
@@ -392,5 +386,68 @@
     <!-- Scripts -->
     <script src="/common.js?v=2.1"></script>
     <script src="/script.js?v=2.1"></script>
+    <script>
+    // OCR: Download .txt, Clear, and word/char counter
+    (function() {
+        var ocrTextOutput = document.getElementById('ocrTextOutput');
+        var ocrCharCount = document.getElementById('ocrCharCount');
+        var ocrWordCount = document.getElementById('ocrWordCount');
+        var btnOcrDownloadTxt = document.getElementById('btnOcrDownloadTxt');
+        var btnOcrClear = document.getElementById('btnOcrClear');
+
+        function updateCounters() {
+            if (!ocrTextOutput) return;
+            var text = ocrTextOutput.value;
+            ocrCharCount.textContent = text.length;
+            ocrWordCount.textContent = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+        }
+
+        if (ocrTextOutput) {
+            ocrTextOutput.addEventListener('input', updateCounters);
+            // Also update when value is set programmatically
+            var observer = new MutationObserver(updateCounters);
+            // Use a setter override to detect programmatic changes
+            var origValue = Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value');
+            if (origValue && origValue.set) {
+                Object.defineProperty(ocrTextOutput, 'value', {
+                    set: function(v) {
+                        origValue.set.call(this, v);
+                        updateCounters();
+                    },
+                    get: function() {
+                        return origValue.get.call(this);
+                    }
+                });
+            }
+        }
+
+        if (btnOcrDownloadTxt) {
+            btnOcrDownloadTxt.addEventListener('click', function() {
+                if (!ocrTextOutput || !ocrTextOutput.value.trim()) {
+                    showToast('No text to download.', 'error');
+                    return;
+                }
+                var blob = new Blob([ocrTextOutput.value], { type: 'text/plain' });
+                var a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = 'extracted-text.txt';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                showToast('Text file downloaded!');
+            });
+        }
+
+        if (btnOcrClear) {
+            btnOcrClear.addEventListener('click', function() {
+                if (ocrTextOutput) {
+                    ocrTextOutput.value = '';
+                    updateCounters();
+                    showToast('Text cleared.');
+                }
+            });
+        }
+    })();
+    </script>
 </body>
 </html>

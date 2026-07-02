@@ -103,6 +103,21 @@
             <p class="text-slate-500 max-w-lg mx-auto">Organize your tasks with priorities, due dates, and categories. All data saved locally in your browser.</p>
         </div>
 
+        <!-- Progress Bar & Export -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-4 mb-6 shadow-sm">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-bold text-slate-700">Progress</span>
+                <span id="todoProgress" class="text-sm font-bold text-blue-600">0 / 0 completed</span>
+            </div>
+            <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                <div id="todoProgressBar" class="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+            <div class="flex justify-end gap-2 mt-3">
+                <button id="btnExportCSV" class="px-4 py-2 text-sm font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 rounded-lg hover:bg-emerald-100 transition-colors">Export CSV</button>
+                <button id="btnResetTodos" class="px-4 py-2 text-sm font-bold text-slate-500 bg-slate-100 border border-slate-200 rounded-lg hover:bg-slate-200 transition-colors">Reset All</button>
+            </div>
+        </div>
+
         <!-- Add Task Form -->
         <div class="bg-white rounded-2xl border border-slate-200 p-6 mb-6 shadow-sm">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">

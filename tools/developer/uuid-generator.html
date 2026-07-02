@@ -173,20 +173,19 @@
                     </div>
 
                     <!-- Generate Button -->
-                    <div class="mb-6">
-                        <button id="btnGenerate" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                    <div class="mb-6 flex gap-3">
+                        <button id="btnGenerate" class="flex-1 px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
                             Generate UUIDs
                         </button>
+                        <button id="btnRegenerate" class="px-3 py-1.5 text-sm font-bold text-violet-600 bg-violet-50 border border-violet-200 rounded-lg hover:bg-violet-100 transition-all">Regenerate ↻</button>
                     </div>
 
                     <!-- Output -->
                     <div class="mb-4">
                         <div class="flex items-center justify-between mb-2">
                             <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Generated UUIDs</label>
-                            <button id="btnCopyAll" class="px-4 py-1.5 text-xs font-bold bg-slate-200 text-slate-700 rounded-lg hover:bg-slate-300 transition-colors dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600">
-                                Copy All
-                            </button>
+                            <button id="btnCopyAll" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all flex items-center gap-1.5">Copy All</button>
                         </div>
                         <div id="uuidOutput" class="bg-slate-900 text-green-400 rounded-xl p-4 text-sm font-mono max-h-80 overflow-y-auto min-h-[60px] dark:bg-slate-950">
                             <span class="text-slate-500">Click "Generate UUIDs" to create UUIDs...</span>
@@ -277,24 +276,7 @@
         </section>
 
         <!-- Related Tools -->
-        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
-            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-                <a href="/tools/developer/hash-generator.html" class="tool-card" style="padding:1rem;">
-                    <span class="tool-card-title" style="font-size:0.95rem;">Hash Generator</span>
-                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate MD5, SHA-1, SHA-256 hashes online.</span>
-                </a>
-                <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
-                    <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
-                    <span class="tool-card-desc" style="font-size:0.8rem;">Format, validate, and minify JSON data.</span>
-                </a>
-                <a href="/tools/developer/base64.html" class="tool-card" style="padding:1rem;">
-                    <span class="tool-card-title" style="font-size:0.95rem;">Base64 Encoder</span>
-                    <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode Base64 strings online.</span>
-                </a>
-            </div>
-        </section>
-    <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;">Last updated: June 2026</p>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;">Last updated: June 2026</p>
     </main>
 
     <footer class="site-footer">
@@ -423,6 +405,10 @@
         }
 
         btnGenerate.addEventListener('click', generate);
+
+        document.getElementById('btnRegenerate').addEventListener('click', function() {
+            document.getElementById('btnGenerate').click();
+        });
 
         btnCopyAll.addEventListener('click', function() {
             var text = uuidOutput.textContent;

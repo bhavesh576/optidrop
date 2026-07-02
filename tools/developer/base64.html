@@ -218,16 +218,23 @@
                                         Decode from Base64
                                     </button>
                                 </div>
+                                <div class="mt-2">
+                                    <button id="btnClear" class="px-4 py-2 text-sm font-bold text-red-600 bg-red-50 border border-red-200 rounded-lg hover:bg-red-100 transition-all">Clear</button>
+                                </div>
                             </div>
                             <!-- Output -->
                             <div>
                                 <div class="flex items-center justify-between mb-2">
                                     <label class="block text-sm font-bold text-slate-700">Output</label>
-                                    <button id="btnCopyText" class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-blue-600 bg-white border border-slate-200 rounded-lg hover:border-blue-300 transition-all">Copy</button>
+                                    <div class="flex gap-2">
+                                        <button id="btnCopyText" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all flex items-center gap-1.5">Copy</button>
+                                        <button id="btnDownloadText" class="px-4 py-2 text-sm font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 rounded-lg hover:bg-emerald-100 transition-all">Download .txt</button>
+                                    </div>
                                 </div>
                                 <div id="b64Output" class="base64-output" style="min-height:180px;">Output will appear here...</div>
-                                <div class="mt-2 text-sm text-slate-500">
-                                    Characters: <strong id="outputCharCount" class="text-slate-800">0</strong>
+                                <div class="mt-2 text-sm text-slate-500 flex gap-4">
+                                    <span>Characters: <strong id="outputCharCount" class="text-slate-800">0</strong></span>
+                                    <span>Bytes: <strong id="outputByteCount" class="text-slate-800">0</strong></span>
                                 </div>
                             </div>
                         </div>
@@ -248,7 +255,7 @@
                         <div id="fileInfo" class="hidden mt-3 text-sm text-slate-600 mb-3"></div>
                         <div class="flex items-center justify-between mb-2 mt-4">
                             <label class="block text-sm font-bold text-slate-700">Base64 Output</label>
-                            <button id="btnCopyFile" class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-blue-600 bg-white border border-slate-200 rounded-lg hover:border-blue-300 transition-all">Copy</button>
+                            <button id="btnCopyFile" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all flex items-center gap-1.5">Copy</button>
                         </div>
                         <div id="fileOutput" class="base64-output" style="min-height:120px;">Base64 output will appear here after selecting a file...</div>
                         <div class="mt-2 text-sm text-slate-500">
@@ -331,24 +338,6 @@
     </main>
 
     <!-- Related Tools -->
-    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
-        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-            <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Format, minify, and validate JSON with syntax highlighting.</span>
-            </a>
-            <a href="/tools/developer/url-encoder.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">URL Encoder</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode URLs and HTML entities online.</span>
-            </a>
-            <a href="/tools/developer/hash-generator.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Hash Generator</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Generate SHA-256 and SHA-512 hashes instantly.</span>
-            </a>
-        </div>
-    </section>
-
     <!-- FOOTER -->
         <footer class="site-footer">
         <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
@@ -447,6 +436,9 @@
         var btnEncode = document.getElementById('btnEncode');
         var btnDecode = document.getElementById('btnDecode');
         var btnCopyText = document.getElementById('btnCopyText');
+        var btnClear = document.getElementById('btnClear');
+        var btnDownloadText = document.getElementById('btnDownloadText');
+        var outputByteCount = document.getElementById('outputByteCount');
         var fileDropzone = document.getElementById('fileDropzone');
         var fileInput = document.getElementById('fileInput');
         var fileInfo = document.getElementById('fileInfo');
@@ -491,6 +483,7 @@
                 currentTextOutput = utf8ToBase64(input);
                 b64Output.textContent = currentTextOutput;
                 outputCharCount.textContent = currentTextOutput.length.toLocaleString();
+                outputByteCount.textContent = new TextEncoder().encode(currentTextOutput).length.toLocaleString();
                 showToast('Text encoded to Base64!');
             } catch (e) {
                 showToast('Encoding failed: ' + e.message, 'error');
@@ -507,6 +500,7 @@
                 currentTextOutput = base64ToUtf8(input);
                 b64Output.textContent = currentTextOutput;
                 outputCharCount.textContent = currentTextOutput.length.toLocaleString();
+                outputByteCount.textContent = new TextEncoder().encode(currentTextOutput).length.toLocaleString();
                 showToast('Base64 decoded successfully!');
             } catch (e) {
                 showToast('Invalid Base64 string. Please check your input.', 'error');
@@ -519,6 +513,35 @@
                 return;
             }
             copyToClipboard(currentTextOutput);
+        });
+
+        // Clear button
+        btnClear.addEventListener('click', function() {
+            b64Input.value = '';
+            b64Output.textContent = 'Output will appear here...';
+            currentTextOutput = '';
+            outputCharCount.textContent = '0';
+            outputByteCount.textContent = '0';
+            showToast('Cleared!');
+        });
+
+        // Download .txt handler
+        btnDownloadText.addEventListener('click', function() {
+            if (!currentTextOutput) {
+                showToast('Nothing to download. Encode or decode first.', 'error');
+                return;
+            }
+            downloadTextFile(currentTextOutput, 'base64-output.txt');
+        });
+
+        // Live input stats counter
+        b64Input.addEventListener('input', function() {
+            var val = b64Input.value;
+            // Reuse the output char/byte counters as live input stats when no output yet
+            if (!currentTextOutput) {
+                outputCharCount.textContent = val.length.toLocaleString();
+                outputByteCount.textContent = new TextEncoder().encode(val).length.toLocaleString();
+            }
         });
 
         // File to Base64

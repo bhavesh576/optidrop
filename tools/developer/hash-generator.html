@@ -227,12 +227,18 @@
                         <textarea id="hashInput" placeholder="Type or paste text here to generate hashes..." class="block w-full px-4 py-4 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium resize-y" style="min-height:120px;font-family:inherit;line-height:1.7;"></textarea>
                     </div>
 
-                    <!-- Generate Button -->
-                    <div class="mb-6">
-                        <button id="btnGenerate" class="w-full px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
+                    <!-- Generate + Clear Buttons -->
+                    <div class="mb-6 flex gap-3">
+                        <button id="btnGenerate" class="flex-1 px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
                             Generate Hashes
                         </button>
+                        <button id="btnClear" class="px-4 py-2 text-sm font-bold text-red-600 bg-red-50 border border-red-200 rounded-lg hover:bg-red-100 transition-all">Clear</button>
+                    </div>
+
+                    <!-- Copy All Hashes Button -->
+                    <div class="mb-4">
+                        <button id="btnCopyAll" class="w-full px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all flex items-center justify-center gap-1.5">Copy All Hashes</button>
                     </div>
 
                     <!-- SHA-256 Result -->
@@ -244,7 +250,7 @@
                         <div class="hash-value" id="sha256Output">Hash will appear here...</div>
                         <div class="hash-meta">
                             <span class="hash-length">Length: <strong id="sha256Length">0</strong> hex characters</span>
-                            <button class="hash-copy-btn" onclick="copyHash('sha256Output')">Copy SHA-256</button>
+                            <button class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all flex items-center gap-1.5" onclick="copyHash('sha256Output')">Copy SHA-256</button>
                         </div>
                     </div>
 
@@ -257,7 +263,7 @@
                         <div class="hash-value" id="sha512Output">Hash will appear here...</div>
                         <div class="hash-meta">
                             <span class="hash-length">Length: <strong id="sha512Length">0</strong> hex characters</span>
-                            <button class="hash-copy-btn" onclick="copyHash('sha512Output')">Copy SHA-512</button>
+                            <button class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all flex items-center gap-1.5" onclick="copyHash('sha512Output')">Copy SHA-512</button>
                         </div>
                     </div>
 
@@ -342,24 +348,6 @@
     </main>
 
     <!-- Related Tools -->
-    <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
-        <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-            <a href="/tools/password-generator.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Password Generator</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Generate strong, secure random passwords with custom options.</span>
-            </a>
-            <a href="/tools/developer/base64.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">Base64 Encoder</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Encode and decode Base64 text and files instantly.</span>
-            </a>
-            <a href="/tools/developer/json-formatter.html" class="tool-card" style="padding:1rem;">
-                <span class="tool-card-title" style="font-size:0.95rem;">JSON Formatter</span>
-                <span class="tool-card-desc" style="font-size:0.8rem;">Format, minify, and validate JSON with syntax highlighting.</span>
-            </a>
-        </div>
-    </section>
-
     <!-- FOOTER -->
         <footer class="site-footer">
         <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
@@ -533,6 +521,32 @@
             }
             copyToClipboard(el.textContent);
         };
+
+        // Copy All Hashes
+        document.getElementById('btnCopyAll').addEventListener('click', function() {
+            var sha256 = sha256Output.textContent;
+            var sha512 = sha512Output.textContent;
+            if (sha256.indexOf('Hash will appear') !== -1 || sha512.indexOf('Hash will appear') !== -1) {
+                showToast('Nothing to copy. Generate hashes first.', 'error');
+                return;
+            }
+            var allHashes = 'SHA-256: ' + sha256 + '\nSHA-512: ' + sha512;
+            copyToClipboard(allHashes);
+            showToast('All hashes copied to clipboard!');
+        });
+
+        // Clear button
+        document.getElementById('btnClear').addEventListener('click', function() {
+            hashInput.value = '';
+            sha256Output.textContent = 'Hash will appear here...';
+            sha512Output.textContent = 'Hash will appear here...';
+            sha256Length.textContent = '0';
+            sha512Length.textContent = '0';
+            inputCharCount.textContent = '0';
+            inputByteCount.textContent = '0';
+            hashInput.focus();
+            showToast('Cleared all fields.');
+        });
     })();
     </script>
 </body>

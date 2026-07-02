@@ -224,11 +224,37 @@
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
                             Copy Text
                         </button>
+<button id="btnDownloadTxt" onclick="downloadTxt()" class="px-4 py-2 text-sm font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 rounded-lg hover:bg-emerald-100 transition-colors inline-flex items-center gap-1">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+    Download .txt
+</button>
+<button id="btnPreview" onclick="togglePreview()" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors inline-flex items-center gap-1">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+    Preview
+</button>
+<button id="btnPrint" onclick="printPreview()" class="px-4 py-2 text-sm font-bold text-indigo-600 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 transition-colors inline-flex items-center gap-1">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+    Print
+</button>
+<button id="btnReset" onclick="resetForm()" class="px-4 py-2 text-sm font-bold text-slate-500 bg-slate-100 border border-slate-200 rounded-lg hover:bg-slate-200 transition-colors inline-flex items-center gap-1">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+    Reset
+</button>
                     </div>
 
                 </div>
             </div>
         </section>
+
+<div id="previewSection" class="max-w-4xl mx-auto px-4 pb-6 hidden">
+    <div class="bg-white border-2 border-slate-200 rounded-2xl p-8 shadow-lg">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-bold text-slate-800">Document Preview</h3>
+            <button onclick="togglePreview()" class="text-sm text-slate-500 hover:text-slate-700 font-medium">Close Preview</button>
+        </div>
+        <div id="previewContent" class="prose max-w-none text-sm"></div>
+    </div>
+</div>
 
         <!-- SEO Content -->
         <section class="max-w-4xl mx-auto px-4 py-8">
@@ -291,24 +317,7 @@
         </section>
 
         <!-- Related Tools -->
-        <section class="related-tools" style="max-width:72rem;margin:0 auto;padding:2rem 1rem;">
-            <h2 style="font-size:1.25rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Related Tools</h2>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-                <a href="/tools/business/experience-letter.html" class="tool-card" style="padding:1rem;">
-                    <span class="tool-card-title" style="font-size:0.95rem;">Experience Letter</span>
-                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate professional experience certificates and relieving letters.</span>
-                </a>
-                <a href="/tools/business/noc-generator.html" class="tool-card" style="padding:1rem;">
-                    <span class="tool-card-title" style="font-size:0.95rem;">NOC Generator</span>
-                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate No Objection Certificates for visa, education, and employment.</span>
-                </a>
-                <a href="/tools/business/salary-slip.html" class="tool-card" style="padding:1rem;">
-                    <span class="tool-card-title" style="font-size:0.95rem;">Salary Slip</span>
-                    <span class="tool-card-desc" style="font-size:0.8rem;">Generate professional salary slips with earnings and deductions.</span>
-                </a>
-            </div>
-        </section>
-    <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;">Last updated: June 2026</p>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:1rem;">Last updated: June 2026</p>
     </main>
 
         <footer class="site-footer">
@@ -586,6 +595,69 @@
 
         document.getElementById('btnGenerate').addEventListener('click', generatePDF);
         document.getElementById('btnCopy').addEventListener('click', function() { copyToClipboard(generateText(), 'Offer letter text copied!'); });
+
+        // Phase 7: Deep Feature Injection
+        function setLoading(btn, loading) {
+            if (!btn) return;
+            if (loading) { btn.disabled = true; btn.style.opacity = '0.6'; }
+            else { btn.disabled = false; btn.style.opacity = '1'; }
+        }
+
+        function togglePreview() {
+            var sec = document.getElementById('previewSection');
+            if (sec.classList.contains('hidden')) {
+                document.getElementById('previewContent').innerHTML = buildPreviewHTML();
+                sec.classList.remove('hidden');
+                sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                sec.classList.add('hidden');
+            }
+        }
+
+        function buildPreviewHTML() {
+            var d = getFormData();
+            var h = '<div style="font-family:Arial,sans-serif;">';
+            h += '<h1 style="font-size:22px;color:#2563eb;border-bottom:2px solid #2563eb;padding-bottom:8px;">OFFER LETTER</h1>';
+            h += '<p style="color:#64748b;font-size:12px;">Date: ' + new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}) + '</p>';
+            h += '<p><strong>Dear ' + d.candidate + ',</strong></p>';
+            h += '<p>We are pleased to extend this offer of employment for the position of <strong>' + d.jobTitle + '</strong> at <strong>' + d.company + '</strong>.</p>';
+            h += '<div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:16px;margin:12px 0;">';
+            h += '<p><strong>Position:</strong> ' + d.jobTitle + '</p>';
+            h += '<p><strong>Start Date:</strong> ' + formatDate(d.startDate) + '</p>';
+            h += '<p><strong>Reporting Manager:</strong> ' + d.manager + '</p>';
+            h += '<p><strong>Probation Period:</strong> ' + d.probation + '</p>';
+            h += '<p><strong>Compensation:</strong> ' + d.salary + '</p>';
+            h += '</div>';
+            h += '<p><strong>Benefits:</strong></p><p>' + d.benefits.replace(/\n/g,'<br>') + '</p>';
+            h += '<p style="margin-top:16px;color:#64748b;font-size:12px;">This offer is contingent upon successful completion of background verification.</p>';
+            h += '</div>';
+            return h;
+        }
+
+        function printPreview() {
+            var content = buildPreviewHTML();
+            var win = window.open('', '_blank');
+            win.document.write('<html><head><title>Offer Letter</title><style>body{font-family:Arial,sans-serif;padding:40px;max-width:800px;margin:0 auto;}h1{margin-bottom:8px;}p{line-height:1.6;}</style></head><body>' + content + '</body></html>');
+            win.document.close();
+            win.print();
+        }
+
+        function resetForm() {
+            if (!confirm('Are you sure you want to clear all form data? This cannot be undone.')) return;
+            localStorage.removeItem('optidrop_offer_letter');
+            location.reload();
+        }
+
+        function downloadTxt() {
+            var text = generateText();
+            var blob = new Blob([text], {type:'text/plain'});
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'Offer_Letter.txt';
+            a.click();
+            URL.revokeObjectURL(a.href);
+            showToast('Text file downloaded!');
+        }
     })();
     </script>
 </body>
