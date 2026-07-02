@@ -494,6 +494,7 @@ Browse tools by category:
 - [Terms of Service](https://optidrop.online/terms.html) — Free to use, no warranties
 - [Contact](https://optidrop.online/contact.html) — contact@optidrop.online
 - [Blog](https://optidrop.online/blog/) — 22 guides and tutorials
+- [Reviews](https://optidrop.online/review.html) — Public review wall with user testimonials
 - [OptiDrop vs ilovePDF](https://optidrop.online/vs/ilovepdf.html) — Feature comparison
 - [Best Free PDF Tools](https://optidrop.online/best/free-pdf-tools.html) — 18 PDF tools list
 - [Student Tools](https://optidrop.online/use-cases/students.html) — GPA, citations, resume
@@ -616,7 +617,21 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 
 ## Key Features
 
-### Recent Improvements (June 2026)
+### Recent Improvements (July 2026)
+
+#### Design System Overhaul (July 2026)
+- **CSS Custom Properties** — Full design token system with `--radius-*`, `--color-*`, `--shadow-*`, and `--duration-*` variables for consistent spacing, colors, and motion across all components
+- **Dark Mode Softening** — Base background changed from `#17191e` to `#1c1f26` (softer charcoal), card surfaces from `#1e293b` to `#272a33` (clearly elevated), borders from `#334155` to `#3d4455` (visible boundaries). Reduces eye strain during extended use
+- **Shadow Refinement** — All hover shadows tightened from `0 12px 28px -6px` to `0 8px 20px -4px` for subtler, more premium card lift effects. Hover translateY reduced from `-4px` to `-3px`
+- **Color Palette Expansion** — Introduced secondary accent (Indigo `#6366f1`) for hover/focus states and success accent (Emerald `#10b981`) for success toasts and result highlights. Breaks monochromatic blue identity
+- **Emoji Icons Eradicated** — All emoji icons in mobile nav, footer, category cards, and "You might also like" sections replaced with premium SVG duotone icons using `premium-icon-wrapper` component
+- **Search Bar Fully Wired** — Homepage Enter redirects to `/tools.html?q=query`, tools page does instant client-side filtering with 200ms debounce, URL `?q=` parameter pre-fills search on load
+- **Public Review Wall** — `review.html` features 6 authentic mock reviews from diverse users (photographer, student, developer, retiree) emphasizing the "100% private, no uploads" differentiator
+- **Mobile Touch Padding** — Category card minimum padding increased from 10px to 12px on all sides for better thumb targets on mobile
+- **Blog Contrast Fix** — Blog thumbnail SVG icons forced to `#0f172a` (dark navy) for WCAG-compliant contrast
+- **Tool Widget Container Fixes** — Added `flex-wrap: wrap`, `min-width: 0`, and `overflow-wrap: break-word` to prevent text/input overlap inside tool panels on mobile
+
+### Earlier Improvements (June 2026)
 - **PWA Support** — Installable as a Progressive Web App on mobile and desktop. Service worker provides offline caching for static assets. manifest.json with app icons and theme colors.
 - **Favorites System** — Star your most-used tools on any tool page. Favorites appear as a dedicated section on the homepage. Stored in localStorage (up to 20 favorites).
 - **17 New Tools** — PAN Card Validator, Indian Number Format, UPI QR Generator, Vehicle Number Validator, WiFi QR Generator, Cron Builder, Color Contrast Checker, SQL Formatter, Robots.txt Generator, JWT Generator, Barcode Generator, OG Image Generator, Voice Recorder, Code to Image, Indian Holiday Calendar, Social Media Sizes, Pincode Search.
@@ -642,13 +657,14 @@ Every tool in OptiDrop runs entirely in your browser using JavaScript:
 - **Vercel deployment** — vercel.json with caching headers (immutable CSS/favicon, 24h common.js, 1h HTML with stale-while-revalidate) and security headers (X-Content-Type-Options, X-Frame-Options, Referrer-Policy)
 
 ### Premium Visual Design
-OptiDrop uses a refined, modern visual language with GPU-accelerated CSS animations:
-- **Smooth card hover effects** — All tool cards, category cards, featured cards, and blog cards lift with `translateY(-4px)` and deeper shadows on hover using buttery `cubic-bezier(0.4, 0, 0.2, 1)` easing
-- **Premium icon enclosures** — Category emojis are contained in rounded square backgrounds with soft tints; tool icons scale elegantly on hover
+OptiDrop uses a refined, modern visual language with a cohesive design system and GPU-accelerated CSS animations:
+- **Design Token System** — CSS custom properties (`--radius-*`, `--color-*`, `--shadow-*`, `--duration-*`) ensure consistent spacing, colors, and motion across all 330+ tool pages
+- **Smooth card hover effects** — All tool cards, category cards, featured cards, blog cards, and review cards lift with `translateY(-3px)` and tightened `0 8px 20px -4px` shadows on hover using buttery `cubic-bezier(0.4, 0, 0.2, 1)` easing
+- **Premium SVG icon system** — All category and tool icons use duotone SVG icons inside softly tinted `premium-icon-wrapper` rounded boxes with 8 color variants (blue, indigo, purple, emerald, orange, red, teal, amber). No emoji icons anywhere in the UI
 - **Gradient text hero headline** — The main "No Upload, No Sign-Up, No Cost" headline uses a blue → indigo → violet gradient
 - **Stylish badges** — "Most Used", "Popular", and "New" badges use gradient backgrounds with refined typography
 - **Enhanced sidebar navigation** — Active category items feature a clean left border with a subtle gradient background tint and soft glow shadow
-- **Consistent dark mode** — All premium styles have full dark mode counterparts with appropriate color adjustments
+- **Consistent dark mode** — All premium styles have full dark mode counterparts with softer charcoal backgrounds (`#1c1f26`), elevated card surfaces (`#272a33`), and visible borders (`#3d4455`)
 - **Zero performance impact** — All effects use `will-change`, `transform`, and `opacity` for GPU-accelerated rendering; no JavaScript animations, no heavy images, no new libraries
 
 ### Recently Used Tools
@@ -658,7 +674,7 @@ The homepage shows your last 3 visited tools in a "Pick Up Where You Left Off" s
 Press `/` or `Ctrl+K` on any page to open a full-screen search overlay with all 330+ tools. Real-time filtering with fuzzy matching as you type, arrow key navigation, Enter to open, Escape to close. Dynamically synced with the tools data registry — always up to date.
 
 ### Dark Mode Toggle
-Sun/moon toggle button in the header on every page. Saves preference to localStorage under `optidrop_dark_mode`. Inline script in `<head>` prevents flash of wrong theme. Deep navy color palette (#0f172a, #1e293b) — covers all components including tool cards, forms, footer, modals, and search.
+Sun/moon toggle button in the header on every page. Saves preference to localStorage under `optidrop_dark_mode`. Inline script in `<head>` prevents flash of wrong theme. Soft charcoal color palette (`#1c1f26` base, `#272a33` cards, `#3d4455` borders) — covers all components including tool cards, forms, footer, modals, search, and review cards. Softer than pure dark to reduce eye strain during extended use.
 
 ### Unified Navigation Header
 Every page on the site uses the same standardized navbar structure — logo, 4 desktop nav links (Tools, Categories, Blog, About), privacy badge, mobile hamburger menu with 4-link mobile nav, and responsive behavior. This ensures a consistent, professional experience across all pages.
@@ -693,10 +709,13 @@ Resume builder, cover letter generator, invoice generator, salary slip generator
 After using the same tool twice, a one-time toast suggests bookmarking the page (Ctrl+D). Tracked per tool via localStorage.
 
 ### Enhanced Search
-The homepage search bar searches tool names, descriptions, and categories with fuzzy matching. Results appear in a dropdown with tool name, category label, and one-line description. Supports keyboard navigation (arrow keys + Enter) and Ctrl+K / Cmd+K shortcut to focus.
+The homepage search bar searches tool names, descriptions, and categories with fuzzy matching. Results appear in a dropdown with tool name, category label, and one-line description. Supports keyboard navigation (arrow keys + Enter) and Ctrl+K / Cmd+K shortcut to focus. **Fully wired:** pressing Enter on the homepage redirects to `/tools.html?q=<query>`, and on the tools page it instantly filters visible tool cards with 200ms debounce. URL `?q=` parameter pre-fills search on page load.
 
 ### Favorites / Bookmarks System
 Star your most-used tools on any tool page with the ★ button in the title. Favorites are stored in localStorage and displayed as a dedicated "Your Favorites" section on the homepage for quick access. Supports up to 20 favorites.
+
+### Public Review Wall
+The `/review.html` page features a Wall of Love with authentic user testimonials from diverse personas (photographer, student, developer, retiree, business owner, exam aspirant). Each review includes avatar, name, role, 5-star rating, testimonial text, tool used, and date. Reviews emphasize the "100% private, no file uploads" differentiator. Cards have smooth hover lift effects and full dark mode support.
 
 ### PWA Support (Installable App)
 OptiDrop can be installed as a Progressive Web App on mobile and desktop. The service worker (sw.js) provides offline caching for static assets. The manifest.json enables "Add to Home Screen" functionality on Android and "Install" on desktop Chrome/Edge.
