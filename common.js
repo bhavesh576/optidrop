@@ -172,10 +172,6 @@ window.OptiTrack = {
                         '<div class="user-hub-panel" data-panel="saved" style="display:none;">' +
                             '<div class="user-hub-empty">No saved tools yet.<br><span>Click the ☆ icon on any tool page to save it.</span></div>' +
                         '</div>' +
-                        '<a href="/#coming-soon-ai" class="user-hub-coming-soon">' +
-                            '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>' +
-                            '<span><strong>Coming Soon:</strong> Free Local AI Tools</span>' +
-                        '</a>' +
                     '</div>' +
                 '</div>' +
                 '<button class="mobile-menu-toggle" aria-label="Menu">' +
@@ -1710,9 +1706,9 @@ function initToolsDirectoryV2() {
             applyFilter();
             renderSidebar();
         });
-        // Pre-fill from URL query parameter
+        // Pre-fill from URL query parameter (?search= or ?q=)
         var urlParams = new URLSearchParams(window.location.search);
-        var searchQuery = urlParams.get('search');
+        var searchQuery = urlParams.get('search') || urlParams.get('q');
         if (searchQuery) {
             dirSearch.value = searchQuery;
             currentQuery = searchQuery.toLowerCase().trim();
