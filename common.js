@@ -5,6 +5,12 @@
    share-bar observer) only created when the browser is idle.
    ========================================================= */
 
+// Signal JS is enabled — CSS uses html.js to hide <noscript>
+document.documentElement.classList.add('js');
+// Remove noscript from DOM entirely — it has inline styles (margin:2rem, padding:2rem)
+// that can cause layout gaps before CSS hides it. With JS on, noscript is pointless.
+(function(){ var ns = document.querySelector('noscript'); if (ns) ns.remove(); })();
+
 // Polyfill requestIdleCallback for Safari
 var _ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1); };
 

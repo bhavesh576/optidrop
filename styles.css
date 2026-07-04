@@ -70,7 +70,12 @@ body {
 /* Prevent margin collapse between header and adjacent elements */
 .site-header + * { margin-top: 0; }
 header.site-header { margin-top: 0 !important; }
-noscript { display: block; margin: 0; padding: 0; }
+/* noscript: let the browser handle display natively —
+   JS-enabled browsers default to display:none; JS-disabled browsers default to display:block.
+   DO NOT set display:block here — it overrides the browser's JS-enabled default and creates a layout gap. */
+noscript { margin: 0 !important; padding: 0 !important; }
+/* Belt-and-suspenders: if any inline style forces noscript visible, kill it */
+html.js noscript, body > noscript { display: none !important; margin: 0 !important; padding: 0 !important; height: 0 !important; overflow: hidden !important; }
 noscript + .site-header { margin-top: 0 !important; }
 
 /* Phase 2: Global layout gap fix — prevent subpage header jumping */
@@ -78,13 +83,14 @@ main, .main-content, [role="main"] { margin-top: 0; padding-top: 0; }
 body > main:first-of-type { margin-top: 0; }
 
 /* ── Task 2: Eliminate navbar gap on all subpages ───────────── */
-html { scroll-padding-top: 0; }
+html { scroll-padding-top: 64px; }
 body { margin-top: 0 !important; padding-top: 0 !important; }
 .site-header {
     position: sticky !important;
     top: 0 !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+    padding-top: 0 !important;
 }
 .site-header + main,
 .site-header + .flex-grow,
@@ -92,7 +98,6 @@ body { margin-top: 0 !important; padding-top: 0 !important; }
 .site-header + div {
     margin-top: 0 !important;
 }
-
 /* Phase 2: Ensure tool pages don't have rogue top spacing */
 .tool-panel, .glass-panel { margin-top: 0; }
 

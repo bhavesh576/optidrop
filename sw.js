@@ -9,6 +9,7 @@ const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/favicon.png',
+  '/favicon.ico',
   '/tools.html',
   '/about.html',
   '/contact.html'
