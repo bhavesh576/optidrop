@@ -492,7 +492,7 @@ Browse tools by category:
 - [About](https://optidrop.online/about.html) — What OptiDrop is and why it is free
 - [Privacy Policy](https://optidrop.online/privacy-policy.html) — No data collection, 100% browser-side processing
 - [Terms of Service](https://optidrop.online/terms.html) — Free to use, no warranties
-- [Contact](https://optidrop.online/contact.html) — contact@optidrop.online
+- [Contact](https://optidrop.online/contact.html) — codenza21@gmail.com
 - [Blog](https://optidrop.online/blog/) — 22 guides and tutorials
 - [Reviews](https://optidrop.online/review.html) — Public review wall with user testimonials
 - [OptiDrop vs ilovePDF](https://optidrop.online/vs/ilovepdf.html) — Feature comparison

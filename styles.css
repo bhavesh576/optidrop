@@ -4175,6 +4175,115 @@ textarea:focus-visible {
 .tool-card,.category-card,.faq-item,.blog-card{content-visibility:auto;contain-intrinsic-size:0 220px;}
 .ad-container,ins.adsbygoogle{min-height:90px;}
 
+/* ═══════════════════════════════════════════════════════════
+   MOBILE AD SLOT KILL-SWITCH — Bulletproof height clamp
+   Targets: .ad-slot wrapper, ins.adsbygoogle (including
+   dynamically injected by AdSense), their iframes, and
+   any AdSense Auto Ads containers.
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+
+    /* ── Layer 1: The wrapper (.ad-slot) ──────────────────── */
+    /* This is the outermost container that sits between
+       </header> and <main>, or inside <main>. Constraining
+       this clips ALL children regardless of what AdSense
+       injects inside. */
+    .ad-slot,
+    .ad-slot-leaderboard,
+    .ad-slot-rectangle {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100px !important;
+        min-height: 50px !important;
+        max-height: 100px !important;
+        margin: 6px auto !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* ── Layer 2: The <ins> element ──────────────────────── */
+    /* Overrides the inline style="width:728px;height:90px"
+       that AdSense sets. Also catches any <ins> that AdSense
+       Auto Ads injects without a .ad-slot wrapper. */
+    .ad-slot ins.adsbygoogle,
+    .ad-slot-leaderboard ins.adsbygoogle,
+    .ad-slot-rectangle ins.adsbygoogle,
+    ins.adsbygoogle {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100px !important;
+        min-height: 50px !important;
+        max-height: 100px !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ── Layer 3: AdSense iframes & injected children ────── */
+    /* The iframe that AdSense creates inside <ins> can have
+       its own fixed dimensions. Clamp it. */
+    .ad-slot iframe,
+    .ad-slot-leaderboard iframe,
+    .ad-slot-rectangle iframe,
+    ins.adsbygoogle iframe,
+    ins.adsbygoogle > div,
+    ins.adsbygoogle > span {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100px !important;
+        max-height: 100px !important;
+        overflow: hidden !important;
+    }
+
+    /* ── Layer 4: AdSense Auto Ads containers ────────────── */
+    /* Auto Ads can inject <div> wrappers that don't have
+       the .ad-slot class. Target common selectors. */
+    .ad-container,
+    .adsbygoogle-container,
+    [data-ad-status],
+    ins.adsbygoogle[data-ad-status="filled"],
+    ins.adsbygoogle[data-ad-status="done"] {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100px !important;
+        max-height: 100px !important;
+        overflow: hidden !important;
+    }
+
+    /* ── Layer 5: Ad placeholder states ──────────────────── */
+    .ad-placeholder,
+    .ad-placeholder-leaderboard,
+    .ad-placeholder-banner {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100px !important;
+        min-height: 50px !important;
+        max-height: 100px !important;
+        margin: 6px auto !important;
+        overflow: hidden !important;
+    }
+    .ad-placeholder-sidebar { display: none !important; }
+
+    /* ── Layer 6: AdSense slot wrappers ──────────────────── */
+    .adsense-slot-wrapper,
+    .adsense-slot-wrapper--leaderboard,
+    .adsense-slot-wrapper--banner {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100px !important;
+        max-height: 100px !important;
+        margin: 6px auto !important;
+        overflow: hidden !important;
+    }
+}
+
 /* ── Skip Link Accessibility ──────────────────────────────── */
 .skip-link{position:absolute;top:-120%;left:1rem;background:#2563eb;color:#fff;padding:.5rem 1rem;border-radius:.375rem;z-index:9999;text-decoration:none;font-weight:600;transition:top .2s;}
 .skip-link:focus{top:1rem;}
