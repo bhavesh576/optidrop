@@ -102,7 +102,7 @@
                     <div>
                         <h2 class="text-xl font-bold text-slate-900 mb-1">Email Us</h2>
                         <p class="text-slate-600 mb-3">The best way to reach us is via email. We read every message and respond within 48 hours.</p>
-                        <a href="mailto:codenza21@gmail.com" class="text-blue-600 hover:text-blue-700 font-bold text-lg underline">codenza21@gmail.com</a>
+                        <a href="#" id="openComposeModal" class="text-blue-600 hover:text-blue-700 font-bold text-lg underline">codenza21@gmail.com</a>
                     </div>
                 </div>
 
@@ -166,7 +166,7 @@
                         <p class="text-sm text-slate-500">We read every message. Your feedback helps us improve.</p>
                     </div>
                 </div>
-                <form id="feedbackForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-5">
+                <form id="feedbackForm" action="https://formsubmit.co/codenza21@gmail.com" method="POST" class="space-y-5">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                             <label for="feedbackName" class="block text-sm font-semibold text-slate-700 mb-1.5">Your Name</label>
@@ -199,6 +199,7 @@
                     </div>
                     <input type="hidden" name="_subject" value="OptiDrop Feedback">
                     <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
                     <button type="submit" id="feedbackSubmitBtn"
                         class="w-full sm:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm flex items-center justify-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
@@ -223,6 +224,41 @@
             </div>
         </section>
     </main>
+
+    <!-- Email Compose Modal -->
+    <div id="composeModal" class="compose-overlay" style="display:none;">
+        <div class="compose-card">
+            <div class="compose-header">
+                <h3>Send Us a Message</h3>
+                <button id="closeComposeModal" class="compose-close" aria-label="Close">&times;</button>
+            </div>
+            <form id="composeForm" action="https://formsubmit.co/codenza21@gmail.com" method="POST" class="compose-body">
+                <input type="hidden" name="_subject" value="New message from OptiDrop contact">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <label class="compose-label">Your Name
+                    <input type="text" name="name" required placeholder="e.g. Alex M." class="compose-input">
+                </label>
+                <label class="compose-label">Your Email (so we can reply)
+                    <input type="email" name="email" required placeholder="you@example.com" class="compose-input">
+                </label>
+                <label class="compose-label">Message
+                    <textarea name="message" required rows="5" placeholder="Write your feedback, question, or issue here..." class="compose-input compose-textarea"></textarea>
+                </label>
+                <button type="submit" id="composeSubmitBtn" class="compose-submit">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                    Send Message
+                </button>
+            </form>
+            <div id="composeSuccess" class="compose-success" style="display:none;">
+                <div class="compose-success-icon">
+                    <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <h3>Message Sent!</h3>
+                <p>Thank you. We will reply to your email within 48 hours.</p>
+            </div>
+        </div>
+    </div>
 
         <footer class="site-footer">
         <div class="footer-inner" style="max-width:72rem;margin:0 auto;">
@@ -312,34 +348,149 @@
     <div id="toast-container"></div>
 
     <!-- Scripts -->
+    <style>
+    /* ── Email Compose Modal ──────────────────────────────── */
+    .compose-overlay {
+        position: fixed; inset: 0; z-index: 9999;
+        background: rgba(15,23,42,0.55); backdrop-filter: blur(4px);
+        display: flex; align-items: center; justify-content: center;
+        padding: 1rem;
+    }
+    .compose-card {
+        background: #fff; border-radius: 1rem; width: 100%; max-width: 480px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.2); overflow: hidden;
+        animation: composeSlideUp 0.25s ease-out;
+    }
+    @keyframes composeSlideUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    .compose-header {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 1.25rem 1.5rem; border-bottom: 1px solid #e2e8f0;
+    }
+    .compose-header h3 { font-size: 1.125rem; font-weight: 800; color: #0f172a; margin: 0; }
+    .compose-close {
+        background: none; border: none; font-size: 1.5rem; color: #94a3b8;
+        cursor: pointer; line-height: 1; padding: 0.25rem; border-radius: 0.375rem;
+        transition: all 0.15s;
+    }
+    .compose-close:hover { background: #f1f5f9; color: #0f172a; }
+    .compose-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+    .compose-label { font-size: 0.8rem; font-weight: 700; color: #334155; display: flex; flex-direction: column; gap: 0.375rem; }
+    .compose-input {
+        font-size: 0.875rem; padding: 0.625rem 0.875rem; border: 2px solid #e2e8f0;
+        border-radius: 0.625rem; color: #0f172a; font-family: inherit;
+        transition: border-color 0.15s; outline: none; width: 100%; box-sizing: border-box;
+    }
+    .compose-input:focus { border-color: #3b82f6; }
+    .compose-textarea { resize: vertical; min-height: 100px; }
+    .compose-submit {
+        display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+        padding: 0.75rem 1.5rem; background: #2563eb; color: #fff;
+        font-weight: 700; font-size: 0.875rem; border: none; border-radius: 0.625rem;
+        cursor: pointer; transition: background 0.15s;
+    }
+    .compose-submit:hover { background: #1d4ed8; }
+    .compose-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+    .compose-success { padding: 2.5rem 1.5rem; text-align: center; }
+    .compose-success-icon {
+        width: 3.5rem; height: 3.5rem; border-radius: 50%;
+        background: #ecfdf5; display: flex; align-items: center; justify-content: center;
+        margin: 0 auto 1rem;
+    }
+    .compose-success h3 { font-size: 1.125rem; font-weight: 800; color: #0f172a; margin: 0 0 0.5rem; }
+    .compose-success p { font-size: 0.875rem; color: #64748b; margin: 0; }
+    .dark-mode .compose-card { background: #1e293b; }
+    .dark-mode .compose-header { border-bottom-color: #334155; }
+    .dark-mode .compose-header h3 { color: #f1f5f9; }
+    .dark-mode .compose-close { color: #64748b; }
+    .dark-mode .compose-close:hover { background: #334155; color: #f1f5f9; }
+    .dark-mode .compose-label { color: #cbd5e1; }
+    .dark-mode .compose-input { background: #0f172a; border-color: #334155; color: #f1f5f9; }
+    .dark-mode .compose-input:focus { border-color: #3b82f6; }
+    .dark-mode .compose-success h3 { color: #f1f5f9; }
+    </style>
     <script src="/common.js?v=4.0"></script>
     <script>
     (function() {
+        // ── Existing Feedback Form (Formsubmit.co) ─────────────
         var form = document.getElementById('feedbackForm');
         var btn = document.getElementById('feedbackSubmitBtn');
         var success = document.getElementById('feedbackSuccess');
-        if (!form) return;
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            btn.disabled = true;
-            btn.innerHTML = '<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" opacity="0.25"/><path fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/></svg> Sending...';
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            }).then(function(res) {
-                if (res.ok) {
-                    form.style.display = 'none';
-                    success.style.display = 'block';
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            }).catch(function() {
-                btn.disabled = false;
-                btn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg> Send Feedback';
-                alert('Something went wrong. Please try emailing us directly at codenza21@gmail.com');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                btn.disabled = true;
+                btn.innerHTML = '<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" opacity="0.25"/><path fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/></svg> Sending...';
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                }).then(function(res) {
+                    if (res.ok) {
+                        form.style.display = 'none';
+                        success.style.display = 'block';
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                }).catch(function() {
+                    btn.disabled = false;
+                    btn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg> Send Feedback';
+                    alert('Something went wrong. Please try again or email us at codenza21@gmail.com');
+                });
             });
-        });
+        }
+
+        // ── Email Compose Modal ───────────────────────────────
+        var modal = document.getElementById('composeModal');
+        var openBtn = document.getElementById('openComposeModal');
+        var closeBtn = document.getElementById('closeComposeModal');
+        var composeForm = document.getElementById('composeForm');
+        var composeBtn = document.getElementById('composeSubmitBtn');
+        var composeSuccess = document.getElementById('composeSuccess');
+
+        if (openBtn && modal) {
+            openBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        }
+        if (closeBtn && modal) {
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            });
+        }
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+        if (composeForm) {
+            composeForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                composeBtn.disabled = true;
+                composeBtn.innerHTML = '<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" opacity="0.25"/><path fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/></svg> Sending...';
+                fetch(composeForm.action, {
+                    method: 'POST',
+                    body: new FormData(composeForm),
+                    headers: { 'Accept': 'application/json' }
+                }).then(function(res) {
+                    if (res.ok) {
+                        composeForm.style.display = 'none';
+                        composeSuccess.style.display = 'block';
+                    } else {
+                        throw new Error('Send failed');
+                    }
+                }).catch(function() {
+                    composeBtn.disabled = false;
+                    composeBtn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg> Send Message';
+                    alert('Could not send. Please try again.');
+                });
+            });
+        }
     })();
     </script>
 </body>
