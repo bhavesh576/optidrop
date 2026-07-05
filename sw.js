@@ -8,8 +8,8 @@ const CACHE_NAME = 'optidrop-v2';  // ← Changed v1 to v2 (clears old broken ca
 const STATIC_ASSETS = [
   '/',
   '/index.html',
+  '/favicon.svg',
   '/favicon.png',
-  '/favicon.ico',
   '/tools.html',
   '/about.html',
   '/contact.html'

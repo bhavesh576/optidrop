@@ -1,0 +1,43 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# Editor artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Debug screenshots and Puppeteer output
+debug-*.png
+screen-*.png
+*screenshot*.png
+*-screenshot.png
+home-screenshot.png
+blog-screenshot.png
+
+# One-time debug/fix scripts
+debug-*.js
+fix-*.js
+screenshot-compare.js
+
+# Node modules (if any one-off scripts use npm)
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
