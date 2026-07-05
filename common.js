@@ -5,6 +5,31 @@
    share-bar observer) only created when the browser is idle.
    ========================================================= */
 
+// ── Supabase Client (for reviews/feedback persistence) ─────
+const supabaseUrl = 'https://ujbldzjuzmvhgqkxyslz.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmbXN0cml3eGRyeXJxZWxmZnhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyNjcwNTgsImV4cCI6MjA5ODg0MzA1OH0.t3sblfMlr_-eB7GAV2mBZFWD00y-k_ygTcAjneBJquo';
+const supabase = window.supabase ? window.supabase.createClient(supabaseUrl, supabaseKey) : null;
+
+async function submitUserReview(name, message, toolName) {
+    if (!supabase) {
+        console.warn('Supabase not loaded');
+        if (typeof showToast === 'function') showToast('Error: service unavailable', 'error');
+        return;
+    }
+    const { data, error } = await supabase
+        .from('reviews')
+        .insert([{ name: name, message: message, tool: toolName, date: new Date().toLocaleDateString() }]);
+    if (error) {
+        console.error('Supabase Error:', error);
+        if (typeof showToast === 'function') showToast('Error submitting review', 'error');
+    } else {
+        if (typeof showToast === 'function') showToast('Thank you for your review!', 'success');
+    }
+}
+
+/* =========================================================
+   ========================================================= */
+
 // Signal JS is enabled — CSS uses html.js to hide <noscript>
 document.documentElement.classList.add('js');
 // Remove noscript from DOM entirely — it has inline styles (margin:2rem, padding:2rem)

@@ -346,6 +346,7 @@
     <footer class="site-footer"></footer>
 
     <div id="toast-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/common.js?v=4.0"></script>
     <script>
     (function() {
@@ -468,6 +469,10 @@
                 reviews.push(review);
                 localStorage.setItem('optidrop_reviews', JSON.stringify(reviews));
             } catch(e) {}
+            // Also save to Supabase
+            if (typeof submitUserReview === 'function') {
+                submitUserReview(review.name, review.text, review.tool);
+            }
             appendReviewCard(review);
             form.classList.add('hidden');
             success.classList.remove('hidden');
