@@ -828,20 +828,29 @@ _ric(function () {
     var docHtml = '<section class="tool-doc-section" id="tool-about-section">';
 
     if (!hasAbout) {
+        // First sentence visible, rest collapsed
+        var firstAbout = content.about[0] || '';
+        var restAbout = content.about.slice(1);
+
         docHtml += '<h2 class="text-xl md:text-2xl font-semibold text-slate-100 mt-8 mb-4">About ' + name + '</h2>';
-        content.about.forEach(function (p) {
-            docHtml += '<p>' + p + '</p>';
-        });
+        docHtml += '<p>' + firstAbout + '</p>';
 
-        docHtml += '<h2 class="text-xl md:text-2xl font-semibold text-slate-100 mt-8 mb-4">How to Use the ' + name + '</h2>';
-        docHtml += '<ol class="list-decimal list-inside space-y-2 text-slate-300">';
-        content.steps.forEach(function (s) {
-            docHtml += '<li>' + s + '</li>';
-        });
-        docHtml += '</ol>';
-
-        docHtml += '<h2 class="text-xl md:text-2xl font-semibold text-slate-100 mt-8 mb-4">100% Secure & Local Processing</h2>';
-        docHtml += '<p>' + SECURITY_STATEMENT.replace('%%NAME%%', name) + '</p>';
+        if (restAbout.length > 0 || content.steps.length > 0) {
+            docHtml += '<details class="seo-collapse"><summary>Learn more about this tool</summary><div class="seo-collapse-content">';
+            restAbout.forEach(function (p) {
+                docHtml += '<p>' + p + '</p>';
+            });
+            if (content.steps.length > 0) {
+                docHtml += '<h3 style="font-size:1rem;font-weight:700;margin:1rem 0 0.5rem;">How to Use the ' + name + '</h3>';
+                docHtml += '<ol class="list-decimal list-inside space-y-2">';
+                content.steps.forEach(function (s) {
+                    docHtml += '<li>' + s + '</li>';
+                });
+                docHtml += '</ol>';
+            }
+            docHtml += '<p>' + SECURITY_STATEMENT.replace('%%NAME%%', name) + '</p>';
+            docHtml += '</div></details>';
+        }
     }
 
     // ── FAQ Accordion ─────────────────────────────────────────
@@ -887,13 +896,28 @@ _ric(function () {
 
     // ── Inject Documentation into DOM ─────────────────────────
     var footer = document.querySelector('.site-footer');
+    // Find the tool widget (glass-panel) for related tools placement
+    var glassPanel = document.querySelector('.glass-panel');
+    var insertTarget = glassPanel ? glassPanel.parentElement : footer;
     if (footer) {
-        // Inject related tools first (before SEO docs)
+        // Inject related tools right after the tool widget
         if (relatedHtml) {
             var relWrapper = document.createElement('div');
             relWrapper.innerHTML = relatedHtml;
-            footer.parentNode.insertBefore(relWrapper.firstChild, footer);
+            var relNode = relWrapper.firstChild;
+            if (glassPanel && glassPanel.parentElement) {
+                // Insert after the glass-panel's parent section
+                var widgetSection = glassPanel.closest('section') || glassPanel.parentElement;
+                if (widgetSection && widgetSection.nextSibling) {
+                    widgetSection.parentNode.insertBefore(relNode, widgetSection.nextSibling);
+                } else {
+                    footer.parentNode.insertBefore(relNode, footer);
+                }
+            } else {
+                footer.parentNode.insertBefore(relNode, footer);
+            }
         }
+        // Inject SEO docs after related tools (before footer)
         var wrapper = document.createElement('div');
         wrapper.innerHTML = docHtml;
         var section = wrapper.firstChild;

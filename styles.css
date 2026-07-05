@@ -130,6 +130,8 @@ body { margin-top: 0 !important; padding-top: 0 !important; }
     backdrop-filter: blur(10px);
     border: 1px solid rgba(226,232,240,0.8);
     border-radius: 1.5rem;
+    height: auto;
+    min-height: 0;
 }
 /* Prevent overlaps inside tool widget flex/grid children */
 .glass-panel .flex { flex-wrap: wrap; }
@@ -680,6 +682,45 @@ details.advanced-settings .advanced-content { padding: 1rem; background: #fff; }
 .dark-mode .tool-doc-section h2 { color: #f1f5f9 !important; }
 .dark-mode .tool-doc-section p,
 .dark-mode .tool-doc-section ol li { color: #cbd5e1 !important; }
+
+/* ── Collapsible SEO Prose (details/summary) ─────────────── */
+details.seo-collapse {
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+details.seo-collapse summary {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    user-select: none;
+}
+details.seo-collapse summary::-webkit-details-marker { display: none; }
+details.seo-collapse summary::after {
+    content: ''; margin-left: auto;
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #94a3b8;
+    transition: transform 0.2s ease;
+}
+details.seo-collapse[open] summary::after { transform: rotate(180deg); }
+details.seo-collapse summary:hover { background: #f1f5f9; color: #1e293b; }
+details.seo-collapse .seo-collapse-content { padding: 1rem 1.25rem; }
+.dark-mode details.seo-collapse { border-color: #3d4455 !important; }
+.dark-mode details.seo-collapse summary { background: #272a33 !important; color: #a1a7b3 !important; }
+.dark-mode details.seo-collapse summary::after { border-top-color: #64748b; }
+.dark-mode details.seo-collapse summary:hover { background: #334155 !important; color: #e2e8f0 !important; }
+.dark-mode details.seo-collapse .seo-collapse-content { background: #1e293b !important; }
 
 /* ── CTA Button ────────────────────────────────────────────── */
 .cta-btn {
@@ -2930,6 +2971,16 @@ body {
     border-color: #3d4455 !important;
 }
 
+.dark-mode details.advanced-settings {
+    border-color: #3d4455 !important;
+}
+.dark-mode details.advanced-settings summary {
+    background: #272a33 !important;
+    color: #a1a7b3 !important;
+}
+.dark-mode details.advanced-settings summary::after {
+    border-top-color: #64748b;
+}
 .dark-mode details.advanced-settings .advanced-content {
     background: #1e293b !important;
     color: #e2e8f0 !important;
@@ -3067,7 +3118,7 @@ body {
     background: #272a33 !important;
     border-color: #3d4455 !important;
 }
-.dark-mode .next-step-card:hover { border-color: #3b82f6 !important; }
+.dark-mode .next-step-card:hover { border-color: #f472b6 !important; }
 .dark-mode .next-step-info h3 { color: #f1f5f9 !important; }
 .dark-mode .next-step-info p { color: #a1a7b3 !important; }
 
