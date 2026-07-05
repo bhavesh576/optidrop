@@ -577,7 +577,7 @@
 
         // Style for active quality button
         var style = document.createElement('style');
-        style.textContent = '.quality-btn { padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 0.75rem; background: #fff; cursor: pointer; transition: all 0.2s ease; text-align: center; } .quality-btn:hover { border-color: #ef4444; background: #fef2f2; } .quality-btn.active { border-color: #ef4444; background: #ef4444; color: #fff; } .quality-btn.active span { color: #fff !important; }';
+        style.textContent = '.quality-btn { padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 0.75rem; background: #fff; cursor: pointer; transition: all 0.2s ease; text-align: center; } .quality-btn:hover { border-color: #ef4444; background: #fef2f2; } .quality-btn.active { border-color: #ef4444; background: #ef4444; color: #fff; } .quality-btn.active span { color: #fff !important; } .dark-mode .quality-btn { background: #272a33 !important; border-color: #3d4455 !important; color: #e2e8f0 !important; } .dark-mode .quality-btn:hover { border-color: #f472b6 !important; background: #3b0f2a !important; } .dark-mode .quality-btn.active { background: #e91e63 !important; border-color: #e91e63 !important; color: #fff !important; }';
         document.head.appendChild(style);
 
         setupDropzone(dropzone, fileInput, handleFile);
