@@ -511,6 +511,8 @@ function _compressViaWorker(file, targetBytes, outputFormat, forcedWidth, forced
 
         var onMsg = function (e) {
             if (timedOut) return;
+            // Ignore progress messages — only resolve on final result
+            if (e.data && e.data.progress !== undefined) return;
             clearTimeout(timer);
             worker.removeEventListener('message', onMsg);
             worker.removeEventListener('error', onErr);
