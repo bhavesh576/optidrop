@@ -13,7 +13,7 @@
     <meta name="description" content="Build a professional resume online free. Choose from 4 templates including ATS friendly. Download as PDF instantly. No sign-up required.">
     <meta name="keywords" content="resume builder, free resume builder, online resume maker, PDF resume download, ATS friendly resume, resume template">
     <meta name="author" content="OptiDrop">
-    <meta name="theme-color" content="#1d4ed8">
+    <meta name="theme-color" content="#e91e63">
     <meta property="og:title" content="Free Resume Builder Online — Download PDF Resume | OptiDrop">
     <meta property="og:description" content="Build a professional resume online free. Choose from 4 templates including ATS friendly. Download as PDF instantly. No sign-up required.">
     <meta property="og:type" content="website">
@@ -114,38 +114,153 @@
     <link rel="stylesheet" href="/styles.css?v=4.0">
 
     <style>
-        .template-thumb { border: 3px solid #e2e8f0; border-radius: 0.75rem; padding: 0.75rem; cursor: pointer; transition: all 0.2s; text-align: center; background: #fff; }
-        .template-thumb:hover { border-color: #93c5fd; }
-        .template-thumb.active { border-color: #2563eb; background: #eff6ff; }
-        .template-thumb .tpl-name { font-size: 0.75rem; font-weight: 700; margin-top: 0.375rem; }
-        /* Resume preview styles */
-        .resume-preview { background: #fff; padding: 2rem; font-size: 0.85rem; line-height: 1.6; color: #1e293b; min-height: 800px; }
-        .resume-preview h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.25rem; }
-        .resume-preview h2 { font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.25rem; margin: 1rem 0 0.5rem; }
-        .resume-preview .contact-line { font-size: 0.8rem; color: #64748b; }
-        .resume-preview .exp-item { margin-bottom: 0.75rem; }
-        .resume-preview .exp-header { display: flex; justify-content: space-between; font-weight: 600; }
-        .resume-preview .exp-sub { color: #64748b; font-size: 0.8rem; }
-        .resume-preview .skills-list { display: flex; flex-wrap: wrap; gap: 0.375rem; }
-        .resume-preview .skill-tag { background: #f1f5f9; padding: 0.15rem 0.5rem; border-radius: 0.25rem; font-size: 0.8rem; }
+    /* ── Resume Builder — Cerise Brand + Step Layout ─────────── */
+    :root { --rb-accent: #e91e63; --rb-accent-light: #fdf2f8; --rb-accent-dark: #be185b; }
 
-        /* Template: Modern */
-        .tpl-modern h2 { border-bottom-color: #2563eb; color: #2563eb; }
-        .tpl-modern h1 { color: #1e3a8a; }
+    /* Progress bar */
+    .rb-progress { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem 0.5rem; flex-wrap: wrap; }
+    .rb-dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #cbd5e1; background: transparent; transition: all 0.2s; cursor: pointer; }
+    .rb-dot.active { background: var(--rb-accent); border-color: var(--rb-accent); transform: scale(1.2); }
+    .rb-dot.done { background: var(--rb-accent); border-color: var(--rb-accent); }
+    .rb-step-label { font-size: 0.7rem; font-weight: 600; color: #64748b; text-align: center; margin-top: 0.25rem; }
 
-        /* Template: Minimal */
-        .tpl-minimal h2 { border-bottom: 1px solid #cbd5e1; text-transform: none; letter-spacing: 0; }
-        .tpl-minimal h1 { font-weight: 600; font-size: 1.25rem; }
+    /* Two-column layout */
+    .rb-layout { display: flex; gap: 1.5rem; padding: 1rem 1.5rem 1.5rem; }
+    .rb-steps { flex: 1; min-width: 0; }
+    .rb-preview-col { flex: 1; min-width: 0; position: sticky; top: 80px; align-self: flex-start; max-height: calc(100vh - 100px); overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 0.75rem; }
 
-        /* Template: ATS Friendly */
-        .tpl-ats { font-family: 'Times New Roman', serif; }
-        .tpl-ats h1 { font-size: 1.35rem; text-align: center; }
-        .tpl-ats h2 { font-size: 0.95rem; }
-        .tpl-ats .contact-line { text-align: center; }
+    /* Steps */
+    .rb-step { display: none; }
+    .rb-step.active { display: block; }
+    .rb-step h3 { font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem; }
+    .rb-step-helper { font-size: 0.8rem; color: #64748b; margin-bottom: 1rem; line-height: 1.5; }
+    .rb-optional { font-size: 0.65rem; font-weight: 700; color: #94a3b8; background: #f1f5f9; padding: 0.1rem 0.4rem; border-radius: 9999px; margin-left: 0.5rem; }
 
-        @media print {
-            .resume-preview { border: none; padding: 0.5in; }
-        }
+    /* Navigation */
+    .rb-nav { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+    .rb-back { flex: 0 0 auto; padding: 0.75rem 1.25rem; border: 2px solid #e2e8f0; border-radius: 0.75rem; background: #fff; color: #475569; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; }
+    .rb-back:hover { border-color: #cbd5e1; background: #f8fafc; }
+    .rb-next { flex: 1; padding: 0.75rem 1.25rem; border: none; border-radius: 0.75rem; background: var(--rb-accent); color: #fff; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; }
+    .rb-next:hover { background: var(--rb-accent-dark); }
+    .rb-skip { display: block; text-align: center; margin-top: 0.75rem; font-size: 0.8rem; color: #94a3b8; text-decoration: underline; cursor: pointer; border: none; background: none; }
+
+    /* Template selector */
+    .rb-tpl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+    .rb-tpl-card { border: 2px solid #e2e8f0; border-radius: 0.75rem; padding: 0.75rem; cursor: pointer; background: #fff; transition: all 0.2s; text-align: center; }
+    .rb-tpl-card:hover { border-color: var(--rb-accent); }
+    .rb-tpl-card.active { border-color: var(--rb-accent); background: var(--rb-accent-light); }
+    .rb-tpl-card .tpl-name { font-size: 0.75rem; font-weight: 700; color: #334155; margin-top: 0.375rem; }
+
+    /* Accent color picker */
+    .rb-accent-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; align-items: center; }
+    .rb-accent-label { font-size: 0.75rem; font-weight: 600; color: #64748b; }
+    .rb-accent-swatch { width: 24px; height: 24px; border-radius: 50%; border: 3px solid transparent; cursor: pointer; transition: all 0.2s; }
+    .rb-accent-swatch.active { border-color: #0f172a; transform: scale(1.15); }
+
+    /* Autosave indicator */
+    .rb-autosave { font-size: 0.75rem; color: #10b981; display: flex; align-items: center; gap: 0.375rem; opacity: 0; transition: opacity 0.3s; }
+    .rb-autosave.show { opacity: 1; }
+
+    /* Section toggles */
+    .rb-section-toggle { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem; margin-bottom: 0.5rem; }
+    .rb-section-toggle .rb-section-name { font-size: 0.8rem; font-weight: 600; color: #334155; flex: 1; }
+    .rb-section-toggle button { background: none; border: none; cursor: pointer; padding: 0.25rem; color: #94a3b8; transition: color 0.2s; }
+    .rb-section-toggle button:hover { color: #334155; }
+    .rb-section-toggle button.hidden-section { color: #e2e8f0; }
+
+    /* Extra sections */
+    .rb-extra-add { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .rb-extra-btn { padding: 0.4rem 0.75rem; border: 1px dashed #cbd5e1; border-radius: 0.5rem; background: transparent; font-size: 0.75rem; font-weight: 600; color: #64748b; cursor: pointer; transition: all 0.2s; }
+    .rb-extra-btn:hover { border-color: var(--rb-accent); color: var(--rb-accent); }
+
+    /* Form fields */
+    .rb-field { margin-bottom: 0.75rem; }
+    .rb-field label { display: block; font-size: 0.8rem; font-weight: 700; color: #334155; margin-bottom: 0.375rem; }
+    .rb-field input, .rb-field textarea, .rb-field select { width: 100%; padding: 0.625rem 0.75rem; border: 2px solid #e2e8f0; border-radius: 0.625rem; font-size: 0.875rem; font-family: inherit; color: #0f172a; transition: border-color 0.2s; box-sizing: border-box; background: #fff; }
+    .rb-field input:focus, .rb-field textarea:focus, .rb-field select:focus { outline: none; border-color: var(--rb-accent); }
+    .rb-field .helper { font-size: 0.7rem; color: #94a3b8; margin-top: 0.25rem; }
+
+    /* Entry rows */
+    .rb-entry { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 0.75rem; margin-bottom: 0.75rem; position: relative; }
+    .rb-entry-remove { position: absolute; top: 0.5rem; right: 0.5rem; background: none; border: none; cursor: pointer; color: #94a3b8; font-size: 1.1rem; }
+    .rb-entry-remove:hover { color: #dc2626; }
+    .rb-add-btn { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.5rem 1rem; border: 2px dashed #cbd5e1; border-radius: 0.625rem; background: transparent; font-size: 0.8rem; font-weight: 700; color: #64748b; cursor: pointer; transition: all 0.2s; }
+    .rb-add-btn:hover { border-color: var(--rb-accent); color: var(--rb-accent); }
+
+    /* Action buttons */
+    .rb-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .rb-action-primary { padding: 0.75rem 1.25rem; border: none; border-radius: 0.75rem; background: var(--rb-accent); color: #fff; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .rb-action-primary:hover { background: var(--rb-accent-dark); }
+    .rb-action-secondary { padding: 0.75rem 1.25rem; border: 2px solid #e2e8f0; border-radius: 0.75rem; background: #fff; color: #334155; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .rb-action-secondary:hover { border-color: #cbd5e1; background: #f8fafc; }
+
+    /* Mobile preview toggle */
+    .rb-mobile-bar { display: none; position: sticky; bottom: 0; background: #fff; border-top: 1px solid #e2e8f0; padding: 0.5rem; z-index: 10; }
+    .rb-mobile-bar button { flex: 1; padding: 0.625rem; border: 2px solid #e2e8f0; border-radius: 0.5rem; background: #fff; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+    .rb-mobile-bar button.active { background: var(--rb-accent); color: #fff; border-color: var(--rb-accent); }
+
+    /* Resume preview */
+    .resume-preview { background: #fff; padding: 2rem; font-size: 0.85rem; line-height: 1.6; color: #1e293b; min-height: 600px; border-radius: 0.75rem; }
+    .resume-preview h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.25rem; }
+    .resume-preview h2 { font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--rb-accent, #e2e8f0); padding-bottom: 0.25rem; margin: 1rem 0 0.5rem; color: var(--rb-accent, #0f172a); }
+    .resume-preview .contact-line { font-size: 0.8rem; color: #64748b; }
+    .resume-preview .exp-item { margin-bottom: 0.75rem; }
+    .resume-preview .exp-header { display: flex; justify-content: space-between; font-weight: 600; }
+    .resume-preview .exp-sub { color: #64748b; font-size: 0.8rem; }
+    .resume-preview .skills-list { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+    .resume-preview .skill-tag { background: #f1f5f9; padding: 0.15rem 0.5rem; border-radius: 0.25rem; font-size: 0.8rem; }
+
+    /* Template: Modern */
+    .tpl-modern h1 { color: var(--rb-accent, #1e3a8a); }
+
+    /* Template: Minimal */
+    .tpl-minimal h2 { border-bottom: 1px solid #cbd5e1; text-transform: none; letter-spacing: 0; }
+    .tpl-minimal h1 { font-weight: 600; font-size: 1.25rem; }
+
+    /* Template: ATS Friendly */
+    .tpl-ats { font-family: 'Times New Roman', serif; }
+    .tpl-ats h1 { font-size: 1.35rem; text-align: center; }
+    .tpl-ats h2 { font-size: 0.95rem; }
+    .tpl-ats .contact-line { text-align: center; }
+
+    /* Dark mode */
+    .dark-mode .rb-step h3 { color: #f1f5f9; }
+    .dark-mode .rb-field label { color: #cbd5e1; }
+    .dark-mode .rb-field input, .dark-mode .rb-field textarea, .dark-mode .rb-field select { background: #272a33; border-color: #3d4455; color: #e2e8f0; }
+    .dark-mode .rb-entry { background: #1e293b; border-color: #334155; }
+    .dark-mode .rb-tpl-card { background: #272a33; border-color: #3d4455; }
+    .dark-mode .rb-tpl-card .tpl-name { color: #cbd5e1; }
+    .dark-mode .rb-back { background: #272a33; border-color: #3d4455; color: #a1a7b3; }
+    .dark-mode .rb-action-secondary { background: #272a33; border-color: #3d4455; color: #a1a7b3; }
+    .dark-mode .rb-section-toggle { background: #1e293b; border-color: #334155; }
+    .dark-mode .rb-section-toggle .rb-section-name { color: #cbd5e1; }
+    .dark-mode .rb-mobile-bar { background: #1c1f26; border-color: #334155; }
+    .dark-mode .rb-mobile-bar button { background: #272a33; border-color: #3d4455; color: #a1a7b3; }
+    .dark-mode .resume-preview { background: #1e293b; color: #e2e8f0; }
+    .dark-mode .resume-preview h1 { color: #f1f5f9; }
+    .dark-mode .resume-preview h2 { border-color: var(--rb-accent, #334155); color: var(--rb-accent, #f1f5f9); }
+    .dark-mode .resume-preview .contact-line, .dark-mode .resume-preview .exp-sub { color: #94a3b8; }
+    .dark-mode .resume-preview .skill-tag { background: #2f3340; }
+    .dark-mode .rb-preview-col { border-color: #3d4455; }
+    .dark-mode .rb-accent-swatch.active { border-color: #f1f5f9; }
+
+    /* Mobile responsive */
+    @media (max-width: 1024px) {
+        .rb-preview-col { display: none; }
+        .rb-preview-col.mobile-visible { display: block; position: fixed; inset: 64px 0 56px 0; z-index: 50; background: #fff; padding: 1rem; overflow-y: auto; border-radius: 0; }
+        .dark-mode .rb-preview-col.mobile-visible { background: #1c1f26; }
+        .rb-steps.mobile-hidden { display: none; }
+        .rb-mobile-bar { display: flex; gap: 0.5rem; }
+    }
+    @media (max-width: 640px) {
+        .rb-layout { padding: 0.75rem; }
+        .rb-tpl-grid { gap: 0.5rem; }
+        .rb-nav { flex-direction: column; }
+        .rb-back, .rb-next { width: 100%; text-align: center; }
+        .rb-actions { flex-direction: column; }
+        .rb-action-primary, .rb-action-secondary { width: 100%; justify-content: center; }
+    }
+    @media print { .resume-preview { border: none; padding: 0.5in; } .rb-progress, .rb-nav, .rb-mobile-bar, .rb-preview-col, .rb-skip { display: none !important; } .rb-steps { display: none !important; } .resume-preview { display: block !important; } }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
@@ -182,112 +297,171 @@
         <!-- TOOL WIDGET -->
         <section class="max-w-6xl mx-auto px-4 pb-8">
             <div class="glass-panel rounded-3xl shadow-xl overflow-hidden">
-                <div class="p-6 sm:p-10">
 
-                    <!-- Template Selector -->
-                    <div class="mb-8">
-                        <label class="block text-sm font-bold text-slate-700 mb-3">Choose Template</label>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                            <div class="template-thumb active" data-tpl="classic" onclick="selectTemplate('classic')">
-                                <div class="text-2xl">&#128196;</div>
-                                <div class="tpl-name">Classic</div>
+                <!-- Progress Bar -->
+                <div class="rb-progress" id="rbProgress"></div>
+
+                <div class="rb-layout">
+                    <!-- LEFT: Steps -->
+                    <div class="rb-steps" id="rbSteps">
+
+                        <!-- Step 0: Template -->
+                        <div class="rb-step active" data-step="0">
+                            <h3>Choose a Template</h3>
+                            <p class="rb-step-helper">Pick a style that fits your industry. You can change this anytime.</p>
+                            <div class="rb-tpl-grid" id="rbTplGrid">
+                                <div class="rb-tpl-card active" data-tpl="classic"><div style="height:40px;background:linear-gradient(180deg,#e2e8f0 20%,#f8fafc 20%,#f8fafc 40%,#e2e8f0 40%,#e2e8f0 45%,#f8fafc 45%);border-radius:4px;"></div><div class="tpl-name">Classic</div></div>
+                                <div class="rb-tpl-card" data-tpl="modern"><div style="height:40px;background:linear-gradient(180deg,#e91e63 15%,#f8fafc 15%,#f8fafc 35%,#e2e8f0 35%,#e2e8f0 40%,#f8fafc 40%);border-radius:4px;"></div><div class="tpl-name">Modern</div></div>
+                                <div class="rb-tpl-card" data-tpl="minimal"><div style="height:40px;background:linear-gradient(180deg,#cbd5e1 20%,#fff 20%,#fff 40%,#cbd5e1 40%,#cbd5e1 41%,#fff 41%);border-radius:4px;"></div><div class="tpl-name">Minimal</div></div>
+                                <div class="rb-tpl-card" data-tpl="ats"><div style="height:40px;background:linear-gradient(180deg,#334155 20%,#fff 20%,#fff 40%,#334155 40%,#334155 45%,#fff 45%);border-radius:4px;font-family:serif;"></div><div class="tpl-name">ATS Friendly</div></div>
                             </div>
-                            <div class="template-thumb" data-tpl="modern" onclick="selectTemplate('modern')">
-                                <div class="text-2xl">&#127912;</div>
-                                <div class="tpl-name">Modern</div>
+                            <div class="rb-accent-row">
+                                <span class="rb-accent-label">Accent color:</span>
+                                <div class="rb-accent-swatch active" style="background:#e91e63;" data-color="#e91e63" title="Cerise"></div>
+                                <div class="rb-accent-swatch" style="background:#2563eb;" data-color="#2563eb" title="Blue"></div>
+                                <div class="rb-accent-swatch" style="background:#059669;" data-color="#059669" title="Green"></div>
+                                <div class="rb-accent-swatch" style="background:#7c3aed;" data-color="#7c3aed" title="Purple"></div>
+                                <div class="rb-accent-swatch" style="background:#ea580c;" data-color="#ea580c" title="Orange"></div>
+                                <div class="rb-accent-swatch" style="background:#475569;" data-color="#475569" title="Slate"></div>
                             </div>
-                            <div class="template-thumb" data-tpl="minimal" onclick="selectTemplate('minimal')">
-                                <div class="text-2xl">&#9998;</div>
-                                <div class="tpl-name">Minimal</div>
-                            </div>
-                            <div class="template-thumb" data-tpl="ats" onclick="selectTemplate('ats')">
-                                <div class="text-2xl">&#9989;</div>
-                                <div class="tpl-name">ATS Friendly</div>
+                            <button type="button" onclick="loadExample()" class="rb-add-btn" style="width:100%;justify-content:center;border-style:solid;border-color:var(--rb-accent);color:var(--rb-accent);">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                                Load Example Resume
+                            </button>
+                        </div>
+
+                        <!-- Step 1: Personal Info -->
+                        <div class="rb-step" data-step="1">
+                            <h3>Personal Information</h3>
+                            <p class="rb-step-helper">Your contact details so employers can reach you.</p>
+                            <div class="rb-field"><label>Full Name</label><input type="text" id="rName" placeholder="e.g. Priya Sharma"><p class="helper">Your name as it should appear on the resume.</p></div>
+                            <div class="rb-field"><label>Email Address</label><input type="email" id="rEmail" placeholder="e.g. priya@email.com"></div>
+                            <div class="rb-field"><label>Phone Number</label><input type="tel" id="rPhone" placeholder="e.g. +91 98765 43210"></div>
+                            <div class="rb-field"><label>Location</label><input type="text" id="rLocation" placeholder="e.g. Bangalore, India"></div>
+                            <div class="rb-field"><label>LinkedIn URL <span class="rb-optional">optional</span></label><input type="url" id="rLinkedin" placeholder="e.g. linkedin.com/in/priya-sharma"></div>
+                        </div>
+
+                        <!-- Step 2: Summary -->
+                        <div class="rb-step" data-step="2">
+                            <h3>Professional Summary</h3>
+                            <p class="rb-step-helper">2–3 sentences about what you do and what you're good at. You can always change this later.</p>
+                            <div class="rb-field">
+                                <textarea id="rSummary" rows="5" maxlength="400" placeholder="Experienced software engineer with 5+ years in full-stack development..."></textarea>
+                                <p class="helper"><span id="summaryCount">0</span>/400 characters</p>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <!-- LEFT: Form -->
-                        <div>
-                            <!-- Personal Info -->
-                            <h3 class="text-lg font-bold text-slate-900 mb-4">Personal Information</h3>
-                            <div class="space-y-3 mb-6">
-                                <input type="text" id="rName" placeholder="Full Name" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <input type="email" id="rEmail" placeholder="Email Address" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
-                                    <input type="tel" id="rPhone" placeholder="Phone Number" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
+                        <!-- Step 3: Experience -->
+                        <div class="rb-step" data-step="3">
+                            <h3>Work Experience</h3>
+                            <p class="rb-step-helper">List your most recent jobs first. Include your key responsibilities and achievements.</p>
+                            <div id="experienceList"></div>
+                            <button type="button" onclick="addExperience()" class="rb-add-btn">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                                Add Experience
+                            </button>
+                        </div>
+
+                        <!-- Step 4: Education -->
+                        <div class="rb-step" data-step="4">
+                            <h3>Education</h3>
+                            <p class="rb-step-helper">Your educational background. Most recent first.</p>
+                            <div id="educationList"></div>
+                            <button type="button" onclick="addEducation()" class="rb-add-btn">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                                Add Education
+                            </button>
+                        </div>
+
+                        <!-- Step 5: Skills -->
+                        <div class="rb-step" data-step="5">
+                            <h3>Skills</h3>
+                            <p class="rb-step-helper">List your key skills, separated by commas. Include both technical and soft skills.</p>
+                            <div class="rb-field">
+                                <textarea id="rSkills" rows="4" placeholder="e.g. JavaScript, React, Node.js, Python, SQL, Git, Communication, Leadership"></textarea>
+                                <p class="helper">Separate each skill with a comma.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 6: Certifications -->
+                        <div class="rb-step" data-step="6">
+                            <h3>Certifications <span class="rb-optional">optional</span></h3>
+                            <p class="rb-step-helper">Professional certifications that strengthen your profile.</p>
+                            <div class="rb-field">
+                                <textarea id="rCerts" rows="3" placeholder="e.g. AWS Certified Solutions Architect, Google Analytics Certified"></textarea>
+                                <p class="helper">Separate each certification with a comma.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 7: Review & Download -->
+                        <div class="rb-step" data-step="7">
+                            <h3>Review & Download</h3>
+                            <p class="rb-step-helper">Check your resume preview on the right, then download or print.</p>
+
+                            <!-- Section toggles -->
+                            <div style="margin-bottom:1rem;">
+                                <p style="font-size:0.75rem;font-weight:700;color:#64748b;margin-bottom:0.5rem;">Toggle sections on/off:</p>
+                                <div id="rbSectionToggles"></div>
+                            </div>
+
+                            <!-- Extra sections -->
+                            <div style="margin-bottom:1rem;">
+                                <p style="font-size:0.75rem;font-weight:700;color:#64748b;margin-bottom:0.5rem;">Add optional sections:</p>
+                                <div class="rb-extra-add">
+                                    <button type="button" onclick="addExtraSection('projects')" class="rb-extra-btn" id="rbExtraProjects">+ Projects</button>
+                                    <button type="button" onclick="addExtraSection('languages')" class="rb-extra-btn" id="rbExtraLanguages">+ Languages</button>
+                                    <button type="button" onclick="addExtraSection('awards')" class="rb-extra-btn" id="rbExtraAwards">+ Awards</button>
+                                    <button type="button" onclick="addExtraSection('links')" class="rb-extra-btn" id="rbExtraLinks">+ Portfolio/Links</button>
                                 </div>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <input type="text" id="rLocation" placeholder="City, State" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
-                                    <input type="url" id="rLinkedin" placeholder="LinkedIn URL (optional)" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium">
-                                </div>
+                                <div id="rbExtraContent" style="margin-top:0.75rem;"></div>
                             </div>
 
-                            <!-- Professional Summary -->
-                            <h3 class="text-lg font-bold text-slate-900 mb-4">Professional Summary</h3>
-                            <div class="mb-6">
-                                <textarea id="rSummary" placeholder="Brief overview of your professional background, key strengths, and career goals..." rows="4" maxlength="400" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"></textarea>
-                                <p class="text-xs text-slate-400 mt-1"><span id="summaryCount">0</span>/400 characters</p>
-                            </div>
-
-                            <!-- Work Experience -->
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-lg font-bold text-slate-900">Work Experience</h3>
-                                <button onclick="addExperience()" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">+ Add</button>
-                            </div>
-                            <div id="experienceList" class="mb-6"></div>
-
-                            <!-- Education -->
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-lg font-bold text-slate-900">Education</h3>
-                                <button onclick="addEducation()" class="px-4 py-2 text-sm font-bold text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">+ Add</button>
-                            </div>
-                            <div id="educationList" class="mb-6"></div>
-
-                            <!-- Skills -->
-                            <h3 class="text-lg font-bold text-slate-900 mb-4">Skills</h3>
-                            <div class="mb-6">
-                                <textarea id="rSkills" placeholder="e.g. JavaScript, Project Management, Data Analysis, Communication" rows="2" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"></textarea>
-                                <p class="text-xs text-slate-400 mt-1">Separate skills with commas</p>
-                            </div>
-
-                            <!-- Certifications -->
-                            <h3 class="text-lg font-bold text-slate-900 mb-4">Certifications <span class="text-slate-400 font-normal text-sm">(optional)</span></h3>
-                            <div class="mb-6">
-                                <textarea id="rCerts" placeholder="e.g. AWS Certified Solutions Architect (2023), PMP Certification (2022)" rows="2" class="block w-full px-4 py-3 text-base border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-blue-500 transition-colors text-slate-900 font-medium"></textarea>
-                            </div>
-
-                            <!-- Action Buttons -->
-                            <div class="flex flex-wrap gap-3 mt-6 pt-6 border-t border-slate-200">
-                                <button onclick="downloadPDF()" class="px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md flex items-center gap-2">
+                            <!-- Action buttons -->
+                            <div class="rb-actions">
+                                <button onclick="downloadPDF()" class="rb-action-primary">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                                     Download PDF
                                 </button>
-                                <button onclick="window.print()" class="px-6 py-3 bg-slate-800 text-white font-bold rounded-xl hover:bg-slate-900 shadow-md flex items-center gap-2">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                                <button onclick="window.print()" class="rb-action-secondary">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
                                     Print
                                 </button>
-                                <button onclick="saveAsJSON()" class="px-4 py-3 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 shadow-md text-sm">Save JSON</button>
-                                <label class="px-4 py-3 bg-amber-600 text-white font-bold rounded-xl hover:bg-amber-700 shadow-md text-sm cursor-pointer">
+                                <button onclick="saveAsJSON()" class="rb-action-secondary">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
+                                    Save JSON
+                                </button>
+                                <label class="rb-action-secondary" style="cursor:pointer;">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
                                     Load JSON
                                     <input type="file" accept=".json" onchange="loadFromJSON(event)" class="hidden">
                                 </label>
                             </div>
+                            <div class="rb-autosave" id="rbAutosave">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                Saved
+                            </div>
                         </div>
 
-                        <!-- RIGHT: Live Preview -->
-                        <div>
-                            <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-lg font-bold text-slate-900">Live Preview</h3>
-                            </div>
-                            <div class="border-2 border-slate-200 rounded-xl overflow-hidden" style="max-height:800px;overflow-y:auto;">
-                                <div id="resumePreview" class="resume-preview tpl-classic">
-                                    <p class="text-center text-slate-400 py-20">Start filling in your details to see a live preview here.</p>
-                                </div>
-                            </div>
+                        <!-- Navigation -->
+                        <div class="rb-nav" id="rbNav">
+                            <button type="button" class="rb-back" id="rbBack" onclick="rbPrev()">Back</button>
+                            <button type="button" class="rb-next" id="rbNext" onclick="rbNext()">Continue</button>
+                        </div>
+                        <button type="button" class="rb-skip" id="rbSkip" onclick="rbSkipToFull()">Skip to full form</button>
+                    </div>
+
+                    <!-- RIGHT: Live Preview (desktop) -->
+                    <div class="rb-preview-col" id="rbPreviewCol">
+                        <div id="resumePreview" class="resume-preview tpl-classic">
+                            <p style="color:#94a3b8;text-align:center;padding-top:200px;">Start filling in your details and the preview will update here...</p>
                         </div>
                     </div>
+                </div>
+
+                <!-- Mobile Preview Toggle -->
+                <div class="rb-mobile-bar" id="rbMobileBar">
+                    <button type="button" class="active" id="rbToggleEdit" onclick="rbShowEdit()">Edit</button>
+                    <button type="button" id="rbTogglePreview" onclick="rbShowPreview()">Preview</button>
                 </div>
             </div>
         </section>
@@ -487,11 +661,659 @@
     <script src="/common.js?v=4.0"></script>
     <script>
     (function(){
+        // ── State ──────────────────────────────────────────────
+        var currentStep = 0;
+        var totalSteps = 8;
         var currentTemplate = 'classic';
+        var accentColor = '#e91e63';
         var expCount = 0;
         var eduCount = 0;
+        var extraSections = {}; // { projects: [], languages: [], awards: [], links: [] }
+        var sectionVisibility = { summary: true, experience: true, education: true, skills: true, certs: true, projects: true, languages: true, awards: true, links: true };
+        var fullFormMode = false;
 
-        // Select template
+        var stepLabels = ['Template', 'Personal', 'Summary', 'Experience', 'Education', 'Skills', 'Certs', 'Review'];
+
+        // ── Progress Bar ─────────────────────────────────────
+        function renderProgress() {
+            var el = document.getElementById('rbProgress');
+            if (!el) return;
+            var html = '';
+            for (var i = 0; i < totalSteps; i++) {
+                var cls = i === currentStep ? 'rb-dot active' : (i < currentStep ? 'rb-dot done' : 'rb-dot');
+                html += '<div class="' + cls + '" onclick="rbGoTo(' + i + ')" title="' + stepLabels[i] + '"></div>';
+            }
+            html += '<div class="rb-step-label">' + stepLabels[currentStep] + ' (' + (currentStep + 1) + '/' + totalSteps + ')</div>';
+            el.innerHTML = html;
+        }
+
+        // ── Step Navigation ──────────────────────────────────
+        window.rbGoTo = function(n) {
+            if (n < 0 || n >= totalSteps) return;
+            document.querySelectorAll('.rb-step').forEach(function(s) { s.classList.remove('active'); });
+            var target = document.querySelector('.rb-step[data-step="' + n + '"]');
+            if (target) target.classList.add('active');
+            currentStep = n;
+            renderProgress();
+            updateNavButtons();
+            if (n === 7) renderSectionToggles();
+        };
+
+        window.rbNext = function() {
+            if (currentStep < totalSteps - 1) rbGoTo(currentStep + 1);
+            else downloadPDF();
+        };
+
+        window.rbPrev = function() {
+            if (currentStep > 0) rbGoTo(currentStep - 1);
+        };
+
+        window.rbSkipToFull = function() {
+            fullFormMode = true;
+            document.querySelectorAll('.rb-step').forEach(function(s) { s.classList.add('active'); });
+            document.getElementById('rbNav').style.display = 'none';
+            document.getElementById('rbSkip').style.display = 'none';
+            document.getElementById('rbProgress').style.display = 'none';
+        };
+
+        function updateNavButtons() {
+            var back = document.getElementById('rbBack');
+            var next = document.getElementById('rbNext');
+            if (back) back.style.visibility = currentStep === 0 ? 'hidden' : 'visible';
+            if (next) next.textContent = currentStep === totalSteps - 1 ? 'Download PDF' : 'Continue';
+        }
+
+        // ── Mobile Preview Toggle ────────────────────────────
+        window.rbShowEdit = function() {
+            document.getElementById('rbPreviewCol').classList.remove('mobile-visible');
+            document.getElementById('rbSteps').classList.remove('mobile-hidden');
+            document.getElementById('rbToggleEdit').classList.add('active');
+            document.getElementById('rbTogglePreview').classList.remove('active');
+        };
+        window.rbShowPreview = function() {
+            document.getElementById('rbPreviewCol').classList.add('mobile-visible');
+            document.getElementById('rbSteps').classList.add('mobile-hidden');
+            document.getElementById('rbTogglePreview').classList.add('active');
+            document.getElementById('rbToggleEdit').classList.remove('active');
+            updatePreview();
+        };
+
+        // ── Template Selection ───────────────────────────────
+        function selectTemplate(tpl) {
+            currentTemplate = tpl;
+            document.querySelectorAll('.rb-tpl-card').forEach(function(c) {
+                c.classList.toggle('active', c.dataset.tpl === tpl);
+            });
+            updatePreview();
+        }
+
+        // ── Accent Color Picker ──────────────────────────────
+        document.querySelectorAll('.rb-accent-swatch').forEach(function(s) {
+            s.addEventListener('click', function() {
+                accentColor = this.dataset.color;
+                document.documentElement.style.setProperty('--rb-accent', accentColor);
+                document.querySelectorAll('.rb-accent-swatch').forEach(function(sw) { sw.classList.remove('active'); });
+                this.classList.add('active');
+                updatePreview();
+            });
+        });
+
+        // ── Template Card Clicks ─────────────────────────────
+        document.querySelectorAll('.rb-tpl-card').forEach(function(c) {
+            c.addEventListener('click', function() { selectTemplate(this.dataset.tpl); });
+        });
+
+        // ── Character Counter ────────────────────────────────
+        var summaryInput = document.getElementById('rSummary');
+        if (summaryInput) {
+            summaryInput.addEventListener('input', function() {
+                document.getElementById('summaryCount').textContent = this.value.length;
+            });
+        }
+
+        // ── Add Experience ───────────────────────────────────
+        window.addExperience = function(data) {
+            expCount++;
+            var id = expCount;
+            var d = data || {};
+            var div = document.createElement('div');
+            div.className = 'rb-entry';
+            div.id = 'exp-' + id;
+            div.innerHTML = '<button type="button" class="rb-entry-remove" onclick="removeExperience(' + id + ')">&times;</button>' +
+                '<div class="rb-field"><label>Job Title</label><input type="text" class="exp-title" placeholder="e.g. Software Engineer" value="' + escAttr(d.title || '') + '"></div>' +
+                '<div class="rb-field"><label>Company</label><input type="text" class="exp-company" placeholder="e.g. Infosys" value="' + escAttr(d.company || '') + '"></div>' +
+                '<div style="display:flex;gap:0.5rem;"><div class="rb-field" style="flex:1"><label>Start</label><input type="text" class="exp-start" placeholder="e.g. Jan 2022" value="' + escAttr(d.start || '') + '"></div>' +
+                '<div class="rb-field" style="flex:1"><label>End</label><input type="text" class="exp-end" placeholder="e.g. Present" value="' + escAttr(d.end || '') + '"></div></div>' +
+                '<div class="rb-field"><label>Description</label><textarea class="exp-desc" rows="3" placeholder="Key responsibilities and achievements...">' + escHtml(d.desc || '') + '</textarea></div>';
+            document.getElementById('experienceList').appendChild(div);
+            bindLiveUpdate();
+        };
+
+        window.removeExperience = function(id) {
+            var el = document.getElementById('exp-' + id);
+            if (el) el.remove();
+            updatePreview();
+        };
+
+        // ── Add Education ────────────────────────────────────
+        window.addEducation = function(data) {
+            eduCount++;
+            var id = eduCount;
+            var d = data || {};
+            var div = document.createElement('div');
+            div.className = 'rb-entry';
+            div.id = 'edu-' + id;
+            div.innerHTML = '<button type="button" class="rb-entry-remove" onclick="removeEducation(' + id + ')">&times;</button>' +
+                '<div class="rb-field"><label>Degree</label><input type="text" class="edu-degree" placeholder="e.g. B.Tech in Computer Science" value="' + escAttr(d.degree || '') + '"></div>' +
+                '<div class="rb-field"><label>School/University</label><input type="text" class="edu-school" placeholder="e.g. IIT Bombay" value="' + escAttr(d.school || '') + '"></div>' +
+                '<div style="display:flex;gap:0.5rem;"><div class="rb-field" style="flex:1"><label>Start</label><input type="text" class="edu-start" placeholder="e.g. 2018" value="' + escAttr(d.start || '') + '"></div>' +
+                '<div class="rb-field" style="flex:1"><label>End</label><input type="text" class="edu-end" placeholder="e.g. 2022" value="' + escAttr(d.end || '') + '"></div></div>' +
+                '<div class="rb-field"><label>GPA / Percentage <span class="rb-optional">optional</span></label><input type="text" class="edu-gpa" placeholder="e.g. 8.5/10 or 85%" value="' + escAttr(d.gpa || '') + '"></div>';
+            document.getElementById('educationList').appendChild(div);
+            bindLiveUpdate();
+        };
+
+        window.removeEducation = function(id) {
+            var el = document.getElementById('edu-' + id);
+            if (el) el.remove();
+            updatePreview();
+        };
+
+        // ── Extra Sections ───────────────────────────────────
+        window.addExtraSection = function(type) {
+            if (extraSections[type]) return; // already added
+            extraSections[type] = [{}];
+            var container = document.getElementById('rbExtraContent');
+            var div = document.createElement('div');
+            div.className = 'rb-entry';
+            div.id = 'extra-' + type;
+            var labels = { projects: 'Project', languages: 'Language', awards: 'Award', links: 'Link' };
+            var fields = {
+                projects: '<div class="rb-field"><label>Project Name</label><input type="text" class="extra-project-title" placeholder="e.g. E-commerce Platform"></div><div class="rb-field"><label>Description</label><textarea class="extra-project-desc" rows="2" placeholder="Brief description..."></textarea></div><div class="rb-field"><label>URL <span class="rb-optional">optional</span></label><input type="url" class="extra-project-url" placeholder="https://..."></div>',
+                languages: '<div class="rb-field"><label>Language</label><input type="text" class="extra-lang-name" placeholder="e.g. English"></div><div class="rb-field"><label>Proficiency</label><select class="extra-lang-level"><option value="Native">Native</option><option value="Fluent">Fluent</option><option value="Intermediate">Intermediate</option><option value="Basic">Basic</option></select></div>',
+                awards: '<div class="rb-field"><label>Award Title</label><input type="text" class="extra-award-title" placeholder="e.g. Employee of the Year"></div><div class="rb-field"><label>Date</label><input type="text" class="extra-award-date" placeholder="e.g. 2023"></div>',
+                links: '<div class="rb-field"><label>Label</label><input type="text" class="extra-link-label" placeholder="e.g. Portfolio"></div><div class="rb-field"><label>URL</label><input type="url" class="extra-link-url" placeholder="https://..."></div>'
+            };
+            div.innerHTML = '<button type="button" class="rb-entry-remove" onclick="removeExtraSection(\'' + type + '\')">&times;</button>' +
+                '<p style="font-size:0.8rem;font-weight:700;color:#334155;margin-bottom:0.5rem;">' + labels[type] + '</p>' +
+                fields[type];
+            container.appendChild(div);
+            // Disable the add button
+            var btn = document.getElementById('rbExtra' + type.charAt(0).toUpperCase() + type.slice(1));
+            if (btn) { btn.disabled = true; btn.style.opacity = '0.4'; }
+            bindLiveUpdate();
+            updatePreview();
+        };
+
+        window.removeExtraSection = function(type) {
+            delete extraSections[type];
+            var el = document.getElementById('extra-' + type);
+            if (el) el.remove();
+            var btn = document.getElementById('rbExtra' + type.charAt(0).toUpperCase() + type.slice(1));
+            if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+            updatePreview();
+        };
+
+        // ── Section Toggles ──────────────────────────────────
+        function renderSectionToggles() {
+            var container = document.getElementById('rbSectionToggles');
+            if (!container) return;
+            var sections = [
+                { key: 'summary', name: 'Professional Summary' },
+                { key: 'experience', name: 'Work Experience' },
+                { key: 'education', name: 'Education' },
+                { key: 'skills', name: 'Skills' },
+                { key: 'certs', name: 'Certifications' }
+            ];
+            var html = '';
+            sections.forEach(function(s) {
+                var vis = sectionVisibility[s.key];
+                html += '<div class="rb-section-toggle">' +
+                    '<span class="rb-section-name">' + s.name + '</span>' +
+                    '<button type="button" onclick="toggleSection(\'' + s.key + '\')" title="' + (vis ? 'Hide' : 'Show') + '">' +
+                    (vis ? '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>' :
+                    '<svg class="w-4 h-4 hidden-section" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/></svg>') +
+                    '</button></div>';
+            });
+            container.innerHTML = html;
+        }
+
+        window.toggleSection = function(key) {
+            sectionVisibility[key] = !sectionVisibility[key];
+            renderSectionToggles();
+            updatePreview();
+        };
+
+        // ── Load Example Resume ──────────────────────────────
+        window.loadExample = function() {
+            document.getElementById('rName').value = 'Priya Sharma';
+            document.getElementById('rEmail').value = 'priya.sharma@email.com';
+            document.getElementById('rPhone').value = '+91 98765 43210';
+            document.getElementById('rLocation').value = 'Bangalore, India';
+            document.getElementById('rLinkedin').value = 'linkedin.com/in/priya-sharma';
+            document.getElementById('rSummary').value = 'Results-driven software engineer with 5+ years of experience in full-stack web development. Proficient in React, Node.js, and cloud technologies. Passionate about building scalable applications that solve real-world problems.';
+            document.getElementById('summaryCount').textContent = document.getElementById('rSummary').value.length;
+            document.getElementById('rSkills').value = 'JavaScript, React, Node.js, Python, PostgreSQL, AWS, Docker, Git, Agile, Communication';
+            document.getElementById('rCerts').value = 'AWS Certified Solutions Architect (2024), Google Cloud Professional (2023)';
+
+            // Clear and add experience
+            document.getElementById('experienceList').innerHTML = '';
+            expCount = 0;
+            addExperience({ title: 'Senior Software Engineer', company: 'TechCorp India', start: 'Jan 2022', end: 'Present', desc: 'Lead a team of 4 developers building a customer analytics platform. Reduced page load time by 40% through code splitting and caching optimization.' });
+            addExperience({ title: 'Software Engineer', company: 'Infosys Limited', start: 'Jun 2019', end: 'Dec 2021', desc: 'Developed REST APIs for banking clients using Node.js and PostgreSQL. Implemented automated testing that reduced bugs by 30%.' });
+
+            // Clear and add education
+            document.getElementById('educationList').innerHTML = '';
+            eduCount = 0;
+            addEducation({ degree: 'B.Tech in Computer Science', school: 'IIT Bombay', start: '2015', end: '2019', gpa: '8.7/10' });
+
+            showToast('Example resume loaded — edit any field to make it yours');
+            updatePreview();
+        };
+
+        // ── Live Preview Update ──────────────────────────────
+        function escHtml(str) { var d = document.createElement('div'); d.appendChild(document.createTextNode(str)); return d.innerHTML; }
+        function escAttr(str) { return (str||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+        function updatePreview() {
+            var preview = document.getElementById('resumePreview');
+            if (!preview) return;
+            var name = (document.getElementById('rName').value || '').trim();
+            var email = (document.getElementById('rEmail').value || '').trim();
+            var phone = (document.getElementById('rPhone').value || '').trim();
+            var location = (document.getElementById('rLocation').value || '').trim();
+            var linkedin = (document.getElementById('rLinkedin').value || '').trim();
+            var summary = (document.getElementById('rSummary').value || '').trim();
+            var skills = (document.getElementById('rSkills').value || '').trim();
+            var certs = (document.getElementById('rCerts').value || '').trim();
+
+            if (!name && !email && !summary) {
+                preview.innerHTML = '<p style="color:#94a3b8;text-align:center;padding-top:200px;">Start filling in your details and the preview will update here...</p>';
+                return;
+            }
+
+            preview.style.setProperty('--rb-accent', accentColor);
+            var html = '';
+
+            // Name
+            html += '<h1>' + escHtml(name || 'Your Name') + '</h1>';
+
+            // Contact line
+            var contact = [email, phone, location, linkedin].filter(Boolean).join(' &nbsp;|&nbsp; ');
+            if (contact) html += '<p class="contact-line">' + contact + '</p>';
+
+            // Summary
+            if (summary && sectionVisibility.summary) {
+                html += '<h2>Professional Summary</h2><p>' + escHtml(summary) + '</p>';
+            }
+
+            // Experience
+            if (sectionVisibility.experience) {
+                var expEntries = document.querySelectorAll('#experienceList .rb-entry');
+                if (expEntries.length > 0) {
+                    var expHtml = '';
+                    expEntries.forEach(function(entry) {
+                        var title = (entry.querySelector('.exp-title') || {}).value || '';
+                        var company = (entry.querySelector('.exp-company') || {}).value || '';
+                        var start = (entry.querySelector('.exp-start') || {}).value || '';
+                        var end = (entry.querySelector('.exp-end') || {}).value || '';
+                        var desc = (entry.querySelector('.exp-desc') || {}).value || '';
+                        if (title || company) {
+                            expHtml += '<div class="exp-item"><div class="exp-header"><span>' + escHtml(title) + '</span><span>' + escHtml([start, end].filter(Boolean).join(' – ')) + '</span></div>';
+                            if (company) expHtml += '<div class="exp-sub">' + escHtml(company) + '</div>';
+                            if (desc) expHtml += '<p style="margin-top:0.25rem;">' + escHtml(desc) + '</p>';
+                            expHtml += '</div>';
+                        }
+                    });
+                    if (expHtml) html += '<h2>Work Experience</h2>' + expHtml;
+                }
+            }
+
+            // Education
+            if (sectionVisibility.education) {
+                var eduEntries = document.querySelectorAll('#educationList .rb-entry');
+                if (eduEntries.length > 0) {
+                    var eduHtml = '';
+                    eduEntries.forEach(function(entry) {
+                        var degree = (entry.querySelector('.edu-degree') || {}).value || '';
+                        var school = (entry.querySelector('.edu-school') || {}).value || '';
+                        var start = (entry.querySelector('.edu-start') || {}).value || '';
+                        var end = (entry.querySelector('.edu-end') || {}).value || '';
+                        var gpa = (entry.querySelector('.edu-gpa') || {}).value || '';
+                        if (degree || school) {
+                            eduHtml += '<div class="exp-item"><div class="exp-header"><span>' + escHtml(degree) + '</span><span>' + escHtml([start, end].filter(Boolean).join(' – ')) + '</span></div>';
+                            var sub = [school, gpa ? 'GPA: ' + gpa : ''].filter(Boolean).join(' · ');
+                            if (sub) eduHtml += '<div class="exp-sub">' + escHtml(sub) + '</div>';
+                            eduHtml += '</div>';
+                        }
+                    });
+                    if (eduHtml) html += '<h2>Education</h2>' + eduHtml;
+                }
+            }
+
+            // Skills
+            if (skills && sectionVisibility.skills) {
+                var skillArr = skills.split(',').map(function(s) { return s.trim(); }).filter(Boolean);
+                if (skillArr.length > 0) {
+                    html += '<h2>Skills</h2><div class="skills-list">';
+                    skillArr.forEach(function(s) { html += '<span class="skill-tag">' + escHtml(s) + '</span>'; });
+                    html += '</div>';
+                }
+            }
+
+            // Certifications
+            if (certs && sectionVisibility.certs) {
+                var certArr = certs.split(',').map(function(s) { return s.trim(); }).filter(Boolean);
+                if (certArr.length > 0) {
+                    html += '<h2>Certifications</h2><ul style="padding-left:1.25rem;margin:0;">';
+                    certArr.forEach(function(c) { html += '<li>' + escHtml(c) + '</li>'; });
+                    html += '</ul>';
+                }
+            }
+
+            // Extra sections
+            if (extraSections.projects && sectionVisibility.projects) {
+                var projEl = document.getElementById('extra-projects');
+                if (projEl) {
+                    var pTitle = (projEl.querySelector('.extra-project-title') || {}).value || '';
+                    var pDesc = (projEl.querySelector('.extra-project-desc') || {}).value || '';
+                    var pUrl = (projEl.querySelector('.extra-project-url') || {}).value || '';
+                    if (pTitle) {
+                        html += '<h2>Projects</h2><div class="exp-item"><strong>' + escHtml(pTitle) + '</strong>';
+                        if (pDesc) html += '<p>' + escHtml(pDesc) + '</p>';
+                        if (pUrl) html += '<p style="font-size:0.8rem;color:#64748b;">' + escHtml(pUrl) + '</p>';
+                        html += '</div>';
+                    }
+                }
+            }
+            if (extraSections.languages && sectionVisibility.languages) {
+                var langEl = document.getElementById('extra-languages');
+                if (langEl) {
+                    var lName = (langEl.querySelector('.extra-lang-name') || {}).value || '';
+                    var lLevel = (langEl.querySelector('.extra-lang-level') || {}).value || '';
+                    if (lName) {
+                        html += '<h2>Languages</h2><p>' + escHtml(lName) + (lLevel ? ' — ' + escHtml(lLevel) : '') + '</p>';
+                    }
+                }
+            }
+            if (extraSections.awards && sectionVisibility.awards) {
+                var awardEl = document.getElementById('extra-awards');
+                if (awardEl) {
+                    var aTitle = (awardEl.querySelector('.extra-award-title') || {}).value || '';
+                    var aDate = (awardEl.querySelector('.extra-award-date') || {}).value || '';
+                    if (aTitle) {
+                        html += '<h2>Awards</h2><p><strong>' + escHtml(aTitle) + '</strong>' + (aDate ? ' (' + escHtml(aDate) + ')' : '') + '</p>';
+                    }
+                }
+            }
+            if (extraSections.links && sectionVisibility.links) {
+                var linkEl = document.getElementById('extra-links');
+                if (linkEl) {
+                    var linkLabel = (linkEl.querySelector('.extra-link-label') || {}).value || '';
+                    var linkUrl = (linkEl.querySelector('.extra-link-url') || {}).value || '';
+                    if (linkLabel && linkUrl) {
+                        html += '<h2>Links</h2><p><strong>' + escHtml(linkLabel) + ':</strong> ' + escHtml(linkUrl) + '</p>';
+                    }
+                }
+            }
+
+            preview.className = 'resume-preview tpl-' + currentTemplate;
+            preview.innerHTML = html;
+        }
+
+        function bindLiveUpdate() {
+            document.querySelectorAll('#experienceList input, #experienceList textarea, #educationList input, #educationList textarea, #rbExtraContent input, #rbExtraContent textarea, #rbExtraContent select').forEach(function(el) {
+                el.removeEventListener('input', updatePreview);
+                el.addEventListener('input', updatePreview);
+            });
+        }
+
+        // Bind static inputs
+        ['rName','rEmail','rPhone','rLocation','rLinkedin','rSummary','rSkills','rCerts'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) el.addEventListener('input', updatePreview);
+        });
+
+        // ── Autosave ─────────────────────────────────────────
+        function collectData() {
+            var data = { template: currentTemplate, accentColor: accentColor, sectionVisibility: sectionVisibility, extraSections: {} };
+            ['rName','rEmail','rPhone','rLocation','rLinkedin','rSummary','rSkills','rCerts'].forEach(function(id) {
+                var el = document.getElementById(id);
+                data[id] = el ? el.value : '';
+            });
+            data.experience = [];
+            document.querySelectorAll('#experienceList .rb-entry').forEach(function(e) {
+                data.experience.push({
+                    title: (e.querySelector('.exp-title') || {}).value || '',
+                    company: (e.querySelector('.exp-company') || {}).value || '',
+                    start: (e.querySelector('.exp-start') || {}).value || '',
+                    end: (e.querySelector('.exp-end') || {}).value || '',
+                    desc: (e.querySelector('.exp-desc') || {}).value || ''
+                });
+            });
+            data.education = [];
+            document.querySelectorAll('#educationList .rb-entry').forEach(function(e) {
+                data.education.push({
+                    degree: (e.querySelector('.edu-degree') || {}).value || '',
+                    school: (e.querySelector('.edu-school') || {}).value || '',
+                    start: (e.querySelector('.edu-start') || {}).value || '',
+                    end: (e.querySelector('.edu-end') || {}).value || '',
+                    gpa: (e.querySelector('.edu-gpa') || {}).value || ''
+                });
+            });
+            // Extra sections data
+            ['projects','languages','awards','links'].forEach(function(type) {
+                var el = document.getElementById('extra-' + type);
+                if (el) {
+                    if (type === 'projects') data.extraSections.projects = [{ title: (el.querySelector('.extra-project-title')||{}).value||'', desc: (el.querySelector('.extra-project-desc')||{}).value||'', url: (el.querySelector('.extra-project-url')||{}).value||'' }];
+                    if (type === 'languages') data.extraSections.languages = [{ name: (el.querySelector('.extra-lang-name')||{}).value||'', level: (el.querySelector('.extra-lang-level')||{}).value||'' }];
+                    if (type === 'awards') data.extraSections.awards = [{ title: (el.querySelector('.extra-award-title')||{}).value||'', date: (el.querySelector('.extra-award-date')||{}).value||'' }];
+                    if (type === 'links') data.extraSections.links = [{ label: (el.querySelector('.extra-link-label')||{}).value||'', url: (el.querySelector('.extra-link-url')||{}).value||'' }];
+                }
+            });
+            return data;
+        }
+
+        function loadData(data) {
+            if (data.template) { currentTemplate = data.template; selectTemplate(data.template); }
+            if (data.accentColor) { accentColor = data.accentColor; document.documentElement.style.setProperty('--rb-accent', accentColor); document.querySelectorAll('.rb-accent-swatch').forEach(function(s) { s.classList.toggle('active', s.dataset.color === accentColor); }); }
+            if (data.sectionVisibility) sectionVisibility = Object.assign(sectionVisibility, data.sectionVisibility);
+            ['rName','rEmail','rPhone','rLocation','rLinkedin','rSummary','rSkills','rCerts'].forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el && data[id]) el.value = data[id];
+            });
+            if (data.rSummary) document.getElementById('summaryCount').textContent = data.rSummary.length;
+            document.getElementById('experienceList').innerHTML = '';
+            expCount = 0;
+            if (data.experience) data.experience.forEach(function(e) { addExperience(e); });
+            document.getElementById('educationList').innerHTML = '';
+            eduCount = 0;
+            if (data.education) data.education.forEach(function(e) { addEducation(e); });
+            // Load extra sections
+            if (data.extraSections) {
+                Object.keys(data.extraSections).forEach(function(type) {
+                    if (data.extraSections[type] && data.extraSections[type].length > 0) {
+                        addExtraSection(type);
+                        var el = document.getElementById('extra-' + type);
+                        if (el) {
+                            var d = data.extraSections[type][0];
+                            if (type === 'projects') { if(d.title) el.querySelector('.extra-project-title').value=d.title; if(d.desc) el.querySelector('.extra-project-desc').value=d.desc; if(d.url) el.querySelector('.extra-project-url').value=d.url; }
+                            if (type === 'languages') { if(d.name) el.querySelector('.extra-lang-name').value=d.name; if(d.level) el.querySelector('.extra-lang-level').value=d.level; }
+                            if (type === 'awards') { if(d.title) el.querySelector('.extra-award-title').value=d.title; if(d.date) el.querySelector('.extra-award-date').value=d.date; }
+                            if (type === 'links') { if(d.label) el.querySelector('.extra-link-label').value=d.label; if(d.url) el.querySelector('.extra-link-url').value=d.url; }
+                        }
+                    }
+                });
+            }
+            updatePreview();
+        }
+
+        // Autosave every 2s
+        setInterval(function() {
+            autoSave('resume_builder', collectData());
+            var el = document.getElementById('rbAutosave');
+            if (el) { el.classList.add('show'); setTimeout(function() { el.classList.remove('show'); }, 3000); }
+        }, 2000);
+
+        // Autoload
+        var saved = autoLoad('resume_builder');
+        if (saved) loadData(saved);
+
+        // ── JSON Export/Import ────────────────────────────────
+        window.saveAsJSON = function() {
+            var data = collectData();
+            downloadTextFile(JSON.stringify(data, null, 2), 'resume-data.json');
+            showToast('Resume data saved as JSON file.');
+        };
+
+        window.loadFromJSON = function(e) {
+            var file = e.target.files[0];
+            if (!file) return;
+            var reader = new FileReader();
+            reader.onload = function(ev) {
+                try {
+                    var data = JSON.parse(ev.target.result);
+                    loadData(data);
+                    showToast('Resume data loaded from JSON file.');
+                } catch(err) { showToast('Invalid JSON file.'); }
+            };
+            reader.readAsText(file);
+        };
+
+        // ── PDF Generation ───────────────────────────────────
+        window.downloadPDF = async function() {
+            var name = (document.getElementById('rName').value || '').trim();
+            if (!name) { showToast('Please enter your name before downloading.'); rbGoTo(1); return; }
+            showToast('Preparing PDF engine...');
+            await loadJsPDF();
+            var doc = new window.jspdf.jsPDF('p', 'mm', 'a4');
+            var y = 20, lm = 15, rm = 195, pw = 180;
+            var accentRgb = hexToRgb(accentColor);
+
+            function checkPage(needed) { if (y + needed > 277) { doc.addPage(); y = 20; } }
+            function hexToRgb(hex) { var r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16); return {r:r,g:g,b:b}; }
+
+            // Name
+            doc.setFont('helvetica', 'bold'); doc.setFontSize(22);
+            doc.setTextColor(30, 30, 30);
+            doc.text(name, 105, y, { align: 'center' }); y += 8;
+
+            // Contact
+            doc.setFont('helvetica', 'normal'); doc.setFontSize(9);
+            doc.setTextColor(100, 100, 100);
+            var contact = [document.getElementById('rEmail').value, document.getElementById('rPhone').value, document.getElementById('rLocation').value, document.getElementById('rLinkedin').value].filter(Boolean).join('  |  ');
+            if (contact) { doc.text(contact, 105, y, { align: 'center' }); y += 6; }
+            doc.setTextColor(30, 30, 30);
+
+            // Summary
+            var summary = (document.getElementById('rSummary').value || '').trim();
+            if (summary && sectionVisibility.summary) {
+                checkPage(20);
+                doc.setFont('helvetica', 'bold'); doc.setFontSize(12);
+                doc.setTextColor(accentRgb.r, accentRgb.g, accentRgb.b);
+                doc.text('PROFESSIONAL SUMMARY', lm, y); y += 2;
+                doc.setDrawColor(200); doc.line(lm, y, rm, y); y += 5;
+                doc.setFont('helvetica', 'normal'); doc.setFontSize(10); doc.setTextColor(30,30,30);
+                var lines = doc.splitTextToSize(summary, pw);
+                lines.forEach(function(l) { checkPage(5); doc.text(l, lm, y); y += 5; });
+                y += 3;
+            }
+
+            // Experience
+            if (sectionVisibility.experience) {
+                var expEntries = document.querySelectorAll('#experienceList .rb-entry');
+                if (expEntries.length > 0) {
+                    checkPage(15);
+                    doc.setFont('helvetica', 'bold'); doc.setFontSize(12);
+                    doc.setTextColor(accentRgb.r, accentRgb.g, accentRgb.b);
+                    doc.text('WORK EXPERIENCE', lm, y); y += 2;
+                    doc.setDrawColor(200); doc.line(lm, y, rm, y); y += 5;
+                    doc.setTextColor(30,30,30);
+                    expEntries.forEach(function(entry) {
+                        var title = (entry.querySelector('.exp-title') || {}).value || '';
+                        var company = (entry.querySelector('.exp-company') || {}).value || '';
+                        var start = (entry.querySelector('.exp-start') || {}).value || '';
+                        var end = (entry.querySelector('.exp-end') || {}).value || '';
+                        var desc = (entry.querySelector('.exp-desc') || {}).value || '';
+                        if (!title && !company) return;
+                        checkPage(20);
+                        doc.setFont('helvetica', 'bold'); doc.setFontSize(10);
+                        doc.text(title, lm, y);
+                        doc.setFont('helvetica', 'normal');
+                        doc.text([start, end].filter(Boolean).join(' – '), rm, y, { align: 'right' }); y += 5;
+                        if (company) { doc.setFontSize(9); doc.setTextColor(100,100,100); doc.text(company, lm, y); doc.setTextColor(30,30,30); y += 5; }
+                        if (desc) { doc.setFontSize(10); var dLines = doc.splitTextToSize(desc, pw); dLines.forEach(function(l) { checkPage(5); doc.text(l, lm, y); y += 5; }); }
+                        y += 3;
+                    });
+                }
+            }
+
+            // Education
+            if (sectionVisibility.education) {
+                var eduEntries = document.querySelectorAll('#educationList .rb-entry');
+                if (eduEntries.length > 0) {
+                    checkPage(15);
+                    doc.setFont('helvetica', 'bold'); doc.setFontSize(12);
+                    doc.setTextColor(accentRgb.r, accentRgb.g, accentRgb.b);
+                    doc.text('EDUCATION', lm, y); y += 2;
+                    doc.setDrawColor(200); doc.line(lm, y, rm, y); y += 5;
+                    doc.setTextColor(30,30,30);
+                    eduEntries.forEach(function(entry) {
+                        var degree = (entry.querySelector('.edu-degree') || {}).value || '';
+                        var school = (entry.querySelector('.edu-school') || {}).value || '';
+                        var start = (entry.querySelector('.edu-start') || {}).value || '';
+                        var end = (entry.querySelector('.edu-end') || {}).value || '';
+                        var gpa = (entry.querySelector('.edu-gpa') || {}).value || '';
+                        if (!degree && !school) return;
+                        checkPage(15);
+                        doc.setFont('helvetica', 'bold'); doc.setFontSize(10);
+                        doc.text(degree, lm, y);
+                        doc.setFont('helvetica', 'normal');
+                        doc.text([start, end].filter(Boolean).join(' – '), rm, y, { align: 'right' }); y += 5;
+                        doc.setFontSize(9); doc.setTextColor(100,100,100);
+                        var sub = [school, gpa ? 'GPA: ' + gpa : ''].filter(Boolean).join(' · ');
+                        if (sub) { doc.text(sub, lm, y); y += 5; }
+                        doc.setTextColor(30,30,30); y += 3;
+                    });
+                }
+            }
+
+            // Skills
+            var skills = (document.getElementById('rSkills').value || '').trim();
+            if (skills && sectionVisibility.skills) {
+                checkPage(15);
+                doc.setFont('helvetica', 'bold'); doc.setFontSize(12);
+                doc.setTextColor(accentRgb.r, accentRgb.g, accentRgb.b);
+                doc.text('SKILLS', lm, y); y += 2;
+                doc.setDrawColor(200); doc.line(lm, y, rm, y); y += 5;
+                doc.setFont('helvetica', 'normal'); doc.setFontSize(10); doc.setTextColor(30,30,30);
+                var sLines = doc.splitTextToSize(skills, pw);
+                sLines.forEach(function(l) { checkPage(5); doc.text(l, lm, y); y += 5; });
+                y += 3;
+            }
+
+            // Certifications
+            var certs = (document.getElementById('rCerts').value || '').trim();
+            if (certs && sectionVisibility.certs) {
+                checkPage(15);
+                doc.setFont('helvetica', 'bold'); doc.setFontSize(12);
+                doc.setTextColor(accentRgb.r, accentRgb.g, accentRgb.b);
+                doc.text('CERTIFICATIONS', lm, y); y += 2;
+                doc.setDrawColor(200); doc.line(lm, y, rm, y); y += 5;
+                doc.setFont('helvetica', 'normal'); doc.setFontSize(10); doc.setTextColor(30,30,30);
+                var cLines = doc.splitTextToSize(certs, pw);
+                cLines.forEach(function(l) { checkPage(5); doc.text(l, lm, y); y += 5; });
+            }
+
+            doc.save((name || 'resume').replace(/\s+/g, '_') + '_resume.pdf');
+            showToast('Resume downloaded as PDF!');
+        };
+
+        // ── Init ─────────────────────────────────────────────
+        renderProgress();
+        updateNavButtons();
+    })();
+    </script>
         window.selectTemplate = function(tpl) {
             currentTemplate = tpl;
             document.querySelectorAll('.template-thumb').forEach(function(t){
@@ -944,11 +1766,5 @@
         };
     })();
     </script>
-<script>
-// Auto-save for resume builder
-document.addEventListener('DOMContentLoaded', function() {
-    initAutoSave('resume', 'form, .glass-panel, main');
-});
-</script>
 </body>
 </html>
