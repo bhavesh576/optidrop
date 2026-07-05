@@ -441,6 +441,11 @@ function updateImageInfo() {
 
 function renderBatchPreview() {
     queueCountDisplay.textContent = fileQueue.length;
+    // Dynamic button text based on file count
+    const btnText = document.getElementById('btnCompressText');
+    if (btnText) {
+        btnText.textContent = fileQueue.length === 1 ? 'Compress Image' : 'Compress All (' + fileQueue.length + ')';
+    }
     batchPreviewContainer.innerHTML = '';
     fileQueue.forEach(item => {
         const div = document.createElement('div');
@@ -1214,6 +1219,11 @@ function handleHeicFiles(files) {
 
 function renderHeicPreview() {
     heicQueueCount.textContent = heicQueue.length;
+    // Dynamic button text based on file count
+    const heicBtnText = document.getElementById('btnHeicConvertText');
+    if (heicBtnText) {
+        heicBtnText.textContent = heicQueue.length === 1 ? 'Convert to JPG' : 'Convert All (' + heicQueue.length + ')';
+    }
     heicPreviewContainer.innerHTML = '';
     heicQueue.forEach((item, index) => {
         const div = document.createElement('div');
