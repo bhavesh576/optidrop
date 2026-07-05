@@ -45,6 +45,7 @@ self.onmessage = async function (e) {
 
         /* ==== PNG — dimension-only reduction (lossless) ==== */
         if (format === 'image/png') {
+            self.postMessage({ progress: 10 });
             var pngBlob = await canvas.convertToBlob({ type: 'image/png' });
             var iter = 0;
             while (pngBlob.size > targetBytes && iter < 8) {
@@ -58,12 +59,14 @@ self.onmessage = async function (e) {
                 draw(canvas, ctx, bm, w, h);
                 bm.close();
                 pngBlob = await canvas.convertToBlob({ type: 'image/png' });
+                self.postMessage({ progress: Math.min(90, 10 + Math.round(iter * 80 / 8)) });
             }
             self.postMessage({ blob: pngBlob, width: w, height: h, success: true }, [pngBlob]);
             return;
         }
 
         /* ==== JPG / WebP — binary-search quality + dimension shrink ==== */
+        self.postMessage({ progress: 10 });
         var bestBlob = await canvas.convertToBlob({ type: format, quality: 0.9 });
         if (bestBlob.size <= targetBytes) {
             self.postMessage({ blob: bestBlob, width: w, height: h, success: true }, [bestBlob]);
@@ -71,6 +74,7 @@ self.onmessage = async function (e) {
         }
 
         for (var iter = 0; iter < 5; iter++) {
+            self.postMessage({ progress: Math.min(90, 10 + Math.round(iter * 80 / 5)) });
             var lo = 0.05, hi = 0.9;
             for (var j = 0; j < 8; j++) {
                 var q = (lo + hi) / 2;

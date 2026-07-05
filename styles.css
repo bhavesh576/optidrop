@@ -726,6 +726,14 @@ h1 .text-transparent.bg-clip-text {
     height: 64px;
     margin: 0;
     padding: 0;
+    transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+.site-header.scrolled {
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.dark-mode .site-header.scrolled {
+    background: rgba(15,23,42,0.95);
 }
 .header-inner {
     max-width: 1200px; margin: 0 auto;
@@ -761,6 +769,31 @@ h1 .text-transparent.bg-clip-text {
     vertical-align: middle;
 }
 .header-nav a:hover, .header-nav .nav-link:hover { background: #f3f4f6; color: #111827; }
+
+/* "All Tools" nav link — signature accent, visually distinct */
+.nav-all-tools {
+    background: #fdf2f8 !important;
+    color: #be185b !important;
+    font-weight: 600 !important;
+    border: 1px solid #f9a8d4;
+    border-radius: 8px !important;
+    padding: 7px 14px !important;
+}
+.nav-all-tools:hover {
+    background: #e91e63 !important;
+    color: #fff !important;
+    border-color: #e91e63 !important;
+}
+.dark-mode .nav-all-tools {
+    background: #3b0f2a !important;
+    color: #f472b6 !important;
+    border-color: #9d174d !important;
+}
+.dark-mode .nav-all-tools:hover {
+    background: #e91e63 !important;
+    color: #fff !important;
+    border-color: #e91e63 !important;
+}
 .privacy-badge {
     display: inline-flex; align-items: center; gap: 6px;
     font-size: 13px; font-weight: 500; color: #16a34a;
@@ -3454,8 +3487,8 @@ body {
     display: none;
     position: fixed; bottom: 20px; right: 20px; z-index: 998;
     width: 56px; height: 56px; border-radius: 50%;
-    background: #2563eb; color: #fff; border: none;
-    box-shadow: 0 4px 16px rgba(37,99,235,0.4);
+    background: #e91e63; color: #fff; border: none;
+    box-shadow: 0 4px 16px rgba(233,30,99,0.4);
     cursor: pointer; align-items: center; justify-content: center;
     transition: transform 0.2s;
 }
@@ -3493,9 +3526,9 @@ body {
     font-weight: 600; font-size: 0.85rem; text-align: center;
     transition: all 0.15s;
 }
-.fab-tool-btn:hover { background: #eff6ff; border-color: #93c5fd; color: #2563eb; }
+.fab-tool-btn:hover { background: #fdf2f8; border-color: #f9a8d4; color: #be185b; }
 
-.dark-mode .fab-button { background: #3b82f6 !important; }
+.dark-mode .fab-button { background: #e91e63 !important; }
 .dark-mode .fab-panel { background: #1e293b !important; }
 .dark-mode .fab-panel-header { color: #f1f5f9 !important; border-bottom-color: #334155 !important; }
 .dark-mode .fab-close { color: #64748b !important; }

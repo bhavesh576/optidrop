@@ -124,8 +124,7 @@ window.OptiTrack = {
                 '</svg>' +
                 'Opti<span>Drop</span></a>' +
             '<nav class="header-nav">' +
-                '<a href="/" class="hide-mobile">Home</a>' +
-                '<a href="/tools.html" class="hide-mobile">Tools</a>' +
+                '<a href="/tools.html" class="nav-all-tools hide-mobile"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg> All Tools</a>' +
                 '<div class="nav-categories hide-mobile">' +
                     '<span class="nav-link">Categories <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span>' +
                     '<div class="mega-menu">' +
@@ -3131,6 +3130,19 @@ _ric(function () {
 });
 
 // ════════════════════════════════════════════════════════════
+// FEATURE 10b — Scroll-aware header (adds .scrolled class after 10px)
+// ════════════════════════════════════════════════════════════
+_ric(function () {
+    var header = document.querySelector('.site-header');
+    if (!header) return;
+    var onScroll = function () {
+        if (window.scrollY > 10) { header.classList.add('scrolled'); }
+        else { header.classList.remove('scrolled'); }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+});
+
 // FEATURE 11 — Scroll to Top Button
 // ════════════════════════════════════════════════════════════
 _ric(function () {
@@ -3138,7 +3150,7 @@ _ric(function () {
     btn.className = 'scroll-top-btn';
     btn.setAttribute('aria-label', 'Scroll to top');
     btn.innerHTML = '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>';
-    btn.style.cssText = 'position:fixed;bottom:80px;right:20px;width:44px;height:44px;border-radius:50%;background:#2563eb;color:white;display:none;align-items:center;justify-content:center;border:none;cursor:pointer;box-shadow:0 4px 12px rgba(37,99,235,0.4);z-index:999;transition:opacity 0.3s,transform 0.3s;';
+    btn.style.cssText = 'position:fixed;bottom:80px;right:20px;width:44px;height:44px;border-radius:50%;background:#e91e63;color:white;display:none;align-items:center;justify-content:center;border:none;cursor:pointer;box-shadow:0 4px 12px rgba(233,30,99,0.4);z-index:999;transition:opacity 0.3s,transform 0.3s;';
     document.body.appendChild(btn);
 
     window.addEventListener('scroll', function () {
