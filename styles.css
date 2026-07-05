@@ -107,7 +107,7 @@ body { margin-top: 0 !important; padding-top: 0 !important; }
 ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
 /* ── Selection ─────────────────────────────────────────────── */
-::selection { background: #2563eb; color: #fff; }
+::selection { background: #e91e63; color: #fff; }
 
 /* ── Toast ─────────────────────────────────────────────────── */
 #toast-container {
@@ -254,7 +254,7 @@ body { margin-top: 0 !important; padding-top: 0 !important; }
     max-width: 100%; overflow-wrap: break-word; box-sizing: border-box;
     min-width: 0;
 }
-.settings-select:focus { outline: none; border-color: #3b82f6; }
+.settings-select:focus { outline: none; border-color: #e91e63; }
 
 .dim-input {
     display: block; width: 100%;
@@ -264,7 +264,7 @@ body { margin-top: 0 !important; padding-top: 0 !important; }
     max-width: 100%; overflow-wrap: break-word; box-sizing: border-box;
     min-width: 0;
 }
-.dim-input:focus { outline: none; border-color: #3b82f6; }
+.dim-input:focus { outline: none; border-color: #e91e63; }
 .dim-input::placeholder { font-weight: 400; color: #94a3b8; }
 
 /* ── Action Buttons ────────────────────────────────────────── */
@@ -381,7 +381,7 @@ details.advanced-settings .advanced-content { padding: 1rem; background: #fff; }
     background: #fff; transition: all 0.2s ease;
     font-family: inherit;
 }
-.search-bar input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,0.12), 0 4px 16px rgba(59,130,246,0.08); }
+.search-bar input:focus { outline: none; border-color: #e91e63; box-shadow: 0 0 0 3px rgba(233,30,99,0.12), 0 4px 16px rgba(233,30,99,0.08); }
 .search-bar .search-icon {
     position: absolute; left: 1rem; top: 50%; transform: translateY(-50%);
     color: #94a3b8; pointer-events: none;
@@ -788,7 +788,7 @@ h1 .text-transparent.bg-clip-text {
   text-decoration: none;
   color: #1a1a2e;
   letter-spacing: -0.8px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1;
 }
 .logo-text span {
@@ -1053,7 +1053,7 @@ h1 .text-transparent.bg-clip-text {
     background: transparent !important; border: none; cursor: pointer;
     border-bottom: 2px solid transparent;
     transition: all 0.15s ease; text-align: center;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 .user-hub-tab:hover { color: #1e293b; }
 .user-hub-tab.active { color: #2563eb; border-bottom-color: #2563eb; }
@@ -1158,7 +1158,7 @@ h1 .text-transparent.bg-clip-text {
     color: #475569;
     font-size: 0.8rem;
     font-weight: 600;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     border-left: 3px solid transparent;
 }
 .tools-sidebar-item:hover {
@@ -1774,7 +1774,7 @@ button:focus-visible,
     color: #64748b;
     font-size: 0.8rem;
     font-weight: 600;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 .sidebar-tool-btn:hover {
     background: #f1f5f9;
@@ -1839,7 +1839,7 @@ button:focus-visible,
     color: #94a3b8;
     font-size: 0.6rem;
     font-weight: 600;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     white-space: nowrap;
     min-width: 56px;
 }
@@ -2674,7 +2674,7 @@ body {
 }
 .next-step-card:hover .next-step-arrow { background: #2563eb; color: #fff; }
 .next-step-info h3 {
-    font-size: 1rem; font-weight: 800; color: #0f172a; margin-bottom: 0.25rem;
+    font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.25rem;
 }
 .next-step-info p {
     font-size: 0.8rem; color: #64748b; line-height: 1.5; margin: 0;
