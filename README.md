@@ -13,21 +13,21 @@ OptiDrop is a fully browser-based toolkit with **330+ free tools** across **18 c
 - [Tools](#tools)
   - [Image Tools](#image-tools-9)
   - [PDF Tools](#pdf-tools-18)
-  - [Calculator Tools](#calculator-tools-51)
-  - [Text Tools](#text-tools-32)
-  - [Developer Tools](#developer-tools-40)
+  - [Calculator Tools](#calculator-tools-48)
+  - [Text Tools](#text-tools-31)
+  - [Developer Tools](#developer-tools-42)
   - [Career & Resume Tools](#career--resume-tools-7)
   - [Business Document Tools](#business-document-tools-19)
   - [Professional Tools](#professional-tools-4)
-  - [Health Tools](#health-tools-18)
+  - [Health Tools](#health-tools-19)
   - [Education Tools](#education-tools-22)
   - [Fitness Tools](#fitness-tools-6)
-  - [Utility Tools](#utility-tools-31)
+  - [Utility Tools](#utility-tools-30)
   - [Fun & Games Tools](#fun--games-tools-15)
   - [Home & DIY Tools](#home--diy-tools-7)
   - [Productivity Tools](#productivity-tools-7)
   - [Travel Tools](#travel-tools-7)
-  - [Design Tools](#design-tools-21)
+  - [Design Tools](#design-tools-22)
   - [Parenting Tools](#parenting-tools-5)
 - [Category Pages](#category-pages)
 - [Site Pages](#site-pages)
@@ -82,7 +82,7 @@ OptiDrop is a fully browser-based toolkit with **330+ free tools** across **18 c
 | PDF Compressor Advanced | Advanced PDF compression with quality control | [/tools/pdf/pdf-compressor-advanced.html](https://optidrop.online/tools/pdf/pdf-compressor-advanced.html) |
 | Multi PDF Combiner | Combine multiple PDFs with interleave or append mode | [/tools/pdf/multi-pdf-combiner.html](https://optidrop.online/tools/pdf/multi-pdf-combiner.html) |
 
-### Calculator Tools (51)
+### Calculator Tools (48)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -114,8 +114,8 @@ OptiDrop is a fully browser-based toolkit with **330+ free tools** across **18 c
 | ROI Calculator | Return on investment percentage and net profit | [/tools/calculators/roi-calculator.html](https://optidrop.online/tools/calculators/roi-calculator.html) |
 | Freelance Rate Calculator | Required hourly and daily rates for freelancers | [/tools/calculators/freelance-rate.html](https://optidrop.online/tools/calculators/freelance-rate.html) |
 | Discount & Tax Calculator | Final price after discount and sales tax combined | [/tools/calculators/discount-tax-calculator.html](https://optidrop.online/tools/calculators/discount-tax-calculator.html) |
-| Bill Split Calculator | Split bills evenly or by custom amounts | [/tools/calculators/bill-split.html](https://optidrop.online/tools/calculators/bill-split.html) |
-| Simple Interest Calculator | Calculate simple interest for short-term loans | [/tools/calculators/simple-interest.html](https://optidrop.online/tools/calculators/simple-interest.html) |
+| Bill Split Calculator | Split bills evenly or by custom amounts | [/tools/calculators/bill-split-calculator.html](https://optidrop.online/tools/calculators/bill-split-calculator.html) |
+| Simple Interest Calculator | Calculate simple interest for short-term loans | [/tools/calculators/simple-interest-calculator.html](https://optidrop.online/tools/calculators/simple-interest-calculator.html) |
 | Savings Goal Tracker | Track savings with monthly contributions and interest projection | [/tools/calculators/savings-goal-tracker.html](https://optidrop.online/tools/calculators/savings-goal-tracker.html) |
 | Budget Planner | Plan monthly budget with category allocation and tracking | [/tools/calculators/budget-planner.html](https://optidrop.online/tools/calculators/budget-planner.html) |
 | Inflation Calculator | Calculate inflation impact on purchasing power over years | [/tools/calculators/inflation-calculator.html](https://optidrop.online/tools/calculators/inflation-calculator.html) |
@@ -124,8 +124,8 @@ OptiDrop is a fully browser-based toolkit with **330+ free tools** across **18 c
 | Rule of 72 | Calculate how long it takes for an investment to double | [/tools/calculators/rule-of-72.html](https://optidrop.online/tools/calculators/rule-of-72.html) |
 | Tax Deduction Calculator | Estimate tax deductions and potential savings | [/tools/calculators/tax-deduction-calculator.html](https://optidrop.online/tools/calculators/tax-deduction-calculator.html) |
 | Advanced Retirement Calculator | Plan retirement with inflation-adjusted projections | [/tools/calculators/advanced-retirement-calculator.html](https://optidrop.online/tools/calculators/advanced-retirement-calculator.html) |
-| Net Worth Calculator | Calculate total net worth from assets and liabilities | [/tools/calculators/net-worth.html](https://optidrop.online/tools/calculators/net-worth.html) |
-| Student Loan Calculator | Estimate student loan repayment and total interest | [/tools/calculators/student-loan.html](https://optidrop.online/tools/calculators/student-loan.html) |
+| Net Worth Calculator | Calculate total net worth from assets and liabilities | [/tools/calculators/net-worth-calculator.html](https://optidrop.online/tools/calculators/net-worth-calculator.html) |
+| Student Loan Calculator | Estimate student loan repayment and total interest | [/tools/calculators/student-loan-calculator.html](https://optidrop.online/tools/calculators/student-loan-calculator.html) |
 | Expense Splitter | Split shared expenses among groups | [/tools/calculators/expense-splitter.html](https://optidrop.online/tools/calculators/expense-splitter.html) |
 | Salary Negotiator | Calculate target salary with inflation and market adjustment | [/tools/calculators/salary-negotiator.html](https://optidrop.online/tools/calculators/salary-negotiator.html) |
 | Break-Even Analysis | Calculate break-even point for business pricing | [/tools/calculators/break-even-analysis.html](https://optidrop.online/tools/calculators/break-even-analysis.html) |
@@ -135,10 +135,10 @@ OptiDrop is a fully browser-based toolkit with **330+ free tools** across **18 c
 | Future Value Annuity | Calculate future value of recurring investments | [/tools/calculators/future-value-annuity.html](https://optidrop.online/tools/calculators/future-value-annuity.html) |
 | Mileage Calculator | Calculate fuel cost per mile or kilometer | [/tools/calculators/mileage-calculator.html](https://optidrop.online/tools/calculators/mileage-calculator.html) |
 | Hourly to Salary Converter | Convert hourly wage to annual salary and vice versa | [/tools/calculators/hourly-to-salary.html](https://optidrop.online/tools/calculators/hourly-to-salary.html) |
-| Percent Error Calculator | Calculate percent error between experimental and actual values | [/tools/calculators/percent-error.html](https://optidrop.online/tools/calculators/percent-error.html) |
-| Reverse Sales Tax Calculator | Calculate pre-tax price from total amount | [/tools/calculators/reverse-sales-tax.html](https://optidrop.online/tools/calculators/reverse-sales-tax.html) |
+| Percent Error Calculator | Calculate percent error between experimental and actual values | [/tools/calculators/percent-error-calculator.html](https://optidrop.online/tools/calculators/percent-error-calculator.html) |
+| Reverse Sales Tax Calculator | Calculate pre-tax price from total amount | [/tools/calculators/reverse-sales-tax-calculator.html](https://optidrop.online/tools/calculators/reverse-sales-tax-calculator.html) |
 
-### Text Tools (32)
+### Text Tools (31)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -175,7 +175,7 @@ OptiDrop is a fully browser-based toolkit with **330+ free tools** across **18 c
 | Email Subject Line Generator | Generate effective email subject lines | [/tools/text/email-subject-line-generator.html](https://optidrop.online/tools/text/email-subject-line-generator.html) |
 | Advanced Case Converter | Convert to camelCase, snake_case, kebab-case, and more | [/tools/text/case-converter-advanced.html](https://optidrop.online/tools/text/case-converter-advanced.html) |
 
-### Developer Tools (40)
+### Developer Tools (42)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -206,13 +206,13 @@ OptiDrop is a fully browser-based toolkit with **330+ free tools** across **18 c
 | ASCII Art Converter | Convert text to ASCII block art | [/tools/developer/ascii-art-converter.html](https://optidrop.online/tools/developer/ascii-art-converter.html) |
 | Markdown Table Generator | Create Markdown tables with a visual editor | [/tools/developer/markdown-table-generator.html](https://optidrop.online/tools/developer/markdown-table-generator.html) |
 | API Response Formatter | Format and prettify API responses (JSON, XML) | [/tools/developer/api-response-formatter.html](https://optidrop.online/tools/developer/api-response-formatter.html) |
-| Git Command Cheatsheet | Quick reference for common Git commands | [/tools/developer/git-cheatsheet.html](https://optidrop.online/tools/developer/git-cheatsheet.html) |
-| Base64 Image Converter | Convert images to and from Base64 data URLs | [/tools/developer/base64-image.html](https://optidrop.online/tools/developer/base64-image.html) |
-| Terminal Command Simulator | Practice terminal commands in a simulated environment | [/tools/developer/terminal-simulator.html](https://optidrop.online/tools/developer/terminal-simulator.html) |
+| Git Command Cheatsheet | Quick reference for common Git commands | [/tools/developer/git-command-cheatsheet.html](https://optidrop.online/tools/developer/git-command-cheatsheet.html) |
+| Base64 Image Converter | Convert images to and from Base64 data URLs | [/tools/developer/base64-image-converter.html](https://optidrop.online/tools/developer/base64-image-converter.html) |
+| Terminal Command Simulator | Practice terminal commands in a simulated environment | [/tools/developer/terminal-command-simulator.html](https://optidrop.online/tools/developer/terminal-command-simulator.html) |
 | HTML Encoder | Encode and decode HTML entities and special characters | [/tools/developer/html-encoder.html](https://optidrop.online/tools/developer/html-encoder.html) |
 | Markdown to HTML | Convert Markdown text to HTML markup | [/tools/developer/markdown-to-html.html](https://optidrop.online/tools/developer/markdown-to-html.html) |
 | Color Picker | Pick colors with HEX, RGB, and HSL output | [/tools/developer/color-picker.html](https://optidrop.online/tools/developer/color-picker.html) |
-| CSS Border Generator | Create CSS border styles with live preview | [/tools/developer/css-border-generator.html](https://optidrop.online/tools/developer/css-border-generator.html) |
+| CSS Border Generator | Create CSS border styles with live preview | [/tools/design/css-border-generator.html](https://optidrop.online/tools/design/css-border-generator.html) |
 | WiFi QR Code Generator | Generate QR codes to share WiFi passwords securely | [/tools/developer/wifi-qr-generator.html](https://optidrop.online/tools/developer/wifi-qr-generator.html) |
 | Cron Expression Builder | Build cron expressions visually with human-readable descriptions | [/tools/developer/cron-builder.html](https://optidrop.online/tools/developer/cron-builder.html) |
 | WCAG Color Contrast Checker | Check color contrast ratios for accessibility AA/AAA compliance | [/tools/developer/color-contrast-checker.html](https://optidrop.online/tools/developer/color-contrast-checker.html) |
@@ -267,14 +267,14 @@ OptiDrop is a fully browser-based toolkit with **330+ free tools** across **18 c
 | Professional Bio Generator | Generate bios for LinkedIn, websites, and profiles | [/tools/professional/bio-generator.html](https://optidrop.online/tools/professional/bio-generator.html) |
 | SOP Generator | Write Statement of Purpose for university applications | [/tools/professional/sop-generator.html](https://optidrop.online/tools/professional/sop-generator.html) |
 
-### Health Tools (18)
+### Health Tools (19)
 
 | Tool | Description | URL |
 |------|-------------|-----|
 | BMI Calculator | Calculate Body Mass Index with metric or imperial units | [/tools/bmi-calculator.html](https://optidrop.online/tools/bmi-calculator.html) |
-| Ideal Weight Calculator | Find ideal weight using 4 medical formulas (Devine, Robinson, Miller, Hamwi) | [/tools/health/ideal-weight.html](https://optidrop.online/tools/health/ideal-weight.html) |
+| Ideal Weight Calculator | Find ideal weight using 4 medical formulas (Devine, Robinson, Miller, Hamwi) | [/tools/health/ideal-weight-calculator.html](https://optidrop.online/tools/health/ideal-weight-calculator.html) |
 | Calorie Calculator | Calculate daily calorie needs with BMR and TDEE (Mifflin-St Jeor) | [/tools/health/calorie-calculator.html](https://optidrop.online/tools/health/calorie-calculator.html) |
-| Water Intake Calculator | Calculate daily water needs with hydration tracker | [/tools/health/water-intake.html](https://optidrop.online/tools/health/water-intake.html) |
+| Water Intake Calculator | Calculate daily water needs with hydration tracker | [/tools/health/water-intake-calculator.html](https://optidrop.online/tools/health/water-intake-calculator.html) |
 | Sleep Calculator | Find the best bedtime and wake-up time based on sleep cycles | [/tools/health/sleep-calculator.html](https://optidrop.online/tools/health/sleep-calculator.html) |
 | Pregnancy Due Date | Calculate estimated due date and current pregnancy week | [/tools/health/pregnancy-due-date.html](https://optidrop.online/tools/health/pregnancy-due-date.html) |
 | Ovulation Calculator | Calculate fertile window and ovulation date | [/tools/health/ovulation-calculator.html](https://optidrop.online/tools/health/ovulation-calculator.html) |
@@ -284,10 +284,10 @@ OptiDrop is a fully browser-based toolkit with **330+ free tools** across **18 c
 | Blood Pressure Tracker | Log and track blood pressure readings over time | [/tools/health/blood-pressure-tracker.html](https://optidrop.online/tools/health/blood-pressure-tracker.html) |
 | BAC Calculator | Estimate blood alcohol content based on drinks consumed | [/tools/health/bac-calculator.html](https://optidrop.online/tools/health/bac-calculator.html) |
 | Dosage Calculator | Calculate medication dosage by weight | [/tools/health/dosage-calculator.html](https://optidrop.online/tools/health/dosage-calculator.html) |
-| Menstrual Cycle Calculator | Track menstrual cycles and predict next period | [/tools/health/menstrual-cycle.html](https://optidrop.online/tools/health/menstrual-cycle.html) |
+| Menstrual Cycle Calculator | Track menstrual cycles and predict next period | [/tools/health/menstrual-cycle-calculator.html](https://optidrop.online/tools/health/menstrual-cycle-calculator.html) |
 | BSA Calculator | Calculate Body Surface Area using Du Bois formula | [/tools/health/bsa-calculator.html](https://optidrop.online/tools/health/bsa-calculator.html) |
 | Target Heart Rate | Calculate heart rate training zones | [/tools/health/target-heart-rate.html](https://optidrop.online/tools/health/target-heart-rate.html) |
-| Stress Level Assessor | Self-assess stress levels with coping suggestions | [/tools/health/stress-assessor.html](https://optidrop.online/tools/health/stress-assessor.html) |
+| Stress Level Assessor | Self-assess stress levels with coping suggestions | [/tools/health/stress-level-assessor.html](https://optidrop.online/tools/health/stress-level-assessor.html) |
 | Medication Reminder | Track medication schedules with local reminders | [/tools/health/medication-reminder.html](https://optidrop.online/tools/health/medication-reminder.html) |
 
 ### Education Tools (22)
@@ -328,7 +328,7 @@ OptiDrop is a fully browser-based toolkit with **330+ free tools** across **18 c
 | Heart Rate Zone Calculator | Find fat burn, cardio, and peak heart rate training zones | [/tools/fitness/heart-rate-zone-calculator.html](https://optidrop.online/tools/fitness/heart-rate-zone-calculator.html) |
 | Exercise Calorie Burn | Calculate calories burned for 100+ exercises | [/tools/fitness/exercise-calorie-burn.html](https://optidrop.online/tools/fitness/exercise-calorie-burn.html) |
 
-### Utility Tools (31)
+### Utility Tools (30)
 
 | Tool | Description | URL |
 |------|-------------|-----|
@@ -382,8 +382,8 @@ OptiDrop is a fully browser-based toolkit with **330+ free tools** across **18 c
 | Rock Paper Scissors | Play against the computer with score tracking | [/tools/fun/rock-paper-scissors.html](https://optidrop.online/tools/fun/rock-paper-scissors.html) |
 | Trivia Quiz | Test your knowledge with random trivia questions | [/tools/fun/trivia-quiz.html](https://optidrop.online/tools/fun/trivia-quiz.html) |
 | Daily Horoscope | Get your daily horoscope by zodiac sign | [/tools/fun/horoscope-daily.html](https://optidrop.online/tools/fun/horoscope-daily.html) |
-| Meme Text Generator | Generate meme-style text with custom formatting | [/tools/fun/meme-text.html](https://optidrop.online/tools/fun/meme-text.html) |
-| Bingo Card Generator | Create custom bingo cards with random or custom items | [/tools/fun/bingo-card.html](https://optidrop.online/tools/fun/bingo-card.html) |
+| Meme Text Generator | Generate meme-style text with custom formatting | [/tools/fun/meme-text-generator.html](https://optidrop.online/tools/fun/meme-text-generator.html) |
+| Bingo Card Generator | Create custom bingo cards with random or custom items | [/tools/fun/bingo-card-generator.html](https://optidrop.online/tools/fun/bingo-card-generator.html) |
 | Would You Rather Advanced | Would you rather with custom scenarios and voting | [/tools/fun/would-you-rather-advanced.html](https://optidrop.online/tools/fun/would-you-rather-advanced.html) |
 
 ### Home & DIY Tools (7)
@@ -402,20 +402,20 @@ OptiDrop is a fully browser-based toolkit with **330+ free tools** across **18 c
 
 | Tool | Description | URL |
 |------|-------------|-----|
-| Todo List Advanced | Feature-rich todo list with priorities and categories | [/tools/productivity/todo-list.html](https://optidrop.online/tools/productivity/todo-list.html) |
+| Todo List Advanced | Feature-rich todo list with priorities and categories | [/tools/productivity/todo-list-advanced.html](https://optidrop.online/tools/productivity/todo-list-advanced.html) |
 | Goal Tracker | Set and track personal and professional goals | [/tools/productivity/goal-tracker.html](https://optidrop.online/tools/productivity/goal-tracker.html) |
-| Meeting Notes Template | Structured meeting notes with action items | [/tools/productivity/meeting-notes.html](https://optidrop.online/tools/productivity/meeting-notes.html) |
+| Meeting Notes Template | Structured meeting notes with action items | [/tools/productivity/meeting-notes-template.html](https://optidrop.online/tools/productivity/meeting-notes-template.html) |
 | Daily Planner | Plan your day with time blocks and priorities | [/tools/productivity/daily-planner.html](https://optidrop.online/tools/productivity/daily-planner.html) |
-| Brainstorm Idea Generator | Generate and organize creative ideas | [/tools/productivity/brainstorm.html](https://optidrop.online/tools/productivity/brainstorm.html) |
-| Time Block Scheduler | Schedule your day in focused time blocks | [/tools/productivity/time-block.html](https://optidrop.online/tools/productivity/time-block.html) |
+| Brainstorm Idea Generator | Generate and organize creative ideas | [/tools/productivity/brainstorm-idea-generator.html](https://optidrop.online/tools/productivity/brainstorm-idea-generator.html) |
+| Time Block Scheduler | Schedule your day in focused time blocks | [/tools/productivity/time-block-scheduler.html](https://optidrop.online/tools/productivity/time-block-scheduler.html) |
 | Priority Matrix | Eisenhower matrix for task prioritization | [/tools/productivity/priority-matrix.html](https://optidrop.online/tools/productivity/priority-matrix.html) |
 
 ### Travel Tools (7)
 
 | Tool | Description | URL |
 |------|-------------|-----|
-| Trip Cost Estimator | Estimate total trip cost with flights, hotels, and activities | [/tools/travel/trip-cost.html](https://optidrop.online/tools/travel/trip-cost.html) |
-| Packing List Generator | Generate packing lists based on destination and duration | [/tools/travel/packing-list.html](https://optidrop.online/tools/travel/packing-list.html) |
+| Trip Cost Estimator | Estimate total trip cost with flights, hotels, and activities | [/tools/travel/trip-cost-estimator.html](https://optidrop.online/tools/travel/trip-cost-estimator.html) |
+| Packing List Generator | Generate packing lists based on destination and duration | [/tools/travel/packing-list-generator.html](https://optidrop.online/tools/travel/packing-list-generator.html) |
 | Itinerary Planner | Plan daily travel itineraries with activities | [/tools/travel/itinerary-planner.html](https://optidrop.online/tools/travel/itinerary-planner.html) |
 | Flight Time Calculator | Estimate flight duration between cities | [/tools/travel/flight-time-calculator.html](https://optidrop.online/tools/travel/flight-time-calculator.html) |
 | Visa Requirement Checker | Check visa requirements by passport and destination | [/tools/travel/visa-requirement-checker.html](https://optidrop.online/tools/travel/visa-requirement-checker.html) |
