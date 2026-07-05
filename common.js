@@ -5,33 +5,34 @@
    share-bar observer) only created when the browser is idle.
    ========================================================= */
 
-// ── Supabase Client (for reviews/feedback persistence) ─────
-var supabase = null;
-try {
-    var _sbUrl = 'https://ujbldzjuzmvhgqkxyslz.supabase.co';
-    var _sbKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmbXN0cml3eGRyeXJxZWxmZnhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyNjcwNTgsImV4cCI6MjA5ODg0MzA1OH0.t3sblfMlr_-eB7GAV2mBZFWD00y-k_ygTcAjneBJquo';
-    if (window.supabase && typeof window.supabase.createClient === 'function') {
-        supabase = window.supabase.createClient(_sbUrl, _sbKey);
-    }
-} catch (e) {
-    console.warn('Supabase init skipped:', e.message);
-    supabase = null;
-}
-
+// ── Supabase via native fetch (no CDN dependency) ─────────
 async function submitUserReview(name, message, toolName) {
-    if (!supabase) {
-        console.warn('Supabase not loaded');
-        if (typeof showToast === 'function') showToast('Error: service unavailable', 'error');
-        return;
-    }
-    const { data, error } = await supabase
-        .from('reviews')
-        .insert([{ name: name, message: message, tool: toolName, date: new Date().toLocaleDateString() }]);
-    if (error) {
-        console.error('Supabase Error:', error);
-        if (typeof showToast === 'function') showToast('Error submitting review', 'error');
-    } else {
+    var supabaseUrl = 'https://ujbldzjuzmvhgqkxyslz.supabase.co';
+    var supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmbXN0cml3eGRyeXJxZWxmZnhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyNjcwNTgsImV4cCI6MjA5ODg0MzA1OH0.t3sblfMlr_-eB7GAV2mBZFWD00y-k_ygTcAjneBJquo';
+
+    try {
+        var response = await fetch(supabaseUrl + '/rest/v1/reviews', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'apikey': supabaseKey,
+                'Authorization': 'Bearer ' + supabaseKey,
+                'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify({
+                name: name,
+                message: message,
+                tool: toolName,
+                date: new Date().toLocaleDateString()
+            })
+        });
+
+        if (!response.ok) throw new Error('Database rejected the request');
+
         if (typeof showToast === 'function') showToast('Thank you for your review!', 'success');
+    } catch (error) {
+        console.error('Fetch Error:', error);
+        if (typeof showToast === 'function') showToast('Error submitting review', 'error');
     }
 }
 
