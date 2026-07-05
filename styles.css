@@ -12,22 +12,21 @@
     --radius-2xl: 24px;
     --radius-pill: 9999px;
 
-    /* Color Palette — Primary (Blue) */
-    --color-primary-50: #eff6ff;
-    --color-primary-100: #dbeafe;
-    --color-primary-500: #3b82f6;
-    --color-primary-600: #2563eb;
-    --color-primary-700: #1d4ed8;
+    /* Color Palette — Brand (Cerise) — THE signature accent */
+    --color-brand-50: #fdf2f8;
+    --color-brand-100: #fce7f3;
+    --color-brand-200: #f9a8d4;
+    --color-brand-500: #ec4899;
+    --color-brand: #e91e63;
+    --color-brand-700: #be185b;
+    --color-brand-800: #9d174d;
 
-    /* Color Palette — Secondary (Indigo) — hover/focus feedback */
-    --color-secondary-50: #eef2ff;
-    --color-secondary-500: #6366f1;
-    --color-secondary-600: #4f46e5;
-
-    /* Color Palette — Success (Emerald) */
+    /* Color Palette — Status (semantic use only) */
     --color-success-50: #ecfdf5;
     --color-success-500: #10b981;
     --color-success-600: #059669;
+    --color-error-500: #ef4444;
+    --color-info-500: #64748b;
 
     /* Neutral Scale */
     --color-slate-50: #f8fafc;
@@ -41,11 +40,11 @@
     --color-slate-800: #1e293b;
     --color-slate-900: #0f172a;
 
-    /* Shadows (tightened) */
+    /* Shadows — now tinted with brand color */
     --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
     --shadow-md: 0 4px 12px -2px rgba(0,0,0,0.08);
-    --shadow-lg: 0 8px 20px -4px rgba(59,130,246,0.12);
-    --shadow-xl: 0 12px 24px -6px rgba(59,130,246,0.12);
+    --shadow-lg: 0 8px 20px -4px rgba(233,30,99,0.10);
+    --shadow-xl: 0 12px 24px -6px rgba(233,30,99,0.10);
 
     /* Timing */
     --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -493,32 +492,38 @@ details.advanced-settings .advanced-content { padding: 1rem; background: #fff; }
 .premium-icon-wrapper svg {
     width: 24px; height: 24px;
 }
-/* Dark mode premium icon wrappers */
-.dark-mode .premium-icon-wrapper.blue     { background: #1e3a5f; color: #60a5fa; }
-.dark-mode .premium-icon-wrapper.indigo   { background: #1e1b4b; color: #818cf8; }
-.dark-mode .premium-icon-wrapper.purple   { background: #2e1065; color: #a78bfa; }
-.dark-mode .premium-icon-wrapper.emerald  { background: #064e3b; color: #34d399; }
-.dark-mode .premium-icon-wrapper.orange   { background: #431407; color: #fb923c; }
-.dark-mode .premium-icon-wrapper.red      { background: #450a0a; color: #f87171; }
-.dark-mode .premium-icon-wrapper.teal     { background: #042f2e; color: #2dd4bf; }
-.dark-mode .premium-icon-wrapper.amber    { background: #451a03; color: #fbbf24; }
-.dark-mode .premium-icon-wrapper.rose     { background: #4c0519; color: #fb7185; }
-.dark-mode .premium-icon-wrapper.pink     { background: #500724; color: #f472b6; }
-.dark-mode .premium-icon-wrapper.green    { background: #052e16; color: #4ade80; }
-.dark-mode .premium-icon-wrapper.cyan     { background: #083344; color: #22d3ee; }
-/* Color variants for premium icons */
-.premium-icon-wrapper.blue     { background: #dbeafe; color: #1d4ed8; }
-.premium-icon-wrapper.indigo   { background: #e0e7ff; color: #3730a3; }
-.premium-icon-wrapper.purple   { background: #ede9fe; color: #5b21b6; }
-.premium-icon-wrapper.emerald  { background: #d1fae5; color: #047857; }
-.premium-icon-wrapper.orange   { background: #ffedd5; color: #c2410c; }
-.premium-icon-wrapper.red      { background: #fee2e2; color: #b91c1c; }
-.premium-icon-wrapper.teal     { background: #ccfbf1; color: #0f766e; }
-.premium-icon-wrapper.amber    { background: #fef3c7; color: #b45309; }
-.premium-icon-wrapper.rose     { background: #ffe4e6; color: #be123c; }
-.premium-icon-wrapper.pink     { background: #fce7f3; color: #9d174d; }
-.premium-icon-wrapper.green    { background: #dcfce7; color: #15803d; }
-.premium-icon-wrapper.cyan     { background: #cffafe; color: #0e7490; }
+/* Dark mode premium icon wrappers — all use cerise accent */
+.dark-mode .premium-icon-wrapper.blue,
+.dark-mode .premium-icon-wrapper.indigo,
+.dark-mode .premium-icon-wrapper.purple,
+.dark-mode .premium-icon-wrapper.emerald,
+.dark-mode .premium-icon-wrapper.orange,
+.dark-mode .premium-icon-wrapper.red,
+.dark-mode .premium-icon-wrapper.teal,
+.dark-mode .premium-icon-wrapper.amber,
+.dark-mode .premium-icon-wrapper.rose,
+.dark-mode .premium-icon-wrapper.pink,
+.dark-mode .premium-icon-wrapper.green,
+.dark-mode .premium-icon-wrapper.cyan,
+.dark-mode .premium-icon-wrapper.brand {
+    background: #3b0f2a; color: #f472b6;
+}
+/* Color variants — ALL use signature cerise accent (single-brand identity) */
+.premium-icon-wrapper.blue,
+.premium-icon-wrapper.indigo,
+.premium-icon-wrapper.purple,
+.premium-icon-wrapper.emerald,
+.premium-icon-wrapper.orange,
+.premium-icon-wrapper.red,
+.premium-icon-wrapper.teal,
+.premium-icon-wrapper.amber,
+.premium-icon-wrapper.rose,
+.premium-icon-wrapper.pink,
+.premium-icon-wrapper.green,
+.premium-icon-wrapper.cyan,
+.premium-icon-wrapper.brand {
+    background: #fdf2f8; color: #be185b;
+}
 
 /* Featured tool cards — premium icon sizing */
 .featured-tool-card .premium-icon-wrapper {
@@ -557,19 +562,7 @@ details.advanced-settings .advanced-content { padding: 1rem; background: #fff; }
     margin-bottom: 0.75rem;
 }
 
-/* Dark Mode: Premium Icon Wrapper */
-.dark-mode .premium-icon-wrapper.blue     { background: #1e3a5f; color: #60a5fa; }
-.dark-mode .premium-icon-wrapper.indigo   { background: #1e1b4b; color: #818cf8; }
-.dark-mode .premium-icon-wrapper.purple   { background: #2e1065; color: #a78bfa; }
-.dark-mode .premium-icon-wrapper.emerald  { background: #064e3b; color: #34d399; }
-.dark-mode .premium-icon-wrapper.orange   { background: #431407; color: #fb923c; }
-.dark-mode .premium-icon-wrapper.red      { background: #450a0a; color: #f87171; }
-.dark-mode .premium-icon-wrapper.teal     { background: #042f2e; color: #2dd4bf; }
-.dark-mode .premium-icon-wrapper.amber    { background: #451a03; color: #fbbf24; }
-.dark-mode .premium-icon-wrapper.rose     { background: #4c0519; color: #fb7185; }
-.dark-mode .premium-icon-wrapper.pink     { background: #500724; color: #f472b6; }
-.dark-mode .premium-icon-wrapper.green    { background: #052e16; color: #4ade80; }
-.dark-mode .premium-icon-wrapper.cyan     { background: #083344; color: #22d3ee; }
+/* Dark Mode: Premium Icon Wrapper — all cerise (duplicate removed, kept one rule) */
 
 /* ── Badge Pop Hover (for all card badges/tags) ──────────── */
 .tool-card:hover .tool-card-tag,
@@ -690,17 +683,17 @@ details.advanced-settings .advanced-content { padding: 1rem; background: #fff; }
 /* ── CTA Button ────────────────────────────────────────────── */
 .cta-btn {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.875rem 1.75rem; background: #2563eb; color: #fff;
+    padding: 0.875rem 1.75rem; background: #e91e63; color: #fff;
     font-weight: 700; font-size: 0.95rem; border-radius: 0.75rem;
     text-decoration: none; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+    box-shadow: 0 4px 12px rgba(233,30,99,0.3);
 }
-.cta-btn:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,99,235,0.4); }
+.cta-btn:hover { background: #be185b; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(233,30,99,0.4); }
 
 /* ── Hero Typography Enhancement ──────────────────────────── */
-/* Premium text gradient for hero headline — applied via Tailwind classes */
+/* Premium text gradient for hero headline — cerise brand accent */
 h1 .text-transparent.bg-clip-text {
-    background-image: linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #7c3aed 100%) !important;
+    background-image: linear-gradient(135deg, #e91e63 0%, #ec4899 50%, #f472b6 100%) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
@@ -749,7 +742,13 @@ h1 .text-transparent.bg-clip-text {
   line-height: 1;
 }
 .logo-text span {
-  color: #2563eb;
+  color: #e91e63;
+}
+.logo-mark {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    flex-shrink: 0;
 }
 .header-nav { display: flex; align-items: center; gap: 0.75rem; }
 .header-nav a, .header-nav .nav-link {
@@ -780,28 +779,28 @@ h1 .text-transparent.bg-clip-text {
 .nav-feedback-btn {
     display: inline-flex; align-items: center; gap: 0.375rem;
     padding: 7px 16px; font-size: 13px; font-weight: 600;
-    color: var(--brand-accent, #2563eb);
-    border: 1px solid var(--brand-accent, #2563eb);
+    color: #e91e63;
+    border: 1px solid #e91e63;
     border-radius: 8px; background: transparent;
     text-decoration: none; cursor: pointer;
     transition: all 0.2s ease; white-space: nowrap;
     line-height: 1;
 }
 .nav-feedback-btn:hover {
-    background: #eff6ff; border-color: #1d4ed8; color: #1d4ed8;
+    background: #fdf2f8; border-color: #be185b; color: #be185b;
 }
 .nav-feedback-btn svg {
     width: 14px; height: 14px; flex-shrink: 0;
 }
 .dark-mode .nav-feedback-btn {
-    color: #60a5fa !important;
-    border-color: #60a5fa !important;
+    color: #f472b6 !important;
+    border-color: #f472b6 !important;
     background: transparent !important;
 }
 .dark-mode .nav-feedback-btn:hover {
-    background: rgba(59,130,246,0.15) !important;
-    border-color: #93bbfd !important;
-    color: #93bbfd !important;
+    background: rgba(233,30,99,0.15) !important;
+    border-color: #f9a8d4 !important;
+    color: #f9a8d4 !important;
 }
 
 /* ── Mega Menu ─────────────────────────────────────────────── */
@@ -3159,16 +3158,16 @@ body {
 .dark-mode .shadow-lg { box-shadow: 0 8px 12px rgba(0,0,0,0.2) !important; }
 .dark-mode .shadow-xl { box-shadow: 0 12px 20px rgba(0,0,0,0.2) !important; }
 
-/* Dark mode: Tailwind brand custom color overrides */
-.dark-mode .text-brand-600 { color: #60a5fa !important; }
-.dark-mode .text-brand-700 { color: #93c5fd !important; }
-.dark-mode .bg-brand-50 { background-color: #1a2e3d !important; }
-.dark-mode .bg-brand-100 { background-color: #1a2e3d !important; }
-.dark-mode .hover\:text-brand-700:hover { color: #93c5fd !important; }
-.dark-mode .hover\:bg-brand-50:hover { background-color: #1a2e3d !important; }
-.dark-mode .hover\:border-brand-200:hover { border-color: #2563eb !important; }
-.dark-mode .from-brand-600 { --tw-gradient-from: #2563eb !important; }
-.dark-mode .to-indigo-600 { --tw-gradient-to: #6366f1 !important; }
+/* Dark mode: Tailwind brand custom color overrides — cerise accent */
+.dark-mode .text-brand-600 { color: #f472b6 !important; }
+.dark-mode .text-brand-700 { color: #f9a8d4 !important; }
+.dark-mode .bg-brand-50 { background-color: #3b0f2a !important; }
+.dark-mode .bg-brand-100 { background-color: #3b0f2a !important; }
+.dark-mode .hover\:text-brand-700:hover { color: #f9a8d4 !important; }
+.dark-mode .hover\:bg-brand-50:hover { background-color: #3b0f2a !important; }
+.dark-mode .hover\:border-brand-200:hover { border-color: #ec4899 !important; }
+.dark-mode .from-brand-600 { --tw-gradient-from: #e91e63 !important; }
+.dark-mode .to-indigo-600 { --tw-gradient-to: #ec4899 !important; }
 
 /* Dark mode: Tailwind semantic color overrides (sidebar icons, badges, etc.) */
 .dark-mode .bg-blue-50 { background-color: #1e3a5f !important; }

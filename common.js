@@ -117,7 +117,12 @@ window.OptiTrack = {
 (function () {
     var NAV_HTML = '<header class="site-header">' +
         '<div class="header-inner">' +
-            '<a href="/" class="logo-text">Opti<span>Drop</span></a>' +
+            '<a href="/" class="logo-text">' +
+                '<svg class="logo-mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">' +
+                    '<path d="M16 2C16 2 6 14 6 20a10 10 0 0020 0C26 14 16 2 16 2z" fill="#e91e63"/>' +
+                    '<path d="M11 18h10M13 21h6" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>' +
+                '</svg>' +
+                'Opti<span>Drop</span></a>' +
             '<nav class="header-nav">' +
                 '<a href="/" class="hide-mobile">Home</a>' +
                 '<a href="/tools.html" class="hide-mobile">Tools</a>' +
@@ -1147,14 +1152,14 @@ _ric(function () {
         'parenting': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>'
     };
 
-    // Icon color map for premium icon wrappers
+    // Icon color map — single brand accent (cerise) for all categories
     var catColors = {
-        'image': 'blue', 'pdf': 'red', 'text': 'indigo', 'career': 'purple',
-        'business': 'emerald', 'professional': 'cyan', 'calculator': 'amber',
-        'developer': 'teal', 'utility': 'orange', 'health': 'rose',
-        'education': 'blue', 'fitness': 'green', 'travel': 'indigo',
-        'productivity': 'purple', 'design': 'pink', 'home': 'amber',
-        'fun': 'orange', 'parenting': 'emerald'
+        'image': 'brand', 'pdf': 'brand', 'text': 'brand', 'career': 'brand',
+        'business': 'brand', 'professional': 'brand', 'calculator': 'brand',
+        'developer': 'brand', 'utility': 'brand', 'health': 'brand',
+        'education': 'brand', 'fitness': 'brand', 'travel': 'brand',
+        'productivity': 'brand', 'design': 'brand', 'home': 'brand',
+        'fun': 'brand', 'parenting': 'brand'
     };
 
     var categoryRelated = {
