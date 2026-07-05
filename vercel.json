@@ -100,6 +100,18 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/tools/health/ideal-weight-calculator.html",
+      "destination": "/tools/health/ideal-weight.html",
+      "permanent": true
+    },
+    {
+      "source": "/tools/health/water-intake-calculator.html",
+      "destination": "/tools/health/water-intake.html",
+      "permanent": true
+    }
+  ],
   "cleanUrls": false,
   "trailingSlash": false
 }

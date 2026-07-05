@@ -974,13 +974,6 @@ _ric(function () {
                 'price': '0',
                 'priceCurrency': 'USD'
             },
-            'aggregateRating': {
-                '@type': 'AggregateRating',
-                'ratingValue': '4.8',
-                'reviewCount': '124',
-                'bestRating': '5',
-                'worstRating': '1'
-            },
             'dateModified': '2026-06-09'
         };
 
@@ -2090,7 +2083,7 @@ function initToolsDirectory() {
         searchBtn.addEventListener('click', function () {
             var query = searchInput.value.trim();
             if (query) {
-                window.location.href = '/tools.html?search=' + encodeURIComponent(query);
+                window.location.href = '/tools.html?q=' + encodeURIComponent(query);
             }
         });
     }
@@ -2114,7 +2107,7 @@ function initToolsDirectory() {
             } else {
                 var query = searchInput.value.trim();
                 if (query) {
-                    window.location.href = '/tools.html?search=' + encodeURIComponent(query);
+                    window.location.href = '/tools.html?q=' + encodeURIComponent(query);
                 }
             }
         } else if (e.key === 'Escape') {
