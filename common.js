@@ -6,9 +6,17 @@
    ========================================================= */
 
 // ── Supabase Client (for reviews/feedback persistence) ─────
-const supabaseUrl = 'https://ujbldzjuzmvhgqkxyslz.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmbXN0cml3eGRyeXJxZWxmZnhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyNjcwNTgsImV4cCI6MjA5ODg0MzA1OH0.t3sblfMlr_-eB7GAV2mBZFWD00y-k_ygTcAjneBJquo';
-const supabase = window.supabase ? window.supabase.createClient(supabaseUrl, supabaseKey) : null;
+var supabase = null;
+try {
+    var _sbUrl = 'https://ujbldzjuzmvhgqkxyslz.supabase.co';
+    var _sbKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmbXN0cml3eGRyeXJxZWxmZnhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyNjcwNTgsImV4cCI6MjA5ODg0MzA1OH0.t3sblfMlr_-eB7GAV2mBZFWD00y-k_ygTcAjneBJquo';
+    if (window.supabase && typeof window.supabase.createClient === 'function') {
+        supabase = window.supabase.createClient(_sbUrl, _sbKey);
+    }
+} catch (e) {
+    console.warn('Supabase init skipped:', e.message);
+    supabase = null;
+}
 
 async function submitUserReview(name, message, toolName) {
     if (!supabase) {
