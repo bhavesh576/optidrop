@@ -1597,20 +1597,66 @@ var allToolsData = [
 var OPTI_TOOL_COUNT = allToolsData.length;
 var OPTI_TOOL_COUNT_STR = OPTI_TOOL_COUNT + '+';
 
-// Update footer and mega-menu with actual tool count
-(function () {
-    // Update footer description
-    var footerDescs = document.querySelectorAll('.footer-about p');
-    footerDescs.forEach(function (p) {
-        if (p.textContent.indexOf('330+') !== -1) {
-            p.textContent = p.textContent.replace('330+', OPTI_TOOL_COUNT_STR);
+// Global tool-count updater — single source of truth for every page
+// Replaces ALL hardcoded tool-count strings ("330+","300+","317+",etc.)
+// in title, meta, OG, Twitter, JSON-LD, and visible body text.
+function OPTI_updateToolCounts() {
+    if (typeof OPTI_TOOL_COUNT_STR === 'undefined') return;
+    var count = OPTI_TOOL_COUNT_STR;
+    var patterns = ['371+', '330+', '317+', '300+'];
+
+    function replaceIn(str) {
+        for (var i = 0; i < patterns.length; i++) {
+            str = str.split(patterns[i]).join(count);
+        }
+        return str;
+    }
+
+    // <title>
+    if (document.title) document.title = replaceIn(document.title);
+
+    // <meta> tags (description, og:*, twitter:*)
+    document.querySelectorAll('meta[name="description"], meta[property^="og:"], meta[name^="twitter:"]').forEach(function (m) {
+        if (m.content) m.content = replaceIn(m.content);
+    });
+
+    // JSON-LD <script> blocks
+    document.querySelectorAll('script[type="application/ld+json"]').forEach(function (s) {
+        if (s.textContent) {
+            var replaced = replaceIn(s.textContent);
+            if (replaced !== s.textContent) {
+                try { JSON.parse(replaced); s.textContent = replaced; } catch (e) {}
+            }
         }
     });
-    // Update any element with data-tool-count attribute
+
+    // Visible body text: [data-tool-count] elements
     document.querySelectorAll('[data-tool-count]').forEach(function (el) {
-        el.textContent = OPTI_TOOL_COUNT_STR;
+        el.textContent = count;
     });
-})();
+
+    // Visible body text: all text nodes containing any pattern
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    var textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+    textNodes.forEach(function (node) {
+        var original = node.nodeValue;
+        var replaced = replaceIn(original);
+        if (replaced !== original) node.nodeValue = replaced;
+    });
+
+    // Search input placeholders
+    document.querySelectorAll('input[placeholder]').forEach(function (input) {
+        input.placeholder = replaceIn(input.placeholder);
+    });
+}
+
+// Run automatically on every page
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', OPTI_updateToolCounts);
+} else {
+    OPTI_updateToolCounts();
+}
 
 var SIDEBAR_CATEGORIES = [
     {id:'all',name:'All Tools',count: OPTI_TOOL_COUNT_STR},
