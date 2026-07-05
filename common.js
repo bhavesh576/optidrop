@@ -5,20 +5,12 @@
    share-bar observer) only created when the browser is idle.
    ========================================================= */
 
-// ── Supabase via native fetch (no CDN dependency) ─────────
+// ── Submit review via same-origin Vercel serverless proxy ──
 async function submitUserReview(name, message, toolName) {
-    var supabaseUrl = 'https://ujbldzjuzmvhgqkxyslz.supabase.co';
-    var supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmbXN0cml3eGRyeXJxZWxmZnhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyNjcwNTgsImV4cCI6MjA5ODg0MzA1OH0.t3sblfMlr_-eB7GAV2mBZFWD00y-k_ygTcAjneBJquo';
-
     try {
-        var response = await fetch(supabaseUrl + '/rest/v1/reviews', {
+        var response = await fetch('/api/submit-review', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'apikey': supabaseKey,
-                'Authorization': 'Bearer ' + supabaseKey,
-                'Prefer': 'return=minimal'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 name: name,
                 message: message,
@@ -27,8 +19,7 @@ async function submitUserReview(name, message, toolName) {
             })
         });
 
-        if (!response.ok) throw new Error('Database rejected the request');
-
+        if (!response.ok) throw new Error('Failed to submit');
         if (typeof showToast === 'function') showToast('Thank you for your review!', 'success');
     } catch (error) {
         console.error('Fetch Error:', error);
