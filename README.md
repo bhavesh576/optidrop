@@ -18,7 +18,7 @@
 - [Other Pages](#other-pages)
 - [Navigation System](#navigation-system)
 - [Interactive Features](#interactive-features)
-- [All 317 Tools — Complete List](#all-317-tools--complete-list)
+- [All 350+ Tools — Complete List](#all-317-tools--complete-list)
 - [Technical Architecture](#technical-architecture)
 - [SEO Structure](#seo-structure)
 - [Deployment & Performance](#deployment--performance)
@@ -31,7 +31,7 @@
 
 ## What OptiDrop Is
 
-OptiDrop is a **static website** (no backend, no database, no server-side code) with **317+ free browser-based tools** across **18 categories**. Every tool runs entirely in the user's browser using JavaScript — files are never uploaded to any server. The site is deployed on Vercel as static HTML/CSS/JS files.
+OptiDrop is a **static website** (no backend, no database, no server-side code) with **350+ free browser-based tools** across **18 categories**. Every tool runs entirely in the user's browser using JavaScript — files are never uploaded to any server. The site is deployed on Vercel as static HTML/CSS/JS files.
 
 **Core differentiator:** Privacy. All processing happens client-side. No sign-up, no file uploads, no data collection. This is the primary marketing claim on the homepage and throughout the site.
 
@@ -132,7 +132,7 @@ All design decisions flow through CSS custom properties in `styles.css` lines 6-
 | Type | Count | Template | Example |
 |------|-------|----------|---------|
 | Homepage | 1 | `index.html` | [optidrop.online](https://optidrop.online) |
-| Tool pages | 317 | Individual HTML files | `/compress-image.html`, `/tools/calculators/sip-calculator.html` |
+| Tool pages | 350+ | Individual HTML files | `/compress-image.html`, `/tools/calculators/sip-calculator.html` |
 | Category pages | 18 | `category/*.html` | `/category/image-tools.html` |
 | Blog index | 1 | `blog/index.html` | `/blog/` |
 | Blog posts | 21 | `blog/*.html` | `/blog/how-to-compress-images-for-whatsapp.html` |
@@ -378,7 +378,7 @@ Each category page (`category/*.html`) lists all tools in that category as tool 
 - **Mobile layout:** Compact card design with smaller avatars, padding, and font sizes
 
 ### Tools Directory (`tools.html`)
-- **Full tool list:** All 317+ tools searchable with filters
+- **Full tool list:** All 350+ tools searchable with filters
 - **Category filter chips:** 18 category buttons
 - **Search bar:** Instant client-side filtering with 200ms debounce
 - **URL parameter:** `?q=` pre-fills search on load
@@ -473,7 +473,7 @@ Each category page (`category/*.html`) lists all tools in that category as tool 
 
 ---
 
-## All 317 Tools — Complete List
+## All 350+ Tools — Complete List
 
 ### Image Tools (10)
 
@@ -1231,12 +1231,12 @@ All HTML responses include:
 
 ### Recent Improvements (July 2026)
 
-#### Star Rating Fix
+#### 1. Star Rating Fix
 - **Issue:** Star ratings displayed 5 stars regardless of actual rating due to Tailwind CSS classes not being available
 - **Fix:** Replaced Tailwind classes (`text-amber-400`, `text-slate-300`) with inline styles and explicit hex colors (`#f59e0b` for filled, `#cbd5e1` for empty)
 - **Files:** `review.html`
 
-#### Review Page Overhaul
+#### 2. Review Page Overhaul
 - **Real Reviews:** Replaced hardcoded sample reviews with 12 realistic fake reviews in Supabase with varied ratings (3-5 stars)
 - **Read More:** Added truncation for reviews longer than 140 characters with "Read more" / "Show less" toggle
 - **Summary Stats:** Added average rating and total review count display
@@ -1245,43 +1245,100 @@ All HTML responses include:
 - **Mobile Layout:** Compact card design with smaller avatars, padding, and font sizes
 - **Files:** `review.html`, `api/submit-review.js`
 
-#### Mobile Layout Optimization
-- **All 8 Main Tools:** Applied compact mobile layout to Image Compressor, HEIC to JPG, JPG to PDF, PDF to JPG, Photo Resizer, Name Stamper, Signature Scanner, OCR
+#### 3. Mobile Layout Optimization (20+ tools)
+- **8 Main Tools:** Image Compressor, HEIC to JPG, JPG to PDF, PDF to JPG, Photo Resizer, Name Stamper, Signature Scanner, OCR
+- **12 Additional Tools:** PDF Merger, PDF Splitter, PDF Watermark, PDF Page Rotator, PDF Page Numbering, PDF Extract Text, PDF Grayscale, PDF Margin Adjuster, PDF Password Protector, PDF Unlock, PDF Compressor, Background Remover
 - **Changes:** Reduced padding (`p-4` mobile, `p-8` desktop), smaller dropzone (`min-h-[180px]` mobile), smaller icons (`w-8/h-8` mobile), smaller text (`text-base` mobile), compact buttons (`py-3` mobile)
-- **Files:** `compress-image.html`, `heic-to-jpg.html`, `jpg-to-pdf.html`, `pdf-to-jpg.html`, `passport-photo-resizer.html`, `name-date-stamp.html`, `signature-scanner.html`, `image-to-text-ocr.html`
+- **Files:** 20+ tool HTML files
 
-#### Auto-Scroll to Results
-- **All 8 Main Tools:** Added `scrollIntoView` to state transitions (upload→settings, settings→loading, loading→result, start over→upload)
+#### 4. Auto-Scroll to Results (20+ tools)
+- **8 Main Tools:** Added `scrollIntoView` to state transitions (upload→settings, settings→loading, loading→result, start over→upload)
 - **12 Popular Calculators:** Added scroll to BMI, QR Code, Loan Amortization, Percentage, Discount, 401k, Savings, Paycheck, VAT, Overtime calculators
 - **Helper Function:** Created `scrollToEl()` function in `script.js` with null check
-- **Files:** `script.js`, 12 calculator HTML files
+- **Files:** `script.js`, 20+ calculator HTML files
 
-#### JavaScript Error Fixes
+#### 5. 20 New Tools Added (Phase 13 & 14)
+
+**Phase 13 (10 tools):**
+1. Rent Receipt Generator — `tools/business/rent-receipt-generator.html`
+2. Gratuity Calculator — `tools/calculators/gratuity-calculator.html`
+3. EPF Calculator — `tools/calculators/epf-calculator.html`
+4. Land Unit Converter — `tools/utility/land-unit-converter.html`
+5. .gitignore Generator — `tools/developer/gitignore-generator.html`
+6. Attendance Percentage Calculator — `tools/education/attendance-percentage-calculator.html`
+7. CGPA ↔ Percentage Converter — `tools/education/cgpa-percentage-converter.html`
+8. Aadhaar Format Checker — `tools/utility/aadhaar-format-checker.html`
+9. Two-Wheeler Loan EMI Calculator — `tools/calculators/two-wheeler-loan-calculator.html`
+10. HRA Exemption Calculator — `tools/calculators/hra-exemption-calculator.html`
+
+**Phase 14 (10 tools):**
+1. Insurance Premium Due Reminder — `tools/utility/premium-due-reminder.html`
+2. EMI Due Date Reminder — `tools/utility/emi-due-reminder.html`
+3. Renewal Reminder Card — `tools/utility/renewal-reminder-card.html`
+4. Gold & Silver Value Calculator — `tools/calculators/gold-silver-value-calculator.html`
+5. Karat Purity Converter — `tools/calculators/karat-purity-converter.html`
+6. Old Gold Exchange Calculator — `tools/calculators/old-gold-exchange-calculator.html`
+7. PPF Calculator — `tools/calculators/ppf-calculator.html`
+8. RD Calculator — `tools/calculators/rd-calculator.html`
+9. NSC Calculator — `tools/calculators/nsc-calculator.html`
+10. KVP Calculator — `tools/calculators/kvp-calculator.html`
+11. SCSS Calculator — `tools/calculators/scss-calculator.html`
+12. Sukanya Samriddhi Calculator — `tools/calculators/sukanya-samriddhi-calculator.html`
+13. FD vs RD Calculator — `tools/calculators/fd-vs-rd-calculator.html`
+
+**Total tools: 350+**
+
+#### 6. Related Tools Placement Fix
+- **Issue:** Related Tools sections were at the bottom of pages (after SEO content + FAQ), forcing users to scroll too much
+- **Fix:** Moved Related Tools sections above SEO content in 173 tool pages
+- **Result:** Users now see Related Tools right after the tool interface
+- **Files:** 173 tool HTML files
+
+#### 7. Dark Mode Styling Fix
+- **Issue:** Conflicting `.tool-card` dark mode rules — second rule (`#1e293b`) overwrote first (`#272a33`), causing deep bluish appearance
+- **Fix:** Removed duplicate rule at line 3561, unified to single rule with `#272a33` background
+- **Files:** `styles.css`
+
+#### 8. JavaScript Error Fixes
 - **Null Reference Fix:** Added null check for resizer inputs in shared `script.js` to prevent errors on pages without those elements
 - **Files:** `script.js`
 
-#### Broken Link Fixes
-- **38 Links Fixed:** Across 20 files, including PDF tool links, text tool links, calculator tool links, education tool links, utility tool links, business tool links
-- **Files:** `best/free-pdf-tools.html`, `tools/pdf/pdf-password-protector.html`, `vs/ilovepdf.html`, and 17 other files
+#### 9. Broken Link Fixes
+- **53 Links Fixed:** Across 35 files, including PDF tool links, text tool links, calculator tool links, education tool links, utility tool links, business tool links
+- **Files:** `best/free-pdf-tools.html`, `tools/pdf/pdf-password-protector.html`, `vs/ilovepdf.html`, and 32 other files
 
-#### Accessibility Improvements
-- **Skip Navigation:** Added "Skip to main content" links to 5 main pages (index, tools, contact, review, about)
+#### 10. Accessibility Improvements
+- **Skip Navigation:** Added "Skip to main content" links to all main pages (index, tools, contact, review, about) AND all 21 blog pages
 - **Main Content IDs:** Added `id="main-content"` to main elements for skip navigation
 - **Image Alt Text:** Added alt text to base64-image-converter preview image
-- **ARIA Labels:** Added aria-label to review star rating group
+- **ARIA Labels:** Added aria-label to review star rating group, star rating radiogroup
 - **Autocomplete:** Added autocomplete attribute to reviewer name input
-- **Files:** `index.html`, `tools.html`, `contact.html`, `review.html`, `about.html`, `tools/developer/base64-image-converter.html`
+- **Files:** 26+ HTML files
 
-#### Performance Optimization
+#### 11. Performance Optimization
 - **Preload Hints:** Added preload hints for critical resources (styles.css, common.js) to 5 main pages
+- **Auto-Scroll:** `scrollIntoView` on tool state transitions for better mobile UX
 - **Files:** `index.html`, `tools.html`, `contact.html`, `review.html`, `about.html`
 
-#### Contact/Feedback Form Testing
+#### 12. Security Hardening
+- **Content Security Policy (CSP):** Added CSP header to `vercel.json` restricting script sources to known CDNs
+- **Subresource Integrity (SRI):** Added integrity hashes to CDN scripts (jszip, qrcode)
+- **Input Validation:** Added sanitization and validation to API endpoints (`submit-review.js`, `submit-feedback.js`)
+- **Payload Limits:** Added 10KB limit on API endpoints
+- **Error Sanitization:** API endpoints no longer expose internal error details
+- **Files:** `vercel.json`, `api/submit-review.js`, `api/submit-feedback.js`, `image-format-converter.html`, `qr-code-generator.html`
+
+#### 13. Blog Pages Audit
+- **Skip Navigation:** Added to all 21 blog pages
+- **Verified:** HTML structure, meta tags, dark mode, responsive classes, JSON-LD schemas, no broken links
+- **Files:** 21 blog HTML files
+
+#### 14. Contact/Feedback Form Testing
 - **Review Form:** Verified star rating validation, required fields, Supabase submission, success message
 - **Feedback Form:** Verified dual submission (Supabase + FormSubmit), error handling, success message
 - **Compose Form:** Verified FormSubmit submission, error handling, success message
 
-#### 404 Page Testing
+#### 15. 404 Page Testing
 - **Verified:** All links working, search functionality, meta robots tag, proper HTML structure, accessibility
 
 ---
