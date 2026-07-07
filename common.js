@@ -8,19 +8,23 @@
 // ── Submit review via same-origin Vercel serverless proxy ──
 async function submitUserReview(name, message, toolName, rating) {
     try {
+        var payload = {
+            name: name,
+            message: message,
+            tool: toolName,
+            rating: rating,
+            date: new Date().toLocaleDateString()
+        };
+        console.log('submitUserReview - rating param:', rating, 'type:', typeof rating, 'payload.rating:', payload.rating, 'full payload:', JSON.stringify(payload));
         var response = await fetch('/api/submit-review', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                name: name,
-                message: message,
-                tool: toolName,
-                rating: rating || null,
-                date: new Date().toLocaleDateString()
-            })
+            body: JSON.stringify(payload)
         });
 
         if (!response.ok) throw new Error('Failed to submit');
+        var result = await response.json().catch(function() { return null; });
+        console.log('submitUserReview - API response:', JSON.stringify(result));
         if (typeof showToast === 'function') showToast('Thank you for your review!', 'success');
     } catch (error) {
         console.error('Fetch Error:', error);
