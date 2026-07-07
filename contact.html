@@ -429,7 +429,7 @@
     <script src="/common.js?v=4.0"></script>
     <script>
     (function() {
-        // ── Feedback Form (Supabase via /api/submit-feedback) ─────
+        // ── Feedback Form (Supabase + FormSubmit email) ─────
         var form = document.getElementById('feedbackForm');
         var btn = document.getElementById('feedbackSubmitBtn');
         var success = document.getElementById('feedbackSuccess');
@@ -438,21 +438,47 @@
                 e.preventDefault();
                 btn.disabled = true;
                 btn.innerHTML = '<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" opacity="0.25"/><path fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/></svg> Sending...';
-                fetch('/api/submit-feedback', {
+
+                var formData = {
+                    name: document.getElementById('feedbackName').value || 'Anonymous',
+                    email: document.getElementById('feedbackEmail').value || '',
+                    subject: document.getElementById('feedbackSubject').value || 'General Feedback',
+                    message: document.getElementById('feedbackMessage').value || ''
+                };
+
+                // Send to both Supabase and FormSubmit in parallel
+                var supabasePromise = fetch('/api/submit-feedback', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                }).catch(function() { return { ok: false }; });
+
+                var formSubmitPromise = fetch('https://formsubmit.co/ajax/codenza21@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                     body: JSON.stringify({
-                        name: document.getElementById('feedbackName').value || 'Anonymous',
-                        email: document.getElementById('feedbackEmail').value || '',
-                        subject: document.getElementById('feedbackSubject').value || 'General Feedback',
-                        message: document.getElementById('feedbackMessage').value || ''
+                        name: formData.name,
+                        email: formData.email,
+                        subject: '[OptiDrop Feedback] ' + formData.subject,
+                        message: formData.message
                     })
-                }).then(function(res) {
+                }).catch(function() { return { ok: false }; });
+
+                // Show success if Supabase succeeds (email is bonus)
+                supabasePromise.then(function(res) {
                     if (res.ok) {
                         form.style.display = 'none';
                         success.style.display = 'block';
                     } else {
-                        throw new Error('Form submission failed');
+                        // Fallback: check FormSubmit
+                        return formSubmitPromise.then(function(fsRes) {
+                            if (fsRes.ok) {
+                                form.style.display = 'none';
+                                success.style.display = 'block';
+                            } else {
+                                throw new Error('Both failed');
+                            }
+                        });
                     }
                 }).catch(function() {
                     btn.disabled = false;
