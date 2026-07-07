@@ -179,6 +179,11 @@ buildSidebarNav();
     }
 })();
 
+// Scroll a newly-visible state into view on mobile
+function scrollToEl(el) {
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 function resetAllTools() {
     // Reset compress
     clearQueueMemory();
@@ -971,6 +976,7 @@ function handleMergeFiles(files) {
         renderMergeQueue();
         mergeStateUpload.classList.add('hidden');
         mergeStateSettings.classList.remove('hidden');
+        scrollToEl(mergeStateSettings);
     }
 }
 
@@ -1054,6 +1060,7 @@ if (btnMergeStartOver) {
         mergeFileInput.value = '';
         mergeStateResult.classList.add('hidden');
         mergeStateUpload.classList.remove('hidden');
+        scrollToEl(mergeStateUpload);
     });
 }
 
@@ -1067,6 +1074,7 @@ if (btnMergeGenerate) {
 
         mergeStateLoading.classList.remove('hidden');
         mergeStateSettings.classList.add('hidden');
+        scrollToEl(mergeStateLoading);
         mergeProgressText.textContent = 'Preparing PDF engine...';
 
         try { await loadJsPdf(); } catch (e) {
@@ -1156,6 +1164,7 @@ if (btnMergeGenerate) {
         mergeSuccessCount.textContent = total;
         mergeStateLoading.classList.add('hidden');
         mergeStateResult.classList.remove('hidden');
+        scrollToEl(mergeStateResult);
         showToast(`PDF created with ${total} page(s)!`);
     });
 }
@@ -1217,6 +1226,7 @@ function handleHeicFiles(files) {
         renderHeicPreview();
         heicStateUpload.classList.add('hidden');
         heicStateSettings.classList.remove('hidden');
+        scrollToEl(heicStateSettings);
     }
     if (addedCount === 0) {
         showToast('No valid HEIC/HEIF files found.', 'error');
@@ -1273,6 +1283,7 @@ if (btnHeicStartOver) {
         heicFileInput.value = '';
         heicStateResult.classList.add('hidden');
         heicStateUpload.classList.remove('hidden');
+        scrollToEl(heicStateUpload);
     });
 }
 
@@ -1282,6 +1293,7 @@ if (btnHeicConvert) {
 
         heicStateLoading.classList.remove('hidden');
         heicStateSettings.classList.add('hidden');
+        scrollToEl(heicStateLoading);
         heicProgressText.textContent = 'Loading HEIC converter...';
 
         try { await loadHeic2Any(); } catch (e) {
@@ -1323,6 +1335,7 @@ if (btnHeicConvert) {
         renderHeicResults();
         heicStateLoading.classList.add('hidden');
         heicStateResult.classList.remove('hidden');
+        scrollToEl(heicStateResult);
         showToast(`Converted ${successCount} HEIC photo(s) to JPG!`);
     });
 }
@@ -1428,6 +1441,7 @@ async function handlePdf2jpgFile(files) {
         pdf2jpgPageCount.textContent = `${pdf2jpgDoc.numPages} pages detected`;
         pdf2jpgStateUpload.classList.add('hidden');
         pdf2jpgStateSettings.classList.remove('hidden');
+        scrollToEl(pdf2jpgStateSettings);
     } catch (err) {
         console.error('Failed to load PDF:', err);
         showToast('Failed to load PDF. It may be corrupted or password-protected.', 'error');
@@ -1453,6 +1467,7 @@ if (btnPdf2jpgStartOver) {
         pdf2jpgFileInput.value = '';
         pdf2jpgStateResult.classList.add('hidden');
         pdf2jpgStateUpload.classList.remove('hidden');
+        scrollToEl(pdf2jpgStateUpload);
     });
 }
 
@@ -1462,6 +1477,7 @@ if (btnPdf2jpgExtract) {
 
         pdf2jpgStateLoading.classList.remove('hidden');
         pdf2jpgStateSettings.classList.add('hidden');
+        scrollToEl(pdf2jpgStateLoading);
 
         const qualityMap = { high: 0.95, medium: 0.85, low: 0.7 };
         const jpegQuality = qualityMap[pdf2jpgQuality.value] || 0.95;
@@ -1506,6 +1522,7 @@ if (btnPdf2jpgExtract) {
         renderPdf2jpgResults();
         pdf2jpgStateLoading.classList.add('hidden');
         pdf2jpgStateResult.classList.remove('hidden');
+        scrollToEl(pdf2jpgStateResult);
         showToast(`Extracted ${pdf2jpgPages.length} pages as JPG!`);
     });
 }
@@ -1598,6 +1615,7 @@ function handleResizerFile(files) {
         drawResizerPreview();
         resizerStateUpload.classList.add('hidden');
         resizerStateSettings.classList.remove('hidden');
+        scrollToEl(resizerStateSettings);
     };
     resizerOriginalImg.src = url;
 }
@@ -1683,6 +1701,7 @@ if (btnResizerCancel) {
         resizerPresetBtns.forEach(b => b.classList.remove('active'));
         resizerStateSettings.classList.add('hidden');
         resizerStateUpload.classList.remove('hidden');
+        scrollToEl(resizerStateUpload);
     });
 }
 
@@ -1698,6 +1717,7 @@ if (btnResizerStartOver) {
         resizerPresetBtns.forEach(b => b.classList.remove('active'));
         resizerStateResult.classList.add('hidden');
         resizerStateUpload.classList.remove('hidden');
+        scrollToEl(resizerStateUpload);
     });
 }
 
@@ -1764,6 +1784,7 @@ if (btnResizerResize) {
 
         resizerStateSettings.classList.add('hidden');
         resizerStateResult.classList.remove('hidden');
+        scrollToEl(resizerStateResult);
         showToast('Photo resized successfully!');
     });
 }
@@ -1831,6 +1852,7 @@ function handleStamperFile(files) {
         drawStamperPreview();
         stamperStateUpload.classList.add('hidden');
         stamperStateSettings.classList.remove('hidden');
+        scrollToEl(stamperStateSettings);
     };
     stamperOriginalImg.src = url;
 }
@@ -1959,6 +1981,7 @@ if (btnStamperCancel) {
         stamperOriginalImg = null;
         stamperStateSettings.classList.add('hidden');
         stamperStateUpload.classList.remove('hidden');
+        scrollToEl(stamperStateUpload);
     });
 }
 
@@ -1971,6 +1994,7 @@ if (btnStamperStartOver) {
         stamperResultUrl = null;
         stamperStateResult.classList.add('hidden');
         stamperStateUpload.classList.remove('hidden');
+        scrollToEl(stamperStateUpload);
     });
 }
 
@@ -2060,6 +2084,7 @@ if (btnStamperStamp) {
 
         stamperStateSettings.classList.add('hidden');
         stamperStateResult.classList.remove('hidden');
+        scrollToEl(stamperStateResult);
         showToast('Photo stamped successfully!');
     });
 }
@@ -2125,6 +2150,7 @@ function handleSignatureFile(files) {
         drawSignaturePreview();
         signatureStateUpload.classList.add('hidden');
         signatureStateSettings.classList.remove('hidden');
+        scrollToEl(signatureStateSettings);
     };
     signatureOriginalImg.src = url;
 }
@@ -2170,6 +2196,7 @@ if (btnSignatureCancel) {
         signatureOriginalImg = null;
         signatureStateSettings.classList.add('hidden');
         signatureStateUpload.classList.remove('hidden');
+        scrollToEl(signatureStateUpload);
     });
 }
 
@@ -2182,6 +2209,7 @@ if (btnSignatureStartOver) {
         signatureResultUrl = null;
         signatureStateResult.classList.add('hidden');
         signatureStateUpload.classList.remove('hidden');
+        scrollToEl(signatureStateUpload);
     });
 }
 
@@ -2250,6 +2278,7 @@ if (btnSignatureProcess) {
 
         signatureStateSettings.classList.add('hidden');
         signatureStateResult.classList.remove('hidden');
+        scrollToEl(signatureStateResult);
         showToast('Signature cleaned and compressed!');
     });
 }
@@ -2366,6 +2395,7 @@ function handleOcrFile(files) {
     ocrFile = file;
     ocrStateUpload.classList.add('hidden');
     ocrStateProcessing.classList.remove('hidden');
+    scrollToEl(ocrStateProcessing);
     ocrProgressText.textContent = 'Initializing OCR engine...';
 
     /* ---- try Web Worker first ---- */
@@ -2377,6 +2407,7 @@ function handleOcrFile(files) {
 
             ocrStateProcessing.classList.add('hidden');
             ocrStateResult.classList.remove('hidden');
+            scrollToEl(ocrStateResult);
 
             if (result.text.length > 0) {
                 showToast('Text extracted successfully!');
@@ -2430,6 +2461,7 @@ function _ocrMainFallbackRun(file) {
 
         ocrStateProcessing.classList.add('hidden');
         ocrStateResult.classList.remove('hidden');
+        scrollToEl(ocrStateResult);
 
         if (text.trim().length > 0) {
             showToast('Text extracted successfully!');
@@ -2471,5 +2503,6 @@ if (btnOcrStartOver) {
         ocrTextOutput.value = '';
         ocrStateResult.classList.add('hidden');
         ocrStateUpload.classList.remove('hidden');
+        scrollToEl(ocrStateUpload);
     });
 }
