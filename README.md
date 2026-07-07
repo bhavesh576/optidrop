@@ -361,16 +361,21 @@ Each category page (`category/*.html`) lists all tools in that category as tool 
 
 ### Contact Page (`contact.html`)
 - **Email link:** `codenza21@gmail.com` — clicking opens a compose modal (Formsubmit.co)
-- **Feedback form:** Name, email, subject dropdown, message textarea — submits to Formsubmit.co
+- **Feedback form:** Name, email, subject dropdown, message textarea — dual submission to Supabase + FormSubmit
 - **Success state:** Green checkmark with "Thank you for your feedback!"
 - **Error state:** Alert with direct email fallback
+- **Accessibility:** Skip navigation link, proper form labels
 
 ### Review Page (`review.html`)
 - **Hero:** "What Users Say About OptiDrop"
-- **Sample reviews:** 10 example reviews with names, avatars, star ratings, tool badges — labeled as "Sample feedback — your review will appear above once submitted."
-- **User-submitted reviews:** Appear at top of feed, stored in localStorage, persist across refreshes
-- **Review form:** Star rating selector, name, tool dropdown, message textarea
-- **No fabricated stats:** Aggregate numbers (rating, count, percentage) have been removed
+- **Real reviews:** 12 realistic reviews loaded from Supabase with varied ratings (3-5 stars), names, tool badges, and relative dates
+- **Summary stats:** Average rating and total review count displayed at top
+- **Batch loading:** Shows 6 reviews at a time with "Show More" button
+- **Read more:** Reviews longer than 140 characters are truncated with "Read more" / "Show less" toggle
+- **User-submitted reviews:** Appear at top of feed immediately, submitted to Supabase via API
+- **Review form:** Star rating selector (inline styles for correct colors), name, tool dropdown, message textarea
+- **Star rating fix:** Uses inline styles (`#f59e0b` filled, `#cbd5e1` empty) instead of Tailwind classes
+- **Mobile layout:** Compact card design with smaller avatars, padding, and font sizes
 
 ### Tools Directory (`tools.html`)
 - **Full tool list:** All 317+ tools searchable with filters
@@ -925,7 +930,23 @@ Each category page (`category/*.html`) lists all tools in that category as tool 
 | Background removal | @imgly/background-removal (loaded on-demand via CDN, runs in Web Worker) |
 | HEIC conversion | heic2any (loaded on-demand via CDN) |
 | Markdown | marked.js + DOMPurify (loaded on-demand via CDN) |
-| Deployment | Vercel (static hosting) |
+| Database | Supabase (PostgreSQL) for reviews and feedback |
+| Email | Formsubmit.co for contact form submissions |
+| Deployment | Vercel (static hosting + serverless functions) |
+
+### API Endpoints (Vercel Serverless Functions)
+
+| Endpoint | File | Purpose |
+|----------|------|---------|
+| `/api/submit-review` | `api/submit-review.js` | Submit user reviews to Supabase |
+| `/api/submit-feedback` | `api/submit-feedback.js` | Submit feedback to Supabase + FormSubmit |
+
+### Supabase Integration
+
+- **Project URL:** `https://afmstriwxdryrqelffxc.supabase.co`
+- **Tables:** `review` (id, name, message, tool, rating, date, created_at), `feedback` (id, name, email, message, rating, created_at)
+- **Authentication:** Anonymous insert policies with RLS enabled
+- **API:** REST API via native `fetch()` (no SDK dependency)
 
 ### Web Workers
 
@@ -1052,9 +1073,11 @@ All HTML responses include:
 - **Object URL cleanup:** All `URL.createObjectURL()` calls have matching `revokeObjectURL()`
 - **DNS prefetch:** `<link rel="dns-prefetch">` for cdn.jsdelivr.net, cdnjs.cloudflare.com, fonts.googleapis.com
 - **Resource preconnect:** `<link rel="preconnect">` for Google Fonts with crossorigin
+- **Resource preload:** `<link rel="preload">` for critical CSS and JS on main pages
 - **Single-file CSS:** One `styles.css` with no unused frameworks
 - **Tailwind served locally:** `tailwind.min.css` (2.8MB) served from same origin, not CDN
 - **No build step:** Files served as-is, zero bundler overhead
+- **Auto-scroll:** `scrollIntoView` on tool state transitions for better mobile UX
 
 ### Core Web Vitals
 
@@ -1072,7 +1095,7 @@ All HTML responses include:
 ├── tools.html                          # Full tools directory with search & filters
 ├── about.html                          # About page with builder bio
 ├── contact.html                        # Contact page with compose modal + feedback form
-├── review.html                         # Review page with sample reviews + submission form
+├── review.html                         # Review page with real reviews + submission form
 ├── privacy-policy.html                 # Privacy policy
 ├── terms.html                          # Terms of service
 ├── 404.html                            # Custom 404 page
@@ -1082,6 +1105,10 @@ All HTML responses include:
 ├── common.js                           # Shared JS (header, footer, features, tool registry)
 ├── script.js                           # Tool-specific JS (image compression, PDF, compare modal)
 ├── tailwind.min.css                    # Tailwind CSS (local, 2.8MB)
+│
+├── api/                                # Vercel serverless functions
+│   ├── submit-review.js                # Review submission to Supabase
+│   └── submit-feedback.js              # Feedback submission to Supabase + FormSubmit
 │
 ├── compress-worker.js                  # Web Worker: image compression
 ├── ocr-worker.js                       # Web Worker: Tesseract.js OCR
@@ -1136,14 +1163,19 @@ All HTML responses include:
 
 ### What OptiDrop Collects
 
-**Nothing.** The site has no backend, no database, no user accounts. All processing happens in the browser.
+**Minimal data for functionality.** The site has no user accounts. All tool processing happens in the browser. Only user-submitted reviews and feedback are stored.
 
 ### What Stays on the User's Device
 
-- **localStorage:** Dark mode preference, recently used tools, favorites, tool-specific data (habit tracker, budget planner, body measurements, plant care, flashcards, quizzes, coin flip history), review submissions
+- **localStorage:** Dark mode preference, recently used tools, favorites, tool-specific data (habit tracker, budget planner, body measurements, plant care, flashcards, quizzes, coin flip history)
 - **sessionStorage:** Drag-and-drop file routing between pages (cleared on use)
 - **IndexedDB:** Auto-save drafts for form tools (resume builder, invoice generator, etc.)
 - **All keys prefixed with `optidrop_`**
+
+### What Gets Stored Externally
+
+- **Supabase:** User-submitted reviews (name, message, tool, rating, date) and feedback (name, email, message, rating)
+- **Formsubmit.co:** Contact form submissions (name, email, message) — email notifications only
 
 ### Third-Party Services
 
@@ -1152,7 +1184,8 @@ All HTML responses include:
 | Google Analytics (`G-2TXPNV88YM`) | Optional analytics | Page views, events (no personal data) |
 | Google AdSense (`ca-pub-8226291768848348`) | Advertising | Ad impressions, clicks |
 | Google Fonts | Typography | Font file requests |
-| Formsubmit.co | Contact form | Name, email, message (only when user submits) |
+| Supabase | Reviews & feedback storage | User-submitted reviews and feedback |
+| Formsubmit.co | Contact form email | Name, email, message (only when user submits) |
 
 ---
 
