@@ -59,16 +59,16 @@
         <section class="max-w-4xl mx-auto px-4 pb-8">
             <div class="glass-panel rounded-3xl shadow-xl overflow-hidden relative">
                 <!-- Upload State -->
-                <div id="rotate-state-upload" class="p-8 sm:p-12 text-center">
-                    <div id="rotateDropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 cursor-pointer transition-all hover:bg-slate-50 hover:border-brand-400 group flex flex-col items-center justify-center min-h-[200px]">
+                <div id="rotate-state-upload" class="p-4 sm:p-8 text-center">
+                    <div id="rotateDropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-5 sm:p-10 cursor-pointer transition-all hover:bg-slate-50 hover:border-brand-400 group flex flex-col items-center justify-center min-h-[200px]">
                         <input type="file" id="rotateFileInput" class="hidden" accept=".pdf,application/pdf" />
-                        <div class="bg-brand-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
-                            <svg class="w-10 h-10 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                        <div class="bg-brand-50 p-3 sm:p-4 rounded-full mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-2">Drop PDF Here or Tap to Browse</h3>
-                        <p class="text-sm text-slate-500">Supports PDF files</p>
+                        <h3 class="text-base sm:text-xl font-bold text-slate-800 mb-1 sm:mb-2">Drop PDF Here or Tap to Browse</h3>
+                        <p class="text-xs sm:text-sm text-slate-500">Supports PDF files</p>
                     </div>
-                    <div class="mt-4 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
+                    <div class="mt-4 flex items-center justify-center gap-2 text-xs sm:text-sm text-slate-500 font-medium">
                         <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
                         100% Local — your file never leaves this device
                     </div>
@@ -79,7 +79,7 @@
                     <div class="flex items-center justify-between mb-6">
                         <div>
                             <h3 class="text-lg font-bold text-slate-800" id="rotateFileName">file.pdf</h3>
-                            <p class="text-sm text-slate-500" id="rotatePageCount">0 pages</p>
+                            <p class="text-xs sm:text-sm text-slate-500" id="rotatePageCount">0 pages</p>
                         </div>
                         <button id="btnRotateCancel" class="px-4 py-2 text-sm text-slate-600 hover:bg-slate-100 rounded-lg transition-colors">Cancel</button>
                     </div>
@@ -114,13 +114,13 @@
                 </div>
 
                 <!-- Processing State -->
-                <div id="rotate-state-processing" class="hidden p-8 sm:p-12 text-center">
+                <div id="rotate-state-processing" class="hidden p-4 sm:p-8 text-center">
                     <div class="relative w-20 h-20 mb-4 mx-auto">
                         <div class="absolute inset-0 border-4 border-brand-100 rounded-full"></div>
                         <div class="absolute inset-0 border-4 border-brand-600 rounded-full border-t-transparent animate-spin"></div>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800">Rotating pages...</h3>
-                    <p class="text-sm text-slate-500 mt-2" id="rotateProgressText">Processing...</p>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-2" id="rotateProgressText">Processing...</p>
                 </div>
 
                 <!-- Result State -->
