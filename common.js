@@ -6,7 +6,7 @@
    ========================================================= */
 
 // ── Submit review via same-origin Vercel serverless proxy ──
-async function submitUserReview(name, message, toolName) {
+async function submitUserReview(name, message, toolName, rating) {
     try {
         var response = await fetch('/api/submit-review', {
             method: 'POST',
@@ -15,6 +15,7 @@ async function submitUserReview(name, message, toolName) {
                 name: name,
                 message: message,
                 tool: toolName,
+                rating: rating || null,
                 date: new Date().toLocaleDateString()
             })
         });

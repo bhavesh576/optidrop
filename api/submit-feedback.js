@@ -12,9 +12,8 @@ export default async function handler(req, res) {
         const email = body.email || null;
         const message = body.message || body.feedback || '';
         const subject = body.subject || 'General Feedback';
-        const rating = body.rating ? Number(body.rating) : null;
 
-        const insertData = { name, email, message, subject, rating };
+        const insertData = { name, email, message, subject };
         console.log('Inserting feedback:', JSON.stringify(insertData));
 
         const response = await fetch(`${supabaseUrl}/rest/v1/feedback`, {
