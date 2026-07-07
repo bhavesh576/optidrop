@@ -3373,36 +3373,3 @@ window.OptiDB = OptiDB;
         } catch (e) {}
     }
 })();
-
-// ════════════════════════════════════════════════════════════
-// PHASE 4B — PUBLIC REVIEW WALL (review.html)
-// NOTE: Sample reviews are now managed entirely by review.html's
-// inline script. This IIFE only adds hover effects to existing cards.
-// ════════════════════════════════════════════════════════════
-(function () {
-    // Only run on review.html
-    if (window.location.pathname.indexOf('review') === -1) return;
-
-    // Wait for review.html's inline script to populate, then add hover effects
-    function addHoverEffects() {
-        var container = document.getElementById('reviewWall') || document.getElementById('reviewFeed');
-        if (!container) return;
-        container.querySelectorAll('.review-card').forEach(function (card) {
-            if (card.dataset.hoverBound) return;
-            card.dataset.hoverBound = '1';
-            card.addEventListener('mouseenter', function () {
-                this.style.borderColor = 'transparent';
-                this.style.boxShadow = '0 8px 20px -4px rgba(59,130,246,0.12), 0 4px 8px -2px rgba(0,0,0,0.06)';
-                this.style.transform = 'translateY(-3px)';
-            });
-            card.addEventListener('mouseleave', function () {
-                this.style.borderColor = '#e2e8f0';
-                this.style.boxShadow = 'none';
-                this.style.transform = 'translateY(0)';
-            });
-        });
-    }
-    // Run after inline script has had time to populate
-    addHoverEffects();
-    setTimeout(addHoverEffects, 1000);
-})();

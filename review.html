@@ -47,19 +47,20 @@
 
                 <!-- LEFT: Review Feed (2 cols) — shown second on mobile -->
                 <div class="lg:col-span-2 order-2 lg:order-1">
-                    <div class="space-y-4" id="reviewFeed">
+                    <!-- Summary Stats -->
+                    <div id="reviewStats" class="hidden flex items-center gap-4 mb-5 px-1">
+                        <div class="flex items-center gap-1.5">
+                            <span id="avgRating" style="font-size:1.8rem;font-weight:800;color:#0f172a;">0</span>
+                            <svg style="width:20px;height:20px;color:#f59e0b;" viewBox="0 0 20 20"><path fill="#f59e0b" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <span id="totalReviews" style="font-size:0.85rem;color:#64748b;">0 reviews</span>
+                    </div>
+                    <div class="space-y-3 sm:space-y-4" id="reviewFeed">
                         <div id="userReviews"></div>
-                        <p class="text-sm text-slate-400 mb-2 mt-2">Sample feedback — your review will appear above once submitted.</p>
-
-                        <div class="review-card"><div class="review-card-header"><div class="review-avatar" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);">RP</div><div class="review-meta"><div class="review-name">Rita Patel</div><div class="review-stars"><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg> <span class="review-date">2 weeks ago</span></div></div></div><p class="review-tool-badge">HEIC to JPG Converter</p><p class="review-text">Converted 200+ iPhone photos in seconds. Nothing uploaded anywhere!</p></div>
-
-                        <div class="review-card"><div class="review-card-header"><div class="review-avatar" style="background:linear-gradient(135deg,#059669,#10b981);">JK</div><div class="review-meta"><div class="review-name">James Kimani</div><div class="review-stars"><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg> <span class="review-date">3 weeks ago</span></div></div></div><p class="review-tool-badge">Image Compressor</p><p class="review-text">Passport photo under 50KB on first try. No login, no upload. Absolute lifesaver.</p></div>
-
-                        <div class="review-card"><div class="review-card-header"><div class="review-avatar" style="background:linear-gradient(135deg,#2563eb,#3b82f6);">AS</div><div class="review-meta"><div class="review-name">Aiko Suzuki</div><div class="review-stars"><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-slate-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg> <span class="review-date">1 month ago</span></div></div></div><p class="review-tool-badge">Resume Builder</p><p class="review-text">Built my resume during job hunt. Templates look professional. 4 stars — wish there were more color themes.</p></div>
-
-                        <div class="review-card"><div class="review-card-header"><div class="review-avatar" style="background:linear-gradient(135deg,#dc2626,#ef4444);">MC</div><div class="review-meta"><div class="review-name">Maria Costa</div><div class="review-stars"><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-slate-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-slate-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg> <span class="review-date">1 month ago</span></div></div></div><p class="review-tool-badge">PDF Compressor</p><p class="review-text">Does the job. Compressed my PDF fine.</p></div>
-
-                        <div class="review-card"><div class="review-card-header"><div class="review-avatar" style="background:linear-gradient(135deg,#d97706,#f59e0b);">TN</div><div class="review-meta"><div class="review-name">Tomoko Nakamura</div><div class="review-stars"><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg> <span class="review-date">2 months ago</span></div></div></div><p class="review-tool-badge">Passport Photo Resizer</p><p class="review-text">Resized my selfie to exact EU specs for free. Saved me a trip to the photo studio.</p></div>
+                    </div>
+                    <!-- Load More -->
+                    <div id="loadMoreWrap" class="hidden text-center mt-6">
+                        <button id="loadMoreBtn" onclick="loadMoreReviews()" style="padding:0.6rem 1.5rem;border-radius:0.75rem;border:1px solid #e2e8f0;background:#fff;font-weight:600;font-size:0.85rem;color:#475569;cursor:pointer;transition:all 0.2s;">Show More Reviews</button>
                     </div>
                 </div>
 
@@ -142,12 +143,8 @@
         var labels = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
 
         starBtns.forEach(function(btn) {
-            btn.addEventListener('mouseenter', function() {
-                highlightStars(parseInt(this.dataset.rating));
-            });
-            btn.addEventListener('mouseleave', function() {
-                highlightStars(selectedRating);
-            });
+            btn.addEventListener('mouseenter', function() { highlightStars(parseInt(this.dataset.rating)); });
+            btn.addEventListener('mouseleave', function() { highlightStars(selectedRating); });
             btn.addEventListener('click', function() {
                 selectedRating = parseInt(this.dataset.rating);
                 ratingValue.value = selectedRating;
@@ -161,41 +158,36 @@
             starBtns.forEach(function(btn) {
                 var r = parseInt(btn.dataset.rating);
                 var svg = btn.querySelector('svg path');
-                if (r <= rating) {
-                    svg.setAttribute('fill', '#f59e0b');
-                    svg.setAttribute('stroke', '#f59e0b');
-                } else {
-                    svg.setAttribute('fill', 'none');
-                    svg.setAttribute('stroke', 'currentColor');
-                }
+                if (r <= rating) { svg.setAttribute('fill', '#f59e0b'); svg.setAttribute('stroke', '#f59e0b'); }
+                else { svg.setAttribute('fill', 'none'); svg.setAttribute('stroke', 'currentColor'); }
             });
         }
 
-        // Generate avatar initials from name
         function getInitials(name) {
             var parts = name.trim().split(/\s+/);
             if (parts.length >= 2) return (parts[0][0] + parts[parts.length-1][0]).toUpperCase();
             return name.substring(0, 2).toUpperCase();
         }
 
-        // Random gradient for user avatars
         var gradients = [
-            'linear-gradient(135deg,#6366f1,#8b5cf6)',
-            'linear-gradient(135deg,#059669,#10b981)',
-            'linear-gradient(135deg,#2563eb,#3b82f6)',
-            'linear-gradient(135deg,#dc2626,#ef4444)',
-            'linear-gradient(135deg,#d97706,#f59e0b)',
-            'linear-gradient(135deg,#7c3aed,#a78bfa)',
-            'linear-gradient(135deg,#0891b2,#22d3ee)',
-            'linear-gradient(135deg,#be123c,#f43f5e)'
+            'linear-gradient(135deg,#6366f1,#8b5cf6)','linear-gradient(135deg,#059669,#10b981)',
+            'linear-gradient(135deg,#2563eb,#3b82f6)','linear-gradient(135deg,#dc2626,#ef4444)',
+            'linear-gradient(135deg,#d97706,#f59e0b)','linear-gradient(135deg,#7c3aed,#a78bfa)',
+            'linear-gradient(135deg,#0891b2,#22d3ee)','linear-gradient(135deg,#be123c,#f43f5e)'
         ];
+        // Deterministic gradient from name
+        function getGrad(name) {
+            var hash = 0;
+            for (var i = 0; i < name.length; i++) hash = ((hash << 5) - hash) + name.charCodeAt(i);
+            return gradients[Math.abs(hash) % gradients.length];
+        }
 
         function renderStars(rating) {
             var num = Math.max(0, Math.min(5, parseInt(rating) || 0));
             var html = '';
             for (var i = 1; i <= 5; i++) {
-                var color = i <= num ? '#f59e0b' : '#cbd5e1';
-                html += '<svg style="width:16px;height:16px;color:' + color + '" viewBox="0 0 20 20"><path fill="' + color + '" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
+                var c = i <= num ? '#f59e0b' : '#cbd5e1';
+                html += '<svg style="width:14px;height:14px;" viewBox="0 0 20 20"><path fill="' + c + '" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
             }
             return html;
         }
@@ -206,28 +198,72 @@
             return d.innerHTML;
         }
 
-        function appendReviewCard(review) {
-            var container = document.getElementById('userReviews');
-            if (!container) return;
-            var initials = getInitials(review.name || 'User');
-            var grad = gradients[Math.floor(Math.random() * gradients.length)];
-            var card = document.createElement('div');
-            card.className = 'review-card';
-            card.style.animation = 'fadeInUp 0.3s ease-out';
-            card.innerHTML =
+        function timeAgo(dateStr) {
+            var diff = Date.now() - new Date(dateStr).getTime();
+            var days = Math.floor(diff / 86400000);
+            if (days < 1) return 'Today';
+            if (days === 1) return 'Yesterday';
+            if (days < 7) return days + ' days ago';
+            if (days < 30) return Math.floor(days / 7) + ' weeks ago';
+            if (days < 365) return Math.floor(days / 30) + ' months ago';
+            return Math.floor(days / 365) + ' years ago';
+        }
+
+        var allReviews = [];
+        var displayCount = 0;
+        var BATCH = 6;
+
+        function buildCardHTML(r, isNew) {
+            var initials = getInitials(r.name || 'User');
+            var grad = getGrad(r.name || 'User');
+            var text = escapeHtml(r.text || '');
+            var maxLen = 140;
+            var needsReadMore = text.length > maxLen;
+            var shortText = needsReadMore ? text.substring(0, maxLen).replace(/\s+\S*$/, '') : text;
+            return '<div class="review-card" style="' + (isNew ? 'animation:fadeInUp 0.3s ease-out;' : '') + '">' +
                 '<div class="review-card-header">' +
                     '<div class="review-avatar" style="background:' + grad + ';">' + escapeHtml(initials) + '</div>' +
                     '<div class="review-meta">' +
-                        '<div class="review-name">' + escapeHtml(review.name || 'Anonymous') + '</div>' +
-                        '<div class="review-stars">' + renderStars(review.rating) + ' <span class="review-date">Just now</span></div>' +
+                        '<div class="review-name">' + escapeHtml(r.name || 'Anonymous') + '</div>' +
+                        '<div class="review-stars">' + renderStars(r.rating) + ' <span class="review-date">' + (r.date || '') + '</span></div>' +
                     '</div>' +
                 '</div>' +
-                (review.tool ? '<p class="review-tool-badge">' + escapeHtml(review.tool) + '</p>' : '') +
-                '<p class="review-text">' + escapeHtml(review.text) + '</p>';
-            container.prepend(card);
+                (r.tool ? '<p class="review-tool-badge">' + escapeHtml(r.tool) + '</p>' : '') +
+                '<p class="review-text">' + shortText +
+                (needsReadMore ? '<span class="review-dots">...</span><span class="review-more" style="display:none;">' + text.substring(shortText.length) + '</span> <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>' : '') +
+                '</p></div>';
         }
 
-        // Load reviews from Supabase + localStorage fallback
+        window.toggleReadMore = function(btn) {
+            var more = btn.previousElementSibling;
+            var dots = more.previousElementSibling;
+            if (more.style.display === 'none') {
+                more.style.display = 'inline';
+                dots.style.display = 'none';
+                btn.textContent = 'Show less';
+            } else {
+                more.style.display = 'none';
+                dots.style.display = 'inline';
+                btn.textContent = 'Read more';
+            }
+        };
+
+        function renderBatch() {
+            var container = document.getElementById('userReviews');
+            if (!container) return;
+            var end = Math.min(displayCount + BATCH, allReviews.length);
+            for (var i = displayCount; i < end; i++) {
+                var div = document.createElement('div');
+                div.innerHTML = buildCardHTML(allReviews[i], false);
+                container.appendChild(div.firstChild);
+            }
+            displayCount = end;
+            var loadWrap = document.getElementById('loadMoreWrap');
+            if (loadWrap) loadWrap.classList.toggle('hidden', displayCount >= allReviews.length);
+        }
+
+        window.loadMoreReviews = function() { renderBatch(); };
+
         async function loadReviews() {
             var supabaseUrl = 'https://afmstriwxdryrqelffxc.supabase.co';
             var supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmbXN0cml3eGRyeXJxZWxmZnhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyNjcwNTgsImV4cCI6MjA5ODg0MzA1OH0.t3sblfMlr_-eB7GAV2mBZFWD00y-k_ygTcAjneBJquo';
@@ -237,22 +273,21 @@
                 });
                 if (resp.ok) {
                     var rows = await resp.json();
-                    rows.forEach(function(r) {
-                        appendReviewCard({
-                            name: r.name || 'Anonymous',
-                            rating: r.rating || 0,
-                            tool: r.tool || '',
-                            text: r.message || ''
-                        });
+                    allReviews = rows.map(function(r) {
+                        return { name: r.name || 'Anonymous', rating: r.rating || 0, tool: r.tool || '', text: r.message || '', date: timeAgo(r.created_at) };
                     });
+                    // Stats
+                    if (allReviews.length > 0) {
+                        var sum = 0, rated = 0;
+                        allReviews.forEach(function(r) { if (r.rating > 0) { sum += r.rating; rated++; } });
+                        document.getElementById('avgRating').textContent = rated > 0 ? (sum / rated).toFixed(1) : '0';
+                        document.getElementById('totalReviews').textContent = allReviews.length + ' review' + (allReviews.length !== 1 ? 's' : '');
+                        document.getElementById('reviewStats').classList.remove('hidden');
+                        document.getElementById('reviewStats').style.display = 'flex';
+                    }
+                    renderBatch();
                 }
-            } catch(e) { console.warn('Could not load reviews from Supabase:', e); }
-
-            // Also load localStorage reviews (user's own submissions)
-            try {
-                var stored = JSON.parse(localStorage.getItem('optidrop_reviews') || '[]');
-                stored.forEach(function(r) { appendReviewCard(r); });
-            } catch(e) {}
+            } catch(e) { console.warn('Could not load reviews:', e); }
         }
         loadReviews();
 
@@ -270,26 +305,20 @@
                 rating: selectedRating,
                 name: document.getElementById('reviewerName').value || 'Anonymous',
                 tool: document.getElementById('reviewTool').value,
-                text: document.getElementById('reviewText').value,
-                date: new Date().toISOString()
+                text: document.getElementById('reviewText').value
             };
-            try {
-                var reviews = JSON.parse(localStorage.getItem('optidrop_reviews') || '[]');
-                reviews.push(review);
-                localStorage.setItem('optidrop_reviews', JSON.stringify(reviews));
-            } catch(e) {}
-            // Also save to Supabase
             if (typeof submitUserReview === 'function') {
                 submitUserReview(review.name, review.text, review.tool, review.rating);
             }
-            appendReviewCard(review);
+            // Prepend new card immediately
+            var container = document.getElementById('userReviews');
+            if (container) {
+                var div = document.createElement('div');
+                div.innerHTML = buildCardHTML({ name: review.name, rating: review.rating, tool: review.tool, text: review.text, date: 'Just now' }, true);
+                container.insertBefore(div.firstChild, container.firstChild);
+            }
             form.classList.add('hidden');
             success.classList.remove('hidden');
-            // Scroll the new review into view
-            var userReviews = document.getElementById('userReviews');
-            if (userReviews && userReviews.firstChild) {
-                userReviews.firstChild.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
         });
     })();
     </script>
@@ -299,8 +328,8 @@
     .review-card {
         background: #fff;
         border: 1px solid #e2e8f0;
-        border-radius: 1rem;
-        padding: 1.5rem;
+        border-radius: 0.875rem;
+        padding: 1rem 1.25rem;
         transition: all 0.2s ease;
     }
     .review-card:hover {
@@ -308,42 +337,44 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
     .review-card-header {
-        display: flex; align-items: center; gap: 0.75rem;
-        margin-bottom: 0.75rem;
+        display: flex; align-items: center; gap: 0.6rem;
+        margin-bottom: 0.5rem;
     }
     .review-avatar {
-        width: 44px; height: 44px; border-radius: 50%;
+        width: 36px; height: 36px; border-radius: 50%;
         display: flex; align-items: center; justify-content: center;
-        color: #fff; font-weight: 800; font-size: 0.85rem;
+        color: #fff; font-weight: 800; font-size: 0.75rem;
         letter-spacing: 0.02em; flex-shrink: 0;
         font-family: 'Inter', sans-serif;
     }
     .review-meta { flex: 1; min-width: 0; }
     .review-name {
-        font-size: 0.95rem; font-weight: 700; color: #0f172a;
-        display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
-    }
-    .review-verified {
-        font-size: 0.7rem; font-weight: 600; color: #059669;
-        background: #ecfdf5; padding: 0.1rem 0.5rem; border-radius: 9999px;
+        font-size: 0.85rem; font-weight: 700; color: #0f172a;
+        display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;
     }
     .review-stars {
-        display: flex; align-items: center; gap: 0.15rem;
-        margin-top: 0.15rem;
+        display: flex; align-items: center; gap: 0.1rem;
+        margin-top: 0.1rem;
     }
     .review-date {
-        font-size: 0.7rem; color: #94a3b8; margin-left: 0.5rem;
+        font-size: 0.65rem; color: #94a3b8; margin-left: 0.4rem;
     }
     .review-tool-badge {
         display: inline-block;
-        font-size: 0.7rem; font-weight: 700; color: #2563eb;
-        background: #eff6ff; padding: 0.2rem 0.65rem;
-        border-radius: 9999px; margin-bottom: 0.75rem;
+        font-size: 0.65rem; font-weight: 700; color: #2563eb;
+        background: #eff6ff; padding: 0.15rem 0.55rem;
+        border-radius: 9999px; margin-bottom: 0.5rem;
         text-transform: uppercase; letter-spacing: 0.03em;
     }
     .review-text {
-        font-size: 0.9rem; color: #475569; line-height: 1.7;
+        font-size: 0.82rem; color: #475569; line-height: 1.6;
     }
+    .read-more-btn {
+        background: none; border: none; color: #2563eb; cursor: pointer;
+        font-size: 0.78rem; font-weight: 600; padding: 0;
+        text-decoration: underline; text-underline-offset: 2px;
+    }
+    .read-more-btn:hover { color: #1d4ed8; }
 
     /* Star button */
     .star-btn {
@@ -360,12 +391,24 @@
     .dark-mode .review-name { color: #f1f5f9 !important; }
     .dark-mode .review-text { color: #94a3b8 !important; }
     .dark-mode .review-tool-badge { background: #1a2e3d !important; color: #60a5fa !important; }
-    .dark-mode .review-verified { background: #064e3b !important; color: #34d399 !important; }
     .dark-mode .star-btn svg { color: #4b5563; }
+    .dark-mode #avgRating { color: #f1f5f9 !important; }
+    .dark-mode #totalReviews { color: #94a3b8 !important; }
+    .dark-mode #loadMoreBtn { background: #272a33 !important; border-color: #3d4455 !important; color: #cbd5e1 !important; }
 
     @keyframes fadeInUp {
         from { opacity: 0; transform: translateY(12px); }
         to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Mobile: compact cards, form first ── */
+    @media (max-width: 640px) {
+        .review-card { padding: 0.85rem 1rem; border-radius: 0.75rem; }
+        .review-avatar { width: 32px; height: 32px; font-size: 0.7rem; }
+        .review-card-header { gap: 0.5rem; margin-bottom: 0.4rem; }
+        .review-name { font-size: 0.8rem; }
+        .review-text { font-size: 0.78rem; line-height: 1.55; }
+        .review-tool-badge { font-size: 0.6rem; padding: 0.1rem 0.45rem; margin-bottom: 0.4rem; }
     }
     </style>
 </body>
