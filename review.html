@@ -206,7 +206,6 @@
         }
 
         function appendReviewCard(review) {
-            console.log('appendReviewCard - rating:', review.rating, 'type:', typeof review.rating, 'renderStars output length:', renderStars(review.rating).length);
             var container = document.getElementById('userReviews');
             if (!container) return;
             var initials = getInitials(review.name || 'User');
@@ -237,9 +236,7 @@
                 });
                 if (resp.ok) {
                     var rows = await resp.json();
-                    console.log('loadReviews - Supabase returned', rows.length, 'rows');
-                    rows.forEach(function(r, idx) {
-                        console.log('loadReviews row', idx, '- r.rating:', r.rating, 'type:', typeof r.rating, 'r:', JSON.stringify({id: r.id, name: r.name, rating: r.rating, tool: r.tool}));
+                    rows.forEach(function(r) {
                         appendReviewCard({
                             name: r.name || 'Anonymous',
                             rating: r.rating || 0,
@@ -275,9 +272,6 @@
                 text: document.getElementById('reviewText').value,
                 date: new Date().toISOString()
             };
-            console.log('SUBMIT - selectedRating:', selectedRating, 'review.rating:', review.rating, 'type:', typeof review.rating);
-            console.log('SUBMIT - ratingValue hidden input:', ratingValue.value);
-            console.log('SUBMIT - Full review object:', JSON.stringify(review));
             try {
                 var reviews = JSON.parse(localStorage.getItem('optidrop_reviews') || '[]');
                 reviews.push(review);
@@ -285,10 +279,8 @@
             } catch(e) {}
             // Also save to Supabase
             if (typeof submitUserReview === 'function') {
-                console.log('SUBMIT - Calling submitUserReview with rating:', review.rating);
                 submitUserReview(review.name, review.text, review.tool, review.rating);
             }
-            console.log('SUBMIT - appendReviewCard with rating:', review.rating);
             appendReviewCard(review);
             form.classList.add('hidden');
             success.classList.remove('hidden');

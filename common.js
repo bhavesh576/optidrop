@@ -8,23 +8,19 @@
 // ── Submit review via same-origin Vercel serverless proxy ──
 async function submitUserReview(name, message, toolName, rating) {
     try {
-        var payload = {
-            name: name,
-            message: message,
-            tool: toolName,
-            rating: rating,
-            date: new Date().toLocaleDateString()
-        };
-        console.log('submitUserReview - rating param:', rating, 'type:', typeof rating, 'payload.rating:', payload.rating, 'full payload:', JSON.stringify(payload));
         var response = await fetch('/api/submit-review', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
+            body: JSON.stringify({
+                name: name,
+                message: message,
+                tool: toolName,
+                rating: rating,
+                date: new Date().toLocaleDateString()
+            })
         });
 
         if (!response.ok) throw new Error('Failed to submit');
-        var result = await response.json().catch(function() { return null; });
-        console.log('submitUserReview - API response:', JSON.stringify(result));
         if (typeof showToast === 'function') showToast('Thank you for your review!', 'success');
     } catch (error) {
         console.error('Fetch Error:', error);
@@ -3380,107 +3376,33 @@ window.OptiDB = OptiDB;
 
 // ════════════════════════════════════════════════════════════
 // PHASE 4B — PUBLIC REVIEW WALL (review.html)
-// Pre-populated with authentic mock reviews
+// NOTE: Sample reviews are now managed entirely by review.html's
+// inline script. This IIFE only adds hover effects to existing cards.
 // ════════════════════════════════════════════════════════════
 (function () {
     // Only run on review.html
     if (window.location.pathname.indexOf('review') === -1) return;
 
-    // Check for either reviewWall or reviewFeed container
-    var container = document.getElementById('reviewWall') || document.getElementById('reviewFeed');
-    if (!container) return;
-
-    // Only inject if container has no existing review cards
-    if (container.children.length > 0 && container.querySelector('.review-card')) return;
-
-    var reviews = [
-        {
-            name: 'Sarah M.',
-            role: 'Freelance Photographer',
-            rating: 5,
-            text: "I compress hundreds of photos daily for client galleries. OptiDrop's Image Compressor lets me hit exact KB targets for web uploads — and the fact that nothing gets uploaded to a server is a game-changer for client confidentiality. This is the only tool I trust.",
-            tool: 'Image Compressor',
-            date: 'June 2026'
-        },
-        {
-            name: 'Rajesh K.',
-            role: 'Small Business Owner, India',
-            rating: 5,
-            text: "The Invoice Generator saved me from buying expensive software. I create GST-compliant invoices in seconds, and everything stays on my laptop. The privacy aspect is what sold me — my financial data never leaves my browser. Absolutely brilliant for a free tool.",
-            tool: 'Invoice Generator',
-            date: 'May 2026'
-        },
-        {
-            name: 'Emily T.',
-            role: 'University Student, UK',
-            rating: 5,
-            text: "I used the Resume Builder before my graduation and got three interview callbacks within a week. The templates are clean and ATS-friendly. Best part? No sign-up, no watermark, no paywall. Just a genuinely free tool that actually works.",
-            tool: 'Resume Builder',
-            date: 'June 2026'
-        },
-        {
-            name: 'Marcus L.',
-            role: 'Software Engineer, Germany',
-            rating: 5,
-            text: "As a developer, I use the JSON Formatter and Base64 encoder daily. What I love about OptiDrop is the 100% client-side processing — I can use it on sensitive production data without worrying about data leaks. The command palette (Ctrl+K) is a nice touch too.",
-            tool: 'JSON Formatter',
-            date: 'April 2026'
-        },
-        {
-            name: 'Priya S.',
-            role: 'Government Exam Aspirant, India',
-            rating: 5,
-            text: "The Passport Photo Resizer is a lifesaver. I needed exact pixel dimensions for my exam application, and this tool resized my photo perfectly in one click. No uploads, no waiting, no watermarks. I've recommended it to everyone in my study group.",
-            tool: 'Passport Photo Resizer',
-            date: 'May 2026'
-        },
-        {
-            name: 'David W.',
-            role: 'Retired Teacher, USA',
-            rating: 5,
-            text: "I'm not tech-savvy at all, but OptiDrop is incredibly easy to use. I converted all my old iPhone photos from HEIC to JPG so I could print them. The interface is clean, the buttons are big enough to tap on my phone, and nothing confusing happened. Highly recommend for anyone who isn't a computer expert.",
-            tool: 'HEIC to JPG Converter',
-            date: 'March 2026'
-        }
-    ];
-
-    var starSvg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>';
-
-    var html = '';
-    reviews.forEach(function (r) {
-        var stars = '';
-        for (var i = 0; i < r.rating; i++) stars += starSvg;
-
-        html += '<div class="review-card" style="background:#fff;border:1px solid #e2e8f0;border-radius:1rem;padding:1.5rem;display:flex;flex-direction:column;gap:0.75rem;transition:all 0.25s cubic-bezier(0.4,0,0.2,1);will-change:transform,box-shadow;">' +
-            '<div style="display:flex;align-items:center;gap:0.75rem;">' +
-                '<div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#dbeafe,#e0e7ff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#2563eb;font-size:1rem;">' + r.name.charAt(0) + '</div>' +
-                '<div>' +
-                    '<div style="font-weight:700;font-size:0.9rem;color:#0f172a;">' + r.name + '</div>' +
-                    '<div style="font-size:0.75rem;color:#64748b;">' + r.role + '</div>' +
-                '</div>' +
-            '</div>' +
-            '<div style="display:flex;gap:2px;">' + stars + '</div>' +
-            '<p style="font-size:0.875rem;line-height:1.7;color:#475569;margin:0;">' + r.text + '</p>' +
-            '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;">' +
-                '<span style="font-size:0.7rem;font-weight:700;color:#2563eb;background:#eff6ff;padding:0.2rem 0.6rem;border-radius:9999px;">' + r.tool + '</span>' +
-                '<span style="font-size:0.7rem;color:#94a3b8;">' + r.date + '</span>' +
-            '</div>' +
-        '</div>';
-    });
-
-    container.innerHTML = html;
-
-    // Add hover effects via JS (since inline styles can't do :hover)
-    container.querySelectorAll('.review-card').forEach(function (card) {
-        card.addEventListener('mouseenter', function () {
-            this.style.borderColor = 'transparent';
-            this.style.boxShadow = '0 8px 20px -4px rgba(59,130,246,0.12), 0 4px 8px -2px rgba(0,0,0,0.06)';
-            this.style.transform = 'translateY(-3px)';
+    // Wait for review.html's inline script to populate, then add hover effects
+    function addHoverEffects() {
+        var container = document.getElementById('reviewWall') || document.getElementById('reviewFeed');
+        if (!container) return;
+        container.querySelectorAll('.review-card').forEach(function (card) {
+            if (card.dataset.hoverBound) return;
+            card.dataset.hoverBound = '1';
+            card.addEventListener('mouseenter', function () {
+                this.style.borderColor = 'transparent';
+                this.style.boxShadow = '0 8px 20px -4px rgba(59,130,246,0.12), 0 4px 8px -2px rgba(0,0,0,0.06)';
+                this.style.transform = 'translateY(-3px)';
+            });
+            card.addEventListener('mouseleave', function () {
+                this.style.borderColor = '#e2e8f0';
+                this.style.boxShadow = 'none';
+                this.style.transform = 'translateY(0)';
+            });
         });
-        card.addEventListener('mouseleave', function () {
-            this.style.borderColor = '#e2e8f0';
-            this.style.boxShadow = 'none';
-            this.style.transform = 'translateY(0)';
-        });
-    });
+    }
+    // Run after inline script has had time to populate
+    addHoverEffects();
+    setTimeout(addHoverEffects, 1000);
 })();
