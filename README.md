@@ -1196,6 +1196,61 @@ All HTML responses include:
 - **Phase 5:** Sticky header polish, "All Tools" accent link, Web Worker progress events
 - **Phase 6:** SEO/content audit, structured data review, thin content identification
 
+### Recent Improvements (July 2026)
+
+#### Star Rating Fix
+- **Issue:** Star ratings displayed 5 stars regardless of actual rating due to Tailwind CSS classes not being available
+- **Fix:** Replaced Tailwind classes (`text-amber-400`, `text-slate-300`) with inline styles and explicit hex colors (`#f59e0b` for filled, `#cbd5e1` for empty)
+- **Files:** `review.html`
+
+#### Review Page Overhaul
+- **Real Reviews:** Replaced hardcoded sample reviews with 12 realistic fake reviews in Supabase with varied ratings (3-5 stars)
+- **Read More:** Added truncation for reviews longer than 140 characters with "Read more" / "Show less" toggle
+- **Summary Stats:** Added average rating and total review count display
+- **Batch Loading:** Shows 6 reviews at a time with "Show More" button
+- **Relative Dates:** Shows "2 days ago", "3 weeks ago", etc. instead of absolute dates
+- **Mobile Layout:** Compact card design with smaller avatars, padding, and font sizes
+- **Files:** `review.html`, `api/submit-review.js`
+
+#### Mobile Layout Optimization
+- **All 8 Main Tools:** Applied compact mobile layout to Image Compressor, HEIC to JPG, JPG to PDF, PDF to JPG, Photo Resizer, Name Stamper, Signature Scanner, OCR
+- **Changes:** Reduced padding (`p-4` mobile, `p-8` desktop), smaller dropzone (`min-h-[180px]` mobile), smaller icons (`w-8/h-8` mobile), smaller text (`text-base` mobile), compact buttons (`py-3` mobile)
+- **Files:** `compress-image.html`, `heic-to-jpg.html`, `jpg-to-pdf.html`, `pdf-to-jpg.html`, `passport-photo-resizer.html`, `name-date-stamp.html`, `signature-scanner.html`, `image-to-text-ocr.html`
+
+#### Auto-Scroll to Results
+- **All 8 Main Tools:** Added `scrollIntoView` to state transitions (upload→settings, settings→loading, loading→result, start over→upload)
+- **12 Popular Calculators:** Added scroll to BMI, QR Code, Loan Amortization, Percentage, Discount, 401k, Savings, Paycheck, VAT, Overtime calculators
+- **Helper Function:** Created `scrollToEl()` function in `script.js` with null check
+- **Files:** `script.js`, 12 calculator HTML files
+
+#### JavaScript Error Fixes
+- **Null Reference Fix:** Added null check for resizer inputs in shared `script.js` to prevent errors on pages without those elements
+- **Files:** `script.js`
+
+#### Broken Link Fixes
+- **38 Links Fixed:** Across 20 files, including PDF tool links, text tool links, calculator tool links, education tool links, utility tool links, business tool links
+- **Files:** `best/free-pdf-tools.html`, `tools/pdf/pdf-password-protector.html`, `vs/ilovepdf.html`, and 17 other files
+
+#### Accessibility Improvements
+- **Skip Navigation:** Added "Skip to main content" links to 5 main pages (index, tools, contact, review, about)
+- **Main Content IDs:** Added `id="main-content"` to main elements for skip navigation
+- **Image Alt Text:** Added alt text to base64-image-converter preview image
+- **ARIA Labels:** Added aria-label to review star rating group
+- **Autocomplete:** Added autocomplete attribute to reviewer name input
+- **Files:** `index.html`, `tools.html`, `contact.html`, `review.html`, `about.html`, `tools/developer/base64-image-converter.html`
+
+#### Performance Optimization
+- **Preload Hints:** Added preload hints for critical resources (styles.css, common.js) to 5 main pages
+- **Files:** `index.html`, `tools.html`, `contact.html`, `review.html`, `about.html`
+
+#### Contact/Feedback Form Testing
+- **Review Form:** Verified star rating validation, required fields, Supabase submission, success message
+- **Feedback Form:** Verified dual submission (Supabase + FormSubmit), error handling, success message
+- **Compose Form:** Verified FormSubmit submission, error handling, success message
+
+#### 404 Page Testing
+- **Verified:** All links working, search functionality, meta robots tag, proper HTML structure, accessibility
+
 ---
 
 ## License
