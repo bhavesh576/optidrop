@@ -8,12 +8,12 @@ export default async function handler(req, res) {
         let body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
         console.log('Received feedback body:', JSON.stringify(body));
 
-        const name = body.name || 'Anonymous';
-        const email = body.email || null;
-        const message = body.message || body.feedback || '';
-        const subject = body.subject || 'General Feedback';
-
-        const insertData = { name, email, message, subject };
+        const insertData = {
+            name: body.name || 'Anonymous',
+            email: body.email || null,
+            subject: body.subject || 'General Feedback',
+            message: body.message || ''
+        };
         console.log('Inserting feedback:', JSON.stringify(insertData));
 
         const response = await fetch(`${supabaseUrl}/rest/v1/feedback`, {
