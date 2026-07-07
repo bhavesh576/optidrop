@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPF Calculator — Free Online | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Calculate your EPF (Employee Provident Fund) corpus at retirement. Estimate employee + employer contributions with interest. Free, instant.">
+    <meta name="keywords" content="EPF calculator, provident fund calculator, EPF corpus calculator, employee provident fund, EPF interest calculator">
+    <link rel="canonical" href="https://optidrop.online/tools/calculators/epf-calculator.html">
+    <meta property="og:title" content="EPF Calculator — Free Online | OptiDrop">
+    <meta property="og:description" content="Calculate your EPF corpus at retirement. Free, instant.">
+    <meta property="og:url" content="https://optidrop.online/tools/calculators/epf-calculator.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "EPF Calculator",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate your EPF corpus at retirement with employee and employer contributions."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://optidrop.online/category/calculator-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "EPF Calculator", "item": "https://optidrop.online/tools/calculators/epf-calculator.html"}
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload.</p></div></noscript>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">EPF Calculator</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Estimate your Employee Provident Fund (EPF) corpus at retirement. Enter your salary details below.</p>
+        </section>
+
+        <section class="max-w-xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-2xl shadow-xl p-6 sm:p-8">
+                <form id="epfForm" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Current Basic + DA Salary (Monthly) *</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-bold">₹</span>
+                            <input type="number" id="salary" required min="1" placeholder="e.g. 30000" class="dim-input pl-8">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Current EPF Balance (Optional)</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-bold">₹</span>
+                            <input type="number" id="balance" min="0" placeholder="e.g. 200000" class="dim-input pl-8">
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Leave blank if you don't know</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Expected Annual Salary Increment %</label>
+                            <input type="number" id="increment" min="0" max="20" step="0.5" value="5" placeholder="e.g. 5" class="dim-input">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Years to Retirement *</label>
+                            <input type="number" id="years" required min="1" max="50" placeholder="e.g. 25" class="dim-input">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">EPF Interest Rate (% per annum)</label>
+                        <input type="number" id="rate" min="1" max="15" step="0.1" value="8.25" class="dim-input">
+                        <p class="text-xs text-slate-400 mt-1">EPFO revises this rate periodically — verify the current rate before relying on this estimate.</p>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3.5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md transition-all">Calculate EPF Corpus</button>
+                </form>
+
+                <div id="result" class="hidden mt-6">
+                    <div class="p-5 bg-green-50 border border-green-200 rounded-xl text-center mb-4">
+                        <p class="text-sm font-semibold text-green-700 mb-1">Estimated EPF Corpus at Retirement</p>
+                        <p class="text-4xl font-extrabold text-green-800" id="epfCorpus">₹0</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="p-4 bg-blue-50 rounded-xl text-center">
+                            <p class="text-xs font-semibold text-blue-600 mb-1">Total Employee Contribution</p>
+                            <p class="text-lg font-extrabold text-blue-800" id="empContrib">₹0</p>
+                        </div>
+                        <div class="p-4 bg-purple-50 rounded-xl text-center">
+                            <p class="text-xs font-semibold text-purple-600 mb-1">Total Employer Contribution</p>
+                            <p class="text-lg font-extrabold text-purple-800" id="emprContrib">₹0</p>
+                        </div>
+                    </div>
+                    <div class="mt-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
+                        <p class="text-xs text-slate-500"><strong>Note:</strong> This uses employee 12% + employer 3.67% (EPF portion only). Employer's 8.33% goes to EPS (pension) and is not included here. Interest is compounded monthly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        How is EPF calculated?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Both employee and employer contribute to EPF. Employee contributes 12% of Basic + DA. Employer also contributes 12%, but split: 3.67% goes to EPF and 8.33% goes to EPS (pension). This calculator uses 12% + 3.67% = 15.67% for EPF corpus. Interest is compounded monthly at the rate set by EPFO.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the current EPF interest rate?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The EPF interest rate is set annually by EPFO. For FY 2023-24, it was 8.25%. The rate is announced each year and can change. Always verify the current rate on the EPFO website before making financial decisions.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    (function() {
+        document.getElementById('epfForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var salary = parseFloat(document.getElementById('salary').value);
+            var balance = parseFloat(document.getElementById('balance').value) || 0;
+            var increment = parseFloat(document.getElementById('increment').value) || 0;
+            var years = parseInt(document.getElementById('years').value);
+            var rate = parseFloat(document.getElementById('rate').value) || 8.25;
+
+            if (isNaN(salary) || salary <= 0 || isNaN(years) || years < 1) {
+                if (typeof showToast === 'function') showToast('Please enter valid values.', 'error');
+                return;
+            }
+
+            var monthlyRate = rate / 12 / 100;
+            var corpus = balance;
+            var totalEmp = 0;
+            var totalEmpr = 0;
+            var currentSalary = salary;
+
+            for (var y = 0; y < years; y++) {
+                for (var m = 0; m < 12; m++) {
+                    var empContrib = currentSalary * 0.12;
+                    var emprContrib = currentSalary * 0.0367;
+                    corpus = (corpus + empContrib + emprContrib) * (1 + monthlyRate);
+                    totalEmp += empContrib;
+                    totalEmpr += emprContrib;
+                }
+                currentSalary = currentSalary * (1 + increment / 100);
+            }
+
+            document.getElementById('epfCorpus').textContent = '₹' + Math.round(corpus).toLocaleString('en-IN');
+            document.getElementById('empContrib').textContent = '₹' + Math.round(totalEmp).toLocaleString('en-IN');
+            document.getElementById('emprContrib').textContent = '₹' + Math.round(totalEmpr).toLocaleString('en-IN');
+
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    })();
+    </script>
+</body>
+</html>

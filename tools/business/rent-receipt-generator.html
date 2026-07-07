@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Receipt Generator — Free Online | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Generate rent receipts for HRA tax exemption claims in India. Fill in tenant details, rent amount, and download printable receipts instantly. 100% free, no upload.">
+    <meta name="keywords" content="rent receipt generator, HRA receipt, rent receipt for tax exemption, house rent receipt format, rent receipt India">
+    <link rel="canonical" href="https://optidrop.online/tools/business/rent-receipt-generator.html">
+    <meta property="og:title" content="Rent Receipt Generator — Free Online | OptiDrop">
+    <meta property="og:description" content="Generate rent receipts for HRA tax exemption claims in India. Free, instant, no upload.">
+    <meta property="og:url" content="https://optidrop.online/tools/business/rent-receipt-generator.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Rent Receipt Generator",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Generate rent receipts for HRA tax exemption claims in India."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Business Tools", "item": "https://optidrop.online/category/business-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Rent Receipt Generator", "item": "https://optidrop.online/tools/business/rent-receipt-generator.html"}
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload.</p></div></noscript>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Rent Receipt Generator</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate rent receipts for HRA tax exemption claims in India. Fill in the details below and download a printable receipt.</p>
+        </section>
+
+        <section class="max-w-2xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-2xl shadow-xl p-6 sm:p-8">
+                <form id="rentForm" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Tenant Name *</label>
+                            <input type="text" id="tenantName" required placeholder="e.g. Rahul Sharma" class="dim-input">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Landlord Name *</label>
+                            <input type="text" id="landlordName" required placeholder="e.g. Suresh Kumar" class="dim-input">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Rental Address *</label>
+                        <textarea id="address" required rows="2" placeholder="Full address of rented property" class="dim-input" style="resize:vertical;"></textarea>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Monthly Rent (₹) *</label>
+                            <input type="number" id="rentAmount" required min="1" placeholder="e.g. 15000" class="dim-input">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Payment Month *</label>
+                            <select id="paymentMonth" class="settings-select">
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July" selected>July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Payment Date *</label>
+                            <input type="date" id="paymentDate" required class="dim-input">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Payment Mode</label>
+                            <select id="paymentMode" class="settings-select">
+                                <option value="Cash">Cash</option>
+                                <option value="Bank Transfer" selected>Bank Transfer</option>
+                                <option value="UPI">UPI</option>
+                                <option value="Cheque">Cheque</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3.5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md transition-all flex justify-center items-center gap-2">
+                        Generate Receipt
+                    </button>
+                </form>
+
+                <div id="result" class="hidden mt-6">
+                    <div class="border-2 border-slate-200 rounded-xl p-6 bg-white" id="receiptContent">
+                        <div class="text-center border-b-2 border-slate-800 pb-3 mb-4">
+                            <h2 class="text-xl font-extrabold text-slate-900">RENT RECEIPT</h2>
+                        </div>
+                        <div class="space-y-2 text-sm text-slate-700 mb-4">
+                            <p><strong>Received from:</strong> <span id="rTenant"></span></p>
+                            <p><strong>Received by:</strong> <span id="rLandlord"></span></p>
+                            <p><strong>Address:</strong> <span id="rAddress"></span></p>
+                            <p><strong>Amount:</strong> ₹<span id="rAmount"></span></p>
+                            <p><strong>For the month of:</strong> <span id="rMonth"></span></p>
+                            <p><strong>Payment Date:</strong> <span id="rDate"></span></p>
+                            <p><strong>Payment Mode:</strong> <span id="rMode"></span></p>
+                        </div>
+                        <div class="text-right mt-8 pt-4 border-t border-slate-200">
+                            <p class="text-sm text-slate-600">Signature of Landlord</p>
+                            <p class="text-xs text-slate-400 mt-1" id="rLandlordName"></p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 mt-4">
+                        <button onclick="printReceipt()" class="flex-1 px-4 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all text-sm">Print</button>
+                        <button onclick="downloadPDF()" class="flex-1 px-4 py-3 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all text-sm">Download PDF</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Why do I need rent receipts for HRA?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        If you claim House Rent Allowance (HRA) exemption under Section 10(13A) of the Income Tax Act, your employer may ask for rent receipts as proof of rent payment. These receipts should show the landlord's name, address, rent amount, and payment period.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Is a PAN card required for rent receipts?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        If your annual rent exceeds ₹1,00,000, you need to provide your landlord's PAN to your employer. For rent below ₹1,00,000, PAN is not mandatory but receipts are still recommended.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    (function() {
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementById('paymentDate').value = today;
+
+        document.getElementById('rentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var tenant = document.getElementById('tenantName').value.trim();
+            var landlord = document.getElementById('landlordName').value.trim();
+            var address = document.getElementById('address').value.trim();
+            var amount = document.getElementById('rentAmount').value;
+            var month = document.getElementById('paymentMonth').value;
+            var date = document.getElementById('paymentDate').value;
+            var mode = document.getElementById('paymentMode').value;
+
+            if (!tenant || !landlord || !address || !amount) {
+                if (typeof showToast === 'function') showToast('Please fill all required fields.', 'error');
+                return;
+            }
+
+            var formattedDate = new Date(date).toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' });
+
+            document.getElementById('rTenant').textContent = tenant;
+            document.getElementById('rLandlord').textContent = landlord;
+            document.getElementById('rAddress').textContent = address;
+            document.getElementById('rAmount').textContent = Number(amount).toLocaleString('en-IN');
+            document.getElementById('rMonth').textContent = month;
+            document.getElementById('rDate').textContent = formattedDate;
+            document.getElementById('rMode').textContent = mode;
+            document.getElementById('rLandlordName').textContent = landlord;
+
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        window.printReceipt = function() {
+            var content = document.getElementById('receiptContent').innerHTML;
+            var win = window.open('', '_blank');
+            win.document.write('<!DOCTYPE html><html><head><title>Rent Receipt</title><style>body{font-family:Arial,sans-serif;padding:40px;max-width:700px;margin:0 auto;color:#1e293b;}h2{font-size:20px;text-align:center;border-bottom:2px solid #1e293b;padding-bottom:8px;}p{margin:8px 0;font-size:14px;}</style></head><body>' + content + '</body></html>');
+            win.document.close();
+            win.print();
+        };
+
+        window.downloadPDF = function() {
+            if (typeof window.jspdf === 'undefined') {
+                var s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+                s.onload = function() { generateRentPDF(); };
+                document.head.appendChild(s);
+            } else {
+                generateRentPDF();
+            }
+        };
+
+        function generateRentPDF() {
+            var doc = new window.jspdf.jsPDF();
+            doc.setFontSize(18);
+            doc.setFont(undefined, 'bold');
+            doc.text('RENT RECEIPT', 105, 25, { align: 'center' });
+            doc.setLineWidth(0.5);
+            doc.line(20, 30, 190, 30);
+            doc.setFontSize(11);
+            doc.setFont(undefined, 'normal');
+            var y = 45;
+            var lines = [
+                'Received from: ' + document.getElementById('rTenant').textContent,
+                'Received by: ' + document.getElementById('rLandlord').textContent,
+                'Address: ' + document.getElementById('rAddress').textContent,
+                'Amount: Rs. ' + document.getElementById('rAmount').textContent,
+                'For the month of: ' + document.getElementById('rMonth').textContent,
+                'Payment Date: ' + document.getElementById('rDate').textContent,
+                'Payment Mode: ' + document.getElementById('rMode').textContent
+            ];
+            lines.forEach(function(line) {
+                doc.text(line, 20, y);
+                y += 10;
+            });
+            doc.line(20, y + 20, 100, y + 20);
+            doc.text('Signature of Landlord', 20, y + 28);
+            doc.text(document.getElementById('rLandlordName').textContent, 20, y + 35);
+            doc.save('rent-receipt.pdf');
+        }
+    })();
+    </script>
+</body>
+</html>

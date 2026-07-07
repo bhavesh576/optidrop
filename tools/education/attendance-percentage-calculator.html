@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Percentage Calculator — Free Online | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Calculate your attendance percentage and find out how many classes you can miss. Supports 75% and custom thresholds. Free, instant.">
+    <meta name="keywords" content="attendance calculator, attendance percentage, how many classes can I miss, attendance calculator for students, 75 attendance calculator">
+    <link rel="canonical" href="https://optidrop.online/tools/education/attendance-percentage-calculator.html">
+    <meta property="og:title" content="Attendance Percentage Calculator — Free Online | OptiDrop">
+    <meta property="og:description" content="Calculate attendance percentage and how many classes you can miss. Free, instant.">
+    <meta property="og:url" content="https://optidrop.online/tools/education/attendance-percentage-calculator.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Attendance Percentage Calculator",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate attendance percentage and find out how many classes you can miss while staying above the required threshold."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Education Tools", "item": "https://optidrop.online/category/education-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Attendance Percentage Calculator", "item": "https://optidrop.online/tools/education/attendance-percentage-calculator.html"}
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload.</p></div></noscript>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Attendance Percentage Calculator</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Calculate your attendance percentage or find out how many more classes you can miss while staying above the required threshold.</p>
+        </section>
+
+        <section class="max-w-xl mx-auto px-4 pb-8">
+            <!-- Mode Tabs -->
+            <div class="flex gap-2 mb-6">
+                <button onclick="switchMode('percentage')" id="tabPercentage" class="flex-1 px-4 py-3 text-sm font-bold rounded-xl transition-all bg-blue-600 text-white">What's my %?</button>
+                <button onclick="switchMode('missable')" id="tabMissable" class="flex-1 px-4 py-3 text-sm font-bold rounded-xl transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">How many can I miss?</button>
+            </div>
+
+            <!-- Mode 1: Calculate Percentage -->
+            <div id="modePercentage" class="glass-panel rounded-2xl shadow-xl p-6 sm:p-8">
+                <form id="percentageForm" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Classes Attended *</label>
+                            <input type="number" id="attended" required min="0" placeholder="e.g. 45" class="dim-input">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Classes Held *</label>
+                            <input type="number" id="held" required min="1" placeholder="e.g. 60" class="dim-input">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3.5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md transition-all">Calculate Percentage</button>
+                </form>
+
+                <div id="percentageResult" class="hidden mt-6 p-5 bg-green-50 border border-green-200 rounded-xl text-center">
+                    <p class="text-sm font-semibold text-green-700 mb-1">Your Attendance</p>
+                    <p class="text-5xl font-extrabold text-green-800" id="attendancePercent">0%</p>
+                    <p class="text-sm text-green-600 mt-2" id="attendanceStatus"></p>
+                </div>
+            </div>
+
+            <!-- Mode 2: How many can I miss -->
+            <div id="modeMissable" class="hidden glass-panel rounded-2xl shadow-xl p-6 sm:p-8">
+                <form id="missableForm" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Required Attendance % *</label>
+                        <input type="number" id="required" required min="1" max="100" value="75" placeholder="e.g. 75" class="dim-input">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Total Classes So Far *</label>
+                            <input type="number" id="totalHeld" required min="1" placeholder="e.g. 60" class="dim-input">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Classes Attended So Far *</label>
+                            <input type="number" id="totalAttended" required min="0" placeholder="e.g. 50" class="dim-input">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3.5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md transition-all">Calculate</button>
+                </form>
+
+                <div id="missableResult" class="hidden mt-6 space-y-3">
+                    <div id="aboveThreshold" class="hidden p-5 bg-green-50 border border-green-200 rounded-xl text-center">
+                        <p class="text-sm font-semibold text-green-700 mb-1">Good news! You're above the threshold.</p>
+                        <p class="text-3xl font-extrabold text-green-800" id="canMiss">0</p>
+                        <p class="text-sm text-green-600">more classes you can miss</p>
+                    </div>
+                    <div id="belowThreshold" class="hidden p-5 bg-red-50 border border-red-200 rounded-xl text-center">
+                        <p class="text-sm font-semibold text-red-700 mb-1">Warning! You're below the threshold.</p>
+                        <p class="text-3xl font-extrabold text-red-800" id="mustAttend">0</p>
+                        <p class="text-sm text-red-600">more consecutive classes you must attend to reach <span id="targetPercent">75</span>%</p>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-center">
+                        <p class="text-xs text-slate-500">Current attendance: <strong id="currentPercent">0%</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What attendance percentage is required?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Most Indian universities and colleges require a minimum of 75% attendance. Some institutions have different requirements (65% to 85%). Check your institution's official policy for the exact requirement.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    (function() {
+        window.switchMode = function(mode) {
+            document.getElementById('modePercentage').classList.toggle('hidden', mode !== 'percentage');
+            document.getElementById('modeMissable').classList.toggle('hidden', mode !== 'missable');
+            document.getElementById('tabPercentage').className = mode === 'percentage' ? 'flex-1 px-4 py-3 text-sm font-bold rounded-xl transition-all bg-blue-600 text-white' : 'flex-1 px-4 py-3 text-sm font-bold rounded-xl transition-all bg-slate-100 text-slate-600 hover:bg-slate-200';
+            document.getElementById('tabMissable').className = mode === 'missable' ? 'flex-1 px-4 py-3 text-sm font-bold rounded-xl transition-all bg-blue-600 text-white' : 'flex-1 px-4 py-3 text-sm font-bold rounded-xl transition-all bg-slate-100 text-slate-600 hover:bg-slate-200';
+        };
+
+        document.getElementById('percentageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var attended = parseInt(document.getElementById('attended').value);
+            var held = parseInt(document.getElementById('held').value);
+
+            if (isNaN(attended) || isNaN(held) || held < 1 || attended < 0) {
+                if (typeof showToast === 'function') showToast('Please enter valid values.', 'error');
+                return;
+            }
+
+            var percent = (attended / held) * 100;
+            document.getElementById('attendancePercent').textContent = percent.toFixed(1) + '%';
+
+            var status = '';
+            if (percent >= 90) status = 'Excellent! Keep it up.';
+            else if (percent >= 75) status = 'Good. You meet the 75% requirement.';
+            else status = 'Below 75%. You may need to attend more classes.';
+            document.getElementById('attendanceStatus').textContent = status;
+
+            document.getElementById('percentageResult').classList.remove('hidden');
+            document.getElementById('percentageResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        document.getElementById('missableForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var required = parseFloat(document.getElementById('required').value);
+            var totalHeld = parseInt(document.getElementById('totalHeld').value);
+            var totalAttended = parseInt(document.getElementById('totalAttended').value);
+
+            if (isNaN(required) || isNaN(totalHeld) || isNaN(totalAttended) || totalHeld < 1 || totalAttended < 0) {
+                if (typeof showToast === 'function') showToast('Please enter valid values.', 'error');
+                return;
+            }
+
+            var currentPercent = (totalAttended / totalHeld) * 100;
+            document.getElementById('currentPercent').textContent = currentPercent.toFixed(1) + '%';
+            document.getElementById('targetPercent').textContent = required;
+
+            if (currentPercent >= required) {
+                // Can miss X more classes
+                var canMiss = Math.floor((totalAttended - (required / 100) * totalHeld) / (required / 100));
+                document.getElementById('canMiss').textContent = canMiss;
+                document.getElementById('aboveThreshold').classList.remove('hidden');
+                document.getElementById('belowThreshold').classList.add('hidden');
+            } else {
+                // Must attend X more consecutive classes
+                var needed = Math.ceil(((required / 100) * totalHeld - totalAttended) / (1 - required / 100));
+                document.getElementById('mustAttend').textContent = needed;
+                document.getElementById('belowThreshold').classList.remove('hidden');
+                document.getElementById('aboveThreshold').classList.add('hidden');
+            }
+
+            document.getElementById('missableResult').classList.remove('hidden');
+            document.getElementById('missableResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    })();
+    </script>
+</body>
+</html>

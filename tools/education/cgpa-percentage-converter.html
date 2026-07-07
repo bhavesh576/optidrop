@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA to Percentage Converter — Free Online | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Convert CGPA to percentage and percentage to CGPA. Uses CBSE ×9.5 formula. Supports both directions. Free, instant.">
+    <meta name="keywords" content="CGPA to percentage, percentage to CGPA, CGPA converter, CBSE CGPA formula, CGPA calculator">
+    <link rel="canonical" href="https://optidrop.online/tools/education/cgpa-percentage-converter.html">
+    <meta property="og:title" content="CGPA to Percentage Converter — Free Online | OptiDrop">
+    <meta property="og:description" content="Convert CGPA to percentage and percentage to CGPA. Free, instant.">
+    <meta property="og:url" content="https://optidrop.online/tools/education/cgpa-percentage-converter.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CGPA to Percentage Converter",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Convert CGPA to percentage and percentage to CGPA using the CBSE ×9.5 formula."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Education Tools", "item": "https://optidrop.online/category/education-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "CGPA to Percentage Converter", "item": "https://optidrop.online/tools/education/cgpa-percentage-converter.html"}
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload.</p></div></noscript>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">CGPA ↔ Percentage Converter</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Convert between CGPA and percentage instantly. Uses the CBSE/most-common ×9.5 formula.</p>
+        </section>
+
+        <section class="max-w-xl mx-auto px-4 pb-8">
+            <div class="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+                <p class="text-xs text-amber-800"><strong>⚠️ Note:</strong> This uses the CBSE/most-common ×9.5 formula. Some universities use a different formula — check your institution's official conversion if this is for an official document.</p>
+            </div>
+
+            <!-- Mode Tabs -->
+            <div class="flex gap-2 mb-6">
+                <button onclick="switchMode('cgpa')" id="tabCgpa" class="flex-1 px-4 py-3 text-sm font-bold rounded-xl transition-all bg-blue-600 text-white">CGPA → %</button>
+                <button onclick="switchMode('percent')" id="tabPercent" class="flex-1 px-4 py-3 text-sm font-bold rounded-xl transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">% → CGPA</button>
+            </div>
+
+            <!-- CGPA to Percentage -->
+            <div id="modeCgpa" class="glass-panel rounded-2xl shadow-xl p-6 sm:p-8">
+                <form id="cgpaForm" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">CGPA (out of 10) *</label>
+                        <input type="number" id="cgpaInput" required min="0" max="10" step="0.01" placeholder="e.g. 8.5" class="dim-input">
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3.5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md transition-all">Convert to Percentage</button>
+                </form>
+
+                <div id="cgpaResult" class="hidden mt-6 p-5 bg-green-50 border border-green-200 rounded-xl text-center">
+                    <p class="text-sm font-semibold text-green-700 mb-1">Percentage</p>
+                    <p class="text-5xl font-extrabold text-green-800" id="percentOutput">0%</p>
+                    <p class="text-xs text-green-600 mt-2">Formula: CGPA × 9.5</p>
+                </div>
+            </div>
+
+            <!-- Percentage to CGPA -->
+            <div id="modePercent" class="hidden glass-panel rounded-2xl shadow-xl p-6 sm:p-8">
+                <form id="percentForm" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Percentage (%) *</label>
+                        <input type="number" id="percentInput" required min="0" max="100" step="0.01" placeholder="e.g. 80.75" class="dim-input">
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3.5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md transition-all">Convert to CGPA</button>
+                </form>
+
+                <div id="percentResult" class="hidden mt-6 p-5 bg-green-50 border border-green-200 rounded-xl text-center">
+                    <p class="text-sm font-semibold text-green-700 mb-1">CGPA</p>
+                    <p class="text-5xl font-extrabold text-green-800" id="cgpaOutput">0</p>
+                    <p class="text-xs text-green-600 mt-2">Formula: Percentage ÷ 9.5</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        What is the CGPA to percentage formula?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        The most commonly used formula (CBSE) is: Percentage = CGPA × 9.5. For example, a CGPA of 8.0 equals 8.0 × 9.5 = 76%. To convert back: CGPA = Percentage ÷ 9.5.
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Do all universities use the ×9.5 formula?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        No. The ×9.5 formula is used by CBSE and many Indian universities, but not all. Some universities use ×10, ×9, or custom formulas. Always check your institution's official conversion formula for official documents.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    (function() {
+        window.switchMode = function(mode) {
+            document.getElementById('modeCgpa').classList.toggle('hidden', mode !== 'cgpa');
+            document.getElementById('modePercent').classList.toggle('hidden', mode !== 'percent');
+            document.getElementById('tabCgpa').className = mode === 'cgpa' ? 'flex-1 px-4 py-3 text-sm font-bold rounded-xl transition-all bg-blue-600 text-white' : 'flex-1 px-4 py-3 text-sm font-bold rounded-xl transition-all bg-slate-100 text-slate-600 hover:bg-slate-200';
+            document.getElementById('tabPercent').className = mode === 'percent' ? 'flex-1 px-4 py-3 text-sm font-bold rounded-xl transition-all bg-blue-600 text-white' : 'flex-1 px-4 py-3 text-sm font-bold rounded-xl transition-all bg-slate-100 text-slate-600 hover:bg-slate-200';
+        };
+
+        document.getElementById('cgpaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var cgpa = parseFloat(document.getElementById('cgpaInput').value);
+
+            if (isNaN(cgpa) || cgpa < 0 || cgpa > 10) {
+                if (typeof showToast === 'function') showToast('Please enter a valid CGPA (0-10).', 'error');
+                return;
+            }
+
+            var percent = cgpa * 9.5;
+            document.getElementById('percentOutput').textContent = percent.toFixed(2) + '%';
+            document.getElementById('cgpaResult').classList.remove('hidden');
+            document.getElementById('cgpaResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        document.getElementById('percentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var percent = parseFloat(document.getElementById('percentInput').value);
+
+            if (isNaN(percent) || percent < 0 || percent > 100) {
+                if (typeof showToast === 'function') showToast('Please enter a valid percentage (0-100).', 'error');
+                return;
+            }
+
+            var cgpa = percent / 9.5;
+            document.getElementById('cgpaOutput').textContent = cgpa.toFixed(2);
+            document.getElementById('percentResult').classList.remove('hidden');
+            document.getElementById('percentResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    })();
+    </script>
+</body>
+</html>

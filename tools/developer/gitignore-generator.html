@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.gitignore Generator — Free Online | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Generate .gitignore files for your projects. Select languages and frameworks, get a ready-to-use .gitignore file. Free, instant.">
+    <meta name="keywords" content="gitignore generator, .gitignore file, gitignore template, node gitignore, python gitignore, react gitignore">
+    <link rel="canonical" href="https://optidrop.online/tools/developer/gitignore-generator.html">
+    <meta property="og:title" content=".gitignore Generator — Free Online | OptiDrop">
+    <meta property="og:description" content="Generate .gitignore files for your projects. Free, instant.">
+    <meta property="og:url" content="https://optidrop.online/tools/developer/gitignore-generator.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": ".gitignore Generator",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Generate .gitignore files for your projects by selecting languages and frameworks."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://optidrop.online/category/developer-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": ".gitignore Generator", "item": "https://optidrop.online/tools/developer/gitignore-generator.html"}
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload.</p></div></noscript>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">.gitignore Generator</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Select your languages and frameworks below to generate a ready-to-use .gitignore file.</p>
+        </section>
+
+        <section class="max-w-2xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-2xl shadow-xl p-6 sm:p-8">
+                <div class="mb-4">
+                    <p class="text-sm font-bold text-slate-700 mb-3">Select languages & frameworks:</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="optionsGrid">
+                        <!-- Options will be populated by JS -->
+                    </div>
+                </div>
+
+                <div class="flex gap-3 mb-4">
+                    <button onclick="selectAll()" class="px-4 py-2 text-sm font-semibold text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">Select All</button>
+                    <button onclick="clearAll()" class="px-4 py-2 text-sm font-semibold text-slate-600 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors">Clear All</button>
+                </div>
+
+                <button onclick="generate()" class="w-full px-6 py-3.5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md transition-all mb-4">Generate .gitignore</button>
+
+                <div id="result" class="hidden">
+                    <div class="relative">
+                        <pre id="output" class="bg-slate-900 text-green-400 p-4 rounded-xl text-xs overflow-auto max-h-96 font-mono"></pre>
+                    </div>
+                    <div class="flex gap-3 mt-3">
+                        <button onclick="copyToClipboard()" class="flex-1 px-4 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all text-sm">Copy</button>
+                        <button onclick="downloadFile()" class="flex-1 px-4 py-3 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all text-sm">Download .gitignore</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    (function() {
+        var gitignoreData = {
+            node: { name: 'Node.js', content: 'node_modules/\nnpm-debug.log\nyarn-debug.log\nyarn-error.log\n.env\n.env.local\ndist/\nbuild/\n.DS_Store\n*.log\npackage-lock.json\nyarn.lock\n.pnp\n.pnp.js\ncoverage/\n.cache/\n' },
+            python: { name: 'Python', content: '__pycache__/\n*.py[cod]\n*$py.class\n*.so\n.Python\nbuild/\ndevelop-eggs/\ndist/\ndownloads/\neggs/\n.eggs/\nlib/\nlib64/\nparts/\nsdist/\nvar/\nwheels/\n*.egg-info/\n.installed.cfg\n*.egg\n.env\n.venv\nenv/\nvenv/\nENV/\n.pytest_cache/\n.coverage\nhtmlcov/\n' },
+            java: { name: 'Java', content: '*.class\n*.log\n*.ctxt\n.mtj.tmp/\n*.jar\n*.war\n*.nar\n*.ear\n*.zip\n*.tar.gz\n*.rar\nhs_err_pid*\nreplay_pid*\nbuild/\n.gradle/\n.idea/\n*.iml\nout/\n' },
+            react: { name: 'React', content: 'node_modules/\nbuild/\ndist/\n.env\n.env.local\n.env.development.local\n.env.test.local\n.env.production.local\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n.DS_Store\ncoverage/\n' },
+            nextjs: { name: 'Next.js', content: 'node_modules/\n.next/\nout/\nbuild/\n.env\n.env.local\n.env.development.local\n.env.test.local\n.env.production.local\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n.DS_Store\n.vercel\n' },
+            angular: { name: 'Angular', content: 'node_modules/\ndist/\n.tmp/\n.sass-cache/\n.idea/\n*.iml\ncoverage/\n.env\nnpm-debug.log\n' },
+            vue: { name: 'Vue.js', content: 'node_modules/\ndist/\n.env\n.env.local\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n.DS_Store\ncoverage/\n' },
+            django: { name: 'Django', content: '*.pyc\n__pycache__/\nlocal_settings.py\ndb.sqlite3\ndb.sqlite3-journal\nmedia/\nstaticfiles/\n.env\nvenv/\n*.log\n' },
+            flask: { name: 'Flask', content: '__pycache__/\n*.py[cod]\n.env\nvenv/\ninstance/\n.wsgi_pid\n*.log\n' },
+            laravel: { name: 'Laravel', content: 'vendor/\nnode_modules/\n.env\n.env.backup\n.phpunit.result.cache\nHomestead.json\nHomestead.yaml\nnpm-debug.log\nyarn-error.log\ndesktop.ini\nThumbs.db\n' },
+            ruby: { name: 'Ruby', content: '*.gem\n*.rbc\n/.config\n/coverage/\n/InstalledFiles\n/pkg/\n/spec/reports/\n/spec/examples.txt\n/test/tmp/\n/test/version_tmp/\n/tmp/\n.env\n.byebug_history\n' },
+            go: { name: 'Go', content: '# Binaries\n*.exe\n*.exe~\ndll*\n*.dylib\n*.so\n*.test\n*.out\nvendor/\n.env\n' },
+            rust: { name: 'Rust', content: 'target/\nCargo.lock\n*.pdb\n.env\n' },
+            swift: { name: 'Swift', content: '.build/\nPackages/\nxcuserdata/\n*.xcodeproj/\nDerivedData/\n.env\n' },
+            kotlin: { name: 'Kotlin', content: '*.class\n*.log\n*.jar\nbuild/\n.gradle/\n.idea/\n*.iml\nout/\n' },
+            dart: { name: 'Dart/Flutter', content: '.dart_tool/\n.flutter-plugins\n.flutter-plugins-dependencies\n.packages\npubspec.lock\nbuild/\n*.iml\n.idea/\n.env\n' },
+            php: { name: 'PHP', content: 'vendor/\n.env\ncomposer.lock\n*.log\n.idea/\n' },
+            csharp: { name: 'C# / .NET', content: 'bin/\nobj/\n*.user\n*.suo\n*.cache\n*.dll\n*.exe\n.vs/\npackages/\n.env\n' },
+            cpp: { name: 'C++', content: '*.o\n*.obj\n*.exe\n*.out\n*.a\n*.so\n*.dylib\nbuild/\n.env\n' },
+            android: { name: 'Android', content: '*.iml\n.gradle/\n/local.properties\n.idea/\n.DS_Store\n/build/\n/captures\n.externalNativeBuild\n.cxx/\n*.apk\n*.ap_\n*.aab\n' },
+            ios: { name: 'iOS', content: 'build/\nDerivedData/\n*.pbxuser\n*.mode1v3\n*.mode2v3\n*.perspectivev3\nxcuserdata/\n*.xccheckout\n*.moved-aside\n*.hmap\n*.ipa\n*.dSYM.zip\n*.dSYM\nPods/\n.env\n' },
+            xcode: { name: 'Xcode', content: 'build/\nDerivedData/\n*.pbxuser\n*.mode1v3\n*.mode2v3\n*.perspectivev3\nxcuserdata/\n*.xccheckout\n*.moved-aside\n*.hmap\n*.ipa\n*.dSYM.zip\n*.dSYM\n' },
+            macos: { name: 'macOS', content: '.DS_Store\n.AppleDouble\n.LSOverride\nIcon\n._*\n.Spotlight-V100\n.Trashes\n' },
+            windows: { name: 'Windows', content: 'Thumbs.db\nThumbs.db:encryptable\nehthumbs.db\nehthumbs_v2.db\nDesktop.ini\n$RECYCLE.BIN/\n*.cab\n*.msi\n*.msix\n*.msm\n*.msp\n' },
+            linux: { name: 'Linux', content: '*~\n.fuse_hidden*\n.Directory\n.Trash-*\n.nfs*\n' },
+            vscode: { name: 'VS Code', content: '.vscode/*\n!.vscode/settings.json\n!.vscode/tasks.json\n!.vscode/launch.json\n!.vscode/extensions.json\n*.code-workspace\n' },
+            intellij: { name: 'IntelliJ IDEA', content: '.idea/\n*.iml\nout/\n.idea_modules/\n' },
+            vim: { name: 'Vim', content: 'Session.vim\nSessionx.vim\n.netrwhist\n*~\n.tags\n[._]*.s[a-v][a-z]\n[._]*.sw[a-p]\n' },
+            docker: { name: 'Docker', content: '.docker/\ndocker-compose.override.yml\n' },
+            terraform: { name: 'Terraform', content: '*.tfstate\n*.tfstate.*\n.terraform/\n*.tfvars\n!*.tfvars.example\n.crash.log\ncrash.log\noverride.tf\noverride.tf.json\n*_override.tf\n*_override.tf.json\n.terraformrc\nterraform.rc\n' },
+            elixir: { name: 'Elixir', content: '/_build/\n/cover/\n/deps/\n/doc/\n/.fetch\nerl_crash.dump\n*.ez\n*.beam\n/tmp/\n.env\n' },
+            haskell: { name: 'Haskell', content: 'dist\n*.hi\n*.o\n.stack-work/\ncabal.project.local\n.env\n' }
+        };
+
+        var grid = document.getElementById('optionsGrid');
+        Object.keys(gitignoreData).forEach(function(key) {
+            var label = document.createElement('label');
+            label.className = 'flex items-center gap-2 p-2 rounded-lg border border-slate-200 hover:border-blue-300 cursor-pointer transition-colors bg-white';
+            label.innerHTML = '<input type="checkbox" value="' + key + '" class="rounded text-blue-600"> <span class="text-sm font-medium text-slate-700">' + gitignoreData[key].name + '</span>';
+            grid.appendChild(label);
+        });
+
+        window.selectAll = function() {
+            grid.querySelectorAll('input[type="checkbox"]').forEach(function(cb) { cb.checked = true; });
+        };
+
+        window.clearAll = function() {
+            grid.querySelectorAll('input[type="checkbox"]').forEach(function(cb) { cb.checked = false; });
+        };
+
+        var generatedContent = '';
+
+        window.generate = function() {
+            var selected = [];
+            grid.querySelectorAll('input:checked').forEach(function(cb) { selected.push(cb.value); });
+
+            if (selected.length === 0) {
+                if (typeof showToast === 'function') showToast('Please select at least one option.', 'error');
+                return;
+            }
+
+            var content = '# Generated by OptiDrop .gitignore Generator\n# https://optidrop.online/tools/developer/gitignore-generator.html\n\n';
+            selected.forEach(function(key) {
+                content += '# === ' + gitignoreData[key].name + ' ===\n';
+                content += gitignoreData[key].content + '\n';
+            });
+
+            generatedContent = content;
+            document.getElementById('output').textContent = content;
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+
+        window.copyToClipboard = function() {
+            navigator.clipboard.writeText(generatedContent).then(function() {
+                if (typeof showToast === 'function') showToast('Copied to clipboard!', 'success');
+            });
+        };
+
+        window.downloadFile = function() {
+            var blob = new Blob([generatedContent], { type: 'text/plain' });
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '.gitignore';
+            a.click();
+            URL.revokeObjectURL(a.href);
+            if (typeof showToast === 'function') showToast('Downloaded .gitignore file!', 'success');
+        };
+    })();
+    </script>
+</body>
+</html>

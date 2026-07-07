@@ -371,6 +371,12 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://optidrop.online/tools/business/rent-receipt-generator.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://optidrop.online/tools/business/relieving-letter.html</loc>
         <lastmod>2026-06-10</lastmod>
         <changefreq>monthly</changefreq>
@@ -421,6 +427,30 @@
     <url>
         <loc>https://optidrop.online/tools/calculators/car-loan-calculator.html</loc>
         <lastmod>2026-06-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/tools/calculators/two-wheeler-loan-calculator.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/tools/calculators/gratuity-calculator.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/tools/calculators/epf-calculator.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/tools/calculators/hra-exemption-calculator.html</loc>
+        <lastmod>2026-07-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -863,6 +893,12 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://optidrop.online/tools/developer/gitignore-generator.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://optidrop.online/tools/developer/base64-encoder.html</loc>
         <lastmod>2026-06-10</lastmod>
         <changefreq>monthly</changefreq>
@@ -1099,6 +1135,18 @@
     <url>
         <loc>https://optidrop.online/tools/education/academic-declaration.html</loc>
         <lastmod>2026-06-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/tools/education/attendance-percentage-calculator.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/tools/education/cgpa-percentage-converter.html</loc>
+        <lastmod>2026-07-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -2035,6 +2083,18 @@
     <url>
         <loc>https://optidrop.online/tools/utility/pan-card-validator.html</loc>
         <lastmod>2026-06-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/tools/utility/aadhaar-format-checker.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://optidrop.online/tools/utility/land-unit-converter.html</loc>
+        <lastmod>2026-07-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

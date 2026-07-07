@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Unit Converter — Free Online | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Convert between Indian land units (Bigha, Guntha, Katha, Kanal, Acre, Hectare) and metric units. State-specific Bigha conversions. Free, instant.">
+    <meta name="keywords" content="land unit converter, bigha to acre, guntha to square feet, katha converter, kanal converter, land measurement India">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/land-unit-converter.html">
+    <meta property="og:title" content="Land Unit Converter — Free Online | OptiDrop">
+    <meta property="og:description" content="Convert between Indian land units with state-specific Bigha conversions. Free, instant.">
+    <meta property="og:url" content="https://optidrop.online/tools/utility/land-unit-converter.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Land Unit Converter",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Convert between Indian land units (Bigha, Guntha, Katha, Kanal) and metric units with state-specific conversions."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Utility Tools", "item": "https://optidrop.online/category/utility-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Land Unit Converter", "item": "https://optidrop.online/tools/utility/land-unit-converter.html"}
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload.</p></div></noscript>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Land Unit Converter</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Convert between Indian land units (Bigha, Guntha, Katha, Kanal) and metric/imperial units. State-specific Bigha conversions included.</p>
+        </section>
+
+        <section class="max-w-xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-2xl shadow-xl p-6 sm:p-8">
+                <div class="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+                    <p class="text-xs text-amber-800"><strong>⚠️ Important:</strong> "Bigha" size varies significantly by Indian state. Select your state below for accurate conversion.</p>
+                </div>
+
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">State (for Bigha conversion)</label>
+                        <select id="stateSelect" class="settings-select">
+                            <option value="up">Uttar Pradesh (1 Bigha = 27,000 sq ft)</option>
+                            <option value="rajasthan">Rajasthan (1 Bigha = 27,225 sq ft)</option>
+                            <option value="punjab">Punjab (1 Bigha = 9,070 sq ft)</option>
+                            <option value="wb">West Bengal (1 Bigha = 14,400 sq ft)</option>
+                            <option value="mp">Madhya Pradesh (1 Bigha = 13,333 sq ft)</option>
+                            <option value="bihar">Bihar (1 Bigha = 27,220 sq ft)</option>
+                            <option value="assam">Assam (1 Bigha = 14,400 sq ft)</option>
+                            <option value="gujarat">Gujarat (1 Guntha = 1,089 sq ft)</option>
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Value</label>
+                            <input type="number" id="inputValue" min="0" step="any" placeholder="e.g. 100" class="dim-input">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">From Unit</label>
+                            <select id="fromUnit" class="settings-select">
+                                <option value="sqft">Square Feet</option>
+                                <option value="sqm">Square Meter</option>
+                                <option value="acre">Acre</option>
+                                <option value="hectare">Hectare</option>
+                                <option value="bigha">Bigha</option>
+                                <option value="guntha">Guntha</option>
+                                <option value="katha">Katha</option>
+                                <option value="kanal">Kanal</option>
+                                <option value="yard">Square Yard (Gaz)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">To Unit</label>
+                            <select id="toUnit" class="settings-select">
+                                <option value="sqft">Square Feet</option>
+                                <option value="sqm" selected>Square Meter</option>
+                                <option value="acre">Acre</option>
+                                <option value="hectare">Hectare</option>
+                                <option value="bigha">Bigha</option>
+                                <option value="guntha">Guntha</option>
+                                <option value="katha">Katha</option>
+                                <option value="kanal">Kanal</option>
+                                <option value="yard">Square Yard (Gaz)</option>
+                            </select>
+                        </div>
+                        <div class="flex items-end">
+                            <button onclick="convert()" class="w-full px-6 py-3.5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md transition-all">Convert</button>
+                        </div>
+                    </div>
+
+                    <div id="result" class="hidden p-5 bg-green-50 border border-green-200 rounded-xl text-center">
+                        <p class="text-sm text-green-700 mb-1">Result</p>
+                        <p class="text-3xl font-extrabold text-green-800" id="resultValue">0</p>
+                        <p class="text-sm text-green-600" id="resultUnit"></p>
+                    </div>
+
+                    <div id="allConversions" class="hidden mt-4">
+                        <p class="text-xs font-semibold text-slate-500 mb-2">All conversions:</p>
+                        <div id="conversionsGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                        Why does Bigha size vary by state?
+                        <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Bigha is a traditional land measurement unit used across India, but it was never standardized nationally. Different regions adopted different sizes based on local agricultural practices. For example, 1 Bigha in UP is about 27,000 sq ft, while in Punjab it's only about 9,070 sq ft. Always confirm which Bigha standard applies to your land.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    (function() {
+        // All conversions to Square Feet
+        var toSqft = {
+            sqft: 1,
+            sqm: 10.7639,
+            acre: 43560,
+            hectare: 107639,
+            guntha: 1089,
+            katha: 1361.25,
+            kanal: 5445,
+            yard: 9
+        };
+
+        // Bigha to sqft varies by state
+        var bighaToSqft = {
+            up: 27000,
+            rajasthan: 27225,
+            punjab: 9070,
+            wb: 14400,
+            mp: 13333,
+            bihar: 27220,
+            assam: 14400,
+            gujarat: 17424
+        };
+
+        var unitNames = {
+            sqft: 'Square Feet',
+            sqm: 'Square Meter',
+            acre: 'Acre',
+            hectare: 'Hectare',
+            bigha: 'Bigha',
+            guntha: 'Guntha',
+            katha: 'Katha',
+            kanal: 'Kanal',
+            yard: 'Square Yard (Gaz)'
+        };
+
+        function getConversion(unit) {
+            if (unit === 'bigha') {
+                var state = document.getElementById('stateSelect').value;
+                return bighaToSqft[state] || 27000;
+            }
+            return toSqft[unit];
+        }
+
+        window.convert = function() {
+            var value = parseFloat(document.getElementById('inputValue').value);
+            var from = document.getElementById('fromUnit').value;
+            var to = document.getElementById('toUnit').value;
+
+            if (isNaN(value) || value < 0) {
+                if (typeof showToast === 'function') showToast('Please enter a valid value.', 'error');
+                return;
+            }
+
+            var sqftValue = value * getConversion(from);
+            var result = sqftValue / getConversion(to);
+
+            document.getElementById('resultValue').textContent = result.toLocaleString('en-IN', { maximumFractionDigits: 4 });
+            document.getElementById('resultUnit').textContent = unitNames[to];
+            document.getElementById('result').classList.remove('hidden');
+
+            // Show all conversions
+            var grid = document.getElementById('conversionsGrid');
+            grid.innerHTML = '';
+            var units = ['sqft', 'sqm', 'acre', 'hectare', 'bigha', 'guntha', 'katha', 'kanal', 'yard'];
+            units.forEach(function(u) {
+                var val = sqftValue / getConversion(u);
+                var div = document.createElement('div');
+                div.className = 'p-2 bg-white rounded-lg border border-slate-200 text-center';
+                div.innerHTML = '<p class="text-xs text-slate-500">' + unitNames[u] + '</p><p class="text-sm font-bold text-slate-800">' + val.toLocaleString('en-IN', { maximumFractionDigits: 4 }) + '</p>';
+                grid.appendChild(div);
+            });
+            document.getElementById('allConversions').classList.remove('hidden');
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+
+        // Auto-convert on input change
+        document.getElementById('inputValue').addEventListener('input', function() {
+            if (this.value) convert();
+        });
+        document.getElementById('fromUnit').addEventListener('change', function() {
+            if (document.getElementById('inputValue').value) convert();
+        });
+        document.getElementById('toUnit').addEventListener('change', function() {
+            if (document.getElementById('inputValue').value) convert();
+        });
+        document.getElementById('stateSelect').addEventListener('change', function() {
+            if (document.getElementById('inputValue').value) convert();
+        });
+    })();
+    </script>
+</body>
+</html>
