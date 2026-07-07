@@ -161,16 +161,16 @@
             <div class="glass-panel rounded-3xl shadow-xl overflow-hidden relative">
 
                     <!-- STATE 1: UPLOAD ZONE -->
-                    <div id="merge-state-upload" class="p-8 sm:p-12 text-center">
-                        <div id="mergeDropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-10 cursor-pointer transition-all-ease hover:bg-slate-50 hover:border-brand-400 group flex flex-col items-center justify-center min-h-[260px]">
+                    <div id="merge-state-upload" class="p-4 sm:p-8 text-center">
+                        <div id="mergeDropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-5 sm:p-10 cursor-pointer transition-all-ease hover:bg-slate-50 hover:border-brand-400 group flex flex-col items-center justify-center min-h-[180px] sm:min-h-[260px]">
                             <input type="file" id="mergeFileInput" class="hidden" accept="image/jpeg, image/png, image/webp" multiple />
-                            <div class="bg-indigo-50 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
-                                <svg class="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="bg-indigo-50 p-3 sm:p-4 rounded-full mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8 sm:w-10 sm:h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                                 </svg>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-800 mb-2">Drop Images Here or Tap to Browse</h3>
-                            <p class="text-sm text-slate-500">Supports JPG, PNG, WebP (Max 50 images)</p>
+                            <h3 class="text-base sm:text-xl font-bold text-slate-800 mb-1 sm:mb-2">Drop Images Here or Tap to Browse</h3>
+                            <p class="text-xs sm:text-sm text-slate-500">Supports JPG, PNG, WebP (Max 50 images)</p>
                         </div>
                         <div class="mt-5 flex items-center justify-center gap-2 text-sm text-slate-500 font-medium">
                             <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -185,7 +185,7 @@
                     </div>
 
                     <!-- STATE 2: SETTINGS -->
-                    <div id="merge-state-settings" class="hidden p-6 sm:p-8">
+                    <div id="merge-state-settings" class="hidden p-4 sm:p-6">
                         <div class="flex flex-col md:flex-row gap-8 items-start">
 
                             <!-- Left: Image Queue -->
@@ -255,14 +255,14 @@
                                     </div>
                                 </details>
 
-                                <div class="flex gap-3 pt-1">
-                                    <button id="btnMergeCancel" class="w-1/3 px-4 py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors focus:outline-none">
+                                <div class="flex gap-2 sm:gap-3 pt-1">
+                                    <button id="btnMergeCancel" class="w-1/3 px-3 py-3 sm:px-4 sm:py-4 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors focus:outline-none text-sm sm:text-base">
                                         Cancel
                                     </button>
-                                    <button id="btnMergeGenerate" class="w-2/3 px-4 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2">
+                                    <button id="btnMergeGenerate" class="w-2/3 px-3 py-3 sm:px-4 sm:py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-md hover:shadow-lg transition-all focus:outline-none flex justify-center items-center gap-2 text-sm sm:text-base">
                                         <span class="btn-default-text">Generate PDF</span>
                                         <span class="btn-loading-text hidden">Processing...</span>
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                                     </button>
                                 </div>
                             </div>
@@ -284,20 +284,20 @@
                     </div>
 
                     <!-- STATE 4: RESULT -->
-                    <div id="merge-state-result" class="hidden p-6 sm:p-10 text-center flex flex-col items-center">
-                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
-                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <div id="merge-state-result" class="hidden p-4 sm:p-6 text-center flex flex-col items-center">
+                        <div class="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-green-100 mb-4 sm:mb-6">
+                            <svg class="w-6 h-6 sm:w-8 sm:h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                         </div>
-                        <h2 class="text-2xl font-bold text-slate-900 mb-2">PDF Created Successfully!</h2>
-                        <p class="text-slate-600 mb-6">
+                        <h2 class="text-lg sm:text-2xl font-bold text-slate-900 mb-2">PDF Created Successfully!</h2>
+                        <p class="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6">
                             Merged <span id="mergeSuccessCount" class="font-bold text-indigo-600">0</span> images into a single PDF document.
                         </p>
-                        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2 w-full max-w-lg mx-auto">
-                            <button id="btnMergeDownload" class="w-full sm:w-auto px-6 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-lg shadow-indigo-200 transition-all focus:outline-none flex justify-center items-center gap-2 transform hover:-translate-y-1">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-2 w-full max-w-lg mx-auto">
+                            <button id="btnMergeDownload" class="w-full sm:w-auto px-5 py-3 sm:px-6 sm:py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-lg shadow-indigo-200 transition-all focus:outline-none flex justify-center items-center gap-2 text-sm sm:text-base">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                                 Download PDF
                             </button>
-                            <button id="btnMergeStartOver" class="w-full sm:w-auto px-6 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all focus:outline-none">
+                            <button id="btnMergeStartOver" class="w-full sm:w-auto px-5 py-3 sm:px-6 sm:py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all focus:outline-none text-sm sm:text-base">
                                 Merge More Images
                             </button>
                         </div>
