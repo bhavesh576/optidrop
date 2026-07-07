@@ -332,6 +332,7 @@
         document.getElementById('rVat2').textContent = vat.toFixed(2);
         document.getElementById('rVat3').textContent = gross.toFixed(2);
         document.getElementById('resultsVat').classList.remove('hidden');
+        document.getElementById('resultsVat').scrollIntoView({ behavior: 'smooth', block: 'start' });
         showToast('VAT calculated!');
     });
     </script>

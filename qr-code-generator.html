@@ -583,6 +583,7 @@
 
                 qrPlaceholder.classList.add('hidden');
                 qrResult.classList.remove('hidden');
+                qrResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
             } catch (err) {
                 console.error('QR generation error:', err);
                 showToast('Failed to generate QR code. Your content may be too long.', 'error');

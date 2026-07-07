@@ -313,6 +313,7 @@
         document.getElementById('rTotalPay').textContent = '$' + (P + totalInterest).toFixed(2);
         document.getElementById('amortBody').innerHTML = tbody;
         document.getElementById('amortResults').classList.remove('hidden');
+        document.getElementById('amortResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
         // Visual breakdown bar
         var principalPct = (P / (P + totalInterest)) * 100;
         var interestPct = 100 - principalPct;

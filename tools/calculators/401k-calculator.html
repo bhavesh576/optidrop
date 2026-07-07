@@ -365,6 +365,7 @@
         document.getElementById('r401kIncome').textContent = '$' + Math.round(balance * 0.04 / 12).toLocaleString();
         document.getElementById('tbody401k').innerHTML = tbody;
         document.getElementById('results401k').classList.remove('hidden');
+        document.getElementById('results401k').scrollIntoView({ behavior: 'smooth', block: 'start' });
         showToast('401(k) projection calculated!');
     });
 

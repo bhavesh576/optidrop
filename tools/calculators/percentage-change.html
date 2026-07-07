@@ -78,6 +78,7 @@
             document.getElementById('direction').className='text-lg font-extrabold '+(change>=0?'text-green-600':'text-red-600');
             document.getElementById('difference').textContent=diff.toFixed(2);
             document.getElementById('results').classList.remove('hidden');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
             showToast('Change calculated: '+change.toFixed(2)+'%');
         });
 

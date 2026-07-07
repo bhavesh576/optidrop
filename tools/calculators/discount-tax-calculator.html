@@ -253,6 +253,7 @@
         document.getElementById('rTaxAmt').textContent = '+$' + taxAmt.toFixed(2);
         document.getElementById('rFinal').textContent = '$' + finalPrice.toFixed(2);
         document.getElementById('dtResults').classList.remove('hidden');
+        document.getElementById('dtResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
         showToast('Final price calculated!');
     });
     initCalculatorUrlParams({ original: 'dtOriginal', discount: 'dtDiscount', tax: 'dtTax' });

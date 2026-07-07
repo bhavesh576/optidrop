@@ -315,6 +315,7 @@
         document.getElementById('rOTTotal').textContent = '$' + total.toFixed(2);
         document.getElementById('rOTAnnual').textContent = '$' + Math.round(total * 52).toLocaleString();
         document.getElementById('resultsOT').classList.remove('hidden');
+        document.getElementById('resultsOT').scrollIntoView({ behavior: 'smooth', block: 'start' });
         showToast('Overtime calculated!');
     });
     </script>

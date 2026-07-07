@@ -399,6 +399,7 @@
             var result = (x / 100) * y;
             valueEl.textContent = result % 1 === 0 ? result.toLocaleString() : result.toLocaleString(undefined, {maximumFractionDigits: 6});
             resultEl.classList.remove('hidden');
+            resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         };
 
         // Tab 2: X is what percent of Y?

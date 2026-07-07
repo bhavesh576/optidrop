@@ -388,6 +388,7 @@
         document.getElementById('lblMedicare').textContent = '$' + medPerPeriod.toFixed(2);
         document.getElementById('lblEffRate').textContent = ((totalDed / grossPerPeriod) * 100).toFixed(1) + '%';
         document.getElementById('resultsPaycheck').classList.remove('hidden');
+        document.getElementById('resultsPaycheck').scrollIntoView({ behavior: 'smooth', block: 'start' });
         showToast('Take-home pay calculated!');
     });
 

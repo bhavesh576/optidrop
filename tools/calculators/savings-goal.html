@@ -394,6 +394,7 @@
         document.getElementById('rSav2').textContent = '$' + Math.round(totalDeposited).toLocaleString();
         document.getElementById('rSav3').textContent = '$' + Math.round(interest).toLocaleString();
         document.getElementById('resultsSavings').classList.remove('hidden');
+        document.getElementById('resultsSavings').scrollIntoView({ behavior: 'smooth', block: 'start' });
         // Update progress bar
         var goalTarget = activeTab === 'goal' ? parseFloat(document.getElementById('goalAmount').value) || 0 : result1;
         var currentSaved = totalDeposited;
