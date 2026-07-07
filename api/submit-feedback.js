@@ -11,10 +11,10 @@ export default async function handler(req, res) {
         const insertData = {
             name: body.name || 'Anonymous',
             email: body.email || null,
-            subject: body.subject || 'General Feedback',
-            message: body.message || ''
+            message: body.message || body.feedback || '',
+            rating: body.rating ? Number(body.rating) : null
         };
-        console.log('Inserting feedback:', JSON.stringify(insertData));
+        console.log('Final insertData:', JSON.stringify(insertData));
 
         const response = await fetch(`${supabaseUrl}/rest/v1/feedback`, {
             method: 'POST',
