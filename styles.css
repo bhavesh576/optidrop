@@ -3553,18 +3553,12 @@ body {
     box-shadow: 0 0 0 3px rgba(59,130,246,0.2) !important;
 }
 
-/* Dark mode: glass-panel and tool-card overrides */
+/* Dark mode: glass-panel overrides */
 .dark-mode .glass-panel {
     background: #272a33 !important;
     border-color: #3d4455 !important;
 }
-.dark-mode .tool-card {
-    background: #1e293b !important;
-    border-color: #334155 !important;
-}
-.dark-mode .tool-card:hover {
-    border-color: #f472b6 !important;
-}
+/* NOTE: .tool-card dark mode is defined at line ~2998 — do not duplicate here */
 
 /* Dark mode: search bar */
 .dark-mode .search-bar input {
