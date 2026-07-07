@@ -440,11 +440,34 @@
             container.prepend(card);
         }
 
-        // Load existing reviews from localStorage
-        try {
-            var stored = JSON.parse(localStorage.getItem('optidrop_reviews') || '[]');
-            stored.forEach(function(r) { appendReviewCard(r); });
-        } catch(e) {}
+        // Load reviews from Supabase + localStorage fallback
+        async function loadReviews() {
+            var supabaseUrl = 'https://afmstriwxdryrqelffxc.supabase.co';
+            var supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmbXN0cml3eGRyeXJxZWxmZnhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyNjcwNTgsImV4cCI6MjA5ODg0MzA1OH0.t3sblfMlr_-eB7GAV2mBZFWD00y-k_ygTcAjneBJquo';
+            try {
+                var resp = await fetch(supabaseUrl + '/rest/v1/review?select=*&order=created_at.desc&limit=50', {
+                    headers: { 'apikey': supabaseKey, 'Authorization': 'Bearer ' + supabaseKey }
+                });
+                if (resp.ok) {
+                    var rows = await resp.json();
+                    rows.forEach(function(r) {
+                        appendReviewCard({
+                            name: r.name || 'Anonymous',
+                            rating: r.rating || 5,
+                            tool: r.tool || '',
+                            text: r.message || ''
+                        });
+                    });
+                }
+            } catch(e) { console.warn('Could not load reviews from Supabase:', e); }
+
+            // Also load localStorage reviews (user's own submissions)
+            try {
+                var stored = JSON.parse(localStorage.getItem('optidrop_reviews') || '[]');
+                stored.forEach(function(r) { appendReviewCard(r); });
+            } catch(e) {}
+        }
+        loadReviews();
 
         // Form submission
         var form = document.getElementById('reviewForm');
