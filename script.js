@@ -1616,6 +1616,7 @@ resizerPresetBtns.forEach(btn => {
 });
 
 [resizerWidthInput, resizerHeightInput].forEach(input => {
+    if (!input) return;
     input.addEventListener('input', () => {
         resizerPresetBtns.forEach(b => {
             b.classList.toggle('active', b.dataset.w === resizerWidthInput.value && b.dataset.h === resizerHeightInput.value);
