@@ -2203,7 +2203,9 @@ body {
     .glass-panel {
         min-height: auto !important;
         height: max-content;
-        padding-bottom: 1.5rem !important;
+        padding: 0.75rem !important;
+        padding-bottom: 1rem !important;
+        border-radius: 0.75rem !important;
     }
     .universal-tool-container {
         min-height: auto !important;

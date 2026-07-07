@@ -411,6 +411,7 @@ function handleFiles(files) {
         }
         stateUpload.classList.add('hidden');
         stateSettings.classList.remove('hidden');
+        stateSettings.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     if (skippedCount > 0 || fileQueue.length === MAX_FILES) {
@@ -659,6 +660,7 @@ if (btnStartOver) {
         clearQueueMemory();
         stateResult.classList.add('hidden');
         stateUpload.classList.remove('hidden');
+        stateUpload.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 }
 
@@ -676,6 +678,7 @@ if (btnCompress) {
 
         stateLoading.classList.remove('hidden');
         stateSettings.classList.add('hidden');
+        stateLoading.scrollIntoView({ behavior: 'smooth', block: 'start' });
         batchProgressText.textContent = `0 / ${fileQueue.length} completed`;
         batchProgressBar.style.width = '0%';
         loadingPercent.textContent = '0%';
@@ -708,6 +711,7 @@ if (btnCompress) {
             renderBatchResults(targetKB);
             stateLoading.classList.add('hidden');
             stateResult.classList.remove('hidden');
+            stateResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
             showToast(`Successfully compressed ${successCount} image(s)!`);
         }, 100);
     });
