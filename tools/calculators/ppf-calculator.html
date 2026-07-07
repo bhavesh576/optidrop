@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPF Calculator — Free Online | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Calculate PPF (Public Provident Fund) maturity amount. Estimate returns with annual compounding. Free, instant.">
+    <meta name="keywords" content="PPF calculator, public provident fund calculator, PPF maturity calculator, PPF interest calculator, PPF returns">
+    <link rel="canonical" href="https://optidrop.online/tools/calculators/ppf-calculator.html">
+    <meta property="og:title" content="PPF Calculator — Free Online | OptiDrop">
+    <meta property="og:description" content="Calculate PPF maturity amount with annual compounding. Free, instant.">
+    <meta property="og:url" content="https://optidrop.online/tools/calculators/ppf-calculator.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PPF Calculator",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Calculate PPF maturity amount with annual compounding."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://optidrop.online/category/calculator-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "PPF Calculator", "item": "https://optidrop.online/tools/calculators/ppf-calculator.html"}
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload.</p></div></noscript>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">PPF Calculator</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Calculate your PPF (Public Provident Fund) maturity amount with annual compounding. Plan your long-term savings.</p>
+        </section>
+
+        <section class="max-w-xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-2xl shadow-xl p-6 sm:p-8">
+                <form id="ppfForm" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Yearly Deposit (₹) *</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-bold">₹</span>
+                            <input type="number" id="deposit" required min="500" max="150000" placeholder="e.g. 150000" class="dim-input pl-8">
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Min ₹500, Max ₹1,50,000 per year</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Interest Rate (% p.a.)</label>
+                            <input type="number" id="rate" min="1" max="15" step="0.1" value="7.1" class="dim-input">
+                            <p class="text-xs text-slate-400 mt-1">Govt. revises quarterly — verify current rate</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Tenure (Years)</label>
+                            <input type="number" id="tenure" min="15" max="50" value="15" class="dim-input">
+                            <p class="text-xs text-slate-400 mt-1">Default 15 years, extendable in 5-year blocks</p>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3.5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md transition-all">Calculate PPF Maturity</button>
+                </form>
+
+                <div id="result" class="hidden mt-6">
+                    <div class="p-5 bg-green-50 border border-green-200 rounded-xl text-center mb-4">
+                        <p class="text-sm font-semibold text-green-700 mb-1">Maturity Amount</p>
+                        <p class="text-4xl font-extrabold text-green-800" id="maturityAmount">₹0</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="p-4 bg-blue-50 rounded-xl text-center">
+                            <p class="text-xs font-semibold text-blue-600 mb-1">Total Deposited</p>
+                            <p class="text-lg font-extrabold text-blue-800" id="totalDeposited">₹0</p>
+                        </div>
+                        <div class="p-4 bg-purple-50 rounded-xl text-center">
+                            <p class="text-xs font-semibold text-purple-600 mb-1">Total Interest</p>
+                            <p class="text-lg font-extrabold text-purple-800" id="totalInterest">₹0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    (function() {
+        document.getElementById('ppfForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var deposit = parseFloat(document.getElementById('deposit').value);
+            var rate = parseFloat(document.getElementById('rate').value) / 100;
+            var years = parseInt(document.getElementById('tenure').value);
+
+            if (isNaN(deposit) || deposit < 500 || deposit > 150000 || isNaN(years) || years < 15) {
+                if (typeof showToast === 'function') showToast('Please enter valid values.', 'error');
+                return;
+            }
+
+            var balance = 0;
+            for (var y = 0; y < years; y++) {
+                balance = (balance + deposit) * (1 + rate);
+            }
+
+            var totalDeposited = deposit * years;
+            var totalInterest = balance - totalDeposited;
+
+            document.getElementById('maturityAmount').textContent = '₹' + Math.round(balance).toLocaleString('en-IN');
+            document.getElementById('totalDeposited').textContent = '₹' + Math.round(totalDeposited).toLocaleString('en-IN');
+            document.getElementById('totalInterest').textContent = '₹' + Math.round(totalInterest).toLocaleString('en-IN');
+
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    })();
+    </script>
+</body>
+</html>

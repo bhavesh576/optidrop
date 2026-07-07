@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance & RC Renewal Reminder — Free Online | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Generate printable renewal reminder cards for insurance policies and vehicle RC. Never miss a renewal date. Free, instant.">
+    <meta name="keywords" content="renewal reminder, insurance renewal reminder, RC renewal reminder, vehicle registration renewal, policy renewal card">
+    <link rel="canonical" href="https://optidrop.online/tools/utility/renewal-reminder-card.html">
+    <meta property="og:title" content="Insurance & RC Renewal Reminder — Free Online | OptiDrop">
+    <meta property="og:description" content="Generate printable renewal reminder cards. Free, instant.">
+    <meta property="og:url" content="https://optidrop.online/tools/utility/renewal-reminder-card.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Insurance & RC Renewal Reminder",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "Generate printable renewal reminder cards for insurance and vehicle RC."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Utility Tools", "item": "https://optidrop.online/category/utility-tools.html"},
+        {"@type": "ListItem", "position": 3, "name": "Renewal Reminder Card", "item": "https://optidrop.online/tools/utility/renewal-reminder-card.html"}
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload.</p></div></noscript>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Insurance & RC Renewal Reminder</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">Generate a printable reminder card for insurance policy renewals and vehicle RC (Registration Certificate) renewals.</p>
+        </section>
+
+        <section class="max-w-xl mx-auto px-4 pb-8">
+            <div class="glass-panel rounded-2xl shadow-xl p-6 sm:p-8">
+                <form id="reminderForm" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Policy / RC Name *</label>
+                        <input type="text" id="itemName" required placeholder="e.g. Car Insurance, Bike RC, Health Policy" class="dim-input">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Policy / RC Number</label>
+                        <input type="text" id="policyNumber" placeholder="e.g. MH-01-AB-1234" class="dim-input">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Renewal Amount (₹)</label>
+                            <input type="number" id="amount" min="0" placeholder="e.g. 5000" class="dim-input">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Renewal Date *</label>
+                            <input type="date" id="dueDate" required class="dim-input">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Additional Note</label>
+                        <textarea id="note" rows="2" placeholder="e.g. Renew at PolicyBazaar or agent" class="dim-input" style="resize:vertical;"></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3.5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-md transition-all">Generate Reminder Card</button>
+                </form>
+
+                <div id="result" class="hidden mt-6">
+                    <div id="cardContent" class="border-2 border-amber-200 rounded-xl p-6 bg-white">
+                        <div class="text-center border-b-2 border-amber-600 pb-3 mb-4">
+                            <div class="inline-flex items-center gap-2 mb-2">
+                                <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                <h2 class="text-xl font-extrabold text-amber-800">RENEWAL REMINDER</h2>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between"><span class="text-slate-500">Item:</span><span class="font-bold text-slate-800" id="rName"></span></div>
+                            <div class="flex justify-between" id="rPolicyRow"><span class="text-slate-500">Policy/RC No:</span><span class="font-bold text-slate-800" id="rPolicy"></span></div>
+                            <div class="flex justify-between" id="rAmountRow"><span class="text-slate-500">Amount:</span><span class="font-bold text-slate-800" id="rAmount"></span></div>
+                            <div class="flex justify-between bg-amber-50 p-3 rounded-lg"><span class="text-amber-700 font-semibold">Renewal Date:</span><span class="font-extrabold text-amber-800 text-lg" id="rDate"></span></div>
+                            <div class="flex justify-between" id="rNoteRow"><span class="text-slate-500">Note:</span><span class="text-slate-700" id="rNote"></span></div>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 mt-4">
+                        <button onclick="printCard()" class="flex-1 px-4 py-3 bg-amber-600 text-white font-bold rounded-xl hover:bg-amber-700 transition-all text-sm">Print</button>
+                        <button onclick="downloadPDF()" class="flex-1 px-4 py-3 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all text-sm">Download PDF</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    (function() {
+        document.getElementById('reminderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('itemName').value.trim();
+            var policy = document.getElementById('policyNumber').value.trim();
+            var amount = document.getElementById('amount').value;
+            var dueDate = document.getElementById('dueDate').value;
+            var note = document.getElementById('note').value.trim();
+
+            if (!name || !dueDate) {
+                if (typeof showToast === 'function') showToast('Please fill required fields.', 'error');
+                return;
+            }
+
+            document.getElementById('rName').textContent = name;
+            document.getElementById('rPolicy').textContent = policy || '—';
+            document.getElementById('rPolicyRow').style.display = policy ? 'flex' : 'none';
+            document.getElementById('rAmount').textContent = amount ? '₹' + Number(amount).toLocaleString('en-IN') : '—';
+            document.getElementById('rAmountRow').style.display = amount ? 'flex' : 'none';
+            document.getElementById('rDate').textContent = new Date(dueDate).toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' });
+            document.getElementById('rNote').textContent = note || '—';
+            document.getElementById('rNoteRow').style.display = note ? 'flex' : 'none';
+
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        window.printCard = function() {
+            var content = document.getElementById('cardContent').innerHTML;
+            var win = window.open('', '_blank');
+            win.document.write('<!DOCTYPE html><html><head><title>Renewal Reminder</title><style>body{font-family:Arial,sans-serif;padding:40px;max-width:600px;margin:0 auto;color:#1e293b;}h2{font-size:18px;text-align:center;border-bottom:2px solid #d97706;padding-bottom:8px;}p{margin:8px 0;font-size:14px;}</style></head><body>' + content + '</body></html>');
+            win.document.close();
+            win.print();
+        };
+
+        window.downloadPDF = function() {
+            if (typeof window.jspdf === 'undefined') {
+                var s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+                s.onload = function() { generatePDF(); };
+                document.head.appendChild(s);
+            } else {
+                generatePDF();
+            }
+        };
+
+        function generatePDF() {
+            var doc = new window.jspdf.jsPDF();
+            doc.setFontSize(16);
+            doc.setFont(undefined, 'bold');
+            doc.text('RENEWAL REMINDER', 105, 25, { align: 'center' });
+            doc.setLineWidth(0.5);
+            doc.line(20, 30, 190, 30);
+            doc.setFontSize(11);
+            doc.setFont(undefined, 'normal');
+            var y = 45;
+            doc.text('Item: ' + document.getElementById('rName').textContent, 20, y); y += 10;
+            if (document.getElementById('rPolicy').textContent !== '—') { doc.text('Policy/RC No: ' + document.getElementById('rPolicy').textContent, 20, y); y += 10; }
+            if (document.getElementById('rAmount').textContent !== '—') { doc.text('Amount: ' + document.getElementById('rAmount').textContent, 20, y); y += 10; }
+            doc.setFont(undefined, 'bold');
+            doc.text('Renewal Date: ' + document.getElementById('rDate').textContent, 20, y); y += 10;
+            doc.setFont(undefined, 'normal');
+            if (document.getElementById('rNote').textContent !== '—') { doc.text('Note: ' + document.getElementById('rNote').textContent, 20, y); }
+            doc.save('renewal-reminder.pdf');
+        }
+    })();
+    </script>
+</body>
+</html>
