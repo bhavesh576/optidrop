@@ -312,7 +312,13 @@
             members.forEach(function(name, i) {
                 var tag = document.createElement('span');
                 tag.className = 'inline-flex items-center gap-1 px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold';
-                tag.innerHTML = name + ' <button data-idx="' + i + '" class="ml-1 text-blue-500 hover:text-red-600 font-bold">&times;</button>';
+                var nameText = document.createTextNode(name + ' ');
+                tag.appendChild(nameText);
+                var btn = document.createElement('button');
+                btn.dataset.idx = i;
+                btn.className = 'ml-1 text-blue-500 hover:text-red-600 font-bold';
+                btn.textContent = '×';
+                tag.appendChild(btn);
                 list.appendChild(tag);
             });
 
@@ -338,7 +344,13 @@
             members.forEach(function(name) {
                 var label = document.createElement('label');
                 label.className = 'inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-full text-sm font-medium cursor-pointer hover:bg-slate-200';
-                label.innerHTML = '<input type="checkbox" checked class="split-cb" value="' + name + '"> ' + name;
+                var cb = document.createElement('input');
+                cb.type = 'checkbox';
+                cb.checked = true;
+                cb.className = 'split-cb';
+                cb.value = name;
+                label.appendChild(cb);
+                label.appendChild(document.createTextNode(' ' + name));
                 div.appendChild(label);
             });
         }
@@ -354,8 +366,34 @@
                 total += exp.amount;
                 var row = document.createElement('div');
                 row.className = 'flex items-center justify-between bg-slate-50 border border-slate-200 rounded-xl px-4 py-3';
-                row.innerHTML = '<div><span class="font-semibold text-slate-800">' + exp.desc + '</span> — <span class="text-slate-500">Paid by ' + exp.paidBy + '</span> — <span class="text-xs text-slate-400">' + exp.participants.join(', ') + '</span></div>'
-                    + '<div class="flex items-center gap-3"><span class="font-bold text-slate-800">' + fmt(exp.amount) + '</span><button data-idx="' + i + '" class="text-red-500 hover:text-red-700 font-bold text-lg">&times;</button></div>';
+                var leftDiv = document.createElement('div');
+                var descSpan = document.createElement('span');
+                descSpan.className = 'font-semibold text-slate-800';
+                descSpan.textContent = exp.desc;
+                leftDiv.appendChild(descSpan);
+                leftDiv.appendChild(document.createTextNode(' — '));
+                var paidSpan = document.createElement('span');
+                paidSpan.className = 'text-slate-500';
+                paidSpan.textContent = 'Paid by ' + exp.paidBy;
+                leftDiv.appendChild(paidSpan);
+                leftDiv.appendChild(document.createTextNode(' — '));
+                var partSpan = document.createElement('span');
+                partSpan.className = 'text-xs text-slate-400';
+                partSpan.textContent = exp.participants.join(', ');
+                leftDiv.appendChild(partSpan);
+                row.appendChild(leftDiv);
+                var rightDiv = document.createElement('div');
+                rightDiv.className = 'flex items-center gap-3';
+                var amountSpan = document.createElement('span');
+                amountSpan.className = 'font-bold text-slate-800';
+                amountSpan.textContent = fmt(exp.amount);
+                rightDiv.appendChild(amountSpan);
+                var delBtn = document.createElement('button');
+                delBtn.dataset.idx = i;
+                delBtn.className = 'text-red-500 hover:text-red-700 font-bold text-lg';
+                delBtn.textContent = '×';
+                rightDiv.appendChild(delBtn);
+                row.appendChild(rightDiv);
                 list.appendChild(row);
             });
             document.getElementById('totalExpenses').textContent = fmt(total);
