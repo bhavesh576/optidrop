@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your First Invoice — Free Playbook | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Learn how to create a professional invoice in 5 minutes. Step-by-step interactive guide using free OptiDrop tools. No sign-up required.">
+    <meta name="keywords" content="how to create invoice, invoice generator, free invoice maker, invoice template India, freelance invoice">
+    <link rel="canonical" href="https://optidrop.online/playbooks/create-first-invoice.html">
+    <meta property="og:title" content="Create Your First Invoice — Free Playbook | OptiDrop">
+    <meta property="og:description" content="Learn how to create a professional invoice in 5 minutes. Free, interactive guide.">
+    <meta property="og:url" content="https://optidrop.online/playbooks/create-first-invoice.html">
+
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Create Your First Invoice",
+      "description": "Learn how to create a professional invoice in 5 minutes using free online tools.",
+      "totalTime": "PT5M",
+      "tool": [{"@type": "HowToTool", "name": "OptiDrop Invoice Generator"}],
+      "step": [
+        {"@type": "HowToStep", "position": 1, "name": "Gather Your Details", "text": "Collect your business name, client info, and item list."},
+        {"@type": "HowToStep", "position": 2, "name": "Open Invoice Generator", "text": "Open the free OptiDrop Invoice Generator tool."},
+        {"@type": "HowToStep", "position": 3, "name": "Fill In Your Invoice", "text": "Enter your business details, client info, and line items."},
+        {"@type": "HowToStep", "position": 4, "name": "Download as PDF", "text": "Preview your invoice and download as a professional PDF."},
+        {"@type": "HowToStep", "position": 5, "name": "Send to Client", "text": "Email or WhatsApp the invoice to your client."}
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optidrop.online"},
+        {"@type": "ListItem", "position": 2, "name": "Playbooks", "item": "https://optidrop.online/playbooks/"},
+        {"@type": "ListItem", "position": 3, "name": "Create First Invoice", "item": "https://optidrop.online/playbooks/create-first-invoice.html"}
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+
+    <style>
+    /* Playbook-specific styles */
+    .playbook-container { max-width: 640px; margin: 0 auto; padding: 1rem; }
+
+    /* Hero */
+    .playbook-hero { text-align: center; padding: 2rem 1rem 1.5rem; }
+    .playbook-badge { display: inline-block; padding: 0.3rem 0.9rem; background: #fdf2f8; color: #e91e63; font-size: 0.8rem; font-weight: 700; border-radius: 9999px; margin-bottom: 1rem; }
+    .playbook-hero h1 { font-size: 1.6rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.3; }
+    .playbook-hero .subtitle { font-size: 0.95rem; color: #64748b; line-height: 1.5; }
+    .playbook-meta { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; font-size: 0.8rem; color: #94a3b8; flex-wrap: wrap; }
+    .playbook-meta span { display: flex; align-items: center; gap: 0.3rem; }
+
+    /* Progress Path */
+    .quest-path { position: relative; padding: 1.5rem 1rem; margin-bottom: 1rem; }
+    .path-line { position: absolute; top: 50%; left: 36px; right: 36px; height: 4px; background: #e2e8f0; border-radius: 2px; transform: translateY(-50%); }
+    .path-fill { height: 100%; background: linear-gradient(90deg, #10b981, #059669); border-radius: 2px; transition: width 0.5s ease; width: 0%; }
+    .path-nodes { display: flex; justify-content: space-between; position: relative; z-index: 1; }
+    .path-node { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; background: none; border: none; cursor: pointer; padding: 0; }
+    .node-dot { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; background: #e2e8f0; color: #94a3b8; border: 3px solid white; box-shadow: 0 0 0 2px #e2e8f0; transition: all 0.3s ease; }
+    .path-node.done .node-dot { background: #10b981; color: white; box-shadow: 0 0 0 2px #10b981; }
+    .path-node.active .node-dot { background: #e91e63; color: white; box-shadow: 0 0 0 2px #e91e63, 0 0 0 6px rgba(233,30,99,0.15); animation: pulse 2s infinite; }
+    .node-label { font-size: 0.65rem; font-weight: 600; color: #94a3b8; }
+    .path-node.active .node-label { color: #e91e63; }
+    .path-node.done .node-label { color: #10b981; }
+
+    /* Step Cards */
+    .quest-step { background: white; border: 1px solid #e2e8f0; border-radius: 16px; margin-bottom: 0.75rem; overflow: hidden; transition: all 0.3s ease; }
+    .quest-step.active { border-color: #f9a8d4; box-shadow: 0 0 0 1px #f9a8d4; }
+    .quest-step.done { opacity: 0.6; }
+    .quest-step.locked { opacity: 0.4; pointer-events: none; }
+    .step-header { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; cursor: pointer; }
+    .step-num { width: 32px; height: 32px; border-radius: 50%; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: #64748b; flex-shrink: 0; }
+    .quest-step.active .step-num { background: #e91e63; color: white; }
+    .quest-step.done .step-num { background: #10b981; color: white; }
+    .step-title { flex: 1; }
+    .step-title h2 { font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0; }
+    .step-badge { font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 9999px; }
+    .step-badge.active { background: #fdf2f8; color: #e91e63; }
+    .step-badge.done { background: #ecfdf5; color: #059669; }
+    .step-badge.locked { background: #f1f5f9; color: #94a3b8; }
+
+    /* Step Content */
+    .step-body { padding: 0 1.25rem 1.25rem; display: none; }
+    .quest-step.open .step-body { display: block; }
+    .step-body p { color: #475569; line-height: 1.7; margin-bottom: 1rem; font-size: 0.9rem; }
+
+    /* Tip Box */
+    .step-tip { display: flex; gap: 0.5rem; padding: 0.75rem; background: #f8fafc; border-radius: 12px; margin-bottom: 1.25rem; font-size: 0.8rem; color: #64748b; border-left: 3px solid #e91e63; }
+    .step-tip .tip-icon { font-size: 1rem; flex-shrink: 0; }
+
+    /* Tool Button */
+    .tool-btn { display: flex; align-items: center; gap: 0.75rem; padding: 0.9rem 1rem; background: #fdf2f8; border: 2px solid #f9a8d4; border-radius: 12px; text-decoration: none; margin-bottom: 1rem; transition: all 0.2s ease; }
+    .tool-btn:hover { background: #fce7f3; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(233,30,99,0.1); }
+    .tool-icon { font-size: 1.3rem; }
+    .tool-name { flex: 1; font-weight: 700; color: #0f172a; font-size: 0.9rem; }
+    .tool-arrow { font-size: 1rem; color: #e91e63; }
+
+    /* Action Buttons */
+    .action-btn { display: block; width: 100%; padding: 0.9rem; border: none; border-radius: 12px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; margin-bottom: 0.5rem; }
+    .action-btn.primary { background: #10b981; color: white; }
+    .action-btn.primary:hover { background: #059669; }
+    .action-btn.secondary { background: none; color: #94a3b8; font-size: 0.8rem; text-decoration: underline; }
+
+    /* Savings Counter */
+    .savings-counter { position: sticky; bottom: 0; background: white; border-top: 2px solid #10b981; padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: space-between; z-index: 50; box-shadow: 0 -4px 12px rgba(0,0,0,0.05); }
+    .savings-label { font-size: 0.8rem; color: #64748b; }
+    .savings-value { font-size: 1.1rem; font-weight: 800; color: #10b981; }
+
+    /* Completion */
+    .quest-complete { text-align: center; padding: 2rem 1rem; display: none; }
+    .quest-complete.show { display: block; }
+    .complete-card { background: white; border: 2px solid #10b981; border-radius: 16px; padding: 2rem 1.5rem; }
+    .complete-icon { font-size: 3rem; display: block; margin-bottom: 1rem; }
+    .complete-card h2 { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; }
+    .complete-card .subtitle { color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .complete-stats { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+    .stat { text-align: center; }
+    .stat-value { display: block; font-size: 1.3rem; font-weight: 800; color: #e91e63; }
+    .stat-label { font-size: 0.75rem; color: #94a3b8; }
+    .share-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: #25d366; color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; margin-bottom: 1rem; }
+    .next-link { display: inline-block; color: #e91e63; font-weight: 600; font-size: 0.9rem; }
+
+    /* Dark Mode */
+    .dark-mode .quest-step { background: #272a33; border-color: #3d4455; }
+    .dark-mode .quest-step.active { border-color: #f472b6; box-shadow: 0 0 0 1px #f472b6; }
+    .dark-mode .step-header { color: #f1f5f9; }
+    .dark-mode .step-title h2 { color: #f1f5f9; }
+    .dark-mode .step-body p { color: #cbd5e1; }
+    .dark-mode .step-tip { background: #1e293b; color: #94a3b8; border-color: #f472b6; }
+    .dark-mode .tool-btn { background: #1e293b; border-color: #3d4455; }
+    .dark-mode .tool-name { color: #f1f5f9; }
+    .dark-mode .savings-counter { background: #1c1f26; border-color: #10b981; }
+    .dark-mode .complete-card { background: #272a33; }
+    .dark-mode .complete-card h2 { color: #f1f5f9; }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+        .playbook-hero h1 { font-size: 1.35rem; }
+        .node-dot { width: 32px; height: 32px; font-size: 0.75rem; }
+        .node-label { font-size: 0.6rem; }
+        .step-header { padding: 0.75rem 1rem; }
+        .step-body { padding: 0 1rem 1rem; }
+        .complete-stats { gap: 1rem; }
+        .savings-counter { flex-wrap: wrap; gap: 0.25rem; }
+    }
+
+    @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 0 2px #e91e63, 0 0 0 6px rgba(233,30,99,0.15); }
+        50% { box-shadow: 0 0 0 2px #e91e63, 0 0 0 10px rgba(233,30,99,0.08); }
+    }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+<noscript><div style="text-align:center;padding:2rem;background:#fef3c7;border:2px solid #f59e0b;border-radius:8px;margin:2rem auto;max-width:500px;font-family:sans-serif;"><h2 style="color:#92400e;">JavaScript Required</h2><p style="color:#78350f;">Please enable JavaScript and reload.</p></div></noscript>
+
+    <header class="site-header"></header>
+
+    <main id="main-content" class="flex-grow">
+        <div class="playbook-container">
+
+            <!-- Hero -->
+            <header class="playbook-hero">
+                <span class="playbook-badge">📘 FREE PLAYBOOK</span>
+                <h1>Create Your First Invoice</h1>
+                <p class="subtitle">A step-by-step guide to send a professional invoice in 5 minutes — no design skills needed.</p>
+                <div class="playbook-meta">
+                    <span>📖 5 Steps</span>
+                    <span>⏱ 5 min</span>
+                    <span>🛠 1 Tool</span>
+                    <span>💰 ₹0 Cost</span>
+                </div>
+            </header>
+
+            <!-- Progress Path -->
+            <div class="quest-path" role="progressbar" aria-valuenow="0" aria-valuemax="5">
+                <div class="path-line">
+                    <div class="path-fill" id="pathFill"></div>
+                </div>
+                <div class="path-nodes">
+                    <button class="path-node active" data-step="1" aria-label="Step 1: Gather Details" aria-current="true">
+                        <span class="node-dot">1</span>
+                        <span class="node-label">Gather</span>
+                    </button>
+                    <button class="path-node" data-step="2" aria-label="Step 2: Open Tool">
+                        <span class="node-dot">2</span>
+                        <span class="node-label">Open</span>
+                    </button>
+                    <button class="path-node" data-step="3" aria-label="Step 3: Fill In">
+                        <span class="node-dot">3</span>
+                        <span class="node-label">Fill In</span>
+                    </button>
+                    <button class="path-node" data-step="4" aria-label="Step 4: Download">
+                        <span class="node-dot">4</span>
+                        <span class="node-label">Download</span>
+                    </button>
+                    <button class="path-node" data-step="5" aria-label="Step 5: Send">
+                        <span class="node-dot">5</span>
+                        <span class="node-label">Send</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="quest-step active open" data-step="1">
+                <div class="step-header" onclick="toggleStep(1)">
+                    <span class="step-num">1</span>
+                    <div class="step-title"><h2>Gather Your Details</h2></div>
+                    <span class="step-badge active">In Progress</span>
+                </div>
+                <div class="step-body">
+                    <p>Before you open the tool, have these ready — it'll take 2 minutes:</p>
+                    <div class="step-tip">
+                        <span class="tip-icon">💡</span>
+                        <span>Write them in your phone's Notes app so you can copy-paste easily.</span>
+                    </div>
+                    <p><strong>Your info:</strong> Business name, your name, email or phone, address (optional).</p>
+                    <p><strong>Client info:</strong> Client name, their email or address.</p>
+                    <p><strong>Items:</strong> What you sold — description, quantity, price per unit.</p>
+                    <button class="action-btn primary" onclick="completeStep(1)">I have my details ready →</button>
+                    <button class="action-btn secondary" onclick="completeStep(1)">Skip — I'll fill as I go</button>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="quest-step locked" data-step="2">
+                <div class="step-header" onclick="toggleStep(2)">
+                    <span class="step-num">2</span>
+                    <div class="step-title"><h2>Open Invoice Generator</h2></div>
+                    <span class="step-badge locked">🔒 Locked</span>
+                </div>
+                <div class="step-body">
+                    <p>Click the button below to open OptiDrop's free Invoice Generator. It runs 100% in your browser — nothing is uploaded.</p>
+                    <a href="/tools/business/invoice-generator.html" target="_blank" class="tool-btn" onclick="markToolUsed()">
+                        <span class="tool-icon">🧾</span>
+                        <span class="tool-name">Open Invoice Generator</span>
+                        <span class="tool-arrow">→</span>
+                    </a>
+                    <p style="font-size:0.8rem;color:#94a3b8;">Opens in a new tab. Come back here when done.</p>
+                    <button class="action-btn primary" onclick="completeStep(2)">I opened the tool →</button>
+                    <button class="action-btn secondary" onclick="completeStep(2)">Skip for now</button>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="quest-step locked" data-step="3">
+                <div class="step-header" onclick="toggleStep(3)">
+                    <span class="step-num">3</span>
+                    <div class="step-title"><h2>Fill In Your Invoice</h2></div>
+                    <span class="step-badge locked">🔒 Locked</span>
+                </div>
+                <div class="step-body">
+                    <p>In the Invoice Generator, fill in these fields:</p>
+                    <div class="step-tip">
+                        <span class="tip-icon">💡</span>
+                        <span>Start with your business name at the top, then add 1-2 line items. Keep it simple for your first invoice.</span>
+                    </div>
+                    <p><strong>1. Your details</strong> — Business name, contact info</p>
+                    <p><strong>2. Client details</strong> — Who you're billing</p>
+                    <p><strong>3. Line items</strong> — What you sold, quantity, price</p>
+                    <p><strong>4. Payment terms</strong> — Due date, payment method</p>
+                    <button class="action-btn primary" onclick="completeStep(3)">I filled in my invoice →</button>
+                    <button class="action-btn secondary" onclick="completeStep(3)">Skip for now</button>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="quest-step locked" data-step="4">
+                <div class="step-header" onclick="toggleStep(4)">
+                    <span class="step-num">4</span>
+                    <div class="step-title"><h2>Download as PDF</h2></div>
+                    <span class="step-badge locked">🔒 Locked</span>
+                </div>
+                <div class="step-body">
+                    <p>Preview your invoice to check everything looks correct, then click "Download PDF".</p>
+                    <div class="step-tip">
+                        <span class="tip-icon">💡</span>
+                        <span>The PDF is print-ready and looks professional. No watermarks, no sign-up needed.</span>
+                    </div>
+                    <p>Your invoice will be saved to your Downloads folder. You can also print it directly.</p>
+                    <button class="action-btn primary" onclick="completeStep(4)">I downloaded my invoice →</button>
+                    <button class="action-btn secondary" onclick="completeStep(4)">Skip for now</button>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="quest-step locked" data-step="5">
+                <div class="step-header" onclick="toggleStep(5)">
+                    <span class="step-num">5</span>
+                    <div class="step-title"><h2>Send to Your Client</h2></div>
+                    <span class="step-badge locked">🔒 Locked</span>
+                </div>
+                <div class="step-body">
+                    <p>Send your invoice to your client via:</p>
+                    <p><strong>Email</strong> — Attach the PDF to a professional email.</p>
+                    <p><strong>WhatsApp</strong> — Quick and common in India.</p>
+                    <p><strong>Print</strong> — If they need a physical copy.</p>
+                    <div class="step-tip">
+                        <span class="tip-icon">💡</span>
+                        <span>Pro tip: Add "Invoice #[number]" in the subject line. It looks professional and helps both of you track it.</span>
+                    </div>
+                    <button class="action-btn primary" onclick="completeStep(5)">I sent my invoice! 🎉</button>
+                </div>
+            </div>
+
+            <!-- Completion -->
+            <div class="quest-complete" id="questComplete">
+                <div class="complete-card">
+                    <span class="complete-icon">🎉</span>
+                    <h2>You Did It!</h2>
+                    <p class="subtitle">You just created and sent your first professional invoice — for free.</p>
+                    <div class="complete-stats">
+                        <div class="stat">
+                            <span class="stat-value">5</span>
+                            <span class="stat-label">Steps done</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">1</span>
+                            <span class="stat-label">Tool used</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">₹0</span>
+                            <span class="stat-label">Cost</span>
+                        </div>
+                    </div>
+                    <button class="share-btn" onclick="sharePlaybook()">
+                        📱 Share this playbook
+                    </button>
+                    <br>
+                    <a href="/playbooks/" class="next-link">More playbooks →</a>
+                </div>
+            </div>
+
+            <!-- Savings Counter -->
+            <div class="savings-counter" id="savingsCounter" style="display:none;">
+                <div>
+                    <span class="savings-label">Your savings so far</span>
+                    <span class="savings-value" id="savingsValue">₹0</span>
+                </div>
+                <div style="font-size:0.75rem;color:#94a3b8;">
+                    vs. paid invoice software
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Related Tools -->
+    <section class="max-w-4xl mx-auto px-4 py-8">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 text-center">Tools Used in This Playbook</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="/tools/business/invoice-generator.html" class="tool-card">
+                <div class="tool-card-icon bg-blue-100 text-blue-600">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <span class="tool-card-title">Invoice Generator</span>
+                <span class="tool-card-desc">Create professional invoices with auto-calculations.</span>
+                <span class="tool-card-tag blue">Business</span>
+            </a>
+            <a href="/tools/business/quotation-generator.html" class="tool-card">
+                <div class="tool-card-icon bg-purple-100 text-purple-600">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <span class="tool-card-title">Quotation Generator</span>
+                <span class="tool-card-desc">Send quotes before invoicing.</span>
+                <span class="tool-card-tag purple">Business</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="max-w-4xl mx-auto px-4 py-8">
+        <div class="prose max-w-none">
+            <h2>How to Create an Invoice — Free Guide</h2>
+            <p>Creating a professional invoice doesn't require expensive software or design skills. With OptiDrop's free Invoice Generator, you can create, customize, and download a print-ready invoice in under 5 minutes — entirely in your browser.</p>
+            <h3>What You Need</h3>
+            <p>Before starting, gather: your business name, client details, list of items/services with prices, and payment terms. Having these ready speeds up the process.</p>
+            <h3>Step-by-Step Process</h3>
+            <p>Follow the interactive playbook above. Each step guides you through the process with clear instructions and direct links to the tool. No technical knowledge required.</p>
+            <h3>Why OptiDrop?</h3>
+            <p>Unlike paid invoice software, OptiDrop is 100% free with no watermarks, no sign-up, and no file uploads. Your data stays on your device. Perfect for freelancers, small businesses, and anyone who needs a quick, professional invoice.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-3xl mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Frequently Asked Questions</h2>
+        <div class="space-y-3">
+            <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                    Is the invoice generator really free?
+                    <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                    Yes, 100% free. No hidden fees, no watermarks, no sign-up required. You can create unlimited invoices.
+                </div>
+            </div>
+            <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left px-5 py-4 font-bold text-slate-800 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
+                    Can I use this for GST invoices in India?
+                    <svg class="w-5 h-5 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer px-5 py-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                    Yes. The invoice generator includes fields for GST number, tax rates, and HSN codes. It's suitable for Indian GST-compliant invoices.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    (function() {
+        var state = {
+            currentStep: 1,
+            totalSteps: 5,
+            completed: new Set(),
+            toolUsed: false,
+            savings: 0
+        };
+
+        // Load saved progress
+        try {
+            var saved = localStorage.getItem('optidrop_playbook_invoice');
+            if (saved) {
+                var data = JSON.parse(saved);
+                state.completed = new Set(data.completed || []);
+                state.currentStep = data.currentStep || 1;
+                state.toolUsed = data.toolUsed || false;
+                state.savings = data.savings || 0;
+                // Restore UI
+                state.completed.forEach(function(s) { markDone(s); });
+                goToStep(state.currentStep);
+            }
+        } catch(e) {}
+
+        window.toggleStep = function(step) {
+            var el = document.querySelector('.quest-step[data-step="' + step + '"]');
+            if (el) el.classList.toggle('open');
+        };
+
+        window.completeStep = function(step) {
+            state.completed.add(step);
+            state.savings += 50; // ₹50 saved per step (vs paid software)
+            markDone(step);
+            save();
+
+            // Auto-open next step
+            if (step < state.totalSteps) {
+                goToStep(step + 1);
+            } else {
+                showCompletion();
+            }
+        };
+
+        function markDone(step) {
+            var el = document.querySelector('.quest-step[data-step="' + step + '"]');
+            if (el) {
+                el.classList.remove('active', 'locked');
+                el.classList.add('done');
+                el.querySelector('.step-badge').className = 'step-badge done';
+                el.querySelector('.step-badge').textContent = '✓ Done';
+            }
+            var node = document.querySelector('.path-node[data-step="' + step + '"]');
+            if (node) {
+                node.classList.remove('active');
+                node.classList.add('done');
+                node.querySelector('.node-dot').textContent = '✓';
+            }
+            updatePath();
+        }
+
+        function goToStep(step) {
+            state.currentStep = step;
+            // Hide all steps
+            document.querySelectorAll('.quest-step').forEach(function(s) {
+                s.classList.remove('active', 'open');
+                if (!s.classList.contains('done')) s.classList.add('locked');
+            });
+            // Show target
+            var target = document.querySelector('.quest-step[data-step="' + step + '"]');
+            if (target) {
+                target.classList.remove('locked');
+                target.classList.add('active', 'open');
+                setTimeout(function() {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+            // Update path nodes
+            document.querySelectorAll('.path-node').forEach(function(n) {
+                n.classList.remove('active');
+                n.removeAttribute('aria-current');
+            });
+            var activeNode = document.querySelector('.path-node[data-step="' + step + '"]');
+            if (activeNode) {
+                activeNode.classList.add('active');
+                activeNode.setAttribute('aria-current', 'true');
+            }
+            updatePath();
+            updateSavings();
+            save();
+        }
+
+        function updatePath() {
+            var percent = (state.completed.size / state.totalSteps) * 100;
+            var fill = document.getElementById('pathFill');
+            if (fill) fill.style.width = percent + '%';
+            var path = document.querySelector('.quest-path');
+            if (path) path.setAttribute('aria-valuenow', state.completed.size);
+        }
+
+        function updateSavings() {
+            var counter = document.getElementById('savingsCounter');
+            var value = document.getElementById('savingsValue');
+            if (state.savings > 0) {
+                counter.style.display = 'flex';
+                value.textContent = '₹' + state.savings;
+            }
+        }
+
+        function showCompletion() {
+            document.querySelector('.quest-path').style.display = 'none';
+            document.querySelectorAll('.quest-step').forEach(function(s) { s.style.display = 'none'; });
+            document.getElementById('questComplete').classList.add('show');
+            document.getElementById('questComplete').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('savingsCounter').style.display = 'none';
+        }
+
+        function save() {
+            localStorage.setItem('optidrop_playbook_invoice', JSON.stringify({
+                completed: Array.from(state.completed),
+                currentStep: state.currentStep,
+                toolUsed: state.toolUsed,
+                savings: state.savings
+            }));
+        }
+
+        window.markToolUsed = function() {
+            state.toolUsed = true;
+            save();
+        };
+
+        window.sharePlaybook = function() {
+            var text = 'I just learned how to create a professional invoice in 5 minutes using OptiDrop — 100% free, no sign-up! Try it: https://optidrop.online/playbooks/create-first-invoice.html';
+            if (navigator.share) {
+                navigator.share({ title: 'Create Your First Invoice', text: text, url: 'https://optidrop.online/playbooks/create-first-invoice.html' });
+            } else {
+                navigator.clipboard.writeText(text).then(function() {
+                    if (typeof showToast === 'function') showToast('Link copied!', 'success');
+                });
+            }
+        };
+    })();
+    </script>
+</body>
+</html>
