@@ -478,6 +478,7 @@
         var currentSize = 400;
         var currentPngData = null;
         var currentSvgString = null;
+        var currentQr = null;
 
         var placeholders = {
             url: 'https://example.com',
@@ -566,20 +567,23 @@
                 qr.addData(data);
                 qr.make();
 
-                // PNG
-                currentPngData = qr.createDataURL(currentSize, 0);
-                // SVG
+                // SVG for display (fast, vector-based)
                 currentSvgString = qr.createSvgTag(currentSize, 0);
+                // PNG generated lazily on download (not on display)
+                currentPngData = null;
+                currentQr = qr;
 
-                // Display
+                // Display SVG directly (much faster than PNG data URL)
                 qrCodeDisplay.innerHTML = '';
-                var img = document.createElement('img');
-                img.src = currentPngData;
-                img.alt = 'QR Code';
-                img.style.width = '100%';
-                img.style.maxWidth = currentSize + 'px';
-                img.style.height = 'auto';
-                qrCodeDisplay.appendChild(img);
+                var wrapper = document.createElement('div');
+                wrapper.innerHTML = currentSvgString;
+                var svgEl = wrapper.querySelector('svg');
+                if (svgEl) {
+                    svgEl.style.width = '100%';
+                    svgEl.style.maxWidth = currentSize + 'px';
+                    svgEl.style.height = 'auto';
+                    qrCodeDisplay.appendChild(svgEl);
+                }
 
                 qrPlaceholder.classList.add('hidden');
                 qrResult.classList.remove('hidden');
@@ -602,9 +606,13 @@
             }
         });
 
-        // Download PNG
+        // Download PNG (generate lazily for performance)
         btnDownloadPNG.addEventListener('click', function() {
-            if (!currentPngData) return;
+            if (!currentQr) return;
+            // Generate PNG only when downloading (not on display)
+            if (!currentPngData) {
+                currentPngData = currentQr.createDataURL(currentSize, 0);
+            }
             var a = document.createElement('a');
             a.href = currentPngData;
             a.download = 'qr-code.png';
