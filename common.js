@@ -187,13 +187,10 @@ window.OptiTrack = {
                         '<div class="mega-menu-footer"><a href="/tools.html">Browse All Tools →</a></div>' +
                     '</div>' +
                 '</div>' +
-                '<a href="/blog/" class="hide-mobile">Blog</a>' +
                 '<a href="/playbooks/" class="hide-mobile">Playbooks</a>' +
                 '<a href="/review.html" class="hide-mobile">Reviews</a>' +
                 '<a href="/about.html" class="hide-mobile">About</a>' +
-                '<a href="/contact.html" class="nav-feedback-btn hide-mobile"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>Feedback</a>' +
-                '<span class="privacy-badge"><span class="dot"></span> <span>100% Private</span></span>' +
-                '<span class="kbd-hint hide-mobile" onclick="document.dispatchEvent(new KeyboardEvent(\'keydown\',{key:\'k\',ctrlKey:true}))"><kbd>/</kbd> Tools</span>' +
+                '<span class="privacy-badge hide-mobile"><span class="dot"></span> <span>100% Private</span></span>' +
                 '<div class="user-hub hide-mobile">' +
                     '<button class="user-hub-trigger" aria-label="User menu" title="Your tools">' +
                         '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>' +
