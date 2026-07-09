@@ -303,13 +303,13 @@ window.OptiTrack = {
                 mobileNav.classList.toggle('open');
             });
         }
-        // Initialize mobile accordion
-        var accordionTrigger = document.querySelector('.mobile-accordion-trigger');
-        if (accordionTrigger) {
-            accordionTrigger.addEventListener('click', function () {
+        // Initialize all mobile accordions (Categories, Learn, etc.)
+        var accordionTriggers = document.querySelectorAll('.mobile-accordion-trigger');
+        accordionTriggers.forEach(function(trigger) {
+            trigger.addEventListener('click', function () {
                 this.parentElement.classList.toggle('open');
             });
-        }
+        });
 
         // Initialize User Hub dropdown
         var userHub = document.querySelector('.user-hub');
