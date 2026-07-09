@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest in Stock Market — First ₹10K | Premium Playbook | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Premium playbook to start investing in the stock market with your first ₹10,000. Professional strategies for beginners — from opening a demat account to building a portfolio.">
+    <meta name="keywords" content="stock market investing, invest first 10000, demat account, portfolio building, beginner investor, SIP, mutual funds, stocks">
+    <link rel="canonical" href="https://optidrop.online/playbooks/stock-market-first-10k.html">
+    <meta property="og:title" content="Invest in Stock Market — First ₹10K | OptiDrop">
+    <meta property="og:description" content="Premium playbook to start investing in the stock market with your first ₹10,000.">
+    <meta property="og:url" content="https://optidrop.online/playbooks/stock-market-first-10k.html">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"HowTo","name":"Invest in Stock Market — First ₹10K","description":"A professional playbook to start investing in the stock market with your first ₹10,000.","totalTime":"PT15M","step":[
+        {"@type":"HowToStep","position":1,"name":"Foundation","text":"Understand how the stock market works and key terminology."},
+        {"@type":"HowToStep","position":2,"name":"Setup","text":"Open a demat account and trading account."},
+        {"@type":"HowToStep","position":3,"name":"First Investment","text":"Make your first investment with ₹10,000."},
+        {"@type":"HowToStep","position":4,"name":"Portfolio","text":"Build a diversified portfolio strategy."},
+        {"@type":"HowToStep","position":5,"name":"Growth","text":"Scale your investments over time."}
+    ]}
+    </script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    /* Stock Market Dashboard Styles */
+    .sm-container{max-width:960px;margin:0 auto;padding:1rem 1.25rem}
+    .sm-hero{text-align:center;padding:2rem 1rem 1rem}
+    .sm-badge{display:inline-block;padding:0.3rem 0.9rem;background:linear-gradient(135deg,#0f172a,#1e293b);color:#10b981;font-size:0.7rem;font-weight:700;border-radius:9999px;margin-bottom:0.8rem;letter-spacing:0.05em;text-transform:uppercase}
+    .sm-hero h1{font-size:1.6rem;font-weight:800;color:#0f172a;margin-bottom:0.4rem;line-height:1.2}
+    .sm-hero h1 .accent{background:linear-gradient(135deg,#10b981,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .sm-hero .sub{font-size:0.9rem;color:#64748b;line-height:1.5;max-width:480px;margin:0 auto}
+
+    /* Quick Stats Bar */
+    .sm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;max-width:640px;margin:1.25rem auto;padding:0 0.5rem}
+    .sm-stat{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.7rem 0.4rem;text-align:center}
+    .sm-stat .icon{font-size:1rem;margin-bottom:0.2rem}
+    .sm-stat .val{font-size:1.1rem;font-weight:800;color:#0f172a}
+    .sm-stat .lbl{font-size:0.6rem;color:#94a3b8;margin-top:0.1rem;font-weight:500}
+
+    /* Tab Navigation */
+    .sm-tabs{display:flex;gap:0.25rem;max-width:640px;margin:0 auto 1rem;padding:0 0.5rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .sm-tabs::-webkit-scrollbar{display:none}
+    .sm-tab{flex:1;min-width:0;padding:0.6rem 0.4rem;border:1px solid #e2e8f0;border-radius:10px;background:#fff;text-align:center;cursor:pointer;transition:all 0.2s;font-size:0.72rem;font-weight:600;color:#64748b;-webkit-tap-highlight-color:transparent;white-space:nowrap}
+    .sm-tab.active{background:#0f172a;border-color:#0f172a;color:#fff}
+    .sm-tab:hover:not(.active){border-color:#cbd5e1;background:#f8fafc}
+
+    /* Tab Content */
+    .sm-panel{display:none;max-width:640px;margin:0 auto}
+    .sm-panel.active{display:block}
+
+    /* Section Card */
+    .sm-section{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:0.6rem}
+    .sm-section-head{display:flex;align-items:center;gap:0.6rem;padding:0.85rem 1rem;cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .sm-section-head .icon{font-size:1.1rem}
+    .sm-section-head .title{flex:1;font-size:0.9rem;font-weight:700;color:#0f172a}
+    .sm-section-head .badge{font-size:0.6rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:9999px;background:#f1f5f9;color:#64748b}
+    .sm-section-head .badge.essential{background:#ecfdf5;color:#059669}
+    .sm-section-head .badge.advanced{background:#fdf2f8;color:#e91e63}
+    .sm-section-chevron{font-size:0.85rem;color:#94a3b8;transition:transform 0.3s}
+    .sm-section.open .sm-section-chevron{transform:rotate(180deg)}
+    .sm-section-body{padding:0 1rem 1rem;display:none;font-size:0.85rem;color:#475569;line-height:1.65}
+    .sm-section.open .sm-section-body{display:block}
+    .sm-section-body p{margin-bottom:0.7rem}
+    .sm-section-body strong{color:#0f172a}
+    .sm-section-body ul{margin:0 0 0.7rem 1.2rem;padding:0}
+    .sm-section-body li{margin-bottom:0.3rem}
+
+    /* Key Concept Box */
+    .sm-concept{display:flex;gap:0.6rem;padding:0.7rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;margin-bottom:0.7rem;font-size:0.8rem;color:#166534}
+    .sm-concept.warn{background:#fffbeb;border-color:#fde68a;color:#92400e}
+    .sm-concept .icon{font-size:0.95rem;flex-shrink:0}
+
+    /* Quick Action */
+    .sm-action{display:flex;align-items:center;gap:0.6rem;padding:0.7rem 0.8rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:0.6rem;font-size:0.82rem}
+    .sm-action .num{width:24px;height:24px;border-radius:50%;background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;flex-shrink:0}
+    .sm-action .text{flex:1;color:#334155}
+    .sm-action .text strong{color:#0f172a}
+
+    /* Checklist */
+    .sm-check{display:flex;align-items:flex-start;gap:0.55rem;padding:0.45rem 0;border-bottom:1px solid #f1f5f9;cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .sm-check:last-child{border-bottom:none}
+    .sm-check-box{width:20px;height:20px;border-radius:5px;border:2px solid #cbd5e1;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.2s;margin-top:0.1rem}
+    .sm-check.done .sm-check-box{background:#10b981;border-color:#10b981}
+    .sm-check-box svg{width:11px;height:11px;opacity:0}
+    .sm-check.done .sm-check-box svg{opacity:1}
+    .sm-check-text{font-size:0.82rem;color:#334155}
+    .sm-check.done .sm-check-text{color:#94a3b8;text-decoration:line-through}
+
+    /* Progress Ring */
+    .sm-ring-wrap{display:flex;align-items:center;gap:1rem;padding:0.75rem 1rem;background:#fff;border:1px solid #e2e8f0;border-radius:12px;margin-bottom:0.75rem}
+    .sm-ring{width:52px;height:52px;flex-shrink:0}
+    .sm-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+    .sm-ring-bg{fill:none;stroke:#f1f5f9;stroke-width:5}
+    .sm-ring-fill{fill:none;stroke:#10b981;stroke-width:5;stroke-linecap:round;transition:stroke-dashoffset 0.5s}
+    .sm-ring-text{flex:1}
+    .sm-ring-text .title{font-size:0.85rem;font-weight:700;color:#0f172a}
+    .sm-ring-text .desc{font-size:0.72rem;color:#94a3b8;margin-top:0.1rem}
+
+    /* Completion */
+    .sm-complete{text-align:center;padding:2.5rem 1rem;display:none}
+    .sm-complete.show{display:block}
+    .done-card{background:#fff;border:2px solid #10b981;border-radius:18px;padding:2.5rem 2rem}
+    .done-icon{font-size:3rem;display:block;margin-bottom:1rem}
+    .done-card h2{font-size:1.4rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem}
+    .done-card .sub{color:#64748b;font-size:0.9rem;margin-bottom:1.5rem;line-height:1.6}
+    .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.8rem 1.5rem;background:#25d366;color:#fff;border:none;border-radius:12px;font-weight:700;cursor:pointer;margin-bottom:1rem;font-size:0.9rem}
+    .next-link{display:inline-block;color:#e91e63;font-weight:600;font-size:0.9rem}
+
+    /* Dark Mode */
+    .dark-mode .sm-hero h1{color:#f1f5f9}
+    .dark-mode .sm-hero h1 .accent{background:linear-gradient(135deg,#34d399,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .dark-mode .sm-hero .sub{color:#94a3b8}
+    .dark-mode .sm-stat{background:#272a33;border-color:#3d4455}
+    .dark-mode .sm-stat .val{color:#f1f5f9}
+    .dark-mode .sm-stat .lbl{color:#94a3b8}
+    .dark-mode .sm-tab{background:#272a33;border-color:#3d4455;color:#94a3b8}
+    .dark-mode .sm-tab.active{background:#10b981;border-color:#10b981;color:#fff}
+    .dark-mode .sm-tab:hover:not(.active){border-color:#475569;background:#1e293b}
+    .dark-mode .sm-section{background:#272a33;border-color:#3d4455}
+    .dark-mode .sm-section-head .title{color:#f1f5f9}
+    .dark-mode .sm-section-head .badge{background:#3d4455;color:#94a3b8}
+    .dark-mode .sm-section-head .badge.essential{background:#064e3b;color:#34d399}
+    .dark-mode .sm-section-head .badge.advanced{background:#3b0f2a;color:#f472b6}
+    .dark-mode .sm-section-chevron{color:#64748b}
+    .dark-mode .sm-section-body{color:#e2e8f0}
+    .dark-mode .sm-section-body strong{color:#f1f5f9}
+    .dark-mode .sm-concept{background:#064e3b;border-color:#065f46;color:#6ee7b7}
+    .dark-mode .sm-concept.warn{background:#1c1917;border-color:#92400e;color:#fbbf24}
+    .dark-mode .sm-action{background:#1e293b;border-color:#3d4455}
+    .dark-mode .sm-action .num{background:#10b981;color:#fff}
+    .dark-mode .sm-action .text{color:#e2e8f0}
+    .dark-mode .sm-action .text strong{color:#f1f5f9}
+    .dark-mode .sm-check{border-color:#3d4455}
+    .dark-mode .sm-check-box{border-color:#64748b}
+    .dark-mode .sm-check.done .sm-check-box{background:#10b981;border-color:#10b981}
+    .dark-mode .sm-check-text{color:#e2e8f0}
+    .dark-mode .sm-check.done .sm-check-text{color:#64748b}
+    .dark-mode .sm-ring-wrap{background:#272a33;border-color:#3d4455}
+    .dark-mode .sm-ring-bg{stroke:#3d4455}
+    .dark-mode .sm-ring-text .title{color:#f1f5f9}
+    .dark-mode .sm-ring-text .desc{color:#94a3b8}
+    .dark-mode .done-card{background:#272a33;border-color:#10b981}
+    .dark-mode .done-card h2{color:#f1f5f9}
+    .dark-mode .done-card .sub{color:#94a3b8}
+
+    /* Responsive */
+    @media(min-width:900px){
+        .sm-container{padding:1.5rem 2rem;max-width:1000px}
+        .sm-hero{padding:2.5rem 1rem 1.5rem}
+        .sm-hero h1{font-size:1.9rem}
+        .sm-hero .sub{font-size:0.95rem}
+        .sm-stats{max-width:700px}
+        .sm-stat{padding:0.85rem 0.5rem}
+        .sm-stat .val{font-size:1.25rem}
+        .sm-tabs{max-width:700px}
+        .sm-panel{max-width:700px}
+        .sm-section-body{font-size:0.88rem}
+    }
+    @media(min-width:1200px){
+        .sm-container{max-width:1100px}
+        .sm-hero h1{font-size:2.1rem}
+        .sm-stats{max-width:800px;gap:0.75rem}
+        .sm-stat{padding:1rem 0.5rem;border-radius:12px}
+        .sm-stat .val{font-size:1.4rem}
+        .sm-stat .lbl{font-size:0.65rem}
+        .sm-tabs{max-width:800px}
+        .sm-panel{max-width:800px}
+        .sm-section{border-radius:16px}
+        .sm-section-body{font-size:0.9rem;line-height:1.7}
+    }
+    @media(max-width:640px){
+        .sm-container{padding:0.75rem 0.85rem}
+        .sm-hero{padding:1.5rem 0.5rem 0.75rem}
+        .sm-hero h1{font-size:1.3rem}
+        .sm-hero .sub{font-size:0.82rem}
+        .sm-stats{grid-template-columns:repeat(2,1fr);gap:0.4rem;padding:0 0.25rem}
+        .sm-stat{padding:0.6rem 0.3rem;border-radius:8px}
+        .sm-stat .val{font-size:1rem}
+        .sm-stat .lbl{font-size:0.58rem}
+        .sm-tabs{gap:0.2rem;padding:0 0.25rem}
+        .sm-tab{padding:0.5rem 0.3rem;font-size:0.68rem;border-radius:8px}
+        .sm-section{border-radius:10px}
+        .sm-section-head{padding:0.7rem 0.8rem;gap:0.5rem}
+        .sm-section-head .icon{font-size:1rem}
+        .sm-section-head .title{font-size:0.82rem}
+        .sm-section-body{padding:0 0.8rem 0.85rem;font-size:0.8rem}
+        .sm-concept{padding:0.55rem;font-size:0.75rem;border-radius:8px}
+        .sm-action{padding:0.55rem 0.7rem;font-size:0.78rem;border-radius:8px}
+        .sm-check{gap:0.45rem}
+        .sm-check-box{width:18px;height:18px;border-radius:4px}
+        .sm-check-box svg{width:10px;height:10px}
+        .sm-check-text{font-size:0.78rem}
+        .sm-ring-wrap{padding:0.6rem 0.8rem;border-radius:10px}
+        .sm-ring{width:44px;height:44px}
+        .sm-ring-text .title{font-size:0.8rem}
+        .sm-ring-text .desc{font-size:0.68rem}
+        .done-card{padding:1.5rem 1.25rem;border-radius:14px}
+        .done-icon{font-size:2.5rem}
+        .done-card h2{font-size:1.2rem}
+        .done-card .sub{font-size:0.82rem}
+        .share-btn{padding:0.65rem 1.2rem;font-size:0.82rem;border-radius:10px}
+    }
+    @media(max-width:380px){
+        .sm-hero h1{font-size:1.15rem}
+        .sm-stat .val{font-size:0.9rem}
+        .sm-tab{font-size:0.62rem;padding:0.45rem 0.25rem}
+    }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <div class="sm-container">
+            <!-- Hero -->
+            <header class="sm-hero">
+                <span class="sm-badge">🎓 Premium Playbook</span>
+                <h1>Invest in Stock Market<br><span class="accent">First ₹10,000</span></h1>
+                <p class="sub">No fluff. No theory. Just what you need to open an account, pick investments, and grow your money. Read time: 15 minutes.</p>
+            </header>
+
+            <!-- Quick Stats -->
+            <div class="sm-stats">
+                <div class="sm-stat"><div class="icon">💰</div><div class="val">₹10K</div><div class="lbl">Min. Start</div></div>
+                <div class="sm-stat"><div class="icon">📈</div><div class="val">12-15%</div><div class="lbl">Avg. Returns</div></div>
+                <div class="sm-stat"><div class="icon">⏰</div><div class="val">5+ Yrs</div><div class="lbl">Ideal Horizon</div></div>
+                <div class="sm-stat"><div class="icon">🎯</div><div class="val">5</div><div class="lbl">Steps</div></div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="sm-tabs">
+                <div class="sm-tab active" onclick="switchTab('basics')">Basics</div>
+                <div class="sm-tab" onclick="switchTab('setup')">Setup</div>
+                <div class="sm-tab" onclick="switchTab('invest')">Invest</div>
+                <div class="sm-tab" onclick="switchTab('portfolio')">Portfolio</div>
+                <div class="sm-tab" onclick="switchTab('grow')">Grow</div>
+            </div>
+
+            <!-- Tab: Basics -->
+            <div class="sm-panel active" id="panel-basics">
+                <div class="sm-section open" data-section="b1">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">📊</span>
+                        <span class="title">How the Stock Market Works</span>
+                        <span class="badge essential">Essential</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <p><strong>Stocks</strong> are ownership shares in a company. When you buy a stock, you own a tiny piece of that company. If the company does well, your share becomes more valuable.</p>
+                        <p><strong>How prices move:</strong> Stock prices change based on supply and demand. More buyers = price goes up. More sellers = price goes down. This happens every second the market is open.</p>
+                        <div class="sm-concept"><span class="icon">💡</span><span><strong>Key insight:</strong> You don't need to time the market. Time IN the market beats timing the market. Consistent investing over years beats trying to predict daily moves.</span></div>
+                        <p><strong>Market hours:</strong> Indian markets open 9:15 AM - 3:30 PM (Mon-Fri). US markets open 7:00 PM - 1:30 AM IST. You can place orders outside hours too.</p>
+                    </div>
+                </div>
+
+                <div class="sm-section" data-section="b2">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">📖</span>
+                        <span class="title">Key Terms You Must Know</span>
+                        <span class="badge essential">Essential</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <ul>
+                            <li><strong>Demat Account:</strong> Where your stocks are stored digitally (like a bank account for stocks)</li>
+                            <li><strong>Trading Account:</strong> Where you buy and sell stocks</li>
+                            <li><strong>Broker:</strong> The platform that connects you to the stock exchange (Zerodha, Groww, etc.)</li>
+                            <li><strong>SIP:</strong> Systematic Investment Plan — invest a fixed amount monthly automatically</li>
+                            <li><strong>Mutual Fund:</strong> A pool of money managed by a professional, investing in many stocks</li>
+                            <li><strong>Index Fund:</strong> A mutual fund that tracks a market index (like Nifty 50 or S&P 500)</li>
+                            <li><strong>Dividend:</strong> A portion of company profits paid to shareholders</li>
+                            <li><strong>Portfolio:</strong> Your collection of all investments</li>
+                            <li><strong>Bull Market:</strong> Prices going up over time</li>
+                            <li><strong>Bear Market:</strong> Prices going down over time</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sm-section" data-section="b3">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">⚠️</span>
+                        <span class="title">What Nobody Tells Beginners</span>
+                        <span class="badge advanced">Important</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <div class="sm-concept warn"><span class="icon">⚡</span><span><strong>Reality check:</strong> 90% of day traders lose money. Don't try to get rich quick. The boring strategy (buy and hold) is what actually works.</span></div>
+                        <ul>
+                            <li><strong>You will lose money sometimes.</strong> Even the best investors have losing months. It's normal.</li>
+                            <li><strong>Don't invest money you need in the next 1-2 years.</strong> Only invest what you can leave alone for 5+ years.</li>
+                            <li><strong>Don't check your portfolio daily.</strong> It'll make you emotional. Check monthly at most.</li>
+                            <li><strong>Ignore "hot tips."</strong> If someone tells you about a stock that's "guaranteed to go up," run.</li>
+                            <li><strong>Start small.</strong> ₹10,000 is enough to learn. You can always add more later.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sm-check" onclick="toggleCheck(this)" data-id="basics"><div class="sm-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div class="sm-check-text">I understand how the market works and key terms</div></div>
+            </div>
+
+            <!-- Tab: Setup -->
+            <div class="sm-panel" id="panel-setup">
+                <div class="sm-section open" data-section="s1">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">🏦</span>
+                        <span class="title">Open Your Accounts (15 min)</span>
+                        <span class="badge essential">Essential</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <p>You need two accounts to start investing. Most brokers open both together in 15 minutes.</p>
+                        <div class="sm-action"><span class="num">1</span><div class="text"><strong>Choose a broker</strong> — Zerodha, Groww, Upstox, or Angel One (India). Fidelity, Schwab, or Robinhood (US).</div></div>
+                        <div class="sm-action"><span class="num">2</span><div class="text"><strong>Keep documents ready</strong> — PAN card, Aadhaar, bank statement, passport photo. US: SSN, ID, bank details.</div></div>
+                        <div class="sm-action"><span class="num">3</span><div class="text"><strong>Complete KYC</strong> — Video verification (2 min). Most brokers do this online.</div></div>
+                        <div class="sm-action"><span class="num">4</span><div class="text"><strong>Add funds</strong> — Transfer ₹10,000 from your bank to your trading account.</div></div>
+                        <div class="sm-concept"><span class="icon">💡</span><span><strong>Broker comparison:</strong> Zerodha (₹20/order, best tools), Groww (free equity delivery, simple UI), Upstox (₹20/order, good app). All are safe and regulated by SEBI.</span></div>
+                    </div>
+                </div>
+
+                <div class="sm-section" data-section="s2">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">🛡️</span>
+                        <span class="title">Choose the Right Broker</span>
+                        <span class="badge essential">Essential</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <p><strong>What to look for:</strong></p>
+                        <ul>
+                            <li><strong>Regulation:</strong> SEBI registered (India), SEC/FINRA (US), FCA (UK)</li>
+                            <li><strong>Brokerage fees:</strong> ₹0-20 per order for equity delivery</li>
+                            <li><strong>App quality:</strong> Clean, fast, easy to use</li>
+                            <li><strong>Research tools:</strong> Charts, screeners, company data</li>
+                            <li><strong>Customer support:</strong> Phone, chat, email support</li>
+                        </ul>
+                        <div class="sm-concept warn"><span class="icon">⚠️</span><span><strong>Warning:</strong> Avoid unregulated brokers or apps that promise guaranteed returns. If it sounds too good to be true, it is.</span></div>
+                    </div>
+                </div>
+
+                <div class="sm-check" onclick="toggleCheck(this)" data-id="setup"><div class="sm-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div class="sm-check-text">I've opened my demat + trading account and added funds</div></div>
+            </div>
+
+            <!-- Tab: Invest -->
+            <div class="sm-panel" id="panel-invest">
+                <div class="sm-section open" data-section="i1">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">🎯</span>
+                        <span class="title">Your First ₹10,000 — Where to Put It</span>
+                        <span class="badge essential">Essential</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <p>Here's exactly how to split your first ₹10,000:</p>
+                        <div class="sm-action"><span class="num">1</span><div class="text"><strong>₹7,000 → Index Fund (Nifty 50 or S&P 500)</strong> — This is your foundation. Low cost, diversified, proven returns.</div></div>
+                        <div class="sm-action"><span class="num">2</span><div class="text"><strong>₹2,000 → Blue-chip stock</strong> — Pick one company you understand (Reliance, TCS, Apple, Microsoft).</div></div>
+                        <div class="sm-action"><span class="num">3</span><div class="text"><strong>₹1,000 → Learning budget</strong> — Buy a book or course. This ₹1,000 will make you lakhs over your lifetime.</div></div>
+                        <div class="sm-concept"><span class="icon">💡</span><span><strong>Why index funds?</strong> Over 15 years, 90% of actively managed funds underperform index funds. The simplest strategy is often the best.</span></div>
+                    </div>
+                </div>
+
+                <div class="sm-section" data-section="i2">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">📊</span>
+                        <span class="title">Index Funds vs Individual Stocks</span>
+                        <span class="badge essential">Essential</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <p><strong>Index Funds (Recommended for beginners):</strong></p>
+                        <ul>
+                            <li>Instant diversification (you own 50-500 companies)</li>
+                            <li>Very low fees (0.05-0.2% expense ratio)</li>
+                            <li>No research needed — just buy and hold</li>
+                            <li>Average 12-15% annual returns over 10+ years</li>
+                        </ul>
+                        <p><strong>Individual Stocks (For when you're ready):</strong></p>
+                        <ul>
+                            <li>Higher potential returns (and higher risk)</li>
+                            <li>Requires research and understanding of the business</li>
+                            <li>Start with companies you know and use daily</li>
+                            <li>Never put more than 5-10% in a single stock</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sm-section" data-section="i3">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">🔄</span>
+                        <span class="title">Set Up SIP (Auto-Invest)</span>
+                        <span class="badge essential">Essential</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <p><strong>SIP is the #1 wealth-building tool.</strong> It automatically invests a fixed amount every month — no willpower needed.</p>
+                        <div class="sm-action"><span class="num">1</span><div class="text">Go to your broker app → Find Nifty 50 Index Fund → Click "Start SIP"</div></div>
+                        <div class="sm-action"><span class="num">2</span><div class="text">Set amount: ₹1,000-5,000/month (whatever you can afford)</div></div>
+                        <div class="sm-action"><span class="num">3</span><div class="text">Set date: 1st or 5th of every month (right after salary)</div></div>
+                        <div class="sm-action"><span class="num">4</span><div class="text">Done. Forget about it. Check once a year.</div></div>
+                        <div class="sm-concept"><span class="icon">📈</span><span><strong>Example:</strong> ₹5,000/month SIP in Nifty 50 for 10 years at 12% returns = ₹11.6 lakhs (you invested only ₹6 lakhs). That's the power of compounding.</span></div>
+                    </div>
+                </div>
+
+                <div class="sm-check" onclick="toggleCheck(this)" data-id="invest"><div class="sm-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div class="sm-check-text">I've made my first investment and set up a SIP</div></div>
+            </div>
+
+            <!-- Tab: Portfolio -->
+            <div class="sm-panel" id="panel-portfolio">
+                <div class="sm-section open" data-section="p1">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">🏗️</span>
+                        <span class="title">The Simple Portfolio (80/20)</span>
+                        <span class="badge essential">Essential</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <p>For beginners, this is all you need:</p>
+                        <div class="sm-action"><span class="num">80</span><div class="text"><strong>80% in Index Funds</strong> — Nifty 50 (India) or S&P 500 (US). This is your core.</div></div>
+                        <div class="sm-action"><span class="num">20</span><div class="text"><strong>20% in Bonds/Gold</strong> — Stability for when markets fall. Government bonds or gold ETFs.</div></div>
+                        <div class="sm-concept"><span class="icon">💡</span><span><strong>Why this works:</strong> When stocks fall 30%, bonds usually go up. This smooths your returns and lets you sleep at night. Simple beats complex.</span></div>
+                    </div>
+                </div>
+
+                <div class="sm-section" data-section="p2">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">📐</span>
+                        <span class="title">Asset Allocation by Age</span>
+                        <span class="badge advanced">Advanced</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <p>A simple rule: <strong>100 minus your age = % in stocks</strong></p>
+                        <ul>
+                            <li><strong>Age 25:</strong> 75% stocks, 25% bonds/gold</li>
+                            <li><strong>Age 35:</strong> 65% stocks, 35% bonds/gold</li>
+                            <li><strong>Age 45:</strong> 55% stocks, 45% bonds/gold</li>
+                        </ul>
+                        <p>Adjust once a year. As you get older, shift more toward stability.</p>
+                    </div>
+                </div>
+
+                <div class="sm-section" data-section="p3">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">🔄</span>
+                        <span class="title">Rebalancing</span>
+                        <span class="badge advanced">Advanced</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <p>Once a year, check if your allocation is still correct. If stocks grew to 90% of your portfolio, sell some and buy bonds to get back to 80/20.</p>
+                        <div class="sm-concept"><span class="icon">💡</span><span><strong>When to rebalance:</strong> Only when allocation drifts more than 5-10% from target. Don't over-optimize. Once a year is enough.</span></div>
+                    </div>
+                </div>
+
+                <div class="sm-check" onclick="toggleCheck(this)" data-id="portfolio"><div class="sm-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div class="sm-check-text">I understand portfolio allocation and rebalancing</div></div>
+            </div>
+
+            <!-- Tab: Grow -->
+            <div class="sm-panel" id="panel-grow">
+                <div class="sm-section open" data-section="g1">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">📈</span>
+                        <span class="title">Scaling Your Investments</span>
+                        <span class="badge essential">Essential</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <p>Once you're comfortable, increase your SIP by ₹1,000 every 6 months. Here's the growth:</p>
+                        <ul>
+                            <li><strong>Year 1:</strong> ₹5,000/month → ₹60,000 invested</li>
+                            <li><strong>Year 3:</strong> ₹10,000/month → ₹3 lakhs invested</li>
+                            <li><strong>Year 5:</strong> ₹15,000/month → ₹7.5 lakhs invested</li>
+                            <li><strong>Year 10:</strong> ₹25,000/month → ₹25+ lakhs invested (worth ₹50L+ with returns)</li>
+                        </ul>
+                        <div class="sm-concept"><span class="icon">🚀</span><span><strong>The magic number:</strong> ₹25,000/month SIP for 20 years at 12% = ₹3 crores. That's financial freedom. Start now.</span></div>
+                    </div>
+                </div>
+
+                <div class="sm-section" data-section="g2">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">📚</span>
+                        <span class="title">Next Steps</span>
+                        <span class="badge advanced">Advanced</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <p><strong>Books to read:</strong></p>
+                        <ul>
+                            <li><strong>"The Intelligent Investor"</strong> by Benjamin Graham — the bible of investing</li>
+                            <li><strong>"Psychology of Money"</strong> by Morgan Housel — easy, practical, life-changing</li>
+                            <li><strong>"A Random Walk Down Wall Street"</strong> — why index funds work</li>
+                        </ul>
+                        <p><strong>What to learn next:</strong></p>
+                        <ul>
+                            <li>Fundamental analysis (reading financial statements)</li>
+                            <li>Tax-saving investments (ELSS, PPF, 401k)</li>
+                            <li>International investing (US stocks from India)</li>
+                            <li>Retirement planning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sm-section" data-section="g3">
+                    <div class="sm-section-head" onclick="toggleSection(this)">
+                        <span class="icon">🧠</span>
+                        <span class="title">Investor Mindset</span>
+                        <span class="badge essential">Essential</span>
+                        <span class="sm-section-chevron">▼</span>
+                    </div>
+                    <div class="sm-section-body">
+                        <div class="sm-concept warn"><span class="icon">⚡</span><span><strong>The #1 rule:</strong> Never invest based on emotions. Fear and greed are the two biggest enemies of investors. Have a plan. Stick to it.</span></div>
+                        <ul>
+                            <li><strong>Be patient.</strong> Wealth is built over decades, not days.</li>
+                            <li><strong>Be consistent.</strong> Invest every month, regardless of market conditions.</li>
+                            <li><strong>Be boring.</strong> The best investors are boring. They buy, hold, and wait.</li>
+                            <li><strong>Ignore noise.</strong> News channels want you to panic. Don't. Your 10-year plan doesn't care about today's headlines.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sm-check" onclick="toggleCheck(this)" data-id="grow"><div class="sm-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div class="sm-check-text">I have a long-term plan and the right mindset</div></div>
+            </div>
+
+            <!-- Progress Ring -->
+            <div class="sm-ring-wrap" id="progressRing" style="max-width:640px;margin:1rem auto;padding:0 0.5rem;">
+                <div class="sm-ring">
+                    <svg viewBox="0 0 52 52">
+                        <circle class="sm-ring-bg" cx="26" cy="26" r="22"/>
+                        <circle class="sm-ring-fill" id="ringFill" cx="26" cy="26" r="22" stroke-dasharray="138" stroke-dashoffset="138"/>
+                    </svg>
+                </div>
+                <div class="sm-ring-text">
+                    <div class="title" id="ringTitle">0 / 5 steps completed</div>
+                    <div class="desc" id="ringDesc">Complete each tab's checklist to track progress</div>
+                </div>
+            </div>
+
+            <!-- Completion -->
+            <div class="sm-complete" id="smComplete">
+                <div class="done-card">
+                    <span class="done-icon">🏆</span>
+                    <h2>You're an Investor Now!</h2>
+                    <p class="sub">You've completed the entire investing playbook. You have the knowledge, the account, and the strategy. Now the only thing left is time. Start your SIP today. Future you will thank you.</p>
+                    <button class="share-btn" onclick="sharePlaybook()">📱 Share this playbook</button>
+                    <br>
+                    <a href="/playbooks/" class="next-link">More playbooks →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>How to Start Investing in the Stock Market with ₹10,000</h2>
+                <p>You don't need lakhs to start investing. ₹10,000 is enough to open an account, buy your first index fund, and begin building wealth. The most important step is starting — even small amounts compound into significant wealth over time.</p>
+                <h3>Why Index Funds Are Best for Beginners</h3>
+                <p>Index funds track the overall market. Instead of trying to pick winning stocks (which even professionals fail at), you buy the entire market. Over 15+ years, this strategy has outperformed 90% of actively managed funds.</p>
+                <h3>The Power of Starting Early</h3>
+                <p>If you invest ₹5,000/month starting at age 25 with 12% average returns, you'll have ₹3 crores by age 50. Start at 35, and you'll have only ₹94 lakhs. Those 10 years of delay cost you ₹2 crores. Time is your greatest asset.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 style="font-size:1.2rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Frequently Asked Questions</h2>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">Is ₹10,000 enough to start investing?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Yes. You can buy index fund units for as little as ₹100-500. ₹10,000 is more than enough to start a SIP and learn the basics. You can always add more later.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">What if the market crashes after I invest?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Markets crash regularly — it's normal. The Nifty 50 has recovered from every crash in history and gone on to new highs. If you're investing for 5+ years, crashes are actually opportunities to buy more at lower prices.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">Should I invest in stocks or mutual funds?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Start with index funds (a type of mutual fund). They're diversified, low-cost, and require no research. Once you have ₹5+ lakhs in index funds, you can start exploring individual stocks with a small portion.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">How much can I earn from the stock market?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Historically, the stock market returns 12-15% per year on average over 10+ years. That means ₹1 lakh invested today could become ₹3-4 lakhs in 10 years. But past returns don't guarantee future results.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    var CHECKS = ['basics','setup','invest','portfolio','grow'];
+    var state = {checks: new Set()};
+
+    // Restore state
+    try {
+        var s = localStorage.getItem('optidrop_playbook_stock');
+        if (s) {
+            var d = JSON.parse(s);
+            state.checks = new Set(d.checks || []);
+            state.checks.forEach(function(id){
+                var el = document.querySelector('.sm-check[data-id="'+id+'"]');
+                if (el) el.classList.add('done');
+            });
+        }
+    } catch(e){}
+
+    updateProgress();
+
+    window.switchTab = function(tab) {
+        document.querySelectorAll('.sm-tab').forEach(function(t){ t.classList.remove('active'); });
+        document.querySelectorAll('.sm-panel').forEach(function(p){ p.classList.remove('active'); });
+        event.target.classList.add('active');
+        document.getElementById('panel-'+tab).classList.add('active');
+    };
+
+    window.toggleSection = function(head) {
+        head.closest('.sm-section').classList.toggle('open');
+    };
+
+    window.toggleCheck = function(el) {
+        var id = el.dataset.id;
+        if (state.checks.has(id)) {
+            state.checks.delete(id);
+            el.classList.remove('done');
+        } else {
+            state.checks.add(id);
+            el.classList.add('done');
+        }
+        save();
+        updateProgress();
+        if (state.checks.size >= CHECKS.length) showComplete();
+    };
+
+    function updateProgress() {
+        var count = state.checks.size;
+        var total = CHECKS.length;
+        var pct = Math.round((count / total) * 100);
+        var circumference = 2 * Math.PI * 22; // ~138
+        var offset = circumference - (pct / 100) * circumference;
+        document.getElementById('ringFill').style.strokeDashoffset = offset;
+        document.getElementById('ringTitle').textContent = count + ' / ' + total + ' steps completed';
+        document.getElementById('ringDesc').textContent = count === total ? 'All done!' : 'Complete each tab\'s checklist to track progress';
+    }
+
+    function showComplete() {
+        document.getElementById('progressRing').style.display = 'none';
+        document.getElementById('smComplete').classList.add('show');
+        document.getElementById('smComplete').scrollIntoView({behavior:'smooth'});
+    }
+
+    function save() {
+        localStorage.setItem('optidrop_playbook_stock', JSON.stringify({
+            checks: Array.from(state.checks)
+        }));
+    }
+
+    window.sharePlaybook = function() {
+        var t = 'I found a premium playbook for stock market investing — covers everything from first ₹10K to portfolio building: https://optidrop.online/playbooks/stock-market-first-10k.html';
+        if (navigator.share) {
+            navigator.share({title:'Invest in Stock Market — First ₹10K',text:t,url:'https://optidrop.online/playbooks/stock-market-first-10k.html'});
+        } else {
+            navigator.clipboard.writeText(t).then(function(){
+                if (typeof showToast === 'function') showToast('Link copied!','success');
+            });
+        }
+    };
+    </script>
+</body>
+</html>
