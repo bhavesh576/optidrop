@@ -23,32 +23,33 @@
     <link rel="stylesheet" href="/styles.css?v=4.0">
 
     <style>
-    .pb-strip-list{max-width:700px;margin:0 auto;padding:0 1rem;display:flex;flex-direction:column;gap:0.4rem}
-    .pb-strip{display:flex;align-items:center;gap:0.75rem;padding:0.7rem 1rem;background:#fff;border:1px solid #e2e8f0;border-radius:12px;text-decoration:none;transition:all 0.2s;border-left:4px solid #e91e63}
-    .pb-strip:hover{border-color:#f9a8d4;box-shadow:0 2px 10px rgba(0,0,0,0.04);transform:translateY(-1px)}
-    .pb-strip .pb-s-badge{font-size:0.62rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:9999px;background:#fdf2f8;color:#e91e63;white-space:nowrap;flex-shrink:0}
-    .pb-strip .pb-s-badge.blue{background:#eff6ff;color:#2563eb}
-    .pb-strip .pb-s-info{flex:1;min-width:0}
-    .pb-strip .pb-s-title{font-size:0.88rem;font-weight:700;color:#0f172a;line-height:1.3}
-    .pb-strip .pb-s-desc{font-size:0.72rem;color:#64748b;line-height:1.4;margin-top:0.1rem}
-    .pb-strip .pb-s-meta{font-size:0.65rem;color:#94a3b8;white-space:nowrap;flex-shrink:0}
-    .pb-strip .pb-s-arrow{font-size:0.85rem;color:#cbd5e1;flex-shrink:0}
-    .pb-strip.coming-soon{opacity:0.4;pointer-events:none;border-left-color:#cbd5e1}
-    .dark-mode .pb-strip{background:#1e293b;border-color:#334155}
-    .dark-mode .pb-strip:hover{border-color:#f472b6}
-    .dark-mode .pb-strip .pb-s-badge{background:#3b0f2a;color:#f472b6}
-    .dark-mode .pb-strip .pb-s-badge.blue{background:#1e3a5f;color:#60a5fa}
-    .dark-mode .pb-strip .pb-s-title{color:#f1f5f9}
-    .dark-mode .pb-strip .pb-s-desc{color:#94a3b8}
-    .dark-mode .pb-strip .pb-s-meta{color:#64748b}
-    .dark-mode .pb-strip .pb-s-arrow{color:#475569}
+    .pb-card-list{max-width:700px;margin:0 auto;padding:0 1rem;display:flex;flex-direction:column;gap:0.5rem}
+    .pb-item{display:block;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1rem 1.1rem;text-decoration:none;transition:all 0.2s;position:relative;border-left:4px solid #e91e63}
+    .pb-item:hover{border-color:#f9a8d4;box-shadow:0 4px 14px rgba(0,0,0,0.05);transform:translateY(-1px)}
+    .pb-item-top{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.35rem}
+    .pb-item-badge{font-size:0.6rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:9999px;background:#fdf2f8;color:#e91e63;flex-shrink:0}
+    .pb-item-badge.blue{background:#eff6ff;color:#2563eb}
+    .pb-item-title{font-size:0.95rem;font-weight:800;color:#0f172a;line-height:1.3}
+    .pb-item-desc{font-size:0.8rem;color:#64748b;line-height:1.5;margin-bottom:0.4rem}
+    .pb-item-bottom{display:flex;justify-content:space-between;align-items:center}
+    .pb-item-meta{font-size:0.7rem;color:#94a3b8}
+    .pb-item-arrow{font-size:0.85rem;color:#e91e63;font-weight:700}
+    .pb-item.coming-soon{opacity:0.4;pointer-events:none;border-left-color:#cbd5e1}
+    .dark-mode .pb-item{background:#1e293b;border-color:#334155}
+    .dark-mode .pb-item:hover{border-color:#f472b6}
+    .dark-mode .pb-item-badge{background:#3b0f2a;color:#f472b6}
+    .dark-mode .pb-item-badge.blue{background:#1e3a5f;color:#60a5fa}
+    .dark-mode .pb-item-title{color:#f1f5f9}
+    .dark-mode .pb-item-desc{color:#94a3b8}
+    .dark-mode .pb-item-meta{color:#64748b}
+    .dark-mode .pb-item-arrow{color:#f472b6}
     @media(max-width:640px){
-        .pb-strip-list{padding:0 0.75rem;gap:0.35rem}
-        .pb-strip{padding:0.6rem 0.75rem;gap:0.6rem;border-radius:10px}
-        .pb-strip .pb-s-badge{font-size:0.55rem;padding:0.12rem 0.4rem}
-        .pb-strip .pb-s-title{font-size:0.82rem}
-        .pb-strip .pb-s-desc{font-size:0.68rem}
-        .pb-strip .pb-s-meta{font-size:0.6rem}
+        .pb-card-list{padding:0 0.75rem;gap:0.4rem}
+        .pb-item{padding:0.8rem 0.85rem;border-radius:12px}
+        .pb-item-badge{font-size:0.55rem;padding:0.12rem 0.4rem}
+        .pb-item-title{font-size:0.88rem}
+        .pb-item-desc{font-size:0.75rem;margin-bottom:0.3rem}
+        .pb-item-meta{font-size:0.65rem}
     }
     </style>
 </head>
@@ -69,117 +70,117 @@
         </section>
 
         <section class="max-w-3xl mx-auto px-4 pb-16">
-            <div class="pb-strip-list">
-                <a href="/playbooks/freelancing-roadmap-1lakh.html" class="pb-strip">
-                    <span class="pb-s-badge">🗺️ ROADMAP</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Start Freelancing — Zero to ₹1 Lakh/Month</div><div class="pb-s-desc">12-month step-by-step roadmap to build full-time freelancing income from scratch.</div></div>
-                    <span class="pb-s-meta">10 steps</span>
-                    <span class="pb-s-arrow">→</span>
+            <div class="pb-card-list">
+                <a href="/playbooks/freelancing-roadmap-1lakh.html" class="pb-item">
+                    <div class="pb-item-top"><span class="pb-item-badge">🗺️ ROADMAP</span></div>
+                    <div class="pb-item-title">Start Freelancing — Zero to ₹1 Lakh/Month</div>
+                    <div class="pb-item-desc">A 12-month step-by-step roadmap to build a full-time freelancing income from scratch. No degree needed.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">10 steps · 12 months</span><span class="pb-item-arrow">Start →</span></div>
                 </a>
 
-                <a href="/playbooks/youtube-1000-subs.html" class="pb-strip">
-                    <span class="pb-s-badge">🎮 QUEST MAP</span>
-                    <div class="pb-s-info"><div class="pb-s-title">YouTube Growth — 0 to 1,000 Subscribers</div><div class="pb-s-desc">9 quests with real strategies to grow your channel. No fluff — just what works.</div></div>
-                    <span class="pb-s-meta">9 quests</span>
-                    <span class="pb-s-arrow">→</span>
+                <a href="/playbooks/youtube-1000-subs.html" class="pb-item">
+                    <div class="pb-item-top"><span class="pb-item-badge">🎮 QUEST MAP</span></div>
+                    <div class="pb-item-title">YouTube Growth — 0 to 1,000 Subscribers</div>
+                    <div class="pb-item-desc">9 quests with real strategies to grow your channel. No fluff — just what actually works.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">9 quests · 20 min</span><span class="pb-item-arrow">Start →</span></div>
                 </a>
 
-                <a href="/playbooks/online-store-first-sale.html" class="pb-strip">
-                    <span class="pb-s-badge">📋 CHECKLIST</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Start Online Store — Zero to First Sale</div><div class="pb-s-desc">42-item checklist to launch your store and get that first sale.</div></div>
-                    <span class="pb-s-meta">42 items</span>
-                    <span class="pb-s-arrow">→</span>
+                <a href="/playbooks/online-store-first-sale.html" class="pb-item">
+                    <div class="pb-item-top"><span class="pb-item-badge">📋 CHECKLIST</span></div>
+                    <div class="pb-item-title">Start Online Store — Zero to First Sale</div>
+                    <div class="pb-item-desc">42-item checklist to launch your store and get that first sale. Every step checked off.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">42 items · 25 min</span><span class="pb-item-arrow">Start →</span></div>
                 </a>
 
-                <a href="/playbooks/save-1-lakh-12-months.html" class="pb-strip">
-                    <span class="pb-s-badge">📊 TRACKER</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Save ₹1 Lakh in 12 Months</div><div class="pb-s-desc">Interactive savings tracker with monthly targets, progress ring, and tips.</div></div>
-                    <span class="pb-s-meta">12 months</span>
-                    <span class="pb-s-arrow">→</span>
+                <a href="/playbooks/save-1-lakh-12-months.html" class="pb-item">
+                    <div class="pb-item-top"><span class="pb-item-badge">📊 TRACKER</span></div>
+                    <div class="pb-item-title">Save ₹1 Lakh in 12 Months</div>
+                    <div class="pb-item-desc">Interactive savings tracker with monthly targets, progress ring, and money-saving tips.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">12 months · ₹8,333/mo</span><span class="pb-item-arrow">Start →</span></div>
                 </a>
 
-                <a href="/playbooks/first-remote-job.html" class="pb-strip">
-                    <span class="pb-s-badge">🗺️ TREASURE MAP</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Get Your First Remote Job</div><div class="pb-s-desc">7 locations on the map — from building skills to landing the offer.</div></div>
-                    <span class="pb-s-meta">7 locations</span>
-                    <span class="pb-s-arrow">→</span>
+                <a href="/playbooks/first-remote-job.html" class="pb-item">
+                    <div class="pb-item-top"><span class="pb-item-badge">🗺️ TREASURE MAP</span></div>
+                    <div class="pb-item-title">Get Your First Remote Job</div>
+                    <div class="pb-item-desc">7 locations on the map — from building skills to landing the offer. Follow the path to the treasure.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">7 locations · 20 min</span><span class="pb-item-arrow">Start →</span></div>
                 </a>
 
-                <a href="/playbooks/digital-marketing-free-cert.html" class="pb-strip">
-                    <span class="pb-s-badge">📚 SYLLABUS</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Learn Digital Marketing — Free Certification</div><div class="pb-s-desc">8 modules, 35 lessons, 6 free certifications. Complete curriculum.</div></div>
-                    <span class="pb-s-meta">8 modules</span>
-                    <span class="pb-s-arrow">→</span>
+                <a href="/playbooks/digital-marketing-free-cert.html" class="pb-item">
+                    <div class="pb-item-top"><span class="pb-item-badge">📚 SYLLABUS</span></div>
+                    <div class="pb-item-title">Learn Digital Marketing — Free Certification</div>
+                    <div class="pb-item-desc">8 modules, 35 lessons, 6 free certifications. Complete curriculum from scratch.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">8 modules · 6 certs</span><span class="pb-item-arrow">Start →</span></div>
                 </a>
 
-                <a href="/playbooks/stock-market-first-10k.html" class="pb-strip">
-                    <span class="pb-s-badge">🎓 PREMIUM</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Invest in Stock Market — First ₹10,000</div><div class="pb-s-desc">Professional dashboard-style playbook. Tabbed interface, no fluff.</div></div>
-                    <span class="pb-s-meta">5 tabs</span>
-                    <span class="pb-s-arrow">→</span>
+                <a href="/playbooks/stock-market-first-10k.html" class="pb-item">
+                    <div class="pb-item-top"><span class="pb-item-badge">🎓 PREMIUM</span></div>
+                    <div class="pb-item-title">Invest in Stock Market — First ₹10,000</div>
+                    <div class="pb-item-desc">Professional dashboard-style playbook. Tabbed interface, no fluff — just what investors need.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">5 tabs · 15 min</span><span class="pb-item-arrow">Start →</span></div>
                 </a>
 
-                <a href="/playbooks/linkedin-brand-10k.html" class="pb-strip">
-                    <span class="pb-s-badge blue">📱 STORIES</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Build LinkedIn Brand — 0 to 10K Followers</div><div class="pb-s-desc">Swipeable story-card playbook for corporate professionals.</div></div>
-                    <span class="pb-s-meta">12 cards</span>
-                    <span class="pb-s-arrow">→</span>
+                <a href="/playbooks/linkedin-brand-10k.html" class="pb-item">
+                    <div class="pb-item-top"><span class="pb-item-badge blue">📱 STORIES</span></div>
+                    <div class="pb-item-title">Build LinkedIn Brand — 0 to 10K Followers</div>
+                    <div class="pb-item-desc">Swipeable story-card playbook for corporate professionals. 12 steps, LinkedIn-themed.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">12 cards · 15 min</span><span class="pb-item-arrow">Start →</span></div>
                 </a>
 
-                <a href="/playbooks/side-hustle-50k.html" class="pb-strip">
-                    <span class="pb-s-badge">🎯 DECISION TREE</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Start Side Hustle — Extra ₹50K/Month</div><div class="pb-s-desc">Answer 4 questions, get a personalized side hustle recommendation.</div></div>
-                    <span class="pb-s-meta">4 questions</span>
-                    <span class="pb-s-arrow">→</span>
+                <a href="/playbooks/side-hustle-50k.html" class="pb-item">
+                    <div class="pb-item-top"><span class="pb-item-badge">🎯 DECISION TREE</span></div>
+                    <div class="pb-item-title">Start Side Hustle — Extra ₹50K/Month</div>
+                    <div class="pb-item-desc">Answer 4 questions, get a personalized side hustle recommendation with action plan.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">4 questions · 3 min</span><span class="pb-item-arrow">Start →</span></div>
                 </a>
 
-                <a href="/playbooks/mobile-app-idea-to-launch.html" class="pb-strip">
-                    <span class="pb-s-badge blue">🏗️ BLUEPRINT</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Build Mobile App — Idea to Launch</div><div class="pb-s-desc">Technical blueprint with 8 phases. Tech stack comparison, design, build, test, launch.</div></div>
-                    <span class="pb-s-meta">8 phases</span>
-                    <span class="pb-s-arrow">→</span>
+                <a href="/playbooks/mobile-app-idea-to-launch.html" class="pb-item">
+                    <div class="pb-item-top"><span class="pb-item-badge blue">🏗️ BLUEPRINT</span></div>
+                    <div class="pb-item-title">Build Mobile App — Idea to Launch</div>
+                    <div class="pb-item-desc">Technical blueprint with 8 phases. Tech stack comparison, design, build, test, launch.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">8 phases · 20 min</span><span class="pb-item-arrow">Start →</span></div>
                 </a>
 
-                <a href="/playbooks/start-freelancing-india.html" class="pb-strip">
-                    <span class="pb-s-badge">📘 QUICK</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Create Your First Invoice</div><div class="pb-s-desc">Send a professional invoice in 5 minutes. Perfect for freelancers.</div></div>
-                    <span class="pb-s-meta">5 steps</span>
-                    <span class="pb-s-arrow">→</span>
+                <a href="/playbooks/start-freelancing-india.html" class="pb-item">
+                    <div class="pb-item-top"><span class="pb-item-badge">📘 QUICK</span></div>
+                    <div class="pb-item-title">Create Your First Invoice</div>
+                    <div class="pb-item-desc">Send a professional invoice in 5 minutes. Perfect for freelancers and small businesses.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">5 steps · 5 min</span><span class="pb-item-arrow">Start →</span></div>
                 </a>
 
-                <a href="/playbooks/fix-pdf-problem.html" class="pb-strip">
-                    <span class="pb-s-badge">📘 QUICK</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Fix Your PDF Problem</div><div class="pb-s-desc">Compress, merge, split, or convert — find the right tool in 30 seconds.</div></div>
-                    <span class="pb-s-meta">3 steps</span>
-                    <span class="pb-s-arrow">→</span>
+                <a href="/playbooks/fix-pdf-problem.html" class="pb-item">
+                    <div class="pb-item-top"><span class="pb-item-badge">📘 QUICK</span></div>
+                    <div class="pb-item-title">Fix Your PDF Problem</div>
+                    <div class="pb-item-desc">Compress, merge, split, or convert — find the right tool in 30 seconds.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">3 steps · 2 min</span><span class="pb-item-arrow">Start →</span></div>
                 </a>
 
-                <a href="/playbooks/start-freelancing-india.html" class="pb-strip">
-                    <span class="pb-s-badge">📘 QUICK</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Start Freelancing in India</div><div class="pb-s-desc">From zero to first client — resume, proposal, invoice, and more.</div></div>
-                    <span class="pb-s-meta">8 steps</span>
-                    <span class="pb-s-arrow">→</span>
+                <a href="/playbooks/start-freelancing-india.html" class="pb-item">
+                    <div class="pb-item-top"><span class="pb-item-badge">📘 QUICK</span></div>
+                    <div class="pb-item-title">Start Freelancing in India</div>
+                    <div class="pb-item-desc">From zero to first client — resume, proposal, invoice, and more.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">8 steps · 15 min</span><span class="pb-item-arrow">Start →</span></div>
                 </a>
 
-                <div class="pb-strip coming-soon">
-                    <span class="pb-s-badge">SOON</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Compress Photos for WhatsApp</div><div class="pb-s-desc">Send high-quality photos without the "file too large" error.</div></div>
-                    <span class="pb-s-meta">Coming</span>
-                    <span class="pb-s-arrow">→</span>
+                <div class="pb-item coming-soon">
+                    <div class="pb-item-top"><span class="pb-item-badge">SOON</span></div>
+                    <div class="pb-item-title">Compress Photos for WhatsApp</div>
+                    <div class="pb-item-desc">Send high-quality photos without the "file too large" error.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">Coming soon</span><span class="pb-item-arrow">Soon →</span></div>
                 </div>
 
-                <div class="pb-strip coming-soon">
-                    <span class="pb-s-badge">SOON</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Build a Resume That Gets Interviews</div><div class="pb-s-desc">Step-by-step resume creation with templates and tips.</div></div>
-                    <span class="pb-s-meta">Coming</span>
-                    <span class="pb-s-arrow">→</span>
+                <div class="pb-item coming-soon">
+                    <div class="pb-item-top"><span class="pb-item-badge">SOON</span></div>
+                    <div class="pb-item-title">Build a Resume That Gets Interviews</div>
+                    <div class="pb-item-desc">Step-by-step resume creation with templates and tips.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">Coming soon</span><span class="pb-item-arrow">Soon →</span></div>
                 </div>
 
-                <div class="pb-strip coming-soon">
-                    <span class="pb-s-badge">SOON</span>
-                    <div class="pb-s-info"><div class="pb-s-title">Prepare Passport Photos at Home</div><div class="pb-s-desc">Resize, compress, and format photos for any government application.</div></div>
-                    <span class="pb-s-meta">Coming</span>
-                    <span class="pb-s-arrow">→</span>
+                <div class="pb-item coming-soon">
+                    <div class="pb-item-top"><span class="pb-item-badge">SOON</span></div>
+                    <div class="pb-item-title">Prepare Passport Photos at Home</div>
+                    <div class="pb-item-desc">Resize, compress, and format photos for any government application.</div>
+                    <div class="pb-item-bottom"><span class="pb-item-meta">Coming soon</span><span class="pb-item-arrow">Soon →</span></div>
                 </div>
             </div>
         </section>
