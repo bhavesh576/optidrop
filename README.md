@@ -134,6 +134,8 @@ All design decisions flow through CSS custom properties in `styles.css` lines 6-
 | Homepage | 1 | `index.html` | [optidrop.online](https://optidrop.online) |
 | Tool pages | 350+ | Individual HTML files | `/compress-image.html`, `/tools/calculators/sip-calculator.html` |
 | Category pages | 18 | `category/*.html` | `/category/image-tools.html` |
+| Playbook pages | 10 | `playbooks/*.html` | `/playbooks/freelancing-roadmap-1lakh.html` |
+| Student resources | 6 | `students/*.html` | `/students/problems.html` |
 | Blog index | 1 | `blog/index.html` | `/blog/` |
 | Blog posts | 21 | `blog/*.html` | `/blog/how-to-compress-images-for-whatsapp.html` |
 | Static pages | 6 | Individual HTML | `about.html`, `contact.html`, `privacy-policy.html`, `terms.html`, `review.html`, `tools.html` |
@@ -315,6 +317,43 @@ Both are clamped to `max-height: 100px` on mobile via CSS.
 
 ---
 
+## Playbooks (`playbooks/`)
+
+Interactive guides that teach practical skills step-by-step. Each playbook uses a unique visual format — no two look alike.
+
+| # | Playbook | Style | Description |
+|---|----------|-------|-------------|
+| 1 | Start Freelancing — Zero to ₹1L/Month | 🗺️ Roadmap | 12-month timeline with phases and income tracking |
+| 2 | YouTube Growth — 0 to 1000 Subs | 🎮 Quest Map | 9 quests with winding visual path |
+| 3 | Start Online Store — Zero to First Sale | 📋 Checklist | 42 items across 8 phases |
+| 4 | Save ₹1 Lakh in 12 Months | 📊 Tracker | Interactive savings tracker with progress ring |
+| 5 | Get First Remote Job | 🗺️ Treasure Map | 7 locations with progressive unlock |
+| 6 | Learn Digital Marketing — Free Cert | 📚 Syllabus | 8 modules, 35 lessons, 6 free certs |
+| 7 | Invest in Stock Market — First ₹10K | 📊 Dashboard | Tabbed interface, compact layout |
+| 8 | Build LinkedIn Brand — 0 to 10K | 📱 Story Cards | Swipeable cards, LinkedIn-themed |
+| 9 | Start Side Hustle — Extra ₹50K/Month | 🎯 Decision Tree | 4 questions → personalized recommendation |
+| 10 | Build Mobile App — Idea to Launch | 🏗️ Blueprint | 8 phases with tech stack table |
+
+**Common features:** Pure value content (no tool promotion), globally relevant, mobile-first responsive, dark mode, localStorage progress, SEO content + FAQ.
+
+---
+
+## Student Resources (`students/`)
+
+Free resources for students to build projects, prepare for careers, and learn real-world skills.
+
+| # | Resource | Style | Description |
+|---|----------|-------|-------------|
+| 1 | Problem Bank | Grid + Modal | 50+ real-world problems for projects (Web, Mobile, AI/ML) |
+| 2 | Hackathon Playbook | Tabs | 5 phases: Prep, Team, Building, Pitching, After |
+| 3 | Resume Project Guide | Tabs | Before/after examples, STAR method, portfolio tips |
+| 4 | Internship Guide | Flowchart | 6-step path with branch options, cold email template |
+| 5 | Open Source Guide | Pipeline | 6-step workflow, leveling system, PR template |
+
+**Coming Soon:** Interview Prep, Career Growth Guide, Salary Negotiation Guide
+
+---
+
 ## Category Pages
 
 Each category page (`category/*.html`) lists all tools in that category as tool cards in a responsive grid.
@@ -398,14 +437,18 @@ Each category page (`category/*.html`) lists all tools in that category as tool 
 
 ### Desktop Header (sticky, `position: sticky; top: 0; z-index: 1000`)
 - **Logo:** SVG drop mark + "OptiDrop" text (cerise accent on "Drop")
-- **Nav links:** "All Tools" (accent-styled button), Categories (mega-menu dropdown), Blog, Reviews, About
-- **Right side:** Feedback button (cerise outline), privacy badge ("100% Private" with green dot), keyboard shortcut hint (`/` key), user hub dropdown (recently used + saved tools)
+- **Nav links:** "All Tools" (accent-styled button), Categories (mega-menu), Learn ▾ (dropdown: Playbooks, Students, Blog), More ▾ (dropdown: Reviews, Feedback, About)
+- **Right side:** Privacy badge ("100% Private" with green dot), user hub dropdown (recently used + saved tools)
 - **Scroll behavior:** Header becomes more opaque with stronger shadow after scrolling 10px (`.scrolled` class)
 
 ### Mobile Header (below 768px)
 - **Logo:** Same as desktop
 - **Hamburger button:** Opens `.mobile-nav` dropdown
-- **Mobile nav:** Full-width dropdown with links to Home, All Tools, Categories (accordion with all 18), Blog, Reviews, About, Give Feedback
+- **Mobile nav:** Home, All Tools, Categories (accordion), Learn (accordion: Playbooks, Students, Blog), Reviews, About, Give Feedback
+
+### Dropdown Menus (desktop, on hover)
+- **Learn:** Playbooks, Students, Blog
+- **More:** Reviews, Feedback, About
 
 ### Mega-Menu (desktop, on Categories hover)
 - **Layout:** 5-column grid grouped by theme

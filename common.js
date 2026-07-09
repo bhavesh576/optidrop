@@ -187,12 +187,22 @@ window.OptiTrack = {
                         '<div class="mega-menu-footer"><a href="/tools.html">Browse All Tools →</a></div>' +
                     '</div>' +
                 '</div>' +
-                '<a href="/playbooks/" class="hide-mobile">Playbooks</a>' +
-                '<a href="/blog/" class="hide-mobile">Blog</a>' +
-                '<a href="/students/" class="hide-mobile">Students</a>' +
-                '<a href="/review.html" class="hide-mobile">Reviews</a>' +
-                '<a href="/contact.html" class="hide-mobile">Feedback</a>' +
-                '<a href="/about.html" class="hide-mobile">About</a>' +
+                '<div class="nav-dropdown hide-mobile">' +
+                    '<span class="nav-link">Learn <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span>' +
+                    '<div class="nav-dropdown-menu">' +
+                        '<a href="/playbooks/">📚 Playbooks</a>' +
+                        '<a href="/students/">🎓 Students</a>' +
+                        '<a href="/blog/">✍️ Blog</a>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="nav-dropdown hide-mobile">' +
+                    '<span class="nav-link">More <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span>' +
+                    '<div class="nav-dropdown-menu">' +
+                        '<a href="/review.html">⭐ Reviews</a>' +
+                        '<a href="/contact.html">💬 Feedback</a>' +
+                        '<a href="/about.html">ℹ️ About</a>' +
+                    '</div>' +
+                '</div>' +
                 '<span class="privacy-badge hide-mobile"><span class="dot"></span> <span>100% Private</span></span>' +
                 '<div class="user-hub hide-mobile">' +
                     '<button class="user-hub-trigger" aria-label="User menu" title="Your tools">' +
@@ -242,9 +252,14 @@ window.OptiTrack = {
                     '<a href="/category/parenting-tools.html">Parenting</a>' +
                 '</div>' +
             '</div>' +
-            '<a href="/blog/">Blog</a>' +
-            '<a href="/playbooks/">Playbooks</a>' +
-            '<a href="/students/">Students</a>' +
+            '<div class="mobile-accordion">' +
+                '<button class="mobile-accordion-trigger">Learn <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>' +
+                '<div class="mobile-accordion-content">' +
+                    '<a href="/playbooks/">📚 Playbooks</a>' +
+                    '<a href="/students/">🎓 Students</a>' +
+                    '<a href="/blog/">✍️ Blog</a>' +
+                '</div>' +
+            '</div>' +
             '<a href="/review.html">Reviews</a>' +
             '<a href="/about.html">About</a>' +
             '<a href="/contact.html">Give Feedback</a>' +
