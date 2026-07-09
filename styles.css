@@ -778,7 +778,7 @@ h1 .text-transparent.bg-clip-text {
 }
 .header-inner {
     max-width: 1200px; margin: 0 auto;
-    padding: 0 24px; height: 64px;
+    padding: 0 24px; min-height: 64px;
     display: flex; align-items: center; justify-content: space-between;
 }
 .site-logo { display: flex; align-items: center; text-decoration: none; }
@@ -2008,7 +2008,7 @@ body {
 
 /* ── Tablet (768px and below) ──────────────────────────────── */
 @media (max-width: 768px) {
-    .header-inner { height: 64px; padding: 0 16px; }
+    .header-inner { min-height: 64px; padding: 0 16px; }
     .mobile-menu-toggle { display: block; }
 
     .tool-card { padding: 1.25rem; }
@@ -2096,7 +2096,7 @@ body {
     }
 
     /* Header */
-    .header-inner { height: 64px; padding: 0 12px; }
+    .header-inner { min-height: 64px; padding: 0 12px; }
     .header-nav { gap: 0.25rem; }
 
     /* Footer */
@@ -2293,7 +2293,7 @@ body {
 
 /* ── Small Mobile (375px — iPhone SE) ──────────────────────── */
 @media (max-width: 375px) {
-    .header-inner { height: 64px; padding: 0 10px; }
+    .header-inner { min-height: 64px; padding: 0 10px; }
     .privacy-badge { padding: 3px 8px; font-size: 12px; }
     .tool-card { padding: 1rem; }
     .tool-card-icon { width: 2.75rem; height: 2.75rem; }
