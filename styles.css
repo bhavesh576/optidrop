@@ -1596,6 +1596,99 @@ h1 .text-transparent.bg-clip-text {
     letter-spacing: 0.03em;
 }
 
+/* ── Playbook Strips (Homepage) ──────────────────────────────── */
+.playbook-strip-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+.playbook-strip {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.1rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #e91e63;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+.playbook-strip:hover {
+    border-color: #f9a8d4;
+    box-shadow: 0 4px 14px rgba(233,30,99,0.06);
+    transform: translateY(-1px);
+}
+.playbook-strip .pb-badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 9999px;
+    background: #fdf2f8;
+    color: #e91e63;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.playbook-strip .pb-title {
+    flex: 1;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+.playbook-strip .pb-meta {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.playbook-strip .pb-arrow {
+    font-size: 0.85rem;
+    color: #e91e63;
+    flex-shrink: 0;
+}
+
+/* ── Student Cards (Homepage) ────────────────────────────────── */
+.student-cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.student-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+.student-card:hover {
+    border-color: #f9a8d4;
+    box-shadow: 0 8px 20px -4px rgba(233,30,99,0.1), 0 4px 8px -2px rgba(0,0,0,0.04);
+    transform: translateY(-3px);
+}
+.student-card .student-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+.student-card .student-name {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.375rem;
+}
+.student-card .student-desc {
+    font-size: 0.8rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
 @media (max-width: 768px) {
     .header-nav { gap: 0.25rem; }
     .header-nav .hide-mobile { display: none; }
@@ -1650,6 +1743,11 @@ h1 .text-transparent.bg-clip-text {
     }
     .category-card .cat-arrow { display: none; }
     .new-tool-pill { min-height: 48px; display: inline-flex; align-items: center; }
+    .playbook-strip { padding: 0.75rem 0.85rem; gap: 0.5rem; }
+    .playbook-strip .pb-title { font-size: 0.82rem; }
+    .playbook-strip .pb-meta { font-size: 0.62rem; }
+    .student-cards-row { grid-template-columns: 1fr; gap: 0.75rem; }
+    .student-card { padding: 1rem; }
 }
 
 /* Prevent word-splitting in category cards at all breakpoints */
@@ -3044,6 +3142,20 @@ body {
 .dark-mode .new-tool-pill { background: #272a33 !important; border-color: #3d4455 !important; color: #e2e8f0 !important; }
 .dark-mode .new-tool-pill:hover { border-color: #3b82f6 !important; background: #1a2e3d !important; color: #60a5fa !important; }
 .dark-mode .new-tool-pill .new-badge { background: linear-gradient(135deg, #1a3a2a, #14532d) !important; color: #4ade80 !important; }
+
+/* Dark Mode: Playbook Strips */
+.dark-mode .playbook-strip { background: #272a33 !important; border-color: #3d4455 !important; }
+.dark-mode .playbook-strip:hover { border-color: #f472b6 !important; }
+.dark-mode .playbook-strip .pb-badge { background: #3b0f2a !important; color: #f472b6 !important; }
+.dark-mode .playbook-strip .pb-title { color: #f1f5f9 !important; }
+.dark-mode .playbook-strip .pb-meta { color: #64748b !important; }
+.dark-mode .playbook-strip .pb-arrow { color: #f472b6 !important; }
+
+/* Dark Mode: Student Cards */
+.dark-mode .student-card { background: #272a33 !important; border-color: #3d4455 !important; }
+.dark-mode .student-card:hover { border-color: #f472b6 !important; }
+.dark-mode .student-card .student-name { color: #f1f5f9 !important; }
+.dark-mode .student-card .student-desc { color: #94a3b8 !important; }
 
 /* Dark Mode: Hero Text Gradient */
 .dark-mode h1 .text-transparent.bg-clip-text {
