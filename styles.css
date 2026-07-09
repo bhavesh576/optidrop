@@ -832,7 +832,7 @@ h1 .text-transparent.bg-clip-text {
     transform: translateY(-8px);
     transition: visibility 0s linear 0.15s, opacity 0.15s ease, transform 0.15s ease;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 8px);
     left: 50%;
     transform: translateX(-50%) translateY(-8px);
     min-width: 280px;
