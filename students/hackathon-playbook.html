@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Playbook — Win Your Next Hackathon | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Free hackathon playbook — from first-timer to winner. Preparation, team formation, building, pitching, and portfolio tips.">
+    <meta name="keywords" content="hackathon guide, hackathon tips, win hackathon, hackathon strategy, coding competition, hackathon preparation">
+    <link rel="canonical" href="https://optidrop.online/students/hackathon-playbook.html">
+    <meta property="og:title" content="Hackathon Playbook — Win Your Next Hackathon | OptiDrop">
+    <meta property="og:description" content="Free hackathon playbook — from first-timer to winner.">
+    <meta property="og:url" content="https://optidrop.online/students/hackathon-playbook.html">
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    .hk-container{max-width:800px;margin:0 auto;padding:0.75rem 1rem}
+
+    /* Tabs */
+    .hk-tabs{display:flex;gap:0.25rem;margin-bottom:0.75rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 0.25rem}
+    .hk-tabs::-webkit-scrollbar{display:none}
+    .hk-tab{padding:0.5rem 0.75rem;border:1px solid #e2e8f0;border-radius:10px;background:#fff;font-size:0.72rem;font-weight:600;color:#64748b;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all 0.2s}
+    .hk-tab.active{background:#0f172a;border-color:#0f172a;color:#fff}
+    .hk-tab:hover:not(.active){border-color:#cbd5e1}
+
+    /* Tab Panel */
+    .hk-panel{display:none}
+    .hk-panel.active{display:block}
+
+    /* Section Card */
+    .hk-section{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1rem 1.1rem;margin-bottom:0.6rem}
+    .hk-section-title{font-size:0.88rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.4rem}
+    .hk-section-title .icon{font-size:1rem}
+
+    /* Tip/Checklist items */
+    .hk-item{display:flex;gap:0.5rem;padding:0.35rem 0;font-size:0.82rem;color:#475569;line-height:1.5;align-items:flex-start}
+    .hk-item .bullet{width:5px;height:5px;border-radius:50%;background:#cbd5e1;flex-shrink:0;margin-top:0.45rem}
+    .hk-item strong{color:#0f172a}
+
+    /* Tip Box */
+    .hk-tip{display:flex;gap:0.5rem;padding:0.6rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;font-size:0.78rem;color:#166534;line-height:1.5;margin-top:0.5rem}
+    .hk-tip .icon{font-size:0.9rem;flex-shrink:0}
+    .hk-tip.gold{background:#fffbeb;border-color:#fde68a;color:#92400e}
+
+    /* Warning Box */
+    .hk-warn{display:flex;gap:0.5rem;padding:0.6rem;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;font-size:0.78rem;color:#991b1b;line-height:1.5;margin-top:0.5rem}
+    .hk-warn .icon{font-size:0.9rem;flex-shrink:0}
+
+    /* Checklist */
+    .hk-check{display:flex;gap:0.45rem;padding:0.3rem 0;font-size:0.82rem;color:#475569;cursor:pointer;align-items:flex-start;-webkit-tap-highlight-color:transparent}
+    .hk-check-box{width:18px;height:18px;border-radius:5px;border:2px solid #cbd5e1;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.2s;margin-top:0.1rem}
+    .hk-check.done .hk-check-box{background:#10b981;border-color:#10b981}
+    .hk-check-box svg{width:10px;height:10px;opacity:0}
+    .hk-check.done .hk-check-box svg{opacity:1}
+    .hk-check.done{color:#94a3b8;text-decoration:line-through}
+
+    /* Timeline */
+    .hk-timeline{display:flex;gap:0.3rem;margin-bottom:0.75rem;overflow-x:auto;padding:0 0.25rem}
+    .hk-tl-item{flex:1;min-width:0;text-align:center;padding:0.5rem 0.3rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;font-size:0.62rem;font-weight:600;color:#64748b}
+    .hk-tl-item.active{background:#0f172a;border-color:#0f172a;color:#fff}
+    .hk-tl-item .time{font-size:0.72rem;font-weight:800;display:block;margin-bottom:0.1rem}
+
+    /* Table */
+    .hk-table{width:100%;border-collapse:collapse;font-size:0.78rem;margin-top:0.5rem}
+    .hk-table th{text-align:left;padding:0.4rem 0.5rem;background:#f8fafc;border:1px solid #e2e8f0;font-weight:700;color:#0f172a;font-size:0.72rem}
+    .hk-table td{padding:0.4rem 0.5rem;border:1px solid #e2e8f0;color:#475569}
+
+    /* Dark Mode */
+    .dark-mode .hk-tab{background:#1e293b;border-color:#334155;color:#94a3b8}
+    .dark-mode .hk-tab.active{background:#10b981;border-color:#10b981;color:#fff}
+    .dark-mode .hk-section{background:#1e293b;border-color:#334155}
+    .dark-mode .hk-section-title{color:#f1f5f9}
+    .dark-mode .hk-item{color:#94a3b8}
+    .dark-mode .hk-item strong{color:#f1f5f9}
+    .dark-mode .hk-tip{background:#064e3b;border-color:#065f46;color:#6ee7b7}
+    .dark-mode .hk-tip.gold{background:#1c1917;border-color:#92400e;color:#fbbf24}
+    .dark-mode .hk-warn{background:#450a0a;border-color:#7f1d1d;color:#fca5a5}
+    .dark-mode .hk-check{color:#94a3b8}
+    .dark-mode .hk-check.done{color:#64748b}
+    .dark-mode .hk-tl-item{background:#0f172a;border-color:#334155;color:#94a3b8}
+    .dark-mode .hk-tl-item.active{background:#10b981;border-color:#10b981;color:#fff}
+    .dark-mode .hk-table th{background:#0f172a;border-color:#334155;color:#f1f5f9}
+    .dark-mode .hk-table td{border-color:#334155;color:#94a3b8}
+
+    /* Responsive */
+    @media(max-width:640px){
+        .hk-container{padding:0.5rem 0.65rem}
+        .hk-tabs{gap:0.2rem}
+        .hk-tab{padding:0.4rem 0.6rem;font-size:0.68rem;border-radius:8px}
+        .hk-section{padding:0.75rem 0.85rem;border-radius:12px}
+        .hk-section-title{font-size:0.82rem}
+        .hk-item{font-size:0.78rem}
+        .hk-tip,.hk-warn{font-size:0.72rem;padding:0.5rem}
+        .hk-tl-item{font-size:0.58rem;padding:0.4rem 0.2rem}
+        .hk-table{font-size:0.72rem}
+    }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <!-- Hero -->
+        <section class="max-w-4xl mx-auto px-4 pt-10 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">
+                🏆 Hackathon Playbook
+            </h1>
+            <p class="text-base text-slate-600 max-w-xl mx-auto">
+                From first-timer to winner. Real strategies that actually work at hackathons.
+            </p>
+        </section>
+
+        <div class="hk-container">
+            <!-- Tabs -->
+            <div class="hk-tabs">
+                <div class="hk-tab active" onclick="switchTab('prep')">🎯 Prep</div>
+                <div class="hk-tab" onclick="switchTab('team')">👥 Team & Idea</div>
+                <div class="hk-tab" onclick="switchTab('build')">🔨 Building</div>
+                <div class="hk-tab" onclick="switchTab('pitch')">🎤 Pitching</div>
+                <div class="hk-tab" onclick="switchTab('after')">🚀 After</div>
+            </div>
+
+            <!-- Tab: Prep -->
+            <div class="hk-panel active" id="panel-prep">
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">📋</span> Before You Register</div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Pick the right hackathon</strong> — College hackathons are low-pressure. Company-sponsored ones have better prizes and networking.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Check the theme</strong> — Some are open-ended, some are themed (AI, Web3, Social Impact). Pick one that matches your skills.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Online vs In-person</strong> — In-person has better energy and networking. Online is more flexible and comfortable.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Solo or Team</strong> — Most hackathons allow 1-4 members. Solo is fine for smaller ones. Teams win bigger ones.</div></div>
+                    <div class="hk-tip"><span class="icon">💡</span><span><strong>First hackathon?</strong> Pick a college-level one. Low pressure, friendly judges, and everyone is learning. You'll finish feeling confident for the next one.</span></div>
+                </div>
+
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">🎒</span> What to Bring (In-Person)</div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Laptop + charger</strong> — Obvious, but people forget chargers</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Extension board</strong> — Power outlets are always limited</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Headphones</strong> — For focus time when it gets noisy</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Snacks & water</strong> — Don't rely on hackathon food alone</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Notepad & pen</strong> — For sketching ideas and UI wireframes</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Change of clothes</strong> — If it's overnight, you'll thank yourself</div></div>
+                </div>
+
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">⏰</span> Timeline — 48-Hour Hackathon</div>
+                    <div class="hk-timeline">
+                        <div class="hk-tl-item active"><span class="time">0-2h</span>Idea</div>
+                        <div class="hk-tl-item"><span class="time">2-8h</span>MVP</div>
+                        <div class="hk-tl-item"><span class="time">8-24h</span>Build</div>
+                        <div class="hk-tl-item"><span class="time">24-36h</span>Polish</div>
+                        <div class="hk-tl-item"><span class="time">36-44h</span>Pitch</div>
+                        <div class="hk-tl-item"><span class="time">44-48h</span>Buffer</div>
+                    </div>
+                    <div class="hk-tip"><span class="icon">💡</span><span><strong>The #1 mistake:</strong> Spending 20 hours on code and 2 hours on pitch. Judges see your pitch, not your code. Split time 60% build / 25% pitch / 15% buffer.</span></div>
+                </div>
+            </div>
+
+            <!-- Tab: Team & Idea -->
+            <div class="hk-panel" id="panel-team">
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">👥</span> Team Formation</div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Ideal team size:</strong> 3 people — one builder, one designer, one presenter</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Roles matter:</strong> Everyone should know their role before starting. No ambiguity.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Solo strategy:</strong> Scope smaller. Build one feature perfectly instead of five poorly. Your pitch is your advantage — you know everything.</div></div>
+                    <div class="hk-tip"><span class="icon">💡</span><span><strong>Finding teammates:</strong> Check hackathon Discord/Slack channels. Post: "Looking for [role] for [hackathon]. I do [your skill]." Don't wait until the event starts.</span></div>
+                </div>
+
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">💡</span> Idea Generation</div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Problem-first, not tech-first.</strong> "What problem can we solve?" beats "What cool tech can we use?"</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Check the problem bank</strong> — <a href="/students/problems.html" style="color:#e91e63;font-weight:600;">50+ real-world problems</a> ready to build</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Scope ruthlessly.</strong> Can you build it in 8 hours? If not, cut features until you can.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Use existing APIs.</strong> Don't build what you can borrow — Maps, Auth, Payments, AI. Integration > invention.</div></div>
+                    <div class="hk-warn"><span class="icon">⚠️</span><span><strong>Avoid:</strong> Blockchain for the sake of blockchain. AI that doesn't solve a real problem. Ideas that require 10,000 users to work.</span></div>
+                </div>
+
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">🎯</span> Idea Scoring</div>
+                    <table class="hk-table">
+                        <tr><th>Criteria</th><th>Good</th><th>Bad</th></tr>
+                        <tr><td><strong>Impact</strong></td><td>Solves real problem for many people</td><td>Problem nobody has</td></tr>
+                        <tr><td><strong>Feasibility</strong></td><td>Buildable in 24-48 hours</td><td>Needs months of work</td></tr>
+                        <tr><td><strong>Demo-able</strong></td><td>Works live, visually impressive</td><td>Needs explanation to understand</td></tr>
+                        <tr><td><strong>Novelty</strong></td><td>Fresh angle or new approach</td><td>Clone of existing product</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tab: Building -->
+            <div class="hk-panel" id="panel-build">
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">🔨</span> Building Strategy</div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Start with the demo.</strong> What will you show on stage? Build that first. Everything else is optional.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Use templates.</strong> Don't start from scratch. Use boilerplates, UI libraries, and starter kits.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>One feature, done well.</strong> A working core feature beats five broken ones. Judges don't check your code quality.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Commit often.</strong> Git commit every 30 minutes. If something breaks at hour 20, you can roll back.</div></div>
+                    <div class="hk-tip gold"><span class="icon">⚡</span><span><strong>Time hack:</strong> Set a timer for each feature. If it's not done in 2 hours, move on. Don't perfectionism-kill your project.</span></div>
+                </div>
+
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">🛠️</span> Tech Stack Shortcuts</div>
+                    <table class="hk-table">
+                        <tr><th>Need</th><th>Fast Option</th><th>Why</th></tr>
+                        <tr><td>Frontend</td><td>React + Tailwind</td><td>Fast to build, looks good</td></tr>
+                        <tr><td>Backend</td><td>Firebase / Supabase</td><td>Auth + DB in minutes</td></tr>
+                        <tr><td>AI features</td><td>OpenAI API</td><td>One API call = magic</td></tr>
+                        <tr><td>Maps</td><td>Google Maps / Leaflet</td><td>Free tier is enough</td></tr>
+                        <tr><td>Payments</td><td>Stripe / Razorpay</td><td>Test mode is instant</td></tr>
+                        <tr><td>Hosting</td><td>Vercel / Netlify</td><td>Deploy in 30 seconds</td></tr>
+                    </table>
+                </div>
+
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">🚫</span> What NOT to Do</div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Don't learn a new framework</strong> during the hackathon. Use what you know.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Don't build auth from scratch.</strong> Use Firebase Auth or Clerk. Saves 4+ hours.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Don't skip sleep</strong> in 48-hour events. 4 hours of sleep > 4 hours of buggy code.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Don't redesign at hour 30.</strong> Ship what you have. Polish what works.</div></div>
+                </div>
+            </div>
+
+            <!-- Tab: Pitching -->
+            <div class="hk-panel" id="panel-pitch">
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">🎤</span> Pitch Structure (3-5 min)</div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Hook (15 sec):</strong> Start with the problem. "Every year, 50 lakh students waste ₹20K on fake courses."</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Solution (30 sec):</strong> What you built and how it works. Keep it simple.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Demo (2 min):</strong> Show it working. Live demo > slides. Have a recorded backup.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Impact (30 sec):</strong> Who benefits? How many people? What changes?</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Ask (15 sec):</strong> What you need next — feedback, users, mentorship, funding.</div></div>
+                    <div class="hk-tip"><span class="icon">💡</span><span><strong>Golden rule:</strong> Judges remember stories, not features. "A farmer lost his entire crop because he couldn't identify a disease" beats "We built an image classifier."</span></div>
+                </div>
+
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">🖥️</span> Demo Preparation</div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Test your demo 3 times</strong> before presenting. If it fails once, it'll fail on stage.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Have a backup video.</strong> Record your demo working. If live fails, play the video.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Zoom in.</strong> Make sure judges can see your UI from the back row. Use browser zoom (Ctrl+).</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Prepare for questions.</strong> Common ones: "How is this different from X?" "What's your business model?" "How does it scale?"</div></div>
+                    <div class="hk-warn"><span class="icon">⚠️</span><span><strong>Never:</strong> Apologize for what you didn't build. Focus on what you did build. Confidence wins.</span></div>
+                </div>
+
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">📊</span> What Judges Look For</div>
+                    <table class="hk-table">
+                        <tr><th>Criteria</th><th>Weight</th><th>How to Score</th></tr>
+                        <tr><td><strong>Innovation</strong></td><td>30%</td><td>Fresh angle, not a clone</td></tr>
+                        <tr><td><strong>Impact</strong></td><td>25%</td><td>Real problem, many people</td></tr>
+                        <tr><td><strong>Execution</strong></td><td>25%</td><td>Working demo, polished UI</td></tr>
+                        <tr><td><strong>Presentation</strong></td><td>20%</td><td>Clear, confident, engaging</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tab: After -->
+            <div class="hk-panel" id="panel-after">
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">📝</span> Post-Hackathon Checklist</div>
+                    <div class="hk-check" onclick="this.classList.toggle('done')"><div class="hk-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div>Push code to GitHub with a clean README</div></div>
+                    <div class="hk-check" onclick="this.classList.toggle('done')"><div class="hk-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div>Add project to your portfolio/resume</div></div>
+                    <div class="hk-check" onclick="this.classList.toggle('done')"><div class="hk-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div>Connect with teammates and judges on LinkedIn</div></div>
+                    <div class="hk-check" onclick="this.classList.toggle('done')"><div class="hk-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div>Write a short post about what you built and learned</div></div>
+                    <div class="hk-check" onclick="this.classList.toggle('done')"><div class="hk-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div>Note what worked and what to improve next time</div></div>
+                    <div class="hk-check" onclick="this.classList.toggle('done')"><div class="hk-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div>Find the next hackathon to attend</div></div>
+                </div>
+
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">💼</span> Portfolio Impact</div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Hackathon projects are resume gold.</strong> They show you can build under pressure, work in teams, and ship fast.</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>How to present it:</strong> "Built [X] at [Hackathon Name] in 48 hours. Won [Y]. Used [tech stack]. Solved [problem] for [users]."</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Interview talking point:</strong> "Tell me about a challenging project" — hackathon stories are perfect answers.</div></div>
+                    <div class="hk-tip"><span class="icon">💡</span><span><strong>Even if you don't win:</strong> The project, the connections, and the experience are worth it. Every hackathon makes you better.</span></div>
+                </div>
+
+                <div class="hk-section">
+                    <div class="hk-section-title"><span class="icon">🔍</span> Where to Find Hackathons</div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Devpost</strong> — Largest hackathon platform, global online + in-person</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>MLH</strong> — Major League Hacking, college-focused</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>Devfolio</strong> — Popular in India, great community</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>HackerEarth</strong> — Company-sponsored, good prizes</div></div>
+                    <div class="hk-item"><span class="bullet"></span><div><strong>College tech clubs</strong> — Ask your department or coding club</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>How to Win Your First Hackathon</h2>
+                <p>Hackathons are intense coding events where you build a project in 24-48 hours. They're the fastest way to learn, build your portfolio, and meet like-minded developers. Whether you're a first-timer or experienced, having a strategy makes the difference between burning out and shipping something great.</p>
+                <h3>The Secret to Winning</h3>
+                <p>Winning hackathons isn't about the best code — it's about the best pitch. Judges see your presentation, not your codebase. A working demo with a clear story beats a complex project with a confusing pitch every time.</p>
+                <h3>Should Beginners Attend?</h3>
+                <p>Absolutely. Hackathons are the best learning environment. You'll learn more in 48 hours of building than in a month of tutorials. Start with college-level hackathons where the pressure is lower and everyone is learning together.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    window.switchTab = function(tab) {
+        document.querySelectorAll('.hk-tab').forEach(function(t){ t.classList.remove('active'); });
+        document.querySelectorAll('.hk-panel').forEach(function(p){ p.classList.remove('active'); });
+        event.target.classList.add('active');
+        document.getElementById('panel-'+tab).classList.add('active');
+    };
+    </script>
+</body>
+</html>
