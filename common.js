@@ -188,6 +188,7 @@ window.OptiTrack = {
                     '</div>' +
                 '</div>' +
                 '<a href="/playbooks/" class="hide-mobile">Playbooks</a>' +
+                '<a href="/blog/" class="hide-mobile">Blog</a>' +
                 '<a href="/students/" class="hide-mobile">Students</a>' +
                 '<a href="/review.html" class="hide-mobile">Reviews</a>' +
                 '<a href="/about.html" class="hide-mobile">About</a>' +
