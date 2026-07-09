@@ -188,6 +188,7 @@ window.OptiTrack = {
                     '</div>' +
                 '</div>' +
                 '<a href="/playbooks/" class="hide-mobile">Playbooks</a>' +
+                '<a href="/students/" class="hide-mobile">Students</a>' +
                 '<a href="/review.html" class="hide-mobile">Reviews</a>' +
                 '<a href="/about.html" class="hide-mobile">About</a>' +
                 '<span class="privacy-badge hide-mobile"><span class="dot"></span> <span>100% Private</span></span>' +
@@ -241,6 +242,7 @@ window.OptiTrack = {
             '</div>' +
             '<a href="/blog/">Blog</a>' +
             '<a href="/playbooks/">Playbooks</a>' +
+            '<a href="/students/">Students</a>' +
             '<a href="/review.html">Reviews</a>' +
             '<a href="/about.html">About</a>' +
             '<a href="/contact.html">Give Feedback</a>' +
@@ -382,6 +384,7 @@ window.OptiTrack = {
                     '<a href="/">Home</a>' +
                     '<a href="/tools.html">All Tools</a>' +
                     '<a href="/playbooks/">Playbooks</a>' +
+                    '<a href="/students/">Students</a>' +
                     '<a href="/blog/">Blog</a>' +
                     '<a href="/about.html">About</a>' +
                     '<a href="/contact.html">Contact</a>' +

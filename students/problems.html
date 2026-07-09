@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Bank — Real-World Problems Worth Solving | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="50+ real-world problems that students can solve by building tech projects. Find resume-worthy project ideas for hackathons, placements, and portfolios.">
+    <meta name="keywords" content="project ideas, hackathon ideas, resume projects, real world problems, CS projects, student projects, tech projects">
+    <link rel="canonical" href="https://optidrop.online/problems/">
+    <meta property="og:title" content="Problem Bank — Real-World Problems Worth Solving | OptiDrop">
+    <meta property="og:description" content="50+ real-world problems that students can solve by building tech projects.">
+    <meta property="og:url" content="https://optidrop.online/problems/">
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    .pb-container{max-width:960px;margin:0 auto;padding:1rem 1.25rem}
+    .pb-hero{text-align:center;padding:2rem 1rem 1.5rem}
+    .pb-badge{display:inline-block;padding:0.35rem 1rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);color:#e91e63;font-size:0.75rem;font-weight:700;border-radius:9999px;margin-bottom:0.8rem}
+    .pb-hero h1{font-size:1.65rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;line-height:1.2}
+    .pb-hero .sub{font-size:0.92rem;color:#64748b;line-height:1.5;max-width:520px;margin:0 auto}
+    .pb-hero .count{font-size:0.78rem;color:#94a3b8;margin-top:0.5rem}
+
+    /* Search & Filters */
+    .pb-controls{max-width:960px;margin:0 auto 1.25rem;padding:0 0.5rem}
+    .pb-search{width:100%;padding:0.75rem 1rem 0.75rem 2.5rem;border:2px solid #e2e8f0;border-radius:12px;font-size:0.9rem;outline:none;transition:border-color 0.2s;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") no-repeat 0.85rem center}
+    .pb-search:focus{border-color:#e91e63}
+    .pb-filters{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.75rem}
+    .pb-filter{padding:0.4rem 0.8rem;border:1px solid #e2e8f0;border-radius:9999px;background:#fff;font-size:0.72rem;font-weight:600;color:#64748b;cursor:pointer;transition:all 0.2s;-webkit-tap-highlight-color:transparent}
+    .pb-filter.active{background:#e91e63;border-color:#e91e63;color:#fff}
+    .pb-filter:hover:not(.active){border-color:#cbd5e1}
+
+    /* Stats */
+    .pb-stats{display:flex;gap:0.75rem;margin-top:0.75rem;font-size:0.72rem;color:#94a3b8}
+    .pb-stat{display:flex;align-items:center;gap:0.3rem}
+
+    /* Problem Grid */
+    .pb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0.75rem;max-width:960px;margin:0 auto;padding:0 0.5rem}
+
+    /* Problem Card */
+    .pb-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;transition:all 0.3s;cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .pb-card:hover{border-color:#f9a8d4;transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+    .pb-card-head{padding:1rem 1rem 0.75rem}
+    .pb-card-id{font-size:0.65rem;font-weight:700;color:#94a3b8;margin-bottom:0.4rem;font-family:monospace}
+    .pb-card-title{font-size:0.95rem;font-weight:700;color:#0f172a;line-height:1.3;margin-bottom:0.5rem}
+    .pb-card-problem{font-size:0.82rem;color:#64748b;line-height:1.5;margin-bottom:0.75rem}
+
+    /* Tags */
+    .pb-tags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.75rem}
+    .pb-tag{font-size:0.62rem;font-weight:600;padding:0.18rem 0.5rem;border-radius:9999px}
+    .pb-tag.cat{background:#eff6ff;color:#2563eb}
+    .pb-tag.diff.beginner{background:#ecfdf5;color:#059669}
+    .pb-tag.diff.intermediate{background:#fffbeb;color:#d97706}
+    .pb-tag.diff.advanced{background:#fdf2f8;color:#e91e63}
+    .pb-tag.time{background:#f1f5f9;color:#64748b}
+
+    /* Scores */
+    .pb-scores{display:grid;grid-template-columns:repeat(2,1fr);gap:0.3rem;padding:0.75rem 1rem;background:#f8fafc;border-top:1px solid #f1f5f9}
+    .pb-score{display:flex;align-items:center;gap:0.4rem}
+    .pb-score-label{font-size:0.62rem;color:#94a3b8;min-width:50px}
+    .pb-score-bar{flex:1;height:4px;background:#e2e8f0;border-radius:99px;overflow:hidden}
+    .pb-score-fill{height:100%;border-radius:99px;transition:width 0.3s}
+    .pb-score-fill.s5{background:#10b981}
+    .pb-score-fill.s4{background:#22c55e}
+    .pb-score-fill.s3{background:#f59e0b}
+    .pb-score-fill.s2{background:#f97316}
+    .pb-score-fill.s1{background:#ef4444}
+
+    /* Expanded Content */
+    .pb-expand{display:none;padding:0 1rem 1rem}
+    .pb-card.open .pb-expand{display:block}
+    .pb-card.open{border-color:#f9a8d4}
+
+    .pb-who{font-size:0.78rem;color:#64748b;margin-bottom:0.6rem}
+    .pb-who strong{color:#334155}
+    .pb-impact{font-size:0.78rem;color:#64748b;margin-bottom:0.75rem}
+    .pb-impact strong{color:#334155}
+
+    .pb-hints{margin-bottom:0.75rem}
+    .pb-hints-title{font-size:0.72rem;font-weight:700;color:#0f172a;margin-bottom:0.4rem}
+    .pb-hint{display:none;padding:0.5rem 0.65rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;margin-bottom:0.35rem;font-size:0.78rem;color:#166534;cursor:pointer}
+    .pb-hint.revealed{display:block}
+    .pb-hint-trigger{display:inline-block;padding:0.35rem 0.7rem;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:8px;font-size:0.72rem;font-weight:600;color:#64748b;cursor:pointer;margin-bottom:0.3rem;transition:all 0.2s}
+    .pb-hint-trigger:hover{border-color:#cbd5e1;background:#e2e8f0}
+    .pb-hint-trigger.used{background:#ecfdf5;border-color:#bbf7d0;color:#059669}
+
+    .pb-skills{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.75rem}
+    .pb-skill{font-size:0.65rem;font-weight:600;padding:0.2rem 0.55rem;background:#f1f5f9;color:#334155;border-radius:6px}
+
+    .pb-companies{font-size:0.72rem;color:#94a3b8}
+    .pb-companies strong{color:#64748b}
+
+    .pb-save-btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.45rem 0.8rem;border:1px solid #e2e8f0;border-radius:8px;background:#fff;font-size:0.72rem;font-weight:600;color:#64748b;cursor:pointer;margin-top:0.75rem;transition:all 0.2s}
+    .pb-save-btn:hover{border-color:#f9a8d4;color:#e91e63}
+    .pb-save-btn.saved{background:#fdf2f8;border-color:#f9a8d4;color:#e91e63}
+
+    /* Empty State */
+    .pb-empty{text-align:center;padding:3rem 1rem;color:#94a3b8}
+    .pb-empty .icon{font-size:2rem;margin-bottom:0.5rem}
+    .pb-empty p{font-size:0.9rem}
+
+    /* Dark Mode */
+    .dark-mode .pb-hero h1{color:#f1f5f9}
+    .dark-mode .pb-hero .sub{color:#94a3b8}
+    .dark-mode .pb-hero .count{color:#64748b}
+    .dark-mode .pb-search{background-color:#272a33;border-color:#3d4455;color:#f1f5f9}
+    .dark-mode .pb-search:focus{border-color:#f472b6}
+    .dark-mode .pb-filter{background:#272a33;border-color:#3d4455;color:#94a3b8}
+    .dark-mode .pb-filter.active{background:#e91e63;border-color:#e91e63;color:#fff}
+    .dark-mode .pb-filter:hover:not(.active){border-color:#475569}
+    .dark-mode .pb-card{background:#272a33;border-color:#3d4455}
+    .dark-mode .pb-card:hover{border-color:#f472b6}
+    .dark-mode .pb-card.open{border-color:#f472b6}
+    .dark-mode .pb-card-id{color:#64748b}
+    .dark-mode .pb-card-title{color:#f1f5f9}
+    .dark-mode .pb-card-problem{color:#94a3b8}
+    .dark-mode .pb-tag.cat{background:#1e3a5f;color:#60a5fa}
+    .dark-mode .pb-tag.diff.beginner{background:#064e3b;color:#34d399}
+    .dark-mode .pb-tag.diff.intermediate{background:#1c1917;color:#fbbf24}
+    .dark-mode .pb-tag.diff.advanced{background:#3b0f2a;color:#f472b6}
+    .dark-mode .pb-tag.time{background:#3d4455;color:#94a3b8}
+    .dark-mode .pb-scores{background:#1e293b;border-color:#3d4455}
+    .dark-mode .pb-score-label{color:#64748b}
+    .dark-mode .pb-score-bar{background:#3d4455}
+    .dark-mode .pb-who,.dark-mode .pb-impact{color:#94a3b8}
+    .dark-mode .pb-who strong,.dark-mode .pb-impact strong{color:#e2e8f0}
+    .dark-mode .pb-hints-title{color:#f1f5f9}
+    .dark-mode .pb-hint{background:#064e3b;border-color:#065f46;color:#6ee7b7}
+    .dark-mode .pb-hint-trigger{background:#3d4455;border-color:#475569;color:#94a3b8}
+    .dark-mode .pb-hint-trigger:hover{background:#475569}
+    .dark-mode .pb-hint-trigger.used{background:#064e3b;border-color:#065f46;color:#34d399}
+    .dark-mode .pb-skill{background:#3d4455;color:#e2e8f0}
+    .dark-mode .pb-companies{color:#64748b}
+    .dark-mode .pb-companies strong{color:#94a3b8}
+    .dark-mode .pb-save-btn{background:#272a33;border-color:#3d4455;color:#94a3b8}
+    .dark-mode .pb-save-btn:hover{border-color:#f472b6;color:#f472b6}
+    .dark-mode .pb-save-btn.saved{background:#3b0f2a;border-color:#f472b6;color:#f472b6}
+
+    /* Responsive */
+    @media(min-width:900px){
+        .pb-container{padding:1.5rem 2rem}
+        .pb-hero{padding:2.5rem 1rem 2rem}
+        .pb-hero h1{font-size:1.9rem}
+        .pb-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+    }
+    @media(min-width:1200px){
+        .pb-container{max-width:1100px}
+        .pb-hero h1{font-size:2.1rem}
+        .pb-grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media(max-width:640px){
+        .pb-container{padding:0.75rem 0.85rem}
+        .pb-hero{padding:1.5rem 0.5rem 1rem}
+        .pb-hero h1{font-size:1.3rem}
+        .pb-hero .sub{font-size:0.85rem}
+        .pb-search{padding:0.65rem 0.85rem 0.65rem 2.2rem;font-size:0.85rem;border-radius:10px}
+        .pb-filters{gap:0.3rem}
+        .pb-filter{padding:0.35rem 0.65rem;font-size:0.68rem}
+        .pb-grid{grid-template-columns:1fr;gap:0.6rem}
+        .pb-card-head{padding:0.85rem 0.85rem 0.65rem}
+        .pb-card-title{font-size:0.9rem}
+        .pb-card-problem{font-size:0.78rem}
+        .pb-scores{padding:0.65rem 0.85rem;grid-template-columns:1fr 1fr}
+        .pb-expand{padding:0 0.85rem 0.85rem}
+        .pb-hint{font-size:0.75rem}
+    }
+    @media(max-width:380px){
+        .pb-hero h1{font-size:1.15rem}
+        .pb-scores{grid-template-columns:1fr}
+    }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <div class="pb-container">
+            <header class="pb-hero">
+                <span class="pb-badge">🔍 PROBLEM BANK</span>
+                <h1>Real-World Problems<br>Worth Solving</h1>
+                <p class="sub">Not project ideas. Not tutorials. Real problems that real people face. Find one. Think. Build. Get hired.</p>
+                <div class="count" id="totalCount"></div>
+            </header>
+
+            <div class="pb-controls">
+                <input type="text" class="pb-search" id="searchInput" placeholder="Search problems..." oninput="filterProblems()">
+                <div class="pb-filters" id="filterButtons"></div>
+                <div class="pb-stats">
+                    <div class="pb-stat" id="showingCount"></div>
+                    <div class="pb-stat" id="savedCount"></div>
+                </div>
+            </div>
+
+            <div class="pb-grid" id="problemGrid"></div>
+            <div class="pb-empty" id="emptyState" style="display:none">
+                <div class="icon">🔍</div>
+                <p>No problems match your search. Try different keywords or filters.</p>
+            </div>
+        </div>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>What Is the Problem Bank?</h2>
+                <p>The Problem Bank is a curated collection of real-world problems that students can solve by building tech projects. Unlike generic "project idea" lists, every problem here is something real people actually face — making your project meaningful, resume-worthy, and interview-ready.</p>
+                <h3>How to Use It</h3>
+                <p>Browse problems by category or difficulty. When you find one that interests you, read the context, reveal the hints, and start building. The hints guide your thinking without giving away the full solution — because the thinking is what makes you a better engineer.</p>
+                <h3>For Hackathons</h3>
+                <p>Look for problems marked "hackathon: 5" — these are scoped for 2-3 day builds with impressive demos. They're perfect for weekend hackathons where judges value real-world impact.</p>
+                <h3>For Resumes</h3>
+                <p>Problems with high "resume" scores are projects that recruiters want to hear about. They demonstrate problem-solving, technical skills, and impact — the three things companies look for.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    var PROBLEMS = [
+        {
+            "id":1,"title":"Local Restaurant QR Menu Manager",
+            "problem":"Small restaurants waste time updating printed menus and lack digital presence for online ordering.",
+            "who":"Small restaurant owners, street food vendors, cafe owners",
+            "impact":"Affects 5+ lakh small restaurants in India",
+            "hints":["Build a web dashboard where restaurant owners can update menu items, prices, and availability in real-time","Use Firebase or MongoDB to store menu data and generate unique QR codes for each restaurant","Implement a public-facing menu page customers scan to view, with optional WhatsApp ordering integration"],
+            "skills":["React","Node.js","Firebase","QR Code API","CSS"],"difficulty":"beginner","time":"1-2 weeks",
+            "resume":4,"hackathon":5,"interview":4,"impact_score":5,"category":"web-apps","companies":["Zomato","Swiggy","Dukaan"]
+        },
+        {
+            "id":2,"title":"College Assignment Deadline Tracker",
+            "problem":"Students miss assignment deadlines because they're scattered across emails, WhatsApp groups, and college portals.",
+            "who":"College students, university students, online learners",
+            "impact":"Affects 4 crore college students in India",
+            "hints":["Create a web dashboard where students add assignments with deadlines, subjects, and priority levels","Implement browser notifications or email reminders 24 hours before deadlines using cron jobs","Add calendar view and filters by subject, allowing students to share deadline lists with classmates"],
+            "skills":["React","Express.js","PostgreSQL","Cron Jobs","Nodemailer"],"difficulty":"beginner","time":"1-2 weeks",
+            "resume":3,"hackathon":4,"interview":3,"impact_score":4,"category":"web-apps","companies":["Notion","Google","Microsoft"]
+        },
+        {
+            "id":3,"title":"Apartment Maintenance Bill Splitter",
+            "problem":"Housing society secretaries manually calculate and collect maintenance bills, causing payment disputes and delays.",
+            "who":"Housing society secretaries, apartment residents, property managers",
+            "impact":"Affects 2 crore+ apartment residents in Indian cities",
+            "hints":["Build a platform where society admins set monthly charges, add expenses, and track payments per flat","Use Razorpay or Stripe API for online payment collection and generate automated receipts","Create resident dashboards showing payment history, pending dues, and expense breakdowns"],
+            "skills":["Vue.js","Node.js","MongoDB","Razorpay API","PDF generation"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":4,"interview":5,"impact_score":5,"category":"web-apps","companies":["NoBroker","Housing.com","Razorpay"]
+        },
+        {
+            "id":4,"title":"Freelancer GST Invoice Generator",
+            "problem":"Freelancers waste hours creating GST-compliant invoices manually in Word or Excel for each client.",
+            "who":"Freelancers, consultants, small business owners, content creators",
+            "impact":"Affects 15 lakh+ freelancers in India",
+            "hints":["Create a web app with templates for GST-compliant invoices, saving client details and service items","Auto-calculate GST (CGST/SGST/IGST based on state), generate sequential invoice numbers, support multiple currencies","Export as PDF, track payment status, and send email reminders for overdue invoices"],
+            "skills":["React","Node.js","jsPDF","Nodemailer","LocalStorage"],"difficulty":"beginner","time":"2 weeks",
+            "resume":4,"hackathon":4,"interview":4,"impact_score":4,"category":"web-apps","companies":["Razorpay","Zoho","Freshbooks"]
+        },
+        {
+            "id":5,"title":"Study Group Matching Platform",
+            "problem":"Students struggle to find serious study partners with similar goals, schedules, and learning styles.",
+            "who":"College students, competitive exam aspirants, online learners",
+            "impact":"Affects 3 crore+ students preparing for exams in India",
+            "hints":["Build a platform where students create profiles with subjects, goals, availability, and preferred study style","Implement a matching algorithm pairing students based on compatible schedules and learning preferences","Add group chat, video call integration via WebRTC, and accountability features like study streak tracking"],
+            "skills":["React","Node.js","Socket.io","MongoDB","WebRTC"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":4,"category":"web-apps","companies":["Unacademy","PhysicsWallah","Discord"]
+        },
+        {
+            "id":6,"title":"Used Textbook Marketplace for Colleges",
+            "problem":"College students can't easily buy or sell used textbooks locally, leading to wasted money on new books.",
+            "who":"College students, university students, hostel residents",
+            "impact":"Affects 4 crore college students in India annually",
+            "hints":["Create a college-specific marketplace where students list used books with photos, condition, price, and department","Implement email-based verification to ensure only college students access their campus marketplace","Add search/filter by course, semester, department, and in-app chat for price negotiation"],
+            "skills":["React","Firebase","Image upload","Authentication","Real-time chat"],"difficulty":"beginner","time":"2-3 weeks",
+            "resume":4,"hackathon":5,"interview":4,"impact_score":5,"category":"web-apps","companies":["OLX","Meesho","Flipkart"]
+        },
+        {
+            "id":7,"title":"Local Service Provider Discovery",
+            "problem":"People can't easily find verified local electricians, plumbers, carpenters in their neighborhood during emergencies.",
+            "who":"Homeowners, tenants, apartment residents, senior citizens",
+            "impact":"Affects 10 crore+ urban households in India",
+            "hints":["Build a location-based platform where service providers create profiles with skills, rates, and contact info","Use Google Maps API for radius-based search showing providers within 5km of user's location","Add rating/review system, emergency contact feature, and verification via phone OTP"],
+            "skills":["React","Node.js","Google Maps API","MongoDB","Twilio"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":4,"interview":5,"impact_score":5,"category":"web-apps","companies":["UrbanClap","Housejoy","Google"]
+        },
+        {
+            "id":8,"title":"Shared Expense Tracker for Roommates",
+            "problem":"Roommates fight over who paid for what and struggle to split rent, groceries, and utilities fairly.",
+            "who":"College students in shared housing, working professionals, hostel mates",
+            "impact":"Affects 2 crore+ people in shared accommodations in India",
+            "hints":["Create a web app where roommates log expenses with amount, payer, and category (rent/food/utilities)","Automatically calculate who owes whom using a settlement algorithm minimizing number of transactions","Add receipt photo upload, expense history, monthly reports, and UPI payment integration"],
+            "skills":["React","Node.js","MongoDB","Algorithm design","UPI API"],"difficulty":"intermediate","time":"2-3 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":4,"category":"web-apps","companies":["Splitwise","PhonePe","Google"]
+        },
+        {
+            "id":9,"title":"Coaching Class Attendance Manager",
+            "problem":"Small coaching classes track attendance and fee payments manually in notebooks, causing errors and disputes.",
+            "who":"Coaching class owners, tuition teachers, small educational institutes",
+            "impact":"Affects 5 lakh+ small coaching centers in India",
+            "hints":["Build a dashboard where teachers mark daily attendance for batches and track fee payment status per student","Generate automated fee reminders via SMS/WhatsApp for parents with pending dues using Twilio","Create student-wise reports showing attendance percentage, fee history, and monthly progress reports"],
+            "skills":["React","Node.js","MySQL","Twilio API","Chart.js"],"difficulty":"beginner","time":"2-3 weeks",
+            "resume":4,"hackathon":4,"interview":4,"impact_score":5,"category":"web-apps","companies":["Byju's","Vedantu","Classplus"]
+        },
+        {
+            "id":10,"title":"Anonymous College Discussion Board",
+            "problem":"Students need a safe space to discuss mental health, academic pressure, and campus issues anonymously.",
+            "who":"College students, university students, hostel residents",
+            "impact":"Affects 4 crore college students across India",
+            "hints":["Create a college-specific platform with email verification but anonymous posting for discussions","Implement moderation queue using keyword filtering and community reporting to prevent harassment","Add upvote/downvote system, topic categories, and optional resources for mental health support"],
+            "skills":["React","Node.js","PostgreSQL","Content moderation","Authentication"],"difficulty":"intermediate","time":"2-3 weeks",
+            "resume":4,"hackathon":5,"interview":4,"impact_score":4,"category":"web-apps","companies":["Reddit","Discord","Meta"]
+        },
+        {
+            "id":11,"title":"Hyperlocal Job Board for Blue-Collar Workers",
+            "problem":"Daily wage workers, delivery persons, and helpers can't find nearby job opportunities posted by local businesses.",
+            "who":"Daily wage workers, delivery persons, domestic helpers, local shop owners",
+            "impact":"Affects 5 crore+ blue-collar workers in India",
+            "hints":["Create a platform where employers post short-term jobs with location, pay, duration, and required skills","Implement SMS-based job alerts for workers without smartphones and location-based filtering within 5km","Add multi-language support, voice-based job posting, and simple image-based UI for low-literacy users"],
+            "skills":["React","Node.js","Twilio","Google Maps API","i18n"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":5,"category":"web-apps","companies":["UrbanClap","Dunzo","Swiggy"]
+        },
+        {
+            "id":12,"title":"Transparent Donation Platform for NGOs",
+            "problem":"People don't trust NGOs because they can't track how their donations are actually being used.",
+            "who":"Donors, NGO supporters, social workers, philanthropists",
+            "impact":"Affects 3 lakh NGOs and 20 crore+ potential donors in India",
+            "hints":["Build a platform where NGOs post projects with budget breakdown and donors see real-time updates with photos","Implement milestone-based fund release where NGOs prove progress before getting next tranche","Add immutable ledger for transparency, impact metrics tracking, and donor tax receipt generation"],
+            "skills":["React","Node.js","MongoDB","Razorpay","Blockchain basics"],"difficulty":"intermediate","time":"4-5 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":5,"category":"web-apps","companies":["Ketto","Milaap","GiveIndia"]
+        },
+        {
+            "id":13,"title":"Parking Slot Finder for City Areas",
+            "problem":"Drivers waste 15-30 minutes searching for parking in busy areas, causing traffic congestion and fuel waste.",
+            "who":"Car owners, bike riders, commercial vehicle drivers in cities",
+            "impact":"Affects 5 crore+ vehicle owners in urban India",
+            "hints":["Create a crowdsourced platform where users mark available/occupied parking spots in real-time on a map","Use Google Maps API for location display and implement upvote system to verify parking availability","Add filters for parking type (free/paid/2-wheeler/4-wheeler), estimated cost, and navigation to the spot"],
+            "skills":["React","Node.js","Google Maps API","WebSocket","MongoDB"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":4,"category":"web-apps","companies":["Google","Ola","Park+"]
+        },
+        {
+            "id":14,"title":"Offline-First Study Material Downloader",
+            "problem":"Students in areas with poor internet can't access online study materials when they need them most.",
+            "who":"Students in rural areas, students with limited data plans, exam aspirants",
+            "impact":"Affects 15 crore+ students with unreliable internet in India",
+            "hints":["Build a web app where students batch download PDFs, videos, notes when they have WiFi access","Implement Service Workers and IndexedDB for offline storage, allowing content access without internet","Add smart sync that resumes failed downloads, compresses videos, and shows offline-available content clearly"],
+            "skills":["React","Service Workers","IndexedDB","PWA","File handling"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":4,"interview":5,"impact_score":5,"category":"web-apps","companies":["Google","YouTube","Khan Academy"]
+        },
+        {
+            "id":15,"title":"Crowdsourced Public Toilet Finder",
+            "problem":"Travelers and delivery workers struggle to find clean public toilets in unfamiliar areas, especially for women.",
+            "who":"Travelers, delivery workers, cab drivers, women travelers, tourists",
+            "impact":"Affects 10 crore+ people traveling daily in India",
+            "hints":["Build a map-based app where users mark public toilet locations with cleanliness ratings and amenities","Implement Google Maps integration, filter by gender-specific facilities, disability access, and free vs paid","Add real-time crowdsourced updates on availability, working condition, and safety ratings for women"],
+            "skills":["React","Node.js","Google Maps API","MongoDB","Image upload"],"difficulty":"beginner","time":"2-3 weeks",
+            "resume":4,"hackathon":5,"interview":4,"impact_score":5,"category":"web-apps","companies":["Google","Ola","Swiggy"]
+        },
+        {
+            "id":16,"title":"Offline Public Transport Route Finder",
+            "problem":"People traveling in new cities can't access bus/metro routes when they don't have mobile data.",
+            "who":"Commuters, tourists, job seekers traveling to interviews, students",
+            "impact":"Affects 20 crore+ public transport users in Indian cities",
+            "hints":["Create a mobile app that downloads city transport data (routes, stops, timings) for offline use","Use static GTFS data from government sources, implement route finding algorithm that works offline","Add nearby stops detection using GPS without internet, save favorite routes, and offline maps integration"],
+            "skills":["React Native","SQLite","GTFS parsing","GPS","Offline algorithms"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":4,"interview":5,"impact_score":5,"category":"mobile-apps","companies":["Google","Citymapper","Moovit"]
+        },
+        {
+            "id":17,"title":"Voice-Based Expense Tracker",
+            "problem":"People don't track daily expenses because manually entering each transaction is too time-consuming.",
+            "who":"Working professionals, small business owners, homemakers, freelancers",
+            "impact":"Affects 30 crore+ people who want to track spending in India",
+            "hints":["Build a mobile app where users speak expenses like 'spent 50 rupees on tea' and it auto-categorizes","Use speech-to-text API and NLP to extract amount, category, and date from voice input","Add monthly budget limits, spending insights with charts, export to CSV, and voice reports in regional languages"],
+            "skills":["React Native","Speech Recognition API","NLP","SQLite","Chart.js"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":4,"category":"mobile-apps","companies":["Google","Paytm","Walnut"]
+        },
+        {
+            "id":18,"title":"Instant Language Translation for Shop Signs",
+            "problem":"Travelers and migrants can't read shop signs in unfamiliar regional scripts when moving to new states.",
+            "who":"Interstate migrants, travelers, tourists, non-native speakers",
+            "impact":"Affects 10 crore+ people traveling across linguistic regions in India",
+            "hints":["Create a mobile app using camera to capture text on shop signs and translate to user's preferred language","Use Google ML Kit or Tesseract OCR for text extraction, then Google Translate API for translation","Add AR overlay showing translated text on camera view in real-time, support for 20+ Indian languages"],
+            "skills":["React Native","ML Kit","OCR","Translation API","Camera API"],"difficulty":"intermediate","time":"2-3 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":5,"category":"mobile-apps","companies":["Google","Microsoft","Samsung"]
+        },
+        {
+            "id":19,"title":"Medicine Reminder with Family Tracking",
+            "problem":"Senior citizens forget to take medications on time and family members can't monitor remotely.",
+            "who":"Senior citizens, chronic patients, caregivers, family members",
+            "impact":"Affects 15 crore+ senior citizens and chronic patients in India",
+            "hints":["Build an app with simple UI for medication schedules, sends reminders via notification and SMS","Implement family member login to monitor medications, get alerts if patient misses doses, refill reminders","Add medicine identification by scanning strip barcode, dosage tracking, health reports for doctor visits"],
+            "skills":["React Native","Firebase","Push notifications","Twilio","Barcode scanning"],"difficulty":"beginner","time":"2-3 weeks",
+            "resume":4,"hackathon":5,"interview":4,"impact_score":5,"category":"mobile-apps","companies":["Practo","1mg","Google"]
+        },
+        {
+            "id":20,"title":"Women Safety Commute Tracker",
+            "problem":"Women traveling alone want to share live location with family but existing apps drain battery or are complex.",
+            "who":"Women commuters, college students, working women, solo travelers",
+            "impact":"Affects 15 crore+ women commuting daily in India",
+            "hints":["Create a battery-efficient app sharing live location with selected contacts during commute with auto-stop on arrival","Implement SOS button sending alert with location, starting audio recording, and calling emergency contacts","Add safe/unsafe route crowdsourcing, check-in reminders every 15 min, integration with emergency services"],
+            "skills":["React Native","GPS tracking","Battery optimization","WebSocket","Twilio"],"difficulty":"intermediate","time":"3 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":5,"category":"mobile-apps","companies":["Google","Uber","Ola"]
+        },
+        {
+            "id":21,"title":"Government Scheme Eligibility Checker",
+            "problem":"Citizens miss out on government benefits because they don't know which schemes they're eligible for.",
+            "who":"Low-income families, farmers, students, senior citizens, rural residents",
+            "impact":"Affects 30 crore+ potential beneficiaries of government schemes in India",
+            "hints":["Build an app with questionnaire about income, age, occupation, location to show eligible government schemes","Compile database of central and state schemes with eligibility criteria, benefits, and application process","Add document checklist, application tracking, nearby centers for form submission, multi-language support"],
+            "skills":["React Native","Decision tree logic","Database","Multi-language","PDF viewing"],"difficulty":"beginner","time":"2-3 weeks",
+            "resume":4,"hackathon":5,"interview":4,"impact_score":5,"category":"mobile-apps","companies":["Government tech","Google","Public service orgs"]
+        },
+        {
+            "id":22,"title":"Pothole Reporter with Govt Integration",
+            "problem":"Citizens see dangerous potholes daily but have no easy way to report them to municipal authorities.",
+            "who":"Vehicle owners, cyclists, pedestrians, accident victims, citizens",
+            "impact":"Affects 20 crore+ urban residents in India dealing with bad roads",
+            "hints":["Create an app where users take pothole photo with GPS location and it auto-files complaint to ward office","Use image recognition to verify it's a pothole, track repair status, show all reported potholes on map","Add upvote system for severity, automated escalation emails if unresolved, gamification for active reporters"],
+            "skills":["React Native","Image upload","GPS","Node.js","Google Maps API"],"difficulty":"beginner","time":"2 weeks",
+            "resume":4,"hackathon":5,"interview":4,"impact_score":5,"category":"mobile-apps","companies":["Google","Ola","Municipal corporations"]
+        },
+        {
+            "id":23,"title":"Grocery Price Comparison Across Stores",
+            "problem":"Shoppers can't easily compare prices for the same items across nearby grocery stores and apps.",
+            "who":"Homemakers, budget-conscious shoppers, students, senior citizens",
+            "impact":"Affects 25 crore+ households doing grocery shopping in India",
+            "hints":["Create an app aggregating prices from BigBasket, Blinkit, Zepto, JioMart for user's shopping list items","Use web scraping or APIs to fetch real-time prices, calculate total cost per platform, suggest cheapest option","Add barcode scanning to add items, price history charts, alerts when items go on sale, location-based availability"],
+            "skills":["React Native","Web scraping","APIs","Barcode scanning","Data aggregation"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":4,"category":"mobile-apps","companies":["Google","Amazon","Flipkart"]
+        },
+        {
+            "id":24,"title":"Hyper-Local Weather Alerts for Farmers",
+            "problem":"Farmers get generic weather forecasts but need micro-level predictions for their exact farmland location.",
+            "who":"Farmers, agricultural workers, rural communities, crop planners",
+            "impact":"Affects 10 crore+ farmers across India",
+            "hints":["Build an app using weather APIs giving location-specific forecasts with farm-relevant data (rain, humidity, wind)","Send push notifications for sudden weather changes, frost alerts, heavy rain warnings affecting crop health","Add crop-specific recommendations, historical weather data, crowdsourced local observations"],
+            "skills":["React Native","Weather APIs","Push notifications","GPS","Data visualization"],"difficulty":"beginner","time":"2 weeks",
+            "resume":4,"hackathon":5,"interview":4,"impact_score":5,"category":"mobile-apps","companies":["Google","Microsoft","AgroStar"]
+        },
+        {
+            "id":25,"title":"Street Vendor Digital Payment Manager",
+            "problem":"Street vendors lose customers because they accept only cash and struggle to manage multiple payment QR codes.",
+            "who":"Street vendors, small shop owners, auto drivers, food cart sellers",
+            "impact":"Affects 1 crore+ street vendors across Indian cities",
+            "hints":["Create a simple app generating unified QR code accepting payments from UPI, Paytm, PhonePe, GPay simultaneously","Show payment notifications in real-time, maintain basic transaction history, work with minimal smartphone specs","Add voice-based transaction confirmation in regional languages, daily sales summary, offline QR display"],
+            "skills":["React Native","UPI APIs","QR generation","SQLite","Offline-first"],"difficulty":"intermediate","time":"2-3 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":5,"category":"mobile-apps","companies":["Paytm","PhonePe","Google Pay"]
+        },
+        {
+            "id":26,"title":"Resume Keyword Optimizer for ATS",
+            "problem":"Job applications get rejected by ATS systems before human review because resumes lack the right keywords.",
+            "who":"Job seekers, freshers, career switchers, students",
+            "impact":"Affects 8 crore+ people applying for jobs in India",
+            "hints":["Build a tool that scans job description and resume PDF to identify missing keywords ATS looks for","Use NLP to extract skills, qualifications, experience keywords from job posting and compare with resume","Provide keyword suggestions to add, ATS-friendly formatting tips, match percentage score, industry templates"],
+            "skills":["Python","NLP","spaCy","PDF parsing","Flask"],"difficulty":"intermediate","time":"2-3 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":5,"category":"ai-ml","companies":["LinkedIn","Naukri","HackerRank"]
+        },
+        {
+            "id":27,"title":"Fake News Detector for WhatsApp",
+            "problem":"People share misinformation on WhatsApp because they can't quickly verify if viral messages are true.",
+            "who":"WhatsApp users, senior citizens, rural populations, social media users",
+            "impact":"Affects 50 crore+ WhatsApp users in India exposed to misinformation",
+            "hints":["Create a tool where users paste WhatsApp text or image and it checks against fact-checking databases","Use fact-checking APIs like Google Fact Check, reverse image search for viral photos, check verified sources","Implement traffic light system (true/false/unverified), show source links, browser extension for quick checking"],
+            "skills":["Python","APIs","Reverse image search","NLP","Web scraping"],"difficulty":"intermediate","time":"2-3 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":5,"category":"ai-ml","companies":["Google","Meta","Twitter"]
+        },
+        {
+            "id":28,"title":"Crop Disease Detection from Leaf Photos",
+            "problem":"Farmers can't identify crop diseases early and lose entire harvests because expert help arrives too late.",
+            "who":"Farmers, agricultural extension workers, agri-consultants, rural communities",
+            "impact":"Affects 10 crore+ farmers losing 15-25% crops to diseases in India",
+            "hints":["Train an image classification model on PlantVillage dataset to identify diseases from leaf photos","Use transfer learning with MobileNet for lightweight mobile deployment, classify 10-15 common crop diseases","Provide treatment recommendations, nearby agri-stores for pesticides, preventive care tips in local languages"],
+            "skills":["Python","TensorFlow","Computer Vision","Transfer Learning","Mobile deployment"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":5,"category":"ai-ml","companies":["Microsoft","Google","AgroStar"]
+        },
+        {
+            "id":29,"title":"Automatic Meeting Notes Generator",
+            "problem":"Teams waste time manually writing meeting notes and people forget action items discussed in meetings.",
+            "who":"Remote workers, corporate employees, startup teams, project managers",
+            "impact":"Affects 5 crore+ people attending meetings daily in India",
+            "hints":["Build a tool that records meeting audio, transcribes using speech-to-text, and extracts key discussion points","Use NLP to identify action items with assignees and deadlines, decisions made, and important topics","Generate structured summary, send automated emails to participants with their action items, integrate with task managers"],
+            "skills":["Python","Speech-to-text API","NLP","spaCy","Email automation"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":4,"category":"ai-ml","companies":["Google","Microsoft","Zoom"]
+        },
+        {
+            "id":30,"title":"Smart Reply for Customer Support",
+            "problem":"Customer support teams spend hours writing repetitive email responses to common questions.",
+            "who":"Customer support teams, small business owners, e-commerce sellers, service providers",
+            "impact":"Affects 10 lakh+ customer support professionals in India",
+            "hints":["Build a system analyzing incoming support emails and suggesting 3 relevant reply templates based on content","Use text classification to categorize email intent (refund/complaint/inquiry), train on past support emails","Implement Gmail/Outlook plugin showing suggestions inline, allows customization before sending, learns from edits"],
+            "skills":["Python","NLP","Text classification","Gmail API","Flask"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":4,"interview":5,"impact_score":4,"category":"ai-ml","companies":["Freshdesk","Zendesk","Google"]
+        },
+        {
+            "id":31,"title":"Construction Material Price Tracker",
+            "problem":"Home builders and contractors lose money because they can't track daily fluctuations in cement, steel, brick prices.",
+            "who":"Home builders, contractors, construction companies, architects",
+            "impact":"Affects 50 lakh+ people involved in construction annually in India",
+            "hints":["Build an app crowdsourcing current prices of construction materials from local dealers city-wise","Show price trends over time, send alerts when prices drop for bulk purchase opportunities","Add material calculator for estimating quantities needed, dealer contact info, comparison across suppliers"],
+            "skills":["React Native","Firebase","Charts","Notifications","Geolocation"],"difficulty":"beginner","time":"2 weeks",
+            "resume":4,"hackathon":4,"interview":4,"impact_score":4,"category":"mobile-apps","companies":["BuildNext","Infra.Market","Housing.com"]
+        },
+        {
+            "id":32,"title":"Car Pooling for Daily Office Commuters",
+            "problem":"Office workers waste money on solo cab rides when colleagues from same area could share rides.",
+            "who":"Office employees, corporate workers, IT professionals, daily commuters",
+            "impact":"Affects 3 crore+ office commuters in metro cities of India",
+            "hints":["Create a company-specific carpooling app where employees enter home location and office timings to find matches","Implement route matching algorithm considering detour distance, split cost calculator, rating system","Add recurring ride scheduling for Mon-Fri, in-app chat, carbon footprint savings tracker"],
+            "skills":["React Native","Google Maps API","Matching algorithms","Real-time chat","MongoDB"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":4,"category":"mobile-apps","companies":["Uber","Ola","Quick Ride"]
+        },
+        {
+            "id":33,"title":"Job Alert for Specific Skills",
+            "problem":"Job seekers waste time browsing multiple portals when they could get notifications only for matching opportunities.",
+            "who":"Job seekers, freshers, career switchers, freelancers",
+            "impact":"Affects 5 crore+ active job seekers in India",
+            "hints":["Build an app aggregating jobs from LinkedIn, Naukri, Indeed and sending notifications matching user's skills","Use web scraping or APIs to fetch listings, implement keyword matching for skills, location, experience","Add one-click apply, application tracking, salary insights, company reviews aggregation, resume tips"],
+            "skills":["React Native","Web scraping","Push notifications","APIs","Text matching"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":4,"interview":5,"impact_score":4,"category":"mobile-apps","companies":["LinkedIn","Naukri","Indeed"]
+        },
+        {
+            "id":34,"title":"Remote Team Standup Automation",
+            "problem":"Remote teams waste time in daily standup meetings that could be asynchronous text updates instead.",
+            "who":"Remote software teams, distributed teams, startup employees",
+            "impact":"Affects 50 lakh+ remote workers in Indian tech companies",
+            "hints":["Build a Slack/Discord bot asking team members daily standup questions asynchronously","Collect responses throughout the day and compile into a digest shared in the team channel","Add analytics on blocker frequency, task completion patterns, integration with Jira/GitHub for updates"],
+            "skills":["Node.js","Slack API","MongoDB","Cron Jobs","REST APIs"],"difficulty":"intermediate","time":"2-3 weeks",
+            "resume":5,"hackathon":4,"interview":5,"impact_score":4,"category":"web-apps","companies":["Slack","Atlassian","Microsoft"]
+        },
+        {
+            "id":35,"title":"Interview Prep Peer Matching",
+            "problem":"Job seekers need mock interview practice but can't afford expensive services or find suitable partners.",
+            "who":"Job seekers, college students, career switchers, coding bootcamp graduates",
+            "impact":"Affects 1 crore+ people actively seeking jobs in India",
+            "hints":["Create a platform matching people preparing for similar roles to conduct mock interviews for each other","Implement scheduling, video call integration, and structured feedback forms based on interview type","Add question bank by company/role, recording for self-review, rating system to find quality partners"],
+            "skills":["React","Node.js","WebRTC","MongoDB","Scheduling algorithms"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":4,"category":"web-apps","companies":["Pramp","Interviewing.io","LinkedIn"]
+        },
+        {
+            "id":36,"title":"Document Version Control for Non-Developers",
+            "problem":"Non-technical professionals lose track of document versions and struggle to collaborate without tools like Git.",
+            "who":"Content writers, legal professionals, academic researchers, policy makers",
+            "impact":"Affects 2 crore+ professionals working with documents in India",
+            "hints":["Create a web app where users upload documents and the system automatically tracks changes with version history","Implement diff algorithm showing what changed between versions, with comments and annotations support","Add rollback, branch/merge for different drafts, and simple UI without Git terminology"],
+            "skills":["React","Node.js","Diff algorithm","AWS S3","PostgreSQL"],"difficulty":"advanced","time":"4-6 weeks",
+            "resume":5,"hackathon":3,"interview":5,"impact_score":4,"category":"web-apps","companies":["Google","Notion","Dropbox"]
+        },
+        {
+            "id":37,"title":"Neighborhood Grocery Group Buying",
+            "problem":"Families can't access wholesale prices because they buy in small quantities, but together can bulk order.",
+            "who":"Apartment residents, neighborhood communities, housing societies",
+            "impact":"Affects 5 crore+ urban households in India",
+            "hints":["Build a platform where neighbors create buying groups, pool orders to reach wholesale minimums","Implement order collection deadline, payment tracking per member, delivery coordination to central location","Add product catalog with wholesale prices, automatic price calculation per member, local wholesaler integration"],
+            "skills":["React","Node.js","PostgreSQL","Payment gateway","Scheduling"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":4,"category":"web-apps","companies":["Meesho","JioMart","BigBasket"]
+        },
+        {
+            "id":38,"title":"Portfolio Website Builder for Developers",
+            "problem":"Developers need portfolio websites to showcase projects but don't want to spend time designing from scratch.",
+            "who":"Software developers, students, freelancers, designers",
+            "impact":"Affects 50 lakh+ developers in India looking for jobs",
+            "hints":["Create a no-code builder with templates for developer portfolios (projects, skills, GitHub stats, blog)","Auto-fetch GitHub repositories via API, display contribution graphs, allow embedding of live demos","Provide custom domain support, SEO optimization, export as static HTML/CSS for GitHub Pages hosting"],
+            "skills":["React","GitHub API","Template engine","Drag-drop UI","Static site generation"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":4,"hackathon":5,"interview":4,"impact_score":3,"category":"web-apps","companies":["Wix","Squarespace","Webflow"]
+        },
+        {
+            "id":39,"title":"Crowdsourced Water Quality Reporter",
+            "problem":"Citizens can't easily report and track contaminated water supply issues to authorities in their locality.",
+            "who":"Residents, apartment communities, rural villagers, slum dwellers",
+            "impact":"Affects 10 crore+ people facing water quality issues in India",
+            "hints":["Create a mobile app where users report water issues with photos, location, severity, auto-notifying authorities","Implement complaint tracking with status updates, upvote system to highlight widespread issues","Add crowdsourced water quality reports on map, historical data visualization, escalation if unresolved"],
+            "skills":["React Native","Node.js","MongoDB","Google Maps API","Push notifications"],"difficulty":"beginner","time":"2-3 weeks",
+            "resume":4,"hackathon":5,"interview":4,"impact_score":5,"category":"mobile-apps","companies":["Google","Swachh Bharat","Municipal Tech"]
+        },
+        {
+            "id":40,"title":"Last-Mile Delivery Route Optimizer",
+            "problem":"Delivery personnel waste hours finding optimal routes across 30-50 delivery locations daily.",
+            "who":"Delivery executives, courier staff, food delivery persons, logistics workers",
+            "impact":"Affects 50 lakh+ delivery workers in India",
+            "hints":["Build an app taking delivery addresses and calculating optimal route using traveling salesman algorithm","Integrate Google Maps for navigation, allow manual reordering for time-specific deliveries, track completion","Add fuel/distance savings calculator, offline map caching, estimated completion time"],
+            "skills":["React Native","Google Maps API","Route optimization","GPS","Offline maps"],"difficulty":"advanced","time":"4-5 weeks",
+            "resume":5,"hackathon":4,"interview":5,"impact_score":5,"category":"mobile-apps","companies":["Swiggy","Dunzo","Amazon"]
+        },
+        {
+            "id":41,"title":"Vernacular News Aggregator Without Bias",
+            "problem":"People consuming regional language news can't easily compare coverage across different sources to identify bias.",
+            "who":"Regional language readers, rural citizens, senior citizens, vernacular news consumers",
+            "impact":"Affects 50 crore+ vernacular news consumers in India",
+            "hints":["Build an app aggregating news from multiple regional sources on same topic, displaying side-by-side for comparison","Implement RSS feed parsing for regional news sites, categorize by topic using keyword matching","Add bias indicator using source diversity, highlight contradictions, support for 10+ Indian languages"],
+            "skills":["React Native","RSS parsing","NLP basics","Text analysis","Multi-language"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":4,"interview":5,"impact_score":5,"category":"mobile-apps","companies":["Google","Dailyhunt","ShareChat"]
+        },
+        {
+            "id":42,"title":"Domestic Worker Safety App",
+            "problem":"Domestic workers lack awareness of their legal rights and have no platform to report exploitation safely.",
+            "who":"Domestic workers, maids, cooks, caregivers, daily wage workers",
+            "impact":"Affects 5 crore+ domestic workers in India",
+            "hints":["Create an app in multiple languages explaining minimum wages, working hours, leave rights per state","Implement anonymous complaint filing to NGOs/authorities, emergency SOS button","Add community forum for workers, job board for verified employers, legal aid contacts"],
+            "skills":["React Native","Multi-language UI","Firebase","Geolocation","Security"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":5,"category":"mobile-apps","companies":["NGOs","Google","Social impact orgs"]
+        },
+        {
+            "id":43,"title":"Open-Source Canva Alternative",
+            "problem":"Students and small businesses need free graphic design tools but Canva's premium features are expensive.",
+            "who":"Students, small business owners, social media managers, NGOs",
+            "impact":"Affects 10 crore+ users who need design tools in India",
+            "hints":["Build a browser-based design editor with drag-drop elements, text, shapes, and pre-made templates","Use HTML5 Canvas or Fabric.js for rendering, allow export as PNG/JPG without watermarks","Include Indian-specific templates (festival posts, business flyers), local fonts, offline PWA functionality"],
+            "skills":["React","Fabric.js","Canvas API","IndexedDB","PWA"],"difficulty":"advanced","time":"2-3 months",
+            "resume":5,"hackathon":4,"interview":5,"impact_score":5,"category":"web-apps","companies":["Canva","Adobe","Figma"]
+        },
+        {
+            "id":44,"title":"College Syllabus Progress Tracker",
+            "problem":"Students lose track of syllabus completion and realize too late before exams that they're behind schedule.",
+            "who":"College students, competitive exam aspirants, self-learners",
+            "impact":"Affects 4 crore college students across India",
+            "hints":["Create a tool where students input syllabus topics and mark them as not-started/in-progress/completed","Calculate completion percentage, predict if student will finish on time, suggest daily targets","Add Pomodoro timer integration, topic-wise notes upload, anonymous peer comparison percentages"],
+            "skills":["React","Firebase","Chart.js","Local storage","Algorithm design"],"difficulty":"beginner","time":"1-2 weeks",
+            "resume":3,"hackathon":4,"interview":3,"impact_score":4,"category":"web-apps","companies":["Notion","Todoist","Google"]
+        },
+        {
+            "id":45,"title":"Local Language Newsletter Platform",
+            "problem":"Content creators want to start newsletters in regional languages but platforms like Substack lack proper support.",
+            "who":"Content creators, journalists, bloggers, regional language writers",
+            "impact":"Affects 5 lakh+ content creators writing in 20+ Indian languages",
+            "hints":["Build a newsletter platform with native support for Indic scripts, fonts, and right-to-left languages","Implement email delivery via SendGrid/AWS SES, subscriber management, analytics on open rates","Add monetization via UPI subscriptions, free/paid tiers, SEO-friendly web archives"],
+            "skills":["React","Node.js","SendGrid API","i18n","PostgreSQL"],"difficulty":"intermediate","time":"3-4 weeks",
+            "resume":5,"hackathon":4,"interview":5,"impact_score":4,"category":"web-apps","companies":["Substack","Ghost","Medium"]
+        },
+        {
+            "id":46,"title":"Fitness Tracker for Low-Cost Phones",
+            "problem":"Budget smartphone users can't access fitness tracking because apps require expensive phones with many sensors.",
+            "who":"Budget smartphone users, rural youth, students, middle-class fitness enthusiasts",
+            "impact":"Affects 40 crore+ people with budget smartphones in India",
+            "hints":["Create a lightweight fitness app working with basic accelerometer for step counting and manual exercise logging","Use minimal battery and storage, implement offline workout plans, BMI calculator, water intake tracking","Add simple home workouts with illustrations (no videos), progress charts, achievement badges"],
+            "skills":["React Native","Device sensors","SQLite","Performance optimization","Low-resource design"],"difficulty":"beginner","time":"2-3 weeks",
+            "resume":4,"hackathon":4,"interview":4,"impact_score":4,"category":"mobile-apps","companies":["Google","HealthifyMe","Cult.fit"]
+        },
+        {
+            "id":47,"title":"Event Budget Planner for Students",
+            "problem":"Student event organizers struggle to plan budgets, track expenses, and get approvals for college fests.",
+            "who":"College event organizers, club coordinators, fest committees",
+            "impact":"Affects 50 lakh+ student event organizers annually in India",
+            "hints":["Build a tool where organizers create event budgets with categories, estimated vs actual costs","Implement approval workflow where faculty advisors review and approve budget requests with comments","Generate expense reports, track vendor payments, budget vs actual variance analysis with visual charts"],
+            "skills":["Vue.js","Express.js","MongoDB","Chart.js","PDF export"],"difficulty":"intermediate","time":"3 weeks",
+            "resume":4,"hackathon":4,"interview":4,"impact_score":3,"category":"web-apps","companies":["Eventbrite","Zoho","Microsoft"]
+        },
+        {
+            "id":48,"title":"College Club Event Calendar",
+            "problem":"Students miss events because each club announces separately on different WhatsApp groups and Instagram pages.",
+            "who":"College students, club coordinators, event organizers",
+            "impact":"Affects 3 crore+ college students interested in campus events",
+            "hints":["Build a centralized calendar where club coordinators post events with date, time, venue, and registration links","Implement filters by club type, event category, and send personalized email/SMS reminders","Add Google Calendar sync, event popularity tracking, and feedback collection after events"],
+            "skills":["React","Node.js","MongoDB","Google Calendar API","Email notifications"],"difficulty":"beginner","time":"2 weeks",
+            "resume":3,"hackathon":4,"interview":3,"impact_score":3,"category":"web-apps","companies":["Google","Microsoft","Eventbrite"]
+        },
+        {
+            "id":49,"title":"Automatic Subtitle Generator for Videos",
+            "problem":"Content creators spend hours manually creating subtitles for videos in multiple languages.",
+            "who":"YouTubers, content creators, educators, marketing teams, course instructors",
+            "impact":"Affects 5 lakh+ video creators in India",
+            "hints":["Use speech-to-text API to transcribe video audio, segment by speaker and timing, generate SRT files","Add translation to multiple Indian languages using Google Translate API, sync with video timestamps","Provide web interface to upload video, edit generated subtitles, export for YouTube/social media"],
+            "skills":["Python","Speech-to-text","FFmpeg","Translation APIs","SRT formatting"],"difficulty":"intermediate","time":"2-3 weeks",
+            "resume":5,"hackathon":5,"interview":5,"impact_score":4,"category":"ai-ml","companies":["Google","YouTube","Otter.ai"]
+        },
+        {
+            "id":50,"title":"Period Tracker with Pharmacy Inventory",
+            "problem":"Women struggle to find sanitary products during emergencies as local pharmacies don't show real-time stock.",
+            "who":"Women, teenage girls, travelers, rural women",
+            "impact":"Affects 35 crore+ menstruating women in India",
+            "hints":["Build an app combining period tracking calendar with nearby pharmacy location and product availability","Partner with pharmacies to update stock status, implement location-based search for nearest products","Add symptom tracking, health tips, emergency gynecologist contacts, and discreet delivery options"],
+            "skills":["React Native","Firebase","Google Maps API","Push notifications","Database"],"difficulty":"beginner","time":"2-3 weeks",
+            "resume":4,"hackathon":5,"interview":4,"impact_score":5,"category":"mobile-apps","companies":["1mg","PharmEasy","Flo"]
+        }
+    ];
+
+    var CATEGORIES = [
+        {id:'all',label:'All',icon:'📋'},
+        {id:'web-apps',label:'Web Apps',icon:'💻'},
+        {id:'mobile-apps',label:'Mobile',icon:'📱'},
+        {id:'ai-ml',label:'AI/ML',icon:'🤖'},
+        {id:'beginner',label:'Beginner',icon:'🟢'},
+        {id:'intermediate',label:'Intermediate',icon:'🟡'},
+        {id:'advanced',label:'Advanced',icon:'🔴'},
+        {id:'saved',label:'Saved',icon:'⭐'}
+    ];
+
+    var state = {filter:'all', saved: new Set(), revealedHints: new Set()};
+
+    // Restore state
+    try {
+        var s = localStorage.getItem('optidrop_problems');
+        if (s) {
+            var d = JSON.parse(s);
+            state.saved = new Set(d.saved || []);
+            state.revealedHints = new Set(d.revealedHints || []);
+        }
+    } catch(e){}
+
+    // Build filters
+    var filterHTML = '';
+    CATEGORIES.forEach(function(c) {
+        filterHTML += '<button class="pb-filter' + (c.id === 'all' ? ' active' : '') + '" data-filter="' + c.id + '" onclick="setFilter(\'' + c.id + '\')">' + c.icon + ' ' + c.label + '</button>';
+    });
+    document.getElementById('filterButtons').innerHTML = filterHTML;
+
+    // Render
+    renderProblems();
+    updateStats();
+
+    function renderProblems() {
+        var search = document.getElementById('searchInput').value.toLowerCase();
+        var filtered = PROBLEMS.filter(function(p) {
+            // Search
+            if (search) {
+                var searchable = (p.title + ' ' + p.problem + ' ' + p.skills.join(' ') + ' ' + p.category + ' ' + p.who).toLowerCase();
+                if (searchable.indexOf(search) === -1) return false;
+            }
+            // Filter
+            if (state.filter === 'saved') return state.saved.has(p.id);
+            if (state.filter === 'beginner' || state.filter === 'intermediate' || state.filter === 'advanced') return p.difficulty === state.filter;
+            if (state.filter !== 'all') return p.category === state.filter;
+            return true;
+        });
+
+        if (filtered.length === 0) {
+            document.getElementById('problemGrid').innerHTML = '';
+            document.getElementById('emptyState').style.display = 'block';
+        } else {
+            document.getElementById('emptyState').style.display = 'none';
+            var html = '';
+            filtered.forEach(function(p) {
+                var isOpen = false; // Cards start closed
+                html += '<div class="pb-card' + (isOpen ? ' open' : '') + '" data-id="' + p.id + '" onclick="toggleCard(' + p.id + ')">';
+                html += '<div class="pb-card-head">';
+                html += '<div class="pb-card-id">#' + String(p.id).padStart(3,'0') + '</div>';
+                html += '<div class="pb-card-title">' + p.title + '</div>';
+                html += '<div class="pb-card-problem">' + p.problem + '</div>';
+                html += '<div class="pb-tags">';
+                html += '<span class="pb-tag cat">' + p.category.replace('-',' ') + '</span>';
+                html += '<span class="pb-tag diff ' + p.difficulty + '">' + p.difficulty + '</span>';
+                html += '<span class="pb-tag time">' + p.time + '</span>';
+                html += '</div></div>';
+
+                // Scores
+                html += '<div class="pb-scores">';
+                html += '<div class="pb-score"><span class="pb-score-label">Resume</span><div class="pb-score-bar"><div class="pb-score-fill s' + p.resume + '" style="width:' + (p.resume*20) + '%"></div></div></div>';
+                html += '<div class="pb-score"><span class="pb-score-label">Hackathon</span><div class="pb-score-bar"><div class="pb-score-fill s' + p.hackathon + '" style="width:' + (p.hackathon*20) + '%"></div></div></div>';
+                html += '<div class="pb-score"><span class="pb-score-label">Interview</span><div class="pb-score-bar"><div class="pb-score-fill s' + p.interview + '" style="width:' + (p.interview*20) + '%"></div></div></div>';
+                html += '<div class="pb-score"><span class="pb-score-label">Impact</span><div class="pb-score-bar"><div class="pb-score-fill s' + p.impact_score + '" style="width:' + (p.impact_score*20) + '%"></div></div></div>';
+                html += '</div>';
+
+                // Expanded content
+                html += '<div class="pb-expand" onclick="event.stopPropagation()">';
+                html += '<div class="pb-who"><strong>Who faces this:</strong> ' + p.who + '</div>';
+                html += '<div class="pb-impact"><strong>Impact:</strong> ' + p.impact + '</div>';
+
+                // Hints
+                html += '<div class="pb-hints">';
+                html += '<div class="pb-hints-title">💡 Hints (click to reveal)</div>';
+                p.hints.forEach(function(hint, i) {
+                    var hintId = p.id + '.' + (i+1);
+                    var revealed = state.revealedHints.has(hintId);
+                    html += '<div class="pb-hint-trigger' + (revealed ? ' used' : '') + '" onclick="event.stopPropagation();revealHint(' + p.id + ',' + (i+1) + ')">Hint ' + (i+1) + (revealed ? ' ✓' : '') + '</div>';
+                    html += '<div class="pb-hint' + (revealed ? ' revealed' : '') + '" id="hint-' + hintId + '">' + hint + '</div>';
+                });
+                html += '</div>';
+
+                // Skills
+                html += '<div class="pb-skills">';
+                p.skills.forEach(function(sk) {
+                    html += '<span class="pb-skill">' + sk + '</span>';
+                });
+                html += '</div>';
+
+                html += '<div class="pb-companies"><strong>Companies value this:</strong> ' + p.companies.join(', ') + '</div>';
+
+                // Save button
+                var isSaved = state.saved.has(p.id);
+                html += '<button class="pb-save-btn' + (isSaved ? ' saved' : '') + '" onclick="event.stopPropagation();toggleSave(' + p.id + ')">' + (isSaved ? '⭐ Saved' : '☆ Save') + '</button>';
+
+                html += '</div>'; // expand
+                html += '</div>'; // card
+            });
+            document.getElementById('problemGrid').innerHTML = html;
+        }
+        updateStats();
+    }
+
+    window.toggleCard = function(id) {
+        var card = document.querySelector('.pb-card[data-id="'+id+'"]');
+        if (card) card.classList.toggle('open');
+    };
+
+    window.revealHint = function(problemId, hintNum) {
+        var hintId = problemId + '.' + hintNum;
+        state.revealedHints.add(hintId);
+        var el = document.getElementById('hint-' + hintId);
+        if (el) el.classList.add('revealed');
+        var trigger = el.previousElementSibling;
+        if (trigger) { trigger.classList.add('used'); trigger.textContent = 'Hint ' + hintNum + ' ✓'; }
+        save();
+    };
+
+    window.toggleSave = function(id) {
+        if (state.saved.has(id)) state.saved.delete(id);
+        else state.saved.add(id);
+        save();
+        renderProblems();
+    };
+
+    window.setFilter = function(f) {
+        state.filter = f;
+        document.querySelectorAll('.pb-filter').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.filter === f);
+        });
+        renderProblems();
+    };
+
+    window.filterProblems = function() {
+        renderProblems();
+    };
+
+    function updateStats() {
+        var total = PROBLEMS.length;
+        var showing = document.querySelectorAll('.pb-card').length;
+        document.getElementById('totalCount').textContent = total + ' problems · 4 categories · Updated regularly';
+        document.getElementById('showingCount').textContent = 'Showing: ' + showing;
+        document.getElementById('savedCount').textContent = 'Saved: ' + state.saved.size;
+    }
+
+    function save() {
+        localStorage.setItem('optidrop_problems', JSON.stringify({
+            saved: Array.from(state.saved),
+            revealedHints: Array.from(state.revealedHints)
+        }));
+    }
+    </script>
+</body>
+</html>

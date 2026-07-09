@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Resources — Projects, Problems & More | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Free student resources: real-world problem bank for projects, resume builders, and more. Find hackathon ideas and portfolio-worthy projects.">
+    <meta name="keywords" content="student projects, hackathon ideas, resume projects, CS projects, engineering projects, problem bank">
+    <link rel="canonical" href="https://optidrop.online/students/">
+    <meta property="og:title" content="Student Resources — Projects, Problems & More | OptiDrop">
+    <meta property="og:description" content="Free student resources: real-world problem bank, project ideas, and more.">
+    <meta property="og:url" content="https://optidrop.online/students/">
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    .st-container{max-width:960px;margin:0 auto;padding:1rem 1.25rem}
+    .st-hero{text-align:center;padding:2.5rem 1rem 1.5rem}
+    .st-badge{display:inline-block;padding:0.35rem 1rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);color:#e91e63;font-size:0.75rem;font-weight:700;border-radius:9999px;margin-bottom:0.8rem}
+    .st-hero h1{font-size:1.75rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;line-height:1.2}
+    .st-hero .sub{font-size:0.95rem;color:#64748b;line-height:1.5;max-width:520px;margin:0 auto}
+
+    /* Resource Cards Grid */
+    .st-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;max-width:960px;margin:0 auto;padding:0 0.5rem}
+
+    .st-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;text-decoration:none;display:block;transition:all 0.3s}
+    .st-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.08);border-color:#f9a8d4}
+    .st-card-header{padding:1.5rem 1.5rem 1rem}
+    .st-card-icon{font-size:2rem;margin-bottom:0.75rem}
+    .st-card-badge{display:inline-block;padding:0.2rem 0.6rem;font-size:0.65rem;font-weight:700;border-radius:9999px;margin-bottom:0.6rem}
+    .st-card-badge.live{background:#ecfdf5;color:#059669}
+    .st-card-badge.soon{background:#f1f5f9;color:#94a3b8}
+    .st-card h3{font-size:1.1rem;font-weight:800;color:#0f172a;margin-bottom:0.4rem}
+    .st-card p{font-size:0.85rem;color:#64748b;line-height:1.5}
+    .st-card-footer{padding:0.75rem 1.5rem;border-top:1px solid #f1f5f9;display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:#94a3b8}
+    .st-card-footer .cta{color:#e91e63;font-weight:700}
+
+    /* Coming Soon Card */
+    .st-card.coming-soon{opacity:0.5;pointer-events:none}
+
+    /* Stats */
+    .st-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;max-width:500px;margin:2rem auto;padding:0 1rem}
+    .st-stat{text-align:center;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1rem 0.5rem}
+    .st-stat .num{font-size:1.5rem;font-weight:800;color:#e91e63}
+    .st-stat .label{font-size:0.7rem;color:#94a3b8;margin-top:0.2rem;font-weight:500}
+
+    /* Dark Mode */
+    .dark-mode .st-hero h1{color:#f1f5f9}
+    .dark-mode .st-hero .sub{color:#94a3b8}
+    .dark-mode .st-card{background:#272a33;border-color:#3d4455}
+    .dark-mode .st-card:hover{border-color:#f472b6}
+    .dark-mode .st-card h3{color:#f1f5f9}
+    .dark-mode .st-card p{color:#94a3b8}
+    .dark-mode .st-card-badge.live{background:#064e3b;color:#34d399}
+    .dark-mode .st-card-badge.soon{background:#3d4455;color:#94a3b8}
+    .dark-mode .st-card-footer{border-color:#3d4455;color:#94a3b8}
+    .dark-mode .st-card-footer .cta{color:#f472b6}
+    .dark-mode .st-stat{background:#272a33;border-color:#3d4455}
+    .dark-mode .st-stat .num{color:#f472b6}
+    .dark-mode .st-stat .label{color:#94a3b8}
+
+    /* Responsive */
+    @media(min-width:900px){
+        .st-container{padding:1.5rem 2rem}
+        .st-hero{padding:3rem 1rem 2rem}
+        .st-hero h1{font-size:2rem}
+        .st-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+    }
+    @media(max-width:640px){
+        .st-container{padding:0.75rem 0.85rem}
+        .st-hero{padding:1.5rem 0.5rem 1rem}
+        .st-hero h1{font-size:1.35rem}
+        .st-hero .sub{font-size:0.88rem}
+        .st-grid{grid-template-columns:1fr}
+        .st-stats{gap:0.5rem}
+        .st-stat{padding:0.75rem 0.4rem}
+        .st-stat .num{font-size:1.2rem}
+    }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <div class="st-container">
+            <header class="st-hero">
+                <span class="st-badge">🎓 STUDENT RESOURCES</span>
+                <h1>Build Projects That<br>Get You Hired</h1>
+                <p class="sub">Real problems. Real impact. Find projects worth building for your resume, hackathons, and portfolio.</p>
+            </header>
+
+            <div class="st-stats">
+                <div class="st-stat"><div class="num">50+</div><div class="label">Problems</div></div>
+                <div class="st-stat"><div class="num">4</div><div class="label">Categories</div></div>
+                <div class="st-stat"><div class="num">Free</div><div class="label">Forever</div></div>
+            </div>
+
+            <div class="st-grid">
+                <a href="/students/problems.html" class="st-card">
+                    <div class="st-card-header">
+                        <div class="st-card-icon">🔍</div>
+                        <span class="st-card-badge live">✅ LIVE</span>
+                        <h3>Problem Bank</h3>
+                        <p>50+ real-world problems that students can solve by building tech projects. Not generic ideas — actual problems people face.</p>
+                    </div>
+                    <div class="st-card-footer">
+                        <span>💻 Web · 📱 Mobile · 🤖 AI/ML</span>
+                        <span class="cta">Explore →</span>
+                    </div>
+                </a>
+
+                <div class="st-card coming-soon">
+                    <div class="st-card-header">
+                        <div class="st-card-icon">🏆</div>
+                        <span class="st-card-badge soon">COMING SOON</span>
+                        <h3>Hackathon Playbook</h3>
+                        <p>How to win hackathons: team formation, idea selection, building in 48 hours, and pitching to judges.</p>
+                    </div>
+                    <div class="st-card-footer">
+                        <span>Coming soon</span>
+                        <span class="cta" style="color:#94a3b8;">Soon →</span>
+                    </div>
+                </div>
+
+                <div class="st-card coming-soon">
+                    <div class="st-card-header">
+                        <div class="st-card-icon">📄</div>
+                        <span class="st-card-badge soon">COMING SOON</span>
+                        <h3>Resume Project Guide</h3>
+                        <p>How to write project descriptions that impress recruiters. STAR method, metrics, and portfolio tips.</p>
+                    </div>
+                    <div class="st-card-footer">
+                        <span>Coming soon</span>
+                        <span class="cta" style="color:#94a3b8;">Soon →</span>
+                    </div>
+                </div>
+
+                <div class="st-card coming-soon">
+                    <div class="st-card-header">
+                        <div class="st-card-icon">🎤</div>
+                        <span class="st-card-badge soon">COMING SOON</span>
+                        <h3>Interview Prep</h3>
+                        <p>How to talk about your projects in interviews. Common questions, STAR answers, and demo tips.</p>
+                    </div>
+                    <div class="st-card-footer">
+                        <span>Coming soon</span>
+                        <span class="cta" style="color:#94a3b8;">Soon →</span>
+                    </div>
+                </div>
+
+                <div class="st-card coming-soon">
+                    <div class="st-card-header">
+                        <div class="st-card-icon">🔗</div>
+                        <span class="st-card-badge soon">COMING SOON</span>
+                        <h3>Open Source Guide</h3>
+                        <p>How to contribute to open source projects as a beginner. First PR, good first issues, and building reputation.</p>
+                    </div>
+                    <div class="st-card-footer">
+                        <span>Coming soon</span>
+                        <span class="cta" style="color:#94a3b8;">Soon →</span>
+                    </div>
+                </div>
+
+                <div class="st-card coming-soon">
+                    <div class="st-card-header">
+                        <div class="st-card-icon">💼</div>
+                        <span class="st-card-badge soon">COMING SOON</span>
+                        <h3>Internship Guide</h3>
+                        <p>How to find, apply, and land internships. Cold emailing, LinkedIn strategy, and interview preparation.</p>
+                    </div>
+                    <div class="st-card-footer">
+                        <span>Coming soon</span>
+                        <span class="cta" style="color:#94a3b8;">Soon →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>Why Real-World Projects Matter</h2>
+                <p>Every year, millions of students graduate with the same degrees and the same textbook projects. The ones who stand out are those who built something that solves a real problem. Recruiters don't care about your calculator app — they care about impact.</p>
+                <h3>What Makes a Good Student Project?</h3>
+                <p>A good project has three things: it solves a real problem, it demonstrates technical skills, and you can explain it clearly in an interview. The Problem Bank helps you find projects that check all three boxes.</p>
+                <h3>For Hackathons</h3>
+                <p>Hackathon judges look for novelty, impact, and execution. Projects from the Problem Bank are designed to score high on all three — they're real problems with clear impact, and they're scoped for weekend builds.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+</body>
+</html>
