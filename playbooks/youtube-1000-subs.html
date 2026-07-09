@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Quest Map — 0 to 1000 Subscribers | Free Playbook | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Free interactive quest map to grow your YouTube channel from 0 to 1000 subscribers. Real strategies, no fluff — just what actually works.">
+    <meta name="keywords" content="youtube growth, 1000 subscribers, youtube playbook, youtube strategy, grow youtube channel, youtube for beginners">
+    <link rel="canonical" href="https://optidrop.online/playbooks/youtube-1000-subs.html">
+    <meta property="og:title" content="YouTube Quest Map — 0 to 1000 Subscribers | OptiDrop">
+    <meta property="og:description" content="Free interactive quest map to grow your YouTube channel from 0 to 1000 subscribers.">
+    <meta property="og:url" content="https://optidrop.online/playbooks/youtube-1000-subs.html">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"HowTo","name":"YouTube Quest Map — 0 to 1000 Subscribers","description":"A quest-style guide to grow your YouTube channel from zero to 1000 subscribers.","totalTime":"PT20M","step":[
+        {"@type":"HowToStep","position":1,"name":"Pick Your Niche","text":"Choose a specific topic you can create 100+ videos about."},
+        {"@type":"HowToStep","position":2,"name":"Set Up Your Channel","text":"Create a professional channel with clear branding."},
+        {"@type":"HowToStep","position":3,"name":"Publish Your First Video","text":"Create and upload your first video — done is better than perfect."},
+        {"@type":"HowToStep","position":4,"name":"Master Thumbnails & Titles","text":"Create clickable thumbnails and compelling titles."},
+        {"@type":"HowToStep","position":5,"name":"Stay Consistent","text":"Upload on a regular schedule your audience can rely on."},
+        {"@type":"HowToStep","position":6,"name":"Learn YouTube SEO","text":"Optimize your videos for search and discovery."},
+        {"@type":"HowToStep","position":7,"name":"Build Community","text":"Engage with viewers and other creators."},
+        {"@type":"HowToStep","position":8,"name":"Analyze & Adapt","text":"Use YouTube Analytics to understand what works."},
+        {"@type":"HowToStep","position":9,"name":"Monetize","text":"Turn your channel into income streams."}
+    ]}
+    </script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    /* Quest Map Styles */
+    .qm-container{max-width:720px;margin:0 auto;padding:1rem}
+    .qm-hero{text-align:center;padding:2rem 1rem 1rem}
+    .qm-badge{display:inline-block;padding:0.3rem 0.9rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);color:#e91e63;font-size:0.75rem;font-weight:700;border-radius:9999px;margin-bottom:1rem;letter-spacing:0.02em}
+    .qm-hero h1{font-size:1.6rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;line-height:1.25}
+    .qm-hero h1 .accent{background:linear-gradient(135deg,#e91e63,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .qm-hero .sub{font-size:0.95rem;color:#64748b;line-height:1.6;max-width:500px;margin:0 auto}
+    .qm-meta{display:flex;justify-content:center;gap:1.2rem;margin-top:1.2rem;font-size:0.78rem;color:#94a3b8;flex-wrap:wrap}
+    .qm-meta span{display:flex;align-items:center;gap:0.3rem}
+
+    /* Stats Strip */
+    .qm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;max-width:480px;margin:1.5rem auto;padding:0 1rem}
+    .qm-stat{text-align:center;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1rem 0.5rem}
+    .qm-stat .num{font-size:1.4rem;font-weight:800;color:#e91e63}
+    .qm-stat .label{font-size:0.7rem;color:#94a3b8;margin-top:0.2rem}
+
+    /* Quest Map Path */
+    .qm-map{position:relative;padding:1rem 0 2rem;max-width:560px;margin:0 auto}
+
+    /* Quest Node */
+    .qm-node{position:relative;display:flex;align-items:flex-start;gap:1rem;margin-bottom:0.5rem;cursor:pointer}
+    .qm-node:nth-child(odd){flex-direction:row}
+    .qm-node:nth-child(even){flex-direction:row-reverse}
+    .qm-node:nth-child(even) .qm-card{margin-left:auto}
+
+    /* Quest Dot on Path */
+    .qm-dot-col{display:flex;flex-direction:column;align-items:center;width:48px;flex-shrink:0;position:relative}
+    .qm-dot{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;background:#f1f5f9;color:#94a3b8;border:3px solid #e2e8f0;transition:all 0.3s ease;position:relative;z-index:2}
+    .qm-node.completed .qm-dot{background:#10b981;color:#fff;border-color:#10b981;box-shadow:0 0 0 4px rgba(16,185,129,0.15)}
+    .qm-node.active .qm-dot{background:#e91e63;color:#fff;border-color:#e91e63;box-shadow:0 0 0 4px rgba(233,30,99,0.15);animation:qm-pulse 2s infinite}
+    .qm-connector{width:3px;height:24px;background:#e2e8f0;flex-shrink:0}
+    .qm-node.completed .qm-connector{background:#10b981}
+    .qm-node:last-child .qm-connector{display:none}
+
+    /* Quest Card */
+    .qm-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;transition:all 0.3s ease;flex:1;max-width:calc(100% - 64px)}
+    .qm-node.active .qm-card{border-color:#f9a8d4;box-shadow:0 0 0 1px #f9a8d4}
+    .qm-node.completed .qm-card{border-color:#d1fae5;opacity:0.7}
+    .qm-card-head{display:flex;align-items:center;gap:0.6rem;padding:0.85rem 1rem;cursor:pointer}
+    .qm-card-title{flex:1}
+    .qm-card-title h3{font-size:0.95rem;font-weight:700;color:#0f172a;margin:0}
+    .qm-card-title .tag{font-size:0.65rem;font-weight:600;padding:0.15rem 0.5rem;border-radius:9999px;display:inline-block;margin-top:0.2rem}
+    .qm-card-title .tag.active{background:#fdf2f8;color:#e91e63}
+    .qm-card-title .tag.done{background:#ecfdf5;color:#059669}
+    .qm-card-title .tag.available{background:#f1f5f9;color:#64748b}
+    .qm-card-chevron{font-size:1rem;color:#94a3b8;transition:transform 0.3s ease;flex-shrink:0}
+    .qm-node.open .qm-card-chevron{transform:rotate(180deg)}
+    .qm-card-body{padding:0 1rem 1rem;display:none}
+    .qm-node.open .qm-card-body{display:block}
+    .qm-card-body p{color:#475569;line-height:1.7;margin-bottom:0.8rem;font-size:0.85rem}
+    .qm-card-body p strong{color:#0f172a}
+    .qm-card-body ul{margin:0 0 0.8rem 1.2rem;padding:0}
+    .qm-card-body li{color:#475569;font-size:0.85rem;line-height:1.6;margin-bottom:0.3rem}
+    .qm-card-body li strong{color:#0f172a}
+
+    /* Milestone Badge inside cards */
+    .qm-milestone{display:flex;align-items:center;gap:0.5rem;padding:0.6rem 0.8rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);border-radius:10px;margin-bottom:0.8rem;font-size:0.8rem;font-weight:600;color:#be185b}
+    .qm-milestone .icon{font-size:1.1rem}
+
+    /* Tip Box */
+    .qm-tip{display:flex;gap:0.5rem;padding:0.7rem;background:#f8fafc;border-radius:10px;margin-bottom:0.8rem;font-size:0.78rem;color:#64748b;border-left:3px solid #e91e63}
+    .qm-tip .icon{font-size:0.95rem;flex-shrink:0}
+    .qm-tip.gold{background:#fffbeb;border-color:#f59e0b}
+
+    /* Action Button */
+    .qm-btn{display:block;width:100%;padding:0.75rem;border:none;border-radius:10px;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all 0.2s ease;margin-top:0.5rem}
+    .qm-btn.primary{background:#10b981;color:#fff}
+    .qm-btn.primary:hover{background:#059669}
+
+    /* Completion */
+    .qm-complete{text-align:center;padding:2rem 1rem;display:none}
+    .qm-complete.show{display:block}
+    .done-card{background:#fff;border:2px solid #10b981;border-radius:16px;padding:2rem 1.5rem}
+    .done-icon{font-size:3rem;display:block;margin-bottom:1rem}
+    .done-card h2{font-size:1.4rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem}
+    .done-card .sub{color:#64748b;font-size:0.9rem;margin-bottom:1.5rem;line-height:1.6}
+    .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;background:#25d366;color:#fff;border:none;border-radius:12px;font-weight:700;cursor:pointer;margin-bottom:1rem;font-size:0.9rem}
+    .next-link{display:inline-block;color:#e91e63;font-weight:600;font-size:0.9rem}
+
+    /* Progress Bar */
+    .qm-progress{max-width:480px;margin:0 auto 1.5rem;padding:0 1rem}
+    .qm-progress-bar{height:8px;background:#f1f5f9;border-radius:99px;overflow:hidden}
+    .qm-progress-fill{height:100%;background:linear-gradient(90deg,#e91e63,#ec4899);border-radius:99px;transition:width 0.5s ease;width:0%}
+    .qm-progress-label{display:flex;justify-content:space-between;margin-top:0.4rem;font-size:0.7rem;color:#94a3b8}
+
+    /* Dark Mode */
+    .dark-mode .qm-hero h1{color:#f1f5f9}
+    .dark-mode .qm-hero h1 .accent{background:linear-gradient(135deg,#f472b6,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .dark-mode .qm-hero .sub{color:#94a3b8}
+    .dark-mode .qm-meta span{color:#94a3b8}
+    .dark-mode .qm-stat{background:#272a33;border-color:#3d4455}
+    .dark-mode .qm-stat .num{color:#f472b6}
+    .dark-mode .qm-stat .label{color:#94a3b8}
+    .dark-mode .qm-dot{background:#3d4455;color:#94a3b8;border-color:#3d4455}
+    .dark-mode .qm-node.completed .qm-dot{background:#10b981;color:#fff;border-color:#10b981}
+    .dark-mode .qm-node.active .qm-dot{background:#e91e63;color:#fff;border-color:#e91e63}
+    .dark-mode .qm-connector{background:#3d4455}
+    .dark-mode .qm-node.completed .qm-connector{background:#10b981}
+    .dark-mode .qm-card{background:#272a33;border-color:#3d4455}
+    .dark-mode .qm-node.active .qm-card{border-color:#f472b6;box-shadow:0 0 0 1px #f472b6}
+    .dark-mode .qm-node.completed .qm-card{border-color:#064e3b}
+    .dark-mode .qm-card-title h3{color:#f1f5f9}
+    .dark-mode .qm-card-title .tag.active{background:#3b0f2a;color:#f472b6}
+    .dark-mode .qm-card-title .tag.done{background:#064e3b;color:#34d399}
+    .dark-mode .qm-card-title .tag.available{background:#3d4455;color:#94a3b8}
+    .dark-mode .qm-card-chevron{color:#94a3b8}
+    .dark-mode .qm-card-body p{color:#e2e8f0}
+    .dark-mode .qm-card-body p strong{color:#f1f5f9}
+    .dark-mode .qm-card-body li{color:#e2e8f0}
+    .dark-mode .qm-card-body li strong{color:#f1f5f9}
+    .dark-mode .qm-milestone{background:linear-gradient(135deg,#3b0f2a,#4a1535);color:#f472b6}
+    .dark-mode .qm-tip{background:#1e293b;color:#e2e8f0;border-color:#f472b6}
+    .dark-mode .qm-tip.gold{background:#1c1917;border-color:#f59e0b}
+    .dark-mode .qm-btn.primary{background:#10b981;color:#fff}
+    .dark-mode .qm-progress-bar{background:#3d4455}
+    .dark-mode .done-card{background:#272a33;border-color:#10b981}
+    .dark-mode .done-card h2{color:#f1f5f9}
+    .dark-mode .done-card .sub{color:#94a3b8}
+
+    @media(max-width:640px){
+        .qm-hero h1{font-size:1.35rem}
+        .qm-stats{grid-template-columns:repeat(3,1fr);gap:0.5rem}
+        .qm-stat{padding:0.75rem 0.25rem}
+        .qm-stat .num{font-size:1.1rem}
+        .qm-node{gap:0.6rem}
+        .qm-dot-col{width:40px}
+        .qm-dot{width:36px;height:36px;font-size:1rem}
+        .qm-card{max-width:calc(100% - 52px)}
+        .qm-card-head{padding:0.7rem 0.85rem}
+        .qm-card-body{padding:0 0.85rem 0.85rem}
+    }
+    @keyframes qm-pulse{0%,100%{box-shadow:0 0 0 4px rgba(233,30,99,0.15)}50%{box-shadow:0 0 0 8px rgba(233,30,99,0.08)}}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <div class="qm-container">
+            <!-- Hero -->
+            <header class="qm-hero">
+                <span class="qm-badge">🎮 QUEST MAP</span>
+                <h1>YouTube Growth<br><span class="accent">0 to 1,000 Subscribers</span></h1>
+                <p class="sub">9 quests. Real strategies. No fluff. This is the playbook creators actually use to hit their first 1K subs.</p>
+                <div class="qm-meta">
+                    <span>🎮 9 Quests</span>
+                    <span>⏱ 20 min read</span>
+                    <span>🌍 Global</span>
+                    <span>💰 Free</span>
+                </div>
+            </header>
+
+            <!-- Stats -->
+            <div class="qm-stats">
+                <div class="qm-stat">
+                    <div class="num">1K</div>
+                    <div class="label">Subscribers Goal</div>
+                </div>
+                <div class="qm-stat">
+                    <div class="num">9</div>
+                    <div class="label">Quests</div>
+                </div>
+                <div class="qm-stat">
+                    <div class="num">4-8</div>
+                    <div class="label">Months</div>
+                </div>
+            </div>
+
+            <!-- Progress -->
+            <div class="qm-progress">
+                <div class="qm-progress-bar">
+                    <div class="qm-progress-fill" id="progressFill"></div>
+                </div>
+                <div class="qm-progress-label">
+                    <span id="progressText">0 / 9 quests completed</span>
+                    <span id="progressPct">0%</span>
+                </div>
+            </div>
+
+            <!-- Quest Map -->
+            <div class="qm-map" id="questMap">
+
+                <!-- Quest 1 -->
+                <div class="qm-node active" data-quest="1">
+                    <div class="qm-dot-col">
+                        <div class="qm-dot">1</div>
+                        <div class="qm-connector"></div>
+                    </div>
+                    <div class="qm-card">
+                        <div class="qm-card-head" onclick="toggleQuest(1)">
+                            <div class="qm-card-title">
+                                <h3>🎯 Pick Your Niche</h3>
+                                <span class="tag active">Start Here</span>
+                            </div>
+                            <span class="qm-card-chevron">▼</span>
+                        </div>
+                        <div class="qm-card-body">
+                            <div class="qm-milestone"><span class="icon">🏆</span> Milestone: You know exactly what your channel is about</div>
+                            <p>Your niche is the <strong>specific topic</strong> your channel covers. Not "tech" — but "budget smartphone reviews." Not "cooking" — but "30-minute meals for students."</p>
+                            <p><strong>How to pick:</strong></p>
+                            <ul>
+                                <li><strong>What do you know?</strong> Skills, hobbies, work experience</li>
+                                <li><strong>What do people search?</strong> Check YouTube search suggestions</li>
+                                <li><strong>Can you make 100 videos?</strong> If not, it's too narrow</li>
+                                <li><strong>Are others succeeding?</strong> Competition = demand (good sign)</li>
+                            </ul>
+                            <p><strong>Winning niches in 2026:</strong> Personal finance, productivity, AI tools, health & fitness, cooking, tech reviews, language learning, career advice.</p>
+                            <div class="qm-tip">
+                                <span class="icon">💡</span>
+                                <span>Don't overthink this. Pick something you can talk about for hours. You can always narrow or pivot later — most successful YouTubers did.</span>
+                            </div>
+                            <button class="qm-btn primary" onclick="completeQuest(1)">Quest Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quest 2 -->
+                <div class="qm-node" data-quest="2">
+                    <div class="qm-dot-col">
+                        <div class="qm-dot">2</div>
+                        <div class="qm-connector"></div>
+                    </div>
+                    <div class="qm-card">
+                        <div class="qm-card-head" onclick="toggleQuest(2)">
+                            <div class="qm-card-title">
+                                <h3>🏗️ Set Up Your Channel</h3>
+                                <span class="tag available">Available</span>
+                            </div>
+                            <span class="qm-card-chevron">▼</span>
+                        </div>
+                        <div class="qm-card-body">
+                            <div class="qm-milestone"><span class="icon">🏆</span> Milestone: Channel looks professional and tells visitors what you do</div>
+                            <p>Your channel page is your <strong>storefront</strong>. Visitors decide in 3 seconds whether to subscribe. Make those seconds count.</p>
+                            <p><strong>Channel setup checklist:</strong></p>
+                            <ul>
+                                <li><strong>Channel name:</strong> Short, memorable, easy to spell</li>
+                                <li><strong>Profile picture:</strong> Your face or a clean logo (not a selfie with sunglasses)</li>
+                                <li><strong>Banner:</strong> Tells visitors what you post + upload schedule</li>
+                                <li><strong>About section:</strong> Who you are, what you post, why they should subscribe</li>
+                                <li><strong>Channel trailer:</strong> A 60-90 second video explaining your channel</li>
+                            </ul>
+                            <div class="qm-tip">
+                                <span class="icon">💡</span>
+                                <span>Your banner should answer: "What will I get from this channel?" in 2 seconds. Use Canva (free) to create one — no design skills needed.</span>
+                            </div>
+                            <button class="qm-btn primary" onclick="completeQuest(2)">Quest Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quest 3 -->
+                <div class="qm-node" data-quest="3">
+                    <div class="qm-dot-col">
+                        <div class="qm-dot">3</div>
+                        <div class="qm-connector"></div>
+                    </div>
+                    <div class="qm-card">
+                        <div class="qm-card-head" onclick="toggleQuest(3)">
+                            <div class="qm-card-title">
+                                <h3>🎬 Publish Your First Video</h3>
+                                <span class="tag available">Available</span>
+                            </div>
+                            <span class="qm-card-chevron">▼</span>
+                        </div>
+                        <div class="qm-card-body">
+                            <div class="qm-milestone"><span class="icon">🏆</span> Milestone: Your first video is live — you're officially a YouTuber</div>
+                            <p>Your first video will be bad. That's fine. <strong>Every creator's first video was bad.</strong> The goal is to publish, not to be perfect.</p>
+                            <p><strong>First video strategy:</strong></p>
+                            <ul>
+                                <li><strong>Topic:</strong> Answer a common question in your niche</li>
+                                <li><strong>Length:</strong> 5-10 minutes (short enough to finish, long enough for value)</li>
+                                <li><strong>Quality:</strong> Phone camera + natural light is enough. Seriously.</li>
+                                <li><strong>Audio:</strong> This matters MORE than video quality. Record in a quiet room.</li>
+                                <li><strong>Editing:</strong> Cut out "ums," long pauses, and dead air. Keep it tight.</li>
+                            </ul>
+                            <p><strong>Equipment you actually need:</strong></p>
+                            <ul>
+                                <li>📱 Smartphone (you already have one)</li>
+                                <li>☀️ Window with natural light (free)</li>
+                                <li>🎤 Lapel mic ($10-15 — massive quality boost)</li>
+                                <li>💻 Free editing: CapCut, DaVinci Resolve, or iMovie</li>
+                            </ul>
+                            <div class="qm-tip gold">
+                                <span class="icon">⚡</span>
+                                <span>The biggest mistake beginners make: spending months planning without publishing. Your first 10 videos are your "learning videos." Publish fast, improve faster.</span>
+                            </div>
+                            <button class="qm-btn primary" onclick="completeQuest(3)">Quest Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quest 4 -->
+                <div class="qm-node" data-quest="4">
+                    <div class="qm-dot-col">
+                        <div class="qm-dot">4</div>
+                        <div class="qm-connector"></div>
+                    </div>
+                    <div class="qm-card">
+                        <div class="qm-card-head" onclick="toggleQuest(4)">
+                            <div class="qm-card-title">
+                                <h3>🖼️ Master Thumbnails & Titles</h3>
+                                <span class="tag available">Available</span>
+                            </div>
+                            <span class="qm-card-chevron">▼</span>
+                        </div>
+                        <div class="qm-card-body">
+                            <div class="qm-milestone"><span class="icon">🏆</span> Milestone: Your videos get clicks, not just impressions</div>
+                            <p>A great video with a bad thumbnail = nobody watches it. <strong>Thumbnails and titles are 80% of your success</strong> on YouTube.</p>
+                            <p><strong>Thumbnail rules:</strong></p>
+                            <ul>
+                                <li><strong>3 elements max:</strong> Face, text, one visual element</li>
+                                <li><strong>Big text:</strong> 3-5 words, readable on a phone screen</li>
+                                <li><strong>Contrast:</strong> Bright colors, clear subject, not cluttered</li>
+                                <li><strong>Face with emotion:</strong> Shock, excitement, curiosity — not a blank stare</li>
+                                <li><strong>No clickbait:</strong> Deliver what the thumbnail promises</li>
+                            </ul>
+                            <p><strong>Title formula that works:</strong></p>
+                            <ul>
+                                <li><strong>How to [achieve result] in [timeframe]</strong></li>
+                                <li><strong>[Number] [things] that [benefit]</strong></li>
+                                <li><strong>I tried [thing] for [time] — here's what happened</strong></li>
+                                <li><strong>The truth about [topic]</strong></li>
+                            </ul>
+                            <div class="qm-tip">
+                                <span class="icon">💡</span>
+                                <span>Before publishing, ask: "Would I click this if I saw it in my feed?" If the answer is no, redo the thumbnail. Tools: Canva (free), Photopea (free Photoshop alternative).</span>
+                            </div>
+                            <button class="qm-btn primary" onclick="completeQuest(4)">Quest Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quest 5 -->
+                <div class="qm-node" data-quest="5">
+                    <div class="qm-dot-col">
+                        <div class="qm-dot">5</div>
+                        <div class="qm-connector"></div>
+                    </div>
+                    <div class="qm-card">
+                        <div class="qm-card-head" onclick="toggleQuest(5)">
+                            <div class="qm-card-title">
+                                <h3>📅 Stay Consistent</h3>
+                                <span class="tag available">Available</span>
+                            </div>
+                            <span class="qm-card-chevron">▼</span>
+                        </div>
+                        <div class="qm-card-body">
+                            <div class="qm-milestone"><span class="icon">🏆</span> Milestone: You've uploaded on schedule for 4+ weeks straight</div>
+                            <p>YouTube's algorithm rewards consistency. <strong>A channel that uploads weekly will outperform one that uploads randomly</strong>, even if the random videos are better.</p>
+                            <p><strong>Pick a schedule you can keep:</strong></p>
+                            <ul>
+                                <li><strong>Beginner:</strong> 1 video per week (recommended)</li>
+                                <li><strong>Ambitious:</strong> 2 videos per week (only if you can sustain it)</li>
+                                <li><strong>Minimum:</strong> 2 per month (bare minimum to stay relevant)</li>
+                            </ul>
+                            <p><strong>How to stay consistent:</strong></p>
+                            <ul>
+                                <li><strong>Batch create:</strong> Film 2-4 videos in one day, edit throughout the week</li>
+                                <li><strong>Content calendar:</strong> Plan 4-8 videos ahead</li>
+                                <li><strong>Repurpose:</strong> Turn one long video into 3-5 Shorts</li>
+                                <li><strong>Templates:</strong> Create reusable thumbnail and editing templates</li>
+                            </ul>
+                            <div class="qm-tip">
+                                <span class="icon">💡</span>
+                                <span>Consistency beats frequency. 1 video every week > 5 videos one week then nothing for a month. Your audience needs to know when to expect new content.</span>
+                            </div>
+                            <button class="qm-btn primary" onclick="completeQuest(5)">Quest Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quest 6 -->
+                <div class="qm-node" data-quest="6">
+                    <div class="qm-dot-col">
+                        <div class="qm-dot">6</div>
+                        <div class="qm-connector"></div>
+                    </div>
+                    <div class="qm-card">
+                        <div class="qm-card-head" onclick="toggleQuest(6)">
+                            <div class="qm-card-title">
+                                <h3>🔍 Learn YouTube SEO</h3>
+                                <span class="tag available">Available</span>
+                            </div>
+                            <span class="qm-card-chevron">▼</span>
+                        </div>
+                        <div class="qm-card-body">
+                            <div class="qm-milestone"><span class="icon">🏆</span> Milestone: Your videos appear in YouTube search results</div>
+                            <p>YouTube is the <strong>second largest search engine</strong> in the world. SEO helps your videos get found by people searching for your topic.</p>
+                            <p><strong>YouTube SEO checklist (every video):</strong></p>
+                            <ul>
+                                <li><strong>Title:</strong> Include your main keyword naturally</li>
+                                <li><strong>Description:</strong> First 2 lines should have your keyword + a compelling summary</li>
+                                <li><strong>Tags:</strong> 5-10 relevant tags (use TubeBuddy or VidIQ free tiers)</li>
+                                <li><strong>Hashtags:</strong> 3-5 hashtags in the description</li>
+                                <li><strong>Chapters:</strong> Add timestamps for longer videos</li>
+                                <li><strong>Pinned comment:</strong> Add a call-to-action or summary</li>
+                            </ul>
+                            <p><strong>Where to find keywords:</strong></p>
+                            <ul>
+                                <li>YouTube search bar autocomplete (type your topic, see suggestions)</li>
+                                <li>"People also search for" section</li>
+                                <li>Competitors' top-performing videos</li>
+                                <li>Google Trends (YouTube search filter)</li>
+                            </ul>
+                            <div class="qm-tip">
+                                <span class="icon">💡</span>
+                                <span>Don't chase high-competition keywords as a new creator. Target long-tail keywords (specific phrases with lower competition). "How to cook pasta" → "How to cook pasta for one person in 10 minutes."</span>
+                            </div>
+                            <button class="qm-btn primary" onclick="completeQuest(6)">Quest Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quest 7 -->
+                <div class="qm-node" data-quest="7">
+                    <div class="qm-dot-col">
+                        <div class="qm-dot">7</div>
+                        <div class="qm-connector"></div>
+                    </div>
+                    <div class="qm-card">
+                        <div class="qm-card-head" onclick="toggleQuest(7)">
+                            <div class="qm-card-title">
+                                <h3>💬 Build Community</h3>
+                                <span class="tag available">Available</span>
+                            </div>
+                            <span class="qm-card-chevron">▼</span>
+                        </div>
+                        <div class="qm-card-body">
+                            <div class="qm-milestone"><span class="icon">🏆</span> Milestone: You have viewers who comment regularly and share your videos</div>
+                            <p>Subscribers are numbers. <strong>Community is power.</strong> 100 engaged fans who comment and share are worth more than 10,000 passive subscribers.</p>
+                            <p><strong>How to build community:</strong></p>
+                            <ul>
+                                <li><strong>Reply to every comment</strong> in the first 24 hours (especially early on)</li>
+                                <li><strong>Ask questions</strong> in your videos — give viewers a reason to comment</li>
+                                <li><strong>Heart and pin</strong> the best comments</li>
+                                <li><strong>Use the Community tab</strong> for polls, updates, behind-the-scenes</li>
+                                <li><strong>Go live</strong> once you have even 50 subs — live builds connection fast</li>
+                            </ul>
+                            <p><strong>Collaboration strategy:</strong></p>
+                            <ul>
+                                <li>Find creators with similar subscriber counts</li>
+                                <li>Propose a collab that benefits BOTH audiences</li>
+                                <li>Guest appearances, shoutouts, joint videos</li>
+                                <li>Don't compete — complement each other</li>
+                            </ul>
+                            <div class="qm-tip">
+                                <span class="icon">💡</span>
+                                <span>The first 100 subscribers are the hardest. They're also the most loyal. Treat them like gold — they'll become your biggest advocates.</span>
+                            </div>
+                            <button class="qm-btn primary" onclick="completeQuest(7)">Quest Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quest 8 -->
+                <div class="qm-node" data-quest="8">
+                    <div class="qm-dot-col">
+                        <div class="qm-dot">8</div>
+                        <div class="qm-connector"></div>
+                    </div>
+                    <div class="qm-card">
+                        <div class="qm-card-head" onclick="toggleQuest(8)">
+                            <div class="qm-card-title">
+                                <h3>📊 Analyze & Adapt</h3>
+                                <span class="tag available">Available</span>
+                            </div>
+                            <span class="qm-card-chevron">▼</span>
+                        </div>
+                        <div class="qm-card-body">
+                            <div class="qm-milestone"><span class="icon">🏆</span> Milestone: You know which videos work and why</div>
+                            <p>YouTube gives you <strong>free data</strong> on every video. Use it. Don't guess what works — let the numbers tell you.</p>
+                            <p><strong>Key metrics to track:</strong></p>
+                            <ul>
+                                <li><strong>Click-Through Rate (CTR):</strong> % of people who click your thumbnail. Aim for 4-10%</li>
+                                <li><strong>Average View Duration:</strong> How long people watch. Aim for 50%+</li>
+                                <li><strong>Impressions:</strong> How many times YouTube shows your thumbnail</li>
+                                <li><strong>Subscriber conversion:</strong> % of viewers who subscribe from each video</li>
+                            </ul>
+                            <p><strong>What to do with the data:</strong></p>
+                            <ul>
+                                <li><strong>High CTR, low views:</strong> Great thumbnail/title, but YouTube isn't showing it. Improve SEO.</li>
+                                <li><strong>High views, low CTR:</strong> YouTube is showing it but people aren't clicking. Fix thumbnail/title.</li>
+                                <li><strong>Low watch time:</strong> People leave early. Fix your intro (hook in first 10 seconds).</li>
+                                <li><strong>Double down:</strong> Make more of what's working. If "5 tips" videos do well, make more of them.</li>
+                            </ul>
+                            <div class="qm-tip">
+                                <span class="icon">💡</span>
+                                <span>Don't check analytics every day — it'll drive you crazy. Check once a week, look for patterns, and adjust. Give each video at least 7 days of data before judging.</span>
+                            </div>
+                            <button class="qm-btn primary" onclick="completeQuest(8)">Quest Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quest 9 -->
+                <div class="qm-node" data-quest="9">
+                    <div class="qm-dot-col">
+                        <div class="qm-dot">9</div>
+                        <div class="qm-connector"></div>
+                    </div>
+                    <div class="qm-card">
+                        <div class="qm-card-head" onclick="toggleQuest(9)">
+                            <div class="qm-card-title">
+                                <h3>💰 Monetize Your Channel</h3>
+                                <span class="tag available">Available</span>
+                            </div>
+                            <span class="qm-card-chevron">▼</span>
+                        </div>
+                        <div class="qm-card-body">
+                            <div class="qm-milestone"><span class="icon">🏆</span> Milestone: Your channel earns money — even if it's just your first dollar</div>
+                            <p>1,000 subscribers unlocks the <strong>YouTube Partner Program</strong> (ad revenue). But you can start earning before that.</p>
+                            <p><strong>YouTube Partner Program requirements:</strong></p>
+                            <ul>
+                                <li>1,000 subscribers</li>
+                                <li>4,000 watch hours in the last 12 months (or 10M Shorts views)</li>
+                                <li>Follow YouTube's monetization policies</li>
+                            </ul>
+                            <p><strong>Ways to earn BEFORE 1K subs:</strong></p>
+                            <ul>
+                                <li><strong>Affiliate links:</strong> Recommend products, earn commission on sales</li>
+                                <li><strong>Sponsorships:</strong> Small brands pay $50-200 for shoutouts (even at 500 subs)</li>
+                                <li><strong>Digital products:</strong> Sell templates, guides, presets, courses</li>
+                                <li><strong>Services:</strong> Coaching, consulting, freelance work</li>
+                                <li><strong>Super Chats:</strong> Earn from live streams (available earlier than ads)</li>
+                            </ul>
+                            <div class="qm-tip gold">
+                                <span class="icon">⚡</span>
+                                <span>Don't wait for monetization to create great content. Focus on value first, money follows. The creators who chase money early burn out. The ones who focus on audience growth build empires.</span>
+                            </div>
+                            <button class="qm-btn primary" onclick="completeQuest(9)">Quest Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /quest map -->
+
+            <!-- Completion -->
+            <div class="qm-complete" id="qmComplete">
+                <div class="done-card">
+                    <span class="done-icon">🏆</span>
+                    <h2>You've Completed the Quest Map!</h2>
+                    <p class="sub">You now have the complete playbook for growing from 0 to 1,000 subscribers. The strategies are proven — now it's about execution. Start today, stay consistent, and trust the process.</p>
+                    <button class="share-btn" onclick="sharePlaybook()">📱 Share this quest map</button>
+                    <br>
+                    <a href="/playbooks/" class="next-link">More playbooks →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>How to Grow Your YouTube Channel from 0 to 1000 Subscribers</h2>
+                <p>Reaching 1,000 subscribers is the hardest milestone on YouTube. It's where most creators give up. But with the right strategy, consistency, and patience, it's completely achievable — usually within 4-8 months of regular uploading.</p>
+                <h3>Why 1,000 Subscribers Matters</h3>
+                <p>1,000 subscribers unlocks the YouTube Partner Program, which means ad revenue. It also signals to the algorithm that your channel has traction, leading to more recommendations. But beyond the numbers, 1,000 subscribers means you've built a real audience that cares about your content.</p>
+                <h3>The Realistic Timeline</h3>
+                <p>Most channels take 4-8 months to reach 1,000 subscribers with consistent weekly uploads. Some do it faster with viral content or strong SEO. Others take a year or more. The key is not to compare your timeline to others — focus on improving with every video.</p>
+                <h3>What Actually Works</h3>
+                <p>After analyzing thousands of successful channels, the pattern is clear: pick a specific niche, create searchable content, make clickable thumbnails, upload consistently, and engage with your community. There's no shortcut — but there is a clear path.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 style="font-size:1.2rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Frequently Asked Questions</h2>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">How long does it take to get 1,000 subscribers?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">With consistent weekly uploads and good SEO, most channels reach 1,000 subscribers in 4-8 months. Some do it in 2-3 months with viral content, others take a year. The key is consistency and continuous improvement.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">Do I need expensive equipment?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">No. A smartphone, natural light from a window, and a $10-15 lapel microphone is all you need to start. Many successful YouTubers started with just a phone. Upgrade your gear as your channel grows and generates income.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">What if my niche is too crowded?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Competition means demand. Instead of avoiding crowded niches, find a unique angle within them. Don't do "cooking" — do "cooking for college students with no kitchen." Specificity is your advantage as a small creator.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">Should I make Shorts or long-form videos?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Both. Shorts are great for discovery and fast subscriber growth. Long-form videos build deeper engagement and watch time. The ideal strategy: use Shorts to attract viewers, then convert them to long-form subscribers.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    var TOTAL_QUESTS = 9;
+    var state = {completed: new Set()};
+
+    // Restore state
+    try {
+        var s = localStorage.getItem('optidrop_playbook_youtube_1k');
+        if (s) {
+            var d = JSON.parse(s);
+            state.completed = new Set(d.completed || []);
+            state.completed.forEach(function(q){ markDone(q); });
+        }
+    } catch(e){}
+
+    window.toggleQuest = function(q) {
+        var el = document.querySelector('.qm-node[data-quest="'+q+'"]');
+        if (el) el.classList.toggle('open');
+    };
+
+    window.completeQuest = function(q) {
+        state.completed.add(q);
+        markDone(q);
+        save();
+        if (state.completed.size >= TOTAL_QUESTS) showComplete();
+        else {
+            // Scroll to next quest
+            var next = document.querySelector('.qm-node[data-quest="'+(q+1)+'"]');
+            if (next) setTimeout(function(){ next.scrollIntoView({behavior:'smooth',block:'center'}); }, 300);
+        }
+    };
+
+    function markDone(q) {
+        var el = document.querySelector('.qm-node[data-quest="'+q+'"]');
+        if (el) {
+            el.classList.remove('active','open');
+            el.classList.add('completed');
+            var tag = el.querySelector('.tag');
+            if (tag) { tag.className = 'tag done'; tag.textContent = '✓ Done'; }
+            // Change button text
+            var btn = el.querySelector('.qm-btn');
+            if (btn) { btn.textContent = '✓ Completed'; btn.style.background = '#94a3b8'; btn.style.cursor = 'default'; btn.onclick = null; }
+        }
+        // Activate next quest
+        var next = document.querySelector('.qm-node[data-quest="'+(q+1)+'"]');
+        if (next && !next.classList.contains('completed')) {
+            next.classList.add('active');
+            var nextTag = next.querySelector('.tag');
+            if (nextTag) { nextTag.className = 'tag active'; nextTag.textContent = 'Current'; }
+        }
+        updateProgress();
+    }
+
+    function updateProgress() {
+        var count = state.completed.size;
+        var pct = Math.round((count / TOTAL_QUESTS) * 100);
+        var fill = document.getElementById('progressFill');
+        var text = document.getElementById('progressText');
+        var pctEl = document.getElementById('progressPct');
+        if (fill) fill.style.width = pct + '%';
+        if (text) text.textContent = count + ' / ' + TOTAL_QUESTS + ' quests completed';
+        if (pctEl) pctEl.textContent = pct + '%';
+    }
+
+    function showComplete() {
+        document.querySelector('.qm-map').style.display = 'none';
+        document.querySelector('.qm-progress').style.display = 'none';
+        document.getElementById('qmComplete').classList.add('show');
+        document.getElementById('qmComplete').scrollIntoView({behavior:'smooth'});
+    }
+
+    function save() {
+        localStorage.setItem('optidrop_playbook_youtube_1k', JSON.stringify({
+            completed: Array.from(state.completed)
+        }));
+    }
+
+    window.sharePlaybook = function() {
+        var t = 'I found a free quest map to grow my YouTube channel from 0 to 1000 subscribers — check it out: https://optidrop.online/playbooks/youtube-1000-subs.html';
+        if (navigator.share) {
+            navigator.share({title:'YouTube Quest Map — 0 to 1000 Subscribers',text:t,url:'https://optidrop.online/playbooks/youtube-1000-subs.html'});
+        } else {
+            navigator.clipboard.writeText(t).then(function(){
+                if (typeof showToast === 'function') showToast('Link copied!','success');
+            });
+        }
+    };
+    </script>
+</body>
+</html>
