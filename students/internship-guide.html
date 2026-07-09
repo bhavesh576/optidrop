@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Guide — Find, Apply & Land Internships | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Free internship guide — find, apply, and land internships. Cold email templates, interview prep, and conversion tips.">
+    <meta name="keywords" content="internship guide, find internship, internship tips, cold email internship, internship interview, summer internship">
+    <link rel="canonical" href="https://optidrop.online/students/internship-guide.html">
+    <meta property="og:title" content="Internship Guide — Find, Apply & Land Internships | OptiDrop">
+    <meta property="og:description" content="Free internship guide — find, apply, and land internships.">
+    <meta property="og:url" content="https://optidrop.online/students/internship-guide.html">
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    .ig-container{max-width:800px;margin:0 auto;padding:0.75rem 1rem}
+
+    /* Flowchart Path */
+    .ig-path{display:flex;flex-direction:column;gap:0;position:relative}
+
+    /* Flow Node */
+    .ig-node{display:flex;gap:0.75rem;position:relative}
+    .ig-node-line{display:flex;flex-direction:column;align-items:center;width:32px;flex-shrink:0}
+    .ig-node-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:800;background:#e2e8f0;color:#94a3b8;border:3px solid #f8fafc;flex-shrink:0;z-index:1;transition:all 0.3s}
+    .ig-node.active .ig-node-dot{background:#e91e63;color:#fff;box-shadow:0 0 0 4px rgba(233,30,99,0.12)}
+    .ig-node.done .ig-node-dot{background:#10b981;color:#fff}
+    .ig-node-connector{width:3px;flex:1;min-height:12px;background:#e2e8f0}
+    .ig-node.done .ig-node-connector{background:#10b981}
+    .ig-node:last-child .ig-node-connector{display:none}
+
+    /* Node Card */
+    .ig-node-card{flex:1;background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:0.4rem;transition:all 0.2s}
+    .ig-node.active .ig-node-card{border-color:#f9a8d4}
+    .ig-node.done .ig-node-card{border-color:#d1fae5}
+    .ig-node-head{display:flex;align-items:center;gap:0.5rem;padding:0.7rem 0.85rem;cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .ig-node-title{flex:1;font-size:0.85rem;font-weight:700;color:#0f172a}
+    .ig-node-tag{font-size:0.55rem;font-weight:700;padding:0.12rem 0.4rem;border-radius:9999px}
+    .ig-node-tag.active{background:#fdf2f8;color:#e91e63}
+    .ig-node-tag.done{background:#ecfdf5;color:#059669}
+    .ig-node-tag.locked{background:#f1f5f9;color:#94a3b8}
+    .ig-node-chevron{font-size:0.75rem;color:#cbd5e1;transition:transform 0.2s}
+    .ig-node.open .ig-node-chevron{transform:rotate(180deg);color:#e91e63}
+    .ig-node-body{display:none;padding:0 0.85rem 0.85rem}
+    .ig-node.open .ig-node-body{display:block}
+    .ig-node-body p{font-size:0.8rem;color:#475569;line-height:1.55;margin-bottom:0.5rem}
+    .ig-node-body p strong{color:#0f172a}
+
+    /* Branch Options */
+    .ig-branch{display:flex;gap:0.35rem;margin-bottom:0.5rem;flex-wrap:wrap}
+    .ig-branch-btn{padding:0.35rem 0.65rem;border:1px solid #e2e8f0;border-radius:8px;background:#f8fafc;font-size:0.72rem;font-weight:600;color:#64748b;cursor:pointer;transition:all 0.2s}
+    .ig-branch-btn.selected{background:#e91e63;border-color:#e91e63;color:#fff}
+    .ig-branch-result{display:none;font-size:0.78rem;color:#475569;line-height:1.5;padding:0.5rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;margin-bottom:0.5rem}
+    .ig-branch-result.show{display:block}
+
+    /* Tip */
+    .ig-tip{display:flex;gap:0.45rem;padding:0.5rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:0.75rem;color:#166534;line-height:1.5;margin-top:0.4rem}
+    .ig-tip .icon{font-size:0.85rem;flex-shrink:0}
+    .ig-tip.gold{background:#fffbeb;border-color:#fde68a;color:#92400e}
+
+    /* Template Box */
+    .ig-template{background:#0f172a;color:#e2e8f0;padding:0.75rem 0.85rem;border-radius:10px;font-size:0.75rem;line-height:1.6;margin-top:0.5rem;font-family:monospace;white-space:pre-wrap}
+    .ig-template .highlight{color:#34d399}
+
+    /* List */
+    .ig-item{display:flex;gap:0.45rem;padding:0.25rem 0;font-size:0.8rem;color:#475569;line-height:1.5;align-items:flex-start}
+    .ig-item .bullet{width:4px;height:4px;border-radius:50%;background:#cbd5e1;flex-shrink:0;margin-top:0.45rem}
+    .ig-item strong{color:#0f172a}
+
+    /* Complete Button */
+    .ig-done-btn{display:block;width:100%;padding:0.55rem;border:1px solid #e2e8f0;border-radius:8px;background:#fff;font-size:0.75rem;font-weight:600;color:#64748b;cursor:pointer;margin-top:0.5rem;text-align:center}
+    .ig-done-btn:hover{border-color:#10b981;color:#10b981}
+    .ig-done-btn.done{background:#ecfdf5;border-color:#10b981;color:#059669}
+
+    /* Dark Mode */
+    .dark-mode .ig-node-dot{background:#3d4455;color:#94a3b8;border-color:#1e293b}
+    .dark-mode .ig-node.active .ig-node-dot{background:#e91e63;color:#fff}
+    .dark-mode .ig-node.done .ig-node-dot{background:#10b981;color:#fff}
+    .dark-mode .ig-node-connector{background:#3d4455}
+    .dark-mode .ig-node.done .ig-node-connector{background:#10b981}
+    .dark-mode .ig-node-card{background:#1e293b;border-color:#334155}
+    .dark-mode .ig-node.active .ig-node-card{border-color:#f472b6}
+    .dark-mode .ig-node.done .ig-node-card{border-color:#064e3b}
+    .dark-mode .ig-node-title{color:#f1f5f9}
+    .dark-mode .ig-node-tag.active{background:#3b0f2a;color:#f472b6}
+    .dark-mode .ig-node-tag.done{background:#064e3b;color:#34d399}
+    .dark-mode .ig-node-tag.locked{background:#3d4455;color:#94a3b8}
+    .dark-mode .ig-node-chevron{color:#475569}
+    .dark-mode .ig-node.open .ig-node-chevron{color:#f472b6}
+    .dark-mode .ig-node-body p{color:#94a3b8}
+    .dark-mode .ig-node-body p strong{color:#f1f5f9}
+    .dark-mode .ig-branch-btn{background:#0f172a;border-color:#334155;color:#94a3b8}
+    .dark-mode .ig-branch-btn.selected{background:#e91e63;border-color:#e91e63;color:#fff}
+    .dark-mode .ig-branch-result{background:#064e3b;border-color:#065f46;color:#6ee7b7}
+    .dark-mode .ig-tip{background:#064e3b;border-color:#065f46;color:#6ee7b7}
+    .dark-mode .ig-tip.gold{background:#1c1917;border-color:#92400e;color:#fbbf24}
+    .dark-mode .ig-template{background:#064e3b;color:#e2e8f0}
+    .dark-mode .ig-template .highlight{color:#34d399}
+    .dark-mode .ig-item{color:#94a3b8}
+    .dark-mode .ig-item strong{color:#f1f5f9}
+    .dark-mode .ig-done-btn{background:#1e293b;border-color:#334155;color:#94a3b8}
+    .dark-mode .ig-done-btn.done{background:#064e3b;border-color:#10b981;color:#34d399}
+
+    @media(max-width:640px){
+        .ig-container{padding:0.5rem 0.65rem}
+        .ig-node-line{width:26px}
+        .ig-node-dot{width:26px;height:26px;font-size:0.7rem}
+        .ig-node-head{padding:0.55rem 0.7rem}
+        .ig-node-title{font-size:0.78rem}
+        .ig-node-body{padding:0 0.7rem 0.7rem}
+        .ig-node-body p{font-size:0.75rem}
+        .ig-branch-btn{padding:0.3rem 0.55rem;font-size:0.68rem}
+        .ig-tip{font-size:0.7rem;padding:0.45rem}
+        .ig-template{font-size:0.7rem;padding:0.6rem}
+        .ig-item{font-size:0.75rem}
+    }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-10 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">
+                💼 Internship Guide
+            </h1>
+            <p class="text-base text-slate-600 max-w-xl mx-auto">
+                Follow the path. Find, apply, and land your first internship. Real templates included.
+            </p>
+        </section>
+
+        <div class="ig-container">
+            <div class="ig-path">
+
+                <!-- Step 1: Where to Find -->
+                <div class="ig-node active" data-step="1">
+                    <div class="ig-node-line"><div class="ig-node-dot">1</div><div class="ig-node-connector"></div></div>
+                    <div class="ig-node-card">
+                        <div class="ig-node-head" onclick="toggleNode(1)">
+                            <div class="ig-node-title">🔍 Where to Find Internships</div>
+                            <span class="ig-node-tag active">Start Here</span>
+                            <span class="ig-node-chevron">▼</span>
+                        </div>
+                        <div class="ig-node-body">
+                            <p><strong>Choose your path:</strong></p>
+                            <div class="ig-branch">
+                                <div class="ig-branch-btn" onclick="showBranch(this,'b1-portal')">Job Portals</div>
+                                <div class="ig-branch-btn" onclick="showBranch(this,'b1-linkedin')">LinkedIn</div>
+                                <div class="ig-branch-btn" onclick="showBranch(this,'b1-cold')">Cold Email</div>
+                                <div class="ig-branch-btn" onclick="showBranch(this,'b1-referral')">Referral</div>
+                            </div>
+                            <div class="ig-branch-result" id="b1-portal"><strong>Job Portals:</strong> Internshala (best for India), LinkedIn Jobs, Indeed, Glassdoor. Filter by "internship" + your skill + "remote" if needed. Apply to 5-10 per day.</div>
+                            <div class="ig-branch-result" id="b1-linkedin"><strong>LinkedIn:</strong> Search "internship + [your skill]." Connect with hiring managers. Post about your projects — recruiters notice active profiles.</div>
+                            <div class="ig-branch-result" id="b1-cold"><strong>Cold Email:</strong> Find companies you admire. Email the founder/CTO directly. Short, specific, show what you can do. Response rate: 5-15%.</div>
+                            <div class="ig-branch-result" id="b1-referral"><strong>Referral:</strong> Ask seniors, professors, family friends. "Do you know anyone hiring interns in [field]?" Referrals have 10x higher success rate.</div>
+                            <div class="ig-tip"><span class="icon">💡</span><span>Apply to 30-50 internships. Expect 5-10 responses, 2-3 interviews, 1 offer. That's normal. Don't stop after 5 rejections.</span></div>
+                            <button class="ig-done-btn" onclick="completeStep(1,this)">✓ I know where to look</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Cold Email -->
+                <div class="ig-node" data-step="2">
+                    <div class="ig-node-line"><div class="ig-node-dot">2</div><div class="ig-node-connector"></div></div>
+                    <div class="ig-node-card">
+                        <div class="ig-node-head" onclick="toggleNode(2)">
+                            <div class="ig-node-title">📧 Cold Email Template</div>
+                            <span class="ig-node-tag locked">🔒</span>
+                            <span class="ig-node-chevron">▼</span>
+                        </div>
+                        <div class="ig-node-body">
+                            <p>This template has a <strong>10-15% response rate</strong>. Short, specific, and shows value.</p>
+                            <div class="ig-template"><span class="highlight">Subject:</span> Internship: [Your Skill] — [Your Name]
+
+Hi [Name],
+
+I'm [Your Name], a [year] [branch] student at [college]. I've been following [Company]'s work on [specific project/product] — especially [specific detail].
+
+I built [specific project] using [tech stack]. Here's the link: [GitHub/Live]
+
+I'd love to contribute as a [role] intern. I can commit [X hours/week] for [duration].
+
+Would you have 15 minutes this week to chat?
+
+Thanks,
+[Your Name]
+[Phone] | [LinkedIn]</div>
+                            <div class="ig-tip"><span class="icon">💡</span><span><strong>Key rules:</strong> Keep it under 100 words. Mention something specific about the company. Include a link to your work. Make the ask clear.</span></div>
+                            <button class="ig-done-btn" onclick="completeStep(2,this)">✓ Template saved</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Resume -->
+                <div class="ig-node" data-step="3">
+                    <div class="ig-node-line"><div class="ig-node-dot">3</div><div class="ig-node-connector"></div></div>
+                    <div class="ig-node-card">
+                        <div class="ig-node-head" onclick="toggleNode(3)">
+                            <div class="ig-node-title">📄 Tailor Your Resume</div>
+                            <span class="ig-node-tag locked">🔒</span>
+                            <span class="ig-node-chevron">▼</span>
+                        </div>
+                        <div class="ig-node-body">
+                            <p>One generic resume won't work. <strong>Tailor for each application.</strong></p>
+                            <div class="ig-item"><span class="bullet"></span><div><strong>Match keywords</strong> from the job description in your resume</div></div>
+                            <div class="ig-item"><span class="bullet"></span><div><strong>Reorder projects</strong> — most relevant one first</div></div>
+                            <div class="ig-item"><span class="bullet"></span><div><strong>Add metrics</strong> — "Built X serving Y users" beats "Built X"</div></div>
+                            <div class="ig-item"><span class="bullet"></span><div><strong>1 page max</strong> — recruiters won't read more for interns</div></div>
+                            <div class="ig-tip"><span class="icon">💡</span><span>Spend 15 minutes per application tailoring. It's the difference between 2% and 10% response rate.</span></div>
+                            <a href="/students/resume-project-guide.html" style="display:block;padding:0.5rem;background:#fdf2f8;border:1px solid #f9a8d4;border-radius:8px;text-align:center;font-size:0.75rem;font-weight:600;color:#e91e63;margin-top:0.5rem;text-decoration:none">📄 Resume Project Guide →</a>
+                            <button class="ig-done-btn" onclick="completeStep(3,this)">✓ Resume ready</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Interview Prep -->
+                <div class="ig-node" data-step="4">
+                    <div class="ig-node-line"><div class="ig-node-dot">4</div><div class="ig-node-connector"></div></div>
+                    <div class="ig-node-card">
+                        <div class="ig-node-head" onclick="toggleNode(4)">
+                            <div class="ig-node-title">🎤 Interview Preparation</div>
+                            <span class="ig-node-tag locked">🔒</span>
+                            <span class="ig-node-chevron">▼</span>
+                        </div>
+                        <div class="ig-node-body">
+                            <p><strong>Internship interviews have 3 parts:</strong></p>
+                            <div class="ig-branch">
+                                <div class="ig-branch-btn" onclick="showBranch(this,'b4-tech')">Technical</div>
+                                <div class="ig-branch-btn" onclick="showBranch(this,'b4-hr')">HR / Behavioral</div>
+                                <div class="ig-branch-btn" onclick="showBranch(this,'b4-project')">Project Discussion</div>
+                            </div>
+                            <div class="ig-branch-result" id="b4-tech"><strong>Technical:</strong> DSA basics (arrays, strings, loops), language fundamentals, simple coding problems. Practice on LeetCode Easy. 2-3 problems is enough for most internships.</div>
+                            <div class="ig-branch-result" id="b4-hr"><strong>HR / Behavioral:</strong> "Tell me about yourself" (30 sec), "Why this company?" (research them), "Strengths/weaknesses" (be honest, show growth). Use STAR method for stories.</div>
+                            <div class="ig-branch-result" id="b4-project"><strong>Project Discussion:</strong> They'll ask about your projects. Know: why you built it, tech choices, challenges faced, what you'd improve. Be honest about what you don't know.</div>
+                            <div class="ig-tip gold"><span class="icon">⚡</span><span><strong>Pro tip:</strong> Prepare 3 questions to ask THEM. "What does a typical day look like?" "What would I work on?" Shows interest and helps you decide if it's a good fit.</span></div>
+                            <button class="ig-done-btn" onclick="completeStep(4,this)">✓ Prepped for interviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: During Internship -->
+                <div class="ig-node" data-step="5">
+                    <div class="ig-node-line"><div class="ig-node-dot">5</div><div class="ig-node-connector"></div></div>
+                    <div class="ig-node-card">
+                        <div class="ig-node-head" onclick="toggleNode(5)">
+                            <div class="ig-node-title">💼 During the Internship</div>
+                            <span class="ig-node-tag locked">🔒</span>
+                            <span class="ig-node-chevron">▼</span>
+                        </div>
+                        <div class="ig-node-body">
+                            <p>Getting the internship is step 1. <strong>Maximizing it is step 2.</strong></p>
+                            <div class="ig-item"><span class="bullet"></span><div><strong>Ask questions.</strong> No one expects you to know everything. Asking shows initiative.</div></div>
+                            <div class="ig-item"><span class="bullet"></span><div><strong>Document everything.</strong> Keep a log of what you did, what you learned, and results. This becomes your resume content.</div></div>
+                            <div class="ig-item"><span class="bullet"></span><div><strong>Over-deliver.</strong> Finish tasks early, then ask for more. This is how you get a return offer.</div></div>
+                            <div class="ig-item"><span class="bullet"></span><div><strong>Network.</strong> Talk to people in other teams. Learn how the company works. These connections help for years.</div></div>
+                            <div class="ig-item"><span class="bullet"></span><div><strong>Request feedback.</strong> Ask your manager: "What can I improve?" Shows maturity and helps you grow.</div></div>
+                            <button class="ig-done-btn" onclick="completeStep(5,this)">✓ I know how to succeed</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Convert to Full-Time -->
+                <div class="ig-node" data-step="6">
+                    <div class="ig-node-line"><div class="ig-node-dot">6</div><div class="ig-node-connector"></div></div>
+                    <div class="ig-node-card">
+                        <div class="ig-node-head" onclick="toggleNode(6)">
+                            <div class="ig-node-title">🎯 Convert to Full-Time</div>
+                            <span class="ig-node-tag locked">🔒</span>
+                            <span class="ig-node-chevron">▼</span>
+                        </div>
+                        <div class="ig-node-body">
+                            <p>The goal of an internship is a <strong>return offer</strong>. Here's how to get one:</p>
+                            <div class="ig-item"><span class="bullet"></span><div><strong>Deliver consistently.</strong> Not just once — every week. Reliability beats brilliance.</div></div>
+                            <div class="ig-item"><span class="bullet"></span><div><strong>Make your manager's life easier.</strong> Anticipate needs, solve problems before they escalate.</div></div>
+                            <div class="ig-item"><span class="bullet"></span><div><strong>Express interest.</strong> Tell your manager: "I'd love to continue here full-time." Don't be shy.</div></div>
+                            <div class="ig-item"><span class="bullet"></span><div><strong>Ask about the process.</strong> "What does the conversion process look like?" Shows you're serious.</div></div>
+                            <div class="ig-tip"><span class="icon">💡</span><span><strong>If no offer comes:</strong> Ask for a recommendation letter and LinkedIn endorsement. A strong recommendation from a manager is worth more than the internship itself.</span></div>
+                            <button class="ig-done-btn" onclick="completeStep(6,this)">✓ Ready to convert</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /path -->
+        </div>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>How to Land Your First Internship</h2>
+                <p>Internships are the fastest way to gain real-world experience, build your network, and increase your chances of getting a full-time job. The key is treating the internship search like a job itself — consistent effort, tailored applications, and professional follow-up.</p>
+                <h3>When to Start Looking</h3>
+                <p>Start 2-3 months before you want to begin. Summer internships (May-July) have deadlines in February-March. Don't wait until the last minute — the best positions fill early.</p>
+                <h3>How Many to Apply To</h3>
+                <p>Apply to 30-50 internships. Expect 5-10 responses, 2-3 interviews, and 1 offer. That's a normal conversion rate. Don't get discouraged by rejections — they're part of the process.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    var TOTAL_STEPS = 6;
+    var state = {completed: new Set()};
+
+    try {
+        var s = localStorage.getItem('optidrop_internship');
+        if (s) {
+            var d = JSON.parse(s);
+            state.completed = new Set(d.completed || []);
+            state.completed.forEach(function(step){ markDone(step); });
+        }
+    } catch(e){}
+
+    function toggleNode(step) {
+        var el = document.querySelector('.ig-node[data-step="'+step+'"]');
+        if (el && !el.classList.contains('locked')) el.classList.toggle('open');
+    }
+
+    function completeStep(step, btn) {
+        state.completed.add(step);
+        markDone(step);
+        save();
+        btn.classList.add('done');
+        btn.textContent = '✓ Completed';
+        // Open next
+        var next = document.querySelector('.ig-node[data-step="'+(step+1)+'"]');
+        if (next) {
+            next.classList.remove('locked');
+            next.classList.add('active','open');
+            var tag = next.querySelector('.ig-node-tag');
+            if (tag) { tag.className = 'ig-node-tag active'; tag.textContent = 'Current'; }
+            setTimeout(function(){ next.scrollIntoView({behavior:'smooth',block:'center'}); }, 200);
+        }
+    }
+
+    function markDone(step) {
+        var el = document.querySelector('.ig-node[data-step="'+step+'"]');
+        if (!el) return;
+        el.classList.remove('active','locked');
+        el.classList.add('done');
+        var tag = el.querySelector('.ig-node-tag');
+        if (tag) { tag.className = 'ig-node-tag done'; tag.textContent = '✓'; }
+    }
+
+    function showBranch(btn, id) {
+        var parent = btn.parentElement;
+        parent.querySelectorAll('.ig-branch-btn').forEach(function(b){ b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        var results = parent.parentElement.querySelectorAll('.ig-branch-result');
+        results.forEach(function(r){ r.classList.remove('show'); });
+        var target = document.getElementById(id);
+        if (target) target.classList.add('show');
+    }
+
+    function save() {
+        localStorage.setItem('optidrop_internship', JSON.stringify({completed: Array.from(state.completed)}));
+    }
+    </script>
+</body>
+</html>

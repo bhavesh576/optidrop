@@ -2530,6 +2530,12 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://optidrop.online/students/internship-guide.html</loc>
+        <lastmod>2026-07-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
     <url>
         <loc>https://optidrop.online/privacy-policy.html</loc>
