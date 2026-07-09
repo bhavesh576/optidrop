@@ -187,20 +187,42 @@ window.OptiTrack = {
                         '<div class="mega-menu-footer"><a href="/tools.html">Browse All Tools →</a></div>' +
                     '</div>' +
                 '</div>' +
-                '<div class="nav-dropdown hide-mobile">' +
+                '<div class="nav-mega hide-mobile">' +
                     '<span class="nav-link">Learn <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span>' +
-                    '<div class="nav-dropdown-menu">' +
-                        '<a href="/playbooks/">📚 Playbooks</a>' +
-                        '<a href="/students/">🎓 Students</a>' +
-                        '<a href="/blog/">✍️ Blog</a>' +
+                    '<div class="nav-mega-panel">' +
+                        '<div class="nav-mega-inner">' +
+                            '<a href="/playbooks/" class="nav-mega-item">' +
+                                '<span class="nav-mega-icon">📚</span>' +
+                                '<span class="nav-mega-info"><span class="nav-mega-name">Playbooks</span><span class="nav-mega-desc">Interactive guides for career & skills</span></span>' +
+                            '</a>' +
+                            '<a href="/students/" class="nav-mega-item">' +
+                                '<span class="nav-mega-icon">🎓</span>' +
+                                '<span class="nav-mega-info"><span class="nav-mega-name">Students</span><span class="nav-mega-desc">Projects, hackathons, resume tips</span></span>' +
+                            '</a>' +
+                            '<a href="/blog/" class="nav-mega-item">' +
+                                '<span class="nav-mega-icon">✍️</span>' +
+                                '<span class="nav-mega-info"><span class="nav-mega-name">Blog</span><span class="nav-mega-desc">Tutorials, guides, and tips</span></span>' +
+                            '</a>' +
+                        '</div>' +
                     '</div>' +
                 '</div>' +
-                '<div class="nav-dropdown hide-mobile">' +
+                '<div class="nav-mega hide-mobile">' +
                     '<span class="nav-link">More <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span>' +
-                    '<div class="nav-dropdown-menu">' +
-                        '<a href="/review.html">⭐ Reviews</a>' +
-                        '<a href="/contact.html">💬 Feedback</a>' +
-                        '<a href="/about.html">ℹ️ About</a>' +
+                    '<div class="nav-mega-panel">' +
+                        '<div class="nav-mega-inner">' +
+                            '<a href="/review.html" class="nav-mega-item">' +
+                                '<span class="nav-mega-icon">⭐</span>' +
+                                '<span class="nav-mega-info"><span class="nav-mega-name">Reviews</span><span class="nav-mega-desc">What users say about OptiDrop</span></span>' +
+                            '</a>' +
+                            '<a href="/contact.html" class="nav-mega-item">' +
+                                '<span class="nav-mega-icon">💬</span>' +
+                                '<span class="nav-mega-info"><span class="nav-mega-name">Feedback</span><span class="nav-mega-desc">Share your thoughts and suggestions</span></span>' +
+                            '</a>' +
+                            '<a href="/about.html" class="nav-mega-item">' +
+                                '<span class="nav-mega-icon">ℹ️</span>' +
+                                '<span class="nav-mega-info"><span class="nav-mega-name">About</span><span class="nav-mega-desc">Who built OptiDrop and why</span></span>' +
+                            '</a>' +
+                        '</div>' +
                     '</div>' +
                 '</div>' +
                 '<span class="privacy-badge hide-mobile"><span class="dot"></span> <span>100% Private</span></span>' +
