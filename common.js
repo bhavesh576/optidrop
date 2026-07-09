@@ -191,6 +191,7 @@ window.OptiTrack = {
                 '<a href="/blog/" class="hide-mobile">Blog</a>' +
                 '<a href="/students/" class="hide-mobile">Students</a>' +
                 '<a href="/review.html" class="hide-mobile">Reviews</a>' +
+                '<a href="/contact.html" class="hide-mobile">Feedback</a>' +
                 '<a href="/about.html" class="hide-mobile">About</a>' +
                 '<span class="privacy-badge hide-mobile"><span class="dot"></span> <span>100% Private</span></span>' +
                 '<div class="user-hub hide-mobile">' +
