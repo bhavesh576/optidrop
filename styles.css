@@ -831,23 +831,22 @@ h1 .text-transparent.bg-clip-text {
     opacity: 0;
     transform: translateY(-8px);
     transition: visibility 0s linear 0.15s, opacity 0.15s ease, transform 0.15s ease;
-    position: fixed;
-    top: 72px;
+    position: absolute;
+    top: 100%;
     left: 50%;
-    transform: translateY(-8px) translateX(-50%);
-    width: calc(100vw - 40px);
-    max-width: 400px;
+    transform: translateX(-50%) translateY(-8px);
+    min-width: 280px;
     background: #ffffff;
     box-shadow: 0 12px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
     border: 1px solid #e2e8f0;
     z-index: 999;
-    padding: 20px;
-    border-radius: 16px;
+    padding: 12px;
+    border-radius: 14px;
 }
 .nav-mega:hover .nav-mega-panel {
     visibility: visible;
     opacity: 1;
-    transform: translateY(0) translateX(-50%);
+    transform: translateX(-50%) translateY(0);
     transition-delay: 0s;
 }
 .nav-mega-inner {
@@ -870,11 +869,11 @@ h1 .text-transparent.bg-clip-text {
 .nav-mega-name { font-size: 14px; font-weight: 700; color: #0f172a; }
 .nav-mega-desc { font-size: 12px; color: #64748b; }
 
-/* Dark mode for nav mega panels */
-.dark-mode .nav-mega-panel { background: #1e293b; border-color: #334155; }
-.dark-mode .nav-mega-item:hover { background: #334155; }
-.dark-mode .nav-mega-name { color: #f1f5f9; }
-.dark-mode .nav-mega-desc { color: #94a3b8; }
+/* Dark mode for nav mega panels — matches Categories mega-menu */
+.dark-mode .nav-mega-panel { background: #1e2026 !important; border-color: #2e3138 !important; box-shadow: 0 12px 48px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.15) !important; }
+.dark-mode .nav-mega-item:hover { background: #2e3138 !important; }
+.dark-mode .nav-mega-name { color: #e2e8f0 !important; }
+.dark-mode .nav-mega-desc { color: #a1a7b3 !important; }
 
 /* "All Tools" nav link — signature accent, visually distinct */
 .nav-all-tools {
