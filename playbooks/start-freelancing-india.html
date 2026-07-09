@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Freelancing in India — Free Playbook | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Start freelancing in India — from zero to first client. Step-by-step guide with free tools for resume, proposals, invoices, and more.">
+    <link rel="canonical" href="https://optidrop.online/playbooks/start-freelancing-india.html">
+    <meta property="og:title" content="Start Freelancing in India — Free Playbook | OptiDrop">
+    <meta property="og:description" content="Start freelancing in India — from zero to first client. Free step-by-step guide.">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"HowTo","name":"Start Freelancing in India","description":"From zero to first client — resume, proposal, invoice, and more.","totalTime":"PT15M","step":[{"@type":"HowToStep","position":1,"name":"Find Your Skill","text":"Identify what you can offer as a freelancer."},{"@type":"HowToStep","position":2,"name":"Set Your Rate","text":"Calculate your freelance hourly rate."},{"@type":"HowToStep","position":3,"name":"Build Your Resume","text":"Create a professional freelance resume."},{"@type":"HowToStep","position":4,"name":"Find Clients","text":"Where to find your first freelance clients."},{"@type":"HowToStep","position":5,"name":"Send Proposals","text":"Write winning proposals that get responses."},{"@type":"HowToStep","position":6,"name":"Create Invoice","text":"Send professional invoices and get paid."}]}
+    </script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    .pb-container{max-width:640px;margin:0 auto;padding:1rem}
+    .pb-hero{text-align:center;padding:2rem 1rem 1.5rem}
+    .pb-badge{display:inline-block;padding:0.3rem 0.9rem;background:#fdf2f8;color:#e91e63;font-size:0.8rem;font-weight:700;border-radius:9999px;margin-bottom:1rem}
+    .pb-hero h1{font-size:1.6rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;line-height:1.3}
+    .pb-hero .sub{font-size:0.95rem;color:#64748b;line-height:1.5}
+    .pb-meta{display:flex;justify-content:center;gap:1rem;margin-top:1rem;font-size:0.8rem;color:#94a3b8;flex-wrap:wrap}
+    .pb-path{position:relative;padding:1.5rem 1rem;margin-bottom:1rem}
+    .pb-line{position:absolute;top:50%;left:36px;right:36px;height:4px;background:#e2e8f0;border-radius:2px;transform:translateY(-50%)}
+    .pb-fill{height:100%;background:linear-gradient(90deg,#10b981,#059669);border-radius:2px;transition:width 0.5s ease;width:0%}
+    .pb-nodes{display:flex;justify-content:space-between;position:relative;z-index:1}
+    .pb-node{display:flex;flex-direction:column;align-items:center;gap:0.4rem;background:none;border:none;cursor:pointer;padding:0}
+    .pb-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;background:#e2e8f0;color:#94a3b8;border:3px solid #fff;box-shadow:0 0 0 2px #e2e8f0;transition:all 0.3s ease}
+    .pb-node.done .pb-dot{background:#10b981;color:#fff;box-shadow:0 0 0 2px #10b981}
+    .pb-node.active .pb-dot{background:#e91e63;color:#fff;box-shadow:0 0 0 2px #e91e63,0 0 0 6px rgba(233,30,99,0.15);animation:pulse 2s infinite}
+    .pb-label{font-size:0.65rem;font-weight:600;color:#94a3b8}
+    .pb-node.active .pb-label{color:#e91e63}
+    .pb-node.done .pb-label{color:#10b981}
+    .pb-step{background:#fff;border:1px solid #e2e8f0;border-radius:16px;margin-bottom:0.75rem;overflow:hidden;transition:all 0.3s ease}
+    .pb-step.active{border-color:#f9a8d4;box-shadow:0 0 0 1px #f9a8d4}
+    .pb-step.done{opacity:0.6}
+    .pb-step.locked{opacity:0.4;pointer-events:none}
+    .pb-header{display:flex;align-items:center;gap:0.75rem;padding:1rem 1.25rem;cursor:pointer}
+    .pb-num{width:32px;height:32px;border-radius:50%;background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#64748b;flex-shrink:0}
+    .pb-step.active .pb-num{background:#e91e63;color:#fff}
+    .pb-step.done .pb-num{background:#10b981;color:#fff}
+    .pb-title{flex:1}
+    .pb-title h2{font-size:1rem;font-weight:700;color:#0f172a;margin:0}
+    .pb-tag{font-size:0.7rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:9999px}
+    .pb-tag.active{background:#fdf2f8;color:#e91e63}
+    .pb-tag.done{background:#ecfdf5;color:#059669}
+    .pb-tag.locked{background:#f1f5f9;color:#94a3b8}
+    .pb-body{padding:0 1.25rem 1.25rem;display:none}
+    .pb-step.open .pb-body{display:block}
+    .pb-body p{color:#475569;line-height:1.7;margin-bottom:1rem;font-size:0.9rem}
+    .pb-tip{display:flex;gap:0.5rem;padding:0.75rem;background:#f8fafc;border-radius:12px;margin-bottom:1.25rem;font-size:0.8rem;color:#64748b;border-left:3px solid #e91e63}
+    .pb-tip .icon{font-size:1rem;flex-shrink:0}
+    .tool-link{display:flex;align-items:center;gap:0.75rem;padding:0.9rem 1rem;background:#fdf2f8;border:2px solid #f9a8d4;border-radius:12px;text-decoration:none;margin-bottom:1rem;transition:all 0.2s ease}
+    .tool-link:hover{background:#fce7f3;transform:translateY(-2px);box-shadow:0 4px 12px rgba(233,30,99,0.1)}
+    .tool-link .icon{font-size:1.3rem}
+    .tool-link .name{flex:1;font-weight:700;color:#0f172a;font-size:0.9rem}
+    .tool-link .arrow{font-size:1rem;color:#e91e63}
+    .action-btn{display:block;width:100%;padding:0.9rem;border:none;border-radius:12px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.2s ease;margin-bottom:0.5rem}
+    .action-btn.primary{background:#10b981;color:#fff}
+    .action-btn.primary:hover{background:#059669}
+    .action-btn.secondary{background:none;color:#94a3b8;font-size:0.8rem;text-decoration:underline}
+    .pb-complete{text-align:center;padding:2rem 1rem;display:none}
+    .pb-complete.show{display:block}
+    .done-card{background:#fff;border:2px solid #10b981;border-radius:16px;padding:2rem 1.5rem}
+    .done-icon{font-size:3rem;display:block;margin-bottom:1rem}
+    .done-card h2{font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem}
+    .done-card .sub{color:#64748b;font-size:0.9rem;margin-bottom:1.5rem}
+    .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;background:#25d366;color:#fff;border:none;border-radius:12px;font-weight:700;cursor:pointer;margin-bottom:1rem}
+    .next-link{display:inline-block;color:#e91e63;font-weight:600;font-size:0.9rem}
+    .dark-mode .pb-hero h1{color:#f1f5f9}
+    .dark-mode .pb-hero .sub{color:#94a3b8}
+    .dark-mode .pb-meta span{color:#94a3b8}
+    .dark-mode .pb-step{background:#272a33;border-color:#3d4455}
+    .dark-mode .pb-step.active{border-color:#f472b6;box-shadow:0 0 0 1px #f472b6}
+    .dark-mode .pb-header{color:#f1f5f9}
+    .dark-mode .pb-num{background:#3d4455;color:#e2e8f0}
+    .dark-mode .pb-step.active .pb-num{background:#e91e63;color:#fff}
+    .dark-mode .pb-step.done .pb-num{background:#10b981;color:#fff}
+    .dark-mode .pb-title h2{color:#f1f5f9}
+    .dark-mode .pb-tag.active{background:#3b0f2a;color:#f472b6}
+    .dark-mode .pb-tag.done{background:#064e3b;color:#34d399}
+    .dark-mode .pb-tag.locked{background:#3d4455;color:#94a3b8}
+    .dark-mode .pb-body p{color:#e2e8f0}
+    .dark-mode .pb-body strong{color:#f1f5f9}
+    .dark-mode .pb-tip{background:#1e293b;color:#e2e8f0;border-color:#f472b6}
+    .dark-mode .tool-link{background:#1e293b;border-color:#3d4455}
+    .dark-mode .tool-link:hover{background:#272a33}
+    .dark-mode .tool-link .name{color:#f1f5f9}
+    .dark-mode .tool-link .icon{color:#f472b6}
+    .dark-mode .tool-link .arrow{color:#f472b6}
+    .dark-mode .action-btn.primary{background:#10b981;color:#fff}
+    .dark-mode .action-btn.secondary{color:#94a3b8}
+    .dark-mode .done-card{background:#272a33;border-color:#10b981}
+    .dark-mode .done-card h2{color:#f1f5f9}
+    .dark-mode .done-card .sub{color:#94a3b8}
+    .dark-mode .pb-dot{background:#3d4455;color:#94a3b8;box-shadow:0 0 0 2px #3d4455}
+    .dark-mode .pb-node.done .pb-dot{background:#10b981;color:#fff;box-shadow:0 0 0 2px #10b981}
+    .dark-mode .pb-node.active .pb-dot{background:#e91e63;color:#fff;box-shadow:0 0 0 2px #e91e63}
+    .dark-mode .pb-label{color:#94a3b8}
+    .dark-mode .pb-node.active .pb-label{color:#f472b6}
+    .dark-mode .pb-node.done .pb-label{color:#34d399}
+    .dark-mode .pb-line{background:#3d4455}
+    @media(max-width:640px){.pb-hero h1{font-size:1.35rem}.pb-dot{width:32px;height:32px;font-size:0.75rem}.pb-label{font-size:0.6rem}.pb-header{padding:0.75rem 1rem}.pb-body{padding:0 1rem 1rem}}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 2px #e91e63,0 0 0 6px rgba(233,30,99,0.15)}50%{box-shadow:0 0 0 2px #e91e63,0 0 0 10px rgba(233,30,99,0.08)}}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <div class="pb-container">
+            <header class="pb-hero">
+                <span class="pb-badge">📘 FREE PLAYBOOK</span>
+                <h1>Start Freelancing in India</h1>
+                <p class="sub">From zero to first client — a step-by-step guide with free tools for resume, proposals, invoices, and more.</p>
+                <div class="pb-meta">
+                    <span>📖 8 Steps</span>
+                    <span>⏱ 15 min</span>
+                    <span>🛠 5 Tools</span>
+                    <span>💰 ₹0 Cost</span>
+                </div>
+            </header>
+
+            <div class="pb-path" role="progressbar" aria-valuenow="0" aria-valuemax="8">
+                <div class="pb-line"><div class="pb-fill" id="pathFill"></div></div>
+                <div class="pb-nodes">
+                    <button class="pb-node active" data-step="1" aria-label="Step 1" aria-current="true"><span class="pb-dot">1</span><span class="pb-label">Skill</span></button>
+                    <button class="pb-node" data-step="2" aria-label="Step 2"><span class="pb-dot">2</span><span class="pb-label">Rate</span></button>
+                    <button class="pb-node" data-step="3" aria-label="Step 3"><span class="pb-dot">3</span><span class="pb-label">Resume</span></button>
+                    <button class="pb-node" data-step="4" aria-label="Step 4"><span class="pb-dot">4</span><span class="pb-label">Find</span></button>
+                    <button class="pb-node" data-step="5" aria-label="Step 5"><span class="pb-dot">5</span><span class="pb-label">Propose</span></button>
+                    <button class="pb-node" data-step="6" aria-label="Step 6"><span class="pb-dot">6</span><span class="pb-label">Invoice</span></button>
+                    <button class="pb-node" data-step="7" aria-label="Step 7"><span class="pb-dot">7</span><span class="pb-label">Contract</span></button>
+                    <button class="pb-node" data-step="8" aria-label="Step 8"><span class="pb-dot">8</span><span class="pb-label">Done</span></button>
+                </div>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="pb-step active open" data-step="1">
+                <div class="pb-header" onclick="toggleStep(1)">
+                    <span class="pb-num">1</span>
+                    <div class="pb-title"><h2>Find Your Skill</h2></div>
+                    <span class="pb-tag active">In Progress</span>
+                </div>
+                <div class="pb-body">
+                    <p>What are you good at? Think about skills people pay for:</p>
+                    <p><strong>Writing:</strong> Blog posts, product descriptions, social media content.</p>
+                    <p><strong>Design:</strong> Logos, social media graphics, presentations.</p>
+                    <p><strong>Development:</strong> Websites, apps, automation scripts.</p>
+                    <p><strong>Data:</strong> Excel work, data entry, analysis.</p>
+                    <div class="pb-tip">
+                        <span class="icon">💡</span>
+                        <span>Start with what you already know. You don't need to be an expert — just better than your client.</span>
+                    </div>
+                    <button class="action-btn primary" onclick="completeStep(1)">I know my skill →</button>
+                    <button class="action-btn secondary" onclick="completeStep(1)">Skip — I'll figure it out</button>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="pb-step locked" data-step="2">
+                <div class="pb-header" onclick="toggleStep(2)">
+                    <span class="pb-num">2</span>
+                    <div class="pb-title"><h2>Set Your Rate</h2></div>
+                    <span class="pb-tag locked">🔒 Locked</span>
+                </div>
+                <div class="pb-body">
+                    <p>How much should you charge? Use our calculator to find your rate based on your skills and experience.</p>
+                    <a href="/tools/calculators/freelance-rate.html" target="_blank" class="tool-link" onclick="markToolUsed()">
+                        <span class="icon">💰</span>
+                        <span class="name">Freelance Rate Calculator</span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <div class="pb-tip">
+                        <span class="icon">💡</span>
+                        <span>Start slightly lower to get your first reviews, then raise your rates.</span>
+                    </div>
+                    <button class="action-btn primary" onclick="completeStep(2)">I set my rate →</button>
+                    <button class="action-btn secondary" onclick="completeStep(2)">Skip for now</button>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="pb-step locked" data-step="3">
+                <div class="pb-header" onclick="toggleStep(3)">
+                    <span class="pb-num">3</span>
+                    <div class="pb-title"><h2>Build Your Resume</h2></div>
+                    <span class="pb-tag locked">🔒 Locked</span>
+                </div>
+                <div class="pb-body">
+                    <p>Clients want to see what you can do. Create a professional resume that highlights your skills and experience.</p>
+                    <a href="/tools/career/resume-builder.html" target="_blank" class="tool-link" onclick="markToolUsed()">
+                        <span class="icon">📄</span>
+                        <span class="name">Resume Builder</span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <div class="pb-tip">
+                        <span class="icon">💡</span>
+                        <span>Include any relevant experience — even personal projects count!</span>
+                    </div>
+                    <button class="action-btn primary" onclick="completeStep(3)">I built my resume →</button>
+                    <button class="action-btn secondary" onclick="completeStep(3)">Skip for now</button>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="pb-step locked" data-step="4">
+                <div class="pb-header" onclick="toggleStep(4)">
+                    <span class="pb-num">4</span>
+                    <div class="pb-title"><h2>Find Your First Client</h2></div>
+                    <span class="pb-tag locked">🔒 Locked</span>
+                </div>
+                <div class="pb-body">
+                    <p>Where to find freelance work in India:</p>
+                    <p><strong>Upwork / Fiverr:</strong> Global platforms with lots of opportunities.</p>
+                    <p><strong>LinkedIn:</strong> Post about your skills, connect with potential clients.</p>
+                    <p><strong>WhatsApp Groups:</strong> Many local businesses share work in groups.</p>
+                    <p><strong>Referrals:</strong> Tell friends and family what you do.</p>
+                    <div class="pb-tip">
+                        <span class="icon">💡</span>
+                        <span>Start with 1-2 platforms. Don't spread yourself too thin.</span>
+                    </div>
+                    <button class="action-btn primary" onclick="completeStep(4)">I found a client →</button>
+                    <button class="action-btn secondary" onclick="completeStep(4)">Skip — still looking</button>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="pb-step locked" data-step="5">
+                <div class="pb-header" onclick="toggleStep(5)">
+                    <span class="pb-num">5</span>
+                    <div class="pb-title"><h2>Send a Winning Proposal</h2></div>
+                    <span class="pb-tag locked">🔒 Locked</span>
+                </div>
+                <div class="pb-body">
+                    <p>A good proposal shows you understand the client's problem and can solve it.</p>
+                    <a href="/tools/career/cover-letter.html" target="_blank" class="tool-link" onclick="markToolUsed()">
+                        <span class="icon">✉️</span>
+                        <span class="name">Cover Letter Generator</span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <div class="pb-tip">
+                        <span class="icon">💡</span>
+                        <span>Keep it short. Address their specific need. Show examples if you have them.</span>
+                    </div>
+                    <button class="action-btn primary" onclick="completeStep(5)">I sent my proposal →</button>
+                    <button class="action-btn secondary" onclick="completeStep(5)">Skip for now</button>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="pb-step locked" data-step="6">
+                <div class="pb-header" onclick="toggleStep(6)">
+                    <span class="pb-num">6</span>
+                    <div class="pb-title"><h2>Create Your Invoice</h2></div>
+                    <span class="pb-tag locked">🔒 Locked</span>
+                </div>
+                <div class="pb-body">
+                    <p>Got the job? Now send a professional invoice to get paid.</p>
+                    <a href="/tools/business/invoice-generator.html" target="_blank" class="tool-link" onclick="markToolUsed()">
+                        <span class="icon">🧾</span>
+                        <span class="name">Invoice Generator</span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <div class="pb-tip">
+                        <span class="icon">💡</span>
+                        <span>Include payment terms (e.g., "Due in 7 days") and your UPI/bank details.</span>
+                    </div>
+                    <button class="action-btn primary" onclick="completeStep(6)">I sent my invoice →</button>
+                    <button class="action-btn secondary" onclick="completeStep(6)">Skip for now</button>
+                </div>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="pb-step locked" data-step="7">
+                <div class="pb-header" onclick="toggleStep(7)">
+                    <span class="pb-num">7</span>
+                    <div class="pb-title"><h2>Protect Yourself</h2></div>
+                    <span class="pb-tag locked">🔒 Locked</span>
+                </div>
+                <div class="pb-body">
+                    <p>For bigger projects, use a simple contract to protect both parties.</p>
+                    <a href="/tools/business/freelance-contract.html" target="_blank" class="tool-link" onclick="markToolUsed()">
+                        <span class="icon">📋</span>
+                        <span class="name">Freelance Contract</span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <div class="pb-tip">
+                        <span class="icon">💡</span>
+                        <span>Even a simple contract prevents misunderstandings about scope and payment.</span>
+                    </div>
+                    <button class="action-btn primary" onclick="completeStep(7)">I understand →</button>
+                    <button class="action-btn secondary" onclick="completeStep(7)">Skip — I'll use contracts later</button>
+                </div>
+            </div>
+
+            <!-- Step 8 -->
+            <div class="pb-step locked" data-step="8">
+                <div class="pb-header" onclick="toggleStep(8)">
+                    <span class="pb-num">8</span>
+                    <div class="pb-title"><h2>Congratulations!</h2></div>
+                    <span class="pb-tag locked">🔒 Locked</span>
+                </div>
+                <div class="pb-body">
+                    <p>You've taken the first steps toward freelancing. Here's what to remember:</p>
+                    <p><strong>Start small.</strong> Your first client doesn't need to be perfect.</p>
+                    <p><strong>Deliver quality.</strong> Happy clients refer more clients.</p>
+                    <p><strong>Keep learning.</strong> Your skills and rates will grow with experience.</p>
+                    <div class="pb-tip">
+                        <span class="icon">💡</span>
+                        <span>Bookmark this playbook and come back when you need the tools again.</span>
+                    </div>
+                    <button class="action-btn primary" onclick="completeStep(8)">I'm ready to start! 🎉</button>
+                </div>
+            </div>
+
+            <!-- Completion -->
+            <div class="pb-complete" id="pbComplete">
+                <div class="done-card">
+                    <span class="done-icon">🎉</span>
+                    <h2>You're Ready to Freelance!</h2>
+                    <p class="sub">You've completed all 8 steps. Now go get your first client!</p>
+                    <button class="share-btn" onclick="sharePlaybook()">📱 Share this playbook</button>
+                    <br>
+                    <a href="/playbooks/" class="next-link">More playbooks →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>How to Start Freelancing in India</h2>
+                <p>Freelancing is a great way to earn money using your skills. Whether you're a student, stay-at-home parent, or looking for extra income, freelancing offers flexibility and unlimited earning potential.</p>
+                <h3>Getting Started</h3>
+                <p>The first step is identifying what you can offer. Common freelance skills include writing, design, development, data entry, and translation. You don't need to be an expert — just better than your client at that specific task.</p>
+                <h3>Tools You'll Need</h3>
+                <p>OptiDrop provides free tools for every step of freelancing: Resume Builder, Cover Letter Generator, Invoice Generator, and Freelance Contract. All tools run in your browser with no uploads required.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    var state={currentStep:1,totalSteps:8,completed:new Set(),toolUsed:false};
+    try{var s=localStorage.getItem('optidrop_playbook_freelance');if(s){var d=JSON.parse(s);state.completed=new Set(d.completed||[]);state.currentStep=d.currentStep||1;state.toolUsed=d.toolUsed||false;state.completed.forEach(function(x){markDone(x)});goToStep(state.currentStep)}}catch(e){}
+    window.toggleStep=function(s){var el=document.querySelector('.pb-step[data-step="'+s+'"]');if(el)el.classList.toggle('open')};
+    window.completeStep=function(s){state.completed.add(s);markDone(s);save();if(s<state.totalSteps)goToStep(s+1);else showComplete()};
+    function markDone(s){var el=document.querySelector('.pb-step[data-step="'+s+'"]');if(el){el.classList.remove('active','locked');el.classList.add('done');el.querySelector('.pb-tag').className='pb-tag done';el.querySelector('.pb-tag').textContent='✓ Done'}var n=document.querySelector('.pb-node[data-step="'+s+'"]');if(n){n.classList.remove('active');n.classList.add('done');n.querySelector('.pb-dot').textContent='✓'}updatePath()}
+    function goToStep(s){state.currentStep=s;document.querySelectorAll('.pb-step').forEach(function(el){el.classList.remove('active','open');if(!el.classList.contains('done'))el.classList.add('locked')});var t=document.querySelector('.pb-step[data-step="'+s+'"]');if(t){t.classList.remove('locked');t.classList.add('active','open');setTimeout(function(){t.scrollIntoView({behavior:'smooth',block:'start'})},100)}document.querySelectorAll('.pb-node').forEach(function(n){n.classList.remove('active');n.removeAttribute('aria-current')});var a=document.querySelector('.pb-node[data-step="'+s+'"]');if(a){a.classList.add('active');a.setAttribute('aria-current','true')}updatePath();save()}
+    function updatePath(){var p=(state.completed.size/state.totalSteps)*100;var f=document.getElementById('pathFill');if(f)f.style.width=p+'%'}
+    function showComplete(){document.querySelector('.pb-path').style.display='none';document.querySelectorAll('.pb-step').forEach(function(s){s.style.display='none'});document.getElementById('pbComplete').classList.add('show');document.getElementById('pbComplete').scrollIntoView({behavior:'smooth'})}
+    function save(){localStorage.setItem('optidrop_playbook_freelance',JSON.stringify({completed:Array.from(state.completed),currentStep:state.currentStep,toolUsed:state.toolUsed}))}
+    window.markToolUsed=function(){state.toolUsed=true;save()};
+    window.sharePlaybook=function(){var t='I just learned how to start freelancing in India using OptiDrop — 100% free! Try it: https://optidrop.online/playbooks/start-freelancing-india.html';if(navigator.share){navigator.share({title:'Start Freelancing in India',text:t,url:'https://optidrop.online/playbooks/start-freelancing-india.html'})}else{navigator.clipboard.writeText(t).then(function(){if(typeof showToast==='function')showToast('Link copied!','success')})}};
+    </script>
+</body>
+</html>

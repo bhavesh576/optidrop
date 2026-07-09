@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Your PDF Problem — Free Playbook | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Find the right PDF tool in 30 seconds. Compress, merge, split, or convert PDFs — free, no upload.">
+    <link rel="canonical" href="https://optidrop.online/playbooks/fix-pdf-problem.html">
+    <meta property="og:title" content="Fix Your PDF Problem — Free Playbook | OptiDrop">
+    <meta property="og:description" content="Find the right PDF tool in 30 seconds. Free, no upload.">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"HowTo","name":"Fix Your PDF Problem","description":"Find the right PDF tool for your needs.","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"Choose Your Problem","text":"Select what you need to do with your PDF."},{"@type":"HowToStep","position":2,"name":"Open the Right Tool","text":"Use the recommended OptiDrop tool."},{"@type":"HowToStep","position":3,"name":"Download Your File","text":"Download the processed PDF."}]}
+    </script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    .wizard-container{max-width:600px;margin:0 auto;padding:1rem}
+    .wizard-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1rem;text-align:center}
+    .wizard-card h2{font-size:1.2rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem}
+    .wizard-card p{font-size:0.9rem;color:#64748b;line-height:1.6;margin-bottom:1.25rem}
+    .choice-btn{display:block;width:100%;padding:1rem;background:#f8fafc;border:2px solid #e2e8f0;border-radius:12px;font-size:0.95rem;font-weight:600;color:#0f172a;cursor:pointer;margin-bottom:0.75rem;text-align:left;transition:all 0.2s}
+    .choice-btn:hover{border-color:#e91e63;background:#fdf2f8}
+    .choice-btn .emoji{margin-right:0.5rem}
+    .result-card{background:#ecfdf5;border:2px solid #10b981;border-radius:16px;padding:1.5rem;text-align:center}
+    .result-card h2{font-size:1.2rem;font-weight:800;color:#065f46;margin-bottom:0.5rem}
+    .result-card p{font-size:0.9rem;color:#047857;margin-bottom:1rem}
+    .tool-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 1.5rem;background:#e91e63;color:#fff;border:none;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;text-decoration:none;margin-bottom:0.75rem}
+    .tool-btn:hover{background:#be185b}
+    .restart-btn{display:block;width:100%;padding:0.75rem;background:none;color:#94a3b8;border:none;font-size:0.85rem;cursor:pointer;text-decoration:underline}
+    .wizard-progress{display:flex;justify-content:center;gap:0.5rem;margin-bottom:1.5rem}
+    .wizard-dot{width:10px;height:10px;border-radius:50%;background:#e2e8f0}
+    .wizard-dot.active{background:#e91e63}
+    .wizard-dot.done{background:#10b981}
+    .hidden{display:none!important}
+    .dark-mode .wizard-card{background:#272a33;border-color:#3d4455}
+    .dark-mode .wizard-card h2{color:#f1f5f9}
+    .dark-mode .wizard-card p{color:#94a3b8}
+    .dark-mode .choice-btn{background:#1e293b;border-color:#3d4455;color:#e2e8f0}
+    .dark-mode .choice-btn:hover{border-color:#f472b6;background:#3b0f2a}
+    .dark-mode .result-card{background:#064e3b;border-color:#10b981}
+    .dark-mode .result-card h2{color:#34d399}
+    .dark-mode .result-card p{color:#6ee7b7}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-8 pb-4 text-center">
+            <span style="display:inline-block;padding:0.3rem 0.9rem;background:#fdf2f8;color:#e91e63;font-size:0.8rem;font-weight:700;border-radius:9999px;margin-bottom:1rem">📘 FREE PLAYBOOK</span>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">Fix Your PDF Problem</h1>
+            <p class="text-slate-600 max-w-xl mx-auto">Answer 2 questions to find the right PDF tool. Takes 30 seconds.</p>
+        </section>
+
+        <div class="wizard-container">
+            <div class="wizard-progress">
+                <div class="wizard-dot active" id="dot1"></div>
+                <div class="wizard-dot" id="dot2"></div>
+                <div class="wizard-dot" id="dot3"></div>
+            </div>
+
+            <!-- Question 1 -->
+            <div class="wizard-card" id="q1">
+                <h2>What do you need to do?</h2>
+                <p>Pick the option that matches your problem:</p>
+                <button class="choice-btn" onclick="choose('compress')"><span class="emoji">📄</span> Make my PDF file smaller</button>
+                <button class="choice-btn" onclick="choose('merge')"><span class="emoji">📎</span> Combine multiple PDFs into one</button>
+                <button class="choice-btn" onclick="choose('split')"><span class="emoji">✂️</span> Split a PDF into separate pages</button>
+                <button class="choice-btn" onclick="choose('convert')"><span class="emoji">🖼️</span> Convert PDF to images (JPG)</button>
+            </div>
+
+            <!-- Question 2 (Compress) -->
+            <div class="wizard-card hidden" id="q2-compress">
+                <h2>Why do you need to compress?</h2>
+                <p>This helps us recommend the best approach:</p>
+                <button class="choice-btn" onclick="showResult('compress-email')"><span class="emoji">📧</span> To email it (max 25MB)</button>
+                <button class="choice-btn" onclick="showResult('compress-upload')"><span class="emoji">🏛️</span> To upload to a government site</button>
+                <button class="choice-btn" onclick="showResult('compress-whatsapp')"><span class="emoji">💬</span> To send on WhatsApp</button>
+            </div>
+
+            <!-- Question 2 (Merge) -->
+            <div class="wizard-card hidden" id="q2-merge">
+                <h2>How many PDFs?</h2>
+                <button class="choice-btn" onclick="showResult('merge-few')"><span class="emoji">2-3</span> Just a few files</button>
+                <button class="choice-btn" onclick="showResult('merge-many')"><span class="emoji">10+</span> Many files at once</button>
+            </div>
+
+            <!-- Results -->
+            <div class="result-card hidden" id="result-compress-email">
+                <h2>📄 Use PDF Compressor</h2>
+                <p>Email attachments need to be under 25MB. Our compressor reduces file size while keeping text sharp.</p>
+                <a href="/compress-pdf.html" class="tool-btn">Open PDF Compressor →</a>
+                <button class="restart-btn" onclick="restart()">Start Over</button>
+            </div>
+
+            <div class="result-card hidden" id="result-compress-upload">
+                <h2>🏛️ Use PDF Compressor</h2>
+                <p>Government sites usually need files under 1MB. Our tool does this without making text blurry.</p>
+                <a href="/compress-pdf.html" class="tool-btn">Open PDF Compressor →</a>
+                <button class="restart-btn" onclick="restart()">Start Over</button>
+            </div>
+
+            <div class="result-card hidden" id="result-compress-whatsapp">
+                <h2>💬 Use PDF Compressor</h2>
+                <p>WhatsApp has a 16MB limit for documents. Compress your PDF to send it instantly.</p>
+                <a href="/compress-pdf.html" class="tool-btn">Open PDF Compressor →</a>
+                <button class="restart-btn" onclick="restart()">Start Over</button>
+            </div>
+
+            <div class="result-card hidden" id="result-merge-few">
+                <h2>📎 Use JPG to PDF</h2>
+                <p>Convert and merge your images into a single PDF document. Perfect for combining a few files.</p>
+                <a href="/jpg-to-pdf.html" class="tool-btn">Open JPG to PDF →</a>
+                <button class="restart-btn" onclick="restart()">Start Over</button>
+            </div>
+
+            <div class="result-card hidden" id="result-merge-many">
+                <h2>📎 Use PDF Merger</h2>
+                <p>Combine many PDF files into one document. Supports drag-and-drop reordering.</p>
+                <a href="/tools/pdf/pdf-merger.html" class="tool-btn">Open PDF Merger →</a>
+                <button class="restart-btn" onclick="restart()">Start Over</button>
+            </div>
+
+            <div class="result-card hidden" id="result-split">
+                <h2>✂️ Use PDF Splitter</h2>
+                <p>Split your PDF into individual pages or extract specific page ranges.</p>
+                <a href="/tools/pdf/pdf-splitter.html" class="tool-btn">Open PDF Splitter →</a>
+                <button class="restart-btn" onclick="restart()">Start Over</button>
+            </div>
+
+            <div class="result-card hidden" id="result-convert">
+                <h2>🖼️ Use PDF to JPG</h2>
+                <p>Extract pages from your PDF as high-quality JPG images.</p>
+                <a href="/pdf-to-jpg.html" class="tool-btn">Open PDF to JPG →</a>
+                <button class="restart-btn" onclick="restart()">Start Over</button>
+            </div>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>PDF Tools — Free Online</h2>
+                <p>OptiDrop offers 15+ free PDF tools that run entirely in your browser. No file uploads, no sign-up, no watermarks. Compress, merge, split, convert, and edit PDFs instantly.</p>
+                <h3>Supported Operations</h3>
+                <p><strong>Compress PDF</strong> — Reduce file size while keeping quality. Perfect for email attachments and government uploads.</p>
+                <p><strong>Merge PDFs</strong> — Combine multiple PDF files into one document.</p>
+                <p><strong>Split PDF</strong> — Extract pages or split into separate files.</p>
+                <p><strong>PDF to JPG</strong> — Convert PDF pages to images.</p>
+                <p><strong>JPG to PDF</strong> — Convert images to PDF documents.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    var currentQ = 1;
+    function choose(type) {
+        document.getElementById('q1').classList.add('hidden');
+        document.getElementById('dot1').classList.remove('active');
+        document.getElementById('dot1').classList.add('done');
+        document.getElementById('dot2').classList.add('active');
+        if (type === 'compress') { document.getElementById('q2-compress').classList.remove('hidden'); }
+        else if (type === 'merge') { document.getElementById('q2-merge').classList.remove('hidden'); }
+        else if (type === 'split') { showResult('split'); }
+        else if (type === 'convert') { showResult('convert'); }
+        currentQ = 2;
+    }
+    function showResult(id) {
+        document.querySelectorAll('.wizard-card').forEach(function(c) { c.classList.add('hidden'); });
+        document.getElementById('dot2').classList.remove('active');
+        document.getElementById('dot2').classList.add('done');
+        document.getElementById('dot3').classList.add('active');
+        document.getElementById('result-' + id).classList.remove('hidden');
+        document.getElementById('result-' + id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        currentQ = 3;
+    }
+    function restart() {
+        document.querySelectorAll('.wizard-card, .result-card').forEach(function(c) { c.classList.add('hidden'); });
+        document.getElementById('q1').classList.remove('hidden');
+        document.querySelectorAll('.wizard-dot').forEach(function(d) { d.classList.remove('active', 'done'); });
+        document.getElementById('dot1').classList.add('active');
+        document.getElementById('q1').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        currentQ = 1;
+    }
+    </script>
+</body>
+</html>
