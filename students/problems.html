@@ -44,9 +44,8 @@
     .pb-search-wrap{max-width:400px;margin:0 auto 0.75rem;padding:0 1rem}
     .pb-search{width:100%;padding:0.55rem 1rem 0.55rem 2rem;border:1.5px solid #e2e8f0;border-radius:10px;font-size:0.82rem;outline:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") no-repeat 0.7rem center}
     .pb-search:focus{border-color:#e91e63}
-    .pb-filters{display:flex;flex-wrap:nowrap;gap:0.3rem;justify-content:center;margin-bottom:0.75rem;padding:0 1rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-    .pb-filters::-webkit-scrollbar{display:none}
-    .pb-filter{padding:0.3rem 0.6rem;border:1px solid #e2e8f0;border-radius:9999px;background:#fff;font-size:0.65rem;font-weight:600;color:#64748b;cursor:pointer;white-space:nowrap;flex-shrink:0}
+    .pb-filters{display:flex;flex-wrap:wrap;gap:0.3rem;justify-content:center;margin-bottom:0.75rem;padding:0 1rem}
+    .pb-filter{padding:0.3rem 0.55rem;border:1px solid #e2e8f0;border-radius:9999px;background:#fff;font-size:0.64rem;font-weight:600;color:#64748b;cursor:pointer}
     .pb-filter.active{background:#e91e63;border-color:#e91e63;color:#fff}
     .pb-count{text-align:center;font-size:0.72rem;color:#94a3b8;margin-bottom:0.75rem}
     .pb-modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;padding:1rem}
@@ -116,6 +115,7 @@
     .dark-mode .pb-m-save.saved{background:#3b0f2a;border-color:#f472b6;color:#f472b6}
     @media(max-width:900px){.pb-grid{grid-template-columns:repeat(3,1fr)}}
     @media(max-width:640px){
+        .pb-filter{padding:0.25rem 0.45rem;font-size:0.58rem}
         .pb-grid{grid-template-columns:repeat(3,1fr);gap:0.45rem}
         .pb-card{padding:0.5rem;border-radius:10px}
         .pb-card .pb-c-icon{font-size:1rem}
