@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Project Guide — Write Projects That Get You Hired | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Free guide to writing project descriptions that impress recruiters. STAR method, metrics, portfolio tips, and before/after examples.">
+    <meta name="keywords" content="resume projects, project description, portfolio tips, STAR method, resume writing, tech resume, CS resume">
+    <link rel="canonical" href="https://optidrop.online/students/resume-project-guide.html">
+    <meta property="og:title" content="Resume Project Guide — Write Projects That Get You Hired | OptiDrop">
+    <meta property="og:description" content="Free guide to writing project descriptions that impress recruiters.">
+    <meta property="og:url" content="https://optidrop.online/students/resume-project-guide.html">
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    .rp-container{max-width:800px;margin:0 auto;padding:0.75rem 1rem}
+    .rp-tabs{display:flex;gap:0.25rem;margin-bottom:0.75rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 0.25rem}
+    .rp-tabs::-webkit-scrollbar{display:none}
+    .rp-tab{padding:0.5rem 0.75rem;border:1px solid #e2e8f0;border-radius:10px;background:#fff;font-size:0.72rem;font-weight:600;color:#64748b;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all 0.2s}
+    .rp-tab.active{background:#0f172a;border-color:#0f172a;color:#fff}
+    .rp-tab:hover:not(.active){border-color:#cbd5e1}
+    .rp-panel{display:none}
+    .rp-panel.active{display:block}
+    .rp-section{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1rem 1.1rem;margin-bottom:0.6rem}
+    .rp-section-title{font-size:0.88rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.4rem}
+    .rp-item{display:flex;gap:0.5rem;padding:0.3rem 0;font-size:0.82rem;color:#475569;line-height:1.5;align-items:flex-start}
+    .rp-item .bullet{width:5px;height:5px;border-radius:50%;background:#cbd5e1;flex-shrink:0;margin-top:0.45rem}
+    .rp-item strong{color:#0f172a}
+    .rp-tip{display:flex;gap:0.5rem;padding:0.6rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;font-size:0.78rem;color:#166534;line-height:1.5;margin-top:0.5rem}
+    .rp-tip .icon{font-size:0.9rem;flex-shrink:0}
+    .rp-tip.gold{background:#fffbeb;border-color:#fde68a;color:#92400e}
+    .rp-warn{display:flex;gap:0.5rem;padding:0.6rem;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;font-size:0.78rem;color:#991b1b;line-height:1.5;margin-top:0.5rem}
+    .rp-warn .icon{font-size:0.9rem;flex-shrink:0}
+    .rp-example{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem;margin-top:0.5rem;margin-bottom:0.5rem}
+    .rp-example-label{font-size:0.62rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.3rem}
+    .rp-example-bad{border-left:3px solid #ef4444}
+    .rp-example-good{border-left:3px solid #10b981}
+    .rp-example p{font-size:0.8rem;color:#475569;line-height:1.55;margin:0}
+    .rp-example .tag{display:inline-block;font-size:0.58rem;font-weight:700;padding:0.1rem 0.4rem;border-radius:9999px;margin-bottom:0.3rem}
+    .rp-example .tag.bad{background:#fef2f2;color:#dc2626}
+    .rp-example .tag.good{background:#ecfdf5;color:#059669}
+    .rp-table{width:100%;border-collapse:collapse;font-size:0.78rem;margin-top:0.5rem}
+    .rp-table th{text-align:left;padding:0.4rem 0.5rem;background:#f8fafc;border:1px solid #e2e8f0;font-weight:700;color:#0f172a;font-size:0.72rem}
+    .rp-table td{padding:0.4rem 0.5rem;border:1px solid #e2e8f0;color:#475569}
+    .rp-formula{background:#0f172a;color:#fff;padding:0.75rem 1rem;border-radius:10px;font-size:0.82rem;line-height:1.6;margin-top:0.5rem;text-align:center}
+    .rp-formula span{color:#34d399;font-weight:700}
+    .rp-formula .dim{color:#64748b}
+    .dark-mode .rp-tab{background:#1e293b;border-color:#334155;color:#94a3b8}
+    .dark-mode .rp-tab.active{background:#10b981;border-color:#10b981;color:#fff}
+    .dark-mode .rp-section{background:#1e293b;border-color:#334155}
+    .dark-mode .rp-section-title{color:#f1f5f9}
+    .dark-mode .rp-item{color:#94a3b8}
+    .dark-mode .rp-item strong{color:#f1f5f9}
+    .dark-mode .rp-tip{background:#064e3b;border-color:#065f46;color:#6ee7b7}
+    .dark-mode .rp-tip.gold{background:#1c1917;border-color:#92400e;color:#fbbf24}
+    .dark-mode .rp-warn{background:#450a0a;border-color:#7f1d1d;color:#fca5a5}
+    .dark-mode .rp-example{background:#0f172a;border-color:#334155}
+    .dark-mode .rp-example p{color:#94a3b8}
+    .dark-mode .rp-example-label{color:#64748b}
+    .dark-mode .rp-example-bad{border-color:#ef4444}
+    .dark-mode .rp-example-good{border-color:#10b981}
+    .dark-mode .rp-example .tag.bad{background:#450a0a;color:#fca5a5}
+    .dark-mode .rp-example .tag.good{background:#064e3b;color:#34d399}
+    .dark-mode .rp-table th{background:#0f172a;border-color:#334155;color:#f1f5f9}
+    .dark-mode .rp-table td{border-color:#334155;color:#94a3b8}
+    .dark-mode .rp-formula{background:#064e3b}
+    .dark-mode .rp-formula span{color:#34d399}
+    .dark-mode .rp-formula .dim{color:#64748b}
+    @media(max-width:640px){
+        .rp-container{padding:0.5rem 0.65rem}
+        .rp-tabs{gap:0.2rem}
+        .rp-tab{padding:0.4rem 0.6rem;font-size:0.68rem;border-radius:8px}
+        .rp-section{padding:0.75rem 0.85rem;border-radius:12px}
+        .rp-section-title{font-size:0.82rem}
+        .rp-item{font-size:0.78rem}
+        .rp-tip,.rp-warn{font-size:0.72rem;padding:0.5rem}
+        .rp-example{padding:0.6rem}
+        .rp-example p{font-size:0.75rem}
+        .rp-table{font-size:0.72rem}
+        .rp-formula{font-size:0.75rem;padding:0.6rem 0.8rem}
+    }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-10 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">
+                📄 Resume Project Guide
+            </h1>
+            <p class="text-base text-slate-600 max-w-xl mx-auto">
+                Write project descriptions that make recruiters stop scrolling. Real examples, proven formulas.
+            </p>
+        </section>
+
+        <div class="rp-container">
+            <div class="rp-tabs">
+                <div class="rp-tab active" onclick="switchTab('write')">✍️ Writing</div>
+                <div class="rp-tab" onclick="switchTab('examples')">📋 Examples</div>
+                <div class="rp-tab" onclick="switchTab('portfolio')">🌐 Portfolio</div>
+                <div class="rp-tab" onclick="switchTab('format')">📐 Formatting</div>
+            </div>
+
+            <!-- Tab: Writing -->
+            <div class="rp-panel active" id="panel-write">
+                <div class="rp-section">
+                    <div class="rp-section-title">🎯 The Formula That Works</div>
+                    <div class="rp-formula">
+                        <span>[Action Verb]</span> + <span>[What You Built]</span> + <span>[How]</span> + <span>[Result/Metric]</span>
+                    </div>
+                    <div class="rp-example rp-example-good">
+                        <div class="rp-example-label"><span class="tag good">✓ GOOD</span></div>
+                        <p>Built a real-time parking slot finder using React, Node.js, and Google Maps API, reducing average search time by 40% for 500+ test users.</p>
+                    </div>
+                    <div class="rp-example rp-example-bad">
+                        <div class="rp-example-label"><span class="tag bad">✗ BAD</span></div>
+                        <p>Made a parking website using React.</p>
+                    </div>
+                </div>
+
+                <div class="rp-section">
+                    <div class="rp-section-title">📊 Use Numbers Everywhere</div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Users:</strong> "served 500+ users" or "tested with 50 students"</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Performance:</strong> "reduced load time by 60%" or "processed 10K records in 2 seconds"</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Scale:</strong> "handled 1,000 concurrent users" or "stored 50GB of data"</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Impact:</strong> "saved 10 hours/week of manual work" or "reduced errors by 90%"</div></div>
+                    <div class="rp-tip"><span class="icon">💡</span><span><strong>No real users?</strong> Use test data: "Processed 1,000 test records with 99.5% accuracy" or "Achieved 95 Lighthouse performance score."</span></div>
+                </div>
+
+                <div class="rp-section">
+                    <div class="rp-section-title">🔤 Action Verbs That Impress</div>
+                    <table class="rp-table">
+                        <tr><th>Category</th><th>Verbs</th></tr>
+                        <tr><td><strong>Building</strong></td><td>Built, Developed, Created, Designed, Implemented</td></tr>
+                        <tr><td><strong>Improving</strong></td><td>Optimized, Reduced, Improved, Enhanced, Streamlined</td></tr>
+                        <tr><td><strong>Leading</strong></td><td>Led, Managed, Coordinated, Mentored, Drove</td></tr>
+                        <tr><td><strong>Technical</strong></td><td>Architected, Integrated, Automated, Deployed, Migrated</td></tr>
+                    </table>
+                    <div class="rp-warn"><span class="icon">⚠️</span><span><strong>Never use:</strong> "Worked on," "Helped with," "Was responsible for." These are passive and vague. Always start with a strong action verb.</span></div>
+                </div>
+
+                <div class="rp-section">
+                    <div class="rp-section-title">🏗️ STAR Method for Projects</div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Situation:</strong> What problem did you solve? (1 sentence)</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Task:</strong> What was your goal? (1 sentence)</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Action:</strong> What did you build and how? (1-2 bullet points)</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Result:</strong> What was the outcome? Use numbers. (1 bullet point)</div></div>
+                    <div class="rp-tip"><span class="icon">💡</span><span><strong>Interview bonus:</strong> If you can explain your project using STAR in an interview, you'll stand out from 90% of candidates.</span></div>
+                </div>
+            </div>
+
+            <!-- Tab: Examples -->
+            <div class="rp-panel" id="panel-examples">
+                <div class="rp-section">
+                    <div class="rp-section-title">💻 Web Application</div>
+                    <div class="rp-example rp-example-bad">
+                        <div class="rp-example-label"><span class="tag bad">✗ BEFORE</span></div>
+                        <p>Online Store — Built an e-commerce website using React and Node.js.</p>
+                    </div>
+                    <div class="rp-example rp-example-good">
+                        <div class="rp-example-label"><span class="tag good">✓ AFTER</span></div>
+                        <p><strong>HyperLocal Marketplace</strong> — Built a neighborhood grocery group-buying platform using React, Node.js, and Razorpay, enabling 200+ apartment residents to pool orders and access wholesale prices, reducing grocery costs by 15-25%.</p>
+                    </div>
+                </div>
+
+                <div class="rp-section">
+                    <div class="rp-section-title">🤖 AI/ML Project</div>
+                    <div class="rp-example rp-example-bad">
+                        <div class="rp-example-label"><span class="tag bad">✗ BEFORE</span></div>
+                        <p>Crop Disease Detector — Used machine learning to detect plant diseases from photos.</p>
+                    </div>
+                    <div class="rp-example rp-example-good">
+                        <div class="rp-example-label"><span class="tag good">✓ AFTER</span></div>
+                        <p><strong>CropGuard AI</strong> — Developed a mobile-first crop disease detection system using TensorFlow and MobileNet, achieving 94% accuracy across 15 disease categories. Deployed as a PWA serving 500+ farmers with treatment recommendations in 3 regional languages.</p>
+                    </div>
+                </div>
+
+                <div class="rp-section">
+                    <div class="rp-section-title">📱 Mobile App</div>
+                    <div class="rp-example rp-example-bad">
+                        <div class="rp-example-label"><span class="tag bad">✗ BEFORE</span></div>
+                        <p>Medicine Reminder App — An app that reminds people to take their medicine.</p>
+                    </div>
+                    <div class="rp-example rp-example-good">
+                        <div class="rp-example-label"><span class="tag good">✓ AFTER</span></div>
+                        <p><strong>MedBuddy</strong> — Built a React Native medicine reminder app with family tracking, enabling caregivers to monitor medication adherence remotely. Reduced missed doses by 60% in a 2-week pilot with 30 senior citizens.</p>
+                    </div>
+                </div>
+
+                <div class="rp-section">
+                    <div class="rp-section-title">🛠️ Developer Tool</div>
+                    <div class="rp-example rp-example-bad">
+                        <div class="rp-example-label"><span class="tag bad">✗ BEFORE</span></div>
+                        <p>API Testing Tool — A tool to test REST APIs.</p>
+                    </div>
+                    <div class="rp-example rp-example-good">
+                        <div class="rp-example-label"><span class="tag good">✓ AFTER</span></div>
+                        <p><strong>APITester</strong> — Created a browser-based REST API testing tool with request history, environment variables, and response visualization. Reduced API debugging time by 40% for a team of 5 developers during a 3-month internship.</p>
+                    </div>
+                </div>
+
+                <div class="rp-section">
+                    <div class="rp-section-title">📊 Data Project</div>
+                    <div class="rp-example rp-example-bad">
+                        <div class="rp-example-label"><span class="tag bad">✗ BEFORE</span></div>
+                        <p>Data Analysis — Analyzed sales data using Python and created visualizations.</p>
+                    </div>
+                    <div class="rp-example rp-example-good">
+                        <div class="rp-example-label"><span class="tag good">✓ AFTER</span></div>
+                        <p><strong>SalesPulse Dashboard</strong> — Built an interactive sales analytics dashboard using Python, Pandas, and Plotly, processing 50K+ transactions to identify top-performing products and seasonal trends. Insights led to a 20% inventory optimization recommendation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Portfolio -->
+            <div class="rp-panel" id="panel-portfolio">
+                <div class="rp-section">
+                    <div class="rp-section-title">🌐 Where to Host Your Portfolio</div>
+                    <table class="rp-table">
+                        <tr><th>Platform</th><th>Best For</th><th>Cost</th></tr>
+                        <tr><td><strong>GitHub Pages</strong></td><td>Developers, free hosting</td><td>Free</td></tr>
+                        <tr><td><strong>Vercel</strong></td><td>React/Next.js projects</td><td>Free</td></tr>
+                        <tr><td><strong>Netlify</strong></td><td>Static sites, forms</td><td>Free</td></tr>
+                        <tr><td><strong>Notion</strong></td><td>Quick setup, non-developers</td><td>Free</td></tr>
+                        <tr><td><strong>Personal domain</strong></td><td>Professional branding</td><td>₹500-1000/yr</td></tr>
+                    </table>
+                    <div class="rp-tip"><span class="icon">💡</span><span><strong>Minimum viable portfolio:</strong> A GitHub profile with pinned repos + a one-page site with your projects, skills, and contact. That's enough to get hired.</span></div>
+                </div>
+
+                <div class="rp-section">
+                    <div class="rp-section-title">📋 What Each Project Entry Needs</div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Title</strong> — Short, descriptive name (not "Project 1")</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>One-liner</strong> — What it does in one sentence</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Tech stack</strong> — Languages, frameworks, APIs used</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Live link</strong> — Working demo (even if basic)</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>GitHub link</strong> — Clean code with README</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Screenshot/video</strong> — Visual proof it works</div></div>
+                </div>
+
+                <div class="rp-section">
+                    <div class="rp-section-title">📝 GitHub README Template</div>
+                    <div class="rp-example rp-example-good">
+                        <div class="rp-example-label"><span class="tag good">✓ TEMPLATE</span></div>
+                        <p><strong># Project Name</strong><br>
+                        One-line description.<br><br>
+                        <strong>## Features</strong><br>
+                        - Feature 1<br>
+                        - Feature 2<br><br>
+                        <strong>## Tech Stack</strong><br>
+                        Frontend: React, Tailwind<br>
+                        Backend: Node.js, Express<br>
+                        Database: MongoDB<br><br>
+                        <strong>## Setup</strong><br>
+                        Steps to run locally.<br><br>
+                        <strong>## Screenshots</strong><br>
+                        Add 2-3 screenshots.</p>
+                    </div>
+                </div>
+
+                <div class="rp-section">
+                    <div class="rp-section-title">🏆 Portfolio Priorities</div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Quality > Quantity.</strong> 3 polished projects beat 10 unfinished ones.</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Deploy everything.</strong> A live link is 10x more impressive than "run locally."</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Write good READMEs.</strong> Recruiters check your GitHub. Clean README = professional impression.</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Include problem-solving projects.</strong> Real-world problems > todo apps and calculators.</div></div>
+                </div>
+            </div>
+
+            <!-- Tab: Formatting -->
+            <div class="rp-panel" id="panel-format">
+                <div class="rp-section">
+                    <div class="rp-section-title">📐 Resume Project Section Format</div>
+                    <div class="rp-example rp-example-good">
+                        <div class="rp-example-label"><span class="tag good">✓ FORMAT</span></div>
+                        <p><strong>PROJECTS</strong><br><br>
+                        <strong>HyperLocal Marketplace</strong> | React, Node.js, Razorpay | <a href="#" style="color:#e91e63;">Live</a> | <a href="#" style="color:#e91e63;">GitHub</a><br>
+                        • Built a neighborhood grocery group-buying platform enabling 200+ residents to access wholesale prices<br>
+                        • Implemented real-time order tracking, UPI payments, and automated price calculation per member<br>
+                        • Reduced grocery costs by 15-25% in pilot testing with 3 apartment complexes</p>
+                    </div>
+                </div>
+
+                <div class="rp-section">
+                    <div class="rp-section-title">📏 How Many Projects?</div>
+                    <table class="rp-table">
+                        <tr><th>Experience Level</th><th>Projects to Show</th><th>Focus</th></tr>
+                        <tr><td><strong>Fresher (0 exp)</strong></td><td>3-4 projects</td><td>Diverse skills, real problems</td></tr>
+                        <tr><td><strong>1-2 years exp</strong></td><td>2-3 projects</td><td>Best work, relevant to role</td></tr>
+                        <tr><td><strong>3+ years exp</strong></td><td>1-2 projects</td><td>Only if impressive/side projects</td></tr>
+                    </table>
+                    <div class="rp-tip"><span class="icon">💡</span><span><strong>Order matters.</strong> Put your strongest project first. Recruiters spend 6 seconds on a resume — make the first project count.</span></div>
+                </div>
+
+                <div class="rp-section">
+                    <div class="rp-section-title">✅ Project Description Checklist</div>
+                    <div class="rp-item"><span class="bullet"></span><div>Starts with a strong action verb (Built, Developed, Created)</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div>Includes tech stack (languages, frameworks, tools)</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div>Has at least one number/metric</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div>Describes the problem being solved</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div>2-4 bullet points (not more)</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div>Each bullet is one line (no wrapping)</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div>Includes links (Live demo + GitHub)</div></div>
+                    <div class="rp-warn"><span class="icon">⚠️</span><span><strong>Common mistakes:</strong> Listing every project you've ever started. Including "todo app" or "calculator." Writing paragraphs instead of bullets. No links to code/demo.</span></div>
+                </div>
+
+                <div class="rp-section">
+                    <div class="rp-section-title">🎯 Tailor to the Job</div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Frontend role?</strong> Highlight UI/UX, responsive design, performance optimization</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Backend role?</strong> Highlight APIs, database design, scalability, security</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Data role?</strong> Highlight data processing, analysis, visualization, ML models</div></div>
+                    <div class="rp-item"><span class="bullet"></span><div><strong>Full-stack?</strong> Show end-to-end projects with both frontend and backend</div></div>
+                    <div class="rp-tip"><span class="icon">💡</span><span><strong>One resume per application.</strong> Swap project order and adjust descriptions based on what the job asks for. Generic resumes get generic results.</span></div>
+                </div>
+            </div>
+        </div>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>How to Write Project Descriptions That Get Interviews</h2>
+                <p>Your project section is the most important part of a technical resume. Recruiters spend an average of 6 seconds scanning a resume — and they spend most of that time on your projects. A well-written project description can be the difference between getting an interview and getting ignored.</p>
+                <h3>The Problem with Most Project Descriptions</h3>
+                <p>Most students write project descriptions like feature lists: "Built a website using React." This tells the recruiter nothing about your skills, the impact, or why they should care. The fix is simple: use the formula (Action + What + How + Result) and include numbers.</p>
+                <h3>Projects > Degrees</h3>
+                <p>In tech hiring, what you've built matters more than where you studied. A strong portfolio of 3-4 real-world projects demonstrates practical skills that a degree alone can't. Focus on building projects that solve real problems — that's what makes recruiters stop scrolling.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    window.switchTab = function(tab) {
+        document.querySelectorAll('.rp-tab').forEach(function(t){ t.classList.remove('active'); });
+        document.querySelectorAll('.rp-panel').forEach(function(p){ p.classList.remove('active'); });
+        event.target.classList.add('active');
+        document.getElementById('panel-'+tab).classList.add('active');
+    };
+    </script>
+</body>
+</html>
