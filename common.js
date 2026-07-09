@@ -1715,7 +1715,7 @@ var OPTI_TOOL_COUNT_STR = OPTI_TOOL_COUNT + '+';
 function OPTI_updateToolCounts() {
     if (typeof OPTI_TOOL_COUNT_STR === 'undefined') return;
     var count = OPTI_TOOL_COUNT_STR;
-    var patterns = ['371+', '330+', '317+', '300+'];
+    var patterns = ['371+', '350+', '330+', '317+', '300+'];
 
     function replaceIn(str) {
         for (var i = 0; i < patterns.length; i++) {
