@@ -650,10 +650,6 @@
     });
     document.getElementById('filterButtons').innerHTML = filterHTML;
 
-    // Render
-    renderProblems();
-    updateStats();
-
     // Category icons and colors
     var CAT_INFO = {
         'web-apps': {icon:'💻', label:'Web Apps', css:'c-web'},
@@ -663,6 +659,10 @@
         'dev-tools': {icon:'🛠️', label:'Dev Tools', css:'c-dev'},
         'real-world': {icon:'🌍', label:'Real World', css:'c-real'}
     };
+
+    // Render
+    renderProblems();
+    updateStats();
 
     function renderProblems() {
         var search = document.getElementById('searchInput').value.toLowerCase();
