@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Mobile App — Idea to Launch | Blueprint Playbook | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Free blueprint playbook to build a mobile app from idea to launch. Complete technical roadmap for non-technical founders and first-time developers.">
+    <meta name="keywords" content="build mobile app, app development, app idea, launch app, no-code app, react native, flutter, app store">
+    <link rel="canonical" href="https://optidrop.online/playbooks/mobile-app-idea-to-launch.html">
+    <meta property="og:title" content="Build Mobile App — Idea to Launch | OptiDrop">
+    <meta property="og:description" content="Free blueprint playbook to build a mobile app from idea to launch.">
+    <meta property="og:url" content="https://optidrop.online/playbooks/mobile-app-idea-to-launch.html">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"HowTo","name":"Build Mobile App — Idea to Launch","description":"A blueprint playbook to build a mobile app from idea to launch.","totalTime":"PT20M","step":[
+        {"@type":"HowToStep","position":1,"name":"Validate Your Idea","text":"Test if people actually want your app before building."},
+        {"@type":"HowToStep","position":2,"name":"Define Features","text":"List core features and cut everything else."},
+        {"@type":"HowToStep","position":3,"name":"Design UI/UX","text":"Create wireframes and user flows."},
+        {"@type":"HowToStep","position":4,"name":"Choose Tech Stack","text":"Pick the right tools for your skill level."},
+        {"@type":"HowToStep","position":5,"name":"Build MVP","text":"Develop the minimum viable product."},
+        {"@type":"HowToStep","position":6,"name":"Test","text":"Find and fix bugs before launch."},
+        {"@type":"HowToStep","position":7,"name":"Launch","text":"Submit to app stores and get your first users."},
+        {"@type":"HowToStep","position":8,"name":"Iterate","text":"Collect feedback and improve."}
+    ]}
+    </script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    /* Blueprint Styles */
+    .bp-container{max-width:720px;margin:0 auto;padding:1rem 1.25rem}
+    .bp-hero{text-align:center;padding:2rem 1rem 1.5rem}
+    .bp-badge{display:inline-block;padding:0.35rem 1rem;background:linear-gradient(135deg,#0f172a,#1e293b);color:#60a5fa;font-size:0.7rem;font-weight:700;border-radius:9999px;margin-bottom:0.8rem;letter-spacing:0.06em;text-transform:uppercase;font-family:'JetBrains Mono',monospace}
+    .bp-hero h1{font-size:1.65rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;line-height:1.2}
+    .bp-hero h1 .accent{background:linear-gradient(135deg,#3b82f6,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .bp-hero .sub{font-size:0.92rem;color:#64748b;line-height:1.5;max-width:480px;margin:0 auto}
+
+    /* Stats Bar */
+    .bp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;max-width:560px;margin:1.25rem auto;padding:0 0.5rem}
+    .bp-stat{text-align:center;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.7rem 0.35rem}
+    .bp-stat .icon{font-size:0.9rem;margin-bottom:0.15rem}
+    .bp-stat .val{font-size:1rem;font-weight:800;color:#0f172a}
+    .bp-stat .lbl{font-size:0.6rem;color:#94a3b8;margin-top:0.1rem;font-weight:500}
+
+    /* Blueprint Grid Background */
+    .bp-phases{position:relative;padding:1rem 0}
+    .bp-phases::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:2px;background:repeating-linear-gradient(to bottom,#e2e8f0 0,#e2e8f0 8px,transparent 8px,transparent 16px)}
+
+    /* Phase Block */
+    .bp-phase{position:relative;margin-bottom:0.75rem;padding-left:48px}
+    .bp-phase-marker{position:absolute;left:14px;top:0;width:22px;height:22px;border-radius:50%;background:#e2e8f0;border:3px solid #fff;display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:800;color:#94a3b8;z-index:1;transition:all 0.3s}
+    .bp-phase.done .bp-phase-marker{background:#10b981;color:#fff}
+    .bp-phase.active .bp-phase-marker{background:#3b82f6;color:#fff;box-shadow:0 0 0 4px rgba(59,130,246,0.15)}
+
+    /* Phase Card */
+    .bp-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;transition:all 0.3s}
+    .bp-phase.active .bp-card{border-color:#93c5fd;box-shadow:0 4px 16px rgba(59,130,246,0.06)}
+    .bp-phase.done .bp-card{border-color:#d1fae5;opacity:0.65}
+
+    /* Card Header */
+    .bp-card-head{display:flex;align-items:center;gap:0.65rem;padding:0.85rem 1rem;cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .bp-card-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .bp-phase.active .bp-card-icon{background:#eff6ff;color:#3b82f6}
+    .bp-phase.done .bp-card-icon{background:#ecfdf5;color:#10b981}
+    .bp-phase.locked .bp-card-icon{background:#f1f5f9;color:#94a3b8}
+    .bp-card-title{flex:1}
+    .bp-card-title h3{font-size:0.92rem;font-weight:700;color:#0f172a;margin:0}
+    .bp-card-title .tag{font-size:0.6rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:9999px;display:inline-block;margin-top:0.2rem}
+    .bp-card-title .tag.active{background:#eff6ff;color:#3b82f6}
+    .bp-card-title .tag.done{background:#ecfdf5;color:#059669}
+    .bp-card-title .tag.locked{background:#f1f5f9;color:#94a3b8}
+    .bp-card-chevron{font-size:0.85rem;color:#94a3b8;transition:transform 0.3s}
+    .bp-phase.open .bp-card-chevron{transform:rotate(180deg)}
+
+    /* Card Body */
+    .bp-card-body{padding:0 1rem 1rem;display:none}
+    .bp-phase.open .bp-card-body{display:block}
+    .bp-card-body p{font-size:0.85rem;color:#475569;line-height:1.65;margin-bottom:0.7rem}
+    .bp-card-body p strong{color:#0f172a}
+
+    /* Annotation Box */
+    .bp-annotation{display:flex;gap:0.55rem;padding:0.65rem;background:#f8fafc;border:1px solid #e2e8f0;border-left:3px solid #3b82f6;border-radius:8px;margin-bottom:0.7rem;font-size:0.78rem;color:#475569;font-family:'JetBrains Mono',monospace}
+    .bp-annotation.warn{border-left-color:#f59e0b;background:#fffbeb;color:#92400e}
+    .bp-annotation.success{border-left-color:#10b981;background:#f0fdf4;color:#166534}
+    .bp-annotation .icon{font-size:0.9rem;flex-shrink:0;font-family:'Inter',sans-serif}
+
+    /* Task List */
+    .bp-tasks{list-style:none;padding:0;margin:0 0 0.7rem}
+    .bp-task{display:flex;align-items:flex-start;gap:0.5rem;padding:0.35rem 0;font-size:0.82rem;color:#334155}
+    .bp-task .bullet{width:6px;height:6px;border-radius:50%;background:#cbd5e1;flex-shrink:0;margin-top:0.4rem}
+    .bp-task strong{color:#0f172a}
+
+    /* Tech Stack Table */
+    .bp-table{width:100%;border-collapse:collapse;margin-bottom:0.7rem;font-size:0.78rem}
+    .bp-table th{text-align:left;padding:0.5rem 0.6rem;background:#f8fafc;border:1px solid #e2e8f0;font-weight:700;color:#0f172a}
+    .bp-table td{padding:0.5rem 0.6rem;border:1px solid #e2e8f0;color:#475569}
+    .bp-table tr:nth-child(even) td{background:#fafafa}
+
+    /* Complete Button */
+    .bp-btn{display:block;width:100%;padding:0.75rem;border:none;border-radius:10px;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:0.5rem;-webkit-tap-highlight-color:transparent}
+    .bp-btn.primary{background:#3b82f6;color:#fff}
+    .bp-btn.primary:hover{background:#2563eb;transform:translateY(-1px)}
+    .bp-btn.primary:active{transform:translateY(0)}
+
+    /* Progress */
+    .bp-progress{max-width:500px;margin:0 auto 1rem;padding:0 0.5rem}
+    .bp-progress-bar{height:6px;background:#f1f5f9;border-radius:99px;overflow:hidden}
+    .bp-progress-fill{height:100%;background:linear-gradient(90deg,#3b82f6,#2563eb);border-radius:99px;transition:width 0.5s;width:0%}
+    .bp-progress-label{display:flex;justify-content:space-between;margin-top:0.4rem;font-size:0.68rem;color:#94a3b8;font-weight:500}
+
+    /* Completion */
+    .bp-complete{text-align:center;padding:2.5rem 1rem;display:none}
+    .bp-complete.show{display:block}
+    .done-card{background:#fff;border:2px solid #3b82f6;border-radius:18px;padding:2.5rem 2rem}
+    .done-icon{font-size:3rem;display:block;margin-bottom:1rem}
+    .done-card h2{font-size:1.4rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem}
+    .done-card .sub{color:#64748b;font-size:0.9rem;margin-bottom:1.5rem;line-height:1.6}
+    .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.8rem 1.5rem;background:#25d366;color:#fff;border:none;border-radius:12px;font-weight:700;cursor:pointer;margin-bottom:1rem;font-size:0.9rem}
+    .next-link{display:inline-block;color:#3b82f6;font-weight:600;font-size:0.9rem}
+
+    /* Dark Mode */
+    .dark-mode .bp-hero h1{color:#f1f5f9}
+    .dark-mode .bp-hero h1 .accent{background:linear-gradient(135deg,#60a5fa,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .dark-mode .bp-hero .sub{color:#94a3b8}
+    .dark-mode .bp-stat{background:#272a33;border-color:#3d4455}
+    .dark-mode .bp-stat .val{color:#f1f5f9}
+    .dark-mode .bp-stat .lbl{color:#94a3b8}
+    .dark-mode .bp-phases::before{background:repeating-linear-gradient(to bottom,#3d4455 0,#3d4455 8px,transparent 8px,transparent 16px)}
+    .dark-mode .bp-phase-marker{background:#3d4455;color:#94a3b8;border-color:#272a33}
+    .dark-mode .bp-phase.done .bp-phase-marker{background:#10b981;color:#fff}
+    .dark-mode .bp-phase.active .bp-phase-marker{background:#3b82f6;color:#fff}
+    .dark-mode .bp-card{background:#272a33;border-color:#3d4455}
+    .dark-mode .bp-phase.active .bp-card{border-color:#60a5fa;box-shadow:0 4px 16px rgba(59,130,246,0.1)}
+    .dark-mode .bp-phase.done .bp-card{border-color:#064e3b}
+    .dark-mode .bp-phase.active .bp-card-icon{background:#1e3a5f;color:#60a5fa}
+    .dark-mode .bp-phase.done .bp-card-icon{background:#064e3b;color:#34d399}
+    .dark-mode .bp-phase.locked .bp-card-icon{background:#3d4455;color:#64748b}
+    .dark-mode .bp-card-title h3{color:#f1f5f9}
+    .dark-mode .bp-card-title .tag.active{background:#1e3a5f;color:#60a5fa}
+    .dark-mode .bp-card-title .tag.done{background:#064e3b;color:#34d399}
+    .dark-mode .bp-card-title .tag.locked{background:#3d4455;color:#94a3b8}
+    .dark-mode .bp-card-chevron{color:#64748b}
+    .dark-mode .bp-card-body p{color:#e2e8f0}
+    .dark-mode .bp-card-body p strong{color:#f1f5f9}
+    .dark-mode .bp-annotation{background:#1e293b;border-color:#334155;border-left-color:#60a5fa;color:#cbd5e1}
+    .dark-mode .bp-annotation.warn{border-left-color:#f59e0b;background:#1c1917;color:#fbbf24}
+    .dark-mode .bp-annotation.success{border-left-color:#10b981;background:#064e3b;color:#6ee7b7}
+    .dark-mode .bp-task{color:#cbd5e1}
+    .dark-mode .bp-task .bullet{background:#475569}
+    .dark-mode .bp-task strong{color:#f1f5f9}
+    .dark-mode .bp-table th{background:#1e293b;border-color:#3d4455;color:#f1f5f9}
+    .dark-mode .bp-table td{border-color:#3d4455;color:#cbd5e1}
+    .dark-mode .bp-table tr:nth-child(even) td{background:#1e293b}
+    .dark-mode .bp-progress-bar{background:#3d4455}
+    .dark-mode .bp-btn.primary{background:#3b82f6;color:#fff}
+    .dark-mode .done-card{background:#272a33;border-color:#3b82f6}
+    .dark-mode .done-card h2{color:#f1f5f9}
+    .dark-mode .done-card .sub{color:#94a3b8}
+    .dark-mode .next-link{color:#60a5fa}
+
+    /* Responsive */
+    @media(min-width:900px){
+        .bp-container{padding:1.5rem 2rem}
+        .bp-hero{padding:2.5rem 1rem 2rem}
+        .bp-hero h1{font-size:1.9rem}
+        .bp-stats{max-width:640px}
+        .bp-card-body p,.bp-task{font-size:0.88rem}
+    }
+    @media(min-width:1200px){
+        .bp-container{max-width:900px}
+        .bp-hero h1{font-size:2.1rem}
+        .bp-stats{max-width:720px;gap:0.75rem}
+        .bp-stat{padding:0.85rem 0.5rem;border-radius:12px}
+        .bp-stat .val{font-size:1.2rem}
+        .bp-phases{padding:1.5rem 0}
+        .bp-card{border-radius:16px}
+        .bp-card-body{font-size:0.9rem}
+    }
+    @media(max-width:640px){
+        .bp-container{padding:0.75rem 0.85rem}
+        .bp-hero{padding:1.5rem 0.5rem 1rem}
+        .bp-hero h1{font-size:1.3rem}
+        .bp-hero .sub{font-size:0.85rem}
+        .bp-stats{grid-template-columns:repeat(2,1fr);gap:0.4rem;padding:0 0.25rem}
+        .bp-stat{padding:0.6rem 0.3rem;border-radius:8px}
+        .bp-stat .val{font-size:0.95rem}
+        .bp-stat .lbl{font-size:0.58rem}
+        .bp-phases::before{left:16px}
+        .bp-phase{padding-left:36px}
+        .bp-phase-marker{left:6px;width:18px;height:18px;font-size:0.5rem}
+        .bp-card{border-radius:12px}
+        .bp-card-head{padding:0.7rem 0.85rem;gap:0.5rem}
+        .bp-card-icon{width:32px;height:32px;font-size:1rem;border-radius:8px}
+        .bp-card-title h3{font-size:0.85rem}
+        .bp-card-body{padding:0 0.85rem 0.85rem}
+        .bp-card-body p{font-size:0.8rem;margin-bottom:0.6rem}
+        .bp-annotation{padding:0.5rem;font-size:0.72rem;border-radius:6px}
+        .bp-task{font-size:0.78rem}
+        .bp-table{font-size:0.72rem}
+        .bp-table th,.bp-table td{padding:0.4rem 0.5rem}
+        .bp-btn{padding:0.65rem;font-size:0.8rem;border-radius:8px}
+        .bp-progress-bar{height:5px}
+        .done-card{padding:1.5rem 1.25rem;border-radius:14px}
+        .done-icon{font-size:2.5rem}
+        .done-card h2{font-size:1.2rem}
+        .done-card .sub{font-size:0.82rem}
+        .share-btn{padding:0.65rem 1.2rem;font-size:0.82rem;border-radius:10px}
+    }
+    @media(max-width:380px){
+        .bp-hero h1{font-size:1.15rem}
+        .bp-stat .val{font-size:0.85rem}
+        .bp-phase{padding-left:30px}
+        .bp-phase-marker{left:2px;width:16px;height:16px}
+    }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <div class="bp-container">
+            <!-- Hero -->
+            <header class="bp-hero">
+                <span class="bp-badge">🏗️ Technical Blueprint</span>
+                <h1>Build a Mobile App<br><span class="accent">Idea to Launch</span></h1>
+                <p class="sub">8 phases. Real technical decisions. From validating your idea to publishing on the App Store. No fluff — just what works.</p>
+            </header>
+
+            <!-- Stats -->
+            <div class="bp-stats">
+                <div class="bp-stat"><div class="icon">📱</div><div class="val">8</div><div class="lbl">Phases</div></div>
+                <div class="bp-stat"><div class="icon">🛠️</div><div class="val">3</div><div class="lbl">Tech Paths</div></div>
+                <div class="bp-stat"><div class="icon">⏰</div><div class="val">4-12</div><div class="lbl">Weeks</div></div>
+                <div class="bp-stat"><div class="icon">💰</div><div class="val">$0+</div><div class="lbl">Min Cost</div></div>
+            </div>
+
+            <!-- Progress -->
+            <div class="bp-progress">
+                <div class="bp-progress-bar"><div class="bp-progress-fill" id="progressFill"></div></div>
+                <div class="bp-progress-label"><span id="progressText">0 / 8 phases</span><span id="progressPct">0%</span></div>
+            </div>
+
+            <!-- Phases -->
+            <div class="bp-phases">
+
+                <!-- Phase 1: Validate -->
+                <div class="bp-phase active" data-phase="1">
+                    <div class="bp-phase-marker">1</div>
+                    <div class="bp-card">
+                        <div class="bp-card-head" onclick="togglePhase(1)">
+                            <div class="bp-card-icon">💡</div>
+                            <div class="bp-card-title"><h3>Phase 1: Validate Your Idea</h3><span class="tag active">Start Here</span></div>
+                            <span class="bp-card-chevron">▼</span>
+                        </div>
+                        <div class="bp-card-body">
+                            <p><strong>Don't build first. Validate first.</strong> 90% of apps fail because nobody wants them. Spend 1 week confirming demand before writing code.</p>
+                            <ul class="bp-tasks">
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Define the problem:</strong> What specific problem does your app solve? For whom?</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Research competitors:</strong> Search the App Store. If similar apps exist with good reviews = demand. No competitors = risky.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Talk to 10 potential users:</strong> Ask "Would you use this? Would you pay for it?" Listen more than you talk.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Create a landing page:</strong> One page describing your app with an email signup. If 100 people sign up, build it.</div></li>
+                            </ul>
+                            <div class="bp-annotation"><span class="icon">📌</span><span>Key metric: If 30%+ of people you talk to say "I need this," you have a viable idea.</span></div>
+                            <div class="bp-annotation warn"><span class="icon">⚠️</span><span>Don't skip validation. The cost of building an app nobody wants = 3-6 months of your life.</span></div>
+                            <button class="bp-btn primary" onclick="completePhase(1)">Phase Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Features -->
+                <div class="bp-phase locked" data-phase="2">
+                    <div class="bp-phase-marker">2</div>
+                    <div class="bp-card">
+                        <div class="bp-card-head" onclick="togglePhase(2)">
+                            <div class="bp-card-icon">📋</div>
+                            <div class="bp-card-title"><h3>Phase 2: Define Core Features</h3><span class="tag locked">🔒 Locked</span></div>
+                            <span class="bp-card-chevron">▼</span>
+                        </div>
+                        <div class="bp-card-body">
+                            <p><strong>Less is more.</strong> Your MVP (Minimum Viable Product) should have 3-5 core features. Everything else is v2.</p>
+                            <ul class="bp-tasks">
+                                <li class="bp-task"><span class="bullet"></span><div><strong>List ALL features</strong> you want. Every single one. Now cut 80% of them.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Keep only "must-haves":</strong> The 3-5 features that make your app useful. Without them, the app is pointless.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Move "nice-to-haves" to v2:</strong> Dark mode, animations, social login — add these after launch.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Write user stories:</strong> "As a [user], I want to [action] so that [benefit]." One sentence per feature.</div></li>
+                            </ul>
+                            <div class="bp-annotation success"><span class="icon">✅</span><span>Instagram v1: Photo upload + filters + follow. That's it. No stories, reels, DMs, or shopping. Start simple.</span></div>
+                            <button class="bp-btn primary" onclick="completePhase(2)">Phase Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Design -->
+                <div class="bp-phase locked" data-phase="3">
+                    <div class="bp-phase-marker">3</div>
+                    <div class="bp-card">
+                        <div class="bp-card-head" onclick="togglePhase(3)">
+                            <div class="bp-card-icon">🎨</div>
+                            <div class="bp-card-title"><h3>Phase 3: Design UI/UX</h3><span class="tag locked">🔒 Locked</span></div>
+                            <span class="bp-card-chevron">▼</span>
+                        </div>
+                        <div class="bp-card-body">
+                            <p><strong>Design before code.</strong> A good design saves weeks of rework. You don't need to be a designer — just follow patterns.</p>
+                            <ul class="bp-tasks">
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Sketch on paper first:</strong> Draw each screen with a pen. Ugly is fine. Focus on layout and flow.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Create wireframes:</strong> Use Figma (free) to make simple wireframes. No colors yet — just boxes and text.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Map user flows:</strong> How does a user go from open → action → result? Draw the path.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Use a design system:</strong> Copy patterns from apps you use. Don't reinvent navigation or buttons.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Test with 3 people:</strong> Show your wireframes. Can they figure out how to use the app without explanation?</div></li>
+                            </ul>
+                            <div class="bp-annotation"><span class="icon">📌</span><span>Tools: Figma (free), Sketch (Mac), Adobe XD. For quick mockups: Excalidraw or Balsamiq.</span></div>
+                            <button class="bp-btn primary" onclick="completePhase(3)">Phase Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4: Tech Stack -->
+                <div class="bp-phase locked" data-phase="4">
+                    <div class="bp-phase-marker">4</div>
+                    <div class="bp-card">
+                        <div class="bp-card-head" onclick="togglePhase(4)">
+                            <div class="bp-card-icon">⚙️</div>
+                            <div class="bp-card-title"><h3>Phase 4: Choose Tech Stack</h3><span class="tag locked">🔒 Locked</span></div>
+                            <span class="bp-card-chevron">▼</span>
+                        </div>
+                        <div class="bp-card-body">
+                            <p><strong>Pick based on your skills,</strong> not what's trending. The best tech stack is the one you can ship with.</p>
+
+                            <table class="bp-table">
+                                <tr><th>Path</th><th>Tools</th><th>Best For</th><th>Time</th></tr>
+                                <tr><td><strong>No-Code</strong></td><td>Bubble, FlutterFlow, Adalo</td><td>Non-technical founders</td><td>2-4 weeks</td></tr>
+                                <tr><td><strong>Low-Code</strong></td><td>React Native + Expo, Flutter</td><td>Developers, fast MVPs</td><td>4-8 weeks</td></tr>
+                                <tr><td><strong>Native</strong></td><td>Swift (iOS), Kotlin (Android)</td><td>Performance-critical apps</td><td>8-16 weeks</td></tr>
+                            </table>
+
+                            <div class="bp-annotation"><span class="icon">📌</span><span><strong>Recommended for most:</strong> React Native + Expo. One codebase for iOS + Android. Huge community. Free. Fast iteration.</span></div>
+                            <div class="bp-annotation"><span class="icon">📌</span><span><strong>Backend options:</strong> Firebase (free tier), Supabase (free tier), or build your own with Node.js/Python.</span></div>
+                            <button class="bp-btn primary" onclick="completePhase(4)">Phase Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 5: Build -->
+                <div class="bp-phase locked" data-phase="5">
+                    <div class="bp-phase-marker">5</div>
+                    <div class="bp-card">
+                        <div class="bp-card-head" onclick="togglePhase(5)">
+                            <div class="bp-card-icon">🔨</div>
+                            <div class="bp-card-title"><h3>Phase 5: Build the MVP</h3><span class="tag locked">🔒 Locked</span></div>
+                            <span class="bp-card-chevron">▼</span>
+                        </div>
+                        <div class="bp-card-body">
+                            <p><strong>Build fast, ship ugly.</strong> Your MVP doesn't need to be beautiful — it needs to work. Polish comes after launch.</p>
+                            <ul class="bp-tasks">
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Set up the project:</strong> Initialize your app, set up navigation, connect to backend.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Build screens one by one:</strong> Start with the core feature. Get it working, then move to the next.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Use component libraries:</strong> NativeBase, React Native Paper, or Flutter's Material widgets. Don't build from scratch.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Commit daily:</strong> Use Git. Commit every feature. This saves you when things break.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Set a deadline:</strong> Give yourself 4-6 weeks. Ship what you have on that date — no matter what.</div></li>
+                            </ul>
+                            <div class="bp-annotation warn"><span class="icon">⚠️</span><span>The biggest mistake: spending 6 months perfecting an app nobody has used yet. Ship in 4-6 weeks. Improve based on real feedback.</span></div>
+                            <button class="bp-btn primary" onclick="completePhase(5)">Phase Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 6: Test -->
+                <div class="bp-phase locked" data-phase="6">
+                    <div class="bp-phase-marker">6</div>
+                    <div class="bp-card">
+                        <div class="bp-card-head" onclick="togglePhase(6)">
+                            <div class="bp-card-icon">🧪</div>
+                            <div class="bp-card-title"><h3>Phase 6: Test Everything</h3><span class="tag locked">🔒 Locked</span></div>
+                            <span class="bp-card-chevron">▼</span>
+                        </div>
+                        <div class="bp-card-body">
+                            <p><strong>Test before launch.</strong> Bugs in production kill apps. One crash = one-star review = nobody downloads it.</p>
+                            <ul class="bp-tasks">
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Test on real devices:</strong> Simulators lie. Test on at least 2-3 real phones (iOS + Android).</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Test edge cases:</strong> No internet. Slow internet. Wrong inputs. Empty states. What happens when things go wrong?</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Get 5 beta testers:</strong> Friends, family, or strangers from your target audience. Watch them use it.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Fix critical bugs only:</strong> Crashes and data loss = fix now. Visual glitches = fix after launch.</div></li>
+                            </ul>
+                            <div class="bp-annotation"><span class="icon">📌</span><span>Beta testing tools: TestFlight (iOS), Google Play Internal Testing (Android). Both are free.</span></div>
+                            <button class="bp-btn primary" onclick="completePhase(6)">Phase Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 7: Launch -->
+                <div class="bp-phase locked" data-phase="7">
+                    <div class="bp-phase-marker">7</div>
+                    <div class="bp-card">
+                        <div class="bp-card-head" onclick="togglePhase(7)">
+                            <div class="bp-card-icon">🚀</div>
+                            <div class="bp-card-title"><h3>Phase 7: Launch</h3><span class="tag locked">🔒 Locked</span></div>
+                            <span class="bp-card-chevron">▼</span>
+                        </div>
+                        <div class="bp-card-body">
+                            <p><strong>Launch day is day one, not the finish line.</strong> Get your app in stores and start gathering users.</p>
+                            <ul class="bp-tasks">
+                                <li class="bp-task"><span class="bullet"></span><div><strong>App Store Optimization (ASO):</strong> Keyword-rich title, compelling screenshots, clear description.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Create a landing page:</strong> One page with screenshots, features, and download links.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Submit to stores:</strong> Apple App Store ($99/year), Google Play ($25 one-time). Review takes 1-3 days.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Launch on Product Hunt:</strong> Great for visibility. Schedule a launch day and rally supporters.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Share everywhere:</strong> Reddit, Twitter, LinkedIn, indie hacker communities, relevant forums.</div></li>
+                            </ul>
+                            <div class="bp-annotation success"><span class="icon">🎯</span><span>Goal for week 1: 100 downloads. If you get 100 people to try your app in week 1, you're on track.</span></div>
+                            <button class="bp-btn primary" onclick="completePhase(7)">Phase Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 8: Iterate -->
+                <div class="bp-phase locked" data-phase="8">
+                    <div class="bp-phase-marker">8</div>
+                    <div class="bp-card">
+                        <div class="bp-card-head" onclick="togglePhase(8)">
+                            <div class="bp-card-icon">🔄</div>
+                            <div class="bp-card-title"><h3>Phase 8: Iterate & Grow</h3><span class="tag locked">🔒 Locked</span></div>
+                            <span class="bp-card-chevron">▼</span>
+                        </div>
+                        <div class="bp-card-body">
+                            <p><strong>Launch is the beginning.</strong> Now you have real users and real data. Use it to make your app better.</p>
+                            <ul class="bp-tasks">
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Read every review:</strong> One-star reviews tell you what to fix. Five-star reviews tell you what to double down on.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Track analytics:</strong> Where do users drop off? What features do they use? What do they ignore?</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Ship weekly updates:</strong> Small, frequent updates beat big, rare ones. Fix bugs fast.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Add features from feedback:</strong> Now add those "nice-to-haves" — but only the ones users actually ask for.</div></li>
+                                <li class="bp-task"><span class="bullet"></span><div><strong>Monetize when ready:</strong> Freemium, ads, subscriptions, or one-time purchase. Test what works.</div></li>
+                            </ul>
+                            <div class="bp-annotation"><span class="icon">📌</span><span><strong>Revenue models:</strong> Freemium (basic free, premium paid) works best for most apps. Start free, add paid features later.</span></div>
+                            <button class="bp-btn primary" onclick="completePhase(8)">Phase Complete ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /phases -->
+
+            <!-- Completion -->
+            <div class="bp-complete" id="bpComplete">
+                <div class="done-card">
+                    <span class="done-icon">🏗️</span>
+                    <h2>Blueprint Complete!</h2>
+                    <p class="sub">You have the complete technical roadmap to build a mobile app from idea to launch. The hardest part isn't coding — it's starting. Pick your tech stack, set a 4-week deadline, and ship your MVP. You can always improve it later.</p>
+                    <button class="share-btn" onclick="sharePlaybook()">📱 Share this blueprint</button>
+                    <br>
+                    <a href="/playbooks/" class="next-link">More playbooks →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>How to Build a Mobile App from Idea to Launch</h2>
+                <p>Building a mobile app has never been more accessible. With no-code tools, free frameworks, and global distribution through app stores, anyone can build and launch an app. The key is following a structured process — validate, design, build, test, launch, iterate.</p>
+                <h3>How Much Does It Cost to Build an App?</h3>
+                <p>It can cost $0 to build an app if you code it yourself using free tools like React Native, Flutter, or no-code platforms. Hiring a developer costs $5,000-$50,000+ depending on complexity. The biggest cost is your time — budget 4-12 weeks for an MVP.</p>
+                <h3>No-Code vs Code</h3>
+                <p>No-code tools (Bubble, FlutterFlow, Adalo) let you build apps without writing code. They're great for validating ideas quickly. But if you need performance, custom features, or want to scale, learning to code (or hiring a developer) is worth it long-term.</p>
+                <h3>The #1 Reason Apps Fail</h3>
+                <p>Most apps fail not because of bad code, but because nobody wants them. Validation is the most important phase. Talk to potential users before you build anything. If 10 people tell you they'd pay for it, build it. If nobody cares, pivot.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 style="font-size:1.2rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Frequently Asked Questions</h2>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">Can I build an app without knowing how to code?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Yes. No-code tools like Bubble, FlutterFlow, and Adalo let you build functional apps with drag-and-drop interfaces. They're perfect for validating ideas. For more complex apps, learning basic coding or hiring a developer is recommended.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">How long does it take to build an app?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">A simple MVP takes 4-6 weeks. A more complex app takes 3-6 months. The key is setting a deadline and shipping what you have — don't wait for perfection.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">How much does it cost to publish on the App Store?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Apple App Store: $99/year. Google Play: $25 one-time. Both require a developer account. The review process takes 1-3 days for Apple, a few hours for Google.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">Should I build for iOS or Android first?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Build for both using React Native or Flutter — one codebase, two platforms. If you must choose: iOS first if your audience is in the US/Europe. Android first if your audience is in India/Southeast Asia.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    var TOTAL_PHASES = 8;
+    var state = {completed: new Set()};
+
+    // Restore state
+    try {
+        var s = localStorage.getItem('optidrop_playbook_app');
+        if (s) {
+            var d = JSON.parse(s);
+            state.completed = new Set(d.completed || []);
+            state.completed.forEach(function(p){ markDone(p); });
+        }
+    } catch(e){}
+
+    unlockPhases();
+    updateProgress();
+
+    window.togglePhase = function(p) {
+        var el = document.querySelector('.bp-phase[data-phase="'+p+'"]');
+        if (!el || el.classList.contains('locked')) return;
+        el.classList.toggle('open');
+    };
+
+    window.completePhase = function(p) {
+        state.completed.add(p);
+        markDone(p);
+        save();
+        unlockPhases();
+        updateProgress();
+        var next = document.querySelector('.bp-phase[data-phase="'+(p+1)+'"]');
+        if (next && !next.classList.contains('locked')) {
+            next.classList.add('open');
+            setTimeout(function(){ next.scrollIntoView({behavior:'smooth',block:'center'}); }, 300);
+        }
+        if (state.completed.size >= TOTAL_PHASES) showComplete();
+    };
+
+    function markDone(p) {
+        var el = document.querySelector('.bp-phase[data-phase="'+p+'"]');
+        if (!el) return;
+        el.classList.remove('active','locked','open');
+        el.classList.add('done');
+        var tag = el.querySelector('.tag');
+        if (tag) { tag.className = 'tag done'; tag.textContent = '✓ Done'; }
+        var btn = el.querySelector('.bp-btn');
+        if (btn) { btn.textContent = '✓ Completed'; btn.style.background = '#94a3b8'; btn.style.cursor = 'default'; btn.onclick = null; }
+    }
+
+    function unlockPhases() {
+        for (var p = 1; p <= TOTAL_PHASES; p++) {
+            var el = document.querySelector('.bp-phase[data-phase="'+p+'"]');
+            if (!el || state.completed.has(p)) continue;
+            if (p === 1) {
+                el.classList.remove('locked');
+                el.classList.add('active');
+                var tag = el.querySelector('.tag');
+                if (tag) { tag.className = 'tag active'; tag.textContent = 'Current'; }
+            } else if (state.completed.has(p - 1)) {
+                el.classList.remove('locked');
+                el.classList.add('active');
+                var tag = el.querySelector('.tag');
+                if (tag) { tag.className = 'tag active'; tag.textContent = 'Current'; }
+            }
+        }
+    }
+
+    function updateProgress() {
+        var count = state.completed.size;
+        var pct = Math.round((count / TOTAL_PHASES) * 100);
+        document.getElementById('progressFill').style.width = pct + '%';
+        document.getElementById('progressText').textContent = count + ' / ' + TOTAL_PHASES + ' phases';
+        document.getElementById('progressPct').textContent = pct + '%';
+    }
+
+    function showComplete() {
+        document.querySelector('.bp-progress').style.display = 'none';
+        document.querySelector('.bp-phases').style.display = 'none';
+        document.getElementById('bpComplete').classList.add('show');
+        document.getElementById('bpComplete').scrollIntoView({behavior:'smooth'});
+    }
+
+    function save() {
+        localStorage.setItem('optidrop_playbook_app', JSON.stringify({
+            completed: Array.from(state.completed)
+        }));
+    }
+
+    window.sharePlaybook = function() {
+        var t = 'I found a free blueprint playbook to build a mobile app from idea to launch — check it out: https://optidrop.online/playbooks/mobile-app-idea-to-launch.html';
+        if (navigator.share) {
+            navigator.share({title:'Build Mobile App — Idea to Launch',text:t,url:'https://optidrop.online/playbooks/mobile-app-idea-to-launch.html'});
+        } else {
+            navigator.clipboard.writeText(t).then(function(){
+                if (typeof showToast === 'function') showToast('Link copied!','success');
+            });
+        }
+    };
+    </script>
+</body>
+</html>
