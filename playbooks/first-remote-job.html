@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your First Remote Job — Free Treasure Map Playbook | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Free treasure map playbook to land your first remote job. Step-by-step guide for resumes, interviews, job boards, and remote work setup.">
+    <meta name="keywords" content="remote job, work from home, remote work, find remote job, remote career, digital nomad, remote job search">
+    <link rel="canonical" href="https://optidrop.online/playbooks/first-remote-job.html">
+    <meta property="og:title" content="Get Your First Remote Job — Free Treasure Map | OptiDrop">
+    <meta property="og:description" content="Free treasure map playbook to land your first remote job.">
+    <meta property="og:url" content="https://optidrop.online/playbooks/first-remote-job.html">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"HowTo","name":"Get Your First Remote Job","description":"A treasure map guide to landing your first remote job.","totalTime":"PT20M","step":[
+        {"@type":"HowToStep","position":1,"name":"Build Remote Skills","text":"Learn the skills that remote employers actually want."},
+        {"@type":"HowToStep","position":2,"name":"Create Remote-Ready Resume","text":"Tailor your resume for remote positions."},
+        {"@type":"HowToStep","position":3,"name":"Set Up Your Workspace","text":"Create a professional home office setup."},
+        {"@type":"HowToStep","position":4,"name":"Find Remote Job Boards","text":"Know where to look for legitimate remote jobs."},
+        {"@type":"HowToStep","position":5,"name":"Apply Strategically","text":"Quality over quantity — tailor each application."},
+        {"@type":"HowToStep","position":6,"name":"Ace the Remote Interview","text":"Prepare for video calls and async assessments."},
+        {"@type":"HowToStep","position":7,"name":"Negotiate & Land the Offer","text":"Get the best deal and start your remote career."}
+    ]}
+    </script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    /* Treasure Map Styles */
+    .tm-container{max-width:720px;margin:0 auto;padding:1rem 1.25rem}
+    .tm-hero{text-align:center;padding:2.5rem 1rem 1rem}
+    .tm-badge{display:inline-block;padding:0.35rem 1rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);color:#e91e63;font-size:0.75rem;font-weight:700;border-radius:9999px;margin-bottom:1rem;letter-spacing:0.02em}
+    .tm-hero h1{font-size:1.75rem;font-weight:800;color:#0f172a;margin-bottom:0.6rem;line-height:1.2}
+    .tm-hero h1 .accent{background:linear-gradient(135deg,#e91e63,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .tm-hero .sub{font-size:1rem;color:#64748b;line-height:1.6;max-width:520px;margin:0 auto}
+    .tm-meta{display:flex;justify-content:center;gap:1.5rem;margin-top:1.3rem;font-size:0.8rem;color:#94a3b8;flex-wrap:wrap}
+    .tm-meta span{display:flex;align-items:center;gap:0.35rem}
+
+    /* Progress */
+    .tm-progress{max-width:500px;margin:1.5rem auto;padding:0 1rem}
+    .tm-progress-bar{height:10px;background:#f1f5f9;border-radius:99px;overflow:hidden}
+    .tm-progress-fill{height:100%;background:linear-gradient(90deg,#e91e63,#ec4899);border-radius:99px;transition:width 0.5s ease;width:0%}
+    .tm-progress-label{display:flex;justify-content:space-between;margin-top:0.5rem;font-size:0.72rem;color:#94a3b8;font-weight:500}
+
+    /* Map Container */
+    .tm-map{position:relative;max-width:560px;margin:1.5rem auto;padding:0 1rem}
+
+    /* SVG Path Background */
+    .tm-path-svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+
+    /* Location Node */
+    .tm-loc{position:relative;display:flex;gap:1rem;margin-bottom:0.5rem;z-index:1}
+    .tm-loc:nth-child(even){flex-direction:row-reverse}
+    .tm-loc:nth-child(even) .tm-loc-card{margin-left:auto}
+
+    /* Location Marker */
+    .tm-marker{display:flex;flex-direction:column;align-items:center;width:56px;flex-shrink:0}
+    .tm-marker-dot{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;background:#f1f5f9;border:3px solid #e2e8f0;transition:all 0.3s ease;position:relative;z-index:2}
+    .tm-loc.reached .tm-marker-dot{background:#ecfdf5;border-color:#10b981;box-shadow:0 0 0 4px rgba(16,185,129,0.15)}
+    .tm-loc.current .tm-marker-dot{background:#fdf2f8;border-color:#e91e63;box-shadow:0 0 0 4px rgba(233,30,99,0.15);animation:tm-pulse 2s infinite}
+    .tm-loc.locked .tm-marker-dot{opacity:0.4}
+    .tm-marker-label{font-size:0.6rem;font-weight:700;color:#94a3b8;margin-top:0.3rem;text-align:center;max-width:60px}
+    .tm-loc.current .tm-marker-label{color:#e91e63}
+    .tm-loc.reached .tm-marker-label{color:#10b981}
+    .tm-connector{width:3px;height:20px;background:#e2e8f0;flex-shrink:0;margin:0 auto}
+    .tm-loc.reached .tm-connector{background:#10b981}
+    .tm-loc:last-child .tm-connector{display:none}
+
+    /* Location Card */
+    .tm-loc-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;transition:all 0.3s ease;flex:1;max-width:calc(100% - 72px)}
+    .tm-loc.current .tm-loc-card{border-color:#f9a8d4;box-shadow:0 4px 16px rgba(233,30,99,0.08)}
+    .tm-loc.reached .tm-loc-card{border-color:#d1fae5}
+    .tm-loc.locked .tm-loc-card{opacity:0.35}
+    .tm-loc-head{display:flex;align-items:center;gap:0.7rem;padding:1rem 1.1rem;cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .tm-loc-title{flex:1}
+    .tm-loc-title h3{font-size:1rem;font-weight:700;color:#0f172a;margin:0}
+    .tm-loc-title .tag{font-size:0.65rem;font-weight:600;padding:0.18rem 0.55rem;border-radius:9999px;display:inline-block;margin-top:0.25rem}
+    .tm-loc-title .tag.current{background:#fdf2f8;color:#e91e63}
+    .tm-loc-title .tag.reached{background:#ecfdf5;color:#059669}
+    .tm-loc-title .tag.locked{background:#f1f5f9;color:#94a3b8}
+    .tm-loc-chevron{font-size:1rem;color:#94a3b8;transition:transform 0.3s ease;flex-shrink:0}
+    .tm-loc.open .tm-loc-chevron{transform:rotate(180deg)}
+    .tm-loc-body{padding:0 1.1rem 1.1rem;display:none}
+    .tm-loc.open .tm-loc-body{display:block}
+    .tm-loc-body p{color:#475569;line-height:1.75;margin-bottom:0.85rem;font-size:0.88rem}
+    .tm-loc-body p strong{color:#0f172a}
+    .tm-loc-body ul{margin:0 0 0.85rem 1.3rem;padding:0}
+    .tm-loc-body li{color:#475569;font-size:0.88rem;line-height:1.65;margin-bottom:0.35rem}
+    .tm-loc-body li strong{color:#0f172a}
+
+    /* Treasure Chest Badge */
+    .tm-chest{display:flex;align-items:center;gap:0.6rem;padding:0.7rem 0.9rem;background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a;border-radius:12px;margin-bottom:0.9rem;font-size:0.82rem;font-weight:600;color:#92400e}
+    .tm-chest .icon{font-size:1.2rem}
+
+    /* Tip Box */
+    .tm-tip{display:flex;gap:0.6rem;padding:0.75rem;background:#f8fafc;border-radius:12px;margin-bottom:0.9rem;font-size:0.8rem;color:#64748b;border-left:3px solid #e91e63}
+    .tm-tip .icon{font-size:1rem;flex-shrink:0}
+    .tm-tip.gold{background:#fffbeb;border-color:#f59e0b}
+
+    /* Action Button */
+    .tm-btn{display:block;width:100%;padding:0.8rem;border:none;border-radius:12px;font-size:0.9rem;font-weight:700;cursor:pointer;transition:all 0.2s ease;margin-top:0.6rem;-webkit-tap-highlight-color:transparent}
+    .tm-btn.primary{background:#10b981;color:#fff}
+    .tm-btn.primary:hover{background:#059669;transform:translateY(-1px)}
+    .tm-btn.primary:active{transform:translateY(0)}
+
+    /* Completion */
+    .tm-complete{text-align:center;padding:2.5rem 1rem;display:none}
+    .tm-complete.show{display:block}
+    .done-card{background:#fff;border:2px solid #10b981;border-radius:18px;padding:2.5rem 2rem}
+    .done-icon{font-size:3.5rem;display:block;margin-bottom:1rem}
+    .done-card h2{font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.6rem}
+    .done-card .sub{color:#64748b;font-size:0.95rem;margin-bottom:1.5rem;line-height:1.65}
+    .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.75rem;background:#25d366;color:#fff;border:none;border-radius:14px;font-weight:700;cursor:pointer;margin-bottom:1rem;font-size:0.95rem;-webkit-tap-highlight-color:transparent}
+    .share-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,211,102,0.3)}
+    .next-link{display:inline-block;color:#e91e63;font-weight:600;font-size:0.95rem}
+
+    /* Dark Mode */
+    .dark-mode .tm-hero h1{color:#f1f5f9}
+    .dark-mode .tm-hero h1 .accent{background:linear-gradient(135deg,#f472b6,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .dark-mode .tm-hero .sub{color:#94a3b8}
+    .dark-mode .tm-meta span{color:#94a3b8}
+    .dark-mode .tm-progress-bar{background:#3d4455}
+    .dark-mode .tm-marker-dot{background:#3d4455;border-color:#3d4455}
+    .dark-mode .tm-loc.reached .tm-marker-dot{background:#064e3b;border-color:#10b981}
+    .dark-mode .tm-loc.current .tm-marker-dot{background:#3b0f2a;border-color:#e91e63}
+    .dark-mode .tm-marker-label{color:#94a3b8}
+    .dark-mode .tm-loc.current .tm-marker-label{color:#f472b6}
+    .dark-mode .tm-loc.reached .tm-marker-label{color:#34d399}
+    .dark-mode .tm-connector{background:#3d4455}
+    .dark-mode .tm-loc.reached .tm-connector{background:#10b981}
+    .dark-mode .tm-loc-card{background:#272a33;border-color:#3d4455}
+    .dark-mode .tm-loc.current .tm-loc-card{border-color:#f472b6;box-shadow:0 4px 16px rgba(233,30,99,0.1)}
+    .dark-mode .tm-loc.reached .tm-loc-card{border-color:#064e3b}
+    .dark-mode .tm-loc-title h3{color:#f1f5f9}
+    .dark-mode .tm-loc-title .tag.current{background:#3b0f2a;color:#f472b6}
+    .dark-mode .tm-loc-title .tag.reached{background:#064e3b;color:#34d399}
+    .dark-mode .tm-loc-title .tag.locked{background:#3d4455;color:#94a3b8}
+    .dark-mode .tm-loc-chevron{color:#94a3b8}
+    .dark-mode .tm-loc-body p{color:#e2e8f0}
+    .dark-mode .tm-loc-body p strong{color:#f1f5f9}
+    .dark-mode .tm-loc-body li{color:#e2e8f0}
+    .dark-mode .tm-loc-body li strong{color:#f1f5f9}
+    .dark-mode .tm-chest{background:#1c1917;border-color:#92400e;color:#fbbf24}
+    .dark-mode .tm-tip{background:#1e293b;color:#e2e8f0;border-color:#f472b6}
+    .dark-mode .tm-tip.gold{background:#1c1917;border-color:#f59e0b}
+    .dark-mode .tm-btn.primary{background:#10b981;color:#fff}
+    .dark-mode .done-card{background:#272a33;border-color:#10b981}
+    .dark-mode .done-card h2{color:#f1f5f9}
+    .dark-mode .done-card .sub{color:#94a3b8}
+
+    /* Responsive */
+    @media(min-width:900px){
+        .tm-container{padding:1.5rem 2rem}
+        .tm-hero{padding:3rem 1rem 1.5rem}
+        .tm-hero h1{font-size:2rem}
+        .tm-hero .sub{font-size:1.05rem}
+        .tm-loc-card{max-width:calc(100% - 80px)}
+        .tm-loc-body p,.tm-loc-body li{font-size:0.9rem}
+    }
+    @media(min-width:641px) and (max-width:899px){
+        .tm-container{padding:1rem 1.5rem}
+        .tm-hero h1{font-size:1.65rem}
+    }
+    @media(max-width:640px){
+        .tm-container{padding:0.75rem 0.85rem}
+        .tm-hero{padding:1.5rem 0.5rem 1rem}
+        .tm-hero h1{font-size:1.3rem;line-height:1.3}
+        .tm-hero .sub{font-size:0.88rem}
+        .tm-meta{gap:0.9rem;font-size:0.72rem}
+        .tm-progress{padding:0 0.5rem}
+        .tm-progress-bar{height:8px}
+        .tm-map{padding:0 0.5rem}
+        .tm-marker{width:44px}
+        .tm-marker-dot{width:40px;height:40px;font-size:1.1rem}
+        .tm-marker-label{font-size:0.55rem;max-width:50px}
+        .tm-connector{height:16px}
+        .tm-loc{gap:0.6rem}
+        .tm-loc-card{max-width:calc(100% - 56px);border-radius:12px}
+        .tm-loc-head{padding:0.75rem 0.85rem;gap:0.5rem}
+        .tm-loc-title h3{font-size:0.88rem}
+        .tm-loc-body{padding:0 0.85rem 0.85rem}
+        .tm-loc-body p{font-size:0.82rem;margin-bottom:0.7rem}
+        .tm-loc-body ul{margin:0 0 0.7rem 1.1rem}
+        .tm-loc-body li{font-size:0.82rem;margin-bottom:0.25rem}
+        .tm-chest{padding:0.55rem 0.7rem;font-size:0.75rem;border-radius:8px}
+        .tm-tip{padding:0.6rem;font-size:0.72rem;border-radius:8px}
+        .tm-btn{padding:0.7rem;font-size:0.82rem;border-radius:10px}
+        .done-card{padding:1.5rem 1.25rem;border-radius:14px}
+        .done-icon{font-size:2.5rem}
+        .done-card h2{font-size:1.25rem}
+        .done-card .sub{font-size:0.85rem}
+        .share-btn{padding:0.7rem 1.25rem;font-size:0.85rem;border-radius:12px}
+    }
+    @media(max-width:380px){
+        .tm-hero h1{font-size:1.15rem}
+        .tm-meta{gap:0.6rem;font-size:0.68rem}
+        .tm-marker{width:36px}
+        .tm-marker-dot{width:34px;height:34px;font-size:1rem}
+        .tm-loc-card{max-width:calc(100% - 46px)}
+        .tm-loc-head{padding:0.65rem 0.75rem}
+        .tm-loc-title h3{font-size:0.82rem}
+    }
+    @keyframes tm-pulse{0%,100%{box-shadow:0 0 0 4px rgba(233,30,99,0.15)}50%{box-shadow:0 0 0 8px rgba(233,30,99,0.08)}}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <div class="tm-container">
+            <!-- Hero -->
+            <header class="tm-hero">
+                <span class="tm-badge">🗺️ TREASURE MAP</span>
+                <h1>Get Your First <span class="accent">Remote Job</span></h1>
+                <p class="sub">7 locations on the map. Each one gets you closer to landing a remote job. Follow the path — the treasure is waiting.</p>
+                <div class="tm-meta">
+                    <span>🗺️ 7 Locations</span>
+                    <span>⏱ 20 min read</span>
+                    <span>🌍 Global</span>
+                    <span>💰 Free</span>
+                </div>
+            </header>
+
+            <!-- Progress -->
+            <div class="tm-progress">
+                <div class="tm-progress-bar">
+                    <div class="tm-progress-fill" id="progressFill"></div>
+                </div>
+                <div class="tm-progress-label">
+                    <span id="progressText">0 / 7 locations reached</span>
+                    <span id="progressPct">0%</span>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="tm-map">
+
+                <!-- Location 1 -->
+                <div class="tm-loc current" data-loc="1">
+                    <div class="tm-marker">
+                        <div class="tm-marker-dot">📍</div>
+                        <div class="tm-connector"></div>
+                        <div class="tm-marker-label">Start</div>
+                    </div>
+                    <div class="tm-loc-card">
+                        <div class="tm-loc-head" onclick="toggleLoc(1)">
+                            <div class="tm-loc-title">
+                                <h3>🛠️ Build Remote Skills</h3>
+                                <span class="tag current">Current</span>
+                            </div>
+                            <span class="tm-loc-chevron">▼</span>
+                        </div>
+                        <div class="tm-loc-body">
+                            <div class="tm-chest"><span class="icon">🗝️</span> Key: Remote employers want self-starters who communicate well and deliver without supervision.</div>
+                            <p>Remote jobs require specific skills beyond your technical expertise. Companies need to trust that you can work independently.</p>
+                            <p><strong>Must-have remote skills:</strong></p>
+                            <ul>
+                                <li><strong>Written communication</strong> — Clear emails, Slack messages, documentation</li>
+                                <li><strong>Time management</strong> — Meeting deadlines without someone watching</li>
+                                <li><strong>Self-motivation</strong> — Starting work without being told</li>
+                                <li><strong>Tool proficiency</strong> — Zoom, Slack, Notion, Trello, Google Workspace</li>
+                                <li><strong>Async collaboration</strong> — Working across time zones effectively</li>
+                            </ul>
+                            <p><strong>High-demand remote skills (2026):</strong></p>
+                            <ul>
+                                <li>Web development (React, Python, Node.js)</li>
+                                <li>UI/UX design (Figma, user research)</li>
+                                <li>Digital marketing (SEO, content, ads)</li>
+                                <li>Data analysis (Excel, SQL, Python)</li>
+                                <li>Customer support (technical, SaaS)</li>
+                                <li>Writing (copywriting, technical writing)</li>
+                            </ul>
+                            <div class="tm-tip">
+                                <span class="icon">💡</span>
+                                <span>You don't need to learn everything. Pick ONE skill, get good at it, then apply. Depth beats breadth.</span>
+                            </div>
+                            <button class="tm-btn primary" onclick="reachLoc(1)">Location Reached ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="tm-loc locked" data-loc="2">
+                    <div class="tm-marker">
+                        <div class="tm-marker-dot">📄</div>
+                        <div class="tm-connector"></div>
+                        <div class="tm-marker-label">Resume</div>
+                    </div>
+                    <div class="tm-loc-card">
+                        <div class="tm-loc-head" onclick="toggleLoc(2)">
+                            <div class="tm-loc-title">
+                                <h3>📄 Remote-Ready Resume</h3>
+                                <span class="tag locked">🔒 Locked</span>
+                            </div>
+                            <span class="tm-loc-chevron">▼</span>
+                        </div>
+                        <div class="tm-loc-body">
+                            <div class="tm-chest"><span class="icon">🗝️</span> Key: Your resume should scream "I can work from anywhere" — highlight remote experience and tools.</div>
+                            <p>A regular resume won't cut it. Remote employers look for specific signals that you can thrive without in-person supervision.</p>
+                            <p><strong>What to highlight:</strong></p>
+                            <ul>
+                                <li><strong>Remote tools</strong> you've used (Slack, Zoom, Asana, etc.)</li>
+                                <li><strong>Self-directed projects</strong> you completed independently</li>
+                                <li><strong>Async communication</strong> examples (documentation, wikis)</li>
+                                <li><strong>Time zone flexibility</strong> if you have it</li>
+                                <li><strong>Results over activities</strong> — "Increased sales 30%" not "Managed social media"</li>
+                            </ul>
+                            <p><strong>Resume format for remote jobs:</strong></p>
+                            <ul>
+                                <li>Put "Remote" or "Location: [City], Remote" in your header</li>
+                                <li>Add a "Remote Skills" section</li>
+                                <li>Use metrics and numbers everywhere</li>
+                                <li>Keep it to 1 page (2 max for senior roles)</li>
+                                <li>Save as PDF — always</li>
+                            </ul>
+                            <div class="tm-tip">
+                                <span class="icon">💡</span>
+                                <span>Tailor your resume for each application. Generic resumes get generic results. Spend 15 minutes customizing per job.</span>
+                            </div>
+                            <button class="tm-btn primary" onclick="reachLoc(2)">Location Reached ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 3 -->
+                <div class="tm-loc locked" data-loc="3">
+                    <div class="tm-marker">
+                        <div class="tm-marker-dot">🏠</div>
+                        <div class="tm-connector"></div>
+                        <div class="tm-marker-label">Workspace</div>
+                    </div>
+                    <div class="tm-loc-card">
+                        <div class="tm-loc-head" onclick="toggleLoc(3)">
+                            <div class="tm-loc-title">
+                                <h3>🏠 Set Up Your Workspace</h3>
+                                <span class="tag locked">🔒 Locked</span>
+                            </div>
+                            <span class="tm-loc-chevron">▼</span>
+                        </div>
+                        <div class="tm-loc-body">
+                            <div class="tm-chest"><span class="icon">🗝️</span> Key: A professional workspace = professional impression. You don't need expensive gear — just a clean, quiet setup.</div>
+                            <p>Your workspace is your office. Employers want to know you have a reliable setup for video calls and focused work.</p>
+                            <p><strong>Essential setup:</strong></p>
+                            <ul>
+                                <li><strong>Quiet space</strong> — A room with a door, or a dedicated corner</li>
+                                <li><strong>Good internet</strong> — Minimum 25 Mbps download, wired if possible</li>
+                                <li><strong>Webcam</strong> — Laptop camera is fine, external is better</li>
+                                <li><strong>Microphone</strong> — A headset or lapel mic (clear audio matters most)</li>
+                                <li><strong>Lighting</strong> — Face a window for natural light, or get a ring light</li>
+                                <li><strong>Clean background</strong> — A plain wall or tidy bookshelf</li>
+                            </ul>
+                            <p><strong>Nice-to-have upgrades:</strong></p>
+                            <ul>
+                                <li>External monitor (huge productivity boost)</li>
+                                <li>Mechanical keyboard</li>
+                                <li>Standing desk or desk riser</li>
+                                <li>Noise-canceling headphones</li>
+                            </ul>
+                            <div class="tm-tip">
+                                <span class="icon">💡</span>
+                                <span>Test your setup before interviews. Do a practice call with a friend. Check audio, video, lighting, and background. First impressions matter.</span>
+                            </div>
+                            <button class="tm-btn primary" onclick="reachLoc(3)">Location Reached ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 4 -->
+                <div class="tm-loc locked" data-loc="4">
+                    <div class="tm-marker">
+                        <div class="tm-marker-dot">🔍</div>
+                        <div class="tm-connector"></div>
+                        <div class="tm-marker-label">Job Boards</div>
+                    </div>
+                    <div class="tm-loc-card">
+                        <div class="tm-loc-head" onclick="toggleLoc(4)">
+                            <div class="tm-loc-title">
+                                <h3>🔍 Find Remote Job Boards</h3>
+                                <span class="tag locked">🔒 Locked</span>
+                            </div>
+                            <span class="tm-loc-chevron">▼</span>
+                        </div>
+                        <div class="tm-loc-body">
+                            <div class="tm-chest"><span class="icon">🗝️</span> Key: Don't just use LinkedIn. Remote-specific job boards have less competition and better-matched roles.</div>
+                            <p>Where you look matters as much as how you apply. Remote-specific boards filter out on-site roles so you don't waste time.</p>
+                            <p><strong>Best remote job boards:</strong></p>
+                            <ul>
+                                <li><strong>We Work Remotely</strong> — Largest remote-only board</li>
+                                <li><strong>Remote.co</strong> — Curated remote jobs by category</li>
+                                <li><strong>FlexJobs</strong> — Vetted listings (paid, but worth it)</li>
+                                <li><strong>AngelList/Wellfound</strong> — Startup remote jobs</li>
+                                <li><strong>LinkedIn</strong> — Filter by "Remote" in location</li>
+                                <li><strong>Indeed/Glassdoor</strong> — Filter by "Remote" or "Work from home"</li>
+                                <li><strong>Dynamite Jobs</strong> — Digital nomad friendly</li>
+                                <li><strong>Working Nomads</strong> — Curated remote jobs daily</li>
+                            </ul>
+                            <p><strong>Pro search tips:</strong></p>
+                            <ul>
+                                <li>Set up job alerts on 3-4 boards</li>
+                                <li>Check daily — remote jobs fill fast</li>
+                                <li>Search for "remote," "work from home," "distributed," "anywhere"</li>
+                                <li>Look at company career pages directly</li>
+                            </ul>
+                            <div class="tm-tip gold">
+                                <span class="icon">⚡</span>
+                                <span>Apply within 24 hours of a job posting. Early applicants get 3-5x more responses. Set up alerts and check them every morning.</span>
+                            </div>
+                            <button class="tm-btn primary" onclick="reachLoc(4)">Location Reached ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 5 -->
+                <div class="tm-loc locked" data-loc="5">
+                    <div class="tm-marker">
+                        <div class="tm-marker-dot">📬</div>
+                        <div class="tm-connector"></div>
+                        <div class="tm-marker-label">Apply</div>
+                    </div>
+                    <div class="tm-loc-card">
+                        <div class="tm-loc-head" onclick="toggleLoc(5)">
+                            <div class="tm-loc-title">
+                                <h3>📬 Apply Strategically</h3>
+                                <span class="tag locked">🔒 Locked</span>
+                            </div>
+                            <span class="tm-loc-chevron">▼</span>
+                        </div>
+                        <div class="tm-loc-body">
+                            <div class="tm-chest"><span class="icon">🗝️</span> Key: 10 tailored applications beat 100 generic ones. Quality over quantity wins in remote job search.</div>
+                            <p>Most people spray and pray — sending the same resume to hundreds of jobs. That doesn't work. Here's what does:</p>
+                            <p><strong>The 5-step application process:</strong></p>
+                            <ul>
+                                <li><strong>Research the company</strong> — What do they do? What's their culture? What problems do they have?</li>
+                                <li><strong>Tailor your resume</strong> — Mirror the job description's keywords and requirements</li>
+                                <li><strong>Write a custom cover letter</strong> — Address why you want THIS job at THIS company</li>
+                                <li><strong>Show relevant work</strong> — Link to portfolio, GitHub, case studies, or past results</li>
+                                <li><strong>Follow up</strong> — Send a polite follow-up after 5-7 days if no response</li>
+                            </ul>
+                            <p><strong>Application targets:</strong></p>
+                            <ul>
+                                <li>3-5 quality applications per day</li>
+                                <li>Spend 30-45 minutes per application</li>
+                                <li>Track every application in a spreadsheet</li>
+                                <li>Expect 5-10% response rate (that's normal)</li>
+                            </ul>
+                            <div class="tm-tip">
+                                <span class="icon">💡</span>
+                                <span>Don't apply to jobs you're 100% qualified for. If you meet 70% of the requirements, apply. Companies list their ideal candidate — they often hire someone who hits most of the marks.</span>
+                            </div>
+                            <button class="tm-btn primary" onclick="reachLoc(5)">Location Reached ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 6 -->
+                <div class="tm-loc locked" data-loc="6">
+                    <div class="tm-marker">
+                        <div class="tm-marker-dot">🎤</div>
+                        <div class="tm-connector"></div>
+                        <div class="tm-marker-label">Interview</div>
+                    </div>
+                    <div class="tm-loc-card">
+                        <div class="tm-loc-head" onclick="toggleLoc(6)">
+                            <div class="tm-loc-title">
+                                <h3>🎤 Ace the Remote Interview</h3>
+                                <span class="tag locked">🔒 Locked</span>
+                            </div>
+                            <span class="tm-loc-chevron">▼</span>
+                        </div>
+                        <div class="tm-loc-body">
+                            <div class="tm-chest"><span class="icon">🗝️</span> Key: Remote interviews test communication and problem-solving, not just technical skills. Show you can work independently.</div>
+                            <p>Remote interviews are different from in-person. You need to show you can communicate clearly through a screen.</p>
+                            <p><strong>Types of remote interviews:</strong></p>
+                            <ul>
+                                <li><strong>Video call</strong> — Live interview via Zoom/Google Meet</li>
+                                <li><strong>Async video</strong> — Record answers to pre-set questions</li>
+                                <li><strong>Take-home project</strong> — Complete a task in 24-72 hours</li>
+                                <li><strong>Chat interview</strong> — Text-based interview via Slack or email</li>
+                            </ul>
+                            <p><strong>How to prepare:</strong></p>
+                            <ul>
+                                <li>Test your tech 30 minutes before (camera, mic, internet)</li>
+                                <li>Have your resume and the job description open</li>
+                                <li>Prepare 3-5 stories using the STAR method (Situation, Task, Action, Result)</li>
+                                <li>Research the company and prepare 3 questions to ask</li>
+                                <li>Dress professionally (at least from the waist up)</li>
+                                <li>Look at the camera, not the screen — it simulates eye contact</li>
+                            </ul>
+                            <div class="tm-tip">
+                                <span class="icon">💡</span>
+                                <span>After the interview, send a thank-you email within 2 hours. Mention something specific from the conversation. This small step puts you ahead of 90% of candidates.</span>
+                            </div>
+                            <button class="tm-btn primary" onclick="reachLoc(6)">Location Reached ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 7 -->
+                <div class="tm-loc locked" data-loc="7">
+                    <div class="tm-marker">
+                        <div class="tm-marker-dot">🏆</div>
+                        <div class="tm-connector"></div>
+                        <div class="tm-marker-label">Treasure!</div>
+                    </div>
+                    <div class="tm-loc-card">
+                        <div class="tm-loc-head" onclick="toggleLoc(7)">
+                            <div class="tm-loc-title">
+                                <h3>💰 Negotiate & Land the Offer</h3>
+                                <span class="tag locked">🔒 Locked</span>
+                            </div>
+                            <span class="tm-loc-chevron">▼</span>
+                        </div>
+                        <div class="tm-loc-body">
+                            <div class="tm-chest"><span class="icon">🗝️</span> Key: Always negotiate. Remote companies expect it. Even a small increase compounds over years.</div>
+                            <p>You got the offer! But don't accept the first number. Remote companies often have flexibility — especially if they're saving on office space.</p>
+                            <p><strong>What to negotiate:</strong></p>
+                            <ul>
+                                <li><strong>Salary</strong> — Research market rates on Glassdoor, Levels.fyi, Payscale</li>
+                                <li><strong>Equity/stock options</strong> — Common in startups</li>
+                                <li><strong>Home office stipend</strong> — Many companies offer $500-2000 for equipment</li>
+                                <li><strong>Learning budget</strong> — Courses, conferences, books</li>
+                                <li><strong>PTO/vacation</strong> — Especially important for async-first companies</li>
+                                <li><strong>Flexible hours</strong> — The #1 perk of remote work</li>
+                            </ul>
+                            <p><strong>Negotiation script:</strong></p>
+                            <ul>
+                                <li>"Thank you for the offer! I'm excited about this role. Based on my research and experience, I was hoping for [X]. Is there flexibility here?"</li>
+                                <li>Be specific with numbers, not vague</li>
+                                <li>Always negotiate via email or call, not chat</li>
+                                <li>If salary is fixed, negotiate other benefits</li>
+                            </ul>
+                            <div class="tm-tip gold">
+                                <span class="icon">⚡</span>
+                                <span>The worst they can say is no. A 10% salary increase negotiated now = tens of thousands over your career. Always negotiate. Always.</span>
+                            </div>
+                            <button class="tm-btn primary" onclick="reachLoc(7)">Location Reached ✓</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /map -->
+
+            <!-- Completion -->
+            <div class="tm-complete" id="tmComplete">
+                <div class="done-card">
+                    <span class="done-icon">🏆</span>
+                    <h2>You've Found the Treasure!</h2>
+                    <p class="sub">You've reached every location on the map. You now have the complete playbook for landing your first remote job. The treasure isn't just the job — it's the freedom to work from anywhere. Go get it.</p>
+                    <button class="share-btn" onclick="sharePlaybook()">📱 Share this treasure map</button>
+                    <br>
+                    <a href="/playbooks/" class="next-link">More playbooks →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>How to Get Your First Remote Job</h2>
+                <p>Remote work has gone from a perk to a standard option. In 2026, over 30% of knowledge workers work remotely at least part-time. But landing your first remote job requires a different approach than traditional job searching.</p>
+                <h3>Why Remote Jobs Are Different</h3>
+                <p>Remote employers hire differently. They can't see you working, so they need proof you're self-motivated, communicative, and reliable. Your resume, portfolio, and interview need to demonstrate these qualities — not just your technical skills.</p>
+                <h3>The Remote Job Market in 2026</h3>
+                <p>Remote jobs are competitive — a single posting can get 200+ applications. But remote-specific job boards have less competition than LinkedIn. And many companies prefer hiring from countries with lower cost of living, which can work in your favor.</p>
+                <h3>Common Mistakes to Avoid</h3>
+                <p>The biggest mistakes: applying to hundreds of jobs with the same resume, not mentioning remote experience, and failing to follow up. Tailor every application, highlight remote skills, and always send a thank-you note after interviews.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 style="font-size:1.2rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Frequently Asked Questions</h2>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">Do I need experience to get a remote job?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Not necessarily. Many remote-friendly roles (customer support, data entry, content writing, virtual assistance) hire beginners. Build a portfolio with personal projects, volunteer work, or freelance gigs to show you can deliver.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">What are the highest-paying remote jobs?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Software engineering, product management, data science, and UX design are the highest-paying remote roles. But marketing, sales, and project management also pay well remotely. Skills matter more than degrees.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">How long does it take to land a remote job?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Typically 1-3 months with consistent effort. Apply to 3-5 jobs per day, tailor each application, and follow up. The first offer is the hardest — after that, it gets easier.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">Can I work remotely from any country?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Yes, but it depends on the company. Some hire globally (as contractors), others restrict to specific countries for tax/legal reasons. Look for companies that say "worldwide" or "anywhere" in their listings.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    var TOTAL_LOCS = 7;
+    var state = {reached: new Set()};
+
+    // Restore state
+    try {
+        var s = localStorage.getItem('optidrop_playbook_remote');
+        if (s) {
+            var d = JSON.parse(s);
+            state.reached = new Set(d.reached || []);
+            state.reached.forEach(function(l){ markReached(l); });
+        }
+    } catch(e){}
+
+    // Initialize
+    unlockLocs();
+    updateProgress();
+
+    window.toggleLoc = function(l) {
+        var el = document.querySelector('.tm-loc[data-loc="'+l+'"]');
+        if (!el || el.classList.contains('locked')) return;
+        el.classList.toggle('open');
+    };
+
+    window.reachLoc = function(l) {
+        state.reached.add(l);
+        markReached(l);
+        save();
+        unlockLocs();
+        updateProgress();
+        // Open next loc
+        var next = document.querySelector('.tm-loc[data-loc="'+(l+1)+'"]');
+        if (next && !next.classList.contains('locked')) {
+            next.classList.add('open');
+            setTimeout(function(){ next.scrollIntoView({behavior:'smooth',block:'center'}); }, 300);
+        }
+        if (state.reached.size >= TOTAL_LOCS) showComplete();
+    };
+
+    function markReached(l) {
+        var el = document.querySelector('.tm-loc[data-loc="'+l+'"]');
+        if (!el) return;
+        el.classList.remove('current','locked');
+        el.classList.add('reached');
+        var tag = el.querySelector('.tag');
+        if (tag) { tag.className = 'tag reached'; tag.textContent = '✓ Reached'; }
+        var btn = el.querySelector('.tm-btn');
+        if (btn) { btn.textContent = '✓ Reached'; btn.style.background = '#94a3b8'; btn.style.cursor = 'default'; btn.onclick = null; }
+    }
+
+    function unlockLocs() {
+        var locNums = [1,2,3,4,5,6,7];
+        for (var i = 0; i < locNums.length; i++) {
+            var l = locNums[i];
+            var el = document.querySelector('.tm-loc[data-loc="'+l+'"]');
+            if (!el) continue;
+
+            if (l === 1) {
+                if (!state.reached.has(l)) {
+                    el.classList.add('current');
+                    el.classList.remove('locked');
+                    var tag = el.querySelector('.tag');
+                    if (tag) { tag.className = 'tag current'; tag.textContent = 'Current'; }
+                }
+            } else {
+                if (state.reached.has(l - 1) && !state.reached.has(l)) {
+                    el.classList.remove('locked');
+                    el.classList.add('current');
+                    var tag = el.querySelector('.tag');
+                    if (tag) { tag.className = 'tag current'; tag.textContent = 'Current'; }
+                }
+            }
+        }
+    }
+
+    function updateProgress() {
+        var count = state.reached.size;
+        var pct = Math.round((count / TOTAL_LOCS) * 100);
+        var fill = document.getElementById('progressFill');
+        var text = document.getElementById('progressText');
+        var pctEl = document.getElementById('progressPct');
+        if (fill) fill.style.width = pct + '%';
+        if (text) text.textContent = count + ' / ' + TOTAL_LOCS + ' locations reached';
+        if (pctEl) pctEl.textContent = pct + '%';
+    }
+
+    function showComplete() {
+        document.querySelector('.tm-progress').style.display = 'none';
+        document.querySelector('.tm-map').style.display = 'none';
+        document.getElementById('tmComplete').classList.add('show');
+        document.getElementById('tmComplete').scrollIntoView({behavior:'smooth'});
+    }
+
+    function save() {
+        localStorage.setItem('optidrop_playbook_remote', JSON.stringify({
+            reached: Array.from(state.reached)
+        }));
+    }
+
+    window.sharePlaybook = function() {
+        var t = 'I found a free treasure map to land my first remote job — check it out: https://optidrop.online/playbooks/first-remote-job.html';
+        if (navigator.share) {
+            navigator.share({title:'Get Your First Remote Job',text:t,url:'https://optidrop.online/playbooks/first-remote-job.html'});
+        } else {
+            navigator.clipboard.writeText(t).then(function(){
+                if (typeof showToast === 'function') showToast('Link copied!','success');
+            });
+        }
+    };
+    </script>
+</body>
+</html>
