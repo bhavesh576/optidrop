@@ -22,67 +22,37 @@
     <link rel="preload" href="/styles.css?v=4.0" as="style">
     <link rel="stylesheet" href="/styles.css?v=4.0">
     <style>
-    .st-container{max-width:960px;margin:0 auto;padding:1rem 1.25rem}
-    .st-hero{text-align:center;padding:2.5rem 1rem 1.5rem}
-    .st-badge{display:inline-block;padding:0.35rem 1rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);color:#e91e63;font-size:0.75rem;font-weight:700;border-radius:9999px;margin-bottom:0.8rem}
-    .st-hero h1{font-size:1.75rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;line-height:1.2}
-    .st-hero .sub{font-size:0.95rem;color:#64748b;line-height:1.5;max-width:520px;margin:0 auto}
-
-    /* Resource Cards Grid */
-    .st-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;max-width:960px;margin:0 auto;padding:0 0.5rem}
-
-    .st-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;text-decoration:none;display:block;transition:all 0.3s}
-    .st-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.08);border-color:#f9a8d4}
-    .st-card-header{padding:1.5rem 1.5rem 1rem}
-    .st-card-icon{font-size:2rem;margin-bottom:0.75rem}
-    .st-card-badge{display:inline-block;padding:0.2rem 0.6rem;font-size:0.65rem;font-weight:700;border-radius:9999px;margin-bottom:0.6rem}
+    .st-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;max-width:900px;margin:0 auto;padding:0 1rem}
+    .st-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;text-decoration:none;display:block;transition:all 0.3s}
+    .st-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.06);border-color:#f9a8d4}
+    .st-card-header{padding:1rem 1rem 0.75rem}
+    .st-card-icon{font-size:1.5rem;margin-bottom:0.5rem}
+    .st-card-badge{display:inline-block;padding:0.15rem 0.5rem;font-size:0.6rem;font-weight:700;border-radius:9999px;margin-bottom:0.4rem}
     .st-card-badge.live{background:#ecfdf5;color:#059669}
     .st-card-badge.soon{background:#f1f5f9;color:#94a3b8}
-    .st-card h3{font-size:1.1rem;font-weight:800;color:#0f172a;margin-bottom:0.4rem}
-    .st-card p{font-size:0.85rem;color:#64748b;line-height:1.5}
-    .st-card-footer{padding:0.75rem 1.5rem;border-top:1px solid #f1f5f9;display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:#94a3b8}
+    .st-card h3{font-size:0.92rem;font-weight:800;color:#0f172a;margin-bottom:0.3rem}
+    .st-card p{font-size:0.78rem;color:#64748b;line-height:1.45}
+    .st-card-footer{padding:0.6rem 1rem;border-top:1px solid #f1f5f9;display:flex;justify-content:space-between;align-items:center;font-size:0.7rem;color:#94a3b8}
     .st-card-footer .cta{color:#e91e63;font-weight:700}
-
-    /* Coming Soon Card */
-    .st-card.coming-soon{opacity:0.5;pointer-events:none}
-
-    /* Stats */
-    .st-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;max-width:500px;margin:2rem auto;padding:0 1rem}
-    .st-stat{text-align:center;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1rem 0.5rem}
-    .st-stat .num{font-size:1.5rem;font-weight:800;color:#e91e63}
-    .st-stat .label{font-size:0.7rem;color:#94a3b8;margin-top:0.2rem;font-weight:500}
-
-    /* Dark Mode */
-    .dark-mode .st-hero h1{color:#f1f5f9}
-    .dark-mode .st-hero .sub{color:#94a3b8}
-    .dark-mode .st-card{background:#272a33;border-color:#3d4455}
+    .st-card.coming-soon{opacity:0.45;pointer-events:none}
+    .dark-mode .st-card{background:#1e293b;border-color:#334155}
     .dark-mode .st-card:hover{border-color:#f472b6}
     .dark-mode .st-card h3{color:#f1f5f9}
     .dark-mode .st-card p{color:#94a3b8}
     .dark-mode .st-card-badge.live{background:#064e3b;color:#34d399}
-    .dark-mode .st-card-badge.soon{background:#3d4455;color:#94a3b8}
-    .dark-mode .st-card-footer{border-color:#3d4455;color:#94a3b8}
+    .dark-mode .st-card-badge.soon{background:#334155;color:#64748b}
+    .dark-mode .st-card-footer{border-color:#334155;color:#64748b}
     .dark-mode .st-card-footer .cta{color:#f472b6}
-    .dark-mode .st-stat{background:#272a33;border-color:#3d4455}
-    .dark-mode .st-stat .num{color:#f472b6}
-    .dark-mode .st-stat .label{color:#94a3b8}
-
-    /* Responsive */
-    @media(min-width:900px){
-        .st-container{padding:1.5rem 2rem}
-        .st-hero{padding:3rem 1rem 2rem}
-        .st-hero h1{font-size:2rem}
-        .st-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
-    }
     @media(max-width:640px){
-        .st-container{padding:0.75rem 0.85rem}
-        .st-hero{padding:1.5rem 0.5rem 1rem}
-        .st-hero h1{font-size:1.35rem}
-        .st-hero .sub{font-size:0.88rem}
-        .st-grid{grid-template-columns:1fr}
-        .st-stats{gap:0.5rem}
-        .st-stat{padding:0.75rem 0.4rem}
-        .st-stat .num{font-size:1.2rem}
+        .st-grid{grid-template-columns:repeat(3,1fr);gap:0.5rem;padding:0 0.75rem}
+        .st-card-header{padding:0.75rem 0.75rem 0.5rem}
+        .st-card-icon{font-size:1.2rem;margin-bottom:0.35rem}
+        .st-card h3{font-size:0.78rem;margin-bottom:0.2rem}
+        .st-card p{font-size:0.68rem;line-height:1.35}
+        .st-card-footer{padding:0.5rem 0.75rem;font-size:0.62rem}
+    }
+    @media(max-width:380px){
+        .st-grid{grid-template-columns:repeat(2,1fr);gap:0.4rem}
     }
     </style>
 </head>
@@ -90,19 +60,17 @@
 <a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
     <header class="site-header"></header>
     <main id="main-content" class="flex-grow">
-        <div class="st-container">
-            <header class="st-hero">
-                <span class="st-badge">🎓 STUDENT RESOURCES</span>
-                <h1>Build Projects That<br>Get You Hired</h1>
-                <p class="sub">Real problems. Real impact. Find projects worth building for your resume, hackathons, and portfolio.</p>
-            </header>
+        <section class="max-w-4xl mx-auto px-4 pt-10 pb-6 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">
+                🎓 Student Resources
+            </h1>
+            <p class="text-base text-slate-600 max-w-xl mx-auto mb-2">
+                Build projects that get you hired. Real problems, real impact — for your resume, hackathons, and portfolio.
+            </p>
+            <p class="text-sm text-slate-400">50+ problems · 3 categories · Free forever</p>
+        </section>
 
-            <div class="st-stats">
-                <div class="st-stat"><div class="num">50+</div><div class="label">Problems</div></div>
-                <div class="st-stat"><div class="num">4</div><div class="label">Categories</div></div>
-                <div class="st-stat"><div class="num">Free</div><div class="label">Forever</div></div>
-            </div>
-
+        <section class="max-w-5xl mx-auto px-4 pb-16">
             <div class="st-grid">
                 <a href="/students/problems.html" class="st-card">
                     <div class="st-card-header">
@@ -182,7 +150,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <section class="max-w-3xl mx-auto px-4 py-8">
             <div class="prose max-w-none">
