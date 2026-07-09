@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Online Store — Zero to First Sale | Free Playbook | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Free checklist playbook to start your online store and get your first sale. Step-by-step guide for Shopify, Etsy, WooCommerce, and more.">
+    <meta name="keywords" content="start online store, first sale, ecommerce, shopify, etsy, woocommerce, online business, sell online">
+    <link rel="canonical" href="https://optidrop.online/playbooks/online-store-first-sale.html">
+    <meta property="og:title" content="Start Online Store — Zero to First Sale | OptiDrop">
+    <meta property="og:description" content="Free checklist playbook to start your online store and get your first sale.">
+    <meta property="og:url" content="https://optidrop.online/playbooks/online-store-first-sale.html">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"HowTo","name":"Start Online Store — Zero to First Sale","description":"A checklist playbook to launch your online store and get your first sale.","totalTime":"PT25M","step":[
+        {"@type":"HowToStep","position":1,"name":"Choose What to Sell","text":"Decide on your product, niche, and target audience."},
+        {"@type":"HowToStep","position":2,"name":"Pick Your Platform","text":"Choose between Shopify, Etsy, WooCommerce, or other platforms."},
+        {"@type":"HowToStep","position":3,"name":"Set Up Your Store","text":"Create your store with branding, pages, and policies."},
+        {"@type":"HowToStep","position":4,"name":"Add Your Products","text":"Write listings, take photos, and set prices."},
+        {"@type":"HowToStep","position":5,"name":"Set Up Payments & Shipping","text":"Configure payment gateways and shipping options."},
+        {"@type":"HowToStep","position":6,"name":"Pre-Launch Checklist","text":"Test everything before going live."},
+        {"@type":"HowToStep","position":7,"name":"Launch & Get Your First Sale","text":"Go live and drive your first traffic."},
+        {"@type":"HowToStep","position":8,"name":"After Your First Sale","text":"Fulfill the order and build momentum."}
+    ]}
+    </script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    /* Checklist Playbook Styles */
+    .ck-container{max-width:720px;margin:0 auto;padding:1rem 1.25rem}
+    .ck-hero{text-align:center;padding:2.5rem 1rem 1.5rem}
+    .ck-badge{display:inline-block;padding:0.35rem 1rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);color:#e91e63;font-size:0.75rem;font-weight:700;border-radius:9999px;margin-bottom:1rem;letter-spacing:0.02em}
+    .ck-hero h1{font-size:1.75rem;font-weight:800;color:#0f172a;margin-bottom:0.6rem;line-height:1.2}
+    .ck-hero h1 .accent{background:linear-gradient(135deg,#e91e63,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .ck-hero .sub{font-size:1rem;color:#64748b;line-height:1.6;max-width:520px;margin:0 auto}
+    .ck-meta{display:flex;justify-content:center;gap:1.5rem;margin-top:1.3rem;font-size:0.8rem;color:#94a3b8;flex-wrap:wrap}
+    .ck-meta span{display:flex;align-items:center;gap:0.35rem}
+
+    /* Stats Strip */
+    .ck-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;max-width:500px;margin:1.5rem auto;padding:0 1rem}
+    .ck-stat{text-align:center;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1.1rem 0.5rem}
+    .ck-stat .num{font-size:1.5rem;font-weight:800;color:#e91e63}
+    .ck-stat .label{font-size:0.72rem;color:#94a3b8;margin-top:0.25rem;font-weight:500}
+
+    /* Progress */
+    .ck-progress{max-width:500px;margin:0 auto 1.5rem;padding:0 1rem}
+    .ck-progress-bar{height:10px;background:#f1f5f9;border-radius:99px;overflow:hidden}
+    .ck-progress-fill{height:100%;background:linear-gradient(90deg,#e91e63,#ec4899);border-radius:99px;transition:width 0.5s ease;width:0%}
+    .ck-progress-label{display:flex;justify-content:space-between;margin-top:0.5rem;font-size:0.72rem;color:#94a3b8;font-weight:500}
+
+    /* Phase Section */
+    .ck-phase{margin-bottom:1.5rem}
+    .ck-phase-header{display:flex;align-items:center;gap:0.75rem;padding:0.75rem 0;margin-bottom:0.5rem;cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .ck-phase-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;transition:all 0.3s ease}
+    .ck-phase-header .text{flex:1}
+    .ck-phase-header .text h2{font-size:1.05rem;font-weight:800;color:#0f172a;margin:0}
+    .ck-phase-header .text .desc{font-size:0.78rem;color:#94a3b8;margin-top:0.15rem}
+    .ck-phase-progress{font-size:0.72rem;font-weight:700;color:#94a3b8;flex-shrink:0}
+    .ck-phase-progress.done{color:#10b981}
+
+    /* Phase States */
+    .ck-phase[data-state="locked"] .ck-phase-icon{background:#f1f5f9;color:#94a3b8}
+    .ck-phase[data-state="active"] .ck-phase-icon{background:linear-gradient(135deg,#fdf2f8,#fce7f3);color:#e91e63}
+    .ck-phase[data-state="done"] .ck-phase-icon{background:#ecfdf5;color:#10b981}
+
+    /* Checklist Card */
+    .ck-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;transition:all 0.3s ease}
+    .ck-phase[data-state="active"] .ck-card{border-color:#f9a8d4;box-shadow:0 4px 16px rgba(233,30,99,0.06)}
+    .ck-phase[data-state="done"] .ck-card{border-color:#d1fae5;opacity:0.7}
+    .ck-phase[data-state="locked"] .ck-card{opacity:0.35;pointer-events:none}
+    .ck-card-body{padding:1rem 1.1rem}
+
+    /* Checklist Items */
+    .ck-item{display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 0;border-bottom:1px solid #f1f5f9;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:all 0.2s ease}
+    .ck-item:last-child{border-bottom:none}
+    .ck-check{width:24px;height:24px;border-radius:7px;border:2px solid #cbd5e1;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.2s ease;margin-top:0.1rem}
+    .ck-item.checked .ck-check{background:#10b981;border-color:#10b981}
+    .ck-check svg{width:14px;height:14px;opacity:0;transition:opacity 0.2s ease}
+    .ck-item.checked .ck-check svg{opacity:1}
+    .ck-item-content{flex:1}
+    .ck-item-content .title{font-size:0.88rem;font-weight:600;color:#0f172a;line-height:1.4;transition:all 0.2s ease}
+    .ck-item.checked .ck-item-content .title{color:#94a3b8;text-decoration:line-through}
+    .ck-item-content .detail{font-size:0.78rem;color:#64748b;line-height:1.5;margin-top:0.2rem}
+    .ck-item.checked .ck-item-content .detail{color:#cbd5e1}
+
+    /* Tip Box */
+    .ck-tip{display:flex;gap:0.6rem;padding:0.75rem;background:#f8fafc;border-radius:12px;margin:0.75rem 0;font-size:0.8rem;color:#64748b;border-left:3px solid #e91e63}
+    .ck-tip .icon{font-size:1rem;flex-shrink:0}
+    .ck-tip.gold{background:#fffbeb;border-color:#f59e0b}
+
+    /* Completion */
+    .ck-complete{text-align:center;padding:2.5rem 1rem;display:none}
+    .ck-complete.show{display:block}
+    .done-card{background:#fff;border:2px solid #10b981;border-radius:18px;padding:2.5rem 2rem}
+    .done-icon{font-size:3.5rem;display:block;margin-bottom:1rem}
+    .done-card h2{font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.6rem}
+    .done-card .sub{color:#64748b;font-size:0.95rem;margin-bottom:1.5rem;line-height:1.65}
+    .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.75rem;background:#25d366;color:#fff;border:none;border-radius:14px;font-weight:700;cursor:pointer;margin-bottom:1rem;font-size:0.95rem;-webkit-tap-highlight-color:transparent}
+    .share-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,211,102,0.3)}
+    .next-link{display:inline-block;color:#e91e63;font-weight:600;font-size:0.95rem}
+
+    /* Dark Mode */
+    .dark-mode .ck-hero h1{color:#f1f5f9}
+    .dark-mode .ck-hero h1 .accent{background:linear-gradient(135deg,#f472b6,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .dark-mode .ck-hero .sub{color:#94a3b8}
+    .dark-mode .ck-meta span{color:#94a3b8}
+    .dark-mode .ck-stat{background:#272a33;border-color:#3d4455}
+    .dark-mode .ck-stat .num{color:#f472b6}
+    .dark-mode .ck-stat .label{color:#94a3b8}
+    .dark-mode .ck-progress-bar{background:#3d4455}
+    .dark-mode .ck-phase-header .text h2{color:#f1f5f9}
+    .dark-mode .ck-phase-header .text .desc{color:#94a3b8}
+    .dark-mode .ck-phase[data-state="locked"] .ck-phase-icon{background:#3d4455;color:#64748b}
+    .dark-mode .ck-phase[data-state="active"] .ck-phase-icon{background:#3b0f2a;color:#f472b6}
+    .dark-mode .ck-phase[data-state="done"] .ck-phase-icon{background:#064e3b;color:#34d399}
+    .dark-mode .ck-card{background:#272a33;border-color:#3d4455}
+    .dark-mode .ck-phase[data-state="active"] .ck-card{border-color:#f472b6;box-shadow:0 4px 16px rgba(233,30,99,0.1)}
+    .dark-mode .ck-phase[data-state="done"] .ck-card{border-color:#064e3b}
+    .dark-mode .ck-item{border-color:#3d4455}
+    .dark-mode .ck-check{border-color:#64748b}
+    .dark-mode .ck-item.checked .ck-check{background:#10b981;border-color:#10b981}
+    .dark-mode .ck-item-content .title{color:#f1f5f9}
+    .dark-mode .ck-item.checked .ck-item-content .title{color:#64748b}
+    .dark-mode .ck-item-content .detail{color:#94a3b8}
+    .dark-mode .ck-item.checked .ck-item-content .detail{color:#475569}
+    .dark-mode .ck-tip{background:#1e293b;color:#e2e8f0;border-color:#f472b6}
+    .dark-mode .ck-tip.gold{background:#1c1917;border-color:#f59e0b}
+    .dark-mode .done-card{background:#272a33;border-color:#10b981}
+    .dark-mode .done-card h2{color:#f1f5f9}
+    .dark-mode .done-card .sub{color:#94a3b8}
+
+    /* Responsive */
+    @media(min-width:900px){
+        .ck-container{padding:1.5rem 2rem}
+        .ck-hero{padding:3rem 1rem 2rem}
+        .ck-hero h1{font-size:2rem}
+        .ck-hero .sub{font-size:1.05rem}
+        .ck-card-body{padding:1.2rem 1.3rem}
+        .ck-item-content .title{font-size:0.9rem}
+    }
+    @media(min-width:641px) and (max-width:899px){
+        .ck-container{padding:1rem 1.5rem}
+        .ck-hero h1{font-size:1.65rem}
+    }
+    @media(max-width:640px){
+        .ck-container{padding:0.75rem 0.85rem}
+        .ck-hero{padding:1.5rem 0.5rem 1rem}
+        .ck-hero h1{font-size:1.3rem;line-height:1.3}
+        .ck-hero .sub{font-size:0.88rem}
+        .ck-meta{gap:0.9rem;font-size:0.72rem}
+        .ck-stats{gap:0.5rem;padding:0 0.5rem}
+        .ck-stat{padding:0.75rem 0.3rem;border-radius:10px}
+        .ck-stat .num{font-size:1.15rem}
+        .ck-stat .label{font-size:0.65rem}
+        .ck-progress{padding:0 0.5rem}
+        .ck-progress-bar{height:8px}
+        .ck-phase-icon{width:36px;height:36px;font-size:1.1rem;border-radius:10px}
+        .ck-phase-header .text h2{font-size:0.92rem}
+        .ck-phase-header .text .desc{font-size:0.72rem}
+        .ck-card{border-radius:12px}
+        .ck-card-body{padding:0.85rem 0.9rem}
+        .ck-item{gap:0.6rem;padding:0.55rem 0}
+        .ck-check{width:22px;height:22px;border-radius:6px}
+        .ck-check svg{width:12px;height:12px}
+        .ck-item-content .title{font-size:0.82rem}
+        .ck-item-content .detail{font-size:0.72rem}
+        .ck-tip{padding:0.6rem;font-size:0.72rem;border-radius:8px}
+        .done-card{padding:1.5rem 1.25rem;border-radius:14px}
+        .done-icon{font-size:2.5rem}
+        .done-card h2{font-size:1.25rem}
+        .done-card .sub{font-size:0.85rem}
+        .share-btn{padding:0.7rem 1.25rem;font-size:0.85rem;border-radius:12px}
+    }
+    @media(max-width:380px){
+        .ck-hero h1{font-size:1.15rem}
+        .ck-meta{gap:0.6rem;font-size:0.68rem}
+        .ck-stat .num{font-size:1rem}
+        .ck-phase-icon{width:32px;height:32px;font-size:1rem}
+        .ck-phase-header .text h2{font-size:0.85rem}
+    }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <div class="ck-container">
+            <!-- Hero -->
+            <header class="ck-hero">
+                <span class="ck-badge">📋 CHECKLIST PLAYBOOK</span>
+                <h1>Start an Online Store<br><span class="accent">Zero to First Sale</span></h1>
+                <p class="sub">8 phases. Every step checked off. This is the complete checklist to launch your store and get that first sale.</p>
+                <div class="ck-meta">
+                    <span>📋 8 Phases</span>
+                    <span>⏱ 25 min read</span>
+                    <span>🌍 Global</span>
+                    <span>💰 Free</span>
+                </div>
+            </header>
+
+            <!-- Stats -->
+            <div class="ck-stats">
+                <div class="ck-stat">
+                    <div class="num">8</div>
+                    <div class="label">Phases</div>
+                </div>
+                <div class="ck-stat">
+                    <div class="num">42</div>
+                    <div class="label">Checklist Items</div>
+                </div>
+                <div class="ck-stat">
+                    <div class="num">1st</div>
+                    <div class="label">Sale Goal</div>
+                </div>
+            </div>
+
+            <!-- Progress -->
+            <div class="ck-progress">
+                <div class="ck-progress-bar">
+                    <div class="ck-progress-fill" id="progressFill"></div>
+                </div>
+                <div class="ck-progress-label">
+                    <span id="progressText">0 / 42 items checked</span>
+                    <span id="progressPct">0%</span>
+                </div>
+            </div>
+
+            <!-- Phase 1: Choose What to Sell -->
+            <div class="ck-phase" data-phase="1" data-state="active">
+                <div class="ck-phase-header" onclick="togglePhase(1)">
+                    <div class="ck-phase-icon">🎯</div>
+                    <div class="text">
+                        <h2>Phase 1: Choose What to Sell</h2>
+                        <div class="desc">Find your product and niche</div>
+                    </div>
+                    <span class="ck-phase-progress" id="phaseProg1">0/6</span>
+                </div>
+                <div class="ck-card">
+                    <div class="ck-card-body">
+                        <div class="ck-item" data-id="1.1" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Pick a product category</div>
+                                <div class="detail">Physical products, digital products, print-on-demand, or dropshipping</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="1.2" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Research demand</div>
+                                <div class="detail">Check Google Trends, Amazon bestsellers, social media for what people are buying</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="1.3" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Check competition</div>
+                                <div class="detail">Search for similar products — competition means demand, but find your angle</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="1.4" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Define your target customer</div>
+                                <div class="detail">Who exactly is buying this? Age, interests, problems they have</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="1.5" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Calculate profit margins</div>
+                                <div class="detail">Product cost + shipping + platform fees = your cost. Selling price - cost = profit</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="1.6" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Validate with 5 people</div>
+                                <div class="detail">Ask 5 people in your target audience: "Would you buy this?" — listen to their answers</div>
+                            </div>
+                        </div>
+                        <div class="ck-tip">
+                            <span class="icon">💡</span>
+                            <span>Don't overthink this. The best product is one people already buy — just do it better, cheaper, or with a unique twist.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2: Pick Your Platform -->
+            <div class="ck-phase" data-phase="2" data-state="locked">
+                <div class="ck-phase-header" onclick="togglePhase(2)">
+                    <div class="ck-phase-icon">🏪</div>
+                    <div class="text">
+                        <h2>Phase 2: Pick Your Platform</h2>
+                        <div class="desc">Choose where to sell</div>
+                    </div>
+                    <span class="ck-phase-progress" id="phaseProg2">0/5</span>
+                </div>
+                <div class="ck-card">
+                    <div class="ck-card-body">
+                        <div class="ck-item" data-id="2.1" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Compare platforms</div>
+                                <div class="detail">Shopify ($39/mo), Etsy ($0.20/listing), WooCommerce (free + hosting), Gumroad (free for digital)</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="2.2" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Consider your product type</div>
+                                <div class="detail">Physical → Shopify/Etsy. Digital → Gumroad/Lemonsqueezy. Print-on-demand → Printful/Redbubble</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="2.3" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Check transaction fees</div>
+                                <div class="detail">Some platforms take 5-15% per sale. Factor this into your pricing.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="2.4" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Sign up for your platform</div>
+                                <div class="detail">Create your account. Most have free trials — use them.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="2.5" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Choose your store name</div>
+                                <div class="detail">Short, memorable, easy to spell. Check domain availability.</div>
+                            </div>
+                        </div>
+                        <div class="ck-tip gold">
+                            <span class="icon">⚡</span>
+                            <span>Start with ONE platform. Master it before expanding. Most successful stores start on just one marketplace.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3: Set Up Your Store -->
+            <div class="ck-phase" data-phase="3" data-state="locked">
+                <div class="ck-phase-header" onclick="togglePhase(3)">
+                    <div class="ck-phase-icon">🏗️</div>
+                    <div class="text">
+                        <h2>Phase 3: Set Up Your Store</h2>
+                        <div class="desc">Build your storefront</div>
+                    </div>
+                    <span class="ck-phase-progress" id="phaseProg3">0/6</span>
+                </div>
+                <div class="ck-card">
+                    <div class="ck-card-body">
+                        <div class="ck-item" data-id="3.1" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Choose a clean theme/template</div>
+                                <div class="detail">Simple, mobile-friendly, fast-loading. Don't over-design — clarity sells.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="3.2" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Add your logo</div>
+                                <div class="detail">Simple text logo is fine. Use Canva free or looka.com for quick logos.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="3.3" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Create essential pages</div>
+                                <div class="detail">Home, About, Contact, FAQ, Shipping Policy, Return Policy, Privacy Policy</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="3.4" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Set up your domain</div>
+                                <div class="detail">yourstore.com looks professional. Most platforms offer domains for $10-15/year.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="3.5" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Set up navigation</div>
+                                <div class="detail">Clear menu: Home, Shop, About, Contact. Keep it simple.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="3.6" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Test on mobile</div>
+                                <div class="detail">60%+ of shoppers use phones. Your store must look great on mobile.</div>
+                            </div>
+                        </div>
+                        <div class="ck-tip">
+                            <span class="icon">💡</span>
+                            <span>Your store doesn't need to be perfect to launch. You can improve it after your first sale. Done beats perfect.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4: Add Products -->
+            <div class="ck-phase" data-phase="4" data-state="locked">
+                <div class="ck-phase-header" onclick="togglePhase(4)">
+                    <div class="ck-phase-icon">📦</div>
+                    <div class="text">
+                        <h2>Phase 4: Add Your Products</h2>
+                        <div class="desc">Listings, photos, pricing</div>
+                    </div>
+                    <span class="ck-phase-progress" id="phaseProg4">0/7</span>
+                </div>
+                <div class="ck-card">
+                    <div class="ck-card-body">
+                        <div class="ck-item" data-id="4.1" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Take product photos</div>
+                                <div class="detail">Natural light, clean background, multiple angles. Phone camera is fine.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="4.2" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Write product titles</div>
+                                <div class="detail">Clear, descriptive, include keywords people search for</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="4.3" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Write product descriptions</div>
+                                <div class="detail">Benefits first, then features. Answer: "Why should I buy this?"</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="4.4" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Set your prices</div>
+                                <div class="detail">Research competitors. Don't be cheapest — be best value. Include shipping in price if possible.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="4.5" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Add product categories</div>
+                                <div class="detail">Organize products logically. Help customers find what they want.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="4.6" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Set inventory/stock levels</div>
+                                <div class="detail">Track what you have. Don't oversell.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="4.7" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Add at least 5 products</div>
+                                <div class="detail">More products = more chances to be found. Start with 5-10 minimum.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 5: Payments & Shipping -->
+            <div class="ck-phase" data-phase="5" data-state="locked">
+                <div class="ck-phase-header" onclick="togglePhase(5)">
+                    <div class="ck-phase-icon">💳</div>
+                    <div class="text">
+                        <h2>Phase 5: Payments & Shipping</h2>
+                        <div class="desc">Get paid and deliver</div>
+                    </div>
+                    <span class="ck-phase-progress" id="phaseProg5">0/6</span>
+                </div>
+                <div class="ck-card">
+                    <div class="ck-card-body">
+                        <div class="ck-item" data-id="5.1" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Set up payment gateway</div>
+                                <div class="detail">Stripe, PayPal, Razorpay, or platform's built-in payments</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="5.2" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Enable multiple payment methods</div>
+                                <div class="detail">Credit card, debit card, UPI, PayPal, Apple Pay — more options = more sales</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="5.3" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Set up shipping rates</div>
+                                <div class="detail">Free shipping (build into price), flat rate, or calculated by weight/location</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="5.4" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Choose shipping carrier</div>
+                                <div class="detail">Shiprocket, Delhivery, USPS, FedEx, Royal Mail — depends on your country</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="5.5" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Set up tax collection</div>
+                                <div class="detail">GST, VAT, sales tax — depends on your country and where you ship</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="5.6" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Write return/refund policy</div>
+                                <div class="detail">Clear, fair policy. 14-30 day returns is standard. Display it prominently.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 6: Pre-Launch -->
+            <div class="ck-phase" data-phase="6" data-state="locked">
+                <div class="ck-phase-header" onclick="togglePhase(6)">
+                    <div class="ck-phase-icon">✅</div>
+                    <div class="text">
+                        <h2>Phase 6: Pre-Launch Checklist</h2>
+                        <div class="desc">Test everything before going live</div>
+                    </div>
+                    <span class="ck-phase-progress" id="phaseProg6">0/6</span>
+                </div>
+                <div class="ck-card">
+                    <div class="ck-card-body">
+                        <div class="ck-item" data-id="6.1" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Place a test order</div>
+                                <div class="detail">Go through the entire checkout process yourself. Fix any issues.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="6.2" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Check all links work</div>
+                                <div class="detail">Navigation, product links, policy pages, social links — no broken links</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="6.3" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Test on mobile devices</div>
+                                <div class="detail">Browse, add to cart, checkout — all on your phone</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="6.4" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Proofread everything</div>
+                                <div class="detail">Product descriptions, policies, about page — typos kill trust</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="6.5" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Set up Google Analytics</div>
+                                <div class="detail">Track visitors, where they come from, what they buy. Free and essential.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="6.6" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Set up email notifications</div>
+                                <div class="detail">Order confirmation, shipping updates, welcome email — automated emails build trust</div>
+                            </div>
+                        </div>
+                        <div class="ck-tip">
+                            <span class="icon">💡</span>
+                            <span>Ask a friend to browse your store and give honest feedback. Fresh eyes catch things you miss.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 7: Launch -->
+            <div class="ck-phase" data-phase="7" data-state="locked">
+                <div class="ck-phase-header" onclick="togglePhase(7)">
+                    <div class="ck-phase-icon">🚀</div>
+                    <div class="text">
+                        <h2>Phase 7: Launch & Get Your First Sale</h2>
+                        <div class="desc">Go live and drive traffic</div>
+                    </div>
+                    <span class="ck-phase-progress" id="phaseProg7">0/4</span>
+                </div>
+                <div class="ck-card">
+                    <div class="ck-card-body">
+                        <div class="ck-item" data-id="7.1" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Announce on social media</div>
+                                <div class="detail">Post on Instagram, Twitter, Facebook, WhatsApp status — tell everyone you know</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="7.2" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Tell friends and family</div>
+                                <div class="detail">Your first 10 sales often come from people you know. Don't be shy.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="7.3" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Post in relevant communities</div>
+                                <div class="detail">Reddit, Facebook groups, forums — share value first, then mention your store naturally</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="7.4" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Offer a launch discount</div>
+                                <div class="detail">10-20% off for first week. Creates urgency and rewards early buyers.</div>
+                            </div>
+                        </div>
+                        <div class="ck-tip gold">
+                            <span class="icon">⚡</span>
+                            <span>Your first sale is the hardest. Don't wait for customers to find you — go find them. Every successful store owner hustled for their first 10 sales.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 8: After First Sale -->
+            <div class="ck-phase" data-phase="8" data-state="locked">
+                <div class="ck-phase-header" onclick="togglePhase(8)">
+                    <div class="ck-phase-icon">🎉</div>
+                    <div class="text">
+                        <h2>Phase 8: After Your First Sale</h2>
+                        <div class="desc">Fulfill, learn, and grow</div>
+                    </div>
+                    <span class="ck-phase-progress" id="phaseProg8">0/2</span>
+                </div>
+                <div class="ck-card">
+                    <div class="ck-card-body">
+                        <div class="ck-item" data-id="8.1" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Fulfill the order fast</div>
+                                <div class="detail">Ship within 24 hours if possible. Send tracking info. Over-deliver on packaging.</div>
+                            </div>
+                        </div>
+                        <div class="ck-item" data-id="8.2" onclick="toggleItem(this)">
+                            <div class="ck-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="ck-item-content">
+                                <div class="title">Ask for a review</div>
+                                <div class="detail">Follow up after delivery: "Hope you love it! A review would mean the world."</div>
+                            </div>
+                        </div>
+                        <div class="ck-tip">
+                            <span class="icon">💡</span>
+                            <span>Your first sale proves the concept works. Now repeat what got you here. Scale the channels that brought traffic. Double down on what works.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completion -->
+            <div class="ck-complete" id="ckComplete">
+                <div class="done-card">
+                    <span class="done-icon">🏆</span>
+                    <h2>Your Store Is Ready to Launch!</h2>
+                    <p class="sub">You've checked every box. Your store is set up, products are listed, payments work, and you're ready for your first sale. Now go make it happen.</p>
+                    <button class="share-btn" onclick="sharePlaybook()">📱 Share this checklist</button>
+                    <br>
+                    <a href="/playbooks/" class="next-link">More playbooks →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>How to Start an Online Store and Get Your First Sale</h2>
+                <p>Starting an online store has never been easier. With platforms like Shopify, Etsy, and WooCommerce, you can have a professional store running in a weekend. But the real challenge isn't building the store — it's getting that first sale.</p>
+                <h3>What to Sell Online</h3>
+                <p>The best products to sell online solve a specific problem or fulfill a desire. Physical products, digital downloads, print-on-demand items, and handmade goods all work. The key is finding a niche with demand but not too much competition.</p>
+                <h3>How Much Does It Cost?</h3>
+                <p>You can start for under $50. Many platforms offer free trials. Etsy charges $0.20 per listing. Shopify starts at $39/month but offers a $1/month trial. WooCommerce is free but requires hosting ($5-10/month). The biggest investment is your time.</p>
+                <h3>Getting Your First Sale</h3>
+                <p>Your first sale usually comes from someone you know — a friend, family member, or social media follower. Don't be afraid to share your store with your network. After that, focus on social media marketing, SEO, and community engagement to build momentum.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 style="font-size:1.2rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Frequently Asked Questions</h2>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">What's the cheapest way to start an online store?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Etsy or Gumroad are the cheapest to start — you only pay when you sell. Shopify offers a $1/month trial for 3 months. WooCommerce is free but needs hosting ($5-10/month). You can literally start for under $20.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">Do I need inventory to start?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">No. Print-on-demand (Printful, Redbubble) and dropshipping let you sell without holding inventory. You only buy the product after a customer orders it. Digital products have zero inventory costs.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">How long until I get my first sale?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">If you actively promote to your network, you can get your first sale within the first week. Organic traffic takes 2-6 months to build. The key is not waiting for customers — go find them.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">Shopify vs Etsy — which should I pick?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Etsy is best for handmade, vintage, or unique items — it has built-in traffic but takes 6.5% per sale. Shopify is best if you want your own branded store and full control. Start with Etsy if you're testing; move to Shopify when you're ready to scale.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    var TOTAL_ITEMS = 42;
+    var PHASES = {1:['1.1','1.2','1.3','1.4','1.5','1.6'],2:['2.1','2.2','2.3','2.4','2.5'],3:['3.1','3.2','3.3','3.4','3.5','3.6'],4:['4.1','4.2','4.3','4.4','4.5','4.6','4.7'],5:['5.1','5.2','5.3','5.4','5.5','5.6'],6:['6.1','6.2','6.3','6.4','6.5','6.6'],7:['7.1','7.2','7.3','7.4'],8:['8.1','8.2']};
+    var state = {checked: new Set()};
+
+    // Restore state
+    try {
+        var s = localStorage.getItem('optidrop_playbook_store');
+        if (s) {
+            var d = JSON.parse(s);
+            state.checked = new Set(d.checked || []);
+            state.checked.forEach(function(id){ markChecked(id, false); });
+            updateAllPhases();
+            updateProgress();
+        }
+    } catch(e){}
+
+    window.togglePhase = function(p) {
+        var el = document.querySelector('.ck-phase[data-phase="'+p+'"]');
+        if (el && el.dataset.state !== 'locked') {
+            el.querySelector('.ck-card').style.display = el.querySelector('.ck-card').style.display === 'none' ? '' : 'none';
+        }
+    };
+
+    window.toggleItem = function(el) {
+        var id = el.dataset.id;
+        if (state.checked.has(id)) {
+            state.checked.delete(id);
+            el.classList.remove('checked');
+        } else {
+            state.checked.add(id);
+            el.classList.add('checked');
+        }
+        save();
+        updatePhaseProgress(id.split('.')[0]);
+        updateAllPhases();
+        updateProgress();
+        if (state.checked.size >= TOTAL_ITEMS) showComplete();
+    };
+
+    function markChecked(id, animate) {
+        var el = document.querySelector('.ck-item[data-id="'+id+'"]');
+        if (el) el.classList.add('checked');
+    }
+
+    function updatePhaseProgress(phaseNum) {
+        var phase = PHASES[phaseNum];
+        if (!phase) return;
+        var count = phase.filter(function(id){ return state.checked.has(id); }).length;
+        var el = document.getElementById('phaseProg'+phaseNum);
+        if (el) {
+            el.textContent = count + '/' + phase.length;
+            if (count === phase.length) el.classList.add('done');
+            else el.classList.remove('done');
+        }
+    }
+
+    function updateAllPhases() {
+        Object.keys(PHASES).forEach(function(p){ updatePhaseProgress(p); });
+    }
+
+    function updateProgress() {
+        var count = state.checked.size;
+        var pct = Math.round((count / TOTAL_ITEMS) * 100);
+        var fill = document.getElementById('progressFill');
+        var text = document.getElementById('progressText');
+        var pctEl = document.getElementById('progressPct');
+        if (fill) fill.style.width = pct + '%';
+        if (text) text.textContent = count + ' / ' + TOTAL_ITEMS + ' items checked';
+        if (pctEl) pctEl.textContent = pct + '%';
+    }
+
+    function showComplete() {
+        document.querySelector('.ck-progress').style.display = 'none';
+        document.querySelectorAll('.ck-phase').forEach(function(p){ p.style.display = 'none'; });
+        document.getElementById('ckComplete').classList.add('show');
+        document.getElementById('ckComplete').scrollIntoView({behavior:'smooth'});
+    }
+
+    function save() {
+        localStorage.setItem('optidrop_playbook_store', JSON.stringify({
+            checked: Array.from(state.checked)
+        }));
+    }
+
+    window.sharePlaybook = function() {
+        var t = 'I found a free checklist to start an online store from zero to first sale — check it out: https://optidrop.online/playbooks/online-store-first-sale.html';
+        if (navigator.share) {
+            navigator.share({title:'Start Online Store — Zero to First Sale',text:t,url:'https://optidrop.online/playbooks/online-store-first-sale.html'});
+        } else {
+            navigator.clipboard.writeText(t).then(function(){
+                if (typeof showToast === 'function') showToast('Link copied!','success');
+            });
+        }
+    };
+    </script>
+</body>
+</html>
