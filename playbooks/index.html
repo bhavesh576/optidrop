@@ -23,25 +23,30 @@
     <link rel="stylesheet" href="/styles.css?v=4.0">
 
     <style>
-    .playbook-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
-    .playbook-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; transition: all 0.3s ease; text-decoration: none; display: block; }
-    .playbook-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); border-color: #f9a8d4; }
-    .playbook-card-header { padding: 1.5rem 1.5rem 1rem; }
-    .playbook-card-badge { display: inline-block; padding: 0.2rem 0.6rem; background: #fdf2f8; color: #e91e63; font-size: 0.7rem; font-weight: 700; border-radius: 9999px; margin-bottom: 0.75rem; }
-    .playbook-card h3 { font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; }
-    .playbook-card p { font-size: 0.85rem; color: #64748b; line-height: 1.5; }
-    .playbook-card-footer { padding: 1rem 1.5rem; border-top: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #94a3b8; }
-    .playbook-card-footer .cta { color: #e91e63; font-weight: 700; }
-    .dark-mode h1 { color: #f1f5f9; }
-    .dark-mode .text-slate-600 { color: #94a3b8; }
-    .dark-mode .playbook-card { background: #272a33; border-color: #3d4455; }
-    .dark-mode .playbook-card:hover { border-color: #f472b6; }
-    .dark-mode .playbook-card-badge { background: #3b0f2a; color: #f472b6; }
-    .dark-mode .playbook-card h3 { color: #f1f5f9; }
-    .dark-mode .playbook-card p { color: #94a3b8; }
-    .dark-mode .playbook-card-footer { border-color: #3d4455; color: #94a3b8; }
-    .dark-mode .playbook-card-footer .cta { color: #f472b6; }
-    @media (max-width: 640px) { .playbook-grid { grid-template-columns: 1fr; } }
+    .playbook-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;max-width:900px;margin:0 auto;padding:0 1rem}
+    .playbook-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;transition:all 0.3s;text-decoration:none;display:block}
+    .playbook-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.06);border-color:#f9a8d4}
+    .playbook-card-header{padding:0.85rem 0.85rem 0.6rem}
+    .playbook-card-badge{display:inline-block;padding:0.15rem 0.5rem;background:#fdf2f8;color:#e91e63;font-size:0.58rem;font-weight:700;border-radius:9999px;margin-bottom:0.4rem}
+    .playbook-card h3{font-size:0.82rem;font-weight:800;color:#0f172a;margin-bottom:0.3rem;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .playbook-card p{font-size:0.72rem;color:#64748b;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .playbook-card-footer{padding:0.55rem 0.85rem;border-top:1px solid #f1f5f9;display:flex;justify-content:space-between;align-items:center;font-size:0.62rem;color:#94a3b8}
+    .playbook-card-footer .cta{color:#e91e63;font-weight:700;font-size:0.65rem}
+    .dark-mode .playbook-card{background:#1e293b;border-color:#334155}
+    .dark-mode .playbook-card:hover{border-color:#f472b6}
+    .dark-mode .playbook-card-badge{background:#3b0f2a;color:#f472b6}
+    .dark-mode .playbook-card h3{color:#f1f5f9}
+    .dark-mode .playbook-card p{color:#94a3b8}
+    .dark-mode .playbook-card-footer{border-color:#334155;color:#64748b}
+    .dark-mode .playbook-card-footer .cta{color:#f472b6}
+    @media(max-width:640px){
+        .playbook-grid{grid-template-columns:repeat(2,1fr);gap:0.5rem;padding:0 0.75rem}
+        .playbook-card-header{padding:0.65rem 0.65rem 0.45rem}
+        .playbook-card h3{font-size:0.75rem}
+        .playbook-card p{font-size:0.66rem;-webkit-line-clamp:2}
+        .playbook-card-footer{padding:0.45rem 0.65rem;font-size:0.58rem}
+    }
+    @media(max-width:380px){.playbook-grid{grid-template-columns:repeat(2,1fr);gap:0.4rem}}
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
@@ -65,11 +70,11 @@
                 <a href="/playbooks/freelancing-roadmap-1lakh.html" class="playbook-card" style="border-color:#f9a8d4;">
                     <div class="playbook-card-header">
                         <span class="playbook-card-badge" style="background:#e91e63;color:#fff;">🗺️ ROADMAP</span>
-                        <h3>Freelancing Roadmap — Zero to ₹1 Lakh/Month</h3>
-                        <p>A 12-month step-by-step roadmap to build a full-time freelancing income from scratch. No degree needed.</p>
+                        <h3>Freelancing — Zero to ₹1L/Month</h3>
+                        <p>12-month roadmap to build full-time freelancing income from scratch.</p>
                     </div>
                     <div class="playbook-card-footer">
-                        <span>📅 12 months · 📖 10 steps · 🛠 7 tools</span>
+                        <span>10 steps · 12 mo</span>
                         <span class="cta">Start →</span>
                     </div>
                 </a>
@@ -77,11 +82,11 @@
                 <a href="/playbooks/youtube-1000-subs.html" class="playbook-card" style="border-color:#f9a8d4;">
                     <div class="playbook-card-header">
                         <span class="playbook-card-badge" style="background:#e91e63;color:#fff;">🎮 QUEST MAP</span>
-                        <h3>YouTube Growth — 0 to 1,000 Subscribers</h3>
-                        <p>9 quests with real strategies to grow your channel. No fluff — just what actually works.</p>
+                        <h3>YouTube — 0 to 1,000 Subs</h3>
+                        <p>9 quests with real strategies to grow your channel.</p>
                     </div>
                     <div class="playbook-card-footer">
-                        <span>🎮 9 quests · ⏱ 20 min · 🌍 Global</span>
+                        <span>9 quests · 20 min</span>
                         <span class="cta">Start →</span>
                     </div>
                 </a>
@@ -89,11 +94,11 @@
                 <a href="/playbooks/online-store-first-sale.html" class="playbook-card" style="border-color:#f9a8d4;">
                     <div class="playbook-card-header">
                         <span class="playbook-card-badge" style="background:#e91e63;color:#fff;">📋 CHECKLIST</span>
-                        <h3>Start Online Store — Zero to First Sale</h3>
-                        <p>42-item checklist to launch your store and get that first sale. Every step checked off.</p>
+                        <h3>Online Store — First Sale</h3>
+                        <p>42-item checklist to launch your store and get first sale.</p>
                     </div>
                     <div class="playbook-card-footer">
-                        <span>📋 42 items · ⏱ 25 min · 🌍 Global</span>
+                        <span>42 items · 25 min</span>
                         <span class="cta">Start →</span>
                     </div>
                 </a>
@@ -102,10 +107,10 @@
                     <div class="playbook-card-header">
                         <span class="playbook-card-badge" style="background:#e91e63;color:#fff;">📊 TRACKER</span>
                         <h3>Save ₹1 Lakh in 12 Months</h3>
-                        <p>Interactive savings tracker with monthly targets, progress ring, and money-saving tips.</p>
+                        <p>Interactive savings tracker with monthly targets and progress ring.</p>
                     </div>
                     <div class="playbook-card-footer">
-                        <span>📅 12 months · 💰 ₹8,333/mo · 🌍 Global</span>
+                        <span>12 months · ₹8K/mo</span>
                         <span class="cta">Start →</span>
                     </div>
                 </a>
@@ -114,22 +119,22 @@
                     <div class="playbook-card-header">
                         <span class="playbook-card-badge" style="background:#e91e63;color:#fff;">🗺️ TREASURE MAP</span>
                         <h3>Get Your First Remote Job</h3>
-                        <p>7 locations on the map — from building skills to landing the offer. Follow the path to the treasure.</p>
+                        <p>7 locations from building skills to landing the offer.</p>
                     </div>
                     <div class="playbook-card-footer">
-                        <span>🗺️ 7 locations · ⏱ 20 min · 🌍 Global</span>
+                        <span>7 locations · 20 min</span>
                         <span class="cta">Start →</span>
                     </div>
                 </a>
 
                 <a href="/playbooks/digital-marketing-free-cert.html" class="playbook-card" style="border-color:#f9a8d4;">
                     <div class="playbook-card-header">
-                        <span class="playbook-card-badge" style="background:#e91e63;color:#fff;">📚 COURSE SYLLABUS</span>
-                        <h3>Learn Digital Marketing — Free Cert</h3>
-                        <p>8 modules, 35 lessons, 6 free certifications. Complete curriculum from scratch.</p>
+                        <span class="playbook-card-badge" style="background:#e91e63;color:#fff;">📚 SYLLABUS</span>
+                        <h3>Digital Marketing — Free Cert</h3>
+                        <p>8 modules, 35 lessons, 6 free certifications.</p>
                     </div>
                     <div class="playbook-card-footer">
-                        <span>📚 8 modules · 🎓 6 certs · 🌍 Global</span>
+                        <span>8 modules · 6 certs</span>
                         <span class="cta">Start →</span>
                     </div>
                 </a>
@@ -137,23 +142,23 @@
                 <a href="/playbooks/stock-market-first-10k.html" class="playbook-card" style="border-color:#f9a8d4;">
                     <div class="playbook-card-header">
                         <span class="playbook-card-badge" style="background:#e91e63;color:#fff;">🎓 PREMIUM</span>
-                        <h3>Invest in Stock Market — First ₹10K</h3>
-                        <p>Professional dashboard-style playbook. Tabbed interface, no fluff — just what investors need.</p>
+                        <h3>Stock Market — First ₹10K</h3>
+                        <p>Professional dashboard. Tabbed interface, no fluff.</p>
                     </div>
                     <div class="playbook-card-footer">
-                        <span>📊 5 tabs · ⏱ 15 min · 🌍 Global</span>
+                        <span>5 tabs · 15 min</span>
                         <span class="cta">Start →</span>
                     </div>
                 </a>
 
                 <a href="/playbooks/linkedin-brand-10k.html" class="playbook-card" style="border-color:#f9a8d4;">
                     <div class="playbook-card-header">
-                        <span class="playbook-card-badge" style="background:#0a66c2;color:#fff;">📱 STORY CARDS</span>
-                        <h3>Build LinkedIn Brand — 0 to 10K</h3>
-                        <p>Swipeable story-card playbook for corporate professionals. 12 steps, LinkedIn-themed.</p>
+                        <span class="playbook-card-badge" style="background:#0a66c2;color:#fff;">📱 STORIES</span>
+                        <h3>LinkedIn Brand — 0 to 10K</h3>
+                        <p>Swipeable story-cards for corporate professionals.</p>
                     </div>
                     <div class="playbook-card-footer">
-                        <span>📱 12 cards · ⏱ 15 min · 🌍 Global</span>
+                        <span>12 cards · 15 min</span>
                         <span class="cta">Start →</span>
                     </div>
                 </a>
@@ -161,11 +166,11 @@
                 <a href="/playbooks/side-hustle-50k.html" class="playbook-card" style="border-color:#f9a8d4;">
                     <div class="playbook-card-header">
                         <span class="playbook-card-badge" style="background:#e91e63;color:#fff;">🎯 DECISION TREE</span>
-                        <h3>Start Side Hustle — Extra ₹50K/Month</h3>
-                        <p>Answer 4 questions, get a personalized side hustle recommendation with action plan.</p>
+                        <h3>Side Hustle — Extra ₹50K</h3>
+                        <p>Answer 4 questions, get personalized recommendation.</p>
                     </div>
                     <div class="playbook-card-footer">
-                        <span>🎯 4 questions · ⏱ 3 min · 🌍 Global</span>
+                        <span>4 questions · 3 min</span>
                         <span class="cta">Start →</span>
                     </div>
                 </a>
@@ -173,11 +178,11 @@
                 <a href="/playbooks/mobile-app-idea-to-launch.html" class="playbook-card" style="border-color:#f9a8d4;">
                     <div class="playbook-card-header">
                         <span class="playbook-card-badge" style="background:#3b82f6;color:#fff;">🏗️ BLUEPRINT</span>
-                        <h3>Build Mobile App — Idea to Launch</h3>
-                        <p>Technical blueprint with 8 phases. Tech stack comparison, design, build, test, launch.</p>
+                        <h3>Mobile App — Idea to Launch</h3>
+                        <p>Technical blueprint with 8 phases and tech stack guide.</p>
                     </div>
                     <div class="playbook-card-footer">
-                        <span>🏗️ 8 phases · ⏱ 20 min · 🌍 Global</span>
+                        <span>8 phases · 20 min</span>
                         <span class="cta">Start →</span>
                     </div>
                 </a>
@@ -186,22 +191,22 @@
                     <div class="playbook-card-header">
                         <span class="playbook-card-badge">📘 BUSINESS</span>
                         <h3>Create Your First Invoice</h3>
-                        <p>Send a professional invoice in 5 minutes. Perfect for freelancers and small businesses.</p>
+                        <p>Send a professional invoice in 5 minutes.</p>
                     </div>
                     <div class="playbook-card-footer">
-                        <span>📖 5 steps · ⏱ 5 min</span>
+                        <span>5 steps · 5 min</span>
                         <span class="cta">Start →</span>
                     </div>
                 </a>
 
                 <a href="/playbooks/fix-pdf-problem.html" class="playbook-card">
                     <div class="playbook-card-header">
-                        <span class="playbook-card-badge">📘 PDF TOOLS</span>
+                        <span class="playbook-card-badge">📘 PDF</span>
                         <h3>Fix Your PDF Problem</h3>
-                        <p>Compress, merge, split, or convert — find the right tool in 30 seconds.</p>
+                        <p>Compress, merge, split, or convert in 30 seconds.</p>
                     </div>
                     <div class="playbook-card-footer">
-                        <span>📖 3 steps · ⏱ 2 min</span>
+                        <span>3 steps · 2 min</span>
                         <span class="cta">Start →</span>
                     </div>
                 </a>
@@ -210,10 +215,10 @@
                     <div class="playbook-card-header">
                         <span class="playbook-card-badge">📘 CAREER</span>
                         <h3>Start Freelancing in India</h3>
-                        <p>From zero to first client — resume, proposal, invoice, and more.</p>
+                        <p>Zero to first client — resume, proposal, invoice.</p>
                     </div>
                     <div class="playbook-card-footer">
-                        <span>📖 8 steps · ⏱ 15 min</span>
+                        <span>8 steps · 15 min</span>
                         <span class="cta">Start →</span>
                     </div>
                 </a>
