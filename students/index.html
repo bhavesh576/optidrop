@@ -27,9 +27,7 @@
     .st-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.06);border-color:#f9a8d4}
     .st-card-header{padding:1rem 1rem 0.75rem}
     .st-card-icon{font-size:1.5rem;margin-bottom:0.5rem}
-    .st-card-badge{display:inline-block;padding:0.15rem 0.5rem;font-size:0.6rem;font-weight:700;border-radius:9999px;margin-bottom:0.4rem}
-    .st-card-badge.live{background:#ecfdf5;color:#059669}
-    .st-card-badge.soon{background:#f1f5f9;color:#94a3b8}
+    .st-card-badge{display:inline-block;padding:0.12rem 0.45rem;font-size:0.55rem;font-weight:700;border-radius:9999px;margin-bottom:0.3rem;background:#f1f5f9;color:#94a3b8;letter-spacing:0.04em}
     .st-card h3{font-size:0.92rem;font-weight:800;color:#0f172a;margin-bottom:0.3rem}
     .st-card p{font-size:0.78rem;color:#64748b;line-height:1.45}
     .st-card-footer{padding:0.6rem 1rem;border-top:1px solid #f1f5f9;display:flex;justify-content:space-between;align-items:center;font-size:0.7rem;color:#94a3b8}
@@ -39,8 +37,7 @@
     .dark-mode .st-card:hover{border-color:#f472b6}
     .dark-mode .st-card h3{color:#f1f5f9}
     .dark-mode .st-card p{color:#94a3b8}
-    .dark-mode .st-card-badge.live{background:#064e3b;color:#34d399}
-    .dark-mode .st-card-badge.soon{background:#334155;color:#64748b}
+    .dark-mode .st-card-badge{background:#334155;color:#64748b}
     .dark-mode .st-card-footer{border-color:#334155;color:#64748b}
     .dark-mode .st-card-footer .cta{color:#f472b6}
     @media(max-width:640px){
@@ -75,7 +72,6 @@
                 <a href="/students/problems.html" class="st-card">
                     <div class="st-card-header">
                         <div class="st-card-icon">🔍</div>
-                        <span class="st-card-badge live">✅ LIVE</span>
                         <h3>Problem Bank</h3>
                         <p>50+ real-world problems that students can solve by building tech projects. Not generic ideas — actual problems people face.</p>
                     </div>
@@ -88,7 +84,6 @@
                 <a href="/students/hackathon-playbook.html" class="st-card">
                     <div class="st-card-header">
                         <div class="st-card-icon">🏆</div>
-                        <span class="st-card-badge live">✅ LIVE</span>
                         <h3>Hackathon Playbook</h3>
                         <p>From first-timer to winner. Preparation, building, pitching, and portfolio tips.</p>
                     </div>
@@ -101,7 +96,6 @@
                 <a href="/students/resume-project-guide.html" class="st-card">
                     <div class="st-card-header">
                         <div class="st-card-icon">📄</div>
-                        <span class="st-card-badge live">✅ LIVE</span>
                         <h3>Resume Project Guide</h3>
                         <p>Write project descriptions that impress recruiters. Before/after examples, STAR method, portfolio tips.</p>
                     </div>
@@ -111,23 +105,21 @@
                     </div>
                 </a>
 
-                <div class="st-card coming-soon">
+                <a href="/students/internship-guide.html" class="st-card">
                     <div class="st-card-header">
-                        <div class="st-card-icon">🎤</div>
-                        <span class="st-card-badge soon">COMING SOON</span>
-                        <h3>Interview Prep</h3>
-                        <p>How to talk about your projects in interviews. Common questions, STAR answers, and demo tips.</p>
+                        <div class="st-card-icon">💼</div>
+                        <h3>Internship Guide</h3>
+                        <p>Flowchart-style guide to find, apply, and land internships. Cold email templates included.</p>
                     </div>
                     <div class="st-card-footer">
-                        <span>Coming soon</span>
-                        <span class="cta" style="color:#94a3b8;">Soon →</span>
+                        <span>6 steps · 10 min</span>
+                        <span class="cta">Explore →</span>
                     </div>
-                </div>
+                </a>
 
                 <a href="/students/open-source-guide.html" class="st-card">
                     <div class="st-card-header">
                         <div class="st-card-icon">🔗</div>
-                        <span class="st-card-badge live">✅ LIVE</span>
                         <h3>Open Source Guide</h3>
                         <p>Pipeline workflow from first PR to building reputation. Leveling system and PR templates.</p>
                     </div>
@@ -137,14 +129,44 @@
                     </div>
                 </a>
 
-                <a href="/students/internship-guide.html" class="st-card">
+                <div class="st-card coming-soon">
                     <div class="st-card-header">
-                        <div class="st-card-icon">💼</div>
-                        <span class="st-card-badge live">✅ LIVE</span>
-                        <h3>Internship Guide</h3>
-                        <p>Flowchart-style guide to find, apply, and land internships. Cold email templates included.</p>
+                        <div class="st-card-icon">🎤</div>
+                        <span class="st-card-badge soon">SOON</span>
+                        <h3>Interview Prep</h3>
+                        <p>How to talk about your projects in interviews. Common questions, STAR answers, and demo tips.</p>
                     </div>
                     <div class="st-card-footer">
+                        <span>Coming soon</span>
+                        <span class="cta" style="color:#94a3b8;">Soon →</span>
+                    </div>
+                </div>
+
+                <div class="st-card coming-soon">
+                    <div class="st-card-header">
+                        <div class="st-card-icon">📈</div>
+                        <span class="st-card-badge soon">SOON</span>
+                        <h3>Career Growth Guide</h3>
+                        <p>Navigate your first 2 years after college. Promotions, skill building, and career pivots.</p>
+                    </div>
+                    <div class="st-card-footer">
+                        <span>Coming soon</span>
+                        <span class="cta" style="color:#94a3b8;">Soon →</span>
+                    </div>
+                </div>
+
+                <div class="st-card coming-soon">
+                    <div class="st-card-header">
+                        <div class="st-card-icon">💰</div>
+                        <span class="st-card-badge soon">SOON</span>
+                        <h3>Salary Negotiation Guide</h3>
+                        <p>How to negotiate your first salary. Scripts, data, and strategies that actually work.</p>
+                    </div>
+                    <div class="st-card-footer">
+                        <span>Coming soon</span>
+                        <span class="cta" style="color:#94a3b8;">Soon →</span>
+                    </div>
+                </div>
                         <span>6 steps · 10 min</span>
                         <span class="cta">Explore →</span>
                     </div>
