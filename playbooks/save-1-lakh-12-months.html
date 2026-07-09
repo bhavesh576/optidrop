@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save ₹1 Lakh in 12 Months — Free Savings Tracker Playbook | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Free interactive savings tracker to save ₹1 lakh in 12 months. Monthly targets, habit tracking, and proven strategies to grow your savings.">
+    <meta name="keywords" content="save money, savings tracker, 1 lakh savings, financial planning, money saving challenge, budget tracker">
+    <link rel="canonical" href="https://optidrop.online/playbooks/save-1-lakh-12-months.html">
+    <meta property="og:title" content="Save ₹1 Lakh in 12 Months — Free Tracker | OptiDrop">
+    <meta property="og:description" content="Free interactive savings tracker to save ₹1 lakh in 12 months.">
+    <meta property="og:url" content="https://optidrop.online/playbooks/save-1-lakh-12-months.html">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"HowTo","name":"Save ₹1 Lakh in 12 Months","description":"An interactive savings tracker to save ₹1,00,000 in 12 months with monthly targets and habits.","totalTime":"PT15M","step":[
+        {"@type":"HowToStep","position":1,"name":"Month 1 — Track Every Rupee","text":"Start tracking all expenses to understand where your money goes."},
+        {"@type":"HowToStep","position":2,"name":"Month 2 — Cut Subscriptions","text":"Cancel unused subscriptions and reduce recurring expenses."},
+        {"@type":"HowToStep","position":3,"name":"Month 3 — Automate Savings","text":"Set up automatic transfers on payday before you can spend."},
+        {"@type":"HowToStep","position":4,"name":"Month 4 — Reduce Eating Out","text":"Cook more at home and limit restaurant visits."},
+        {"@type":"HowToStep","position":5,"name":"Month 5 — Sell What You Don't Need","text":"Declutter and sell unused items for extra cash."},
+        {"@type":"HowToStep","position":6,"name":"Month 6 — Mid-Year Review","text":"Check progress, adjust targets, celebrate milestones."},
+        {"@type":"HowToStep","position":7,"name":"Month 7-9 — Build Income Streams","text":"Add side income to accelerate savings."},
+        {"@type":"HowToStep","position":8,"name":"Month 10-12 — Final Push","text":"Maximize savings and reach your ₹1 lakh goal."}
+    ]}
+    </script>
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    /* Tracker Playbook Styles */
+    .tr-container{max-width:720px;margin:0 auto;padding:1rem 1.25rem}
+    .tr-hero{text-align:center;padding:2.5rem 1rem 1.5rem}
+    .tr-badge{display:inline-block;padding:0.35rem 1rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);color:#e91e63;font-size:0.75rem;font-weight:700;border-radius:9999px;margin-bottom:1rem;letter-spacing:0.02em}
+    .tr-hero h1{font-size:1.75rem;font-weight:800;color:#0f172a;margin-bottom:0.6rem;line-height:1.2}
+    .tr-hero h1 .accent{background:linear-gradient(135deg,#e91e63,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .tr-hero .sub{font-size:1rem;color:#64748b;line-height:1.6;max-width:520px;margin:0 auto}
+    .tr-meta{display:flex;justify-content:center;gap:1.5rem;margin-top:1.3rem;font-size:0.8rem;color:#94a3b8;flex-wrap:wrap}
+    .tr-meta span{display:flex;align-items:center;gap:0.35rem}
+
+    /* Dashboard */
+    .tr-dashboard{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;max-width:500px;margin:1.5rem auto;padding:0 1rem}
+    .tr-dash-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1.1rem;text-align:center}
+    .tr-dash-card .num{font-size:1.5rem;font-weight:800;color:#e91e63}
+    .tr-dash-card .label{font-size:0.72rem;color:#94a3b8;margin-top:0.25rem;font-weight:500}
+    .tr-dash-card.highlight{background:linear-gradient(135deg,#fdf2f8,#fce7f3);border-color:#f9a8d4}
+
+    /* Big Progress Ring */
+    .tr-ring-wrap{display:flex;flex-direction:column;align-items:center;margin:1.5rem auto;max-width:300px}
+    .tr-ring{position:relative;width:200px;height:200px}
+    .tr-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+    .tr-ring-bg{fill:none;stroke:#f1f5f9;stroke-width:12}
+    .tr-ring-fill{fill:none;stroke:url(#ringGrad);stroke-width:12;stroke-linecap:round;transition:stroke-dashoffset 0.8s ease}
+    .tr-ring-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+    .tr-ring-amount{font-size:1.6rem;font-weight:800;color:#0f172a}
+    .tr-ring-label{font-size:0.72rem;color:#94a3b8;margin-top:0.15rem}
+    .tr-ring-pct{font-size:0.85rem;font-weight:700;color:#e91e63;margin-top:0.3rem}
+
+    /* Month Grid */
+    .tr-months{max-width:500px;margin:0 auto;padding:0 1rem}
+    .tr-section-title{font-size:1rem;font-weight:800;color:#0f172a;margin-bottom:0.75rem;text-align:center}
+    .tr-month-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem}
+
+    /* Month Card */
+    .tr-month{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0.85rem 0.7rem;text-align:center;cursor:pointer;transition:all 0.3s ease;-webkit-tap-highlight-color:transparent}
+    .tr-month:hover{border-color:#f9a8d4;transform:translateY(-2px)}
+    .tr-month.saved{border-color:#10b981;background:#ecfdf5}
+    .tr-month.current{border-color:#e91e63;box-shadow:0 0 0 2px rgba(233,30,99,0.15)}
+    .tr-month .month-name{font-size:0.75rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.05em}
+    .tr-month .month-num{font-size:1.3rem;font-weight:800;color:#0f172a;margin:0.2rem 0}
+    .tr-month .month-target{font-size:0.7rem;color:#64748b}
+    .tr-month .month-status{font-size:0.65rem;font-weight:700;margin-top:0.3rem;padding:0.15rem 0.5rem;border-radius:9999px;display:inline-block}
+    .tr-month .month-status.pending{background:#f1f5f9;color:#94a3b8}
+    .tr-month .month-status.done{background:#ecfdf5;color:#059669}
+    .tr-month .month-status.current{background:#fdf2f8;color:#e91e63}
+
+    /* Input Modal */
+    .tr-modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;padding:1rem}
+    .tr-modal-overlay.show{display:flex}
+    .tr-modal{background:#fff;border-radius:18px;padding:1.75rem;max-width:360px;width:100%;text-align:center}
+    .tr-modal h3{font-size:1.1rem;font-weight:800;color:#0f172a;margin-bottom:0.3rem}
+    .tr-modal .sub{font-size:0.82rem;color:#64748b;margin-bottom:1rem}
+    .tr-modal input{width:100%;padding:0.85rem;border:2px solid #e2e8f0;border-radius:12px;font-size:1.2rem;font-weight:700;text-align:center;outline:none;transition:border-color 0.2s}
+    .tr-modal input:focus{border-color:#e91e63}
+    .tr-modal .hint{font-size:0.72rem;color:#94a3b8;margin-top:0.5rem}
+    .tr-modal-btns{display:flex;gap:0.5rem;margin-top:1rem}
+    .tr-modal-btns button{flex:1;padding:0.75rem;border:none;border-radius:12px;font-size:0.9rem;font-weight:700;cursor:pointer}
+    .tr-modal-btns .cancel{background:#f1f5f9;color:#64748b}
+    .tr-modal-btns .save{background:#10b981;color:#fff}
+    .tr-modal-btns .save:hover{background:#059669}
+
+    /* Tips Section */
+    .tr-tips{max-width:500px;margin:2rem auto;padding:0 1rem}
+    .tr-tip-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1rem 1.1rem;margin-bottom:0.6rem;display:flex;gap:0.75rem;align-items:flex-start}
+    .tr-tip-icon{font-size:1.3rem;flex-shrink:0;margin-top:0.1rem}
+    .tr-tip-text{flex:1}
+    .tr-tip-text h4{font-size:0.88rem;font-weight:700;color:#0f172a;margin:0 0 0.2rem}
+    .tr-tip-text p{font-size:0.8rem;color:#64748b;line-height:1.5;margin:0}
+
+    /* Milestone Badges */
+    .tr-milestones{max-width:500px;margin:1.5rem auto;padding:0 1rem;display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap}
+    .tr-milestone{display:flex;align-items:center;gap:0.4rem;padding:0.45rem 0.8rem;background:#f1f5f9;border-radius:9999px;font-size:0.72rem;font-weight:700;color:#94a3b8;transition:all 0.3s ease}
+    .tr-milestone.achieved{background:#ecfdf5;color:#059669}
+    .tr-milestone .icon{font-size:0.9rem}
+
+    /* Completion */
+    .tr-complete{text-align:center;padding:2.5rem 1rem;display:none}
+    .tr-complete.show{display:block}
+    .done-card{background:#fff;border:2px solid #10b981;border-radius:18px;padding:2.5rem 2rem}
+    .done-icon{font-size:3.5rem;display:block;margin-bottom:1rem}
+    .done-card h2{font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.6rem}
+    .done-card .sub{color:#64748b;font-size:0.95rem;margin-bottom:1.5rem;line-height:1.65}
+    .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.75rem;background:#25d366;color:#fff;border:none;border-radius:14px;font-weight:700;cursor:pointer;margin-bottom:1rem;font-size:0.95rem;-webkit-tap-highlight-color:transparent}
+    .share-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,211,102,0.3)}
+    .next-link{display:inline-block;color:#e91e63;font-weight:600;font-size:0.95rem}
+
+    /* Reset Button */
+    .tr-reset{text-align:center;margin:1.5rem auto;padding:0 1rem}
+    .tr-reset button{background:none;border:none;color:#94a3b8;font-size:0.75rem;cursor:pointer;text-decoration:underline}
+    .tr-reset button:hover{color:#e91e63}
+
+    /* Dark Mode */
+    .dark-mode .tr-hero h1{color:#f1f5f9}
+    .dark-mode .tr-hero h1 .accent{background:linear-gradient(135deg,#f472b6,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .dark-mode .tr-hero .sub{color:#94a3b8}
+    .dark-mode .tr-meta span{color:#94a3b8}
+    .dark-mode .tr-dash-card{background:#272a33;border-color:#3d4455}
+    .dark-mode .tr-dash-card .num{color:#f472b6}
+    .dark-mode .tr-dash-card .label{color:#94a3b8}
+    .dark-mode .tr-dash-card.highlight{background:#3b0f2a;border-color:#f472b6}
+    .dark-mode .tr-ring-bg{stroke:#3d4455}
+    .dark-mode .tr-ring-amount{color:#f1f5f9}
+    .dark-mode .tr-ring-label{color:#94a3b8}
+    .dark-mode .tr-ring-pct{color:#f472b6}
+    .dark-mode .tr-section-title{color:#f1f5f9}
+    .dark-mode .tr-month{background:#272a33;border-color:#3d4455}
+    .dark-mode .tr-month:hover{border-color:#f472b6}
+    .dark-mode .tr-month.saved{background:#064e3b;border-color:#10b981}
+    .dark-mode .tr-month.current{border-color:#f472b6;box-shadow:0 0 0 2px rgba(233,30,99,0.2)}
+    .dark-mode .tr-month .month-name{color:#94a3b8}
+    .dark-mode .tr-month .month-num{color:#f1f5f9}
+    .dark-mode .tr-month .month-target{color:#94a3b8}
+    .dark-mode .tr-month .month-status.pending{background:#3d4455;color:#94a3b8}
+    .dark-mode .tr-month .month-status.done{background:#064e3b;color:#34d399}
+    .dark-mode .tr-month .month-status.current{background:#3b0f2a;color:#f472b6}
+    .dark-mode .tr-modal{background:#272a33}
+    .dark-mode .tr-modal h3{color:#f1f5f9}
+    .dark-mode .tr-modal .sub{color:#94a3b8}
+    .dark-mode .tr-modal input{background:#1e293b;border-color:#3d4455;color:#f1f5f9}
+    .dark-mode .tr-modal input:focus{border-color:#f472b6}
+    .dark-mode .tr-modal .hint{color:#64748b}
+    .dark-mode .tr-modal-btns .cancel{background:#3d4455;color:#94a3b8}
+    .dark-mode .tr-tip-card{background:#272a33;border-color:#3d4455}
+    .dark-mode .tr-tip-text h4{color:#f1f5f9}
+    .dark-mode .tr-tip-text p{color:#94a3b8}
+    .dark-mode .tr-milestone{background:#3d4455;color:#94a3b8}
+    .dark-mode .tr-milestone.achieved{background:#064e3b;color:#34d399}
+    .dark-mode .done-card{background:#272a33;border-color:#10b981}
+    .dark-mode .done-card h2{color:#f1f5f9}
+    .dark-mode .done-card .sub{color:#94a3b8}
+
+    /* Responsive */
+    @media(min-width:900px){
+        .tr-container{padding:1.5rem 2rem}
+        .tr-hero{padding:3rem 1rem 2rem}
+        .tr-hero h1{font-size:2rem}
+        .tr-hero .sub{font-size:1.05rem}
+        .tr-ring{width:240px;height:240px}
+        .tr-ring-amount{font-size:1.9rem}
+    }
+    @media(min-width:641px) and (max-width:899px){
+        .tr-container{padding:1rem 1.5rem}
+        .tr-hero h1{font-size:1.65rem}
+    }
+    @media(max-width:640px){
+        .tr-container{padding:0.75rem 0.85rem}
+        .tr-hero{padding:1.5rem 0.5rem 1rem}
+        .tr-hero h1{font-size:1.3rem;line-height:1.3}
+        .tr-hero .sub{font-size:0.88rem}
+        .tr-meta{gap:0.9rem;font-size:0.72rem}
+        .tr-dashboard{gap:0.5rem;padding:0 0.5rem}
+        .tr-dash-card{padding:0.85rem 0.5rem;border-radius:10px}
+        .tr-dash-card .num{font-size:1.2rem}
+        .tr-dash-card .label{font-size:0.65rem}
+        .tr-ring{width:170px;height:170px}
+        .tr-ring-amount{font-size:1.3rem}
+        .tr-ring-pct{font-size:0.78rem}
+        .tr-month-grid{grid-template-columns:repeat(3,1fr);gap:0.5rem}
+        .tr-month{padding:0.7rem 0.5rem;border-radius:10px}
+        .tr-month .month-num{font-size:1.1rem}
+        .tr-tip-card{padding:0.85rem;border-radius:12px}
+        .tr-modal{padding:1.25rem;border-radius:14px}
+        .done-card{padding:1.5rem 1.25rem;border-radius:14px}
+        .done-icon{font-size:2.5rem}
+        .done-card h2{font-size:1.25rem}
+        .done-card .sub{font-size:0.85rem}
+        .share-btn{padding:0.7rem 1.25rem;font-size:0.85rem;border-radius:12px}
+    }
+    @media(max-width:380px){
+        .tr-hero h1{font-size:1.15rem}
+        .tr-meta{gap:0.6rem;font-size:0.68rem}
+        .tr-ring{width:150px;height:150px}
+        .tr-ring-amount{font-size:1.1rem}
+        .tr-dash-card .num{font-size:1rem}
+        .tr-month .month-num{font-size:1rem}
+    }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <div class="tr-container">
+            <!-- Hero -->
+            <header class="tr-hero">
+                <span class="tr-badge">📊 SAVINGS TRACKER</span>
+                <h1>Save ₹1 Lakh <span class="accent">in 12 Months</span></h1>
+                <p class="sub">Track your savings monthly. Build habits that stick. Hit ₹1,00,000 by the end of the year — one month at a time.</p>
+                <div class="tr-meta">
+                    <span>📅 12 Months</span>
+                    <span>💰 ₹8,333/month</span>
+                    <span>🌍 Global</span>
+                    <span>🎯 ₹1,00,000 Goal</span>
+                </div>
+            </header>
+
+            <!-- Dashboard -->
+            <div class="tr-dashboard">
+                <div class="tr-dash-card highlight">
+                    <div class="num" id="dashSaved">₹0</div>
+                    <div class="label">Total Saved</div>
+                </div>
+                <div class="tr-dash-card">
+                    <div class="num" id="dashRemaining">₹1,00,000</div>
+                    <div class="label">Remaining</div>
+                </div>
+                <div class="tr-dash-card">
+                    <div class="num" id="dashMonths">0</div>
+                    <div class="label">Months Done</div>
+                </div>
+                <div class="tr-dash-card">
+                    <div class="num" id="dashStreak">0</div>
+                    <div class="label">Month Streak</div>
+                </div>
+            </div>
+
+            <!-- Progress Ring -->
+            <div class="tr-ring-wrap">
+                <div class="tr-ring">
+                    <svg viewBox="0 0 200 200">
+                        <defs>
+                            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#e91e63"/>
+                                <stop offset="100%" style="stop-color:#ec4899"/>
+                            </linearGradient>
+                        </defs>
+                        <circle class="tr-ring-bg" cx="100" cy="100" r="85"/>
+                        <circle class="tr-ring-fill" id="ringFill" cx="100" cy="100" r="85"
+                            stroke-dasharray="534" stroke-dashoffset="534"/>
+                    </svg>
+                    <div class="tr-ring-center">
+                        <div class="tr-ring-amount" id="ringAmount">₹0</div>
+                        <div class="tr-ring-label">of ₹1,00,000</div>
+                        <div class="tr-ring-pct" id="ringPct">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestones -->
+            <div class="tr-milestones">
+                <div class="tr-milestone" id="ms25"><span class="icon">🎯</span> ₹25K</div>
+                <div class="tr-milestone" id="ms50"><span class="icon">🎯</span> ₹50K</div>
+                <div class="tr-milestone" id="ms75"><span class="icon">🎯</span> ₹75K</div>
+                <div class="tr-milestone" id="ms100"><span class="icon">🏆</span> ₹1L</div>
+            </div>
+
+            <!-- Month Grid -->
+            <div class="tr-months">
+                <div class="tr-section-title">Tap a month to log your savings</div>
+                <div class="tr-month-grid" id="monthGrid"></div>
+            </div>
+
+            <!-- Tips -->
+            <div class="tr-tips">
+                <div class="tr-section-title">💡 Money-Saving Tips</div>
+                <div class="tr-tip-card">
+                    <span class="tr-tip-icon">🏦</span>
+                    <div class="tr-tip-text">
+                        <h4>Pay Yourself First</h4>
+                        <p>Transfer ₹8,333 to a separate account on payday — before you spend anything. Treat it like a bill you can't skip.</p>
+                    </div>
+                </div>
+                <div class="tr-tip-card">
+                    <span class="tr-tip-icon">📱</span>
+                    <div class="tr-tip-text">
+                        <h4>Cancel Unused Subscriptions</h4>
+                        <p>Check your bank statement for recurring charges. Most people have ₹500-2,000/month in subscriptions they don't use.</p>
+                    </div>
+                </div>
+                <div class="tr-tip-card">
+                    <span class="tr-tip-icon">🍳</span>
+                    <div class="tr-tip-text">
+                        <h4>Cook More, Order Less</h4>
+                        <p>One food delivery order = 2-3 home-cooked meals. Cutting delivery from daily to 2x/week saves ₹3,000-5,000/month.</p>
+                    </div>
+                </div>
+                <div class="tr-tip-card">
+                    <span class="tr-tip-icon">🛒</span>
+                    <div class="tr-tip-text">
+                        <h4>The 24-Hour Rule</h4>
+                        <p>Want something non-essential? Wait 24 hours. If you still want it tomorrow, buy it. Most impulse purchases fade overnight.</p>
+                    </div>
+                </div>
+                <div class="tr-tip-card">
+                    <span class="tr-tip-icon">💰</span>
+                    <div class="tr-tip-text">
+                        <h4>Round Up Savings</h4>
+                        <p>Every time you spend, round up to the nearest 100 and save the difference. ₹47 coffee → save ₹53. It adds up fast.</p>
+                    </div>
+                </div>
+                <div class="tr-tip-card">
+                    <span class="tr-tip-icon">📊</span>
+                    <div class="tr-tip-text">
+                        <h4>Track Every Rupee</h4>
+                        <p>You can't save what you don't track. Write down every expense for 30 days — you'll find ₹2,000-5,000 in "invisible" spending.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reset -->
+            <div class="tr-reset">
+                <button onclick="resetTracker()">Reset all progress</button>
+            </div>
+
+            <!-- Input Modal -->
+            <div class="tr-modal-overlay" id="modal">
+                <div class="tr-modal">
+                    <h3 id="modalTitle">Month 1</h3>
+                    <p class="sub" id="modalSub">Target: ₹8,333</p>
+                    <input type="number" id="modalInput" placeholder="Enter amount saved" min="0" max="100000">
+                    <p class="hint">Enter 0 if you didn't save this month</p>
+                    <div class="tr-modal-btns">
+                        <button class="cancel" onclick="closeModal()">Cancel</button>
+                        <button class="save" onclick="saveMonth()">Save</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completion -->
+            <div class="tr-complete" id="trComplete">
+                <div class="done-card">
+                    <span class="done-icon">🏆</span>
+                    <h2>You Saved ₹1 Lakh!</h2>
+                    <p class="sub">You did it! 12 months of discipline, habits, and smart choices. ₹1,00,000 saved. That's not just money — that's proof you can do anything you set your mind to.</p>
+                    <button class="share-btn" onclick="sharePlaybook()">📱 Share this tracker</button>
+                    <br>
+                    <a href="/playbooks/" class="next-link">More playbooks →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>How to Save ₹1 Lakh in 12 Months</h2>
+                <p>Saving ₹1,00,000 in a year sounds hard, but it breaks down to just ₹8,333 per month — or about ₹278 per day. That's less than most people spend on food delivery, coffee, or impulse purchases. With the right habits and tracking, anyone can do it.</p>
+                <h3>The Power of Consistency</h3>
+                <p>The secret to saving isn't earning more — it's spending less than you earn, consistently. By automating your savings and tracking your progress, you remove the willpower from the equation. The money moves before you can spend it.</p>
+                <h3>Where to Keep Your Savings</h3>
+                <p>Keep your savings in a separate account from your spending money. A high-yield savings account or liquid mutual fund earns interest while keeping your money accessible. The key is separation — if it's in your main account, you'll spend it.</p>
+                <h3>What to Do After ₹1 Lakh</h3>
+                <p>Once you hit ₹1 lakh, you've built the habit. Now you can aim for ₹2 lakhs, start investing, or build an emergency fund. The discipline you've built is worth more than the money itself.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h2 style="font-size:1.2rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Frequently Asked Questions</h2>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">What if I can't save ₹8,333 some months?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">That's okay! Save what you can. If you save ₹5,000 one month, try to save ₹11,666 the next to stay on track. The goal is ₹1 lakh total — the monthly target is just a guide.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">Should I save in a bank account or invest?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">For a 12-month goal, keep it in a savings account or liquid fund. Investing in stocks or mutual funds is for 3+ year horizons. You don't want your savings to drop 20% right when you need them.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">What if I have debt? Should I save or pay debt first?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Pay off high-interest debt first (credit cards, personal loans). For low-interest debt (education loans), you can save alongside. Always build a small emergency fund (₹10-20K) first, then attack debt.</p>
+                </details>
+                <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                    <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">How do I increase my savings rate?</summary>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Two ways: reduce expenses or increase income. Reducing is faster — cancel subscriptions, cook at home, use public transport. Increasing income takes longer but has no ceiling. Do both.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    var GOAL = 100000;
+    var MONTHLY_TARGET = 8333;
+    var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var state = {savings: {}, currentMonth: 0};
+    var selectedMonth = 0;
+
+    // Restore state
+    try {
+        var s = localStorage.getItem('optidrop_playbook_savings');
+        if (s) {
+            var d = JSON.parse(s);
+            state.savings = d.savings || {};
+            state.currentMonth = d.currentMonth || 0;
+        }
+    } catch(e){}
+
+    // Initialize month grid
+    function renderMonths() {
+        var grid = document.getElementById('monthGrid');
+        grid.innerHTML = '';
+        var totalSaved = getTotalSaved();
+        for (var i = 0; i < 12; i++) {
+            var saved = state.savings[i] || 0;
+            var isSaved = saved > 0;
+            var isCurrent = i === getNextMonth();
+            var div = document.createElement('div');
+            div.className = 'tr-month' + (isSaved ? ' saved' : '') + (isCurrent ? ' current' : '');
+            div.setAttribute('data-month', i);
+            div.onclick = (function(m){ return function(){ openModal(m); }; })(i);
+
+            var statusClass = isSaved ? 'done' : (isCurrent ? 'current' : 'pending');
+            var statusText = isSaved ? '₹' + saved.toLocaleString('en-IN') : (isCurrent ? 'Current' : 'Pending');
+
+            div.innerHTML = '<div class="month-name">' + MONTHS[i] + '</div>' +
+                '<div class="month-num">' + (i+1) + '</div>' +
+                '<div class="month-target">Target: ₹' + MONTHLY_TARGET.toLocaleString('en-IN') + '</div>' +
+                '<div class="month-status ' + statusClass + '">' + statusText + '</div>';
+            grid.appendChild(div);
+        }
+    }
+
+    function getNextMonth() {
+        // Find the first month without savings
+        for (var i = 0; i < 12; i++) {
+            if (!state.savings[i] || state.savings[i] === 0) return i;
+        }
+        return 11;
+    }
+
+    function getTotalSaved() {
+        var total = 0;
+        Object.keys(state.savings).forEach(function(k) {
+            total += (state.savings[k] || 0);
+        });
+        return total;
+    }
+
+    function openModal(m) {
+        selectedMonth = m;
+        var saved = state.savings[m] || 0;
+        document.getElementById('modalTitle').textContent = 'Month ' + (m+1) + ' — ' + MONTHS[m];
+        document.getElementById('modalSub').textContent = 'Target: ₹' + MONTHLY_TARGET.toLocaleString('en-IN');
+        document.getElementById('modalInput').value = saved || '';
+        document.getElementById('modal').classList.add('show');
+        setTimeout(function(){ document.getElementById('modalInput').focus(); }, 100);
+    }
+
+    window.closeModal = function() {
+        document.getElementById('modal').classList.remove('show');
+    };
+
+    window.saveMonth = function() {
+        var val = parseInt(document.getElementById('modalInput').value) || 0;
+        if (val < 0) val = 0;
+        if (val > 100000) val = 100000;
+        state.savings[selectedMonth] = val;
+        save();
+        renderMonths();
+        updateDashboard();
+        closeModal();
+        if (getTotalSaved() >= GOAL) showComplete();
+    };
+
+    function updateDashboard() {
+        var total = getTotalSaved();
+        var remaining = Math.max(0, GOAL - total);
+        var monthsDone = Object.keys(state.savings).filter(function(k){ return state.savings[k] > 0; }).length;
+        var streak = 0;
+        for (var i = 0; i < 12; i++) {
+            if (state.savings[i] && state.savings[i] > 0) streak++;
+            else break;
+        }
+
+        document.getElementById('dashSaved').textContent = '₹' + total.toLocaleString('en-IN');
+        document.getElementById('dashRemaining').textContent = '₹' + remaining.toLocaleString('en-IN');
+        document.getElementById('dashMonths').textContent = monthsDone;
+        document.getElementById('dashStreak').textContent = streak;
+
+        // Update ring
+        var pct = Math.min(100, Math.round((total / GOAL) * 100));
+        var circumference = 2 * Math.PI * 85; // ~534
+        var offset = circumference - (pct / 100) * circumference;
+        document.getElementById('ringFill').style.strokeDashoffset = offset;
+        document.getElementById('ringAmount').textContent = '₹' + total.toLocaleString('en-IN');
+        document.getElementById('ringPct').textContent = pct + '%';
+
+        // Update milestones
+        document.getElementById('ms25').className = 'tr-milestone' + (total >= 25000 ? ' achieved' : '');
+        document.getElementById('ms50').className = 'tr-milestone' + (total >= 50000 ? ' achieved' : '');
+        document.getElementById('ms75').className = 'tr-milestone' + (total >= 75000 ? ' achieved' : '');
+        document.getElementById('ms100').className = 'tr-milestone' + (total >= 100000 ? ' achieved' : '');
+    }
+
+    function showComplete() {
+        document.querySelector('.tr-dashboard').style.display = 'none';
+        document.querySelector('.tr-ring-wrap').style.display = 'none';
+        document.querySelector('.tr-milestones').style.display = 'none';
+        document.querySelector('.tr-months').style.display = 'none';
+        document.querySelector('.tr-tips').style.display = 'none';
+        document.querySelector('.tr-reset').style.display = 'none';
+        document.getElementById('trComplete').classList.add('show');
+        document.getElementById('trComplete').scrollIntoView({behavior:'smooth'});
+    }
+
+    function save() {
+        localStorage.setItem('optidrop_playbook_savings', JSON.stringify({
+            savings: state.savings,
+            currentMonth: state.currentMonth
+        }));
+    }
+
+    window.resetTracker = function() {
+        if (confirm('Reset all savings progress? This cannot be undone.')) {
+            state.savings = {};
+            state.currentMonth = 0;
+            save();
+            renderMonths();
+            updateDashboard();
+        }
+    };
+
+    window.sharePlaybook = function() {
+        var total = getTotalSaved();
+        var t = 'I\'ve saved ₹' + total.toLocaleString('en-IN') + ' toward my ₹1 lakh goal using this free savings tracker: https://optidrop.online/playbooks/save-1-lakh-12-months.html';
+        if (navigator.share) {
+            navigator.share({title:'Save ₹1 Lakh in 12 Months',text:t,url:'https://optidrop.online/playbooks/save-1-lakh-12-months.html'});
+        } else {
+            navigator.clipboard.writeText(t).then(function(){
+                if (typeof showToast === 'function') showToast('Link copied!','success');
+            });
+        }
+    };
+
+    // Handle Enter key in modal
+    document.getElementById('modalInput').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') saveMonth();
+        if (e.key === 'Escape') closeModal();
+    });
+
+    // Initialize
+    renderMonths();
+    updateDashboard();
+    </script>
+</body>
+</html>
