@@ -36,29 +36,26 @@
     <link rel="stylesheet" href="/styles.css?v=4.0">
     <style>
     /* LinkedIn Story Cards Styles */
-    .li-container{max-width:100%;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
-    .li-header{padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;background:#f8fafc;border-bottom:1px solid #e2e8f0}
+    .li-container{max-width:100%;margin:0 auto}
+    .li-inner-header{padding:0.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between;background:#f8fafc;border-bottom:1px solid #e2e8f0}
     .li-header-left{display:flex;align-items:center;gap:0.75rem}
     .li-logo{font-size:1.5rem;font-weight:800;color:#0a66c2}
     .li-header-title{font-size:0.85rem;font-weight:600;color:#334155}
     .li-header-right{font-size:0.72rem;color:#94a3b8;font-weight:500}
 
     /* Story Progress Bars */
-    .li-progress{display:flex;gap:4px;padding:0.75rem 1.5rem 0}
+    .li-progress{display:flex;gap:4px;padding:0.5rem 1.5rem 0.75rem;background:#f8fafc}
     .li-progress-bar{flex:1;height:3px;background:#e2e8f0;border-radius:99px;overflow:hidden}
     .li-progress-fill{height:100%;background:#0a66c2;border-radius:99px;transition:width 0.3s ease;width:0%}
     .li-progress-fill.done{width:100%}
     .li-progress-fill.current{width:50%}
 
     /* Story Viewport */
-    .li-viewport{flex:1;display:flex;align-items:center;justify-content:center;padding:1rem;position:relative;overflow:hidden}
+    .li-viewport{display:flex;align-items:center;justify-content:center;padding:1.5rem 1rem;position:relative;min-height:520px}
 
     /* Story Card */
-    .li-card{position:absolute;width:100%;max-width:480px;min-height:500px;background:#fff;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.08);overflow:hidden;display:flex;flex-direction:column;transition:transform 0.35s ease,opacity 0.35s ease;cursor:grab;user-select:none}
-    .li-card.active{transform:translateX(0);opacity:1;z-index:2}
-    .li-card.prev{transform:translateX(-110%);opacity:0;z-index:1}
-    .li-card.next{transform:translateX(110%);opacity:0;z-index:1}
-    .li-card.hidden{display:none}
+    .li-card{width:100%;max-width:480px;background:#fff;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.08);overflow:hidden;display:none;flex-direction:column;cursor:default;user-select:none;margin:0 auto}
+    .li-card.active{display:flex}
 
     /* Card Top Bar */
     .li-card-top{padding:1.25rem 1.5rem 0;display:flex;align-items:center;gap:0.75rem}
@@ -125,7 +122,7 @@
     .next-link{display:inline-block;color:#0a66c2;font-weight:600;font-size:0.9rem}
 
     /* Dark Mode */
-    .dark-mode .li-header{background:#1e293b;border-color:#334155}
+    .dark-mode .li-inner-header{background:#1e293b;border-color:#334155}
     .dark-mode .li-header-title{color:#e2e8f0}
     .dark-mode .li-header-right{color:#64748b}
     .dark-mode .li-progress-bar{background:#334155}
@@ -160,11 +157,10 @@
 
     /* Responsive */
     @media(min-width:900px){
-        .li-container{min-height:100vh}
-        .li-header{padding:1rem 2rem}
-        .li-progress{padding:0.75rem 2rem 0}
-        .li-viewport{padding:1.5rem 4rem}
-        .li-card{max-width:560px;min-height:600px;border-radius:24px}
+        .li-inner-header{padding:0.75rem 2rem}
+        .li-progress{padding:0.5rem 2rem 0.75rem}
+        .li-viewport{padding:2rem 4rem;min-height:600px}
+        .li-card{max-width:560px;border-radius:24px}
         .li-card-content{padding:2rem}
         .li-card-content h2{font-size:1.5rem}
         .li-card-body p{font-size:0.92rem}
@@ -173,29 +169,29 @@
         .li-nav.next{right:1rem}
     }
     @media(min-width:1200px){
-        .li-header{padding:1rem 3rem}
-        .li-progress{padding:0.75rem 3rem 0}
-        .li-viewport{padding:2rem 6rem}
-        .li-card{max-width:640px;min-height:650px}
+        .li-inner-header{padding:0.75rem 3rem}
+        .li-progress{padding:0.5rem 3rem 0.75rem}
+        .li-viewport{padding:2.5rem 6rem;min-height:650px}
+        .li-card{max-width:640px}
         .li-card-content{padding:2.5rem}
         .li-card-content h2{font-size:1.7rem}
     }
     @media(max-width:640px){
-        .li-header{padding:0.75rem 1rem}
+        .li-inner-header{padding:0.6rem 1rem}
         .li-logo{font-size:1.2rem}
         .li-header-title{font-size:0.75rem}
-        .li-progress{padding:0.5rem 1rem 0}
+        .li-progress{padding:0.4rem 1rem 0.5rem}
         .li-progress-bar{height:2px}
-        .li-viewport{padding:0.5rem}
-        .li-card{max-width:100%;min-height:auto;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.06)}
-        .li-card-top{padding:1rem 1.25rem 0}
+        .li-viewport{padding:0.75rem 0.5rem;min-height:auto}
+        .li-card{max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+        .li-card-top{padding:0.85rem 1rem 0}
         .li-card-step{width:32px;height:32px;font-size:0.75rem}
-        .li-card-content{padding:1rem 1.25rem}
-        .li-card-content h2{font-size:1.1rem}
-        .li-card-content .subtitle{font-size:0.78rem;margin-bottom:1rem}
-        .li-card-content .accent-line{margin-bottom:1rem}
-        .li-card-body p{font-size:0.82rem;margin-bottom:0.7rem}
-        .li-action{gap:0.5rem;padding:0.4rem 0}
+        .li-card-content{padding:0.85rem 1rem}
+        .li-card-content h2{font-size:1.05rem}
+        .li-card-content .subtitle{font-size:0.78rem;margin-bottom:0.85rem}
+        .li-card-content .accent-line{margin-bottom:0.85rem}
+        .li-card-body p{font-size:0.82rem;margin-bottom:0.65rem}
+        .li-action{gap:0.45rem;padding:0.35rem 0}
         .li-action-text{font-size:0.78rem}
         .li-pro{padding:0.55rem;font-size:0.72rem;border-radius:8px}
         .li-example{padding:0.6rem;border-radius:8px}
@@ -217,9 +213,11 @@
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
 <a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
-    <div class="li-container" id="main-content">
-        <!-- Header -->
-        <div class="li-header">
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+    <div class="li-container">
+        <!-- Inner Header -->
+        <div class="li-inner-header">
             <div class="li-header-left">
                 <span class="li-logo">in</span>
                 <span class="li-header-title">LinkedIn Brand Playbook</span>
@@ -627,6 +625,46 @@
         </div>
     </div>
 
+    <!-- SEO Content -->
+    <section class="max-w-3xl mx-auto px-4 py-8">
+        <div class="prose max-w-none">
+            <h2>How to Build a LinkedIn Brand from 0 to 10K Followers</h2>
+            <p>LinkedIn is the most powerful platform for professional growth. With 930+ million members, it's where careers are built, deals are made, and opportunities find you. Building a strong LinkedIn brand isn't optional anymore — it's essential.</p>
+            <h3>Why LinkedIn Over Other Platforms</h3>
+            <p>Unlike Instagram or TikTok, LinkedIn's audience is professionals with buying power and decision-making authority. A single viral LinkedIn post can generate more business value than months of content on other platforms. The organic reach is still massive — and it's free.</p>
+            <h3>The 10K Follower Milestone</h3>
+            <p>At 10K followers, LinkedIn's algorithm starts treating you as a creator. Your posts get more distribution, you unlock creator features, and opportunities start coming to you. The journey from 0 to 10K typically takes 6-12 months with consistent effort.</p>
+            <h3>What Actually Works</h3>
+            <p>After analyzing thousands of successful LinkedIn creators, the pattern is clear: optimize your profile, pick a niche, post consistently 3-4 times per week, engage authentically with others, and be patient. There are no shortcuts — but there is a clear playbook.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-3xl mx-auto px-4 py-8">
+        <h2 style="font-size:1.2rem;font-weight:800;color:#0f172a;margin-bottom:1rem;">Frequently Asked Questions</h2>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">How long does it take to reach 10K followers on LinkedIn?</summary>
+                <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">With consistent posting (3-4x/week) and active engagement, most people reach 10K in 6-12 months. The first 1K is the hardest — after that, growth accelerates.</p>
+            </details>
+            <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">Do I need to post every day?</summary>
+                <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">No. 3-4 quality posts per week beats daily mediocre posts. Focus on value, not volume. Consistency matters more than frequency.</p>
+            </details>
+            <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">What if my employer doesn't want me posting on LinkedIn?</summary>
+                <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Most employers encourage it — it's free brand awareness. Don't share confidential information, but sharing your professional expertise is generally welcomed. Check your company's social media policy first.</p>
+            </details>
+            <details style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:0.75rem 1rem;">
+                <summary style="font-weight:700;font-size:0.9rem;cursor:pointer;color:#0f172a;">Should I use LinkedIn Premium?</summary>
+                <p style="margin-top:0.5rem;font-size:0.85rem;color:#475569;line-height:1.6;">Not for brand building. Premium is useful for job seekers (InMail, applicant insights) but doesn't help with content or followers. Free LinkedIn is enough to build a 10K+ brand.</p>
+            </details>
+        </div>
+    </section>
+
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
     <script src="/common.js?v=4.0"></script>
     <script>
     var TOTAL_CARDS = 12;
@@ -693,10 +731,8 @@
         var cards = document.querySelectorAll('.li-card');
         cards.forEach(function(card) {
             var num = parseInt(card.dataset.card);
-            card.classList.remove('active','prev','next','hidden');
+            card.classList.remove('active');
             if (num === currentCard) card.classList.add('active');
-            else if (num < currentCard) card.classList.add('prev');
-            else card.classList.add('next');
         });
 
         // Update progress bars
