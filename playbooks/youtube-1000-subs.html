@@ -37,89 +37,91 @@
     <link rel="stylesheet" href="/styles.css?v=4.0">
     <style>
     /* Quest Map Styles */
-    .qm-container{max-width:720px;margin:0 auto;padding:1rem}
-    .qm-hero{text-align:center;padding:2rem 1rem 1rem}
-    .qm-badge{display:inline-block;padding:0.3rem 0.9rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);color:#e91e63;font-size:0.75rem;font-weight:700;border-radius:9999px;margin-bottom:1rem;letter-spacing:0.02em}
-    .qm-hero h1{font-size:1.6rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;line-height:1.25}
+    .qm-container{max-width:780px;margin:0 auto;padding:1rem 1.25rem}
+    .qm-hero{text-align:center;padding:2.5rem 1rem 1.5rem}
+    .qm-badge{display:inline-block;padding:0.35rem 1rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);color:#e91e63;font-size:0.75rem;font-weight:700;border-radius:9999px;margin-bottom:1rem;letter-spacing:0.02em}
+    .qm-hero h1{font-size:1.75rem;font-weight:800;color:#0f172a;margin-bottom:0.6rem;line-height:1.2}
     .qm-hero h1 .accent{background:linear-gradient(135deg,#e91e63,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .qm-hero .sub{font-size:0.95rem;color:#64748b;line-height:1.6;max-width:500px;margin:0 auto}
-    .qm-meta{display:flex;justify-content:center;gap:1.2rem;margin-top:1.2rem;font-size:0.78rem;color:#94a3b8;flex-wrap:wrap}
-    .qm-meta span{display:flex;align-items:center;gap:0.3rem}
+    .qm-hero .sub{font-size:1rem;color:#64748b;line-height:1.6;max-width:520px;margin:0 auto}
+    .qm-meta{display:flex;justify-content:center;gap:1.5rem;margin-top:1.3rem;font-size:0.8rem;color:#94a3b8;flex-wrap:wrap}
+    .qm-meta span{display:flex;align-items:center;gap:0.35rem}
 
     /* Stats Strip */
-    .qm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;max-width:480px;margin:1.5rem auto;padding:0 1rem}
-    .qm-stat{text-align:center;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1rem 0.5rem}
-    .qm-stat .num{font-size:1.4rem;font-weight:800;color:#e91e63}
-    .qm-stat .label{font-size:0.7rem;color:#94a3b8;margin-top:0.2rem}
+    .qm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;max-width:500px;margin:1.5rem auto;padding:0 1rem}
+    .qm-stat{text-align:center;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1.1rem 0.5rem}
+    .qm-stat .num{font-size:1.5rem;font-weight:800;color:#e91e63}
+    .qm-stat .label{font-size:0.72rem;color:#94a3b8;margin-top:0.25rem;font-weight:500}
 
     /* Quest Map Path */
-    .qm-map{position:relative;padding:1rem 0 2rem;max-width:560px;margin:0 auto}
+    .qm-map{position:relative;padding:1rem 0 2rem;max-width:600px;margin:0 auto}
 
-    /* Quest Node */
+    /* Quest Node — on desktop, alternate left/right */
     .qm-node{position:relative;display:flex;align-items:flex-start;gap:1rem;margin-bottom:0.5rem;cursor:pointer}
     .qm-node:nth-child(odd){flex-direction:row}
     .qm-node:nth-child(even){flex-direction:row-reverse}
     .qm-node:nth-child(even) .qm-card{margin-left:auto}
 
     /* Quest Dot on Path */
-    .qm-dot-col{display:flex;flex-direction:column;align-items:center;width:48px;flex-shrink:0;position:relative}
-    .qm-dot{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;background:#f1f5f9;color:#94a3b8;border:3px solid #e2e8f0;transition:all 0.3s ease;position:relative;z-index:2}
+    .qm-dot-col{display:flex;flex-direction:column;align-items:center;width:52px;flex-shrink:0;position:relative}
+    .qm-dot{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:800;background:#f1f5f9;color:#94a3b8;border:3px solid #e2e8f0;transition:all 0.3s ease;position:relative;z-index:2}
     .qm-node.completed .qm-dot{background:#10b981;color:#fff;border-color:#10b981;box-shadow:0 0 0 4px rgba(16,185,129,0.15)}
     .qm-node.active .qm-dot{background:#e91e63;color:#fff;border-color:#e91e63;box-shadow:0 0 0 4px rgba(233,30,99,0.15);animation:qm-pulse 2s infinite}
-    .qm-connector{width:3px;height:24px;background:#e2e8f0;flex-shrink:0}
+    .qm-connector{width:3px;height:28px;background:#e2e8f0;flex-shrink:0}
     .qm-node.completed .qm-connector{background:#10b981}
     .qm-node:last-child .qm-connector{display:none}
 
     /* Quest Card */
-    .qm-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;transition:all 0.3s ease;flex:1;max-width:calc(100% - 64px)}
-    .qm-node.active .qm-card{border-color:#f9a8d4;box-shadow:0 0 0 1px #f9a8d4}
+    .qm-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;transition:all 0.3s ease;flex:1;max-width:calc(100% - 68px)}
+    .qm-node.active .qm-card{border-color:#f9a8d4;box-shadow:0 4px 16px rgba(233,30,99,0.08)}
     .qm-node.completed .qm-card{border-color:#d1fae5;opacity:0.7}
-    .qm-card-head{display:flex;align-items:center;gap:0.6rem;padding:0.85rem 1rem;cursor:pointer}
+    .qm-card-head{display:flex;align-items:center;gap:0.7rem;padding:1rem 1.1rem;cursor:pointer;-webkit-tap-highlight-color:transparent}
     .qm-card-title{flex:1}
-    .qm-card-title h3{font-size:0.95rem;font-weight:700;color:#0f172a;margin:0}
-    .qm-card-title .tag{font-size:0.65rem;font-weight:600;padding:0.15rem 0.5rem;border-radius:9999px;display:inline-block;margin-top:0.2rem}
+    .qm-card-title h3{font-size:1rem;font-weight:700;color:#0f172a;margin:0}
+    .qm-card-title .tag{font-size:0.65rem;font-weight:600;padding:0.18rem 0.55rem;border-radius:9999px;display:inline-block;margin-top:0.25rem}
     .qm-card-title .tag.active{background:#fdf2f8;color:#e91e63}
     .qm-card-title .tag.done{background:#ecfdf5;color:#059669}
     .qm-card-title .tag.available{background:#f1f5f9;color:#64748b}
     .qm-card-chevron{font-size:1rem;color:#94a3b8;transition:transform 0.3s ease;flex-shrink:0}
     .qm-node.open .qm-card-chevron{transform:rotate(180deg)}
-    .qm-card-body{padding:0 1rem 1rem;display:none}
+    .qm-card-body{padding:0 1.1rem 1.1rem;display:none}
     .qm-node.open .qm-card-body{display:block}
-    .qm-card-body p{color:#475569;line-height:1.7;margin-bottom:0.8rem;font-size:0.85rem}
+    .qm-card-body p{color:#475569;line-height:1.75;margin-bottom:0.85rem;font-size:0.88rem}
     .qm-card-body p strong{color:#0f172a}
-    .qm-card-body ul{margin:0 0 0.8rem 1.2rem;padding:0}
-    .qm-card-body li{color:#475569;font-size:0.85rem;line-height:1.6;margin-bottom:0.3rem}
+    .qm-card-body ul{margin:0 0 0.85rem 1.3rem;padding:0}
+    .qm-card-body li{color:#475569;font-size:0.88rem;line-height:1.65;margin-bottom:0.35rem}
     .qm-card-body li strong{color:#0f172a}
 
     /* Milestone Badge inside cards */
-    .qm-milestone{display:flex;align-items:center;gap:0.5rem;padding:0.6rem 0.8rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);border-radius:10px;margin-bottom:0.8rem;font-size:0.8rem;font-weight:600;color:#be185b}
-    .qm-milestone .icon{font-size:1.1rem}
+    .qm-milestone{display:flex;align-items:center;gap:0.6rem;padding:0.7rem 0.9rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);border-radius:12px;margin-bottom:0.9rem;font-size:0.82rem;font-weight:600;color:#be185b}
+    .qm-milestone .icon{font-size:1.15rem}
 
     /* Tip Box */
-    .qm-tip{display:flex;gap:0.5rem;padding:0.7rem;background:#f8fafc;border-radius:10px;margin-bottom:0.8rem;font-size:0.78rem;color:#64748b;border-left:3px solid #e91e63}
-    .qm-tip .icon{font-size:0.95rem;flex-shrink:0}
+    .qm-tip{display:flex;gap:0.6rem;padding:0.75rem;background:#f8fafc;border-radius:12px;margin-bottom:0.9rem;font-size:0.8rem;color:#64748b;border-left:3px solid #e91e63}
+    .qm-tip .icon{font-size:1rem;flex-shrink:0}
     .qm-tip.gold{background:#fffbeb;border-color:#f59e0b}
 
     /* Action Button */
-    .qm-btn{display:block;width:100%;padding:0.75rem;border:none;border-radius:10px;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all 0.2s ease;margin-top:0.5rem}
+    .qm-btn{display:block;width:100%;padding:0.8rem;border:none;border-radius:12px;font-size:0.9rem;font-weight:700;cursor:pointer;transition:all 0.2s ease;margin-top:0.6rem;-webkit-tap-highlight-color:transparent}
     .qm-btn.primary{background:#10b981;color:#fff}
-    .qm-btn.primary:hover{background:#059669}
+    .qm-btn.primary:hover{background:#059669;transform:translateY(-1px)}
+    .qm-btn.primary:active{transform:translateY(0)}
 
     /* Completion */
-    .qm-complete{text-align:center;padding:2rem 1rem;display:none}
+    .qm-complete{text-align:center;padding:2.5rem 1rem;display:none}
     .qm-complete.show{display:block}
-    .done-card{background:#fff;border:2px solid #10b981;border-radius:16px;padding:2rem 1.5rem}
-    .done-icon{font-size:3rem;display:block;margin-bottom:1rem}
-    .done-card h2{font-size:1.4rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem}
-    .done-card .sub{color:#64748b;font-size:0.9rem;margin-bottom:1.5rem;line-height:1.6}
-    .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;background:#25d366;color:#fff;border:none;border-radius:12px;font-weight:700;cursor:pointer;margin-bottom:1rem;font-size:0.9rem}
-    .next-link{display:inline-block;color:#e91e63;font-weight:600;font-size:0.9rem}
+    .done-card{background:#fff;border:2px solid #10b981;border-radius:18px;padding:2.5rem 2rem}
+    .done-icon{font-size:3.5rem;display:block;margin-bottom:1rem}
+    .done-card h2{font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.6rem}
+    .done-card .sub{color:#64748b;font-size:0.95rem;margin-bottom:1.5rem;line-height:1.65}
+    .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.75rem;background:#25d366;color:#fff;border:none;border-radius:14px;font-weight:700;cursor:pointer;margin-bottom:1rem;font-size:0.95rem;-webkit-tap-highlight-color:transparent}
+    .share-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,211,102,0.3)}
+    .next-link{display:inline-block;color:#e91e63;font-weight:600;font-size:0.95rem}
 
     /* Progress Bar */
-    .qm-progress{max-width:480px;margin:0 auto 1.5rem;padding:0 1rem}
-    .qm-progress-bar{height:8px;background:#f1f5f9;border-radius:99px;overflow:hidden}
+    .qm-progress{max-width:500px;margin:0 auto 1.5rem;padding:0 1rem}
+    .qm-progress-bar{height:10px;background:#f1f5f9;border-radius:99px;overflow:hidden}
     .qm-progress-fill{height:100%;background:linear-gradient(90deg,#e91e63,#ec4899);border-radius:99px;transition:width 0.5s ease;width:0%}
-    .qm-progress-label{display:flex;justify-content:space-between;margin-top:0.4rem;font-size:0.7rem;color:#94a3b8}
+    .qm-progress-label{display:flex;justify-content:space-between;margin-top:0.5rem;font-size:0.72rem;color:#94a3b8;font-weight:500}
 
     /* Dark Mode */
     .dark-mode .qm-hero h1{color:#f1f5f9}
@@ -155,17 +157,67 @@
     .dark-mode .done-card h2{color:#f1f5f9}
     .dark-mode .done-card .sub{color:#94a3b8}
 
+    /* Desktop (900px+) — more breathing room */
+    @media(min-width:900px){
+        .qm-container{padding:1.5rem 2rem}
+        .qm-hero{padding:3rem 1rem 2rem}
+        .qm-hero h1{font-size:2rem}
+        .qm-hero .sub{font-size:1.05rem}
+        .qm-map{max-width:650px}
+        .qm-card-body p,.qm-card-body li{font-size:0.9rem}
+    }
+
+    /* Tablet (641px-899px) */
+    @media(min-width:641px) and (max-width:899px){
+        .qm-container{padding:1rem 1.5rem}
+        .qm-hero h1{font-size:1.65rem}
+    }
+
+    /* Mobile (640px and below) */
     @media(max-width:640px){
-        .qm-hero h1{font-size:1.35rem}
-        .qm-stats{grid-template-columns:repeat(3,1fr);gap:0.5rem}
-        .qm-stat{padding:0.75rem 0.25rem}
-        .qm-stat .num{font-size:1.1rem}
-        .qm-node{gap:0.6rem}
-        .qm-dot-col{width:40px}
-        .qm-dot{width:36px;height:36px;font-size:1rem}
-        .qm-card{max-width:calc(100% - 52px)}
-        .qm-card-head{padding:0.7rem 0.85rem}
-        .qm-card-body{padding:0 0.85rem 0.85rem}
+        .qm-container{padding:0.75rem 0.85rem}
+        .qm-hero{padding:1.5rem 0.5rem 1rem}
+        .qm-hero h1{font-size:1.3rem;line-height:1.3}
+        .qm-hero .sub{font-size:0.88rem}
+        .qm-meta{gap:0.9rem;font-size:0.72rem}
+        .qm-stats{gap:0.5rem;padding:0 0.5rem}
+        .qm-stat{padding:0.75rem 0.3rem;border-radius:10px}
+        .qm-stat .num{font-size:1.15rem}
+        .qm-stat .label{font-size:0.65rem}
+        .qm-map{max-width:100%;padding:0.5rem 0 1.5rem}
+        .qm-node{gap:0.5rem}
+        .qm-dot-col{width:38px}
+        .qm-dot{width:34px;height:34px;font-size:0.9rem}
+        .qm-connector{height:20px}
+        .qm-card{max-width:calc(100% - 48px);border-radius:12px}
+        .qm-card-head{padding:0.7rem 0.8rem;gap:0.5rem}
+        .qm-card-title h3{font-size:0.88rem}
+        .qm-card-body{padding:0 0.8rem 0.85rem}
+        .qm-card-body p{font-size:0.82rem;margin-bottom:0.7rem}
+        .qm-card-body ul{margin:0 0 0.7rem 1.1rem}
+        .qm-card-body li{font-size:0.82rem;margin-bottom:0.25rem}
+        .qm-milestone{padding:0.55rem 0.7rem;font-size:0.75rem;border-radius:8px}
+        .qm-tip{padding:0.6rem;font-size:0.72rem;border-radius:8px}
+        .qm-btn{padding:0.7rem;font-size:0.82rem;border-radius:10px}
+        .qm-progress{padding:0 0.5rem}
+        .qm-progress-bar{height:8px}
+        .done-card{padding:1.5rem 1.25rem;border-radius:14px}
+        .done-icon{font-size:2.5rem}
+        .done-card h2{font-size:1.25rem}
+        .done-card .sub{font-size:0.85rem}
+        .share-btn{padding:0.7rem 1.25rem;font-size:0.85rem;border-radius:12px}
+    }
+
+    /* Small Mobile (380px and below) */
+    @media(max-width:380px){
+        .qm-hero h1{font-size:1.15rem}
+        .qm-meta{gap:0.6rem;font-size:0.68rem}
+        .qm-stat .num{font-size:1rem}
+        .qm-dot-col{width:32px}
+        .qm-dot{width:28px;height:28px;font-size:0.8rem}
+        .qm-card{max-width:calc(100% - 40px)}
+        .qm-card-head{padding:0.6rem 0.7rem}
+        .qm-card-title h3{font-size:0.82rem}
     }
     @keyframes qm-pulse{0%,100%{box-shadow:0 0 0 4px rgba(233,30,99,0.15)}50%{box-shadow:0 0 0 8px rgba(233,30,99,0.08)}}
     </style>

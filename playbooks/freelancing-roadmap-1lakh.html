@@ -38,88 +38,90 @@
     <link rel="stylesheet" href="/styles.css?v=4.0">
     <style>
     /* Roadmap Playbook Styles */
-    .rm-container{max-width:700px;margin:0 auto;padding:1rem}
-    .rm-hero{text-align:center;padding:2rem 1rem 1.5rem}
-    .rm-badge{display:inline-block;padding:0.3rem 0.9rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);color:#e91e63;font-size:0.75rem;font-weight:700;border-radius:9999px;margin-bottom:1rem;letter-spacing:0.02em}
-    .rm-hero h1{font-size:1.6rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;line-height:1.25}
+    .rm-container{max-width:760px;margin:0 auto;padding:1rem 1.25rem}
+    .rm-hero{text-align:center;padding:2.5rem 1rem 1.5rem}
+    .rm-badge{display:inline-block;padding:0.35rem 1rem;background:linear-gradient(135deg,#fdf2f8,#fce7f3);color:#e91e63;font-size:0.75rem;font-weight:700;border-radius:9999px;margin-bottom:1rem;letter-spacing:0.02em}
+    .rm-hero h1{font-size:1.75rem;font-weight:800;color:#0f172a;margin-bottom:0.6rem;line-height:1.2}
     .rm-hero h1 .accent{background:linear-gradient(135deg,#e91e63,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .rm-hero .sub{font-size:0.95rem;color:#64748b;line-height:1.6;max-width:480px;margin:0 auto}
-    .rm-meta{display:flex;justify-content:center;gap:1.2rem;margin-top:1.2rem;font-size:0.78rem;color:#94a3b8;flex-wrap:wrap}
-    .rm-meta span{display:flex;align-items:center;gap:0.3rem}
+    .rm-hero .sub{font-size:1rem;color:#64748b;line-height:1.6;max-width:520px;margin:0 auto}
+    .rm-meta{display:flex;justify-content:center;gap:1.5rem;margin-top:1.3rem;font-size:0.8rem;color:#94a3b8;flex-wrap:wrap}
+    .rm-meta span{display:flex;align-items:center;gap:0.35rem}
 
     /* Income Tracker Bar */
-    .rm-income-bar{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:1.25rem;margin:0 1rem 1.5rem;max-width:680px;margin-left:auto;margin-right:auto}
+    .rm-income-bar{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:1.25rem;margin:0 1rem 1.5rem;max-width:720px;margin-left:auto;margin-right:auto}
     .rm-income-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem}
-    .rm-income-header .label{font-size:0.8rem;font-weight:600;color:#64748b}
-    .rm-income-header .amount{font-size:1.1rem;font-weight:800;color:#e91e63}
+    .rm-income-header .label{font-size:0.82rem;font-weight:600;color:#64748b}
+    .rm-income-header .amount{font-size:1.15rem;font-weight:800;color:#e91e63}
     .rm-income-track{height:10px;background:#f1f5f9;border-radius:99px;overflow:hidden;position:relative}
     .rm-income-fill{height:100%;background:linear-gradient(90deg,#10b981,#059669);border-radius:99px;transition:width 0.6s ease;width:0%}
-    .rm-income-labels{display:flex;justify-content:space-between;margin-top:0.4rem;font-size:0.65rem;color:#94a3b8}
+    .rm-income-labels{display:flex;justify-content:space-between;margin-top:0.5rem;font-size:0.68rem;color:#94a3b8;font-weight:500}
 
     /* Timeline */
     .rm-timeline{position:relative;padding:0 1rem 2rem}
     .rm-timeline::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:3px;background:#e2e8f0;border-radius:2px}
     .rm-phase{margin-bottom:0.5rem}
     .rm-phase-label{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;padding:0.5rem 0}
-    .rm-phase-dot{width:20px;height:20px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;background:#e2e8f0;color:#94a3b8;border:3px solid #f8fafc;position:relative;z-index:1}
+    .rm-phase-dot{width:22px;height:22px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;background:#e2e8f0;color:#94a3b8;border:3px solid #f8fafc;position:relative;z-index:1}
     .rm-phase.active .rm-phase-dot{background:#e91e63;color:#fff;box-shadow:0 0 0 4px rgba(233,30,99,0.15)}
     .rm-phase.done .rm-phase-dot{background:#10b981;color:#fff}
-    .rm-phase-text{font-size:0.85rem;font-weight:700;color:#0f172a}
-    .rm-phase-income{font-size:0.7rem;font-weight:600;color:#94a3b8;margin-left:auto}
+    .rm-phase-text{font-size:0.88rem;font-weight:700;color:#0f172a}
+    .rm-phase-income{font-size:0.72rem;font-weight:600;color:#94a3b8;margin-left:auto}
 
     /* Step Cards */
-    .rm-step{background:#fff;border:1px solid #e2e8f0;border-radius:14px;margin-bottom:0.6rem;margin-left:40px;overflow:hidden;transition:all 0.3s ease}
-    .rm-step.active{border-color:#f9a8d4;box-shadow:0 0 0 1px #f9a8d4}
+    .rm-step{background:#fff;border:1px solid #e2e8f0;border-radius:16px;margin-bottom:0.65rem;margin-left:44px;overflow:hidden;transition:all 0.3s ease}
+    .rm-step.active{border-color:#f9a8d4;box-shadow:0 4px 16px rgba(233,30,99,0.08)}
     .rm-step.done{opacity:0.55;border-color:#d1fae5}
     .rm-step.locked{opacity:0.35;pointer-events:none}
-    .rm-step-header{display:flex;align-items:center;gap:0.6rem;padding:0.85rem 1rem;cursor:pointer}
-    .rm-step-num{width:28px;height:28px;border-radius:50%;background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;color:#64748b;flex-shrink:0}
+    .rm-step-header{display:flex;align-items:center;gap:0.7rem;padding:1rem 1.1rem;cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .rm-step-num{width:30px;height:30px;border-radius:50%;background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.78rem;color:#64748b;flex-shrink:0}
     .rm-step.active .rm-step-num{background:#e91e63;color:#fff}
     .rm-step.done .rm-step-num{background:#10b981;color:#fff}
     .rm-step-title{flex:1}
-    .rm-step-title h3{font-size:0.9rem;font-weight:700;color:#0f172a;margin:0}
-    .rm-step-title .tag{font-size:0.65rem;font-weight:600;padding:0.15rem 0.5rem;border-radius:9999px;display:inline-block;margin-top:0.2rem}
+    .rm-step-title h3{font-size:0.95rem;font-weight:700;color:#0f172a;margin:0}
+    .rm-step-title .tag{font-size:0.65rem;font-weight:600;padding:0.18rem 0.55rem;border-radius:9999px;display:inline-block;margin-top:0.25rem}
     .rm-step-title .tag.active{background:#fdf2f8;color:#e91e63}
     .rm-step-title .tag.done{background:#ecfdf5;color:#059669}
     .rm-step-title .tag.locked{background:#f1f5f9;color:#94a3b8}
-    .rm-step-body{padding:0 1rem 1rem;display:none}
+    .rm-step-body{padding:0 1.1rem 1.1rem;display:none}
     .rm-step.open .rm-step-body{display:block}
-    .rm-step-body p{color:#475569;line-height:1.7;margin-bottom:0.85rem;font-size:0.85rem}
+    .rm-step-body p{color:#475569;line-height:1.75;margin-bottom:0.85rem;font-size:0.88rem}
     .rm-step-body p strong{color:#0f172a}
 
     /* Tip Box */
-    .rm-tip{display:flex;gap:0.5rem;padding:0.7rem;background:#f8fafc;border-radius:10px;margin-bottom:1rem;font-size:0.78rem;color:#64748b;border-left:3px solid #e91e63}
-    .rm-tip .icon{font-size:0.95rem;flex-shrink:0}
+    .rm-tip{display:flex;gap:0.6rem;padding:0.75rem;background:#f8fafc;border-radius:12px;margin-bottom:1rem;font-size:0.8rem;color:#64748b;border-left:3px solid #e91e63}
+    .rm-tip .icon{font-size:1rem;flex-shrink:0}
     .rm-tip.gold{background:#fffbeb;border-color:#f59e0b}
 
     /* Tool Link */
-    .tool-link{display:flex;align-items:center;gap:0.6rem;padding:0.75rem 0.85rem;background:#fdf2f8;border:2px solid #f9a8d4;border-radius:10px;text-decoration:none;margin-bottom:0.85rem;transition:all 0.2s ease}
+    .tool-link{display:flex;align-items:center;gap:0.7rem;padding:0.8rem 0.9rem;background:#fdf2f8;border:2px solid #f9a8d4;border-radius:12px;text-decoration:none;margin-bottom:0.85rem;transition:all 0.2s ease;-webkit-tap-highlight-color:transparent}
     .tool-link:hover{background:#fce7f3;transform:translateY(-1px);box-shadow:0 4px 12px rgba(233,30,99,0.1)}
-    .tool-link .icon{font-size:1.1rem}
-    .tool-link .name{flex:1;font-weight:700;color:#0f172a;font-size:0.85rem}
-    .tool-link .arrow{font-size:0.9rem;color:#e91e63}
+    .tool-link .icon{font-size:1.15rem}
+    .tool-link .name{flex:1;font-weight:700;color:#0f172a;font-size:0.88rem}
+    .tool-link .arrow{font-size:0.95rem;color:#e91e63}
 
     /* Action Buttons */
-    .action-btn{display:block;width:100%;padding:0.8rem;border:none;border-radius:10px;font-size:0.9rem;font-weight:700;cursor:pointer;transition:all 0.2s ease;margin-bottom:0.4rem}
+    .action-btn{display:block;width:100%;padding:0.85rem;border:none;border-radius:12px;font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.2s ease;margin-bottom:0.4rem;-webkit-tap-highlight-color:transparent}
     .action-btn.primary{background:#10b981;color:#fff}
-    .action-btn.primary:hover{background:#059669}
-    .action-btn.secondary{background:none;color:#94a3b8;font-size:0.78rem;text-decoration:underline}
+    .action-btn.primary:hover{background:#059669;transform:translateY(-1px)}
+    .action-btn.primary:active{transform:translateY(0)}
+    .action-btn.secondary{background:none;color:#94a3b8;font-size:0.8rem;text-decoration:underline}
 
     /* Checklist inside steps */
     .rm-checklist{list-style:none;padding:0;margin:0 0 1rem}
-    .rm-checklist li{display:flex;align-items:flex-start;gap:0.5rem;padding:0.4rem 0;font-size:0.85rem;color:#475569}
-    .rm-checklist li::before{content:'☐';flex-shrink:0;color:#cbd5e1;font-size:1rem}
+    .rm-checklist li{display:flex;align-items:flex-start;gap:0.55rem;padding:0.4rem 0;font-size:0.88rem;color:#475569;line-height:1.6}
+    .rm-checklist li::before{content:'☐';flex-shrink:0;color:#cbd5e1;font-size:1.05rem}
     .rm-checklist li.checked::before{content:'☑';color:#10b981}
 
     /* Completion */
-    .rm-complete{text-align:center;padding:2rem 1rem;display:none}
+    .rm-complete{text-align:center;padding:2.5rem 1rem;display:none}
     .rm-complete.show{display:block}
-    .done-card{background:#fff;border:2px solid #10b981;border-radius:16px;padding:2rem 1.5rem}
-    .done-icon{font-size:3rem;display:block;margin-bottom:1rem}
-    .done-card h2{font-size:1.4rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem}
-    .done-card .sub{color:#64748b;font-size:0.9rem;margin-bottom:1.5rem;line-height:1.6}
-    .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;background:#25d366;color:#fff;border:none;border-radius:12px;font-weight:700;cursor:pointer;margin-bottom:1rem;font-size:0.9rem}
-    .next-link{display:inline-block;color:#e91e63;font-weight:600;font-size:0.9rem}
+    .done-card{background:#fff;border:2px solid #10b981;border-radius:18px;padding:2.5rem 2rem}
+    .done-icon{font-size:3.5rem;display:block;margin-bottom:1rem}
+    .done-card h2{font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.6rem}
+    .done-card .sub{color:#64748b;font-size:0.95rem;margin-bottom:1.5rem;line-height:1.65}
+    .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.75rem;background:#25d366;color:#fff;border:none;border-radius:14px;font-weight:700;cursor:pointer;margin-bottom:1rem;font-size:0.95rem;-webkit-tap-highlight-color:transparent}
+    .share-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,211,102,0.3)}
+    .next-link{display:inline-block;color:#e91e63;font-weight:600;font-size:0.95rem}
 
     /* Dark Mode */
     .dark-mode .rm-hero h1{color:#f1f5f9}
@@ -163,15 +165,69 @@
     .dark-mode .done-card h2{color:#f1f5f9}
     .dark-mode .done-card .sub{color:#94a3b8}
 
+    /* Desktop (900px+) */
+    @media(min-width:900px){
+        .rm-container{padding:1.5rem 2rem}
+        .rm-hero{padding:3rem 1rem 2rem}
+        .rm-hero h1{font-size:2rem}
+        .rm-hero .sub{font-size:1.05rem}
+        .rm-income-bar{padding:1.4rem}
+        .rm-step-body p,.rm-step-body li,.rm-checklist li{font-size:0.9rem}
+    }
+
+    /* Tablet (641px-899px) */
+    @media(min-width:641px) and (max-width:899px){
+        .rm-container{padding:1rem 1.5rem}
+        .rm-hero h1{font-size:1.65rem}
+    }
+
+    /* Mobile (640px and below) */
     @media(max-width:640px){
-        .rm-hero h1{font-size:1.35rem}
-        .rm-meta{gap:0.8rem}
-        .rm-timeline::before{left:22px}
-        .rm-step{margin-left:32px}
-        .rm-phase-dot{width:16px;height:16px;font-size:0.55rem}
-        .rm-step-header{padding:0.7rem 0.85rem}
-        .rm-step-body{padding:0 0.85rem 0.85rem}
-        .rm-income-bar{margin:0 0.5rem 1rem;padding:1rem}
+        .rm-container{padding:0.75rem 0.85rem}
+        .rm-hero{padding:1.5rem 0.5rem 1rem}
+        .rm-hero h1{font-size:1.3rem;line-height:1.3}
+        .rm-hero .sub{font-size:0.88rem}
+        .rm-meta{gap:0.9rem;font-size:0.72rem}
+        .rm-income-bar{margin:0 0.25rem 1rem;padding:1rem;border-radius:12px}
+        .rm-income-header .label{font-size:0.75rem}
+        .rm-income-header .amount{font-size:1rem}
+        .rm-income-track{height:8px}
+        .rm-income-labels{font-size:0.6rem}
+        .rm-timeline{padding:0 0.5rem 1.5rem}
+        .rm-timeline::before{left:18px}
+        .rm-phase-dot{width:16px;height:16px;font-size:0.5rem}
+        .rm-phase-label{gap:0.5rem}
+        .rm-phase-text{font-size:0.78rem}
+        .rm-phase-income{font-size:0.62rem}
+        .rm-step{margin-left:30px;border-radius:12px}
+        .rm-step-header{padding:0.7rem 0.8rem;gap:0.5rem}
+        .rm-step-num{width:26px;height:26px;font-size:0.7rem}
+        .rm-step-title h3{font-size:0.85rem}
+        .rm-step-body{padding:0 0.8rem 0.85rem}
+        .rm-step-body p{font-size:0.82rem;margin-bottom:0.7rem}
+        .rm-checklist li{font-size:0.82rem;gap:0.4rem}
+        .rm-tip{padding:0.6rem;font-size:0.72rem;border-radius:8px}
+        .tool-link{padding:0.65rem 0.75rem;border-radius:10px}
+        .tool-link .name{font-size:0.82rem}
+        .action-btn{padding:0.7rem;font-size:0.85rem;border-radius:10px}
+        .action-btn.secondary{font-size:0.72rem}
+        .done-card{padding:1.5rem 1.25rem;border-radius:14px}
+        .done-icon{font-size:2.5rem}
+        .done-card h2{font-size:1.25rem}
+        .done-card .sub{font-size:0.85rem}
+        .share-btn{padding:0.7rem 1.25rem;font-size:0.85rem;border-radius:12px}
+    }
+
+    /* Small Mobile (380px and below) */
+    @media(max-width:380px){
+        .rm-hero h1{font-size:1.15rem}
+        .rm-meta{gap:0.6rem;font-size:0.68rem}
+        .rm-income-header .amount{font-size:0.9rem}
+        .rm-timeline::before{left:14px}
+        .rm-step{margin-left:24px}
+        .rm-phase-dot{width:14px;height:14px;font-size:0.45rem}
+        .rm-step-num{width:22px;height:22px;font-size:0.65rem}
+        .rm-step-title h3{font-size:0.8rem}
     }
     @keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(233,30,99,0.15)}50%{box-shadow:0 0 0 8px rgba(233,30,99,0.08)}}
     </style>
