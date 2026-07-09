@@ -76,7 +76,9 @@
     .ck-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;transition:all 0.3s ease}
     .ck-phase[data-state="active"] .ck-card{border-color:#f9a8d4;box-shadow:0 4px 16px rgba(233,30,99,0.06)}
     .ck-phase[data-state="done"] .ck-card{border-color:#d1fae5;opacity:0.7}
-    .ck-phase[data-state="locked"] .ck-card{opacity:0.35;pointer-events:none}
+    .ck-phase[data-state="locked"] .ck-card{opacity:0.4}
+    .ck-phase[data-state="locked"] .ck-item{pointer-events:none}
+    .ck-phase[data-state="locked"] .ck-tip{pointer-events:none}
     .ck-card-body{padding:1rem 1.1rem}
 
     /* Checklist Items */
@@ -125,6 +127,8 @@
     .dark-mode .ck-card{background:#272a33;border-color:#3d4455}
     .dark-mode .ck-phase[data-state="active"] .ck-card{border-color:#f472b6;box-shadow:0 4px 16px rgba(233,30,99,0.1)}
     .dark-mode .ck-phase[data-state="done"] .ck-card{border-color:#064e3b}
+    .dark-mode .ck-phase[data-state="locked"] .ck-item{pointer-events:none}
+    .dark-mode .ck-phase[data-state="locked"] .ck-tip{pointer-events:none}
     .dark-mode .ck-item{border-color:#3d4455}
     .dark-mode .ck-check{border-color:#64748b}
     .dark-mode .ck-item.checked .ck-check{background:#10b981;border-color:#10b981}
@@ -197,7 +201,7 @@
             <!-- Hero -->
             <header class="ck-hero">
                 <span class="ck-badge">📋 CHECKLIST PLAYBOOK</span>
-                <h1>Start an Online Store<br><span class="accent">Zero to First Sale</span></h1>
+                <h1>Start an Online Store <span class="accent">Zero to First Sale</span></h1>
                 <p class="sub">8 phases. Every step checked off. This is the complete checklist to launch your store and get that first sale.</p>
                 <div class="ck-meta">
                     <span>📋 8 Phases</span>
@@ -744,20 +748,30 @@
         if (s) {
             var d = JSON.parse(s);
             state.checked = new Set(d.checked || []);
-            state.checked.forEach(function(id){ markChecked(id, false); });
-            updateAllPhases();
-            updateProgress();
+            state.checked.forEach(function(id){ markChecked(id); });
         }
     } catch(e){}
 
+    // Initialize all phases on load
+    unlockPhases();
+    updateAllPhases();
+    updateProgress();
+
     window.togglePhase = function(p) {
         var el = document.querySelector('.ck-phase[data-phase="'+p+'"]');
-        if (el && el.dataset.state !== 'locked') {
-            el.querySelector('.ck-card').style.display = el.querySelector('.ck-card').style.display === 'none' ? '' : 'none';
+        if (!el) return;
+        var card = el.querySelector('.ck-card');
+        if (!card) return;
+        // Allow toggling for active and done phases, and also for locked phases that have been unlocked
+        if (el.dataset.state !== 'locked') {
+            card.style.display = card.style.display === 'none' ? '' : 'none';
         }
     };
 
     window.toggleItem = function(el) {
+        var phaseEl = el.closest('.ck-phase');
+        if (phaseEl && phaseEl.dataset.state === 'locked') return;
+
         var id = el.dataset.id;
         if (state.checked.has(id)) {
             state.checked.delete(id);
@@ -767,15 +781,47 @@
             el.classList.add('checked');
         }
         save();
-        updatePhaseProgress(id.split('.')[0]);
+        unlockPhases();
         updateAllPhases();
         updateProgress();
         if (state.checked.size >= TOTAL_ITEMS) showComplete();
     };
 
-    function markChecked(id, animate) {
+    function markChecked(id) {
         var el = document.querySelector('.ck-item[data-id="'+id+'"]');
         if (el) el.classList.add('checked');
+    }
+
+    // Unlock phases: phase N unlocks when phase N-1 is fully checked
+    function unlockPhases() {
+        var phaseNums = Object.keys(PHASES).map(Number).sort(function(a,b){return a-b;});
+        for (var i = 0; i < phaseNums.length; i++) {
+            var p = phaseNums[i];
+            var phaseEl = document.querySelector('.ck-phase[data-phase="'+p+'"]');
+            if (!phaseEl) continue;
+
+            if (p === 1) {
+                // Phase 1 is always active
+                phaseEl.dataset.state = 'active';
+            } else {
+                // Check if previous phase is complete
+                var prevPhase = PHASES[p - 1];
+                var prevComplete = prevPhase && prevPhase.every(function(id){ return state.checked.has(id); });
+                if (prevComplete) {
+                    // If this phase has any checked items, mark as active; if all checked, mark done
+                    var currentPhase = PHASES[p];
+                    var anyChecked = currentPhase.some(function(id){ return state.checked.has(id); });
+                    var allChecked = currentPhase.every(function(id){ return state.checked.has(id); });
+                    if (allChecked) {
+                        phaseEl.dataset.state = 'done';
+                    } else if (anyChecked || prevComplete) {
+                        phaseEl.dataset.state = 'active';
+                    }
+                } else {
+                    phaseEl.dataset.state = 'locked';
+                }
+            }
+        }
     }
 
     function updatePhaseProgress(phaseNum) {
