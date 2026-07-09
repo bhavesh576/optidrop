@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('optidrop_dark_mode')==='1'){document.documentElement.classList.add('dark-mode');}}catch(e){}</script>
+    <style>html.js noscript{display:none!important;margin:0!important;padding:0!important}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Source Guide — Make Your First Contribution | OptiDrop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Free open source contribution guide. From first PR to building reputation. Pipeline workflow, leveling system, and PR templates.">
+    <meta name="keywords" content="open source, first contribution, GitHub, pull request, open source guide, contribute to open source, beginner open source">
+    <link rel="canonical" href="https://optidrop.online/students/open-source-guide.html">
+    <meta property="og:title" content="Open Source Guide — Make Your First Contribution | OptiDrop">
+    <meta property="og:description" content="Free open source contribution guide. From first PR to building reputation.">
+    <meta property="og:url" content="https://optidrop.online/students/open-source-guide.html">
+
+    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles.css?v=4.0" as="style">
+    <link rel="stylesheet" href="/styles.css?v=4.0">
+    <style>
+    .os-container{max-width:800px;margin:0 auto;padding:0.75rem 1rem}
+
+    /* Pipeline */
+    .os-pipeline{display:flex;gap:0.2rem;overflow-x:auto;padding:0.5rem 0;margin-bottom:0.75rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .os-pipeline::-webkit-scrollbar{display:none}
+    .os-pipe-step{flex:1;min-width:0;text-align:center;padding:0.5rem 0.2rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;cursor:pointer;transition:all 0.2s}
+    .os-pipe-step.active{background:#0f172a;border-color:#0f172a;color:#fff}
+    .os-pipe-step.done{background:#ecfdf5;border-color:#10b981}
+    .os-pipe-step .num{font-size:0.7rem;font-weight:800;display:block;margin-bottom:0.1rem}
+    .os-pipe-step .label{font-size:0.58rem;font-weight:600;color:#64748b}
+    .os-pipe-step.active .label{color:#fff}
+    .os-pipe-step.done .label{color:#059669}
+
+    /* Pipeline Content */
+    .os-pipe-panel{display:none}
+    .os-pipe-panel.active{display:block}
+
+    /* Section */
+    .os-section{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1rem 1.1rem;margin-bottom:0.6rem}
+    .os-section-title{font-size:0.88rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.4rem}
+
+    /* Level Cards */
+    .os-levels{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;margin-bottom:0.75rem}
+    .os-level{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0.7rem;text-align:center;cursor:pointer;transition:all 0.2s;border-top:3px solid #e2e8f0}
+    .os-level.active{border-top-color:#e91e63}
+    .os-level .icon{font-size:1.3rem;margin-bottom:0.3rem}
+    .os-level .title{font-size:0.72rem;font-weight:700;color:#0f172a;margin-bottom:0.15rem}
+    .os-level .desc{font-size:0.6rem;color:#94a3b8}
+    .os-level-content{display:none;margin-top:0.5rem}
+    .os-level.active .os-level-content{display:block}
+
+    /* Item */
+    .os-item{display:flex;gap:0.45rem;padding:0.3rem 0;font-size:0.8rem;color:#475569;line-height:1.5;align-items:flex-start}
+    .os-item .bullet{width:4px;height:4px;border-radius:50%;background:#cbd5e1;flex-shrink:0;margin-top:0.45rem}
+    .os-item strong{color:#0f172a}
+
+    /* Tip */
+    .os-tip{display:flex;gap:0.45rem;padding:0.5rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:0.75rem;color:#166534;line-height:1.5;margin-top:0.5rem}
+    .os-tip .icon{font-size:0.85rem;flex-shrink:0}
+    .os-tip.gold{background:#fffbeb;border-color:#fde68a;color:#92400e}
+
+    /* Template */
+    .os-template{background:#0f172a;color:#e2e8f0;padding:0.75rem 0.85rem;border-radius:10px;font-size:0.72rem;line-height:1.6;margin-top:0.5rem;font-family:monospace;white-space:pre-wrap}
+    .os-template .hl{color:#34d399}
+
+    /* Link Card */
+    .os-link{display:flex;align-items:center;gap:0.5rem;padding:0.55rem 0.7rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;text-decoration:none;margin-bottom:0.4rem;transition:all 0.2s}
+    .os-link:hover{border-color:#f9a8d4;background:#fdf2f8}
+    .os-link .icon{font-size:1rem}
+    .os-link .name{flex:1;font-size:0.78rem;font-weight:600;color:#0f172a}
+    .os-link .desc{font-size:0.62rem;color:#94a3b8}
+    .os-link .arrow{font-size:0.8rem;color:#e91e63}
+
+    /* Checklist */
+    .os-check{display:flex;gap:0.4rem;padding:0.25rem 0;font-size:0.8rem;color:#475569;cursor:pointer;align-items:flex-start;-webkit-tap-highlight-color:transparent}
+    .os-check-box{width:17px;height:17px;border-radius:5px;border:2px solid #cbd5e1;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.2s;margin-top:0.08rem}
+    .os-check.done .os-check-box{background:#10b981;border-color:#10b981}
+    .os-check-box svg{width:9px;height:9px;opacity:0}
+    .os-check.done .os-check-box svg{opacity:1}
+    .os-check.done{color:#94a3b8;text-decoration:line-through}
+
+    /* Dark Mode */
+    .dark-mode .os-pipe-step{background:#0f172a;border-color:#334155;color:#94a3b8}
+    .dark-mode .os-pipe-step.active{background:#10b981;border-color:#10b981;color:#fff}
+    .dark-mode .os-pipe-step.done{background:#064e3b;border-color:#10b981}
+    .dark-mode .os-pipe-step .label{color:#94a3b8}
+    .dark-mode .os-pipe-step.active .label{color:#fff}
+    .dark-mode .os-pipe-step.done .label{color:#34d399}
+    .dark-mode .os-section{background:#1e293b;border-color:#334155}
+    .dark-mode .os-section-title{color:#f1f5f9}
+    .dark-mode .os-level{background:#1e293b;border-color:#334155}
+    .dark-mode .os-level.active{border-top-color:#e91e63}
+    .dark-mode .os-level .title{color:#f1f5f9}
+    .dark-mode .os-level .desc{color:#64748b}
+    .dark-mode .os-item{color:#94a3b8}
+    .dark-mode .os-item strong{color:#f1f5f9}
+    .dark-mode .os-tip{background:#064e3b;border-color:#065f46;color:#6ee7b7}
+    .dark-mode .os-tip.gold{background:#1c1917;border-color:#92400e;color:#fbbf24}
+    .dark-mode .os-template{background:#064e3b;color:#e2e8f0}
+    .dark-mode .os-template .hl{color:#34d399}
+    .dark-mode .os-link{background:#0f172a;border-color:#334155}
+    .dark-mode .os-link:hover{border-color:#f472b6;background:#1e293b}
+    .dark-mode .os-link .name{color:#f1f5f9}
+    .dark-mode .os-link .desc{color:#64748b}
+    .dark-mode .os-check{color:#94a3b8}
+    .dark-mode .os-check.done{color:#64748b}
+
+    @media(max-width:640px){
+        .os-container{padding:0.5rem 0.65rem}
+        .os-pipe-step{padding:0.4rem 0.15rem;border-radius:6px}
+        .os-pipe-step .num{font-size:0.65rem}
+        .os-pipe-step .label{font-size:0.5rem}
+        .os-section{padding:0.75rem 0.85rem;border-radius:12px}
+        .os-section-title{font-size:0.82rem}
+        .os-levels{gap:0.35rem}
+        .os-level{padding:0.5rem;border-radius:10px}
+        .os-level .icon{font-size:1.1rem}
+        .os-level .title{font-size:0.68rem}
+        .os-level .desc{font-size:0.55rem}
+        .os-item{font-size:0.75rem}
+        .os-tip{font-size:0.7rem;padding:0.45rem}
+        .os-template{font-size:0.68rem;padding:0.6rem}
+        .os-link{padding:0.45rem 0.6rem}
+        .os-link .name{font-size:0.72rem}
+    }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:0.5rem 1rem;background:#fff;color:#2563eb;font-weight:600;">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="flex-grow">
+        <section class="max-w-4xl mx-auto px-4 pt-10 pb-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">
+                🔓 Open Source Guide
+            </h1>
+            <p class="text-base text-slate-600 max-w-xl mx-auto">
+                From first PR to building reputation. The pipeline to becoming an open source contributor.
+            </p>
+        </section>
+
+        <div class="os-container">
+            <!-- Pipeline -->
+            <div class="os-pipeline">
+                <div class="os-pipe-step active" onclick="switchPipe('find')"><span class="num">1</span><span class="label">Find</span></div>
+                <div class="os-pipe-step" onclick="switchPipe('read')"><span class="num">2</span><span class="label">Read</span></div>
+                <div class="os-pipe-step" onclick="switchPipe('pick')"><span class="num">3</span><span class="label">Pick</span></div>
+                <div class="os-pipe-step" onclick="switchPipe('fork')"><span class="num">4</span><span class="label">Fork</span></div>
+                <div class="os-pipe-step" onclick="switchPipe('code')"><span class="num">5</span><span class="label">Code</span></div>
+                <div class="os-pipe-step" onclick="switchPipe('pr')"><span class="num">6</span><span class="label">PR</span></div>
+            </div>
+
+            <!-- Step 1: Find -->
+            <div class="os-pipe-panel active" id="pipe-find">
+                <div class="os-section">
+                    <div class="os-section-title">🔍 Find Projects to Contribute To</div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Start with tools you use.</strong> If you use a library daily, you already know how it works. Contributing is easier when you're a user.</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Look for "good first issue" labels.</strong> These are curated for beginners. Maintainers want you to succeed.</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Check activity.</strong> Recent commits, active issues, responsive maintainers. Avoid abandoned projects.</div></div>
+                    <div class="os-tip"><span class="icon">💡</span><span><strong>Best first projects:</strong> Documentation repos, CLI tools, small libraries. Avoid massive codebases (React, Linux) for your first contribution.</span></div>
+                </div>
+                <div class="os-section">
+                    <div class="os-section-title">🌐 Where to Find Issues</div>
+                    <a href="https://github.com/topics/good-first-issue" target="_blank" class="os-link"><span class="icon">🐙</span><div><div class="name">GitHub Good First Issues</div><div class="desc">Curated beginner-friendly issues</div></div><span class="arrow">→</span></a>
+                    <a href="https://goodfirstissue.dev/" target="_blank" class="os-link"><span class="icon">🟢</span><div><div class="name">GoodFirstIssue.dev</div><div class="desc">Filtered by language and difficulty</div></div><span class="arrow">→</span></a>
+                    <a href="https://up-for-grabs.net/" target="_blank" class="os-link"><span class="icon">🎯</span><div><div class="name">Up For Grabs</div><div class="desc">Projects actively seeking contributors</div></div><span class="arrow">→</span></a>
+                    <a href="https://www.firsttimersonly.com/" target="_blank" class="os-link"><span class="icon">👋</span><div><div class="name">First Timers Only</div><div class="desc">Guides and issues for absolute beginners</div></div><span class="arrow">→</span></a>
+                </div>
+            </div>
+
+            <!-- Step 2: Read -->
+            <div class="os-pipe-panel" id="pipe-read">
+                <div class="os-section">
+                    <div class="os-section-title">📖 Read the Codebase</div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Start with README.md.</strong> It tells you what the project does, how to set it up, and how to contribute.</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Read CONTRIBUTING.md.</strong> Every good project has one. It explains the process, code style, and PR requirements.</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Look at recent PRs.</strong> See what changes look like, how reviews work, and what maintainers expect.</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Run the project locally.</strong> Get it working on your machine before making changes. If you can't run it, you can't test your changes.</div></div>
+                    <div class="os-tip"><span class="icon">💡</span><span><strong>Time limit:</strong> Spend 1-2 hours reading before you code. Understanding the codebase prevents wasted effort on wrong approaches.</span></div>
+                </div>
+            </div>
+
+            <!-- Step 3: Pick -->
+            <div class="os-pipe-panel" id="pipe-pick">
+                <div class="os-section">
+                    <div class="os-section-title">🎯 Pick Your Contribution Level</div>
+                    <div class="os-levels">
+                        <div class="os-level active" onclick="toggleLevel(this)">
+                            <div class="icon">🟢</div>
+                            <div class="title">Level 1</div>
+                            <div class="desc">Docs & Typos</div>
+                            <div class="os-level-content">
+                                <div class="os-item"><span class="bullet"></span><div>Fix typos in documentation</div></div>
+                                <div class="os-item"><span class="bullet"></span><div>Improve README clarity</div></div>
+                                <div class="os-item"><span class="bullet"></span><div>Add examples to docs</div></div>
+                                <div class="os-item"><span class="bullet"></span><div>Fix broken links</div></div>
+                            </div>
+                        </div>
+                        <div class="os-level" onclick="toggleLevel(this)">
+                            <div class="icon">🟡</div>
+                            <div class="title">Level 2</div>
+                            <div class="desc">Bugs & Tests</div>
+                            <div class="os-level-content">
+                                <div class="os-item"><span class="bullet"></span><div>Fix a reported bug</div></div>
+                                <div class="os-item"><span class="bullet"></span><div>Add missing tests</div></div>
+                                <div class="os-item"><span class="bullet"></span><div>Improve error messages</div></div>
+                                <div class="os-item"><span class="bullet"></span><div>Update dependencies</div></div>
+                            </div>
+                        </div>
+                        <div class="os-level" onclick="toggleLevel(this)">
+                            <div class="icon">🔴</div>
+                            <div class="title">Level 3</div>
+                            <div class="desc">Features</div>
+                            <div class="os-level-content">
+                                <div class="os-item"><span class="bullet"></span><div>Implement a requested feature</div></div>
+                                <div class="os-item"><span class="bullet"></span><div>Add new functionality</div></div>
+                                <div class="os-item"><span class="bullet"></span><div>Refactor code</div></div>
+                                <div class="os-item"><span class="bullet"></span><div>Performance improvements</div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="os-tip"><span class="icon">💡</span><span><strong>Start with Level 1.</strong> Even fixing a typo counts as a contribution. It gets you familiar with the PR process without the pressure of writing code.</span></div>
+                </div>
+            </div>
+
+            <!-- Step 4: Fork -->
+            <div class="os-pipe-panel" id="pipe-fork">
+                <div class="os-section">
+                    <div class="os-section-title">🍴 Fork & Setup</div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Fork the repo</strong> — Click "Fork" on GitHub. This creates your copy.</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Clone your fork</strong> — <code>git clone https://github.com/YOUR_NAME/repo.git</code></div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Create a branch</strong> — <code>git checkout -b fix/your-change-name</code></div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Install dependencies</strong> — Follow the README setup instructions.</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Make your change</strong> — Keep it small. One fix per PR.</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Test your change</strong> — Run existing tests. Make sure nothing breaks.</div></div>
+                    <div class="os-tip"><span class="icon">💡</span><span><strong>Branch naming:</strong> <code>fix/typo-in-readme</code>, <code>feat/add-dark-mode</code>, <code>docs/update-setup-guide</code>. Descriptive names help maintainers.</span></div>
+                </div>
+            </div>
+
+            <!-- Step 5: Code -->
+            <div class="os-pipe-panel" id="pipe-code">
+                <div class="os-section">
+                    <div class="os-section-title">💻 Make Your Changes</div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Follow the code style.</strong> Check .editorconfig, .prettierrc, or existing code for formatting conventions.</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Keep changes small.</strong> One issue = one PR. Don't fix 5 things in one PR.</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Write clear commits.</strong> <code>fix: correct typo in README installation section</code> beats <code>fixed stuff</code>.</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Test everything.</strong> Run the test suite. If you added a feature, add a test for it.</div></div>
+                    <div class="os-tip gold"><span class="icon">⚡</span><span><strong>Commit message format:</strong> <code>type: short description</code>. Types: fix, feat, docs, style, refactor, test, chore.</span></div>
+                </div>
+            </div>
+
+            <!-- Step 6: PR -->
+            <div class="os-pipe-panel" id="pipe-pr">
+                <div class="os-section">
+                    <div class="os-section-title">📬 Submit Your Pull Request</div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Push your branch</strong> — <code>git push origin fix/your-change-name</code></div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Open a PR on GitHub</strong> — Click "Compare & pull request"</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Fill the PR template</strong> — Use the template below</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Link the issue</strong> — Write "Closes #123" to auto-close the issue</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Wait for review</strong> — Maintainers may take days. Be patient.</div></div>
+                    <div class="os-item"><span class="bullet"></span><div><strong>Respond to feedback</strong> — If they request changes, make them and push again.</div></div>
+                    <div class="os-template"><span class="hl">## What this PR does</span>
+Brief description of the change.
+
+<span class="hl">## Related issue</span>
+Closes #123
+
+<span class="hl">## Changes</span>
+- Fixed typo in README line 42
+- Updated installation instructions
+
+<span class="hl">## Testing</span>
+- Ran existing tests — all pass
+- Manually verified the change</div>
+                    <div class="os-tip"><span class="icon">💡</span><span><strong>After merge:</strong> Your contribution is live! Add it to your resume, LinkedIn, and portfolio. "Contributed to [project] — merged PR fixing [issue]."</span></div>
+                </div>
+
+                <div class="os-section">
+                    <div class="os-section-title">✅ First Contribution Checklist</div>
+                    <div class="os-check" onclick="this.classList.toggle('done')"><div class="os-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div>Forked a repository</div></div>
+                    <div class="os-check" onclick="this.classList.toggle('done')"><div class="os-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div>Created a branch</div></div>
+                    <div class="os-check" onclick="this.classList.toggle('done')"><div class="os-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div>Made a change</div></div>
+                    <div class="os-check" onclick="this.classList.toggle('done')"><div class="os-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div>Submitted a PR</div></div>
+                    <div class="os-check" onclick="this.classList.toggle('done')"><div class="os-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div>PR merged</div></div>
+                    <div class="os-check" onclick="this.classList.toggle('done')"><div class="os-check-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div>Added to resume/portfolio</div></div>
+                </div>
+            </div>
+        </div>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose max-w-none">
+                <h2>Why Contribute to Open Source?</h2>
+                <p>Open source contributions are one of the best things you can do for your career. They prove you can work with real codebases, collaborate with teams, and ship quality code. Recruiters actively look for GitHub contributions — it's a public portfolio of your actual work.</p>
+                <h3>What Counts as a Contribution?</h3>
+                <p>Everything counts. Fixing a typo, improving documentation, adding a test, reporting a bug — these are all valid contributions. You don't need to write complex features. Start small, build confidence, and level up over time.</p>
+                <h3>The First PR Is the Hardest</h3>
+                <p>Your first pull request will feel intimidating. You'll worry about making mistakes, getting rejected, or looking foolish. That's normal. Every open source contributor — including the maintainers of React, Linux, and Python — submitted their first PR once. Just do it.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <div id="toast-container"></div>
+    <script src="/common.js?v=4.0"></script>
+    <script>
+    function switchPipe(step) {
+        document.querySelectorAll('.os-pipe-step').forEach(function(s){ s.classList.remove('active'); });
+        document.querySelectorAll('.os-pipe-panel').forEach(function(p){ p.classList.remove('active'); });
+        event.target.closest('.os-pipe-step').classList.add('active');
+        document.getElementById('pipe-'+step).classList.add('active');
+    }
+
+    function toggleLevel(el) {
+        var wasActive = el.classList.contains('active');
+        el.parentElement.querySelectorAll('.os-level').forEach(function(l){ l.classList.remove('active'); });
+        if (!wasActive) el.classList.add('active');
+    }
+    </script>
+</body>
+</html>
