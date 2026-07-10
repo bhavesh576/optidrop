@@ -24,24 +24,44 @@
 
     <style>
     .pb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;max-width:900px;margin:0 auto;padding:0 1rem}
-    .pb-card{display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0.7rem;text-decoration:none;transition:all 0.2s;border-top:3px solid #e91e63}
+    .pb-card{display:block;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:0.7rem;text-decoration:none;transition:all 0.2s;border-top:3px solid #e2e8f0}
     .pb-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.05)}
-    .pb-card .pb-c-badge{font-size:0.52rem;font-weight:700;padding:0.1rem 0.35rem;border-radius:9999px;background:#fdf2f8;color:#e91e63;display:inline-block;margin-bottom:0.3rem}
-    .pb-card .pb-c-badge.blue{background:#eff6ff;color:#2563eb}
+    /* Color variants */
+    .pb-card.c-emerald{border-top-color:#059669}.pb-card.c-emerald .pb-c-badge{background:#ecfdf5;color:#059669}.pb-card.c-emerald .pb-c-arrow{color:#059669}
+    .pb-card.c-red{border-top-color:#dc2626}.pb-card.c-red .pb-c-badge{background:#fef2f2;color:#dc2626}.pb-card.c-red .pb-c-arrow{color:#dc2626}
+    .pb-card.c-blue{border-top-color:#2563eb}.pb-card.c-blue .pb-c-badge{background:#eff6ff;color:#2563eb}.pb-card.c-blue .pb-c-arrow{color:#2563eb}
+    .pb-card.c-green{border-top-color:#16a34a}.pb-card.c-green .pb-c-badge{background:#f0fdf4;color:#16a34a}.pb-card.c-green .pb-c-arrow{color:#16a34a}
+    .pb-card.c-purple{border-top-color:#7c3aed}.pb-card.c-purple .pb-c-badge{background:#f5f3ff;color:#7c3aed}.pb-card.c-purple .pb-c-arrow{color:#7c3aed}
+    .pb-card.c-orange{border-top-color:#ea580c}.pb-card.c-orange .pb-c-badge{background:#fff7ed;color:#ea580c}.pb-card.c-orange .pb-c-arrow{color:#ea580c}
+    .pb-card.c-teal{border-top-color:#0d9488}.pb-card.c-teal .pb-c-badge{background:#f0fdfa;color:#0d9488}.pb-card.c-teal .pb-c-arrow{color:#0d9488}
+    .pb-card.c-linkedin{border-top-color:#0a66c2}.pb-card.c-linkedin .pb-c-badge{background:#eff6ff;color:#0a66c2}.pb-card.c-linkedin .pb-c-arrow{color:#0a66c2}
+    .pb-card.c-amber{border-top-color:#d97706}.pb-card.c-amber .pb-c-badge{background:#fffbeb;color:#d97706}.pb-card.c-amber .pb-c-arrow{color:#d97706}
+    .pb-card.c-indigo{border-top-color:#4f46e5}.pb-card.c-indigo .pb-c-badge{background:#eef2ff;color:#4f46e5}.pb-card.c-indigo .pb-c-arrow{color:#4f46e5}
+    .pb-card.c-cyan{border-top-color:#0891b2}.pb-card.c-cyan .pb-c-badge{background:#ecfeff;color:#0891b2}.pb-card.c-cyan .pb-c-arrow{color:#0891b2}
+    .pb-card.c-rose{border-top-color:#e11d48}.pb-card.c-rose .pb-c-badge{background:#fff1f2;color:#e11d48}.pb-card.c-rose .pb-c-arrow{color:#e11d48}
     .pb-card .pb-c-title{font-size:0.78rem;font-weight:800;color:#0f172a;line-height:1.2;margin-bottom:0.25rem}
     .pb-card .pb-c-desc{font-size:0.65rem;color:#64748b;line-height:1.35;margin-bottom:0.35rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
     .pb-card .pb-c-bottom{display:flex;justify-content:space-between;align-items:center}
     .pb-card .pb-c-meta{font-size:0.55rem;color:#94a3b8}
-    .pb-card .pb-c-arrow{font-size:0.7rem;color:#e91e63;font-weight:700}
     .pb-card.coming-soon{opacity:0.4;pointer-events:none;border-top-color:#cbd5e1}
     .dark-mode .pb-card{background:#1e293b;border-color:#334155}
-    .dark-mode .pb-card:hover{border-color:#f472b6}
-    .dark-mode .pb-card .pb-c-badge{background:#3b0f2a;color:#f472b6}
-    .dark-mode .pb-card .pb-c-badge.blue{background:#1e3a5f;color:#60a5fa}
+    .dark-mode .pb-card:hover{border-color:#475569}
     .dark-mode .pb-card .pb-c-title{color:#f1f5f9}
     .dark-mode .pb-card .pb-c-desc{color:#94a3b8}
     .dark-mode .pb-card .pb-c-meta{color:#64748b}
-    .dark-mode .pb-card .pb-c-arrow{color:#f472b6}
+    /* Dark mode color variants */
+    .dark-mode .pb-card.c-emerald{border-top-color:#34d399}.dark-mode .pb-card.c-emerald .pb-c-badge{background:#064e3b;color:#34d399}.dark-mode .pb-card.c-emerald .pb-c-arrow{color:#34d399}
+    .dark-mode .pb-card.c-red{border-top-color:#fca5a5}.dark-mode .pb-card.c-red .pb-c-badge{background:#450a0a;color:#fca5a5}.dark-mode .pb-card.c-red .pb-c-arrow{color:#fca5a5}
+    .dark-mode .pb-card.c-blue{border-top-color:#60a5fa}.dark-mode .pb-card.c-blue .pb-c-badge{background:#1e3a5f;color:#60a5fa}.dark-mode .pb-card.c-blue .pb-c-arrow{color:#60a5fa}
+    .dark-mode .pb-card.c-green{border-top-color:#4ade80}.dark-mode .pb-card.c-green .pb-c-badge{background:#052e16;color:#4ade80}.dark-mode .pb-card.c-green .pb-c-arrow{color:#4ade80}
+    .dark-mode .pb-card.c-purple{border-top-color:#a78bfa}.dark-mode .pb-card.c-purple .pb-c-badge{background:#2e1065;color:#a78bfa}.dark-mode .pb-card.c-purple .pb-c-arrow{color:#a78bfa}
+    .dark-mode .pb-card.c-orange{border-top-color:#fb923c}.dark-mode .pb-card.c-orange .pb-c-badge{background:#431407;color:#fb923c}.dark-mode .pb-card.c-orange .pb-c-arrow{color:#fb923c}
+    .dark-mode .pb-card.c-teal{border-top-color:#5eead4}.dark-mode .pb-card.c-teal .pb-c-badge{background:#042f2e;color:#5eead4}.dark-mode .pb-card.c-teal .pb-c-arrow{color:#5eead4}
+    .dark-mode .pb-card.c-linkedin{border-top-color:#60a5fa}.dark-mode .pb-card.c-linkedin .pb-c-badge{background:#1e3a5f;color:#60a5fa}.dark-mode .pb-card.c-linkedin .pb-c-arrow{color:#60a5fa}
+    .dark-mode .pb-card.c-amber{border-top-color:#fcd34d}.dark-mode .pb-card.c-amber .pb-c-badge{background:#451a03;color:#fcd34d}.dark-mode .pb-card.c-amber .pb-c-arrow{color:#fcd34d}
+    .dark-mode .pb-card.c-indigo{border-top-color:#a78bfa}.dark-mode .pb-card.c-indigo .pb-c-badge{background:#2e1065;color:#a78bfa}.dark-mode .pb-card.c-indigo .pb-c-arrow{color:#a78bfa}
+    .dark-mode .pb-card.c-cyan{border-top-color:#22d3ee}.dark-mode .pb-card.c-cyan .pb-c-badge{background:#083344;color:#22d3ee}.dark-mode .pb-card.c-cyan .pb-c-arrow{color:#22d3ee}
+    .dark-mode .pb-card.c-rose{border-top-color:#fda4af}.dark-mode .pb-card.c-rose .pb-c-badge{background:#4c0519;color:#fda4af}.dark-mode .pb-card.c-rose .pb-c-arrow{color:#fda4af}
     @media(max-width:640px){
         .pb-grid{grid-template-columns:repeat(3,1fr);gap:0.45rem;padding:0 0.75rem}
         .pb-card{padding:0.55rem;border-radius:10px}
@@ -72,84 +92,84 @@
 
         <section class="max-w-5xl mx-auto px-4 pb-16">
             <div class="pb-grid">
-                <a href="/playbooks/freelancing-roadmap-1lakh.html" class="pb-card">
+                <a href="/playbooks/freelancing-roadmap-1lakh.html" class="pb-card c-emerald">
                     <span class="pb-c-badge">🗺️ ROADMAP</span>
                     <div class="pb-c-title">Freelancing — Zero to ₹1L/Month</div>
                     <div class="pb-c-desc">12-month roadmap to build full-time freelancing income from scratch.</div>
                     <div class="pb-c-bottom"><span class="pb-c-meta">10 steps · 12 mo</span><span class="pb-c-arrow">→</span></div>
                 </a>
 
-                <a href="/playbooks/youtube-1000-subs.html" class="pb-card">
+                <a href="/playbooks/youtube-1000-subs.html" class="pb-card c-red">
                     <span class="pb-c-badge">🎮 QUEST MAP</span>
                     <div class="pb-c-title">YouTube — 0 to 1,000 Subs</div>
                     <div class="pb-c-desc">9 quests with real strategies to grow your channel.</div>
                     <div class="pb-c-bottom"><span class="pb-c-meta">9 quests · 20 min</span><span class="pb-c-arrow">→</span></div>
                 </a>
 
-                <a href="/playbooks/online-store-first-sale.html" class="pb-card">
+                <a href="/playbooks/online-store-first-sale.html" class="pb-card c-blue">
                     <span class="pb-c-badge">📋 CHECKLIST</span>
                     <div class="pb-c-title">Online Store — First Sale</div>
                     <div class="pb-c-desc">42-item checklist to launch your store and get first sale.</div>
                     <div class="pb-c-bottom"><span class="pb-c-meta">42 items · 25 min</span><span class="pb-c-arrow">→</span></div>
                 </a>
 
-                <a href="/playbooks/save-1-lakh-12-months.html" class="pb-card">
+                <a href="/playbooks/save-1-lakh-12-months.html" class="pb-card c-green">
                     <span class="pb-c-badge">📊 TRACKER</span>
                     <div class="pb-c-title">Save ₹1 Lakh in 12 Months</div>
                     <div class="pb-c-desc">Interactive savings tracker with monthly targets and progress ring.</div>
                     <div class="pb-c-bottom"><span class="pb-c-meta">12 months · ₹8K/mo</span><span class="pb-c-arrow">→</span></div>
                 </a>
 
-                <a href="/playbooks/first-remote-job.html" class="pb-card">
+                <a href="/playbooks/first-remote-job.html" class="pb-card c-purple">
                     <span class="pb-c-badge">🗺️ TREASURE MAP</span>
                     <div class="pb-c-title">Get Your First Remote Job</div>
                     <div class="pb-c-desc">7 locations from building skills to landing the offer.</div>
                     <div class="pb-c-bottom"><span class="pb-c-meta">7 locations · 20 min</span><span class="pb-c-arrow">→</span></div>
                 </a>
 
-                <a href="/playbooks/digital-marketing-free-cert.html" class="pb-card">
+                <a href="/playbooks/digital-marketing-free-cert.html" class="pb-card c-orange">
                     <span class="pb-c-badge">📚 SYLLABUS</span>
                     <div class="pb-c-title">Digital Marketing — Free Cert</div>
                     <div class="pb-c-desc">8 modules, 35 lessons, 6 free certifications.</div>
                     <div class="pb-c-bottom"><span class="pb-c-meta">8 modules · 6 certs</span><span class="pb-c-arrow">→</span></div>
                 </a>
 
-                <a href="/playbooks/stock-market-first-10k.html" class="pb-card">
+                <a href="/playbooks/stock-market-first-10k.html" class="pb-card c-teal">
                     <span class="pb-c-badge">🎓 PREMIUM</span>
                     <div class="pb-c-title">Stock Market — First ₹10K</div>
                     <div class="pb-c-desc">Professional dashboard with tabbed interface, no fluff.</div>
                     <div class="pb-c-bottom"><span class="pb-c-meta">5 tabs · 15 min</span><span class="pb-c-arrow">→</span></div>
                 </a>
 
-                <a href="/playbooks/linkedin-brand-10k.html" class="pb-card">
-                    <span class="pb-c-badge blue">📱 STORIES</span>
+                <a href="/playbooks/linkedin-brand-10k.html" class="pb-card c-linkedin">
+                    <span class="pb-c-badge">📱 STORIES</span>
                     <div class="pb-c-title">LinkedIn Brand — 0 to 10K</div>
                     <div class="pb-c-desc">Swipeable story-cards for corporate professionals.</div>
                     <div class="pb-c-bottom"><span class="pb-c-meta">12 cards · 15 min</span><span class="pb-c-arrow">→</span></div>
                 </a>
 
-                <a href="/playbooks/side-hustle-50k.html" class="pb-card">
+                <a href="/playbooks/side-hustle-50k.html" class="pb-card c-amber">
                     <span class="pb-c-badge">🎯 DECISION TREE</span>
                     <div class="pb-c-title">Side Hustle — Extra ₹50K</div>
                     <div class="pb-c-desc">Answer 4 questions, get personalized recommendation.</div>
                     <div class="pb-c-bottom"><span class="pb-c-meta">4 questions · 3 min</span><span class="pb-c-arrow">→</span></div>
                 </a>
 
-                <a href="/playbooks/mobile-app-idea-to-launch.html" class="pb-card">
-                    <span class="pb-c-badge blue">🏗️ BLUEPRINT</span>
+                <a href="/playbooks/mobile-app-idea-to-launch.html" class="pb-card c-indigo">
+                    <span class="pb-c-badge">🏗️ BLUEPRINT</span>
                     <div class="pb-c-title">Mobile App — Idea to Launch</div>
                     <div class="pb-c-desc">Technical blueprint with 8 phases and tech stack guide.</div>
                     <div class="pb-c-bottom"><span class="pb-c-meta">8 phases · 20 min</span><span class="pb-c-arrow">→</span></div>
                 </a>
 
-                <a href="/playbooks/create-first-invoice.html" class="pb-card">
+                <a href="/playbooks/create-first-invoice.html" class="pb-card c-cyan">
                     <span class="pb-c-badge">📘 QUICK</span>
                     <div class="pb-c-title">Create Your First Invoice</div>
                     <div class="pb-c-desc">Send a professional invoice in 5 minutes.</div>
                     <div class="pb-c-bottom"><span class="pb-c-meta">5 steps · 5 min</span><span class="pb-c-arrow">→</span></div>
                 </a>
 
-                <a href="/playbooks/fix-pdf-problem.html" class="pb-card">
+                <a href="/playbooks/fix-pdf-problem.html" class="pb-card c-rose">
                     <span class="pb-c-badge">📘 QUICK</span>
                     <div class="pb-c-title">Fix Your PDF Problem</div>
                     <div class="pb-c-desc">Compress, merge, split, or convert in 30 seconds.</div>
