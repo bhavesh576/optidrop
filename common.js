@@ -249,42 +249,15 @@ window.OptiTrack = {
             '</nav>' +
         '</div>' +
         '<nav class="mobile-nav">' +
-            '<a href="/">Home</a>' +
-            '<a href="/tools.html">All Tools</a>' +
-            '<div class="mobile-accordion">' +
-                '<button class="mobile-accordion-trigger">Categories <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>' +
-                '<div class="mobile-accordion-content">' +
-                    '<a href="/category/image-tools.html">Image Tools</a>' +
-                    '<a href="/category/pdf-tools.html">PDF Tools</a>' +
-                    '<a href="/category/text-tools.html">Text Tools</a>' +
-                    '<a href="/category/career-tools.html">Career & Resume</a>' +
-                    '<a href="/category/business-tools.html">Business Documents</a>' +
-                    '<a href="/category/professional-tools.html">Professional Tools</a>' +
-                    '<a href="/category/calculator-tools.html">Calculator Tools</a>' +
-                    '<a href="/category/developer-tools.html">Developer Tools</a>' +
-                    '<a href="/category/utility-tools.html">Utility Tools</a>' +
-                    '<a href="/category/health-tools.html">Health & Fitness</a>' +
-                    '<a href="/category/education-tools.html">Education</a>' +
-                    '<a href="/category/fitness-tools.html">Fitness</a>' +
-                    '<a href="/category/travel-tools.html">Travel</a>' +
-                    '<a href="/category/productivity-tools.html">Productivity</a>' +
-                    '<a href="/category/design-tools.html">Design</a>' +
-                    '<a href="/category/home-tools.html">Home & DIY</a>' +
-                    '<a href="/category/fun-tools.html">Fun & Games</a>' +
-                    '<a href="/category/parenting-tools.html">Parenting</a>' +
-                '</div>' +
-            '</div>' +
-            '<div class="mobile-accordion">' +
-                '<button class="mobile-accordion-trigger">Learn <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>' +
-                '<div class="mobile-accordion-content">' +
-                    '<a href="/playbooks/">📚 Playbooks</a>' +
-                    '<a href="/students/">🎓 Students</a>' +
-                    '<a href="/blog/">✍️ Blog</a>' +
-                '</div>' +
-            '</div>' +
-            '<a href="/review.html">Reviews</a>' +
-            '<a href="/about.html">About</a>' +
-            '<a href="/contact.html">Give Feedback</a>' +
+            '<a href="/" class="mn-link"><span class="mn-icon">🏠</span><span class="mn-text">Home</span></a>' +
+            '<a href="/tools.html" class="mn-link"><span class="mn-icon">🔧</span><span class="mn-text">All Tools</span><span class="mn-count">350+</span></a>' +
+            '<a href="/playbooks/" class="mn-link"><span class="mn-icon">📚</span><span class="mn-text">Playbooks</span><span class="mn-count">10</span></a>' +
+            '<a href="/students/" class="mn-link"><span class="mn-icon">🎓</span><span class="mn-text">Students</span><span class="mn-count">6</span></a>' +
+            '<a href="/blog/" class="mn-link"><span class="mn-icon">✍️</span><span class="mn-text">Blog</span><span class="mn-count">21</span></a>' +
+            '<div class="mn-divider"></div>' +
+            '<a href="/review.html" class="mn-link mn-secondary"><span class="mn-icon">⭐</span><span class="mn-text">Reviews</span></a>' +
+            '<a href="/about.html" class="mn-link mn-secondary"><span class="mn-icon">ℹ️</span><span class="mn-text">About</span></a>' +
+            '<a href="/contact.html" class="mn-link mn-secondary"><span class="mn-icon">💬</span><span class="mn-text">Feedback</span></a>' +
         '</nav>' +
     '</header>';
 
