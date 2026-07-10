@@ -494,38 +494,34 @@ details.advanced-settings .advanced-content { padding: 1rem; background: #fff; }
 .premium-icon-wrapper svg {
     width: 24px; height: 24px;
 }
-/* Dark mode premium icon wrappers — all use cerise accent */
-.dark-mode .premium-icon-wrapper.blue,
-.dark-mode .premium-icon-wrapper.indigo,
-.dark-mode .premium-icon-wrapper.purple,
-.dark-mode .premium-icon-wrapper.emerald,
-.dark-mode .premium-icon-wrapper.orange,
-.dark-mode .premium-icon-wrapper.red,
-.dark-mode .premium-icon-wrapper.teal,
-.dark-mode .premium-icon-wrapper.amber,
-.dark-mode .premium-icon-wrapper.rose,
-.dark-mode .premium-icon-wrapper.pink,
-.dark-mode .premium-icon-wrapper.green,
-.dark-mode .premium-icon-wrapper.cyan,
-.dark-mode .premium-icon-wrapper.brand {
-    background: #3b0f2a; color: #f472b6;
-}
-/* Color variants — ALL use signature cerise accent (single-brand identity) */
-.premium-icon-wrapper.blue,
-.premium-icon-wrapper.indigo,
-.premium-icon-wrapper.purple,
-.premium-icon-wrapper.emerald,
-.premium-icon-wrapper.orange,
-.premium-icon-wrapper.red,
-.premium-icon-wrapper.teal,
-.premium-icon-wrapper.amber,
-.premium-icon-wrapper.rose,
-.premium-icon-wrapper.pink,
-.premium-icon-wrapper.green,
-.premium-icon-wrapper.cyan,
-.premium-icon-wrapper.brand {
-    background: #fdf2f8; color: #be185b;
-}
+/* Dark mode premium icon wrappers — distinct colors */
+.dark-mode .premium-icon-wrapper.blue { background: #1e3a5f; color: #60a5fa; }
+.dark-mode .premium-icon-wrapper.indigo { background: #2e1065; color: #a78bfa; }
+.dark-mode .premium-icon-wrapper.purple { background: #2e1065; color: #a78bfa; }
+.dark-mode .premium-icon-wrapper.emerald { background: #064e3b; color: #34d399; }
+.dark-mode .premium-icon-wrapper.orange { background: #431407; color: #fb923c; }
+.dark-mode .premium-icon-wrapper.red { background: #450a0a; color: #fca5a5; }
+.dark-mode .premium-icon-wrapper.teal { background: #042f2e; color: #5eead4; }
+.dark-mode .premium-icon-wrapper.amber { background: #451a03; color: #fcd34d; }
+.dark-mode .premium-icon-wrapper.rose { background: #4c0519; color: #fda4af; }
+.dark-mode .premium-icon-wrapper.pink { background: #3b0f2a; color: #f472b6; }
+.dark-mode .premium-icon-wrapper.green { background: #052e16; color: #4ade80; }
+.dark-mode .premium-icon-wrapper.cyan { background: #083344; color: #22d3ee; }
+.dark-mode .premium-icon-wrapper.brand { background: #3b0f2a; color: #f472b6; }
+/* Color variants — distinct colors for visual variety */
+.premium-icon-wrapper.blue { background: #eff6ff; color: #2563eb; }
+.premium-icon-wrapper.indigo { background: #eef2ff; color: #4f46e5; }
+.premium-icon-wrapper.purple { background: #f5f3ff; color: #7c3aed; }
+.premium-icon-wrapper.emerald { background: #ecfdf5; color: #059669; }
+.premium-icon-wrapper.orange { background: #fff7ed; color: #ea580c; }
+.premium-icon-wrapper.red { background: #fef2f2; color: #dc2626; }
+.premium-icon-wrapper.teal { background: #f0fdfa; color: #0d9488; }
+.premium-icon-wrapper.amber { background: #fffbeb; color: #d97706; }
+.premium-icon-wrapper.rose { background: #fff1f2; color: #e11d48; }
+.premium-icon-wrapper.pink { background: #fdf2f8; color: #db2777; }
+.premium-icon-wrapper.green { background: #f0fdf4; color: #16a34a; }
+.premium-icon-wrapper.cyan { background: #ecfeff; color: #0891b2; }
+.premium-icon-wrapper.brand { background: #fdf2f8; color: #be185b; }
 
 /* Featured tool cards — premium icon sizing */
 .featured-tool-card .premium-icon-wrapper {
@@ -1401,7 +1397,7 @@ h1 .text-transparent.bg-clip-text {
 .featured-tool-card {
     background: #fff;
     border: 1px solid #e2e8f0;
-    border-top: 3px solid #e91e63;
+    border-top: 3px solid #e2e8f0;
     border-radius: 1rem;
     padding: 1.5rem;
     text-decoration: none;
@@ -1436,6 +1432,20 @@ h1 .text-transparent.bg-clip-text {
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .featured-tool-card:hover .featured-icon { transform: scale(1.08); }
+
+/* Color-coded top borders for featured cards */
+.featured-tool-card:has(.premium-icon-wrapper.blue) { border-top-color: #2563eb; }
+.featured-tool-card:has(.premium-icon-wrapper.orange) { border-top-color: #ea580c; }
+.featured-tool-card:has(.premium-icon-wrapper.red) { border-top-color: #dc2626; }
+.featured-tool-card:has(.premium-icon-wrapper.emerald) { border-top-color: #059669; }
+.featured-tool-card:has(.premium-icon-wrapper.purple) { border-top-color: #7c3aed; }
+.featured-tool-card:has(.premium-icon-wrapper.brand) { border-top-color: #e91e63; }
+.featured-tool-card:has(.premium-icon-wrapper.green) { border-top-color: #16a34a; }
+.featured-tool-card:has(.premium-icon-wrapper.cyan) { border-top-color: #0891b2; }
+.featured-tool-card:has(.premium-icon-wrapper.amber) { border-top-color: #d97706; }
+.featured-tool-card:has(.premium-icon-wrapper.indigo) { border-top-color: #4f46e5; }
+.featured-tool-card:has(.premium-icon-wrapper.teal) { border-top-color: #0d9488; }
+.featured-tool-card:has(.premium-icon-wrapper.rose) { border-top-color: #e11d48; }
 .featured-tool-card .featured-name {
     font-size: 1rem;
     font-weight: 800;
