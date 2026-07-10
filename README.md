@@ -3,6 +3,7 @@
 **Live:** [https://optidrop.online](https://optidrop.online)
 **Contact:** codenza21@gmail.com
 **Built by:** A solo developer in India
+**Last Updated:** July 2026
 
 ---
 
@@ -12,14 +13,14 @@
 - [Design System](#design-system)
 - [Site Architecture](#site-architecture)
 - [Homepage — Every Section](#homepage--every-section)
+- [Playbooks](#playbooks)
+- [Student Resources](#student-resources)
 - [Tool Pages — Structure & Behavior](#tool-pages--structure--behavior)
 - [Blog Pages — Structure](#blog-pages--structure)
 - [Category Pages](#category-pages)
 - [Other Pages](#other-pages)
 - [Navigation System](#navigation-system)
 - [Interactive Features](#interactive-features)
-- [All 350+ Tools — Complete List](#all-317-tools--complete-list)
-- [Technical Architecture](#technical-architecture)
 - [SEO Structure](#seo-structure)
 - [Deployment & Performance](#deployment--performance)
 - [File Structure](#file-structure)
@@ -31,11 +32,16 @@
 
 ## What OptiDrop Is
 
-OptiDrop is a **static website** (no backend, no database, no server-side code) with **350+ free browser-based tools** across **18 categories**. Every tool runs entirely in the user's browser using JavaScript — files are never uploaded to any server. The site is deployed on Vercel as static HTML/CSS/JS files.
+OptiDrop is a **static website** (no backend, no database, no server-side code) with **350+ free browser-based tools** across **18 categories**, **10 interactive playbooks**, and **6 student resources**. Every tool runs entirely in the user's browser using JavaScript — files are never uploaded to any server. The site is deployed on Vercel as static HTML/CSS/JS files.
 
-**Core differentiator:** Privacy. All processing happens client-side. No sign-up, no file uploads, no data collection. This is the primary marketing claim on the homepage and throughout the site.
+**Three pillars:**
+1. **Tools** — 350+ free browser-based tools for images, PDFs, documents, calculators, and more
+2. **Playbooks** — 10 interactive guides for career growth, freelancing, investing, and learning
+3. **Students** — Problem Bank (50+ real-world projects), Hackathon Playbook, Resume Guide, Internship Guide, Open Source Guide
 
-**Target audience:** Students, professionals, freelancers, and everyday users who need quick utility tools (image compression, PDF manipulation, calculators, resume builders, etc.) without creating accounts or uploading sensitive files.
+**Core differentiator:** Privacy. All processing happens client-side. No sign-up, no file uploads, no data collection.
+
+**Target audience:** Students, professionals, freelancers, and everyday users who need quick utility tools without creating accounts or uploading sensitive files.
 
 ---
 
@@ -43,7 +49,22 @@ OptiDrop is a **static website** (no backend, no database, no server-side code) 
 
 ### Brand Color: Cerise (#e91e63)
 
-The site uses a **single signature accent color** — cerise/magenta-pink — with neutrals. This is a deliberate design choice: one accent color creates brand recognition instead of a rainbow of decorative hues.
+The site uses **cerise/magenta-pink** as the primary brand accent for CTAs, links, and logo. Icon wrappers and card accents use **distinct colors** per category for visual variety (blue, red, green, purple, orange, cyan, amber, indigo).
+
+### Icon Color Palette
+
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Blue | `#2563eb` | Image tools, web apps |
+| Red | `#dc2626` | PDF tools, urgent actions |
+| Green | `#16a34a` | Calculators, finance |
+| Purple | `#7c3aed` | Developer tools |
+| Amber | `#d97706` | Text tools, warnings |
+| Cyan | `#0891b2` | Business tools |
+| Indigo | `#4f46e5` | Education |
+| Emerald | `#059669` | Health, growth |
+| Teal | `#0d9488` | Premium features |
+| Orange | `#ea580c` | Energy, marketing |
 
 **Color tokens (CSS custom properties in `styles.css`):**
 
@@ -158,46 +179,46 @@ Every page loads `common.js` which injects:
 The homepage (`index.html`) is structured as a series of `<section>` elements:
 
 ### 1. Hero Section
-- **Headline:** "Your files never leave your browser." — cerise gradient on the second line
-- **Subhead:** "371+ tools for compressing images, building resumes, generating invoices, and more — all running locally in your browser. Built by a solo developer in India who got tired of tools that upload your files."
-- **Search bar:** Full-width input with search icon, placeholder "Search tools...", triggers command palette on focus or `/` key
-- **Stats strip:** "Runs in your browser • No sign-up • Free" — three claims separated by dots
+- **Headline:** "350+ Free Tools. Zero Uploads." — keyword-optimized H1
+- **Subhead:** "Compress images, build resumes, edit PDFs, calculate EMIs — all running in your browser. No sign-up, no cost."
+- **Search bar:** Full-width input with search icon, triggers command palette
+- **Stats strip:** "Runs in your browser • No sign-up • Free"
 
 ### 2. Most Used Tools
-- **Section header:** "Most Used Tools" with "View All →" link
 - **Layout:** Horizontal scrollable row of 6 featured tool cards
-- **Cards shown:** Image Compressor, HEIC to JPG, JPG to PDF, Resume Builder, Invoice Generator, EMI Calculator
-- **Card style:** Each has a cerise top border (always visible), premium icon wrapper, tool name, short description, and a badge ("Most Used" or "Popular")
+- **Cards:** Image Compressor, HEIC to JPG, JPG to PDF, Resume Builder, Invoice Generator, EMI Calculator
+- **Colors:** Each card has a color-coded top border matching its icon (blue, orange, red, emerald, purple, blue)
 
 ### 3. Browse by Category
-- **Section header:** "Browse by Category" with "All 18 Categories →" link
-- **Layout:** 4-column CSS grid showing top 8 categories (sorted by tool count)
-- **Categories shown:** Image Tools, PDF Tools, Calculators, Developer, Text Tools, Business, Education, Health
-- **Card style:** Flat cards with icon, category name, tool count, and arrow — no lift on hover, just border color change
+- **Layout:** 4-column CSS grid showing top 8 categories
+- **Colors:** Each category has a distinct icon color (blue, red, green, purple, amber, cyan, indigo, green)
 
 ### 4. New Tools Strip
-- **Section header:** "New Tools"
-- **Layout:** Horizontal row of pill-shaped links with "New" badge
-- **Shows:** Recently added tools (Body Fat Calculator, 401(k) Calculator, Macro Calculator, JWT Decoder)
+- Horizontal row of pill-shaped links with "New" badge
 
-### 5. How It Works
-- **Section header:** "How OptiDrop Works"
-- **Layout:** 3-column grid
-- **Steps:** "Choose a Tool" → "Set Your Options" → "Download Instantly"
-- **Each step:** Has a premium icon wrapper, heading, and short description
+### 5. Interactive Playbooks
+- **Layout:** Vertical list of 3 featured playbook strips
+- **Shown:** Freelancing Roadmap, YouTube Quest Map, Stock Market Dashboard
+- **Style:** Horizontal strips with badge, title, meta, arrow
+- **Link:** "View All →" to `/playbooks/`
 
-### 6. Trust Signals
-- **Layout:** 3-column grid with icon, heading, and subtext
-- **Claims:** "No files uploaded — Everything stays on your device" / "No sign-up — Open a tool and start using it" / "Free, no catch — No watermarks, no hidden paywalls"
+### 6. For Students
+- **Layout:** 4-column grid of 3 student resource cards
+- **Shown:** Problem Bank, Hackathon Playbook, Resume Project Guide
+- **Style:** Cards with icon, name, description
+- **Link:** "View All →" to `/students/`
 
-### 7. About OptiDrop
-- **Prose section:** 3 paragraphs explaining what OptiDrop is, how it works, and why it's free
-- **Purpose:** AdSense compliance content + SEO
+### 7. How It Works
+- **Steps:** "Pick a Tool" → "Drop Your File" → "Set Your Options" → "Download Instantly"
 
-### 8. FAQ
-- **4 accordion items:** "What is OptiDrop?", "Is OptiDrop really free?", "How does OptiDrop protect my privacy?", "What file types are supported?"
-- **Each has:** Visible question + expandable answer
-- **Schema:** FAQPage JSON-LD matching visible content
+### 8. Trust Signals
+- "No files uploaded" / "No sign-up" / "Free, no catch"
+
+### 9. About OptiDrop
+- SEO content with internal links to tools, playbooks, students
+
+### 10. FAQ
+- 4 accordion items with FAQPage schema
 
 ---
 
@@ -319,28 +340,28 @@ Both are clamped to `max-height: 100px` on mobile via CSS.
 
 ## Playbooks (`playbooks/`)
 
-Interactive guides that teach practical skills step-by-step. Each playbook uses a unique visual format — no two look alike.
+Interactive guides that teach practical skills step-by-step. Each playbook uses a **unique visual format** — no two look alike. All playbooks are pure value content with no tool promotion, globally relevant, mobile-first responsive, dark mode support, localStorage progress tracking, and SEO content + FAQ.
 
-| # | Playbook | Style | Description |
-|---|----------|-------|-------------|
-| 1 | Start Freelancing — Zero to ₹1L/Month | 🗺️ Roadmap | 12-month timeline with phases and income tracking |
-| 2 | YouTube Growth — 0 to 1000 Subs | 🎮 Quest Map | 9 quests with winding visual path |
-| 3 | Start Online Store — Zero to First Sale | 📋 Checklist | 42 items across 8 phases |
-| 4 | Save ₹1 Lakh in 12 Months | 📊 Tracker | Interactive savings tracker with progress ring |
-| 5 | Get First Remote Job | 🗺️ Treasure Map | 7 locations with progressive unlock |
-| 6 | Learn Digital Marketing — Free Cert | 📚 Syllabus | 8 modules, 35 lessons, 6 free certs |
-| 7 | Invest in Stock Market — First ₹10K | 📊 Dashboard | Tabbed interface, compact layout |
-| 8 | Build LinkedIn Brand — 0 to 10K | 📱 Story Cards | Swipeable cards, LinkedIn-themed |
-| 9 | Start Side Hustle — Extra ₹50K/Month | 🎯 Decision Tree | 4 questions → personalized recommendation |
-| 10 | Build Mobile App — Idea to Launch | 🏗️ Blueprint | 8 phases with tech stack table |
+| # | Playbook | Style | Color | Key Feature |
+|---|----------|-------|-------|-------------|
+| 1 | Start Freelancing — Zero to ₹1L/Month | 🗺️ Roadmap | Emerald | 12-month timeline with income tracking |
+| 2 | YouTube Growth — 0 to 1000 Subs | 🎮 Quest Map | Red | 9 quests with winding visual path |
+| 3 | Start Online Store — Zero to First Sale | 📋 Checklist | Blue | 42 items across 8 phases |
+| 4 | Save ₹1 Lakh in 12 Months | 📊 Tracker | Green | Interactive savings tracker with progress ring |
+| 5 | Get First Remote Job | 🗺️ Treasure Map | Purple | 7 locations with progressive unlock |
+| 6 | Learn Digital Marketing — Free Cert | 📚 Syllabus | Orange | 8 modules, 35 lessons, 6 free certs |
+| 7 | Invest in Stock Market — First ₹10K | 📊 Dashboard | Teal | Tabbed interface, compact layout |
+| 8 | Build LinkedIn Brand — 0 to 10K | 📱 Story Cards | LinkedIn Blue | Swipeable cards, LinkedIn-themed |
+| 9 | Start Side Hustle — Extra ₹50K/Month | 🎯 Decision Tree | Amber | 4 questions → personalized recommendation |
+| 10 | Build Mobile App — Idea to Launch | 🏗️ Blueprint | Indigo | 8 phases with tech stack table |
 
-**Common features:** Pure value content (no tool promotion), globally relevant, mobile-first responsive, dark mode, localStorage progress, SEO content + FAQ.
+**Playbook index page:** Grid of compact cards with color-coded top borders, category badges, and "→" arrows. Each card links to its playbook page.
 
 ---
 
 ## Student Resources (`students/`)
 
-Free resources for students to build projects, prepare for careers, and learn real-world skills.
+Free resources for students to build projects, prepare for careers, and learn real-world skills. All resources use unique visual styles and pure value content.
 
 | # | Resource | Style | Description |
 |---|----------|-------|-------------|
@@ -351,6 +372,8 @@ Free resources for students to build projects, prepare for careers, and learn re
 | 5 | Open Source Guide | Pipeline | 6-step workflow, leveling system, PR template |
 
 **Coming Soon:** Interview Prep, Career Growth Guide, Salary Negotiation Guide
+
+**Student hub page:** Grid of cards with emoji icons, titles, and descriptions. Live cards link to resources; coming soon cards are faded.
 
 ---
 
@@ -437,18 +460,23 @@ Each category page (`category/*.html`) lists all tools in that category as tool 
 
 ### Desktop Header (sticky, `position: sticky; top: 0; z-index: 1000`)
 - **Logo:** SVG drop mark + "OptiDrop" text (cerise accent on "Drop")
-- **Nav links:** "All Tools" (accent-styled button), Categories (mega-menu), Learn ▾ (dropdown: Playbooks, Students, Blog), More ▾ (dropdown: Reviews, Feedback, About)
-- **Right side:** Privacy badge ("100% Private" with green dot), user hub dropdown (recently used + saved tools)
-- **Scroll behavior:** Header becomes more opaque with stronger shadow after scrolling 10px (`.scrolled` class)
+- **Nav links:** [All Tools] [Categories ▾] [Learn ▾] [More ▾] [100% Private] [⋮ User Hub]
+- **Dropdowns:** Learn (Playbooks, Students, Blog), More (Reviews, Feedback, About) — both use mega-menu style with icon + name + description
+- **Scroll behavior:** Header becomes more opaque with stronger shadow after scrolling 10px
 
 ### Mobile Header (below 768px)
 - **Logo:** Same as desktop
 - **Hamburger button:** Opens `.mobile-nav` dropdown
-- **Mobile nav:** Home, All Tools, Categories (accordion), Learn (accordion: Playbooks, Students, Blog), Reviews, About, Give Feedback
-
-### Dropdown Menus (desktop, on hover)
-- **Learn:** Playbooks, Students, Blog
-- **More:** Reviews, Feedback, About
+- **Mobile nav:** Clean list of 8 links with emoji icons and count badges:
+  - 🏠 Home
+  - 🔧 All Tools (350+)
+  - 📚 Playbooks (10)
+  - 🎓 Students (6)
+  - ✍️ Blog (21)
+  - ⭐ Reviews
+  - ℹ️ About
+  - 💬 Feedback
+- **No accordions** — Categories accessible through "All Tools" page
 
 ### Mega-Menu (desktop, on Categories hover)
 - **Layout:** 5-column grid grouped by theme
